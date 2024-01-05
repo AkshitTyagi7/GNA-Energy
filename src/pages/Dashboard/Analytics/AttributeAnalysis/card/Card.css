@@ -1,0 +1,39 @@
+.card{
+    background-image: -webkit-linear-gradient(90deg, #FF7C04 0%, #FF7C04 100%);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.card-total h2{
+    font-size: 20px!important;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0px;
+}
+
+.card-total p{
+    font-size: 15px!important;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card{
+    margin-bottom: 10px!important;
+}
+
+.card-input{
+    font-size: 20px;
+    font-weight: 300;
+    background-color: transparent;
+    color: #fff;
+;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
