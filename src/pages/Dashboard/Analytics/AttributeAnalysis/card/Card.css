@@ -4,6 +4,7 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 179px;
 
 }
 
@@ -27,13 +28,22 @@
 .card-input{
     font-size: 20px;
     font-weight: 300;
+    height: 19px;
+    width: 100px;
+    border: none!important;
     background-color: transparent;
     color: #fff;
 ;
 }
+
+.card-input:focus{
+    outline: none!important;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;
+    margin: 0;
 
-   opacity: 1;
+   opacity: 0;
 
 }

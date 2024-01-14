@@ -15,6 +15,8 @@ import {
 } from 'chart.js';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import ChartLabelValue from './data/Model';
+import zoomPlugin from 'chartjs-plugin-zoom';
+
 
 ChartJS.register(
   CategoryScale,
@@ -23,7 +25,7 @@ ChartJS.register(
   ArcElement,
   PointElement,
   LineElement,
-  
+  zoomPlugin,
   Title,
   Tooltip,
   Legend
@@ -51,11 +53,11 @@ export function PrepareGraphData(data: ChartLabelValue) {
   const values: GLfloat[] = [];
   // return demoData;
   return {labels: data.labels, datasets: [{label:'' ,data: data.values, backgroundColor: [
-    '#34656D', '#F1935C', '#333333', '#7CB5EC', '#FF7F50', '#B8860B',
+    '#34656D', '#F1935C','#7CB5EC' , '#333333', '#FF7F50', '#B8860B',
     ]}]};
 }
 
-export function  BarChart({ data, options, className='', isRawData=false}: {data: ChartLabelValue, options: any, className?: string, isRawData?: boolean}) {
+export function  BarChart({ data, options, className='', isRawData=false}: {data: any, options: any, className?: string, isRawData?: boolean}) {
   return <Bar options={options} data={isRawData ? data as any:  PrepareGraphData(data)}   className={className} />;
 }
 
@@ -65,5 +67,13 @@ export function PieChart({ options, data, className=''}: {options: any, data: Ch
 
 export function LineChart({ options, data, className='' }: {options: any, data: ChartLabelValue, className?: string}) {
   return <Line options={options} data={PrepareGraphData(data)} className={className}/>;
+};
+
+export function RawLineChart({ options, data, className='' }: {options: any, data: any, className?: string}) {
+  return <Line options={options} data={data} className={className}/>;
+}
+
+export function MixChart({ options, data, className='' }: {options: any, data: any, className?: string}) {
+  return <Bar options={options} data={data} className={className}/>;
 };
  

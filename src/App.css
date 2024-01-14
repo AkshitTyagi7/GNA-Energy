@@ -17,7 +17,21 @@
     height: 100%;
     position: absolute;
 }
-
+.btn-small{
+    border-radius: 15px 15px 15px 15px;
+    min-width: 100px;
+    font-size: 12px;
+    display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      padding: 0.275rem 0.55rem;
+      line-height: 1.5;
+    
+  }
+  
 .content {
     display: block;
     position: absolute;

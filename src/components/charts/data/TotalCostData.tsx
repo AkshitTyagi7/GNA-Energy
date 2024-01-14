@@ -151,6 +151,3 @@ const DemoTotalCostData=[
   // Usage
   const totalCostChartData: ChartLabelValue = ConvertTotalCostData(DemoTotalCostData as [string, number][]);
   
-  console.log("Labels:", totalCostChartData.labels);
-  console.log("Values (in crores):", totalCostChartData.values);
-  

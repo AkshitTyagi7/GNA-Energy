@@ -163,6 +163,3 @@ interface NetGenerationData {
   
   // Usage
   const netGenerationChartData: ChartLabelValue = ConvertNetGenerationData(DemoNetChargeData);
-  console.log("Labels:", netGenerationChartData.labels);
-  console.log("Values:", netGenerationChartData.values);
-  

@@ -13,17 +13,13 @@ function DashBoardItem({title, to}: {title: string, to: string}) {
 export default function Dashboard() {
   return (
   <div className="dashboard p-10 mt-10">
-    <h2 className="mb-20 text-3xl">Analysis</h2>
-    <div className="flex flex-row flex-wrap gap-10">
+    <h2 className="mb-20 text-4xl text-center">GNA Data and Analytics Capability Center (GDACC)</h2>
+    <div className="flex flex-row flex-wrap gap-10 justify-center">
     <DashBoardItem title="Market Monioring" to="marketMonioring" />
-    <DashBoardItem title="Discom Analysis" to="discomAnalysis"/>
-    <DashBoardItem title="Exchange Analysis" to="exchangeAnalysis" />
-    <DashBoardItem title="Landing Cost Circular" to="landingCostCircular" />
+    <DashBoardItem title="Discom Analytics" to="discomAnalysis"/>
+    <DashBoardItem title="Exchange Analytics" to="exchangeAnalysis" />
     <DashBoardItem title="Power Atlas" to="powerAtlas" />
-    <DashBoardItem title="Real Time Analysis" to="realTimeAnalysis" />
-    <DashBoardItem title="Attribute Analysis" to="attributeAnalysis" />
   </div>
   </div>
-  
   );
 }

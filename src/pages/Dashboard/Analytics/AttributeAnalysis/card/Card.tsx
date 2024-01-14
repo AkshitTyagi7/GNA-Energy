@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-
+import {ReactComponent as Pencil} from '../../../../../icons/pencil.svg'
 interface TotalCardProps {
     totalAmount: string;
     totalText: string;
@@ -22,8 +22,7 @@ export default function TotalCard(props: TotalCardProps) {
     }
     let handleChange = (event:any) => {
         event.persist();
-        console.log("Something is changed in the textarea")
-        console.log(event.target.value)
+
         if(event.target.value === "") {
             onEdit && onEdit(0);
             return;
@@ -33,11 +32,18 @@ export default function TotalCard(props: TotalCardProps) {
     
     let optimisedHandleChange = debounce(handleChange,1000);
     return (
+        <div>
+             <p className="card-text text-center">{totalText}</p>
+       
         <div className="card card-total">
+           
             <div className="card-body">
                 {
-                    isEditable ? <input 
+                    isEditable ? 
                     
+                    <div className='flex flex-row justify-between'>
+                    <input 
+                    id="totalAmount"
                     type="number"
                     className="card-input"
                     // value={totalAmount}
@@ -48,13 +54,19 @@ export default function TotalCard(props: TotalCardProps) {
                     onChange={optimisedHandleChange}
                     
                     // onChangeCapture={(e) => onEdit && onEdit(Number(e.target.value))}
-                    ></input>:<h2 className="card-title">{totalAmount}</h2>
+                    ></input>
+                    <Pencil className='' width={'20px'} height={'20px'} color='white' fill='white' onClick={()=>{
+                        let input = document.getElementById("totalAmount");
+                        input && input.focus();
+
+                    }}/>
+                    </div>:<h2 className="card-title">{totalAmount}</h2>
                 }
 
                 {/* <h2 className="card-title">{totalAmount}</h2> */}
 
                 
-                <p className="card-text">{totalText}</p>
+                </div>
             </div>
         </div>
     );

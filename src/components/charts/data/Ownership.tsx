@@ -3,6 +3,7 @@ import ChartLabelValue from "./Model";
 interface OwnershipData {
     Generator: string;
     ownership: string;
+    Actual_Mus: number;
   }
 
 let DemoOwnershipData= [
@@ -152,7 +153,7 @@ let DemoOwnershipData= [
       const ownership = entry.ownership;
     
       // If the ownership is not in ownershipCount, initialize it with 1; otherwise, increment the count
-      ownershipCount[ownership] = (ownershipCount[ownership] || 0) + 1;
+      ownershipCount[ownership] = (ownershipCount[ownership] || 0) + entry.Actual_Mus;
     });
     
     // Populate labels and values arrays
@@ -167,8 +168,7 @@ let DemoOwnershipData= [
   }
   
   // Usage
-  const ownershipChartData: ChartLabelValue = ConvertOwnershipData(DemoOwnershipData);
-  console.log("Labels:", ownershipChartData.labels);
-  console.log("Values:", ownershipChartData.values);
+//   const ownershipChartData: ChartLabelValue = ConvertOwnershipData(DemoOwnershipData);
+
   // Optional: console.log("Background Colors:", ownershipChartData.backgroundColor);
   

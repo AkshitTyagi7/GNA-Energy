@@ -3,6 +3,7 @@ import ChartLabelValue from "./Model";
 interface PPAData {
     Generator: string;
     ppa: string;
+    Actual_Mus: number;
   }
   
  let demoPPA= [
@@ -146,15 +147,14 @@ interface PPAData {
     const values: GLfloat[] = [0, 0];
   
     data.forEach((entry) => {
+
       const isPPA = entry.ppa === "Y";
-      isPPA ? (values[0] += 1) : (values[1] += 1);
+
+      isPPA ? (values[0] = values[0]+ entry.Actual_Mus) : (values[1] = values[0]+ entry.Actual_Mus);
     });
   
     return { labels, values };
   }
   
   // Usage
-const ppaChartData: ChartLabelValue = ConvertPPAData(demoPPA);
-console.log("Labels:", ppaChartData.labels);
-console.log("Values:", ppaChartData.values);
-  
+// const ppaChartData: ChartLabelValue = ConvertPPAData(demoPPA);

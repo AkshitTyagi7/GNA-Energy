@@ -277,8 +277,8 @@ const DemoTotalUnitData=[
 // Now the above data we have to convert like this 
 export function ConvertData(data: any[]): GeneratorChartData {
     const labels: string[] = data.map(entry => entry.Generator);
-    const actualMUs: number[] = data.map(entry => entry.Actual_Mus);
-    const allocatedMUs: number[] = data.map(entry => entry.allocated_capactity);
+    const actualMUs: number[] = data.map(entry =>parseFloat( entry.Actual_Mus) < 0 ? 0 : entry.Actual_Mus);
+    const allocatedMUs: number[] = data.map(entry => parseFloat( entry.Adjusted_Mus) < 0 ? 0 : entry.Adjusted_Mus);
   
     return {
       labels,
@@ -289,7 +289,7 @@ export function ConvertData(data: any[]): GeneratorChartData {
           backgroundColor: '#F1935C',
         },
         {
-          label: 'Allocated MUs',
+          label: 'Adjusted MUs',
           data: allocatedMUs,
           backgroundColor: '#34656D',
         },

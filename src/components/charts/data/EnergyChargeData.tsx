@@ -159,4 +159,3 @@ export function ConvertEnergyData(data: any[]): ChartLabelValue {
         return ConvertEnergyData(DemoEnergyData);
     }
 
-console.log(GetEnergyData());
