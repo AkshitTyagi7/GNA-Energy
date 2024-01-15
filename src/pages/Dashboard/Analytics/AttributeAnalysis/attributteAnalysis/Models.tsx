@@ -6,12 +6,23 @@ interface MahaGencoGeneratorData  {
     nomative: number[];
 }
 
+export interface IdTitle{
+    id: string,
+    title: string
+}
+
 interface MahaGencoGenerator {
     generator: string;
     unit: string;
-    actual: number[];
-    nomative: number[];
+    actual_param: number[];
+    normative_param: number[];
 }
+
+export interface MahaGencoFilter {
+    name: string;
+    subfilters: IdTitle[];
+}
+
 class MahaGencoChart{
     constructor(
         public months: string[],
@@ -46,13 +57,13 @@ class MahaGencoChart{
 for (let i = 0; i < this.data.length; i++) {
   let actualData = {
     label: this.data[i].generator + " Actual " + this.data[i].unit,
-    data: this.data[i].actual,
+    data: this.data[i].actual_param,
     backgroundColor: SecondaryColor,
   };
 
   let nomativeData = {
     label: this.data[i].generator + " Nomative " + this.data[i].unit,
-    data: this.data[i].nomative,
+    data: this.data[i].normative_param,
     backgroundColor: PrimaryColor,
   };
 

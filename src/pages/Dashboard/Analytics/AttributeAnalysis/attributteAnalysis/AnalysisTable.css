@@ -457,3 +457,30 @@ thead{
     top: 0;
     
 }
+
+.mahagencoGraph{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterItem{
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+
+.subfilterItem{
+    padding: 10px;
+    background-color: #cccccd;
+    color: black;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+
+}

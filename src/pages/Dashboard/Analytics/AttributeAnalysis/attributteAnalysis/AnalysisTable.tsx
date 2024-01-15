@@ -148,7 +148,7 @@ function TableRow({
                 <td className='tablefield'>{isAdjusted ? record.Adjusted_Mus : record.Actual_Mus}</td>
             </td>
             <td className='optimalmu'>
-                <td className='tablefield'>{isAdjusted ? record.Adjusted_variable_charge : record.variable_charge}</td>
+                <td className='tablefield'>{isAdjusted ? record.variable_cost : record.variable_charge}</td>
             </td>
             <td>
                 <div className='tablefield'>
@@ -187,6 +187,7 @@ export default function AnalysisTable() {
     const [msedChartIndex, setMSEDChartIndex] = useState(0);
     const [mahagencoChartIndex, setMahagencoChartIndex] = useState(0);
     const [chartIndex, setChartIndex] = useState(0);
+    
 
     useEffect(() => {
         fetchTableData();
@@ -249,7 +250,7 @@ export default function AnalysisTable() {
                                                 onClick={() => {
                                                     setTableRecords(tableRecords.sort((a, b) => parseFloat(a.Availability) - parseFloat(b.Availability)));
                                                 }}
-                                            >Plant Availability</th>
+                                            >PLF</th>
                                             <th
                                                 onClick={() => {
                                                     setTableRecords(tableRecords.sort((a, b) => a.variable_charge - b.variable_charge));
@@ -300,7 +301,7 @@ export default function AnalysisTable() {
                                 fetchTableData();
                             }}
                         >
-                            Reset to optimal
+                            Reset
                         </button>
 
                     </div>
@@ -415,7 +416,6 @@ export default function AnalysisTable() {
     function Cards() {
         return (
             <div className='cards'>
-                <table className='cardsTable'></table>
                 <TotalCard totalAmount={
                     // GEt sum of all mus in the Adjusted Mus column inside data
                     data.mus['Adjusted Mus']
@@ -469,9 +469,6 @@ export default function AnalysisTable() {
                 setMahagencoChartIndex(0);
                 req.date_list = newdata.active_month;
                 selectDate(newdata.active_month);
-
-
-
             }
             setTableRecords(newRecords);
             setLoading(false);
