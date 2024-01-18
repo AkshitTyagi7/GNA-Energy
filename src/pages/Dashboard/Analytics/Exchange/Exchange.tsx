@@ -107,7 +107,7 @@ function Exchange() {
               <MixChart data={
                 PrepareExchangeDataSet({
                   labels: IexChartData.length > 0 ? IexChartData[byProductIndex!].date : [],
-                  sellingBids: IexChartData.length > 0 ? IexChartData[byProductIndex!].sellingBids : [],
+                  SellBids: IexChartData.length > 0 ? IexChartData[byProductIndex!].SellBids : [],
                   prchsBids: IexChartData.length > 0 ? IexChartData[byProductIndex!].prchsBids : [],
                   wtMcp: IexChartData.length > 0 ? IexChartData[byProductIndex!].wtMcp : []
                 })}
@@ -121,7 +121,7 @@ function Exchange() {
               <MixChart data={
                 PrepareExchangeDataSet({
                   labels: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].date : [],
-                  sellingBids: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].sellingBids : [],
+                  SellBids: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].SellBids : [],
                   prchsBids: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].prchsBids : [],
                   wtMcp: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].wtMcp : []
                 })}
@@ -135,7 +135,7 @@ function Exchange() {
               <MixChart data={
                 PrepareExchangeDataSet({
                   labels: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].date : [],
-                  sellingBids: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].sellingBids : [],
+                  SellBids: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].SellBids : [],
                   prchsBids: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].prchsBids : [],
                   wtMcp: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].wtMcp : []
                 })}
@@ -180,7 +180,7 @@ function Exchange() {
                         <MixChart data={
                           PrepareExchangeDataSet({
                             labels: data.date,
-                            sellingBids: data.sellingBids,
+                            SellBids: data.SellBids,
                             prchsBids: data.prchsBids,
                             wtMcp: data.wtMcp
                           })}
@@ -226,25 +226,25 @@ function Exchange() {
                   datasets: [
                     {
                       label: "IEX",
-                      data: addFloatList(...selectedProductIndex.map((index) => IexChartData[index].sellingBids)),
+                      data: addFloatList(...selectedProductIndex.map((index) => IexChartData[index].SellBids)),
                       backgroundColor: PrimaryColor,
                     },
                     {
                       label: "PXIL",
                       // create a new list by adding the values of the same index of all the lists
-                      data: addFloatList(...selectedProductIndex.map((index) => pXILChartData[index].sellingBids)),
+                      data: addFloatList(...selectedProductIndex.map((index) => pXILChartData[index].SellBids)),
                       backgroundColor: SecondaryColor,
                     },
                     {
                       label: "HPX",
-                      data: addFloatList(...selectedProductIndex.map((index) => hPAChartData[index].sellingBids)),
+                      data: addFloatList(...selectedProductIndex.map((index) => hPAChartData[index].SellBids)),
                       backgroundColor: QuaternaryColor,
                     },
 
                   ]
                 }}
                 options={GetChartOptions(
-                  { textTitle: "Selling Bids", isStacked: true, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `MW`, fontSize: 20, maintainAspectRatio: false, enableZoom: false }
+                  { textTitle: "Sell Bids", isStacked: true, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `MW`, fontSize: 20, maintainAspectRatio: false, enableZoom: false }
                 )} />
 
 
@@ -426,14 +426,14 @@ const PrepareExchangeChartOptions = (textTitle: string) => {
   )
 }
 
-const PrepareExchangeDataSet = ({ labels, sellingBids, prchsBids, wtMcp }: { labels: any, sellingBids: number[], prchsBids: number[], wtMcp: number[] }) => {
+const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[] }) => {
   return {
     labels: labels.map((label: any, index: any) => (index+1).toString()),
     datasets: [
       {
         type: 'line' as const,
-        label: `Selling Bids (${MEGA_POWER_UNIT})`,
-        data: sellingBids,
+        label: `Sell Bids (${MEGA_POWER_UNIT})`,
+        data: SellBids,
         backgroundColor: QuaternaryColor,
         yAxisID: 'y1',
 

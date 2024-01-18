@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard/Analytics/Dashboard';
 import AnalysisTable from './pages/Dashboard/Analytics/AttributeAnalysis/attributteAnalysis/AnalysisTable';
 import Exchange from './pages/Dashboard/Analytics/Exchange/Exchange';
 import { DemoPage } from './pages/DemoPage';
+import { PowerAtlas } from './pages/Dashboard/Analytics/Atlas/Atlas';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
               <Route path="discomAnalysis" element={<AnalysisTable />} />
               <Route path="exchangeAnalysis" element={<Exchange />} />
               <Route path="landingCostCircular" element={<div>Landing Cost Circular</div>} />
-              <Route path="powerAtlas" element={<div>Power Atlas</div>} />
+              <Route path="powerAtlas" element={<PowerAtlas />} />
               {/* <Route path="realTimeAnalysis" element={<RealTime />} /> */}
               <Route path="attributeAnalysis" element={<AnalysisTable />} />
             </Route>

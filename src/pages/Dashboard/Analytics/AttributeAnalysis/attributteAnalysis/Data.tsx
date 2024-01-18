@@ -4,20 +4,20 @@ export const Filters = [
     {
         "name": "Operational Parameters",
         "subfilters": [
-            { "id": "Total Capacity", "title": "Total Capacity" },
-            { "id": "Availability", "title": "Availability" },
-            { "id": "PLF", "title": "PLF" },
-            { "id": "Gross Generation", "title": "Gross Generation" },
+            { "id": "Total Capacity", "title": "Total Capacity(MW)" },
+            { "id": "Availability", "title": "Availability (%)" },
+            { "id": "PLF", "title": "PLF (%)" },
+            { "id": "Gross Generation", "title": "Gross Generation (MU)" },
             // "Auxiliary Consumption excluding FGD",
             // "Auxiliary Consumption for FGD",
-            { "id": "Total Auxiliary Consumption", "title": "Total Auxiliary Consumption" },
+            { "id": "Total Auxiliary Consumption", "title": "Total Auxiliary Consumption (%)" },
             // "Total Auxiliary Consumption (= 1.6 + 1.8)",
-            { "id": "Net Generation (= 1.4 - 1.10)", "title": "Net Generation" },
-            { "id": "Heat Rate", "title": "Heat Rate" },
-            { "id": "Secondary Fuel Oil Consumption", "title": "Secondary Fuel Oil Consumption" },
-            { "id": "Transit Lossnts a category, and each subfilter represents a specific parameter or aspect within that c for Domestic and Washed Coal", "title": "Transit Loss for Domestic and Washed Coal" },
-            { "id": "Transit Loss for Imported Coal", "title": "Transit Loss for Imported Coal" },
-            { "id": "SHR coal component", "title": "SHR coal component" }
+            { "id": "Net Generation (= 1.4 - 1.10)", "title": "Net Generation (MU)" },
+            { "id": "Heat Rate", "title": "Heat Rate (KCAL/KWH)" },
+            { "id": "Secondary Fuel Oil Consumption", "title": "Secondary Fuel Oil Consumption(ML/KWH)" },
+            { "id": "Transit Lossnts a category, and each subfilter represents a specific parameter or aspect within that c for Domestic and Washed Coal", "title": "Transit Loss for Domestic and Washed Coal (%)" },
+            { "id": "Transit Loss for Imported Coal", "title": "Transit Loss for Imported Coal (%)" },
+            { "id": "SHR coal component", "title": "SHR Coal Component" }
         ]
     },
     {
@@ -48,11 +48,11 @@ export const Filters = [
             // {"id": "stacking loss to be considered as per MERC Regulations", "title": "stacking loss to be considered as per MERC Regulations"},
             // {"id": "Coal (As Fired)- to be considered for energy charge computation", "title": "Coal (As Fired)- to be considered for energy charge computation"},
             // { "id": "Landed Fuel Price per unit", "title": "Landed Fuel Price per unit" },
-            { "id": "Domestic Coal", "title": "Domestic Coal Cost" },
-            { "id": "Imported Coal", "title": "Imported Coal Cost" },
-            { "id": "Wash Coal", "title": "Wash Coal Cost" },
-            { "id": "Weighted AVG price", "title": "Weighted AVG price" },
-            { "id": "Wtd. Avg. Oil price", "title": "Wtd. Avg. Oil price" },
+            { "id": "Domestic Coal", "title": "Domestic Coal (₹ Cr)" },
+            { "id": "Imported Coal", "title": "Imported Coal (₹ Cr)" },
+            { "id": "Wash Coal", "title": "Wash Coal (₹ Cr)" },
+            { "id": "Weighted AVG price", "title": "Weighted Avg Price – Coal (₹/MT)" },
+            { "id": "Wtd. Avg. Oil price", "title": "Weighted Avg Price – Oil (₹/KL)" },
             // {"id": "Fuel Consumption and Heat Contribution (for each fuel separately)", "title": "Fuel Consumption and Heat Contribution (for each fuel separately)"},
             // {"id": "Specific Fuel Consumption", "title": "Specific Fuel Consumption"},
             // { "id": "Total Fuel Consumption", "title": "Total Fuel Consumption" },
@@ -63,9 +63,9 @@ export const Filters = [
             // {"id": "Other Charges (Pl. specify details)", "title": "Other Charges (Pl. specify details)"},
             // {"id": "Other Adjustments (Pl. specify details)", "title": "Other Adjustments (Pl. specify details)"},
             // {"id": "Total Other Charges and Adjustments", "title": "Total Other Charges and Adjustments"},
-            { "id": "Total Cost (= 4 + 5)", "title": "Total Cost" },
-            { "id": "Cost of Generation (at Generation Terminal) (", "title": "Cost of Generation (at Generation Terminal)" },
-            { "id": "Energy Charge (= 6/1.11)", "title": "Energy Charge" }
+            { "id": "Total Cost (= 4 + 5)", "title": "Total Cost of Generation (₹ Cr)" },
+            { "id": "Cost of Generation (at Generation Terminal) (", "title": "Cost of Generation (₹/KWH)" },
+            { "id": "Energy Charge (= 6/1.11)", "title": "Energy Charge (₹/KWH)" }
         ]
     }
 ]

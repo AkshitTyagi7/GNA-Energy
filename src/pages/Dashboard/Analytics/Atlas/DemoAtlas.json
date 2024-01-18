@@ -1,0 +1,14 @@
+{
+    "data": [
+
+    ],
+    "power_types": [
+        "Thermal",
+        "Small-Hydro",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Nuclear",
+        "Bio Power"
+    ]
+}

@@ -22,11 +22,11 @@ export default function MahaGenco() {
     useEffect(() => {
         FetchFilterData(
             {
-                subfilter: selectedSubFilter?.title as string,
+                subfilter: selectedSubFilter?.id as string,
                 generator: generator
             }
         );
-    },[])
+    }, [])
     return (
         <>
             <div className="flex space-x-1 justify-center">
@@ -78,36 +78,43 @@ t">
                 </div>
                 <div className="mahagencoGraph justify-center text-center mt-10">
                     <div>
-                    <h2 className="text-2xl text-slate-500 mt-5	">{
-                        selectedSubFilter?.title
-                    }</h2>
-                    <div className="flex justify-center space-x-10 mt-5">
-                        <div
-                        onClick={()=>{
-                            if (selectedLegend.includes("Actual")) {
-                                setSelectedLegend(selectedLegend.filter((item) => item !== "Actual"));
-                            } else {
-                                setSelectedLegend([...selectedLegend, "Actual"]);
-                            }
-    
-                        }}
-                        className="flex justify-center space-x-2 ">
-                            <div className="w-5 h-5" style={{background:selectedLegend.includes("Actual") ? SecondaryColor : "#cccccd"}}></div>
-                            <span>Actual</span>
-                        </div>
-                        <div 
-                        onClick={()=>{
-                            if (selectedLegend.includes("Nomative")) {
-                                setSelectedLegend(selectedLegend.filter((item) => item !== "Nomative"));
-                            } else {
-                                setSelectedLegend([...selectedLegend, "Nomative"]);
-                            }
-                        }}
-                        className="flex justify-center space-x-2">
-                            <div className="w-5 h-5" style={{background:selectedLegend.includes("Nomative") ? PrimaryColor : "#cccccd"}}></div>
-                            <span>Nomative</span>
+                        <h2 className="text-2xl text-slate-500 mt-5 	">{
+                            selectedSubFilter?.title
+                        }</h2>
+                        <div className={`flex justify-center space-x-10 mt-5`}>
+                            <div
+                                onClick={() => {
+                                    if (selectedLegend.includes("Actual")) {
+                                        setSelectedLegend(selectedLegend.filter((item) => item !== "Actual"));
+                                    } else {
+                                        setSelectedLegend([...selectedLegend, "Actual"]);
+                                    }
+
+                                }}
+                                className="flex justify-center space-x-2 ">
+                                <div className="w-5 h-5" style={{ background: SecondaryColor }}></div>
+                                <span className={
+                                    selectedLegend.includes("Actual") ? "font-bold" : ""
+
+                                }>Actual</span>
                             </div>
-                    </div></div>
+                            <div
+                                onClick={() => {
+                                    if (selectedLegend.includes("Nomative")) {
+                                        setSelectedLegend(selectedLegend.filter((item) => item !== "Nomative"));
+                                    } else {
+                                        setSelectedLegend([...selectedLegend, "Nomative"]);
+                                    }
+                                }}
+                                className="flex justify-center space-x-2">
+                                <div className="w-5 h-5" style={{ background: PrimaryColor }}></div>
+                                <span
+                                    className={
+                                        selectedLegend.includes("Nomative") ? "font-bold" : ""
+                                    }
+                                >Nomative</span>
+                            </div>
+                        </div></div>
                     <BarChart className='' isRawData={true} data={chartData.toDataSet(
                         selectedLegend.length == 0 ? true : selectedLegend.includes("Actual"),
                         selectedLegend.length == 0 ? true : selectedLegend.includes("Nomative"),
@@ -159,8 +166,8 @@ t">
     }
 
     function FetchFilterData({ subfilter, generator }: { subfilter: string, generator: string[] }) {
-        if(subfilter===null || generator.length===0){
-            chartData.data=[];
+        if (subfilter === null || generator.length === 0) {
+            chartData.data = [];
             setChartData(chartData);
         }
         let filterForm = new FormData();

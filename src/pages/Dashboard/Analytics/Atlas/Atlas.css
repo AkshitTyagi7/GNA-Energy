@@ -1,0 +1,8 @@
+.generatorTable{
+    width: 20vw;
+    height: 100%;
+}
+.generatorTable th{
+    width: 9vw;
+    background: #FF7C04;
+}

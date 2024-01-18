@@ -34,7 +34,8 @@
   
 .content {
     display: block;
-    position: absolute;
+    position: fixed;
+    overflow: auto;
     left: 210px;
     width: calc(100% - 210px);
     height: calc(100%);

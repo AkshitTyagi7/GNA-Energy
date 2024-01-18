@@ -15,7 +15,7 @@ export function DemoPage(){
       {
         name: "Sell Bids",
         type: 'line',
-        data: DemoData[0].sellingBids.map((bid, index) =>parseFloat(bid.toFixed(2)))
+        data: DemoData[0].SellBids.map((bid, index) =>parseFloat(bid.toFixed(2)))
       },
       {
         name: "WeightedMCP",
@@ -27,9 +27,10 @@ export function DemoPage(){
         chart: {
           id: "chart1",
           type: "line",
-          stacked: false,
+          stacked: true,
           zoom: {
-            autoScaleYaxis: true
+            autoScaleYaxis: true,
+            type: 'xy',
           }
         },
         dataLabels: {
@@ -197,9 +198,9 @@ export function DemoPage(){
     return (
         <div>
             <Chart options={options} series={series} className="apexchart" height={350} />
-            <Chart options={options} series={series} className="apexchart" height={350} />
+            {/* <Chart options={options} series={series} className="apexchart" height={350} /> */}
 
-            <Chart options={options2} series={series} className="apexchart" height={200} />
+            <Chart options={options2} series={series} className="apexchart" height={150} />
         </div>
     );
 }

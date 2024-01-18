@@ -139,7 +139,7 @@ function TableRow({
     isAdjusted: boolean;
 }) {
     return (
-        <tr>
+        <tr className='h-[49px]'>
             <td>
                 <div className='tablefield'>{record.Generator}</div>
             </td>
@@ -210,7 +210,7 @@ export default function AnalysisTable() {
                 <div className='item1'>
                     <div>
                         <SearchSelect />
-
+                    <div className='flex justify-between'>
                         <div className='gapRow'>
                             <button className={`btn rectangle btn-primary btn-small ${!isAdjusted ? 'btn-active' : ''}`}
                                 onClick={() => {
@@ -225,11 +225,18 @@ export default function AnalysisTable() {
                                 onClick={() => {
                                     setIsAdjusted(true);
                                 }}
-                            > Adjusted</button>
+                            > Plan</button>
 
                         </div>
-
-                        <br />
+                        <SmallButton
+                        isActive={false}
+                        buttonTitle={'Reset'} onClick={() => {
+                            ResetParameters();
+                            fetchTableData();
+                        }
+                        } />
+                        </div>
+                 
                         <div className='tableArea'>
                             <>
                                 <table className='analysisTable'>
@@ -245,8 +252,8 @@ export default function AnalysisTable() {
                                                     console.log("Sorting by Variable Charge");
                                                     console.log(tableRecords);
                                                 }}
-                                            >Variable Cost</th>
-                                            <th
+                                            >Total Cost</th>
+                                             <th
                                                 onClick={() => {
                                                     setTableRecords(tableRecords.sort((a, b) => parseFloat(a.Availability) - parseFloat(b.Availability)));
                                                 }}
@@ -292,17 +299,7 @@ export default function AnalysisTable() {
 
                         </div>
                         <br />
-                        <button
-                            className='btn btn-primary'
-                            onClick={async () => {
-                                req.reset();
 
-
-                                fetchTableData();
-                            }}
-                        >
-                            Reset
-                        </button>
 
                     </div>
                 </div>
@@ -319,7 +316,7 @@ export default function AnalysisTable() {
                             <div className='mahagenco'>
 
                                 <div className='flex item-center justify-center space-x-1'>
-                                    <MSEDButton buttonTitle={'Total Generation'} index={0} />
+                                    <MSEDButton buttonTitle={'Total Procurement'} index={0} />
                                     <MSEDButton buttonTitle={'Total Cost'} index={1} />
                                     <MSEDButton buttonTitle={'Energy Charge'} index={2} />
                                     {/* <MSEDButton buttonTitle={'Plant Load Factor'} index={3} /> */}
@@ -329,7 +326,7 @@ export default function AnalysisTable() {
                                         msedChartIndex === 1 ? PrepareGraphData(ConvertTotalCostData(data.total_cost)) :
                                             msedChartIndex === 2 ? PrepareGraphData(ConvertEnergyData(data.energy_charge)) :
                                                 msedChartIndex === 3 ? PrepareGraphData(ConvertPpaUtil(data.ppa_util)) : { labels: [], datasets: [] }}
-                                        options={msedChartIndex === 0 ? GetChartOptions({ textTitle: `Total Generation (${ENERGY_UNIT})`, yLabelText: ENERGY_UNIT, displayYLabel: true, displayLegend: true, maintainAspectRatio: false }) :
+                                        options={msedChartIndex === 0 ? GetChartOptions({ textTitle: `Total Procurement (${ENERGY_UNIT})`, yLabelText: ENERGY_UNIT, displayYLabel: true, displayLegend: true, maintainAspectRatio: false }) :
                                             msedChartIndex === 1 ? GetChartOptions({ textTitle: `Total Cost (${COST})`, yLabelText: COST, displayYLabel: true, displayLegend: false, maintainAspectRatio: false }) :
                                                 msedChartIndex === 2 ? GetChartOptions({ textTitle: `Variable Energy Charge (${COST_UNIT})`, yLabelText: COST_UNIT, displayYLabel: true, displayLegend: false, maintainAspectRatio: false }) : {}
                                             // msedChartIndex === 3 ? GetChartOptions({ textTitle: `Plant Load Factor (%)`, yLabelText: "%", displayYLabel: true, displayLegend: false }) : {}
@@ -338,23 +335,23 @@ export default function AnalysisTable() {
 
                         </div>
                         {
-                            <div className='flex mt-14 text-center center justify-between'>
-                                <div className='col-3 pie'>
-                                    <PieChart data={ConvertSourceData(data.source)} options={GetChartOptions({ textTitle: "Source", yLabelText: "MUs", displayYLabel: true, displayLegend: true, isSmallLegend: true, maintainAspectRatio: false, })} />
+                            <div className='flex mt-5 text-center center justify-between space-x-0'>
+                                <div className='col-3 pie grow-0'>
+                                    <PieChart data={ConvertSourceData(data.source)} options={GetChartOptions({ textTitle: "By Source", yLabelText: "MUs", displayYLabel: true, displayLegend: true, isSmallLegend: true, maintainAspectRatio: false, showAxis:false })} />
                                 </div>
-                                <div className='col-3 pie'>
-                                    <PieChart data={ConvertOwnershipData(data.ownership)} options={GetChartOptions({ textTitle: "Ownership", yLabelText: "MUs", displayYLabel: true, displayLegend: true, isSmallLegend: true, maintainAspectRatio: false, })} />
+                                <div className='col-3 grow'>
+                                    <BarChart data={ConvertOwnershipData(data.ownership)} options={GetChartOptions({ textTitle: "By Ownership", yLabelText: "MUs", displayYLabel: true, displayLegend: false, isSmallLegend: false, maintainAspectRatio: false, })} />
                                 </div>
-                                <div className='col-3 pie'>
-                                    <PieChart data={ConvertPPAData(data.ppa)} options={GetChartOptions({
+                                {/* <div className='col-3 pie'> */}
+                                    {/* <PieChart data={ConvertPPAData(data.ppa)} options={GetChartOptions({
                                         textTitle: "PPA",
                                         yLabelText: "MUs",
                                         displayYLabel: true,
                                         isSmallLegend: true,
                                         maintainAspectRatio: false,
                                         displayLegend: true,
-                                    })} />
-                                </div>
+                                    })} /> */}
+                                
                             </div>
 
                         }
@@ -419,7 +416,7 @@ export default function AnalysisTable() {
                 <TotalCard totalAmount={
                     // GEt sum of all mus in the Adjusted Mus column inside data
                     data.mus['Adjusted Mus']
-                } isEditable={true} totalText='Total MUs(Adjusted)' onEdit={
+                } isEditable={true} totalText='Total MUs (Plan)' onEdit={
                     (v) => {
                         req.active_mus = v;
                         data.mus['Adjusted Mus'] = v;
@@ -431,9 +428,9 @@ export default function AnalysisTable() {
                     data.mus['Actual -Mus'] ??
                     '-'
 
-                } totalText='Total MUs(Actual)' />
-                <TotalCard totalAmount={data.cost[0]} totalText='Total Cost(Actual)' />
-                <TotalCard totalAmount={data.cost[2]} totalText='Total Cost(Adjusted)' />
+                } totalText='Total MUs (Actual)' />
+                <TotalCard totalAmount={data.cost[0]} totalText='Total Cost - Cr (Actual)' />
+                <TotalCard totalAmount={data.cost[2]} totalText='Total Cost - Cr (Plan)' />
             </div>
         );
     }

@@ -35,10 +35,12 @@ thead {
   
   }
 .barcharts{
-  width: calc(100vw - 700px);
-  height: 35vh;
-  /* width: 65vw; */
+  width: calc(100vw - 660px);
+  height: 42vh;
+  /* width:65vw; */
 }
+
+
 
 
   .App-link {
@@ -119,6 +121,9 @@ thead {
   
   .tableArea {
     width: 398px;
+   margin-top: 10px;
+    height: calc(100vh - 150px);
+    overflow-y: auto;
   }
 
 
@@ -134,114 +139,6 @@ thead {
          width: auto;
       }
  }
-  
-    
-/* .pie{
-  width: 10vh!important;
-}
-  
-    @media (max-width: 1880px) {
-      .col-2{
-        width: 500px;
-        height: 100%;
-      }
-  
-      .col-3{
-        width: 330px;
-        height: 100%;
-      }
-    }
-    @media (max-width: 1700px) {
-      .col-2{
-        width: 500px;
-        height: 100%;
-      }
-      .col-3{
-        width: 300px;
-        height: 100%;
-      }
-    }
-    @media (max-width: 1650px) {
-      .col-2{
-        width:450px;
-        height: 100%;
-      }
-      .col-3{
-        width: 300px;
-        height: 100%;
-      }
-    }
-    @media (max-width: 1550px) {
-      .col-2{
-        width:400px;
-        height: 100%;
-      }
-      .col-3{
-        width: 300px;
-        height: 100%;
-      }
-    }
-  
-    @media (max-width: 1450px) {
-      .col-2{
-        align-items: end;
-        gap: 0px;
-        width: 450px;
-        height: 100%;
-        
-  
-      }
- 
-      .tableArea{
-        height: 60vh!important;
-      }
-      .pie{
-        height: 10vh!important;
-      }
-      .col-3{
-        width: 250px;
-        height: 100%;
-      }
-    }
-  
-    @media (max-width: 1350px) {
-      .col-2{
-        width:350px;
-        height: 100%;
-      }
-      .tableArea{
-        height: 75vh!important;
-      
-      }
-    }
-   */
-  /* 
-    @media(max-width: 1700px){
-      .col-2{
-        width: 500px;
-        height: 100%;
-      }
-      
-    }
-  @media(max-width: 1510px){
-    .col-2{
-      width: 500px;
-      height: 100%;
-    }
-    
-  }
-  
-  
-  
-  @media (max-width: 768px) {
-    .col-2{
-    width: 100%;
-    height: 100%;
-    } 
-  
-  
-    
-  } */
   
   input.slider{
     transition: all 1s ease-in;;
@@ -273,21 +170,33 @@ table{
     height: 50px;
 }
 td{
-    padding-left: 8px;
-    padding-right:8px ;
-    padding-top: 8px;
+    /* padding-left: 8px;
+    padding-right:8px ; */
+    /* padding-top: 8px; */
     
-        font-size: 10px;
+        font-size: 12px;
     
 }
+.tablefield{
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  width: 100%;
+  align-items: center;
+  min-width: 49px;
+}
 .actualmu .tablefield{
-    color: #d3d3d3;
+  margin-right: 10px;
+    color: white;
     background-color: #4790bd;
     border-radius: 4px;
 }
 .optimalmu .tablefield{
     background: green;
-    color: #d3d3d3;
+    margin-left: 3px;
+    color: white;
+
     border-radius: 4px;
     
 }
@@ -335,7 +244,7 @@ td{
   }
 
   .AnalysisBody {
-    padding: 20px;
+    padding-left: 10px;
     padding-bottom: 0px;
     gap: 20px;
     display: flex;
@@ -370,13 +279,11 @@ td{
   width: 35vw;
   height: 100%;
 }
-.col-3{
-  width: 200px;
-}
+
 
 .pie{
-  width: 17vw!important;
-  height: 24vw;
+  width: 20vw!important;
+  height: 20vw;
 
 }
 @media(max-width:1200px) {
@@ -390,21 +297,6 @@ td{
   }
   
 }
-/* @media(min-width: 1700px){
-  .col-2{
-    width: 600px;
-    height: 100%;
-  }
-  .col-3{
-    width: 300px;
-    height: 100%;
-  }
-  
-} */
-
-/* .chartArea .col-2{
-    height: 25vh;
-} */
 
 .gapRow{
     display: flex;
@@ -417,11 +309,18 @@ td{
     justify-content: center;
 }
 
-  .tableArea {
-    width: 396px;    
-    height: calc(100vh - 280px);
-    overflow-y: auto;
+
+.ownership{
+    width:32vw;
+    height: 43vh;
+    width: 42vw;
+    
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 table{
     border-collapse: collapse;

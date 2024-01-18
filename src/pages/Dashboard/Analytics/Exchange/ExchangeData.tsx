@@ -5,7 +5,7 @@ export interface ExchangeChartData {
     title: string;
     timeBlocks: string[];
     date: string[];
-    sellingBids: number[];
+    SellBids: number[];
     prchsBids: number[];
     wtMcp: number[];
   
@@ -71,7 +71,7 @@ export  const FormatExchangeData = (data: any): ExchangeChartData[] => {
             title: key,
             timeBlocks: [],
             date: [],
-            sellingBids: [],
+            SellBids: [],
             prchsBids: [],
             wtMcp: [],
           };
@@ -79,7 +79,7 @@ export  const FormatExchangeData = (data: any): ExchangeChartData[] => {
           exchangeData.forEach((entry: any) => {
             chartData.timeBlocks.push( entry.time_block);
             chartData.date.push(entry.date);
-            chartData.sellingBids.push(parseFloat(entry.sell_bid_mw) ? parseFloat(entry.sell_bid_mw) : 0);
+            chartData.SellBids.push(parseFloat(entry.sell_bid_mw) ? parseFloat(entry.sell_bid_mw) : 0);
             chartData.prchsBids.push(parseFloat(entry.prchs_bid_mw) ? parseFloat(entry.prchs_bid_mw) : 0);
             chartData.wtMcp.push(parseFloat(entry.wt_mcp_rs_mwh) ? parseFloat(entry.wt_mcp_rs_mwh) : 0);
           });

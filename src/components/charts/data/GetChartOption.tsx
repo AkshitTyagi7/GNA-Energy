@@ -40,6 +40,7 @@ export default function GetChartOptions({
   yLabelText = '',
   y2LabelText = '',
   isStacked = false,
+  showAxis = true,
   aspectRatio ,
   fontSize,
   maintainAspectRatio = true,
@@ -56,6 +57,8 @@ export default function GetChartOptions({
   aspectRatio?: number;
   y2LabelText?: string;
   fontSize?: number;
+
+  showAxis?: boolean;
   maintainAspectRatio?: boolean;
   secondYaxis?: boolean;
   displayTooltip?: boolean;
@@ -133,11 +136,13 @@ export default function GetChartOptions({
     scales: {
       x:{
         stacked: isStacked,
+        display: showAxis,
 
       },
       y: {
         stacked: isStacked,
-        display: displayYLabel,
+        // display: displayYLabel,
+        display: showAxis,
         title: {
           
           display: displayYLabel,
