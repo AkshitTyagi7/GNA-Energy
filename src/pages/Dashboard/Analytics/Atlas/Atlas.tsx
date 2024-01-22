@@ -2,14 +2,10 @@ import React, { useEffect } from "react";
 import Chart, { ReactGoogleChartEvent } from "react-google-charts";
 import { FormatAtlasData } from "./ConvertData";
 import AtlasData from "./DemoAtlas.json";
+import {ReactComponent as Cross} from '../../../../icons/cross.svg'
 import "./Atlas.css";
 import ReactSelect from "react-select";
 export function PowerAtlas() {
-  const [atlasData, setAtlasData] = React.useState<any>({
-    data:[]
-  });
-  const [data, setData] = React.useState(FormatAtlasData(AtlasData.data));
-
   const colorMapping: {
     [key: string]: string;
   } = {
@@ -20,21 +16,32 @@ export function PowerAtlas() {
     "Nuclear": "red",
     "Bio Power": "lightgreen",
   }
+
+  const [atlasData, setAtlasData] = React.useState<any>({
+    data:[]
+  });
   let [selectedLegend, setSelectedLegend] = React.useState<string[]>([]);
+  const [data, setData] = React.useState(FormatAtlasData(AtlasData.data, getSelectedLegends()));
+
+
 
   useEffect(() => {
     fetchAtlasData();
   }, [])
   const [selectedPlant, setSelectedPlant] = React.useState<any>();
 
-  const chartEvents: ReactGoogleChartEvent[] = [
+  function chartEvents(dataChart: any): ReactGoogleChartEvent[] {return [
     {
       eventName: "select",
-      callback({ chartWrapper }: { chartWrapper: any }) {
+      callback({ chartWrapper, props, eventArgs }: { chartWrapper: any, props: any, eventArgs: any }) {
         const selectedId = chartWrapper.getChart().getSelection();
+  
         if (selectedId.length) {
-          setSelectedPlant(atlasData.data[selectedId[0].row])
+          const selectedRow = selectedId[0].row;
+          setSelectedPlant(atlasData.data.find((item: any) => item["ID"] === data.data[selectedRow+1][4]));
+      
         } else {
+
         }
       }
     },
@@ -46,7 +53,7 @@ export function PowerAtlas() {
       }) => {
       }
     }
-  ];
+  ];}
   return (
     <>
       <h1
@@ -64,20 +71,13 @@ export function PowerAtlas() {
               <div
                 onClick={() => {
                   if (selectedLegend.includes(key)) {
-                    selectedLegend = selectedLegend.filter((item) => item !== key)
+                    selectedLegend = selectedLegend.filter((item) => item !== key);
                     handleFilterData();
                     setSelectedLegend(selectedLegend);
-
-
-
-
-
                   } else {
                     selectedLegend.push(key);
                     handleFilterData();
-
                   }
-
                 }}
                 className="flex justify-center space-x-2 ">
                 <div className="w-5 h-5 rounded-full" style={{ background: colorMapping[key] }}></div>
@@ -95,24 +95,6 @@ export function PowerAtlas() {
       </div>
 
       <div className="absolute left-12 ml-1 mt-1 z-10 flex justify-center">
-        {/* <ReactSelect
-          className="w-96"
-        options={atlasData.data.map((item: any) => {
-          return {
-            label: item["Name of Project"],
-            value: item["Name of Project"],
-          }
-        }
-        ).filter(
-          onlyUnique
-
-        )
-      } onChange={(e) => {
-          const selectedPlant = atlasData.data.find((item: any) => item["Plant Name"] === e);
-          if (selectedPlant) {
-            setSelectedPlant(selectedPlant);
-          }
-        }} /> */}
       </div>
 
 
@@ -121,24 +103,34 @@ export function PowerAtlas() {
       
 
         <div className="plantInfo bg-white rounded-t-lg shadow-lg">
+         
           {selectedPlant &&
-            <table className="generatorTable">
-              <thead>
-              </thead>
-              <tbody>
-                {Object.keys(selectedPlant).map((key, index) => {
-                  if (key.includes("Latitude") || key.includes("Longitude")) {
-                    return null;
-                  }
-                  return (
-                    <tr key={index}>
-                      <th className="text-sm">{key}</th>
-                      <td className="border text-sm	 ">{selectedPlant[key]}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+           <><div className="flex justify-between items-center p-1 pl-4 pr-4 align-middle	 ">
+              <h1 className="text-lg">Plant Info</h1>
+              <button
+                onClick={() => {
+                  setSelectedPlant(null);
+                } }
+                className="text-lg ">
+                <Cross />
+              </button>
+            </div><table className="generatorTable">
+                <thead>
+                </thead>
+                <tbody>
+                  {Object.keys(selectedPlant).map((key, index) => {
+                    if (key.includes("Latitude") || key.includes("Longitude") || key.includes("ID")) {
+                      return null;
+                    }
+                    return (
+                      <tr key={index}>
+                        <th className="text-sm">{key}</th>
+                        <td className="border text-sm	 ">{selectedPlant[key]}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table></>
           }
         </div>
       </div>
@@ -148,10 +140,16 @@ export function PowerAtlas() {
             chartType="GeoChart"
             width="97%"
             height="100%"
-            data={data.data}
+            data={data.data.map(subArray => subArray.slice(0, 4))}
 
-            chartEvents={chartEvents}
+            chartEvents={chartEvents(data.data)}
+           chartWrapperParams={{
+            view: { columns: [0, 1, 2, 3] 
+            },
+           }}
+            
             options={{
+      
               legend: 'none',
               resolution: 'provinces',
               sizeAxis: { minValue: 0, maxValue: 100 },
@@ -174,18 +172,34 @@ export function PowerAtlas() {
     const response = await fetch("http://13.233.117.192/power_atlas_api");
     const res = await response.json();
     setAtlasData(res);
-    setData(FormatAtlasData(res.data));
+    setData(FormatAtlasData(res.data, getSelectedLegends()));
   }
 
-  function handleFilterData() {
-    let filteredData;
+  function handleSelectChange(selectedRow: any) {
+      }
+
+ async function handleFilterData() {
+  setData(FormatAtlasData(AtlasData.data, getSelectedLegends()));
+  // sleep for a second
+  await new Promise(r => setTimeout(r, 100));
+  let filteredAtlasData = atlasData.data;
     if (selectedLegend.length > 0) {
-      filteredData = atlasData.data.filter((item: any) => selectedLegend.includes(item["Type"]));
+      filteredAtlasData = atlasData.data.filter((item: any) => selectedLegend.includes(item["Type"]));
     }
     else {
-      filteredData = atlasData.data;
+      filteredAtlasData = atlasData.data;
     }
-    setData(FormatAtlasData(filteredData));
+
+   
+    setData(FormatAtlasData(filteredAtlasData, getSelectedLegends()));
+    console.log("--------------------------", "Date when filtering")
+    console.log(data);
+  }
+  function getSelectedLegends(): string[]{
+    if(selectedLegend.length===0){
+      return Object.keys(colorMapping);
+    }
+    return selectedLegend;
   }
   function onlyUnique(value: any, index: any, array: any) {
     return array.indexOf(value) === index;

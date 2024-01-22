@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function DashBoardItem({title, to}: {title: string, to: string}) {
   return (
     <NavLink to={`${to}`} className="dashboard-item" >
-      <h3 className="text-white text-6-xl">{title}</h3>
+      <h3 className="text-white text-2xl">{title}</h3>
     </NavLink>
   );
   
@@ -19,6 +19,9 @@ export default function Dashboard() {
     <DashBoardItem title="Discom Analytics" to="discomAnalysis"/>
     <DashBoardItem title="Exchange Analytics" to="exchangeAnalysis" />
     <DashBoardItem title="Power Atlas" to="powerAtlas" />
+    <DashBoardItem title="Banking Analytics" to="bankingAnalytics" />
+    <DashBoardItem title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
+
   </div>
   </div>
   );

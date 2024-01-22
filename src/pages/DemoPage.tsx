@@ -1,206 +1,158 @@
 import Chart from 'react-apexcharts';
 import { DemoExchangeData } from './Dashboard/Analytics/Exchange/DemoExchangeData';
 import { ExchangeChartData, FormatExchangeData } from './Dashboard/Analytics/Exchange/ExchangeData';
-export function DemoPage(){
-    let DemoData: ExchangeChartData[]=FormatExchangeData(DemoExchangeData.data)
-    let series: ApexAxisChartSeries = [
-          
-      {
-        name: 'Purchase Bids',
-        type: 'line',
-        // decimalsInFloat: 2,
-        data: DemoData[0].prchsBids.map((bid, index) =>parseFloat( bid.toFixed(2)))
+import { CreateApexOption } from './Dashboard/Analytics/Exchange/Options';
+import { count } from 'console';
+import { ReactElement, useEffect, useRef, useState } from 'react';
+import { MediumButton } from '../components/Button';
+import { JsxElement } from 'typescript';
+import { XAxisOption } from './ApexOptions';
+interface SharedBrushState {
+  selected: boolean;
+  range: {
+    start: number | null;
+    end: number | null;
+  };
+}
+export function DemoPage() {
+  const [xmax, setXmax] = useState<number>(90);
+  const [xmin, setXmin] = useState<number>(1);
+  const chartRef:any = useRef(null);
 
-      },
-      {
-        name: "Sell Bids",
-        type: 'line',
-        data: DemoData[0].SellBids.map((bid, index) =>parseFloat(bid.toFixed(2)))
-      },
-      {
-        name: "WeightedMCP",
-        type: 'column',
-        data: DemoData[0].wtMcp.map((bid, index) =>parseFloat(bid.toFixed(2)))
-      },
-    ]
-    let options: ApexCharts.ApexOptions = {
-        chart: {
-          id: "chart1",
-          type: "line",
-          stacked: true,
-          zoom: {
-            autoScaleYaxis: true,
-            type: 'xy',
+
+
+
+  useEffect(() => {
+    scrollingChart().then((chart) => {
+    });
+  }
+    , []);
+  let DemoData: ExchangeChartData[] = FormatExchangeData(DemoExchangeData.data)
+
+
+
+  let series: ApexAxisChartSeries = [
+    {
+      name: 'Purchase Bids',
+      type: 'line',
+      // decimalsInFloat: 2,
+      data: DemoData[0].prchsBids.map((bid, index) => parseFloat(bid.toFixed(2))).concat(DemoData[0].prchsBids.map((bid, index) => parseFloat(bid.toFixed(2))))
+
+    },
+    {
+      name: "Sell Bids",
+      type: 'line',
+      data: DemoData[0].SellBids.map((bid, index) => parseFloat(bid.toFixed(2))).concat(DemoData[0].SellBids.map((bid, index) => parseFloat(bid.toFixed(2))))
+    },
+    {
+      name: "WeightedMCP",
+      type: 'column',
+      data: DemoData[0].wtMcp.map((bid, index) => parseFloat(bid.toFixed(2))).concat(DemoData[0].wtMcp.map((bid, index) => parseFloat(bid.toFixed(2))))
+    },
+  ];
+  let chart1 = <Chart
+  ref={chartRef}
+  options={
+    options({ count: 4, length: series[0].data.length, id: 'chart1' })
+  } series={
+    series
+  }
+    className="apexchart" height={350} width={600} />
+
+    let chart2 = <Chart options={
+      options({ count: 4, length: series[0].data.length, id: 'chart2' })
+    } series={
+      series
+    }
+      className="apexchart" height={350} width={600} />
+
+
+  function options({ id, count, length, brush = false, target }: { id: string, count: number, length: number, brush?: boolean, target?: string }): ApexCharts.ApexOptions {
+
+
+    return {
+      chart: {
+        id: id,
+        group:!brush ? "exchange" : "",
+        height: 350,
+        zoom: {
+          autoScaleYaxis: true
+        },
+        events: {
+          selection: function (chartContext, { xaxis, yaxis }) {
+
+            const chartInstance = chartRef.current.chart;
+        
+
+            brush ? 
+               chartInstance.updateOptions({
+                id:"chart1",
+              xaxis: XAxisOption({ categories:  DemoData[0].date.map((date, index) => (index + 1).toString()).slice(0, 96).concat
+                (DemoData[0].date.map((date, index) => (index + 1).toString()).slice(0, 96)), brush: false, xmin: xaxis.min, xmax: xaxis.max, length: length, space: count }),
+            }): console.log("Brush is not enabled")
+     
+            ;
           }
         },
-        dataLabels: {
-          enabled: false
-        },
-        yaxis: [
-            {
-              seriesName: 'Column A',
-              axisTicks: {
-                show: true
-              },
-              axisBorder: {
-                show: true,
-              },
-              title: {
-                text: "Columns"
-              }
-            },
-            {
-              seriesName: 'Column A',
-              show: false
-            }, {
-              opposite: true,
-              seriesName: 'Weighted MCP',
-              axisTicks: {
-                show: true
-              },
-              axisBorder: {
-                show: true,
-              },
-              title: {
-                text: "WeightedMCP"
-              }
-            }
-          ],
-        stroke: {
-          width: [4, 4, 8]
+        brush: {
+          target: 'chart1',
+          enabled: brush,
+
         },
 
-        xaxis: {
-          categories: DemoData[0].date.map((date, index) => (index+1).toString()).slice(0, 96),
-          min:1,
-          
-          max:50,
-        },
-
-        tooltip: {
-          shared: true,
-          x: {
-            show: true,
-          
-          }
-        },
-        legend: {
-          horizontalAlign: "left",
-          offsetX: 40
-        }
-      }
-
-      let options2: any = {
-        chart: {
-          id: "chart2",
-          type: "line",
-          stacked: false,
-          brush: {
-            target: "chart1",
-            enabled: true,
-            
+        selection: {
+          enabled: true,
+          fill: {
+            color: "#fff",
+            opacity: 0.4
           },
-          selection: {
-            enabled: true,
-            fill: {
-              color: "#fff",
-              opacity: 0.4
-            },
-            xaxis: {
-              min: 1,
-              max: 20
-            }
+          xaxis: {
+            min: 1,
+            max: 96
           }
-        },
-      
-        dataLabels: {
-          enabled: false
-        },
-        yaxis: [
-            {
-              seriesName: 'Column A',
-              axisTicks: {
-                show: true
-              },
-              axisBorder: {
-                show: true,
-              },
-              title: {
-                text: "Columns"
-              }
-            },
-            {
-              seriesName: 'Column A',
-              show: false
-            }, {
-              opposite: true,
-              seriesName: 'Weighted MCP',
-              axisTicks: {
-                show: true
-              },
-              axisBorder: {
-                show: true,
-              },
-              title: {
-                text: "WeightedMCP"
-              }
-            }
-          ],
-        stroke: {
-          width: [4, 4, 8]
-        },
-        data: DemoData[0].date.map((date, index) => (index+1).toString()).slice(0, 96), 
-
-        xaxis: {
-          categories: DemoData[0].date.map((date, index) => (index+1).toString()).slice(0, 96),
-          min:1,
-          labels: {
-            type: "datetime",
-            show: true,
-            formatter: function (val: any, index: any) {
-
-              if(val ==='1'){
-                return val;
-              }
-              if(val === '50'){
-                return '23-10-2022'
-              }
-              if (val ==='96') {
-                return val;
-              } 
-              
-              else {
-                return'';
-              }
-            }
-          },
-          // show axis a at a distance of 20 units from the x axis
-
-          max:96,
-
-        },
-
-        tooltip: {
-          shared: true,
-          x: {
-            show: true,
-          
-          }
-        },
-        legend: {
-          horizontalAlign: "left",
-          offsetX: 40
         }
-      }
+      },
+
+      xaxis: XAxisOption({ categories: DemoData[0].date.map((date, index) => (index + 1).toString()).slice(0, 96).concat
+(DemoData[0].date.map((date, index) => (index + 1).toString()).slice(0, 96)), brush: brush, xmin: xmin, xmax: xmax, length: length, space: count }),
+    }
+  }
 
 
 
-    return (
-        <div>
-            <Chart options={options} series={series} className="apexchart" height={350} />
-            {/* <Chart options={options} series={series} className="apexchart" height={350} /> */}
+  return (
+    <div>
 
-            <Chart options={options2} series={series} className="apexchart" height={150} />
-        </div>
-    );
+      <div className="flex justify-center">
+
+       {chart1}
+      {chart2}
+
+  {
+
+  }
+
+
+      </div>
+  {chart2}
+      <Chart options={
+        options({ count: 4, length: series[0].data.length, id: 'chart3', brush: true})
+      } series={
+        series
+      } className="apexchart" height={350} width={"100%"} />
+
+
+
+
+    </div>
+  );
+  async function scrollingChart(): Promise<ReactElement> {
+    //sleep for 5 seconds
+    await new Promise(r => setTimeout(r, 1000));
+    return <Chart options={
+      options({ count: 4, length: series[0].data.length, id: 'chart2', target: 'chart1', brush: true })
+    } series={
+      series
+    } className="apexchart" height={350} width={"100%"} />
+  }
 }

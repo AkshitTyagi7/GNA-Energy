@@ -22,13 +22,13 @@ const Sidebar = () => {
           <SideBarItems Icon={DocumentIcon} text="Document" href="/document"  />
           <SideBarItems Icon={GNAiIcon} text="GNAi" href="/gnai"  />
       </nav>
-      <hr className="my-2 border-t border-gray-300" />
+      {/* <hr className="my-2 border-t border-gray-300" /> */}
       
       <div className="relative">
-        <button className="flex items-center text-body-emphasis focus:outline-none">
+        {/* <button className="flex items-center text-body-emphasis focus:outline-none">
           <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-full me-2" />
           <strong>mdo</strong>
-        </button>
+        </button> */}
         <div className="absolute right-0 mt-2 bg-white border rounded shadow-md hidden">
           <NavLink to="#"  className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">New project...</NavLink>
           <NavLink to="#" className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">Settings</NavLink>

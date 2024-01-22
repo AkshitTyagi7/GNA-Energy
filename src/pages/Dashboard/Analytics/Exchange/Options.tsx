@@ -30,11 +30,10 @@ export function CreateExchangeSeries({ChartData}:{
 export function CreateApexOption({
     id,
     labels    ,
-    chartRef
+    
 }:{
     id:string,
     labels:string[],
-    chartRef:React.MutableRefObject<Chart | null>
 
 }): ApexCharts.ApexOptions {
     const options: ApexCharts.ApexOptions = {
