@@ -39,7 +39,7 @@ export function LoginPage() {
                                     <div className="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
                                     <input 
                                     
-                                    className="w-full bg-transparent text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-orange-500" required={true} type="email" placeholder="mike@gmail.com" onChange={
+                                    className="w-full bg-transparent text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-orange-500" required={true} type="email" placeholder="" onChange={
                                         (e)=>{
                                             setEmail(e.target.value);
                                         }
