@@ -15,7 +15,7 @@ export default function Dashboard() {
   <div className="dashboard p-10 mt-10">
     <h2 className="mb-20 text-4xl text-center">GNA Data and Analytics Capability Center (GDACC)</h2>
     <div className="flex flex-row flex-wrap gap-10 justify-center">
-    <DashBoardItem title="Market Monioring" to="marketMonioring" />
+    <DashBoardItem title="Market Monitoring" to="marketMonioring" />
     <DashBoardItem title="Discom Analytics" to="discomAnalysis"/>
     <DashBoardItem title="Exchange Analytics" to="exchangeAnalysis" />
     <DashBoardItem title="Power Atlas" to="powerAtlas" />
