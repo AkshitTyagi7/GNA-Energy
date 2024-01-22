@@ -25,7 +25,7 @@ export function LoginPage() {
                             <div>
 <Logo />
                             </div>
-                            <div className="text-2xl text-black-800 tracking-wide ml-3 font-semibold">GNA Eneregy</div>
+                            <div className="text-2xl text-black-800 tracking-wide ml-3 font-semibold">GNA Energy</div>
                         </div>
                     </div>
                     <div className="mt-10 px-12 sm:px-14 md:px-14 lg:px-12 2xl:mt-20 xl:px-15 xl:max-w-2xl">
