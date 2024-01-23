@@ -1,14 +1,15 @@
 import React from "react";
 import DataAnalyticsImage from './Login.png'
-import {ReactComponent as Logo} from '../../logo.svg';
+import { ReactComponent as Logo } from '../../logo.svg';
+import {  buildHttpReq, buildUrl } from "../../common";
 
 
 export function LoginPage() {
     const [otpSent, setOtpSent] = React.useState<boolean>(false);
     const [loading, setLoading] = React.useState<boolean>(false);
     const [email, setEmail] = React.useState<string>("");
-    const [otp, setOtp] = React.useState<string>("");
-    
+    let [otp, setOtp] = React.useState<number>();
+
     return (
         <html>
             {
@@ -23,7 +24,7 @@ export function LoginPage() {
                     <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                         <div className="cursor-pointer flex items-center">
                             <div>
-<Logo />
+                                <Logo />
                             </div>
                             <div className="text-2xl text-black-800 tracking-wide ml-3 font-semibold">GNA Energy</div>
                         </div>
@@ -37,14 +38,14 @@ export function LoginPage() {
                             }>
                                 <div>
                                     <div className="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
-                                    <input 
-                                    
-                                    className="w-full bg-transparent text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-orange-500" required={true} type="email" placeholder="" onChange={
-                                        (e)=>{
-                                            setEmail(e.target.value);
-                                        }
-                                    
-                                    } />
+                                    <input
+
+                                        className="w-full bg-transparent text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-orange-500" required={true} type="email" placeholder="" onChange={
+                                            (e) => {
+                                                setEmail(e.target.value);
+                                            }
+
+                                        } />
                                 </div>
                                 {/* <div className="mt-8">
                                     <div className="flex justify-between items-center">
@@ -64,8 +65,8 @@ export function LoginPage() {
                                     <button className="bg-primary text-gray-100 p-4 w-full rounded-full tracking-wide
                                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-orange-600
                                         shadow-lg"
-                                 
-                                        >
+
+                                    >
                                         Get OTP
                                     </button>
                                 </div>
@@ -73,27 +74,30 @@ export function LoginPage() {
                             <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
                                 Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600">Sign up</a>
                             </div>{otpSent &&
-                            <div className="mt-12">
-                                        <div className="text-xl font-bold text-gray-700 tracking-wide text-center">
-                                            Enter OTP
-                                        </div>
-                                        <div className="text-slate-400 text-center mt-2 mb-1">
-                                           A 6 digit OTP has been sent to your email address
-                                        </div>
-                            <OtpInput fieldNumber={6} onChange={(e: any) => {console.log(e.target.value)}} />
-                            <button className="bg-primary text-gray-100 p-4 w-full rounded-full tracking-wide
+                                <div className="mt-12">
+                                    <div className="text-xl font-bold text-gray-700 tracking-wide text-center">
+                                        Enter OTP
+                                    </div>
+                                    <div className="text-slate-400 text-center mt-2 mb-1">
+                                        A 5 digit OTP has been sent to your email address
+                                    </div>
+                                    <OtpInput fieldNumber={6} onChange={(e: number) => { 
+                                        
+                                        otp=e
+                                        console.log(otp);
+                                        console.log(e);
+                                                                         }} />
+                                    <button className="bg-primary text-gray-100 p-4 w-full rounded-full tracking-wide
                                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-orange-600
                                         shadow-lg mt-6 2xl:mt-10"
                                         onClick={
-                                            ()=>{
-                                                window.location.href="/dashboard";
-                                            }
+                                            () => handleOtpSubmit()
                                         }
-                                        >
-                                       Login
+                                    >
+                                        Login
                                     </button>
-                               
-                            </div>}
+
+                                </div>}
                         </div>
                     </div>
                 </div>
@@ -113,45 +117,113 @@ export function LoginPage() {
 
     )
 
-    function handleFormSubmit(e: any) {
+    async function handleFormSubmit(e: any) {
+        
         e.preventDefault();
-        console.log("Form submitted");
-        setLoading(true);
-        setTimeout(()=>{
-            setOtpSent(true);
+       const url = buildUrl("/api/login");
+       setLoading(true);
+       const response = await buildHttpReq({
+            endpoint:"get_otp",
+              method: "POST",
+              body: {
+                email: email
+              }
+         });
+
+        //  if(response.status === 200){
+        //     console.log
+        console.log(response);
+            if(response.status === true){
+                setOtpSent(true);
+            }
+           else if(response.status === false){
+                alert(response.data.message);
+            }
             setLoading(false);
-        }, 2000);
+        //  }
+            // else{
+            //     alert("Something went wrong, Please try again later");
+            // }
     }
 
-    function OtpInput({fieldNumber, onChange}:{fieldNumber: number, onChange: any}){
+  async  function handleOtpSubmit() {
+        console.log("Form submitted");
+        if(otp?.toString().length !== 5){
+            alert("Please enter a valid otp");
+            return;
+        }
+        setLoading(true);
+        
+        const response=await buildHttpReq({
+            endpoint:"verify_otp",
+              method: "POST",
+              body: {
+                email: email,
+                otp: otp
+              }
+         });
+        //  if(response.status === 200){
+             console.log(response);
+             if(response.status === true){
+                setLoading(false);
+                window.location.href="/dashboard";
+
+             }
+             else{
+                setLoading(false);
+                 alert("The otp you entered is incorrect. Please try again");
+                 
+             }
+        //  }
+        //  else{
+        //      alert("Something went wrong, Please try again later");
+        //  }
+    }
+
+
+
+    function OtpInput({ fieldNumber, onChange }: { fieldNumber: number, onChange: any }) {
         let fieldNumberList: number[] = [];
-        for(let i=0;i<fieldNumber;i++){
+        for (let i = 0; i < fieldNumber; i++) {
             fieldNumberList.push(i);
         }
-        return(
+        let inputList: any[] = [];
+        function handleOnChange(e: number, index: number) {
+            if (inputList[index] === null) {
+                onChange(inputList.join(""));
+                return;
+            }
+            inputList[index] = e;
+            onChange(
+               parseInt(inputList.join("")));
+        }
+
+        return (
             <div className="flex flex-row justify-center text-center px-2 mt-2">
                 {
-                    fieldNumberList.map((item)=>{
-                        return(
-                            <input className="m-2 lg:h-10 lg:w-10 xl:h-12 xl:w-12 text-center text-lg py-2 border focus:outline-none focus:border-orange-500 rounded " type="text" id={`otpInput-${item.toString()}`} maxLength={1} onChange={
-                                (e)=>{
-                                    if(e.target.value.length===1){
-                                        if(item<fieldNumber-1){
-                                            document.getElementById(`otpInput-${(item+1).toString()}`)?.focus();
+                    fieldNumberList.map((item, index) => {
+                        return (
+                            <input className="m-2 lg:h-10 lg:w-10 xl:h-12 xl:w-12 text-center text-lg py-2 border focus:outline-none focus:border-orange-500 rounded " type="number" id={`otpInput-${item.toString()}`} key={`otpInput=${item.toString()}`} maxLength={1} onChange={
+                                (e) => {
+                                    if (e.target.value.length === 1) {
+                                        if (item < fieldNumber - 1) {
+                                            document.getElementById(`otpInput-${(item + 1).toString()}`)?.focus();
                                         }
                                     }
-                                    onChange(e);
+                                    handleOnChange(parseInt(e.target.value), index);
+                                    
                                 }
                             } />
                         )
                     })
-                    
+
                 }
+
 
             </div>
         )
-        
+
     }
 
-    
+
 }
