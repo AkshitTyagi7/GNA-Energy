@@ -394,7 +394,7 @@ function Exchange() {
   async function fetchRealTimeData() {
     console.log("fetching data");
     try {
-      const response = await fetch("http://13.233.117.192/rtm_api");
+      const response = await fetch("http://192.168.1.9:80/rtm_api");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }

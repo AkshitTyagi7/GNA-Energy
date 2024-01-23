@@ -2,6 +2,7 @@ import React from "react";
 import DataAnalyticsImage from './Login.png'
 import { ReactComponent as Logo } from '../../logo.svg';
 import {  buildHttpReq, buildUrl } from "../../common";
+import { setAccessToken, setLoggedIn } from "../Protected";
 
 
 export function LoginPage() {
@@ -9,8 +10,12 @@ export function LoginPage() {
     const [loading, setLoading] = React.useState<boolean>(false);
     const [email, setEmail] = React.useState<string>("");
     let [otp, setOtp] = React.useState<number>();
+    const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
+
+
 
     return (
+        
         <html>
             {
                 loading &&
@@ -19,7 +24,7 @@ export function LoginPage() {
                 </div>
             }
 
-            <div className="lg:flex">
+{            <div className="lg:flex">
                 <div className="lg:w-1/3 xl:max-w-screen-sm">
                     <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                         <div className="cursor-pointer flex items-center">
@@ -110,7 +115,7 @@ export function LoginPage() {
                     </div>
 
                 </div>
-            </div>
+            </div>}
 
         </html>
 
@@ -166,6 +171,8 @@ export function LoginPage() {
              console.log(response);
              if(response.status === true){
                 setLoading(false);
+                setLoggedIn(true);
+                setAccessToken(response.token);
                 window.location.href="/dashboard";
 
              }

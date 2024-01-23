@@ -12,6 +12,8 @@ import Exchange  from './pages/Dashboard/Analytics/Exchange/Exchange';
 import { MarketMontoring } from './pages/Dashboard/MarketMonitoring/MarketMonitoring';
 import { BankingAnalytics } from './pages/Dashboard/BankingAnalytics/BankingAalytics';
 import { ConsumptionAnalytics } from './pages/Dashboard/Consumption/Consumption';
+import { Protected, ProtectedPage } from './pages/Protected';
+import { DashboardRoutes } from './Routes';
 
 function App() {
   return (
@@ -24,24 +26,23 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <>
+              <Protected>
                 <Sidebar />
                 <div className="content">
                   <Outlet />
                 </div>
-              </>
+              </Protected>
             }
           >
             <Route index={true} element={<Dashboard />} />
-            <Route path="demoPage" element={<DemoPage />} />
-            <Route path="marketMonioring" element={<MarketMontoring />} />
-           <Route path="bankingAnalytics" element={<BankingAnalytics />} />
-            <Route path="discomAnalysis" element={<AnalysisTable />} />
-            <Route path="consumptionAndGenerationAnalytics" element={<ConsumptionAnalytics />} />
-            <Route path="exchangeAnalysis" element={<Exchange />} />
-            <Route path="powerAtlas" element={<PowerAtlas />} />
-            <Route path="recharts" element={<ReCharts />} />
-            <Route path="attributeAnalysis" element={<AnalysisTable />} />
+            {
+              DashboardRoutes.map((route, index) => {
+                return <Route key={index} path={route.path} element={
+                 <ProtectedPage children={route.element} pageId={"/"+route.path} /> 
+                 } />
+              }
+              )
+            }
           </Route>
 
           <Route path="/document" element={<div>Document</div>} />
