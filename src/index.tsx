@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ContextProvider } from './contexts/ContextProvider';
-import configureStore from './configureStore.js'
+import configureStore from './configureStore'
 import { Provider } from 'react-redux';
 
-const store = configureStore()
+const store = configureStore({});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

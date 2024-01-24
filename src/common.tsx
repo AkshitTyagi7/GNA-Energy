@@ -5,6 +5,33 @@ export const QuaternaryColor = '#50C878';
 
 const baseUri = 'http://13.233.117.192';
 
-export function buildUri(path: string) {
+export function buildUrl(path: string) {
   return `${baseUri}/${path}`;
+}
+
+export async function buildHttpReq(
+  {
+    endpoint, 
+    method = 'GET',
+    body = null,
+    header= {}
+  }:
+  {
+    endpoint: string,
+    method?: string,
+    body?: any,
+    header?: any
+  }
+){
+  // convert body to form data
+  const formData = new FormData();
+  Object.keys(body).forEach(key => formData.append(key, body[key]));
+  const response = await fetch(buildUrl(endpoint), {
+    method: method,
+    headers: {
+      ...header
+    },
+    body: formData
+  });
+  return await response.json();
 }
