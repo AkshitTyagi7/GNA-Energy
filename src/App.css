@@ -58,3 +58,8 @@ body{
     height: 100%;
     width: 100%;
 }
+
+.swal-button{
+    background-color: #FF7C04!important;
+    
+}

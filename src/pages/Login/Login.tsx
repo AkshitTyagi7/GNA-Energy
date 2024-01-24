@@ -1,8 +1,11 @@
 import React from "react";
 import DataAnalyticsImage from './Login.png'
 import { ReactComponent as Logo } from '../../logo.svg';
-import {  buildHttpReq, buildUrl } from "../../common";
-import { setAccessToken, setLoggedIn } from "../Protected";
+import { ReactComponent as User } from '../../icons/user.svg';
+import { buildHttpReq, buildUrl } from "../../common";
+import { getLoggedIn, getUser, isLoggedIn, setAccessToken, setLoggedIn, setUser } from "../Protected";
+import Loading from "../../components/Loading";
+import swal from "sweetalert";
 
 
 export function LoginPage() {
@@ -10,21 +13,19 @@ export function LoginPage() {
     const [loading, setLoading] = React.useState<boolean>(false);
     const [email, setEmail] = React.useState<string>("");
     let [otp, setOtp] = React.useState<number>();
-    const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
+
 
 
 
     return (
-        
+
         <html>
             {
                 loading &&
-                <div className="w-full h-full bg-primary-100 fixed top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
-                    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-5 border-white"></div>
-                </div>
+                <Loading />
             }
 
-{            <div className="lg:flex">
+            {<div className="lg:flex">
                 <div className="lg:w-1/3 xl:max-w-screen-sm">
                     <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                         <div className="cursor-pointer flex items-center">
@@ -38,7 +39,7 @@ export function LoginPage() {
                         <h2 className="text-center text-4xl text-slate-800 font-display font-semibold lg:text-left xl:text-5xl
                             xl:text-bold">Log in</h2>
                         <div className="mt-8 2xl:mt:12">
-                            <form onSubmit={
+                       { !isLoggedIn() ?    <form onSubmit={
                                 handleFormSubmit
                             }>
                                 <div>
@@ -75,10 +76,74 @@ export function LoginPage() {
                                         Get OTP
                                     </button>
                                 </div>
-                            </form>
-                            <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
+                            </form> :
+                            /* <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
                                 Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600">Sign up</a>
-                            </div>{otpSent &&
+                            </div> */
+                       
+                                <><div className="w-full flex mt-6 bg-gray-300 h-24 rounded-lg flex p-1 pt-3 space-x-0">
+                                    <div className="text-xl font-bold text-gray-700 tracking-wide text-start h-full align-center flex">
+                                        <User className="w-20 h-20" />
+                                    </div>
+                                    <div className="userDetail pt-1">
+                                        <div className="text-lg font-bold text-gray-700 tracking-wide text-center">
+                                            You are already logged in as
+                                        </div>
+                                        <div className="text-slate-500 mt-1 mb-1">
+                                            {getUser().email ?? "User"}
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <div className="flex space-x-8">
+                                    <button className="bg-gray-300 text-slate-600 p-4 w-full rounded-full tracking-wide
+                                        font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-slate-300
+                                        shadow-lg mt-6 2xl:mt-10"
+                                        onClick={
+                                            () => {
+                                                setLoggedIn(false);
+                                                window.location.href = "/dashboard";
+                                            }
+                                        }
+                                    >
+                                        Log out
+                                    </button>
+                                    <button className="bg-primary text-gray-100 p-4 w-full rounded-full tracking-wide
+                                        font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-orange-600
+                                        shadow-lg mt-6 2xl:mt-10"
+                                        onClick={
+                                            async() => {
+                                                setLoading(true);
+                                              const res = await  buildHttpReq({
+                                                    endpoint: "verify_token",
+                                                    method: "POST",
+                                                    body: {
+                                                        token: getUser().accessToken
+                                                    }
+                                                
+                                                })
+                                                if(res.status === true){
+                                                    setLoading(false);
+                                                    window.location.href = "/dashboard";
+                                                }
+                                                else{
+                                                    setLoggedIn(false);
+                                                    setLoading(false);
+                                                    swal("Session Expired", "Please login again", "error");
+                                                }
+                                            
+                                            }
+                                        }
+                                    >Log in</button>
+
+
+                                    </div>
+                                    </>
+                            }
+                            {otpSent &&
                                 <div className="mt-12">
                                     <div className="text-xl font-bold text-gray-700 tracking-wide text-center">
                                         Enter OTP
@@ -86,12 +151,20 @@ export function LoginPage() {
                                     <div className="text-slate-400 text-center mt-2 mb-1">
                                         A 5 digit OTP has been sent to your email address
                                     </div>
-                                    <OtpInput fieldNumber={6} onChange={(e: number) => { 
-                                        
-                                        otp=e
+                                    <OtpInput fieldNumber={5}
+                                    
+                                    onFilled={(e: number) => {
+                                        console.log("OTP Filled");
+                                        console.log(e);
+                                        handleOtpSubmit();
+                                    }}
+                                    onChange={(e: number) => {
+
+                                        otp = e
+
                                         console.log(otp);
                                         console.log(e);
-                                                                         }} />
+                                    }} />
                                     <button className="bg-primary text-gray-100 p-4 w-full rounded-full tracking-wide
                                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-orange-600
                                         shadow-lg mt-6 2xl:mt-10"
@@ -123,73 +196,82 @@ export function LoginPage() {
     )
 
     async function handleFormSubmit(e: any) {
-        
+try{
         e.preventDefault();
-       const url = buildUrl("/api/login");
-       setLoading(true);
-       const response = await buildHttpReq({
-            endpoint:"get_otp",
-              method: "POST",
-              body: {
+        const url = buildUrl("/get_otp");
+        setLoading(true);
+        const response = await buildHttpReq({
+            endpoint: "get_otp",
+            method: "POST",
+            body: {
                 email: email
-              }
-         });
+            }
+        });
 
         //  if(response.status === 200){
         //     console.log
         console.log(response);
-            if(response.status === true){
-                setOtpSent(true);
-            }
-           else if(response.status === false){
-                alert(response.data.message);
-            }
+        if (response.status === true) {
+            setOtpSent(true);
+        }
+        else if (response.status === false) {
+            swal("Error", response.message, "error");
+        }
+        setLoading(false);}
+        catch(e){
             setLoading(false);
+           swal("Something went wrong", "Please try again later", "error");
+        }
         //  }
-            // else{
-            //     alert("Something went wrong, Please try again later");
-            // }
+        // else{
+        //     alert("Something went wrong, Please try again later");
+        // }
     }
 
-  async  function handleOtpSubmit() {
+    async function handleOtpSubmit() {
         console.log("Form submitted");
-        if(otp?.toString().length !== 5){
-            alert("Please enter a valid otp");
+        if (otp?.toString().length !== 5) {
+            // alert("Please enter a valid otp");
+            swal("Invalid Otp", "Please enter a valid otp", "error");
             return;
         }
         setLoading(true);
-        
-        const response=await buildHttpReq({
-            endpoint:"verify_otp",
-              method: "POST",
-              body: {
+
+        const response = await buildHttpReq({
+            endpoint: "verify_otp",
+            method: "POST",
+            body: {
                 email: email,
                 otp: otp
-              }
-         });
+            }
+        });
         //  if(response.status === 200){
-             console.log(response);
-             if(response.status === true){
-                setLoading(false);
-                setLoggedIn(true);
-                setAccessToken(response.token);
-                window.location.href="/dashboard";
+        console.log(response);
+        if (response.status === true) {
+            setLoading(false);
+           
+            setAccessToken(response.token);
+            setUser({
+                email: email,
+                accessToken: response.token
+            
+            })
+            setLoggedIn(true);
+            window.location.href = "/dashboard";
 
-             }
-             else{
-                setLoading(false);
-                 alert("The otp you entered is incorrect. Please try again");
-                 
-             }
-        //  }
-        //  else{
-        //      alert("Something went wrong, Please try again later");
-        //  }
+        }
+        else {
+            setLoading(false);
+            // alert("The otp you entered is incorrect. Please try again");
+            swal("Incorrect Otp", "The otp you entered is incorrect. Please try again", "error");
+
+        }
+
     }
 
 
 
-    function OtpInput({ fieldNumber, onChange }: { fieldNumber: number, onChange: any }) {
+    function OtpInput({ fieldNumber, onChange, onFilled }: { fieldNumber: number, onChange: any, onFilled?: any }) {
         let fieldNumberList: number[] = [];
         for (let i = 0; i < fieldNumber; i++) {
             fieldNumberList.push(i);
@@ -202,7 +284,12 @@ export function LoginPage() {
             }
             inputList[index] = e;
             onChange(
-               parseInt(inputList.join("")));
+                parseInt(inputList.join("")));
+            if(inputList.join("").length===5){
+                onFilled(
+                    parseInt(inputList.join(""))
+                );
+            }
         }
 
         return (
@@ -218,7 +305,7 @@ export function LoginPage() {
                                         }
                                     }
                                     handleOnChange(parseInt(e.target.value), index);
-                                    
+
                                 }
                             } />
                         )
