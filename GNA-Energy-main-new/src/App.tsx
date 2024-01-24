@@ -21,7 +21,7 @@ function App() {
             <Route  path="/dashboard">
               <Route index={true} element={<Dashboard />} />
               <Route path="demoPage" element={<DemoPage />} />
-              <Route path="marketMonioring" element={<center>Market Monitoring</center>} />
+              <Route path="marketmonitoring" element={<center>Market Monitoring</center>} />
               <Route path="discomAnalysis" element={<AnalysisTable />} />
               <Route path="exchangeAnalysis" element={<Exchange />} />
               <Route path="landingCostCircular" element={<div>Landing Cost Circular</div>} />

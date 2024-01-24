@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, Route } from "react-router-dom";
-import { buildHttpReq } from "../common";
+import { buildHttpReq, mail } from "../common";
 import Loading from "../components/Loading";
 import swal from "sweetalert";
 interface User {
@@ -121,12 +121,12 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
 
             // show popup
             setAccess(false);
-            swal("Access Denied","You currently don't have access to this page. Please send a mail to info@gna.energy to request the access.","error" );
+            swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe`,"warning" );
             return false;
         }
 
     }     catch(err){
-        swal("Oops !","Something went wrong. If the issue presist please send a mail to info@gna.energy","error" )
+        swal("Oops !",`Something went wrong. If the issue presist please send a mail to ${mail}`,"warning" )
 
 
         return false;

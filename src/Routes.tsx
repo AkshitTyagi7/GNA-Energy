@@ -8,7 +8,7 @@ import { DemoPage } from "./pages/DemoPage";
 import ReCharts from "./pages/Recharts";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
-<Route path="marketMonioring" element={<MarketMontoring />} />
+<Route path="marketmonitoring" element={<MarketMontoring />} />
 <Route path="bankingAnalytics" element={<BankingAnalytics />} />
 <Route path="discomAnalysis" element={<AnalysisTable />} />
 <Route path="consumptionAndGenerationAnalytics" element={<ConsumptionAnalytics />} />
@@ -23,7 +23,7 @@ export const DashboardRoutes=[
         element:<DemoPage />
     },
     {
-        path:"marketMonioring",
+        path:"marketmonitoring",
         element:<MarketMontoring />
     },
     {

@@ -32,12 +32,11 @@ export function LoginPage() {
                             <div>
                                 <Logo />
                             </div>
-                            <div className="text-2xl text-black-800 tracking-wide ml-3 font-semibold">GNA Energy</div>
                         </div>
                     </div>
                     <div className="mt-10 px-12 sm:px-14 md:px-14 lg:px-12 2xl:mt-20 xl:px-15 xl:max-w-2xl">
-                        <h2 className="text-center text-4xl text-slate-800 font-display font-semibold lg:text-left xl:text-5xl
-                            xl:text-bold">Log in</h2>
+                        <h2 className="text-center text-4xl text-slate-800 font-display font-semibold lg:text-left 2xl:text-5xl
+                            xl:text-bold">Sign in</h2>
                         <div className="mt-8 2xl:mt:12">
                        { !isLoggedIn() ?    <form onSubmit={
                                 handleFormSubmit
@@ -76,11 +75,10 @@ export function LoginPage() {
                                         Get OTP
                                     </button>
                                 </div>
-                                <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
-                                Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600">Sign up</a>
-                            </div>
                             </form> :
-                        
+                            /* <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
+                                Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600">Sign up</a>
+                            </div> */
                        
                                 <><div className="w-full flex mt-6 bg-gray-300 h-24 rounded-lg flex p-1 pt-3 space-x-0">
                                     <div className="text-xl font-bold text-gray-700 tracking-wide text-start h-full align-center flex">
@@ -110,7 +108,7 @@ export function LoginPage() {
                                             }
                                         }
                                     >
-                                        Log out
+                                        Sign out
                                     </button>
                                     <button className="bg-primary text-gray-100 p-4 w-full rounded-full tracking-wide
                                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-orange-600
@@ -133,12 +131,12 @@ export function LoginPage() {
                                                 else{
                                                     setLoggedIn(false);
                                                     setLoading(false);
-                                                    swal("Session Expired", "Please login again", "error");
+                                                    swal("Session Expired", "Please sign in again", "warning");
                                                 }
                                             
                                             }
                                         }
-                                    >Log in</button>
+                                    >Sign in</button>
 
 
                                     </div>
@@ -182,7 +180,7 @@ export function LoginPage() {
                 </div>
                 <div className="hidden lg:flex items-center justify-center bg-primary-100 flex-1 h-screen">
                     <div className=" text-center">
-                        <h1 className="mb-10 primary text-4xl text-slate-600 font-display font-semibold">GNA ENERGY DATA & <br></br> ANALYTICS CAPABILITY CENTRE (GDACC) </h1>
+                        <h1 className="mb-10 primary text-4xl text-slate-600 font-display font-semibold">GNA ENERGY <br></br><div className="mb-10 primary text-3xl text-slate-600 font-display font-semibold"> DATA &  ANALYTICS CAPABILITY CENTER (GDACC)</div> </h1>
                         <div className="transform duration-200 hover:scale-110 cursor-pointer flex justify-center px-20">
                             <img src={DataAnalyticsImage} height={"200px"} />
                         </div>
@@ -216,12 +214,12 @@ try{
             setOtpSent(true);
         }
         else if (response.status === false) {
-            swal("Error", response.message, "error");
+            swal("", response.message, "warning");
         }
         setLoading(false);}
         catch(e){
             setLoading(false);
-           swal("Something went wrong", "Please try again later", "error");
+           swal("Something went wrong", "Please try again later", "warning");
         }
         //  }
         // else{
@@ -233,7 +231,7 @@ try{
         console.log("Form submitted");
         if (otp?.toString().length !== 5) {
             // alert("Please enter a valid otp");
-            swal("Invalid Otp", "Please enter a valid otp", "error");
+            swal("Invalid Otp", "Please enter a valid otp", "warning");
             return;
         }
         setLoading(true);
@@ -264,7 +262,7 @@ try{
         else {
             setLoading(false);
             // alert("The otp you entered is incorrect. Please try again");
-            swal("Incorrect Otp", "The otp you entered is incorrect. Please try again", "error");
+            swal("Incorrect Otp", "The otp you entered is incorrect. Please try again", "warning");
 
         }
 
