@@ -12,7 +12,7 @@ const Sidebar = () => {
   const location = useLocation();
   return (
     <div className="flex-col p-3 fixed inline-flex ph-2 z-10 bg-white" style={{ width: '200px', height: '100%' }}>
-      <a href="/" className="flex space-x-5 text-center items-center">
+      <a href="/dashboard" className="flex space-x-5 text-center items-center">
         <MenuIcon className='ml-3'/>
         <Logo />
       </a>
