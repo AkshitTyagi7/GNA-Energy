@@ -47,9 +47,7 @@ function App() {
           {/* <Route path="/document" element={<div>Document</div>} /> */}
           <Route path="/gnai" element={<div>
             <Sidebar />
-            <div className="content">
               <Gnai />
-            </div>
             </div>} />
         </Routes>
       </BrowserRouter>
