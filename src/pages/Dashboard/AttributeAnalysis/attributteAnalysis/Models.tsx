@@ -1,4 +1,4 @@
-import { PrimaryColor, SecondaryColor } from "../../../../../common";
+import { PrimaryColor, SecondaryColor } from "../../../../common";
 import { DemoMahaGencoDataJson } from "./DemoMahaGenco";
 
 interface MahaGencoGeneratorData  {

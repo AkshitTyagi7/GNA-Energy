@@ -106,7 +106,7 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
             body:{
                 page: pageId.replace("/",""),
                 email: getUser().email,
-                accessToken: getUser().accessToken
+                token: getUser().accessToken
             }
 
         })

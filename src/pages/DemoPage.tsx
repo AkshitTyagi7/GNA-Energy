@@ -1,7 +1,6 @@
 import Chart from 'react-apexcharts';
-import { DemoExchangeData } from './Dashboard/Analytics/Exchange/DemoExchangeData';
-import { ExchangeChartData, FormatExchangeData } from './Dashboard/Analytics/Exchange/ExchangeData';
-import { CreateApexOption } from './Dashboard/Analytics/Exchange/Options';
+import { DemoExchangeData } from './Dashboard/Exchange/DemoExchangeData';
+import { ExchangeChartData, FormatExchangeData } from './Dashboard/Exchange/ExchangeData';
 import { count } from 'console';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import { MediumButton } from '../components/Button';

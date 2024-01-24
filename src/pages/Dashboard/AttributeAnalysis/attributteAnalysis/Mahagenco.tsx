@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { BarChart } from "../../../../../components/charts/Charts";
-import GetChartOptions from "../../../../../components/charts/data/GetChartOption";
+import { BarChart } from "../../../../components/charts/Charts";
+import GetChartOptions from "../../../../components/charts/data/GetChartOption";
 import { DemoMahaGencoDataJson } from "./DemoMahaGenco";
 import MahaGencoChart, { IdTitle, MahaGencoFilter } from "./Models";
-import { SmallButton } from "../../../../../components/Button";
 import Menu from "react-select/dist/declarations/src/components/Menu";
 import { Filters, Generators } from "./Data";
-import { PrimaryColor, SecondaryColor } from "../../../../../common";
+import { PrimaryColor, SecondaryColor } from "../../../../common";
 import Select, { components, MultiValueGenericProps } from 'react-select';
-import { ReactComponent as UpIcon } from '../../../../../icons/up.svg';
-import { ReactComponent as DownIcon } from '../../../../../icons/down.svg';
+import { ReactComponent as UpIcon } from '../../../../icons/up.svg';
+import { ReactComponent as DownIcon } from '../../../../icons/down.svg';
 
 export default function MahaGenco() {
     const [selectedLegend, setSelectedLegend] = React.useState<string[]>([]);
@@ -175,7 +174,7 @@ t">
         filterForm.append("generator", generator.toString());
         filterForm.append("param", subfilter.toString() as string);
 
-        fetch("http://13.233.117.192/mahagenco_api", {
+        fetch("https://datahub.gna.energy/mahagenco_api", {
             method: "POST",
             body: filterForm
         }).then((response) => {

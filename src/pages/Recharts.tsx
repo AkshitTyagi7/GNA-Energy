@@ -11,7 +11,7 @@ import {
     Line,
     ComposedChart,
   } from "recharts";
-import { DemoExchangeData } from "./Dashboard/Analytics/Exchange/DemoExchangeData";
+import { DemoExchangeData } from "./Dashboard/Exchange/DemoExchangeData";
 import { PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../common";
 import { LineChart } from "../components/charts/Charts";
 

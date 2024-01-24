@@ -19,7 +19,7 @@ const Sidebar = () => {
       <hr className="my-2 border-t border-gray-300" />
       <nav className="flex flex-col mb-auto">
         <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard"  />
-          <SideBarItems Icon={DocumentIcon} text="Document" href="/document"  />
+          {/* <SideBarItems Icon={DocumentIcon} text="Document" href="/document"  /> */}
           <SideBarItems Icon={GNAiIcon} text="GNAi" href="/gnai"  />
       </nav>
       {/* <hr className="my-2 border-t border-gray-300" /> */}

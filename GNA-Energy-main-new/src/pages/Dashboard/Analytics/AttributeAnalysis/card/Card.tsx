@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import {ReactComponent as Pencil} from '../../../../../icons/pencil.svg'
+import {ReactComponent as Pencil} from '../../../../icons/pencil.svg'
 interface TotalCardProps {
     totalAmount: string;
     totalText: string;

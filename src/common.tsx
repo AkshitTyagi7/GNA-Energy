@@ -3,7 +3,7 @@ export const SecondaryColor = '#34656D';
 export const TertiaryColor = '#FF5733';
 export const QuaternaryColor = '#50C878';
 
-const baseUri = 'http://13.233.117.192';
+const baseUri = 'https://datahub.gna.energy';
 
 export function buildUrl(path: string) {
   return `${baseUri}/${path}`;

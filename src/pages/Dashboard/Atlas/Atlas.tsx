@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Chart, { ReactGoogleChartEvent } from "react-google-charts";
 import { FormatAtlasData } from "./ConvertData";
 import AtlasData from "./DemoAtlas.json";
-import {ReactComponent as Cross} from '../../../../icons/cross.svg'
+import {ReactComponent as Cross} from '../../../icons/cross.svg'
 import "./Atlas.css";
 import ReactSelect from "react-select";
 export function PowerAtlas() {
@@ -168,8 +168,8 @@ export function PowerAtlas() {
   );
 
   async function fetchAtlasData() {
-    // http://13.233.117.192/power_atlas_api
-    const response = await fetch("http://13.233.117.192/power_atlas_api");
+    // https://datahub.gna.energy/power_atlas_api
+    const response = await fetch("https://datahub.gna.energy/power_atlas_api");
     const res = await response.json();
     setAtlasData(res);
     setData(FormatAtlasData(res.data, getSelectedLegends()));

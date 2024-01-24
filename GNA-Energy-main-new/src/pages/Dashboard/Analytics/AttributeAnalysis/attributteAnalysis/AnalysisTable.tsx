@@ -4,23 +4,23 @@ import Select from 'react-select';
 import Slider from './Slider';
 import TotalCard from '../card/Card';
 import './AnalysisTable.css';
-import { BarChart, PieChart, PrepareGraphData } from '../../../../../components/charts/Charts';
-import GetEnergyData, { ConvertEnergyData } from '../../../../../components/charts/data/EnergyChargeData';
-import '../../../../../components/charts/Charts';
-import GetChartOptions from '../../../../../components/charts/data/GetChartOption';
-import { ConvertVariableData } from '../../../../../components/charts/data/VariableRateData';
-import ConvertSourceData from '../../../../../components/charts/data/Source';
-import { ConvertCostData } from '../../../../../components/charts/data/CostOfGeneration';
-import ConvertOwnershipData from '../../../../../components/charts/data/Ownership';
-import ConvertPPAData from '../../../../../components/charts/data/Ppa';
-import { ConvertCapacityUtilData } from '../../../../../components/charts/data/CapacityUtilData';
-import { ConvertNetGenerationData } from '../../../../../components/charts/data/NetChargeData';
-import { COST, COST_UNIT, ENERGY_UNIT } from '../../../../../Units';
-import { ConvertTotalCostData } from '../../../../../components/charts/data/TotalCostData';
+import { BarChart, PieChart, PrepareGraphData } from '../../../../components/charts/Charts';
+import GetEnergyData, { ConvertEnergyData } from '../../../../components/charts/data/EnergyChargeData';
+import '../../../../components/charts/Charts';
+import GetChartOptions from '../../../../components/charts/data/GetChartOption';
+import { ConvertVariableData } from '../../../../components/charts/data/VariableRateData';
+import ConvertSourceData from '../../../../components/charts/data/Source';
+import { ConvertCostData } from '../../../../components/charts/data/CostOfGeneration';
+import ConvertOwnershipData from '../../../../components/charts/data/Ownership';
+import ConvertPPAData from '../../../../components/charts/data/Ppa';
+import { ConvertCapacityUtilData } from '../../../../components/charts/data/CapacityUtilData';
+import { ConvertNetGenerationData } from '../../../../components/charts/data/NetChargeData';
+import { COST, COST_UNIT, ENERGY_UNIT } from '../../../../Units';
+import { ConvertTotalCostData } from '../../../../components/charts/data/TotalCostData';
 import { Bar } from 'react-chartjs-2';
-import { ConvertData } from '../../../../../components/charts/data/TotalUnitData';
-import { ConvertPpaUtil } from '../../../../../components/charts/data/PpaUtil';
-import ChartLabelValue from '../../../../../components/charts/data/Model';
+import { ConvertData } from '../../../../components/charts/data/TotalUnitData';
+import { ConvertPpaUtil } from '../../../../components/charts/data/PpaUtil';
+import ChartLabelValue from '../../../../components/charts/data/Model';
 
 
 interface TableRecord {
@@ -428,7 +428,7 @@ export default function AnalysisTable() {
     async function fetchTableData() {
         try {
             setLoading(true);
-            const response = await fetch('http://13.233.117.192/attribution_analysis_api', {
+            const response = await fetch('https://datahub.gna.energy/attribution_analysis_api', {
                 method: 'POST',
                 body: req.getFormData(),
             });

@@ -76,10 +76,11 @@ export function LoginPage() {
                                         Get OTP
                                     </button>
                                 </div>
-                            </form> :
-                            /* <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
+                                <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
                                 Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600">Sign up</a>
-                            </div> */
+                            </div>
+                            </form> :
+                        
                        
                                 <><div className="w-full flex mt-6 bg-gray-300 h-24 rounded-lg flex p-1 pt-3 space-x-0">
                                     <div className="text-xl font-bold text-gray-700 tracking-wide text-start h-full align-center flex">
