@@ -1,4 +1,4 @@
-import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../../common";
+import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../common";
 
 export interface ExchangeChartData {
     

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import './Exchange.css'
 import { Line } from "react-chartjs-2";
-import { BarChart, LineChart, MixChart, RawLineChart } from "../../../../components/charts/Charts";
+import { BarChart, LineChart, MixChart, RawLineChart } from "../../../components/charts/Charts";
 import { RealTimeData } from "./DemoData";
-import GetChartOptions from "../../../../components/charts/data/GetChartOption";
+import GetChartOptions from "../../../components/charts/data/GetChartOption";
 import { title } from "process";
-import { MediumButton, SmallButton } from "../../../../components/Button";
+import { MediumButton, SmallButton } from "../../../components/Button";
 import { DemoExchangeData } from "./DemoExchangeData";
-import { PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../../../../common";
+import { PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../../../common";
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { Chart as ChartJS } from 'chart.js';
-import { COST_MU, COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../../Units";
+import { COST_MU, COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ExchangeChartData, FormatExchangeData, RealTimeChartData, formatRealTimeChartData } from "./ExchangeData";
 ChartJS.register(zoomPlugin);
@@ -346,14 +346,14 @@ function Exchange() {
       const formData = new FormData();
       formData.append('date', date);
 
-      const iexresponse = await fetch("http://13.233.117.192/exchange_analytics_api", {
+      const iexresponse = await fetch("https://datahub.gna.energy/exchange_analytics_api", {
         method: 'POST',
         body: formData,
       });
       const iexdata: any = await iexresponse.json();
       setIexChartData(FormatExchangeData(iexdata.data));
       try {
-        const pxilresponse = await fetch("http://13.233.117.192/pxil_exchange_analytics_api", {
+        const pxilresponse = await fetch("https://datahub.gna.energy/pxil_exchange_analytics_api", {
           method: 'POST',
           body: formData,
         });
@@ -366,7 +366,7 @@ function Exchange() {
       }
 
       try {
-        const hpxresponse = await fetch("http://13.233.117.192/hpx_exchange_analytics_api", {
+        const hpxresponse = await fetch("https://datahub.gna.energy/hpx_exchange_analytics_api", {
           method: 'POST',
           body: formData,
         });
@@ -394,7 +394,7 @@ function Exchange() {
   async function fetchRealTimeData() {
     console.log("fetching data");
     try {
-      const response = await fetch("http://192.168.1.9:80/rtm_api");
+      const response = await fetch("https://datahub.gna.energy/rtm_api");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }

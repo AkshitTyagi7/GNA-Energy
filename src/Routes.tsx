@@ -1,6 +1,6 @@
-import { PowerAtlas } from "./pages/Dashboard/Analytics/Atlas/Atlas";
-import AnalysisTable from "./pages/Dashboard/Analytics/AttributeAnalysis/attributteAnalysis/AnalysisTable";
-import Exchange from "./pages/Dashboard/Analytics/Exchange/Exchange";
+import { PowerAtlas } from "./pages/Dashboard/Atlas/Atlas";
+import AnalysisTable from "./pages/Dashboard/AttributeAnalysis/attributteAnalysis/AnalysisTable";
+import Exchange from "./pages/Dashboard/Exchange/Exchange";
 import { BankingAnalytics } from "./pages/Dashboard/BankingAnalytics/BankingAalytics";
 import { ConsumptionAnalytics } from "./pages/Dashboard/Consumption/Consumption";
 import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonitoring";

@@ -346,14 +346,14 @@ function Exchange() {
       const formData = new FormData();
       formData.append('date', date);
 
-      const iexresponse = await fetch("http://13.233.117.192/exchange_analytics_api", {
+      const iexresponse = await fetch("https://datahub.gna.energy/exchange_analytics_api", {
         method: 'POST',
         body: formData,
       });
       const iexdata: any = await iexresponse.json();
       setIexChartData(FormatExchangeData(iexdata.data));
       try {
-        const pxilresponse = await fetch("http://13.233.117.192/pxil_exchange_analytics_api", {
+        const pxilresponse = await fetch("https://datahub.gna.energy/pxil_exchange_analytics_api", {
           method: 'POST',
           body: formData,
         });
@@ -366,7 +366,7 @@ function Exchange() {
       }
 
       try {
-        const hpxresponse = await fetch("http://13.233.117.192/hpx_exchange_analytics_api", {
+        const hpxresponse = await fetch("https://datahub.gna.energy/hpx_exchange_analytics_api", {
           method: 'POST',
           body: formData,
         });
@@ -394,7 +394,7 @@ function Exchange() {
   async function fetchRealTimeData() {
     console.log("fetching data");
     try {
-      const response = await fetch("http://13.233.117.192/rtm_api");
+      const response = await fetch("https://datahub.gna.energy/rtm_api");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
