@@ -11,7 +11,7 @@ export const Protected = (
     { children }: any,
 
 ) => {
-
+    
     console.log("Protected");
     const loggedIn = JSON.parse(localStorage.getItem('loggedIn')!);
     //sleep for 2 seconds
@@ -82,10 +82,7 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
     const [loading, setLoading] = React.useState(true);
     const [access, setAccess] = React.useState(true);
     React.useEffect(() => {
-        // CheckAccess()
-        setAccess(true);
-        setLoading(false);
-
+        CheckAccess();
     }, []);
     return (
         <div style={{
@@ -122,12 +119,12 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
 
             // show popup
             setAccess(false);
-            swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe`,"warning" );
+            swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe.`,"warning" );
             return false;
         }
 
     }     catch(err){
-        swal("Oops !",`Something went wrong. If the issue presist please send a mail to ${mail}`,"warning" )
+        swal("Oops !",`Something went wrong. If the issue persist please send a mail to ${mail}`,"warning" )
 
 
         return false;

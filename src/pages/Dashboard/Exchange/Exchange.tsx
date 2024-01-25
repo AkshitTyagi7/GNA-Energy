@@ -38,7 +38,7 @@ function Exchange() {
 
       // new Date().toLocaleDateString('en-GB').split('/').reverse().join('-')
       // Get the date of 7 days ago
-      new Date(new Date().getTime() - (15 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-GB').split('/').join('-')
+      new Date(new Date().getTime() - (0 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-GB').split('/').join('-')
 
     );
     fetchRealTimeData();
@@ -89,7 +89,9 @@ function Exchange() {
                       { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWh)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/KWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
                     )} />
                 </div></div>
-            </div></div>
+            </div>
+        <Sources source="IEX" />
+            </div>
         }
 
         {pageIndex === 1 &&
@@ -149,7 +151,7 @@ function Exchange() {
 
                 } />
             </div>
-
+                <Sources source="IEX, PXIL, HPX" />
 
           </div>
         }
@@ -201,7 +203,10 @@ function Exchange() {
 
               }
             </div>
+            <Sources source="IEX, PXIL, HPX"    /> 
+
           </div>
+          
         }
 
         {pageIndex === 3 &&
@@ -316,7 +321,7 @@ function Exchange() {
 
 
             </div>
-          </div>}
+      </div>}
 
 
 
@@ -366,7 +371,7 @@ function Exchange() {
       }
       catch (error) {
         console.log("This is the error in fetching the api of pxildata - ", error);
-        setPXILChartData(FormatExchangeData(DemoExchangeData.data));
+        setPXILChartData(FormatExchangeData([]));
       }
 
       try {
@@ -379,7 +384,7 @@ function Exchange() {
         setHPAChartData(FormatExchangeData(hPAdata.data));
       } catch (error) {
         console.log("This is the error in fetching the api of hpxdata - ", error);
-        setHPAChartData(FormatExchangeData(iexdata.data));
+        setHPAChartData(FormatExchangeData([]));
       }
 
       setSelectedProductIndex([0, 1, 2, 3]);
@@ -390,6 +395,10 @@ function Exchange() {
     }
     catch (error) {
       console.error("Error fetching data:", error);
+      setIexChartData([]);
+      setPXILChartData([]);
+      setHPAChartData([]);
+      setSelectedProductIndex([]);
     }
   }
 
@@ -440,7 +449,7 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
         data: SellBids,
         backgroundColor: QuaternaryColor,
         yAxisID: 'y1',
-        pointRadius: 2,
+        pointRadius: 1,
 
         borderColor: QuaternaryColor,
       },
@@ -449,25 +458,29 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
         label: `Purchase Bids (${MEGA_POWER_UNIT})`,
         data: prchsBids,
         backgroundColor: PrimaryColor,
-        pointRadius: 2,
+        pointRadius: 1,
         yAxisID: 'y1',
 
         borderColor: PrimaryColor,
       },
       {
-        label: `Price (${COST_MU})`,
-        data: wtMcp,
-        yAxisID: 'y',
-        backgroundColor: SecondaryColor,
-        borderColor: SecondaryColor,
-      },
-      {
+        type: 'line' as const,
         label: `MCV (${ENERGY_UNIT})`,
         data: mcv,
         yAxisID: 'y1',
-        backgroundColor: TertiaryColor,
-        borderColor: TertiaryColor,
-      }
+        pointRadius: 1,
+
+        backgroundColor: 'red',
+        borderColor: 'red',
+      },
+      {
+        label: `Price (${COST_MU})`,
+        data: wtMcp,
+        yAxisID: 'y',
+        
+        backgroundColor: SecondaryColor,
+        borderColor: SecondaryColor,
+      },
     ],
   }
 
@@ -488,7 +501,16 @@ const addFloatList = (...lists: number[][]) => {
   })
   return result;
 }
-
+ 
+function Sources({source}:{source:string}){
+  return(
+    <div
+    className="absolute bottom-2 right-3 text-xs text-gray-500"
+    >
+      Sources- {source}
+    </div>
+  );
+}
 
 export default Exchange;
 

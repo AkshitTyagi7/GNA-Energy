@@ -8,14 +8,11 @@ import Loading from "../../components/Loading";
 import swal from "sweetalert";
 
 
-
 export function LoginPage() {
     const [otpSent, setOtpSent] = React.useState<boolean>(false);
     const [loading, setLoading] = React.useState<boolean>(false);
     const [email, setEmail] = React.useState<string>("");
     let [otp, setOtp] = React.useState<number>();
-
-    
 
 
 

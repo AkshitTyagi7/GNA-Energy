@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function DashBoardItem({title, to}: {title: string, to: string}) {
   return (
     <NavLink to={`${to}`} className="dashboard-item" >
-      <h3 className="text-white text-2xl">{title}</h3>
+      <h3 className="text-white text-2xl ">{title}</h3>
     </NavLink>
   );
   
@@ -23,6 +23,9 @@ export default function Dashboard() {
     <DashBoardItem title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
 
   </div>
+  <div
+  className="text-center mt-8 text-gray-500"
+  >2024 GNA Energy Private Limited. All Rights Reserved</div>
   </div>
   );
 }
