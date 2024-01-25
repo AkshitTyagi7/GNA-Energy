@@ -12,10 +12,11 @@
 }
 
 .chatArea{
-    height: calc(100% - 140px);
+    height: calc(100% - 120px);
     margin-right: 20px;
     margin-top: 20px;
-    background-color: #F5F5F5;
+    background-color: white;
+    overflow: scroll;
 }
 
 .messageSender{

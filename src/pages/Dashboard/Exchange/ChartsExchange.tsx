@@ -86,7 +86,7 @@ function Exchange() {
                 <div className="flex justify-center realTimeChart text-center  w-full content-center">
                   <RawLineChart data={
                     RealTimeChartData.length > 0 ? RealTimeChartData[realTimechartIndex!].data : { labels: [], datasets: [] }} options={GetChartOptions(
-                      { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWH)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/kWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
+                      { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWh)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/KWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
                     )} />
                 </div></div>
             </div></div>

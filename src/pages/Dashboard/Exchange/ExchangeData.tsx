@@ -7,6 +7,7 @@ export interface ExchangeChartData {
     date: string[];
     SellBids: number[];
     prchsBids: number[];
+    mcv: number[];
     wtMcp: number[];
   
   }
@@ -46,14 +47,14 @@ export interface ExchangeChartData {
           {
             label: "GDAM Prices",
             data: gdamPrices as number[],
-            borderColor: SecondaryColor,
-            backgroundColor: SecondaryColor,
+            borderColor: QuaternaryColor,
+            backgroundColor: QuaternaryColor,
           },
           {
             label: "RTM Prices",
             data: rtmPrices as number[],
-            borderColor: QuaternaryColor,
-            backgroundColor: QuaternaryColor,
+            borderColor: SecondaryColor,
+            backgroundColor: SecondaryColor,
           },
         ],
       }
@@ -73,6 +74,7 @@ export  const FormatExchangeData = (data: any): ExchangeChartData[] => {
             date: [],
             SellBids: [],
             prchsBids: [],
+            mcv: [],
             wtMcp: [],
           };
 
@@ -80,6 +82,7 @@ export  const FormatExchangeData = (data: any): ExchangeChartData[] => {
             chartData.timeBlocks.push( entry.time_block);
             chartData.date.push(entry.date);
             chartData.SellBids.push(parseFloat(entry.sell_bid_mw) ? parseFloat(entry.sell_bid_mw) : 0);
+            chartData.mcv.push(parseFloat(entry.mcv_mw) ? parseFloat(entry.mcv_mw) : 0);
             chartData.prchsBids.push(parseFloat(entry.prchs_bid_mw) ? parseFloat(entry.prchs_bid_mw) : 0);
             chartData.wtMcp.push(parseFloat(entry.wt_mcp_rs_mwh) ? parseFloat(entry.wt_mcp_rs_mwh) : 0);
           });

@@ -13,8 +13,8 @@ export const Filters = [
             { "id": "Total Auxiliary Consumption", "title": "Total Auxiliary Consumption (%)" },
             // "Total Auxiliary Consumption (= 1.6 + 1.8)",
             { "id": "Net Generation (= 1.4 - 1.10)", "title": "Net Generation (MU)" },
-            { "id": "Heat Rate", "title": "Heat Rate (KCAL/KWH)" },
-            { "id": "Secondary Fuel Oil Consumption", "title": "Secondary Fuel Oil Consumption(ML/KWH)" },
+            { "id": "Heat Rate", "title": "Heat Rate (KCAL/KWh)" },
+            { "id": "Secondary Fuel Oil Consumption", "title": "Secondary Fuel Oil Consumption(ML/KWh)" },
             { "id": "Transit Lossnts a category, and each subfilter represents a specific parameter or aspect within that c for Domestic and Washed Coal", "title": "Transit Loss for Domestic and Washed Coal (%)" },
             { "id": "Transit Loss for Imported Coal", "title": "Transit Loss for Imported Coal (%)" },
             { "id": "SHR coal component", "title": "SHR Coal Component" }
@@ -64,8 +64,8 @@ export const Filters = [
             // {"id": "Other Adjustments (Pl. specify details)", "title": "Other Adjustments (Pl. specify details)"},
             // {"id": "Total Other Charges and Adjustments", "title": "Total Other Charges and Adjustments"},
             { "id": "Total Cost (= 4 + 5)", "title": "Total Cost of Generation (₹ Cr)" },
-            { "id": "Cost of Generation (at Generation Terminal) (", "title": "Cost of Generation (₹/KWH)" },
-            { "id": "Energy Charge (= 6/1.11)", "title": "Energy Charge (₹/KWH)" }
+            { "id": "Cost of Generation (at Generation Terminal) (", "title": "Cost of Generation (₹/KWh)" },
+            { "id": "Energy Charge (= 6/1.11)", "title": "Energy Charge (₹/KWh)" }
         ]
     }
 ]

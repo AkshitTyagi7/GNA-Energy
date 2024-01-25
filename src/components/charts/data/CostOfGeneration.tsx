@@ -23,15 +23,15 @@ export const DemoCostData: CostData[] = [
         "Generator": "APML 440 MW"
     },
     {
-        "Cost_of_generation": "9.21 Rs./kWh",
+        "Cost_of_generation": "9.21 Rs./KWh",
         "Generator": "Bhusawal 3"
     },
     {
-        "Cost_of_generation": "2.885 Rs./kWh",
+        "Cost_of_generation": "2.885 Rs./KWh",
         "Generator": "Bhusawal 4"
     },
     {
-        "Cost_of_generation": "2.885 Rs./kWh",
+        "Cost_of_generation": "2.885 Rs./KWh",
         "Generator": "Bhusawal 5"
     },
     {
@@ -39,23 +39,23 @@ export const DemoCostData: CostData[] = [
         "Generator": "CGPL"
     },
     {
-        "Cost_of_generation": "5.81 Rs./kWh",
+        "Cost_of_generation": "5.81 Rs./KWh",
         "Generator": "Chandrapur 3"
     },
     {
-        "Cost_of_generation": "5.81 Rs./kWh",
+        "Cost_of_generation": "5.81 Rs./KWh",
         "Generator": "Chandrapur 4"
     },
     {
-        "Cost_of_generation": "5.81 Rs./kWh",
+        "Cost_of_generation": "5.81 Rs./KWh",
         "Generator": "Chandrapur 5"
     },
     {
-        "Cost_of_generation": "5.81 Rs./kWh",
+        "Cost_of_generation": "5.81 Rs./KWh",
         "Generator": "Chandrapur 6"
     },
     {
-        "Cost_of_generation": "5.81 Rs./kWh",
+        "Cost_of_generation": "5.81 Rs./KWh",
         "Generator": "Chandrapur 7"
     },
     {
@@ -75,7 +75,7 @@ export const DemoCostData: CostData[] = [
         "Generator": "Emco Power"
     },
     {
-        "Cost_of_generation": "9.9 Rs./kWh",
+        "Cost_of_generation": "9.9 Rs./KWh",
         "Generator": "GTPS Uran"
     },
     {
@@ -87,15 +87,15 @@ export const DemoCostData: CostData[] = [
         "Generator": "JSW"
     },
     {
-        "Cost_of_generation": "1.185 Rs./kWh",
+        "Cost_of_generation": "1.185 Rs./KWh",
         "Generator": "Khaparkheda 1 to 4"
     },
     {
-        "Cost_of_generation": "4.75 Rs./kWh",
+        "Cost_of_generation": "4.75 Rs./KWh",
         "Generator": "Khaparkheda 5"
     },
     {
-        "Cost_of_generation": "3.99 Rs./kWh",
+        "Cost_of_generation": "3.99 Rs./KWh",
         "Generator": "Koradi 6"
     },
     {
@@ -103,23 +103,23 @@ export const DemoCostData: CostData[] = [
         "Generator": "Koradi 9"
     },
     {
-        "Cost_of_generation": "6.36 Rs./kWh",
+        "Cost_of_generation": "6.36 Rs./KWh",
         "Generator": "Nashik 3,4 & 5"
     },
     {
-        "Cost_of_generation": "1.715 Rs./kWh",
+        "Cost_of_generation": "1.715 Rs./KWh",
         "Generator": "Paras 3"
     },
     {
-        "Cost_of_generation": "1.715 Rs./kWh",
+        "Cost_of_generation": "1.715 Rs./KWh",
         "Generator": "Paras 4"
     },
     {
-        "Cost_of_generation": "2.86 Rs./kWh",
+        "Cost_of_generation": "2.86 Rs./KWh",
         "Generator": "Parli 6"
     },
     {
-        "Cost_of_generation": "2.86 Rs./kWh",
+        "Cost_of_generation": "2.86 Rs./KWh",
         "Generator": "Parli 7"
     },
     {
@@ -151,7 +151,7 @@ export const DemoCostData: CostData[] = [
       const costOfGenerationString = entry.Cost_of_generation;
   
       // Convert the Cost_of_generation string to a floating-point number
-      const costOfGenerationValue = parseFloat(costOfGenerationString.replace(' Rs./kWh', ''));
+      const costOfGenerationValue = parseFloat(costOfGenerationString.replace(' Rs./KWh', ''));
   
       if (!isNaN(costOfGenerationValue)) {
         labels.push(generator);

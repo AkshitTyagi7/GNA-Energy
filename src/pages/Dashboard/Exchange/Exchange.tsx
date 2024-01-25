@@ -38,7 +38,7 @@ function Exchange() {
 
       // new Date().toLocaleDateString('en-GB').split('/').reverse().join('-')
       // Get the date of 7 days ago
-      new Date(new Date().getTime() - (15 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-GB').split('/').join('-')
+      new Date(new Date().getTime() - (0 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-GB').split('/').join('-')
 
     );
     fetchRealTimeData();
@@ -52,7 +52,7 @@ function Exchange() {
           <MediumButton buttonTitle="Realtime" isActive={pageIndex === 0} onClick={() => setPageIndex(0)} />
           <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
           <MediumButton buttonTitle="By Exchange" isActive={pageIndex === 2} onClick={() => setPageIndex(2)} />
-          <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} />
+          {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
         {
           pageIndex !== 0 &&
@@ -86,10 +86,12 @@ function Exchange() {
                 <div className="flex justify-center realTimeChart text-center  w-full content-center">
                   <RawLineChart data={
                     RealTimeChartData.length > 0 ? RealTimeChartData[realTimechartIndex!].data : { labels: [], datasets: [] }} options={GetChartOptions(
-                      { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWH)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/kWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
+                      { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWh)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/KWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
                     )} />
                 </div></div>
-            </div></div>
+            </div>
+        <Sources source="IEX" />
+            </div>
         }
 
         {pageIndex === 1 &&
@@ -109,7 +111,8 @@ function Exchange() {
                   labels: IexChartData.length > 0 ? IexChartData[byProductIndex!].date : [],
                   SellBids: IexChartData.length > 0 ? IexChartData[byProductIndex!].SellBids : [],
                   prchsBids: IexChartData.length > 0 ? IexChartData[byProductIndex!].prchsBids : [],
-                  wtMcp: IexChartData.length > 0 ? IexChartData[byProductIndex!].wtMcp : []
+                  wtMcp: IexChartData.length > 0 ? IexChartData[byProductIndex!].wtMcp : [],
+                  mcv: IexChartData.length > 0 ? IexChartData[byProductIndex!].mcv : []
                 })}
                 options={
                   PrepareExchangeChartOptions("IEX")
@@ -123,7 +126,8 @@ function Exchange() {
                   labels: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].date : [],
                   SellBids: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].SellBids : [],
                   prchsBids: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].prchsBids : [],
-                  wtMcp: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].wtMcp : []
+                  wtMcp: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].wtMcp : [],
+                  mcv: pXILChartData.length > 0 ? pXILChartData[byProductIndex!].mcv : []
                 })}
 
                 options={
@@ -137,7 +141,8 @@ function Exchange() {
                   labels: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].date : [],
                   SellBids: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].SellBids : [],
                   prchsBids: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].prchsBids : [],
-                  wtMcp: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].wtMcp : []
+                  wtMcp: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].wtMcp : [],
+                  mcv: hPAChartData.length > 0 ? hPAChartData[byProductIndex!].mcv : []
                 })}
 
                 options={
@@ -146,7 +151,7 @@ function Exchange() {
 
                 } />
             </div>
-
+                <Sources source="IEX, PXIL, HPX" />
 
           </div>
         }
@@ -182,7 +187,8 @@ function Exchange() {
                             labels: data.date,
                             SellBids: data.SellBids,
                             prchsBids: data.prchsBids,
-                            wtMcp: data.wtMcp
+                            wtMcp: data.wtMcp,
+                            mcv: data.mcv
                           })}
                           options={
                             PrepareExchangeChartOptions(data.title.toUpperCase())
@@ -197,7 +203,10 @@ function Exchange() {
 
               }
             </div>
+            <Sources source="IEX, PXIL, HPX"    /> 
+
           </div>
+          
         }
 
         {pageIndex === 3 &&
@@ -312,7 +321,7 @@ function Exchange() {
 
 
             </div>
-          </div>}
+      </div>}
 
 
 
@@ -362,7 +371,7 @@ function Exchange() {
       }
       catch (error) {
         console.log("This is the error in fetching the api of pxildata - ", error);
-        setPXILChartData(FormatExchangeData(DemoExchangeData.data));
+        setPXILChartData(FormatExchangeData([]));
       }
 
       try {
@@ -375,7 +384,7 @@ function Exchange() {
         setHPAChartData(FormatExchangeData(hPAdata.data));
       } catch (error) {
         console.log("This is the error in fetching the api of hpxdata - ", error);
-        setHPAChartData(FormatExchangeData(iexdata.data));
+        setHPAChartData(FormatExchangeData([]));
       }
 
       setSelectedProductIndex([0, 1, 2, 3]);
@@ -386,6 +395,10 @@ function Exchange() {
     }
     catch (error) {
       console.error("Error fetching data:", error);
+      setIexChartData([]);
+      setPXILChartData([]);
+      setHPAChartData([]);
+      setSelectedProductIndex([]);
     }
   }
 
@@ -394,7 +407,7 @@ function Exchange() {
   async function fetchRealTimeData() {
     console.log("fetching data");
     try {
-      const response = await fetch("http://192.168.1.9:80/rtm_api");
+      const response = await fetch("http://datahub.gna.energy/rtm_api");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -426,7 +439,7 @@ const PrepareExchangeChartOptions = (textTitle: string) => {
   )
 }
 
-const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[] }) => {
+const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[], mcv:number[] }) => {
   return {
     labels: labels.map((label: any, index: any) => (index+1).toString()),
     datasets: [
@@ -436,6 +449,7 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp }: { labels
         data: SellBids,
         backgroundColor: QuaternaryColor,
         yAxisID: 'y1',
+        pointRadius: 1,
 
         borderColor: QuaternaryColor,
       },
@@ -444,14 +458,26 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp }: { labels
         label: `Purchase Bids (${MEGA_POWER_UNIT})`,
         data: prchsBids,
         backgroundColor: PrimaryColor,
+        pointRadius: 1,
         yAxisID: 'y1',
 
         borderColor: PrimaryColor,
       },
       {
+        type: 'line' as const,
+        label: `MCV (${ENERGY_UNIT})`,
+        data: mcv,
+        yAxisID: 'y1',
+        pointRadius: 1,
+
+        backgroundColor: 'red',
+        borderColor: 'red',
+      },
+      {
         label: `Price (${COST_MU})`,
         data: wtMcp,
         yAxisID: 'y',
+        
         backgroundColor: SecondaryColor,
         borderColor: SecondaryColor,
       },
@@ -475,7 +501,16 @@ const addFloatList = (...lists: number[][]) => {
   })
   return result;
 }
-
+ 
+function Sources({source}:{source:string}){
+  return(
+    <div
+    className="absolute bottom-2 right-3 text-xs text-gray-500"
+    >
+      Sources- {source}
+    </div>
+  );
+}
 
 export default Exchange;
 

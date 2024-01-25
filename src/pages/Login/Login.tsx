@@ -38,7 +38,7 @@ export function LoginPage() {
                         <h2 className="text-center text-4xl text-slate-800 font-display font-semibold lg:text-left 2xl:text-5xl
                             xl:text-bold">Sign in</h2>
                         <div className="mt-8 2xl:mt:12">
-                       { !isLoggedIn() ?    <form onSubmit={
+                       { !isLoggedIn() ? <div>   <form onSubmit={
                                 handleFormSubmit
                             }>
                                 <div>
@@ -75,10 +75,16 @@ export function LoginPage() {
                                         Get OTP
                                     </button>
                                 </div>
-                            </form> :
-                            /* <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
-                                Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600">Sign up</a>
-                            </div> */
+                            </form>
+                             <div className="mt-6 2xl:mt-10 text-sm font-display font-semibold text-gray-700 text-center">
+                                Don't have an account ? <a className="cursor-pointer text-orange-500 hover:text-orange-600"
+                                onClick={()=>{
+                                    swal("","Please write to info@gna.energy to register for this platform.","warning")
+                                }}
+                                >Sign up</a>
+                            </div> </div>
+                            :
+                           
                        
                                 <><div className="w-full flex mt-6 bg-gray-300 h-24 rounded-lg flex p-1 pt-3 space-x-0">
                                     <div className="text-xl font-bold text-gray-700 tracking-wide text-start h-full align-center flex">
@@ -131,7 +137,7 @@ export function LoginPage() {
                                                 else{
                                                     setLoggedIn(false);
                                                     setLoading(false);
-                                                    swal("Session Expired", "Please sign in again", "warning");
+                                                    swal("Session Expired", "Please sign in again.", "warning");
                                                 }
                                             
                                             }
@@ -219,7 +225,7 @@ try{
         setLoading(false);}
         catch(e){
             setLoading(false);
-           swal("Something went wrong", "Please try again later", "warning");
+           swal("Something went wrong", "Please try again later.", "warning");
         }
         //  }
         // else{
@@ -231,7 +237,7 @@ try{
         console.log("Form submitted");
         if (otp?.toString().length !== 5) {
             // alert("Please enter a valid otp");
-            swal("Invalid Otp", "Please enter a valid otp", "warning");
+            swal("Invalid Otp", "Please enter a valid otp.", "warning");
             return;
         }
         setLoading(true);
@@ -262,7 +268,7 @@ try{
         else {
             setLoading(false);
             // alert("The otp you entered is incorrect. Please try again");
-            swal("Incorrect Otp", "The otp you entered is incorrect. Please try again", "warning");
+            swal("Incorrect Otp", "The otp you entered is incorrect. Please try again.", "warning");
 
         }
 
