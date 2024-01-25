@@ -47,7 +47,8 @@ function App() {
           {/* <Route path="/document" element={<div>Document</div>} /> */}
           <Route path="/gnai" element={<div>
             <Sidebar />
-              <Gnai />
+            <ProtectedPage children={
+              <Gnai />} pageId="/gnai" />
             </div>} />
         </Routes>
       </BrowserRouter>

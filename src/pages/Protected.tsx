@@ -132,3 +132,33 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
 
 }
 
+async function CheckAccess(pageName: string): Promise<boolean> {
+
+    try{
+    const res =await buildHttpReq({
+        endpoint: '/verify_access',
+        method: 'POST',
+        body:{
+            page: pageName,
+            email: getUser().email,
+            token: getUser().accessToken
+        }
+    })
+
+    if (res.status === true) {
+
+        return true;
+    }
+    else {
+
+        // show popup
+        swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe.`,"warning" );
+        return false;
+    }
+
+}     catch(err){
+    swal("Oops !",`Something went wrong. If the issue persist please send a mail to ${mail}`,"warning" )
+
+
+    return false;
+}}
