@@ -82,7 +82,9 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
     const [loading, setLoading] = React.useState(true);
     const [access, setAccess] = React.useState(true);
     React.useEffect(() => {
-        CheckAccess()
+        // CheckAccess()
+        setAccess(true);
+        setLoading(false);
 
     }, []);
     return (
@@ -97,7 +99,6 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
     )
 
     async function CheckAccess(): Promise<boolean> {
-        // sleep for 5 second
 
         try{
         const res =await buildHttpReq({

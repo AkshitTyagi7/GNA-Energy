@@ -1,30 +1,5 @@
-<svg width="106" height="106" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_69_2)">
-<g filter="url(#filter0_di_69_2)">
-<path d="M66 12H40C27.8497 12 18 21.8497 18 34V60C18 72.1503 27.8497 82 40 82H66C78.1503 82 88 72.1503 88 60V34C88 21.8497 78.1503 12 66 12Z" fill="#F1935C"/>
-</g>
-<path d="M53 40C56.3137 40 59 37.3137 59 34C59 30.6863 56.3137 28 53 28C49.6863 28 47 30.6863 47 34C47 37.3137 49.6863 40 53 40Z" fill="white"/>
-<path d="M53.5 59C59.299 59 64 56.3137 64 53C64 49.6863 59.299 47 53.5 47C47.701 47 43 49.6863 43 53C43 56.3137 47.701 59 53.5 59Z" fill="white"/>
-</g>
-<defs>
-<filter id="filter0_di_69_2" x="0" y="0" width="106" height="106" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="6"/>
-<feGaussianBlur stdDeviation="9"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.945098 0 0 0 0 0.576471 0 0 0 0 0.360784 0 0 0 0.3 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_69_2"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_69_2" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="10"/>
-<feGaussianBlur stdDeviation="5"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.945098 0 0 0 0 0.576471 0 0 0 0 0.360784 0 0 0 0.3 0"/>
-<feBlend mode="normal" in2="shape" result="effect2_innerShadow_69_2"/>
-</filter>
-<clipPath id="clip0_69_2">
-<rect width="106" height="106" fill="white"/>
-</clipPath>
-</defs>
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20C0 8.9543 8.95431 0 20 0H50C61.0457 0 70 8.95431 70 20V50C70 61.0457 61.0457 70 50 70H20C8.9543 70 0 61.0457 0 50V20Z" fill="#F1935C"/>
+<path d="M34.9998 32C38.3135 32 40.9998 29.3137 40.9998 26C40.9998 22.6863 38.3135 20 34.9998 20C31.686 20 28.9998 22.6863 28.9998 26C28.9998 29.3137 31.686 32 34.9998 32Z" fill="white"/>
+<path d="M35.5 50.9999C41.299 50.9999 46 48.3136 46 44.9999C46 41.6862 41.299 38.9999 35.5 38.9999C29.701 38.9999 25 41.6862 25 44.9999C25 48.3136 29.701 50.9999 35.5 50.9999Z" fill="white"/>
 </svg>

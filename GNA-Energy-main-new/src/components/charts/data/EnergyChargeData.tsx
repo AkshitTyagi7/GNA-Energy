@@ -18,15 +18,15 @@ export const DemoEnergyData=[
         "Generator": "APML 440 MW"
     },
     {
-        "Energy_charge": "11.33 Rs./kWh",
+        "Energy_charge": "11.33 Rs./KWh",
         "Generator": "Bhusawal 3"
     },
     {
-        "Energy_charge": "3.095 Rs./kWh",
+        "Energy_charge": "3.095 Rs./KWh",
         "Generator": "Bhusawal 4"
     },
     {
-        "Energy_charge": "3.095 Rs./kWh",
+        "Energy_charge": "3.095 Rs./KWh",
         "Generator": "Bhusawal 5"
     },
     {
@@ -34,23 +34,23 @@ export const DemoEnergyData=[
         "Generator": "CGPL"
     },
     {
-        "Energy_charge": "6.59 Rs./kWh",
+        "Energy_charge": "6.59 Rs./KWh",
         "Generator": "Chandrapur 3"
     },
     {
-        "Energy_charge": "6.59 Rs./kWh",
+        "Energy_charge": "6.59 Rs./KWh",
         "Generator": "Chandrapur 4"
     },
     {
-        "Energy_charge": "6.59 Rs./kWh",
+        "Energy_charge": "6.59 Rs./KWh",
         "Generator": "Chandrapur 5"
     },
     {
-        "Energy_charge": "6.59 Rs./kWh",
+        "Energy_charge": "6.59 Rs./KWh",
         "Generator": "Chandrapur 6"
     },
     {
-        "Energy_charge": "6.59 Rs./kWh",
+        "Energy_charge": "6.59 Rs./KWh",
         "Generator": "Chandrapur 7"
     },
     {
@@ -70,7 +70,7 @@ export const DemoEnergyData=[
         "Generator": "Emco Power"
     },
     {
-        "Energy_charge": "10.11 Rs./kWh",
+        "Energy_charge": "10.11 Rs./KWh",
         "Generator": "GTPS Uran"
     },
     {
@@ -82,15 +82,15 @@ export const DemoEnergyData=[
         "Generator": "JSW"
     },
     {
-        "Energy_charge": "1.3425 Rs./kWh",
+        "Energy_charge": "1.3425 Rs./KWh",
         "Generator": "Khaparkheda 1 to 4"
     },
     {
-        "Energy_charge": "5.07 Rs./kWh",
+        "Energy_charge": "5.07 Rs./KWh",
         "Generator": "Khaparkheda 5"
     },
     {
-        "Energy_charge": "4.57 Rs./kWh",
+        "Energy_charge": "4.57 Rs./KWh",
         "Generator": "Koradi 6"
     },
     {
@@ -98,23 +98,23 @@ export const DemoEnergyData=[
         "Generator": "Koradi 9"
     },
     {
-        "Energy_charge": "7.34 Rs./kWh",
+        "Energy_charge": "7.34 Rs./KWh",
         "Generator": "Nashik 3,4 & 5"
     },
     {
-        "Energy_charge": "1.963 Rs./kWh",
+        "Energy_charge": "1.963 Rs./KWh",
         "Generator": "Paras 3"
     },
     {
-        "Energy_charge": "1.963 Rs./kWh",
+        "Energy_charge": "1.963 Rs./KWh",
         "Generator": "Paras 4"
     },
     {
-        "Energy_charge": "3.275 Rs./kWh",
+        "Energy_charge": "3.275 Rs./KWh",
         "Generator": "Parli 6"
     },
     {
-        "Energy_charge": "3.275 Rs./kWh",
+        "Energy_charge": "3.275 Rs./KWh",
         "Generator": "Parli 7"
     },
     {
