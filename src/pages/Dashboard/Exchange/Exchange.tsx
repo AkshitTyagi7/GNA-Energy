@@ -49,9 +49,10 @@ function Exchange() {
     <div>
       <div className="flex flex-row justify-between">
         <div className="flex mt-4 space-x-3 h-10">
-          <MediumButton buttonTitle="Realtime" isActive={pageIndex === 0} onClick={() => setPageIndex(0)} />
-          <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
-          <MediumButton buttonTitle="By Exchange" isActive={pageIndex === 2} onClick={() => setPageIndex(2)} />
+          <MediumButton buttonTitle="By Exchange" isActive={pageIndex === 0} onClick={() => setPageIndex(0)} />
+        <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
+          <MediumButton buttonTitle="Realtime" isActive={pageIndex === 2} onClick={() => setPageIndex(2)} />
+
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
         {
@@ -66,35 +67,7 @@ function Exchange() {
         }
       </div>
       <div>
-        {pageIndex === 0 &&
-          <div className="p-5">
-            <div className="justify-between container-chart">
-              <div className="flex flex-row justify-between">
-                <div className="text-2xl text-center mb-2">Real Time Data</div>
-                <div className="">
-                  {
-                    RealTimeChartData.map((data, index) => {
-                      return <MediumButton onClick={() => setRealtimeChartIndex(index)} buttonTitle={data.title} isActive={index === realTimechartIndex} />
-                    })}
-                    
-                </div>
-              </div>
-
-
-              <div className="realtime-container">
-
-                <div className="flex justify-center realTimeChart text-center  w-full content-center">
-                  <RawLineChart data={
-                    RealTimeChartData.length > 0 ? RealTimeChartData[realTimechartIndex!].data : { labels: [], datasets: [] }} options={GetChartOptions(
-                      { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWh)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/KWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
-                    )} />
-                </div></div>
-            </div>
-        <Sources source="IEX" />
-            </div>
-        }
-
-        {pageIndex === 1 &&
+      {pageIndex === 1 &&
           <div className="p-5">
             <div className="flex flex-row justify-between">
               <div className="text-2xl text-center">Price and Volume by Product</div>
@@ -156,7 +129,7 @@ function Exchange() {
           </div>
         }
 
-        {pageIndex === 2 &&
+        {pageIndex === 0 &&
           <div className="p-5">
             <div className="flex flex-row justify-between">
               <div className="text-2xl text-center">Price and Volume by Exchange</div>
@@ -208,6 +181,35 @@ function Exchange() {
           </div>
           
         }
+        {pageIndex === 2 &&
+          <div className="p-5">
+            <div className="justify-between container-chart">
+              <div className="flex flex-row justify-between">
+                <div className="text-2xl text-center mb-2">Real Time Data</div>
+                <div className="">
+                  {
+                    RealTimeChartData.map((data, index) => {
+                      return <MediumButton onClick={() => setRealtimeChartIndex(index)} buttonTitle={data.title} isActive={index === realTimechartIndex} />
+                    })}
+                    
+                </div>
+              </div>
+
+
+              <div className="realtime-container">
+
+                <div className="flex justify-center realTimeChart text-center  w-full content-center">
+                  <RawLineChart data={
+                    RealTimeChartData.length > 0 ? RealTimeChartData[realTimechartIndex!].data : { labels: [], datasets: [] }} options={GetChartOptions(
+                      { textTitle: RealTimeChartData.length > 0 ? `${RealTimeChartData[realTimechartIndex!].title} Prices (Rs/KWh)` : '', displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: "Rs/KWh", fontSize: 20, maintainAspectRatio: false, enableZoom: false }
+                    )} />
+                </div></div>
+            </div>
+        <Sources source="IEX" />
+            </div>
+        }
+
+
 
         {pageIndex === 3 &&
           <div className="p-5">

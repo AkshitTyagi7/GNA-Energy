@@ -245,24 +245,25 @@ export default function AnalysisTable() {
                                             <th>Generator</th>
                                             <th onClick={() => {
                                                 setTableRecords(tableRecords.sort((a, b) => a.Actual_Mus - b.Actual_Mus));
-                                            }}>MUs</th>
+                                            }}>MUs Procured</th>
                                             <th
                                                 onClick={() => {
                                                     setTableRecords(tableRecords.sort((a, b) => a.variable_charge - b.variable_charge));
                                                     console.log("Sorting by Variable Charge");
                                                     console.log(tableRecords);
                                                 }}
-                                            >Total Cost</th>
+                                            >Total Cost (₹ cr)                                            </th>
                                              <th
                                                 onClick={() => {
                                                     setTableRecords(tableRecords.sort((a, b) => parseFloat(a.Availability) - parseFloat(b.Availability)));
                                                 }}
-                                            >PLF</th>
+                                            >PLF (%)
+                                            </th>
                                             <th
                                                 onClick={() => {
                                                     setTableRecords(tableRecords.sort((a, b) => a.variable_charge - b.variable_charge));
                                                 }}
-                                            >Variable Charge</th>
+                                            >Variable Charge (₹/KWH)</th>
                                         </tr>
                                     </thead>
                                     {/* {tableRecords.map((record) => (
