@@ -56,6 +56,12 @@ export interface ExchangeChartData {
             borderColor: SecondaryColor,
             backgroundColor: SecondaryColor,
           },
+          {
+            label:"HPDAM Prices",
+            data:[],
+            borderColor:"red",
+            backgroundColor:"red"
+          }
         ],
       }
     };
