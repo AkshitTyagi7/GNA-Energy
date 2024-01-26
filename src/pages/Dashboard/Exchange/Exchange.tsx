@@ -13,6 +13,7 @@ import { Chart as ChartJS } from 'chart.js';
 import { COST_MU, COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ExchangeChartData, FormatExchangeData, RealTimeChartData, formatRealTimeChartData } from "./ExchangeData";
+import FootNote from "../../../components/charts/footnote";
 ChartJS.register(zoomPlugin);
 
 
@@ -124,7 +125,7 @@ function Exchange() {
 
                 } />
             </div>
-                <Sources source="IEX, PXIL, HPX" />
+                <FootNote source="Source - IEX, PXIL, HPX" />
 
           </div>
         }
@@ -176,7 +177,7 @@ function Exchange() {
 
               }
             </div>
-            <Sources source="IEX, PXIL, HPX"    /> 
+            <FootNote source="Source - IEX, PXIL, HPX"    /> 
 
           </div>
           
@@ -205,7 +206,7 @@ function Exchange() {
                     )} />
                 </div></div>
             </div>
-        <Sources source="IEX" />
+        <FootNote source="Source - IEX" />
             </div>
         }
 
@@ -504,15 +505,7 @@ const addFloatList = (...lists: number[][]) => {
   return result;
 }
  
-function Sources({source}:{source:string}){
-  return(
-    <div
-    className="absolute bottom-2 right-3 text-xs text-gray-500"
-    >
-      Sources- {source}
-    </div>
-  );
-}
+
 
 export default Exchange;
 

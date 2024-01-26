@@ -28,6 +28,8 @@ import { table } from 'console';
 import MahaGencoChart from './Models';
 import { DemoMahaGencoDataJson } from './DemoMahaGenco';
 import MahaGenco from './Mahagenco';
+import FootNote from '../../../../components/charts/footnote';
+import { getUser } from '../../../Protected';
 
 
 interface TableRecord {
@@ -77,6 +79,7 @@ class AtrributeArguments {
                 formData.append(key, String(this[key]));
             }
         }
+        formData.append('token', getUser().accessToken!);
 
         return formData;
     }
@@ -339,6 +342,7 @@ export default function AnalysisTable() {
                             <div className='flex mt-5 text-center center justify-between space-x-0'>
                                 <div className='col-3 pie grow-0'>
                                     <PieChart data={ConvertSourceData(data.source)} options={GetChartOptions({ textTitle: "By Source", yLabelText: "MUs", displayYLabel: true, displayLegend: true, isSmallLegend: true, maintainAspectRatio: false, showAxis:false })} />
+                                   <div>RE - Solar, Wind, Small Hydro, Biomass, Bagasse</div>
                                 </div>
                                 <div className='col-3 grow'>
                                     <BarChart data={ConvertOwnershipData(data.ownership)} options={GetChartOptions({ textTitle: "By Ownership", yLabelText: "MUs", displayYLabel: true, displayLegend: false, isSmallLegend: false, maintainAspectRatio: false, })} />
@@ -359,7 +363,9 @@ export default function AnalysisTable() {
                     </div>
                 </div>
 
-            </div> : <MahaGenco />}</>
+            </div> : <MahaGenco />}
+            
+</>
 
 
     );
