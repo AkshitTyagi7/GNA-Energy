@@ -122,8 +122,9 @@ thead {
   .tableArea {
     width: 398px;
    margin-top: 10px;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 180px);
     overflow-y: auto;
+    margin-bottom: 10px;
   }
 
 

@@ -57,7 +57,7 @@ function Exchange() {
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
         {
-          pageIndex !== 0 &&
+          pageIndex !== 2 &&
           <input type="date" className="mt-4 mr-5 p-2 br-20 rounded-lg" max={maxDate.toLocaleDateString('en-GB').split('/').reverse().join('-')} value={date.toLocaleDateString('en-GB').split('/').reverse().join('-')} onChange={(e) => {
 
             setDate(e.target.valueAsDate!);
@@ -410,7 +410,7 @@ function Exchange() {
   async function fetchRealTimeData() {
     console.log("fetching data");
     try {
-      const response = await fetch("http://datahub.gna.energy/rtm_api");
+      const response = await fetch("https://datahub.gna.energy/rtm_api");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
