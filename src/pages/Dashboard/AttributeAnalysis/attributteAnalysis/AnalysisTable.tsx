@@ -298,11 +298,12 @@ export default function AnalysisTable() {
                                                 }}
                                                 maxOptimalMus={maxOptimalMus} />
                                         ))}
-                                </table></>
+                                </table>
+                                </>
 
 
                         </div>
-                        <br />
+                        <center>RE - Solar, Wind, Small Hydro, Biomass, Bagasse</center>
 
 
                     </div>
@@ -342,7 +343,7 @@ export default function AnalysisTable() {
                             <div className='flex mt-5 text-center center justify-between space-x-0'>
                                 <div className='col-3 pie grow-0'>
                                     <PieChart data={ConvertSourceData(data.source)} options={GetChartOptions({ textTitle: "By Source", yLabelText: "MUs", displayYLabel: true, displayLegend: true, isSmallLegend: true, maintainAspectRatio: false, showAxis:false })} />
-                                   <div>RE - Solar, Wind, Small Hydro, Biomass, Bagasse</div>
+                       
                                 </div>
                                 <div className='col-3 grow'>
                                     <BarChart data={ConvertOwnershipData(data.ownership)} options={GetChartOptions({ textTitle: "By Ownership", yLabelText: "MUs", displayYLabel: true, displayLegend: false, isSmallLegend: false, maintainAspectRatio: false, })} />
