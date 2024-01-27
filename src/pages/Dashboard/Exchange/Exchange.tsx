@@ -159,6 +159,7 @@ function Exchange() {
                         <MixChart data={
                           PrepareExchangeDataSet({
                             labels: data.date,
+                            
                             SellBids: data.SellBids,
                             prchsBids: data.prchsBids,
                             wtMcp: data.wtMcp,
