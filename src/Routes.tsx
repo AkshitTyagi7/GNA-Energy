@@ -6,6 +6,7 @@ import { ConsumptionAnalytics } from "./pages/Dashboard/Consumption/Consumption"
 import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonitoring";
 import { DemoPage } from "./pages/DemoPage";
 import ReCharts from "./pages/Recharts";
+import ReCharts2 from "./pages/ReCharts2";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -49,6 +50,11 @@ export const DashboardRoutes=[
     {
         path:"recharts",
         element:<ReCharts />
+    },
+    {
+        path:"recharts2",
+        element:<ReCharts2 />,
+        notPrtoected:true
     },
     {
         path:"attributeAnalysis",

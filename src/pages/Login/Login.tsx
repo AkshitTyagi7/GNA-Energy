@@ -88,7 +88,7 @@ export function LoginPage() {
                        
                                 <><div className="w-full flex mt-6 bg-gray-300 h-24 rounded-lg flex p-1 pt-3 space-x-0">
                                     <div className="text-xl font-bold text-gray-700 tracking-wide text-start h-full align-center flex">
-                                        <User  />
+                                        <User className="w-20 h-20"  />
                                     </div>
                                     <div className="userDetail pt-1">
                                         <div className="text-lg font-bold text-gray-700 tracking-wide text-center">

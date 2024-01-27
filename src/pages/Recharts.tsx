@@ -123,16 +123,15 @@ import { LineChart } from "../components/charts/Charts";
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
+
+         <CartesianGrid strokeDasharray="3 3" />
+         <XAxis
         // tickFormatter={(index) => GetIndexVal(index)}
         dataKey="name"
         tick={true}
         />
-         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-        dataKey="date"
-        axisLine={true}
-        />
+         <XAxis type="number" domain={['dataMin', 'dataMax']} />
+
         <YAxis name ="MW"  />
         <YAxis yAxisId="right" orientation="right" name="WAP"/>
 

@@ -35,9 +35,11 @@ function App() {
           >
             <Route index={true} element={<Dashboard />} />
             {
-              DashboardRoutes.map((route, index) => {
-                return <Route key={index} path={route.path} element={
-                 <ProtectedPage children={route.element} pageId={"/"+route.path} /> 
+              DashboardRoutes.map((Proute, index) => {
+                return <Route key={index} path={Proute.path} element={
+
+                  Proute.notPrtoected ? Proute.element  :
+                 <ProtectedPage children={Proute.element} pageId={"/"+Proute.path} /> 
                  } />
               }
               )
