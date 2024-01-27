@@ -9,7 +9,9 @@ import {
   Legend,
   ComposedChart,
   Line,
+  Brush,
 } from "recharts";
+import { DemoExchangeData } from "./Dashboard/Exchange/DemoExchangeData";
 
 const data = [
   {
@@ -86,6 +88,33 @@ const data = [
   },
 ];
 
+let data1: any = DemoExchangeData.data.dam.map((item, index) => {
+  return {
+    name: index+1,
+    
+    wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
+    sell_bid_mw: parseFloat(item.sell_bid_mw),
+    prchs_bid_mw: parseFloat(item.prchs_bid_mw),
+    date: item.date,
+
+  };
+}
+);
+
+let data2: any = DemoExchangeData.data.dam.map((item, index) => {
+  return {
+    name: index+1,
+    
+    wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
+    sell_bid_mw: parseFloat(item.sell_bid_mw),
+    prchs_bid_mw: parseFloat(item.prchs_bid_mw),
+    date: item.date,
+
+  };
+}
+);
+
+let data3 = [...data1, ...data2];
 const monthTickFormatter = (tick: string) => {
   const date = new Date(tick);
 
@@ -95,30 +124,31 @@ const monthTickFormatter = (tick: string) => {
 const renderQuarterTick = (tickProps: any) => {
   const { x, y, payload } = tickProps;
   const { value, offset } = payload;
-  const date = new Date(value);
-  const month = date.getMonth();
-  const quarterNo = Math.floor(month / 3) + 1;
+  const quarterNo = Math.floor(value / 96) + 1;
 
-  if (month % 3 === 1) {
-    return <text x={x} y={y - 4} textAnchor="middle">{`Q${quarterNo}`}</text>;
+  if (value % 96 === 0) {
+    return <text x={x} y={y - 4} textAnchor="middle">{``}</text>;
   }
 
-  const isLast = month === 11;
+  if(value === 48){
+    return <text x={x} y={y - 4} textAnchor="middle">{`${quarterNo}-12-2024`}</text>;
 
-  if (month % 3 === 0 || isLast) {
-    const pathX = Math.floor(isLast ? x + offset : x - offset) + 0.5;
-
-    return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red" />;
   }
-  return null;
+
+
+  if (value  === 1 || value === 96 ) {
+    const pathX = Math.floor(x - offset) + 0.5;
+    return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red"  width={"2px"}/>;
+  }
+  return '';
 };
 
 export default function ReCharts2() {
   return (
-    <ComposedChart
-      width={500}
+    <><ComposedChart
+      width={1500}
       height={300}
-      data={data}
+      data={data3}
       margin={{
         top: 5,
         right: 30,
@@ -127,24 +157,30 @@ export default function ReCharts2() {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" tickFormatter={monthTickFormatter as any} />
+      <Brush data={
+          data
+        
+        } startIndex={0} endIndex={95} dataKey="date" height={30} stroke="#8884d8" />
+
+      <XAxis dataKey="name" />
       <XAxis
-        dataKey="date"
+        dataKey="name"
         axisLine={false}
         tickLine={false}
         interval={0}
         tick={renderQuarterTick as any}
-        height={1}
-        scale="band"
-        xAxisId="quarter"
-      />
+        height={20}
+  
+        xAxisId="quarter" />
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="pv" fill="#8884d8" />
-<Line type="monotone" dataKey="amt" stroke="#ff7300" yAxisId={0} />
+      <Bar dataKey="wt_mcp_rs_mwh" fill="#8884d8" />
+      <Line type="monotone" dataKey="prchs_bid_mw" stroke="#ff7300" yAxisId={0} />
 
-      <Bar dataKey="uv" fill="#82ca9d" />
-    </ComposedChart>
+      <Line dataKey="sell_bid_mw" fill="#82ca9d" />
+
+
+    </ComposedChart></>
   );
 }

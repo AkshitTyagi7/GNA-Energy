@@ -15,7 +15,7 @@ export const Filters = [
             { "id": "Net Generation (= 1.4 - 1.10)", "title": "Net Generation (MU)" },
             { "id": "Heat Rate", "title": "Heat Rate (KCAL/KWh)" },
             { "id": "Secondary Fuel Oil Consumption", "title": "Secondary Fuel Oil Consumption(ML/KWh)" },
-            { "id": "Transit Lossnts a category, and each subfilter represents a specific parameter or aspect within that c for Domestic and Washed Coal", "title": "Transit Loss for Domestic and Washed Coal (%)" },
+            { "id": "Transit Loss for Domestic and Washed Coal", "title": "Transit Loss for Domestic and Washed Coal (%)" },
             { "id": "Transit Loss for Imported Coal", "title": "Transit Loss for Imported Coal (%)" },
             { "id": "SHR coal component", "title": "SHR Coal Component" }
         ]
