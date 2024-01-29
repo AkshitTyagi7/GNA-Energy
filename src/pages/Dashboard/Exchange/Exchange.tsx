@@ -22,9 +22,7 @@ function Exchange() {
   const [RealTimeChartData, setRealTimeChartData] = useState<RealTimeChartData[]>([]);
   const [pageIndex, setPageIndex] = useState<number>(0);
   const [realTimechartIndex, setRealtimeChartIndex] = useState<number>(1);
-
   const [IexChartData, setIexChartData] = useState<ExchangeChartData[]>([]);
-
   const [pXILChartData, setPXILChartData] = useState<ExchangeChartData[]>([]);
   const [hPAChartData, setHPAChartData] = useState<ExchangeChartData[]>([]);
   const [byProductIndex, setByProductIndex] = useState<number>(0);
@@ -36,7 +34,6 @@ function Exchange() {
 
     fetchExchangeData(
       // get days in this format "03-01-2024"
-
       // new Date().toLocaleDateString('en-GB').split('/').reverse().join('-')
       // Get the date of 7 days ago
       new Date(new Date().getTime() - (0 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-GB').split('/').join('-')

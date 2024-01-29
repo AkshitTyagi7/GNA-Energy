@@ -135,7 +135,7 @@ import { LineChart } from "../components/charts/Charts";
         <YAxis name ="MW"  />
         <YAxis yAxisId="right" orientation="right" name="WAP"/>
 
-        <Legend verticalAlign="top" wrapperStyle={{ lineHeight: "40px" }} />
+        <Legend  wrapperStyle={{ lineHeight: "40px" }} />
         <ReferenceLine y={0} stroke="#000" />
        
         <Brush data={
