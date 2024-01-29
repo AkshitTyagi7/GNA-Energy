@@ -97,3 +97,24 @@ export function FormatExchangeData(data : any): ExchangeData{
 
     return fomattedDataArray;
 }
+
+export const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: any) => {
+    const isVert = axisType === 'yAxis';
+    const cx = isVert ? x : x + (width / 2);
+    const cy = isVert ? (height / 2) + y : y + height + 10;
+    const rot = isVert ? `270 ${cx} ${cy}` : 0;
+    return (
+      <text x={cx} y={cy} transform={`rotate(${rot})`} textAnchor="middle" stroke={stroke}>
+        {children}
+      </text>
+    );
+  };
+  
+  export  const renderQuarterTick = (tickProps: any) => {
+    const { x, y, payload } = tickProps;
+    const {index,value, offset } = payload;  
+    const finalIndex = index + 1;
+    if(finalIndex %48 === 0 && finalIndex%96 !== 0){
+      return <text x={x} y={y - 4} textAnchor="middle">{value}</text>;
+    }
+  };

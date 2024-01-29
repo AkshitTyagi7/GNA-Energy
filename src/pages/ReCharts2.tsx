@@ -19,7 +19,6 @@ import { ExchangeData, FormatExchangeData } from "./Dashboard/Exchange2/FormatDa
     
   const ApiData = FinalDemoData
 
-let PxilData= FormatExchangeData(ApiData);
 let data1: any = DemoExchangeData.data.dam.map((item, index) => {
   return {
     name: index+1,
@@ -163,9 +162,18 @@ useEffect(() => {
     }} />
 
     </div>
+    <div className="flex flex-row justify-between">
+              <div className="text-2xl text-center">Price and Volume by Product</div>
+              <div className="mt-2">
+                {/* {
+                  IexChartData.map((data, index) => {
+                    return <SmallButton onClick={() => setByProductIndex(index)} buttonTitle={data.title.toUpperCase()} isActive={index === byProductIndex} />
+                  })} */}
+              </div>
+            </div>
     <ExchangeChart data={iexData.dam} showBrush={false} title="IEX"  />
     <ExchangeChart data={hpxData.dam} title="PXIL" />
-    <ExchangeChart data={hpxData.dam} showBrush={true} title="HPX"  />
+    <ExchangeChart data={pxilData.dam} showBrush={true} title="HPX"  />
     
     </>
   );

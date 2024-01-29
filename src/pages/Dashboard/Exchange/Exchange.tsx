@@ -10,7 +10,7 @@ import { DemoExchangeData } from "./DemoExchangeData";
 import { PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../../../common";
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { Chart as ChartJS } from 'chart.js';
-import { COST_MU, COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
+import { COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ExchangeChartData, FormatExchangeData, RealTimeChartData, formatRealTimeChartData } from "./ExchangeData";
 import FootNote from "../../../components/charts/footnote";
@@ -316,7 +316,7 @@ function Exchange() {
                   ]
                 }}
                 options={GetChartOptions(
-                  { textTitle: `Weighted MCP (${COST_MU})`, isStacked: true, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_MU})`, fontSize: 20, maintainAspectRatio: false, enableZoom: false }
+                  { textTitle: `Weighted MCP (${COST_UNIT})`, isStacked: true, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_UNIT})`, fontSize: 20, maintainAspectRatio: false, enableZoom: false }
                 )} />
 
 
@@ -435,7 +435,7 @@ function Exchange() {
 
 const PrepareExchangeChartOptions = (textTitle: string) => {
   return GetChartOptions(
-    { textTitle: textTitle, fontSize: 20, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_MU})`, y2LabelText: 'MW', secondYaxis: true, maintainAspectRatio: false }
+    { textTitle: textTitle, fontSize: 20, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_UNIT})`, y2LabelText: 'MW', secondYaxis: true, maintainAspectRatio: false }
   )
 }
 
@@ -465,7 +465,7 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
       },
       {
         type: 'line' as const,
-        label: `MCV (${ENERGY_UNIT})`,
+        label: `MCV (${MEGA_POWER_UNIT})`,
         data: mcv,
         yAxisID: 'y1',
         pointRadius: 1,
@@ -474,7 +474,7 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
         borderColor: 'red',
       },
       {
-        label: `Price (${COST_MU})`,
+        label: `Price (${COST_UNIT})`,
         data: wtMcp,
         yAxisID: 'y',
         
