@@ -11692,3 +11692,20511 @@ export const DemoExchangeData3={
         ]
     }
 }
+
+export const FinalDemoData={
+    "09-01-2024": {
+        "calculation": {
+            "mcv_mw": {
+                "dam": {
+                    "avg": 0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0.0,
+                    "min": 0.0
+                }
+            },
+            "wg_avg_mcp": {
+                "dam": {
+                    "avg": 0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                }
+            }
+        },
+        "data": {
+            "dam": [],
+            "gdam": [],
+            "hpdam": [],
+            "rtm": [
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "09-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ]
+        }
+    },
+    "10-01-2024": {
+        "calculation": {
+            "mcv_mw": {
+                "dam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0.0,
+                    "min": 0.0
+                }
+            },
+            "wg_avg_mcp": {
+                "dam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                }
+            }
+        },
+        "data": {
+            "dam": [
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "51.25",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "54.5",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "57",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "59.25",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "61.25",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "63.25",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "64.5",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "66",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "67",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "67.75",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "68.75",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "69.25",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "69",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "68.5",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "67.75",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "66.75",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "64.75",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "62.25",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "58.75",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "53.75",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "48.75",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "47.5",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "41.75",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "36.5",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "33.5",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "33.5",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "35.75",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "35.75",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "33.25",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "5",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "5",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "20",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "7",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "10.75",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "9.75",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "13.5",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "22.25",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "23.25",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "29",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "31.5",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "40",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "47.25",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "54.75",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "60",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "51",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "46.5",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "37.5",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "5",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "5",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "11.25",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "17",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "23",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "28.25",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "33.75",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "39.5",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "44.5",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "47",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "54.75",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "gdam": [
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "hpdam": [
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "rtm": [
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.875",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "10-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ]
+        }
+    },
+    "11-01-2024": {
+        "calculation": {
+            "mcv_mw": {
+                "dam": {
+                    "avg": 2.0833333333333335,
+                    "max": 12.5,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0.0,
+                    "min": 0.0
+                }
+            },
+            "wg_avg_mcp": {
+                "dam": {
+                    "avg": 1.6666666666666667,
+                    "max": 10.0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                }
+            }
+        },
+        "data": {
+            "dam": [
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "63",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "66.5",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "70",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "71.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "73.75",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "70.75",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "65.5",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "53.75",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "51.5",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "47",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "41.75",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "37.75",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "35.75",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "39.5",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "40.5",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "40",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "40",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "22.5",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "22.5",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "5.25",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "12",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "15.25",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "13.75",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "17.25",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25.75",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "26.5",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "28.75",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "30.5",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "38.75",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "45.5",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "52.5",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "55.25",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "43.25",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "45",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "17.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "22.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "35",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "30",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "12.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "12.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "12.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "12.5",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 12.5,
+                    "prchs_bid_mw": "12.5",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "12.5",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "1",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "8.5",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "15.25",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "20.25",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "26.5",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "32.5",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "41.25",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "46.75",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "54.75",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "gdam": [
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "hpdam": [
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "rtm": [
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "11-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ]
+        }
+    },
+    "12-01-2024": {
+        "calculation": {
+            "mcv_mw": {
+                "dam": {
+                    "avg": 3.3854166666666665,
+                    "max": 31.25,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0.0,
+                    "min": 0.0
+                }
+            },
+            "wg_avg_mcp": {
+                "dam": {
+                    "avg": 1.25,
+                    "max": 10.0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                }
+            }
+        },
+        "data": {
+            "dam": [
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "78.75",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "81.75",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "84.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "87",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "90.25",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "92.75",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "94",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "95.75",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "97",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "98.25",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "98.75",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "98.75",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "98.75",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "98.75",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "98.75",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "97.75",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "96",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "93.75",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "90.5",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "81.25",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "69.75",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "70",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "65.75",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "60.25",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "31.75",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "30.25",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "33.75",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "34",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "50",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "48",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "18.75",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 18.75,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "18.75",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 18.75,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "18.75",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 18.75,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "18.75",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 18.75,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "62.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "37.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "37.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "37.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "31.25",
+                    "mcp_rs_mwh": "10000",
+                    "mcv_mw": 31.25,
+                    "prchs_bid_mw": "37.5",
+                    "sell_bid_mw": "31.25",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 10.0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "18.75",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "9.5",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "11.5",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "9",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "13",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "21.5",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "24.25",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "29.5",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "31",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "40.75",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "46.5",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "53.5",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "56.25",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "46.5",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "41.25",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "36.25",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "25",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "25",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "31.5",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "37.75",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "44.5",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "49.75",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "55.25",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "60.5",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "61.75",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "70",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "gdam": [
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "hpdam": [
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "rtm": [
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.125",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "4.375",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "12-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ]
+        }
+    },
+    "13-01-2024": {
+        "calculation": {
+            "mcv_mw": {
+                "dam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0.0,
+                    "min": 0.0
+                }
+            },
+            "wg_avg_mcp": {
+                "dam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                }
+            }
+        },
+        "data": {
+            "dam": [
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "gdam": [
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "hpdam": [
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "rtm": [
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5.625",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "6.25",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "13-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ]
+        }
+    },
+    "14-01-2024": {
+        "calculation": {
+            "mcv_mw": {
+                "dam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0.0,
+                    "min": 0.0
+                }
+            },
+            "wg_avg_mcp": {
+                "dam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "gdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "hpdam": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                },
+                "rtm": {
+                    "avg": 0.0,
+                    "max": 0,
+                    "min": 0
+                }
+            }
+        },
+        "data": {
+            "dam": [
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "gdam": [
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "hpdam": [
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "-",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0,
+                    "prchs_bid_mw": "-",
+                    "sell_bid_mw": "-",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ],
+            "rtm": [
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:00-00:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:15-00:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:30-00:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "3.75",
+                    "time_block": "00:45-01:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:00-01:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:15-01:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:30-01:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "5",
+                    "time_block": "01:45-02:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "02:00-02:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "02:15-02:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "02:30-02:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "7.5",
+                    "time_block": "02:45-03:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "03:00-03:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "03:15-03:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "03:30-03:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "03:45-04:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "04:00-04:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "04:15-04:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "04:30-04:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "04:45-05:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "05:00-05:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "05:15-05:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "05:30-05:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "05:45-06:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:00-06:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:15-06:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:30-06:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "06:45-07:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:00-07:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:15-07:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:30-07:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "07:45-08:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:00-08:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:15-08:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:30-08:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "08:45-09:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:00-09:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:15-09:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:30-09:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "09:45-10:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:00-10:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:15-10:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:30-10:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "10:45-11:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:00-11:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:15-11:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:30-11:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "11:45-12:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:00-12:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:15-12:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:30-12:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "12:45-13:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:00-13:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:15-13:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:30-13:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "13:45-14:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "14:00-14:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "14:15-14:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "14:30-14:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "14:45-15:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:00-15:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:15-15:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:30-15:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "15:45-16:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "1.875",
+                    "time_block": "16:00-16:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "1.875",
+                    "time_block": "16:15-16:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "16:30-16:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "16:45-17:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:00-17:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:15-17:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:30-17:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "17:45-18:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:00-18:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:15-18:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:30-18:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "18:45-19:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:00-19:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:15-19:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:30-19:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "19:45-20:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:00-20:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:15-20:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:30-20:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "20:45-21:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:00-21:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:15-21:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:30-21:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "21:45-22:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:00-22:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "0",
+                    "time_block": "22:15-22:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "22:30-22:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "22:45-23:00",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "23:00-23:15",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "23:15-23:30",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "23:30-23:45",
+                    "wt_mcp_rs_mwh": 0
+                },
+                {
+                    "date": "14-01-2024",
+                    "final_scheduled_vol_mw": "0",
+                    "mcp_rs_mwh": "-",
+                    "mcv_mw": 0.0,
+                    "prchs_bid_mw": "0",
+                    "sell_bid_mw": "2.5",
+                    "time_block": "23:45-24:00",
+                    "wt_mcp_rs_mwh": 0
+                }
+            ]
+        }
+    }
+}

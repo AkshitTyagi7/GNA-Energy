@@ -7,6 +7,7 @@ import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonito
 import { DemoPage } from "./pages/DemoPage";
 import ReCharts from "./pages/Recharts";
 import ReCharts2 from "./pages/ReCharts2";
+import { ExchangeReCharts } from "./pages/ReCharts3";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -59,5 +60,10 @@ export const DashboardRoutes=[
     {
         path:"attributeAnalysis",
         element:<AnalysisTable />
+    },
+    {
+        path:"recharts3",
+        element:<ExchangeReCharts />,
+        notPrtoected:true
     }
 ]
