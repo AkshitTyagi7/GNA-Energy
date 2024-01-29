@@ -1,0 +1,17 @@
+.recharts-default-tooltip {
+    font-size: 12px;
+    padding: 4px!important;
+    font-weight: 550;
+}
+li.recharts-tooltip-item {
+    padding: 1px!important;
+}
+
+.byExchangeChart{
+    display: flex;
+    height: 40vh;
+}
+
+ul.recharts-default-legend {
+    margin-bottom: 10px!important;
+}
