@@ -12,8 +12,8 @@ function DashBoardItem({title, to}: {title: string, to: string}) {
 }
 export default function Dashboard() {
   return (
-  <div className="dashboard p-10 mt-10">
-    <h2 className="mb-20 text-4xl text-center">GNA Energy Data and Analytics Capability Center (GDACC)</h2>
+  <div className="dashboard p-10 mt-5">
+    <h2 className="mb-10 text-4xl text-center">GNA Energy Data and Analytics Capability Center (GDACC)</h2>
     <div className="flex flex-row flex-wrap gap-10 justify-center">
     <DashBoardItem title="Market Monitoring" to="marketmonitoring" />
     <DashBoardItem title="Discom Analytics" to="discomAnalysis"/>
@@ -21,6 +21,9 @@ export default function Dashboard() {
     <DashBoardItem title="Power Atlas" to="powerAtlas" />
     <DashBoardItem title="Banking Analytics" to="bankingAnalytics" />
     <DashBoardItem title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
+    <DashBoardItem title="Price Forcasting" to="priceForcasting" />
+    <DashBoardItem title="Demand Forecasting" to="demandForecasting" />
+    <DashBoardItem title="Grid Frequency Profile" to="gridFrequencyProfile" />
 
   </div>
   <div

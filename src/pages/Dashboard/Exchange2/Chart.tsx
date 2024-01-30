@@ -30,76 +30,81 @@ const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: any) => 
     }
   
   };
-export function ExchangeChart({showBrush = false , title= "Exchange Chart", data, height="25%", width="100%", syncId="anyId"}: {
+
+  
+export  const ExchangeChart = ({ showBrush = false, title = "Exchange Chart", data, height = "25%", width = "100%", syncId = "anyId" }: {
     showBrush?: boolean,
     title?: string,
-    data: any,
+    data: any[],
     height?: string,
     width?: string,
-    syncId?: string,
-}){
-    return (
-      <><h2 className="text-center text-2xl mt-0">{title}</h2><ResponsiveContainer width={width} height={height}>
-        <ComposedChart
-          syncId={syncId}
+    syncId?: string
+
+}) => (
+  <><h2 className="text-center text-xl mt-0">{title}</h2><ResponsiveContainer width={width} height={height}>
+  <ComposedChart
+    syncId={syncId}
 
 
 
-          data={data}
-          margin={{
-            top: 1,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
+    data={data}
+    margin={{
+      top: 1,
+      right: 30,
+      left: 20,
+      bottom: 5,
+    }}
+  >
+{  <> <CartesianGrid strokeDasharray="3 3" />
 
 
-          <XAxis dataKey="name" />
-          <XAxis
-            dataKey="date"
-            axisLine={false}
-            tickLine={false}
-            interval={0}
-            tick={renderQuarterTick as any}
-            height={20}
+    <XAxis dataKey="name" />
+    <XAxis
+      dataKey="date"
+      axisLine={false}
+      tickLine={false}
+      interval={0}
+      tick={renderQuarterTick as any}
+      height={20}
 
-            xAxisId="quarter" />
-          <YAxis name="MW" label={"MW"} width={80} />
-          <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={160} />
+      xAxisId="quarter" />
+    {/* <YAxis name="MW" label={"MW"} width={80} /> */}
+    <YAxis name="MW" label={"MW"} width={0} />
 
-          <Tooltip
-            labelFormatter={(value, payload) => {
-              try {
-                return [`${payload[0].payload.date} - Time Slot ${value}`];
-              }
-              catch {
-                return [value,];
-              }
-            } }
+    {/* <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={160} /> */}
 
-            formatter={(value, name, props) => {
-              if (name === "Weighted Average Price") {
-                return [parseFloat(value.toString()).toFixed(2) , name.toString().concat(`(${COST_UNIT})`)];
-              }
-              return [parseFloat(value.toString()).toFixed(2), name,];
-            } } />
+    <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={0} />
 
-          <Legend verticalAlign="top" />
-          <Bar dataKey="wt_mcp_rs_mwh" fill={PrimaryColor} name="Weighted Average Price" />
-          <Line yAxisId="right" dataKey="sell_bid_mw" stroke={SecondaryColor} color={SecondaryColor} fill={SecondaryColor} name="Sell Bids(MW)" />
-          <Line yAxisId="right" dataKey="prchs_bid_mw" stroke={QuaternaryColor} color={QuaternaryColor} fill={QuaternaryColor} name="Purchase Bids(MW)" />
+    <Tooltip
+      labelFormatter={(value, payload) => {
+        try {
+          return [`${payload[0].payload.date} - Time Slot ${value}`];
+        }
+        catch {
+          return [value,];
+        }
+      } }
 
-          {showBrush ?
-            <Brush
+      formatter={(value, name, props) => {
+        if (name === "Weighted Average Price") {
+          return [parseFloat(value.toString()).toFixed(2) , name.toString().concat(`(${COST_UNIT})`)];
+        }
+        return [parseFloat(value.toString()).toFixed(2), name,];
+      } } />
 
-              startIndex={0} endIndex={95} dataKey="date" height={40} stroke={PrimaryColor} />
-            :
-            <Brush
+    <Legend verticalAlign="top" />
+    <Bar dataKey="wt_mcp_rs_mwh" fill={PrimaryColor} name="Weighted Average Price" />
+    <Line yAxisId="right" dataKey="sell_bid_mw" stroke={SecondaryColor} color={SecondaryColor} fill={SecondaryColor} name="Sell Bids(MW)" />
+    <Line yAxisId="right" dataKey="prchs_bid_mw" stroke={QuaternaryColor} color={QuaternaryColor} fill={QuaternaryColor} name="Purchase Bids(MW)" />
+    </> }
+    {showBrush ?
+      <Brush
 
-              startIndex={0} endIndex={95} dataKey="date" height={0} stroke={PrimaryColor} />}
-        </ComposedChart>
-        </ResponsiveContainer></>
-    )
-  }
+        startIndex={0} endIndex={95} dataKey="date" height={40} stroke={PrimaryColor} />
+      :
+      <Brush
+
+        startIndex={0} endIndex={95} dataKey="date" height={0} stroke={PrimaryColor} />}
+  </ComposedChart>
+  </ResponsiveContainer></>
+  );

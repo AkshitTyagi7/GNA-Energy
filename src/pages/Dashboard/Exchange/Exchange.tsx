@@ -48,7 +48,7 @@ function Exchange() {
       <div className="flex flex-row justify-between">
         <div className="flex mt-4 space-x-3 h-10">
           <MediumButton buttonTitle="By Exchange" isActive={pageIndex === 0} onClick={() => setPageIndex(0)} />
-        <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
+          <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
           <MediumButton buttonTitle="Realtime" isActive={pageIndex === 2} onClick={() => setPageIndex(2)} />
 
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
@@ -65,7 +65,7 @@ function Exchange() {
         }
       </div>
       <div>
-      {pageIndex === 1 &&
+        {pageIndex === 1 &&
           <div className="p-5">
             <div className="flex flex-row justify-between">
               <div className="text-2xl text-center">Price and Volume by Product</div>
@@ -122,7 +122,7 @@ function Exchange() {
 
                 } />
             </div>
-                <FootNote source="Source - IEX, PXIL, HPX" />
+            <FootNote source="Source - IEX, PXIL, HPX" />
 
           </div>
         }
@@ -174,10 +174,10 @@ function Exchange() {
 
               }
             </div>
-            <FootNote source="Source - IEX, PXIL, HPX"    /> 
+            <FootNote source="Source - IEX, PXIL, HPX" />
 
           </div>
-          
+
         }
         {pageIndex === 2 &&
           <div className="p-5">
@@ -189,7 +189,7 @@ function Exchange() {
                     RealTimeChartData.map((data, index) => {
                       return <MediumButton onClick={() => setRealtimeChartIndex(index)} buttonTitle={data.title} isActive={index === realTimechartIndex} />
                     })}
-                    
+
                 </div>
               </div>
 
@@ -203,8 +203,8 @@ function Exchange() {
                     )} />
                 </div></div>
             </div>
-        <FootNote source="Source - IEX" />
-            </div>
+            <FootNote source="Source - IEX" />
+          </div>
         }
 
 
@@ -321,7 +321,7 @@ function Exchange() {
 
 
             </div>
-      </div>}
+          </div>}
 
 
 
@@ -439,9 +439,9 @@ const PrepareExchangeChartOptions = (textTitle: string) => {
   )
 }
 
-const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[], mcv:number[] }) => {
+const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[], mcv: number[] }) => {
   return {
-    labels: labels.map((label: any, index: any) => (index+1).toString()),
+    labels: labels.map((label: any, index: any) => (index + 1).toString()),
     datasets: [
       {
         type: 'line' as const,
@@ -477,7 +477,7 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
         label: `Price (${COST_UNIT})`,
         data: wtMcp,
         yAxisID: 'y',
-        
+
         backgroundColor: SecondaryColor,
         borderColor: SecondaryColor,
       },
@@ -501,7 +501,7 @@ const addFloatList = (...lists: number[][]) => {
   })
   return result;
 }
- 
+
 
 
 export default Exchange;
