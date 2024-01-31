@@ -21,7 +21,7 @@ export default function Dashboard() {
     <DashBoardItem title="Power Atlas" to="powerAtlas" />
     <DashBoardItem title="Banking Analytics" to="bankingAnalytics" />
     <DashBoardItem title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
-    <DashBoardItem title="Price Forcasting" to="priceForcasting" />
+    <DashBoardItem title="Price Forecasting" to="priceForecasting" />
     <DashBoardItem title="Demand Forecasting" to="demandForecasting" />
     <DashBoardItem title="Grid Frequency Profile" to="gridFrequencyProfile" />
 

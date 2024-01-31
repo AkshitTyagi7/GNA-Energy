@@ -1,5 +1,6 @@
 import { Text } from "recharts";
 import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../common";
+import { format } from "path";
 
 
 export interface ExchngeItem{
@@ -195,4 +196,30 @@ export const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: a
   };
 
 
-    
+export function FormatDataOfRealtime(data:any){
+    let formatedData: { name: number; price: number; date: string; }[]=[];
+    Object.keys(data).map((key, index) => {
+        Object.keys(data[key]).map((key2, index2) => {
+            Object.keys(data[key][key2]).map((key3, index3) => {
+                formatedData.push({
+                    name: index3+1,
+                    price: parseFloat(data[key][key2][key3]),
+                    date: key,
+                    
+
+            
+            });
+
+
+    });
+});
+});
+console.log(formatedData);
+return formatedData;
+
+}
+
+
+
+
+

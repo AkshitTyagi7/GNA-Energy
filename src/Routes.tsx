@@ -8,7 +8,7 @@ import { DemoPage } from "./pages/DemoPage";
 import ReCharts from "./pages/Recharts";
 import ReCharts2 from "./pages/Dashboard/Exchange2/Exchange2";
 import { ExchangeReCharts } from "./pages/ReCharts3";
-import { PriceForcasting } from "./pages/Dashboard/PriceForcating/PriceForcasting";
+import { PriceForecasting } from "./pages/Dashboard/PriceForcating/PriceForcasting";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -64,13 +64,12 @@ export const DashboardRoutes=[
         element:<ExchangeReCharts />,
         notPrtoected:true
     },
-    // <DashBoardItem title="Price Forcasting" to="priceForcasting" />
+    // <DashBoardItem title="Price Forecasting" to="priceForecasting" />
     // <DashBoardItem title="Demand Forecasting" to="demandForecasting" />
     // <DashBoardItem title="Grid Frequency Profile" to="gridFrequencyProfile" />
     {
-        path:"priceForcasting",
-        element:<PriceForcasting />,
-        notPrtoected:true
+        path:"priceForecasting",
+        element:<PriceForecasting />,
     },
     {
         path:"demandForecasting",

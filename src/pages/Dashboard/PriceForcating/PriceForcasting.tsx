@@ -4,18 +4,18 @@ import { Bar, BarChart, Brush, CartesianGrid, Legend, ResponsiveContainer,Line, 
 import { renderQuarterTick } from "../Exchange2/FormatData";
 import { COST, COST_UNIT } from "../../../Units";
 
-interface PriceForcastingData {
+interface PriceForecastingData {
     name: string;
     date: string;
     forecasted_value: number;
     actual_value: number;
 }
 
-export function PriceForcasting() {
+export function PriceForecasting() {
     const [forecateData, setData] = useState<any>([]);
     const [startDate, setStartDate] = useState(new Date(new Date().getTime() - (4 * 24 * 60 * 60 * 1000)));
-    const [endDate, setEndDate] = useState(new Date(new Date().getTime() - (0 * 24 * 60 * 60 * 1000)));
-    const maxDate = new Date(new Date().getTime() - (0 * 24 * 60 * 60 * 1000));
+    const [endDate, setEndDate] = useState(new Date(new Date().getTime() + (1 * 24 * 60 * 60 * 1000)));
+    const maxDate = new Date(new Date().getTime() + (1 * 24 * 60 * 60 * 1000));
 
       useEffect(() => {
         fetchData(
@@ -31,7 +31,7 @@ export function PriceForcasting() {
         <>
     
         <div className="text-right flex justify-between width-full mt-4 ml-4">
-        <h2 className="text-center text-2xl mt-0">Price Forcasting</h2>
+        <h2 className="text-center text-2xl mt-0">Price Forecasting</h2>
         <div>
             <input type="date" className=" mr-3 p-2 br-20 rounded-lg" max={endDate.toLocaleDateString('en-GB').split('/').reverse().join('-')} value={startDate.toLocaleDateString('en-GB').split('/').reverse().join('-')} onChange={(e) => {
                 setStartDate(new Date(e.target.value));
@@ -87,7 +87,7 @@ export function PriceForcasting() {
                       }}
                     />
                     <Line strokeWidth={4}
-                        dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forcasted Value"} />
+                        dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forecasted Value"} />
                     <Line strokeWidth={4}
                         dataKey="actual_value" stroke={PrimaryColor} color={PrimaryColor} fill={PrimaryColor} name="Actual Value" />
                     <XAxis dataKey="name" />
@@ -126,6 +126,29 @@ export function PriceForcasting() {
             });
         
         });
+            // Sort the data by date which is in string format dd-mm-yyyy
+
+      tempData =  tempData.sort((a: any, b : any) => {
+        const dateA = parseDate(a.date);
+        const dateB = parseDate(b.date);
+    
+        return dateA.getTime() - dateB.getTime();
+            });
+        
+        
         console.log(forecateData);
         setData(tempData);
 }}
+
+
+
+
+
+const parseDate = (dateString: string): Date => {
+    const [day, month, year] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day); // Month is 0-indexed in JavaScript Dates
+};
+
+
+
+
