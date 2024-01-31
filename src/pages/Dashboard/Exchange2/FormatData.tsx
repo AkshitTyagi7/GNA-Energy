@@ -1,3 +1,5 @@
+import { Text } from "recharts";
+import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../common";
 
 
 export interface ExchngeItem{
@@ -6,7 +8,9 @@ export interface ExchngeItem{
         wt_mcp_rs_mwh:  number | string | null;
         sell_bid_mw: number | string | null;
         prchs_bid_mw: number | string | null;
+        mcv_mw: number | string | null;
         date: string | number ;
+
 
     
 }
@@ -37,6 +41,7 @@ export function FormatExchangeData(data : any): ExchangeData{
                     wt_mcp_rs_mwh: null,
                     sell_bid_mw: null,
                     prchs_bid_mw: null,
+                    mcv_mw: null,
                     date: key,
                 });
             }}
@@ -47,6 +52,7 @@ export function FormatExchangeData(data : any): ExchangeData{
                     sell_bid_mw: parseFloat(item.sell_bid_mw),
                     prchs_bid_mw: parseFloat(item.prchs_bid_mw),
                     date: item.date,
+                    mcv_mw: parseFloat(item.mcv_mw),
                 });
             }
             );
@@ -104,9 +110,9 @@ export const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: a
     const cy = isVert ? (height / 2) + y : y + height + 10;
     const rot = isVert ? `270 ${cx} ${cy}` : 0;
     return (
-      <text x={cx} y={cy} transform={`rotate(${rot})`} textAnchor="middle" stroke={stroke}>
+      <Text x={cx} y={cy} transform={`rotate(${rot})`} textAnchor="middle" stroke={stroke}>
         {children}
-      </text>
+      </Text>
     );
   };
   
@@ -118,3 +124,75 @@ export const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: a
       return <text x={x} y={y - 4} textAnchor="middle">{value}</text>;
     }
   };
+
+
+
+  export interface ExchangeChartData {
+    
+    title: string;
+    timeBlocks: string[];
+    date: string[];
+    SellBids: number[];
+    prchsBids: number[];
+    mcv: number[];
+    wtMcp: number[];
+  
+  }
+  
+  export  interface RealTimeChartData {
+    title: string;
+    data: {
+      labels: string[];
+      datasets: {
+        label: string;
+        data: number[];
+        borderColor: string;
+        backgroundColor: string;
+      }[]
+    };
+  }
+  
+  export  const formatRealTimeChartData = (data: any, key: string): RealTimeChartData => {
+    const labels = Object.keys(data["DAM_rates"]);
+    const damPrices = Object.values(data["DAM_rates"]).map((price: any) => parseFloat(price)/10);
+    const gdamPrices = Object.values(data["GDAM_rates"]).map((price: any) => parseFloat(price)/10);
+    const rtmPrices = Object.values(data["RTM_rates"]).map((price: any) => parseFloat(price)/10);
+  
+    return {
+      title: key
+      ,
+      data: {
+        // Add labels as 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+        labels: labels.map((label, index) => (index+1).toString()),
+        datasets: [
+          {
+            label: "DAM Prices",
+            data: damPrices as number[],
+            borderColor: PrimaryColor,
+            backgroundColor: PrimaryColor,
+          },
+          {
+            label: "GDAM Prices",
+            data: gdamPrices as number[],
+            borderColor: QuaternaryColor,
+            backgroundColor: QuaternaryColor,
+          },
+          {
+            label: "RTM Prices",
+            data: rtmPrices as number[],
+            borderColor: SecondaryColor,
+            backgroundColor: SecondaryColor,
+          },
+          {
+            label:"HPDAM Prices",
+            data:[],
+            borderColor:"red",
+            backgroundColor:"red"
+          }
+        ],
+      }
+    };
+  };
+
+
+    

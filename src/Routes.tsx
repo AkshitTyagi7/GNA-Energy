@@ -8,6 +8,7 @@ import { DemoPage } from "./pages/DemoPage";
 import ReCharts from "./pages/Recharts";
 import ReCharts2 from "./pages/Dashboard/Exchange2/Exchange2";
 import { ExchangeReCharts } from "./pages/ReCharts3";
+import { PriceForcasting } from "./pages/Dashboard/PriceForcating/PriceForcasting";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -20,10 +21,7 @@ import { ExchangeReCharts } from "./pages/ReCharts3";
 <Route path="attributeAnalysis" element={<AnalysisTable />} /> */}
 
 export const DashboardRoutes=[
-    {
-        path:"demoPage",
-        element:<DemoPage />
-    },
+
     {
         path:"marketmonitoring",
         element:<MarketMontoring />
@@ -42,7 +40,7 @@ export const DashboardRoutes=[
     },
     {
         path:"exchangeAnalysis",
-        element:<Exchange />
+        element:<ReCharts2 />
     },
     {
         path:"powerAtlas",
@@ -71,7 +69,8 @@ export const DashboardRoutes=[
     // <DashBoardItem title="Grid Frequency Profile" to="gridFrequencyProfile" />
     {
         path:"priceForcasting",
-        element:{}
+        element:<PriceForcasting />,
+        notPrtoected:true
     },
     {
         path:"demandForecasting",
