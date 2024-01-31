@@ -10,7 +10,7 @@ import { DemoExchangeData } from "./DemoExchangeData";
 import { PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../../../common";
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { Chart as ChartJS } from 'chart.js';
-import { COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
+import { COST_MU, COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ExchangeChartData, FormatExchangeData, RealTimeChartData, formatRealTimeChartData } from "./ExchangeData";
 import FootNote from "../../../components/charts/footnote";
@@ -22,7 +22,9 @@ function Exchange() {
   const [RealTimeChartData, setRealTimeChartData] = useState<RealTimeChartData[]>([]);
   const [pageIndex, setPageIndex] = useState<number>(0);
   const [realTimechartIndex, setRealtimeChartIndex] = useState<number>(1);
+
   const [IexChartData, setIexChartData] = useState<ExchangeChartData[]>([]);
+
   const [pXILChartData, setPXILChartData] = useState<ExchangeChartData[]>([]);
   const [hPAChartData, setHPAChartData] = useState<ExchangeChartData[]>([]);
   const [byProductIndex, setByProductIndex] = useState<number>(0);
@@ -34,6 +36,7 @@ function Exchange() {
 
     fetchExchangeData(
       // get days in this format "03-01-2024"
+
       // new Date().toLocaleDateString('en-GB').split('/').reverse().join('-')
       // Get the date of 7 days ago
       new Date(new Date().getTime() - (0 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-GB').split('/').join('-')
@@ -48,7 +51,7 @@ function Exchange() {
       <div className="flex flex-row justify-between">
         <div className="flex mt-4 space-x-3 h-10">
           <MediumButton buttonTitle="By Exchange" isActive={pageIndex === 0} onClick={() => setPageIndex(0)} />
-          <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
+        <MediumButton buttonTitle="By Product" isActive={pageIndex === 1} onClick={() => setPageIndex(1)} />
           <MediumButton buttonTitle="Realtime" isActive={pageIndex === 2} onClick={() => setPageIndex(2)} />
 
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
@@ -65,7 +68,7 @@ function Exchange() {
         }
       </div>
       <div>
-        {pageIndex === 1 &&
+      {pageIndex === 1 &&
           <div className="p-5">
             <div className="flex flex-row justify-between">
               <div className="text-2xl text-center">Price and Volume by Product</div>
@@ -122,7 +125,7 @@ function Exchange() {
 
                 } />
             </div>
-            <FootNote source="Source - IEX, PXIL, HPX" />
+                <FootNote source="Source - IEX, PXIL, HPX" />
 
           </div>
         }
@@ -174,10 +177,10 @@ function Exchange() {
 
               }
             </div>
-            <FootNote source="Source - IEX, PXIL, HPX" />
+            <FootNote source="Source - IEX, PXIL, HPX"    /> 
 
           </div>
-
+          
         }
         {pageIndex === 2 &&
           <div className="p-5">
@@ -189,7 +192,7 @@ function Exchange() {
                     RealTimeChartData.map((data, index) => {
                       return <MediumButton onClick={() => setRealtimeChartIndex(index)} buttonTitle={data.title} isActive={index === realTimechartIndex} />
                     })}
-
+                    
                 </div>
               </div>
 
@@ -203,8 +206,8 @@ function Exchange() {
                     )} />
                 </div></div>
             </div>
-            <FootNote source="Source - IEX" />
-          </div>
+        <FootNote source="Source - IEX" />
+            </div>
         }
 
 
@@ -316,12 +319,12 @@ function Exchange() {
                   ]
                 }}
                 options={GetChartOptions(
-                  { textTitle: `Weighted MCP (${COST_UNIT})`, isStacked: true, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_UNIT})`, fontSize: 20, maintainAspectRatio: false, enableZoom: false }
+                  { textTitle: `Weighted MCP (${COST_MU})`, isStacked: true, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_MU})`, fontSize: 20, maintainAspectRatio: false, enableZoom: false }
                 )} />
 
 
             </div>
-          </div>}
+      </div>}
 
 
 
@@ -435,13 +438,13 @@ function Exchange() {
 
 const PrepareExchangeChartOptions = (textTitle: string) => {
   return GetChartOptions(
-    { textTitle: textTitle, fontSize: 20, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_UNIT})`, y2LabelText: 'MW', secondYaxis: true, maintainAspectRatio: false }
+    { textTitle: textTitle, fontSize: 20, displayTitle: true, displayLegend: true, displayYLabel: true, yLabelText: `Weighted MCP (${COST_MU})`, y2LabelText: 'MW', secondYaxis: true, maintainAspectRatio: false }
   )
 }
 
-const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[], mcv: number[] }) => {
+const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { labels: any, SellBids: number[], prchsBids: number[], wtMcp: number[], mcv:number[] }) => {
   return {
-    labels: labels.map((label: any, index: any) => (index + 1).toString()),
+    labels: labels.map((label: any, index: any) => (index+1).toString()),
     datasets: [
       {
         type: 'line' as const,
@@ -465,7 +468,7 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
       },
       {
         type: 'line' as const,
-        label: `MCV (${MEGA_POWER_UNIT})`,
+        label: `MCV (${ENERGY_UNIT})`,
         data: mcv,
         yAxisID: 'y1',
         pointRadius: 1,
@@ -474,10 +477,10 @@ const PrepareExchangeDataSet = ({ labels, SellBids, prchsBids, wtMcp, mcv }: { l
         borderColor: 'red',
       },
       {
-        label: `Price (${COST_UNIT})`,
+        label: `Price (${COST_MU})`,
         data: wtMcp,
         yAxisID: 'y',
-
+        
         backgroundColor: SecondaryColor,
         borderColor: SecondaryColor,
       },
@@ -501,7 +504,7 @@ const addFloatList = (...lists: number[][]) => {
   })
   return result;
 }
-
+ 
 
 
 export default Exchange;

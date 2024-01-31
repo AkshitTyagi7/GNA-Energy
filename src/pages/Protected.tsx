@@ -88,6 +88,7 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
         <div style={{
             width: '100%',
             height: '100%',
+            display:'unset'
         }}>
             {
                 loading ? <Loading />: access ? children : <Navigate to="/dashboard" />
