@@ -58,48 +58,14 @@ export function FormatExchangeData(data : any): ExchangeData{
             }
             );
         });
-        // data[key].data.dam.map((item: any, index: number) => {
-        //     fomattedDataArray.dam.push({
-        //         name: index+1,
-        //         wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
-        //         sell_bid_mw: parseFloat(item.sell_bid_mw),
-        //         prchs_bid_mw: parseFloat(item.prchs_bid_mw),
-        //         date: item.date,
-        //     });
-        // }
-        // );
-        // data[key].data.gdam.map((item: any, index: number) => {
-        //     fomattedDataArray.gdam.push({
-        //         name: index+1,
-        //         wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
-        //         sell_bid_mw: parseFloat(item.sell_bid_mw),
-        //         prchs_bid_mw: parseFloat(item.prchs_bid_mw),
-        //         date: item.date,
-        //     });
-        // }
-        // );
-        // data[key].data.rtm.map((item: any, index: number) => {
-        //     fomattedDataArray.rtm.push({
-        //         name: index+1,
-        //         wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
-        //         sell_bid_mw: parseFloat(item.sell_bid_mw),
-        //         prchs_bid_mw: parseFloat(item.prchs_bid_mw),
-        //         date: item.date,
-        //     });
-        // }
-        // );
-        // data[key].data.hpdam.map((item: any, index: number) => {
-        //     fomattedDataArray.hpdam.push({
-        //         name: index+1,
-        //         wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
-        //         sell_bid_mw: parseFloat(item.sell_bid_mw),
-        //         prchs_bid_mw: parseFloat(item.prchs_bid_mw),
-        //         date: item.date,
-        //     });
-        // }
-        // );
-
-
+    });
+    Object.keys(fomattedDataArray).map((key, index) => {
+        fomattedDataArray[key] = fomattedDataArray[key].sort((a: any, b : any) => {
+            const dateA = parseDate(a.date);
+            const dateB = parseDate(b.date);
+        
+            return dateA.getTime() - dateB.getTime();
+                });
     });
 
     return fomattedDataArray;
@@ -221,5 +187,8 @@ return formatedData;
 
 
 
-
+const parseDate = (dateString: string): Date => {
+  const [day, month, year] = dateString.split('-').map(Number);
+  return new Date(year, month - 1, day); // Month is 0-indexed in JavaScript Dates
+};
 
