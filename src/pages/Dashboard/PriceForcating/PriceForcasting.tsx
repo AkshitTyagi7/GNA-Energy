@@ -31,7 +31,7 @@ export function PriceForecasting() {
         <>
     
         <div className="text-right flex justify-between width-full mt-4 ml-4">
-        <h2 className="text-center text-2xl mt-0">Price Forecasting</h2>
+        <h2 className="text-center text-2xl mt-0">Price Forecast</h2>
         <div>
             <input type="date" className=" mr-3 p-2 br-20 rounded-lg" max={endDate.toLocaleDateString('en-GB').split('/').reverse().join('-')} value={startDate.toLocaleDateString('en-GB').split('/').reverse().join('-')} onChange={(e) => {
                 setStartDate(new Date(e.target.value));
@@ -87,9 +87,9 @@ export function PriceForecasting() {
                       }}
                     />
                     <Line strokeWidth={4}
-                        dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forecasted Value"} />
+                        dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forecast IEX Dam price"} />
                     <Line strokeWidth={4}
-                        dataKey="actual_value" stroke={PrimaryColor} color={PrimaryColor} fill={PrimaryColor} name="Actual Value" />
+                        dataKey="actual_value" stroke={PrimaryColor} color={PrimaryColor} fill={PrimaryColor} name="Actual IEX Dam Price" />
                     <XAxis dataKey="name" />
                     <Brush
 
