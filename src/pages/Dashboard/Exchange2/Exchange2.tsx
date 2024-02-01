@@ -297,7 +297,11 @@ export default function ExchangePage() {
             }
             title="HPX"
           />
-          <ExchangeChart data={pxilData.dam} showBrush={true} title="PXIL" />
+          <ExchangeChart data={
+              Object.keys(pxilData).map((data, index) => {
+                return pxilData[data];
+              })[selectedProductIndex[0]]
+          } showBrush={true} title="PXIL" />
         </>
       )}
       {pageIndex === 2 && (
