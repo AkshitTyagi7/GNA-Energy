@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import { PowerBiFrame } from "../../../components/frame";
+import { DemoExchangeData } from "./DemoExchangeData";
+import { FormatMarketMonitoringData } from "./FormatData";
 
 export function MarketMontoring () {
+  useEffect
+  (() => {
+  console.log(  FormatMarketMonitoringData(DemoExchangeData));
+    
+
+  },[]);
     return (
       PowerBiFrame
       ({
