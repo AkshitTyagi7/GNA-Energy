@@ -114,7 +114,7 @@ export const ExchangeChart = ({
             >
               <Label
                 value={MEGA_POWER_UNIT}
-                width={110}
+                width={80}
                 position="middle"
                 color="black"
                 fontSize={12}
@@ -126,6 +126,7 @@ export const ExchangeChart = ({
             {/* <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={0} /> */}
 
             <Tooltip
+            
               labelFormatter={(value, payload) => {
                 try {
                   return [`${payload[0].payload.date} - Time Slot ${value}`];
@@ -143,7 +144,14 @@ export const ExchangeChart = ({
                 return [parseFloat(value.toString()).toFixed(2), name];
               }}
             />
-            <Legend verticalAlign="top" />
+            <Legend verticalAlign="top" 
+          align="center"
+            wrapperStyle={{
+              fontSize: "12px",
+              paddingRight: "50px",
+            }}
+      
+            />
 
             <Bar
               dataKey="wt_mcp_rs_mwh"
