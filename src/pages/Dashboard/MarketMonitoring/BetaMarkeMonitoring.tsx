@@ -6,29 +6,65 @@ import {
   Line,
   Brush,
   Tooltip,
-  Legend
+  Legend,
+  CartesianGrid
 } from "recharts";
 import { DemoExchangeData, Exchange, Markets, Products } from "./DemoExchangeData";
 import { ChartExchangeItem, FormatMarketMonitoringData } from "./FormatData";
 import { filters } from "./Filters";
-import { Color1, ColorBlue, ColorRed, ColorYellow, PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../../../common";
+import { Color1, ColorBlue, ColorRed, ColorYellow, PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor, buildHttpReq } from "../../../common";
 import { IdTitle, SubMenu } from "../../../components/SubMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ReactComponent as UpIcon } from "../../../icons/up.svg";
 import { ReactComponent as DownIcon } from "../../../icons/down.svg";
 import "./MarketMonitoring.css";
 import React from "react";
 import Select from "react-select";
 import { MediumButton } from "../../../components/Button";
-
+let selectedMarket: string[] = [];
+let selectedExchange: string[] = [];
+let selectedProduct: string[] = [];
 export function BetaMarketMontoring() {
-  const data: ChartExchangeItem[] =
-    FormatMarketMonitoringData(DemoExchangeData);
+  const [productData, setProductData] = useState<ChartExchangeItem[]>([]);
+  const [priceData, setPriceData] = useState<ChartExchangeItem[]>([]);
+  const [tabIndex, setTabIndex] = useState<number>(0);
   const [selectedFilter, setSelectedFilter] = useState<string | null>(
     "Exchange"
   );
-  const [selectedSubFilter, setSelectedSubFilter] = React.useState<IdTitle[] >([filters[0].subfilter[0]]);
 
+  
+
+  const optionStyle = {
+   
+        
+    valueContainer: (provided: any, state: any) => ({
+      ...provided,
+      // height: '80px',
+      maxHeight: '80px',
+      padding: '6px 6px',
+      overflow:'scroll'
+    }),
+
+    input: (provided: any, state: any) => ({
+      ...provided,
+      margin: '0px',
+
+    }),
+    indicatorSeparator: (state: any) => ({
+
+    }),
+    indicatorsContainer: (provided: any, state: any) => ({
+      ...provided,
+      // height: '30px',
+
+
+    }),
+   }
+
+  const [selectedSubFilter, setSelectedSubFilter] = React.useState<IdTitle[]>([filters[0].subfilter[0]]);
+   useEffect(() => {
+    fetchData({exchange: selectedExchange, market: selectedMarket, product: selectedProduct});
+  }, [])
   return (
     <>
             <div className="flex  w-full space-x-2 mt-2">
@@ -37,6 +73,13 @@ export function BetaMarketMontoring() {
             className="searchSelect"
             closeMenuOnSelect={false}
             isMulti
+            styles={optionStyle}
+
+            onChange={(selectedOption) => {
+                selectedMarket = selectedOption.map((item) => item.value);
+                fetchData({exchange: selectedExchange, market: selectedMarket, product: selectedProduct});
+
+            }}
       
             
             options={Markets.map((item) => {
@@ -49,6 +92,8 @@ export function BetaMarketMontoring() {
             <Select 
             placeholder="Select Exchange"
             className="searchSelect"
+            styles={optionStyle}
+
             closeMenuOnSelect={false}
             isMulti
             options={Exchange.map((item) => {
@@ -57,11 +102,21 @@ export function BetaMarketMontoring() {
                     label: item
                 }
             })}
+            onChange={(selectedOption) => {
+                selectedExchange = selectedOption.map((item) => item.value);
+                fetchData({exchange: selectedExchange, market: selectedMarket, product: selectedProduct});
+
+            }}
             />
             <Select
             placeholder="Select Product"
            className="searchSelect"
+           styles={optionStyle}
            isMulti
+           onChange={(selectedOption) => {
+            selectedProduct = selectedOption.map((item) => item.value);
+            fetchData({exchange: selectedExchange, market: selectedMarket, product: selectedProduct});
+           }}
             closeMenuOnSelect={false}
             options={
                 Products.map((item) => {
@@ -74,58 +129,33 @@ export function BetaMarketMontoring() {
         </div>
       <div className="marketMonitorkingBody justify-between">
         <div className="">
-
-                {/* <div
-                  className="filterItem flex justify-between align-middle"
-                  onClick={() => {
-                    setSelectedFilter(
-                      selectedFilter === filterItem.name ? null : filterItem.name
-                    );
-                  }}
-                  style={{
-                    background: PrimaryColor,
-                    color: "white",
-                  }}
-                >
-                  {filterItem.name}
-                  {selectedFilter === filterItem.name ? (
-                    <UpIcon width={20} height={20} className="whiteIcon" />
-                  ) : (
-                    <DownIcon width={15} height={15} className="whiteIcon" />
-                  )}
-                </div> */}
                 <div style={{}}>
                     <div className="flex justify-between">
                         <h2 className="text-2xl">Market Monitoring</h2>
                   <div>
-                    <MediumButton buttonTitle="By Product" onClick={()=>{}} isActive={true}/>
-                    <MediumButton buttonTitle="By Price" onClick={()=>{}} isActive={false}/>
+                    <MediumButton buttonTitle="By Product" onClick={()=>{
+                      setTabIndex(0);
+                    }} isActive={tabIndex==0}/>
+                    <MediumButton buttonTitle="By Price" onClick={()=>{
+                      setTabIndex(1);
+                    }} isActive={tabIndex==1}/>
                     </div></div>
-                    {/* {
-                        filterItem.subfilter.map((subfilterItem) => {
-                            return (
-                                <SubMenu
-                                    item={subfilterItem}
-                                    onSelected={(item: IdTitle) => {
-                                        selectedSubFilter?.filter((item) => item!.id === subfilterItem!.id)!.length > 0 ? setSelectedSubFilter(selectedSubFilter?.filter((item) => item!.id !== subfilterItem!.id)) : setSelectedSubFilter([...selectedSubFilter!, subfilterItem]);
-                                        // setSelectedSubFilter();
-                                    }}
-                                    isSelected={selectedSubFilter?.filter((item) => item!.id === subfilterItem!.id)!.length > 0 ? true : false}
-                                />
-                            );
-                        })
-                    } */}
+
                   
   
    </div>
    </div>
 
         <ResponsiveContainer width={"98%"}>
-          <ResponsiveContainer width="98%" height={"90%"}>
-            <ComposedChart data={data}>
+          <ResponsiveContainer >
+            <ComposedChart data={
+              tabIndex == 0 ? productData : priceData
+            }>
+              <CartesianGrid strokeDasharray="20 20" />
+
               <XAxis dataKey="month" fontSize={12} />
               <YAxis />
-              {/* <Line strokeWidth={3} type="monotone" dataKey="dam" stroke={PrimaryColor} /> */}
+              <Line strokeWidth={3} type="monotone" dataKey="dam" stroke={PrimaryColor} />
               <Line strokeWidth={3} type="monotone" dataKey="rtm" stroke={SecondaryColor} />
               <Line strokeWidth={3} type="monotone" dataKey="gdam" stroke={ColorBlue} />
               <Line strokeWidth={3} type="monotone" dataKey="intraDay" stroke={QuaternaryColor}/>
@@ -148,8 +178,12 @@ export function BetaMarketMontoring() {
                 dataKey="month"
                 height={30}
                 stroke="#8884d8"
-                startIndex={0}
-                endIndex={10}
+                // startIndex={
+                //   data.length > 0 ? data.length - 11 : 0
+                // }
+                // endIndex={
+                //   data.length > 0 ? data.length - 1 : 0
+                // }
               />
               <Legend verticalAlign="top"/>
               <Tooltip />
@@ -159,4 +193,39 @@ export function BetaMarketMontoring() {
       </div>
     </>
   );
+
+  async function fetchData(
+    {exchange, market, product}: {exchange: string[], market: string[], product: string[]}
+  ){
+   const res= await buildHttpReq({
+      endpoint:"market_monitoring_volume_api",
+      method: "POST",
+      body:{
+        exchange: exchange.toString(),
+        market: market.toString(),
+        product: product.toString()
+      }
+  })
+
+  console.log("Chart Data = ",FormatMarketMonitoringData(res));
+  setProductData(FormatMarketMonitoringData(res));
+  
+  const byPrice= await buildHttpReq({
+    endpoint:"market_monitoring_price_api",
+    method: "POST",
+    body:{
+      exchange: exchange.toString(),
+      market: market.toString(),
+      product: product.toString()
+    }
+  })
+  setPriceData(FormatMarketMonitoringData(byPrice));
 }
+
+
+
+
+
+
+}
+

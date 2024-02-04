@@ -20,5 +20,22 @@ export const filters=
 
             ]
 
+        },
+        {
+            name: "Month",
+            subfilter:[
+                {id:"January",title:"January"},
+                {id:"February",title:"February"},
+                {id:"March",title:"March"},
+                {id:"April",title:"April"},
+                {id:"May",title:"May"},
+                {id:"June",title:"June"},
+                {id:"July",title:"July"},
+                {id:"August",title:"August"},
+                {id:"September",title:"September"},
+                {id:"October",title:"October"},
+                {id:"November",title:"November"},
+                {id:"December",title:"December"}
+            ]
         }
     ]
