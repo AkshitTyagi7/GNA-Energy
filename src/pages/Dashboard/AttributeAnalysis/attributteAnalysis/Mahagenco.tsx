@@ -32,8 +32,7 @@ export default function MahaGenco() {
 
             </div>
             <div className="flex space-x-1 justify-between">
-                <div className="w-1/2 h-full border-r justify-star
-t">
+                <div className="w-1/2 h-full border-r justify-start">
                     <SearchGenerator />
                     <div className="mt-2">
                         {
@@ -53,10 +52,6 @@ t">
 
                                             }>
                                             {item.name}
-                                            {/* <UpIcon width={20} height={20} color="white" className={
-                        selectedFilter ===item.name ? "whiteIcon" : "blackIcon"
-                        } 
-                         /> */}
                                             {
                                                 selectedFilter === item.name ? <UpIcon width={20} height={20} className="whiteIcon" /> : <DownIcon width={15} height={15} className="whiteIcon" />
                                             }
@@ -125,7 +120,8 @@ t">
     )
 
     function SearchGenerator() {
-        return (<Select
+        return (
+        <Select
             closeMenuOnSelect={false}
             isMulti
             styles={{
