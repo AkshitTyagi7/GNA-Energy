@@ -116,27 +116,53 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
         });
     });
     const finalChartExchangeData: ChartExchangeItem[] = [];
-    formattedDataArray.dam.forEach((item, index) => {
-            finalChartExchangeData.push({
-                month: item.month,
-                dam: item.value,
-                rtm: formattedDataArray.rtm[index]?.value ?? [],
-                gdam: formattedDataArray.gdam[index]?.value ?? [],
-                intraDay: formattedDataArray.intraDay[index]?.value ?? [],
-                contingencyContracts: formattedDataArray.contingencyContracts[index]?.value ?? [],
-                // daily: formattedDataArray.daily[index].value,
-                // weekly: formattedDataArray.weekly[index].value,
-                // monthly: formattedDataArray.monthly[index].value,
-                // anyDay: formattedDataArray.anyDay[index].value,
-                // singleSided: formattedDataArray.singleSided[index].value,
-                daily: formattedDataArray.daily[index]?.value ?? [],
-                weekly: formattedDataArray.weekly[index]?.value ?? [],
-                monthly: formattedDataArray.monthly[index]?.value ?? [],
-                anyDay: formattedDataArray.anyDay[index]?.value ?? [],
-                singleSided: formattedDataArray.singleSided[index]?.value ?? [],
-            });
-     
+
+    let maxLength = 0;
+    let maxLengthKey = "";
+    Object.keys(formattedDataArray).forEach((key) => {
+        if (formattedDataArray[key as keyof MarketMonitoringData].length > maxLength) {
+            maxLength = formattedDataArray[key as keyof MarketMonitoringData].length;
+            maxLengthKey = key;
+        }
     });
-    console.log(finalChartExchangeData);
+    for(let index= 0; index < 
+        maxLength; index++
+        ){
+            finalChartExchangeData.push({
+                month: formattedDataArray[maxLengthKey as keyof MarketMonitoringData][index].month,
+                dam: formattedDataArray.dam[index]?.value ?? null,
+                rtm: formattedDataArray.rtm[index]?.value ?? null,
+                gdam: formattedDataArray.gdam[index]?.value ?? null,
+                intraDay: formattedDataArray.intraDay[index]?.value ?? null,
+                contingencyContracts: formattedDataArray.contingencyContracts[index]?.value ?? null,
+                daily: formattedDataArray.daily[index]?.value ?? null,
+                weekly: formattedDataArray.weekly[index]?.value ?? null,
+                monthly: formattedDataArray.monthly[index]?.value ?? null,
+                anyDay: formattedDataArray.anyDay[index]?.value ?? null,
+                singleSided: formattedDataArray.singleSided[index]?.value ?? null,
+            });
+        }    
+        console.log(finalChartExchangeData);
+    // formattedDataArray.dam.forEach((item, index) => {
+    //         finalChartExchangeData.push({
+    //             month: item.month,
+    //             dam: item.value,
+    //             rtm: formattedDataArray.rtm[index]?.value ?? [],
+    //             gdam: formattedDataArray.gdam[index]?.value ?? [],
+    //             intraDay: formattedDataArray.intraDay[index]?.value ?? [],
+    //             contingencyContracts: formattedDataArray.contingencyContracts[index]?.value ?? [],
+    //             // daily: formattedDataArray.daily[index].value,
+    //             // weekly: formattedDataArray.weekly[index].value,
+    //             // monthly: formattedDataArray.monthly[index].value,
+    //             // anyDay: formattedDataArray.anyDay[index].value,
+    //             // singleSided: formattedDataArray.singleSided[index].value,
+    //             daily: formattedDataArray.daily[index]?.value ?? [],
+    //             weekly: formattedDataArray.weekly[index]?.value ?? [],
+    //             monthly: formattedDataArray.monthly[index]?.value ?? [],
+    //             anyDay: formattedDataArray.anyDay[index]?.value ?? [],
+    //             singleSided: formattedDataArray.singleSided[index]?.value ?? [],
+    //         });
+     
+    // });
     return finalChartExchangeData;
 }

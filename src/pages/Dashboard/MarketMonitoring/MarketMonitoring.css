@@ -1,6 +1,7 @@
 .marketMonitorkingBody{
-    height: 90vh;
+    height: 88vh;
     padding: 20px;
+    padding-top: 15px;
 }
 
 /* .filters{
@@ -9,5 +10,23 @@
 } */
 
 .searchSelect{
-    width: 23%;
+    width: 30%;
+}
+
+.dateSelect{
+    width: 147px;
+}
+.filter-item{
+    margin-bottom: 0.25vw;
+    padding: 0.25vw;
+    width: 100%;
+    border-radius:4px;
+    text-align: center;
+    font-size: 0.85vw;
+    background-color: whitesmoke;
+}
+
+.activeFilter{
+    background-color: #F1935C;
+    color: white;
 }

@@ -1,7 +1,7 @@
 import { SecondaryColor } from "../common";
 
 export interface IdTitle{
-    id: string,
+    id: string | number,
     title: string
 }
 export function SubMenu({ item, onSelected, isSelected }: {item: IdTitle,onSelected:Function,isSelected:boolean })  {
