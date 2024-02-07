@@ -122,7 +122,6 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
             });
         });
     });
-    console.log(formattedDataArray);
     const finalChartExchangeData: ChartExchangeItem[] = [];
 
     let maxLength = 0;
