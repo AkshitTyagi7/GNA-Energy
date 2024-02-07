@@ -212,10 +212,10 @@ const TamProducts: Product[] = [
     id: 10,
     name: "Any Day Single Sided Contracts",
   },
-  {
-    id: 11,
-    name: "Trading Licenses",
-  },
+  // {
+  //   id: 11,
+  //   name: "Trading Licenses",
+  // },
 ];
 
 export const Markets: Filter[] = [
@@ -290,7 +290,7 @@ export const Exchange: Filter[] = [
   {
     id: 4,
     name: "Traders",
-    products: [{ id: 11, name: "Trading Licenses" }],
+    products: [{ id: 11, name: "Trading License" }],
   },
 ];
 export const Months = [

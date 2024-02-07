@@ -17,7 +17,7 @@ import {
   Markets,
   Product,
 } from "./DemoExchangeData";
-import { ChartExchangeItem, FormatMarketMonitoringData } from "./FormatData";
+import { ChartByPriceItem, ChartExchangeItem, FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
 import { filters } from "./Filters";
 import {
   Color1,
@@ -39,7 +39,6 @@ import React from "react";
 import Select from "react-select";
 import { MediumButton } from "../../../components/Button";
 import { COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
-let selectedProduct: Filter[] = [];
 let startMonth: {
   value: number;
   label: string;
@@ -55,71 +54,40 @@ let endMonth: {
   label: "",
 };
 export function BetaMarketMontoring() {
-  const [productData, setProductData] = useState<ChartExchangeItem[]>([]);
-  const [priceData, setPriceData] = useState<ChartExchangeItem[]>([]);
-  const [chartData, setChartData] = useState<ChartExchangeItem[]>(
-    productData
+  const [productData, setProductData] = useState<any[]>([]);
+  const [priceData, setPriceData] = useState<any[]>([]);
+  const [chartData, setChartData] = useState<any[]>(
+    []
   );
   const [tabIndex, setTabIndex] = useState<number>(0);
   const [selectedMarket, setSelectedMarket] = useState<Filter[]>(Markets);
-  const [selectedExchange, setSelectedExchange] = useState<Filter[]>([]);
+  const [selectedExchange, setSelectedExchange] = useState<Filter[]>(Exchange);
   const [selectedFilter, setSelectedFilter] = useState<Product[]>(
     getProducts({
       exchange: selectedExchange,
       market: selectedMarket,
     })
   );
+  const [byPriceProduct, setByPriceProduct] = useState<Product>(
+    getProducts({
+      exchange: selectedExchange,
+      market: selectedMarket,
+    })[0]
+  );
 
-  // const optionStyle = {
-  //   valueContainer: (provided: any, state: any) => ({
-  //     ...provided,
-  //     // height: '80px',
-  //     maxHeight: "60px",
-  //     padding: "6px 6px",
-  //     overflow: "scroll",
-  //   }),
-
-  //   input: (provided: any, state: any) => ({
-  //     ...provided,
-  //     margin: "0px",
-  //   }),
-  //   indicatorSeparator: (state: any) => ({}),
-  //   indicatorsContainer: (provided: any, state: any) => ({
-  //     ...provided,
-  //     // height: '30px',
-  //   }),
-  // };
-
-  // const optionStyle={
-  //   valueContainer: (provided: any, state: any) => ({
-  //     ...provided,
-      
-
-  //   }),
-
-  //   input: (provided: any, state: any) => ({
-  //     ...provided,
-      
-
-  //   }),
-  //   indicatorSeparator: (state: any) => ({}),
-  //   indicatorsContainer: (provided: any, state: any) => ({
-  //     ...provided,
-      
-  //     // height: '30px',
-  //   }),
-    
-  // }
-
-  const [selectedSubFilter, setSelectedSubFilter] = React.useState<IdTitle[]>([
-    filters[0].subfilter[0],
-  ]);
 
   useEffect(() => {
-    fetchData({
-      selectedExchange,
-      selectedMarket,
-      selectedProduct,
+    fetchVolumeData({
+      selectedExchange: Exchange,
+      selectedMarket: selectedMarket,
+      selectedProduct: selectedFilter,
+      startMonth,
+      endMonth,
+    });
+    fetchPriceData({
+      selectedExchange: Exchange,
+      selectedMarket: selectedMarket,
+      selectedProduct: byPriceProduct,
       startMonth,
       endMonth,
     });
@@ -137,123 +105,6 @@ export function BetaMarketMontoring() {
     <>
       <div className="marketMonitorkingBody ">
         <div className="flex  w-full space-x-2 ">
-          {/* <div className="flex space-x-2 w-full justify-between">
-            <div className="flex flex-grow space-x-4">
-              <Select
-                placeholder="Select Market"
-                className="searchSelect"
-                closeMenuOnSelect={false}
-                isMulti
-                styles={optionStyle}
-                onChange={(selectedOption) => {
-                  selectedMarket = selectedOption.map((item) => item.value);
-                  fetchData();
-                }}
-                options={Markets.map((item) => {
-                  return {
-                    value: item,
-                    label: item,
-                  };
-                })}
-              />
-              <Select
-                placeholder="Select Exchange"
-                className="searchSelect"
-                styles={optionStyle}
-                closeMenuOnSelect={false}
-                isMulti
-                options={Exchange.map((item) => {
-                  return {
-                    value: item,
-                    label: item,
-                  };
-                })}
-                onChange={(selectedOption) => {
-                  selectedExchange = selectedOption.map((item) => item.value);
-                  fetchData();
-                }}
-              />
-              <Select
-                placeholder="Select Product"
-                className="flex-grow searchSelect"
-                styles={optionStyle}
-                isMulti
-                onChange={(selectedOption) => {
-                  selectedProduct = selectedOption.map((item) => item.value);
-                  fetchData();
-                }}
-                closeMenuOnSelect={false}
-                options={Products.map((item) => {
-                  return {
-                    value: item,
-                    label: item,
-                  };
-                })}
-              />
-            </div>
-            <div className="flex space-x-2">
-              <Select
-                placeholder="Start Month"
-                className="dateSelect"
-                styles={optionStyle}
-                options={filters[2].subfilter.map((item) => {
-                  if (
-                    endMonth.value === -1 ||
-                    parseInt(item.id.toString()) <
-                      parseInt(endMonth.value.toString())
-                  ) {
-                    return {
-                      value: item.id,
-                      label: item.title,
-                    };
-                  } else {
-                    return {
-                      value: item.id,
-                      label: item.title,
-                      isDisabled: true,
-                    };
-                  }
-                })}
-                onChange={(selectedOption) => {
-                  startMonth = {
-                    value: selectedOption!.value as number,
-                    label: selectedOption!.label,
-                  };
-                  fetchData();
-                }}
-              />
-              <Select
-                placeholder="End Month"
-                className="dateSelect"
-                styles={optionStyle}
-                // options that are ahead of the start month
-                options={filters[2].subfilter.map((item) => {
-                  if (
-                    parseInt(item.id.toString()) >
-                    parseInt(startMonth.value.toString())
-                  ) {
-                    return {
-                      value: item.id,
-                      label: item.title,
-                    };
-                  } else {
-                    return {
-                      value: item.id,
-                      label: item.title,
-                      isDisabled: true,
-                    };
-                  }
-                })}
-                onChange={(selectedOption) => {
-                  endMonth = {
-                    value: selectedOption!.value as number,
-                    label: selectedOption!.label,
-                  };
-                  fetchData();
-                }}
-              />
-            </div>
-          </div>{" "} */}
         </div>
         <div className="">
           <div style={{}}>
@@ -285,10 +136,10 @@ export function BetaMarketMontoring() {
                     value: selectedOption!.value as number,
                     label: selectedOption!.label,
                   };
-                  fetchData({
+                  fetchVolumeData({
                     selectedExchange,
                     selectedMarket,
-                    selectedProduct,
+                    selectedProduct: selectedFilter,
                     startMonth,
                     endMonth,
                   });
@@ -320,14 +171,14 @@ export function BetaMarketMontoring() {
                     value: selectedOption!.value as number,
                     label: selectedOption!.label,
                   };
-                  fetchData({
+                  fetchVolumeData({
                     selectedExchange,
                     selectedMarket,
-                    selectedProduct,
+                    selectedProduct: selectedFilter,
                     startMonth,
                     endMonth,
                   });
-                  // fetchData();
+                  // fetchVolumeData();
                 }}
               />
             </div>
@@ -366,29 +217,32 @@ export function BetaMarketMontoring() {
                       selectedMarket.includes(item) ? "activeFilter" : ""
                     }`}
                     onClick={() => {
+                      let filter;
                       if (selectedMarket.includes(item)) {
                         setSelectedMarket(
                           selectedMarket.filter((i) => i != item)
                         );
-                        fetchData({
-                          selectedExchange,
-                          selectedMarket: selectedMarket.filter(
-                            (i) => i != item
-                          ),
-                          selectedProduct,
-                          startMonth,
-                          endMonth,
-                        });
+                        filter = selectedMarket.filter((i) => i != item);
+                      
                       } else {
                         setSelectedMarket([...selectedMarket, item]);
-                        fetchData({
-                          selectedExchange,
-                          selectedMarket: [...selectedMarket, item],
-                          selectedProduct,
-                          startMonth,
-                          endMonth,
-                        });
+                        filter = [...selectedMarket, item];
                       }
+                     fetchVolumeData({
+                        selectedExchange,
+                        selectedMarket: filter,
+                        selectedProduct: selectedFilter,
+                        startMonth,
+                        endMonth,
+                      });
+                       fetchPriceData({
+                        selectedExchange,
+                        selectedMarket: filter,
+                        selectedProduct: byPriceProduct,
+                        startMonth,
+                        endMonth,
+                      });
+                     
                     }}
                   >
                     {item.name}
@@ -397,7 +251,7 @@ export function BetaMarketMontoring() {
               })}
             </div>
             <div className="mt-2 ">
-              <div className="text-md text-slate-500">Exchange</div>
+              <div className="text-md text-slate-500">Exchange / Trader</div>
 
               {Exchange.map((item) => {
                 return (
@@ -406,29 +260,33 @@ export function BetaMarketMontoring() {
                       selectedExchange.includes(item) ? "activeFilter" : ""
                     }`}
                     onClick={() => {
+                      let filter;
                       if (selectedExchange.includes(item)) {
                         setSelectedExchange(
                           selectedExchange.filter((i) => i != item)
                         );
-                        fetchData({
-                          selectedExchange: selectedExchange.filter(
-                            (i) => i != item
-                          ),
-                          selectedMarket,
-                          selectedProduct,
-                          startMonth,
-                          endMonth,
-                        });
+                        filter = selectedExchange.filter((i) => i != item);
+
+                        
                       } else {
                         setSelectedExchange([...selectedExchange, item]);
-                        fetchData({
-                          selectedExchange: [...selectedExchange, item],
-                          selectedMarket,
-                          selectedProduct,
-                          startMonth,
-                          endMonth,
-                        });
+                        filter = [...selectedExchange, item];
+               
                       }
+                     fetchVolumeData({
+                        selectedExchange: filter,
+                        selectedMarket,
+                        selectedProduct: selectedFilter,
+                        startMonth,
+                        endMonth,
+                      }); fetchPriceData({
+                        selectedExchange: filter,
+                        selectedMarket,
+                        selectedProduct: byPriceProduct,
+                        startMonth,
+                        endMonth,
+                      });
+               
                     }}
                   >
                     {item.name}
@@ -447,14 +305,25 @@ export function BetaMarketMontoring() {
                 return (
                   <button
                     className={`filter-item ${
-                      selectedFilter.includes(item) ? "activeFilter" : ""
+                     tabIndex == 1 ? byPriceProduct.id == item.id ? "activeFilter" : "" : selectedFilter.filter((p)=>p.id == item.id).length > 0 ? "activeFilter" : ""
                     }`}
                     onClick={() => {
-                      if (selectedFilter.includes(item)) {
+                      if(tabIndex == 1){
+                        setByPriceProduct(item);
+                        fetchPriceData({
+                          selectedExchange,
+                          selectedMarket,
+                          selectedProduct: item,
+                          startMonth,
+                          endMonth,
+                        });
+                        return;
+                      }
+                      if (selectedFilter.filter((p)=>p.id == item.id).length > 0) {
                         setSelectedFilter(
                           selectedFilter.filter((i) => i.id != item.id)
                         );
-                        fetchData({
+                        fetchVolumeData({
                           selectedExchange: selectedExchange,
                           selectedMarket: selectedMarket,
                           selectedProduct: selectedFilter.filter(
@@ -465,7 +334,7 @@ export function BetaMarketMontoring() {
                         });
                       } else {
                         setSelectedFilter([...selectedFilter, item]);
-                        fetchData({
+                        fetchVolumeData({
                           selectedExchange: selectedExchange,
                           selectedMarket: selectedMarket,
                           selectedProduct: [...selectedFilter, item],
@@ -503,6 +372,47 @@ export function BetaMarketMontoring() {
                   height={60}
                 />
                 <YAxis />
+
+              {
+                tabIndex == 1 ? 
+                <> <Line
+                  strokeWidth={2}
+                  type="monotone"
+                  dot={false}
+                  dataKey="hpx"
+                  name="HPX"
+                  stroke={"rgb(17, 141, 255)"}
+                />
+               <Line
+                  strokeWidth={2}
+                  type="monotone"
+                  dot={false}
+                  dataKey="iex"
+                  name="IEX"
+                  stroke={"rgb(18, 35, 158)"}
+                />
+                <Line
+                  strokeWidth={2}
+                  type="monotone"
+                  dot={false}
+                  dataKey="pxil"
+                  name="PXIL"
+                  stroke={"rgb(230, 108, 55)"}
+                />
+                {
+                  chartData.filter(item=>item.traders).length != 0 ?
+                  <Line
+                  strokeWidth={2}
+                  type="monotone"
+                  dot={false}
+                  dataKey="traders"
+                  name="Traders"
+                  stroke={"skyblue"}
+                /> : null}
+</>
+
+                :
+                <>
              {
             chartData.filter(item=>item.dam).length != 0 ?
              <Line
@@ -514,87 +424,6 @@ export function BetaMarketMontoring() {
                   name="DAM"
                   stroke={PrimaryColor}
                 /> : null}
-                  {/* <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dataKey="rtm"
-                    dot={false}
-
-                    name="RTM"
-                    stroke={SecondaryColor}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dot={false}
-
-                    name="GDAM"
-                    dataKey="gdam"
-                    stroke={"Green"}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dot={false}
-
-                    dataKey="intraDay"
-                    name="Intra-Day Contracts"
-                    stroke={ColorBlue}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dot={false}
-
-                    name="Day Ahead Contingency Contracts"
-                    dataKey="contingencyContracts"
-                    stroke={"red"}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    name="Daily Contracts"
-                    dot={false}
-
-                    dataKey="daily"
-                    stroke={"slateblue"}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dataKey="weekly"
-                    dot={false}
-
-                    name="Weekly Contracts"
-                    stroke={"black"}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dataKey="monthly"
-                    dot={false}
-
-                    name="Monthly Contracts"
-                    stroke={"#710907"}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dot={false}
-
-                    name="Any Day Contracts"
-                    dataKey="anyDay"
-                    stroke={ColorYellow}
-                  />
-                  <Line
-                    strokeWidth={2}
-                    type="monotone"
-                    dataKey="singleSided"
-                    dot={false}
-
-                    name="Any Day Single Sided Contracts"
-                    stroke="#82ca9d"
-                  /> */}
 
                   {chartData.filter(item=>item.rtm).length != 0 ?
                   <Line
@@ -687,19 +516,24 @@ export function BetaMarketMontoring() {
                     name="Any Day Single Sided Contracts"
                     stroke="#82ca9d"
                   /> : null}
-
+                  {
+                           chartData.filter(item=>item.bilateral).length != 0 ?
+                           <Line
+                           strokeWidth={2}
+                           type="monotone"
+                           dot={false}
+                           dataKey="bilateral"
+                           name="Bilateral"
+                           stroke={"skyblue"} /> : null
+                  }
+             
+                  
+</>}
                   
                 <Brush
                   dataKey="month"
                   height={30}
                   stroke="#8884d8"
-                  // startIndex={
-                  //   chartData.length - 12
-                    
-                  // }
-                  // endIndex={
-                  //  chartData.length - 1
-                  // }
                 />
                 <Legend verticalAlign="top" />
                 <Tooltip
@@ -731,12 +565,7 @@ export function BetaMarketMontoring() {
     market: Filter[];
     exchange: Filter[];
   }): Product[] {
-    if (exchange.length === 0) {
-      // return unique products from all markets
-      return market
-        .flatMap((m) => m.products)
-        .filter((value, index, self) => self.indexOf(value) === index);
-    }
+
 
     const marketProducts = market.flatMap((m) => m.products);
     const exchangeProducts = exchange.flatMap((e) => e.products);
@@ -747,12 +576,14 @@ export function BetaMarketMontoring() {
     const commonProducts = uniqueMarketProducts.filter((mp) =>
       uniqueExchangeProducts.some((ep) => ep.id === mp.id)
     );
-    if(exchange.filter(item=>item.name == "Traders").length != 0){}
+    if(exchange.filter(item=>item.name == "Traders").length != 0){
+      tabIndex == 0 && commonProducts.push({id:13,name:"Bilateral"}) ;
+    }
 
     return commonProducts;
   }
 
-  async function fetchData({
+  async function fetchVolumeData({
     selectedExchange,
     selectedMarket,
     selectedProduct,
@@ -769,7 +600,7 @@ export function BetaMarketMontoring() {
       endpoint: "market_monitoring_volume_api",
       method: "POST",
       body: {
-        exchange: selectedExchange.map((item) => item.name).toString(),
+        exchange:selectedExchange.map((item) => item.name).toString(),
         market: selectedMarket.map((item) => item.name).toString(),
         product: selectedProduct.map((item) => item.name).toString(),
         start_month: startMonth.label,
@@ -779,20 +610,36 @@ export function BetaMarketMontoring() {
 
     setProductData(FormatMarketMonitoringData(res));
 
+
+
+ tabIndex == 0 &&   setChartData(FormatMarketMonitoringData(res));
+  }
+
+ async function fetchPriceData({
+    selectedExchange,
+    selectedMarket,
+    selectedProduct,
+    startMonth,
+    endMonth,
+  }: {
+    selectedExchange: Filter[];
+    selectedMarket: Filter[];
+    selectedProduct: Product;
+    startMonth: { value: number; label: string };
+    endMonth: { value: number; label: string };
+  }) {
     const byPrice = await buildHttpReq({
       endpoint: "market_monitoring_price_api",
       method: "POST",
       body: {
-        exchange: selectedExchange.map((item) => item.name).toString(),
-        market: selectedMarket.map((item) => item.name).toString(),
-        product: selectedProduct.map((item) => item.name).toString(),
+        exchange:selectedExchange.map((item) => item.name).toString(),
+        market:  selectedMarket.map((item) => item.name).toString(),
+        product: selectedProduct.name+",Trading Licensees",
         start_month: startMonth.label,
         end_month: endMonth.label,
       },
     });
-    tabIndex == 0? 
-    setChartData(FormatMarketMonitoringData(res)):
-    setChartData(FormatMarketMonitoringData(byPrice));
-    setPriceData(FormatMarketMonitoringData(byPrice));
+   tabIndex == 1 && setChartData(FormatByPriceData(byPrice));
+    setPriceData(FormatByPriceData(byPrice));
   }
 }
