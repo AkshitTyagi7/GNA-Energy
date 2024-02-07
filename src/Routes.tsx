@@ -25,7 +25,7 @@ export const DashboardRoutes=[
 
     {
         path:"marketmonitoring",
-        element:<MarketMontoring />
+        element:<BetaMarketMontoring />
     },
     {
         path:"bankingAnalytics",
@@ -80,9 +80,9 @@ export const DashboardRoutes=[
         path:"gridFrequencyProfile",
         element:{}
     },
-    {
-        path:"betaMarketMonitoring",
-        element: <BetaMarketMontoring />,
-        notPrtoected:true
-    }
+    // {
+    //     path:"betaMarketMonitoring",
+    //     element: <BetaMarketMontoring />,
+    //     notPrtoected:true
+    // }
 ]
