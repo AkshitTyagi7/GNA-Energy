@@ -38,7 +38,7 @@ export const DashboardRoutes=[
     },
     {
         path:"consumptionAndGenerationAnalytics",
-        element:<ConsumptionAnalytics />
+        element:<BetaConsumption />
     },
     {
         path:"exchangeAnalysis",
