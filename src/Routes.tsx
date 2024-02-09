@@ -10,6 +10,7 @@ import ReCharts2 from "./pages/Dashboard/Exchange2/Exchange2";
 import { ExchangeReCharts } from "./pages/ReCharts3";
 import { PriceForecasting } from "./pages/Dashboard/PriceForcating/PriceForcasting";
 import { BetaMarketMontoring } from "./pages/Dashboard/MarketMonitoring/BetaMarkeMonitoring";
+import { BetaConsumption } from "./pages/Dashboard/Consumption/BetaConsumption";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -80,6 +81,11 @@ export const DashboardRoutes=[
         path:"gridFrequencyProfile",
         element:{}
     },
+    {
+        path:"betaConsumption",
+        element: <BetaConsumption />,
+        notPrtoected:true
+    }
     // {
     //     path:"betaMarketMonitoring",
     //     element: <BetaMarketMontoring />,

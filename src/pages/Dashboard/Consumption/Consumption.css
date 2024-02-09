@@ -1,0 +1,26 @@
+.consumptionFilters{
+    overflow: scroll;
+    max-height: 90vh;
+    margin-top: 10px;
+    height: 90vh;
+}
+
+.ConsumptionChart{
+    height: 38vh;
+    
+}
+
+.OutageChart{
+    height: 86vh;
+}
+
+button.btn.rectangle.btn-primary.btn-medium {
+    height: 40px;
+}
+.consumptionButtons{
+    height: 35px;
+}
+
+.consumptionTitle{
+    font-size: 2vw;
+}
