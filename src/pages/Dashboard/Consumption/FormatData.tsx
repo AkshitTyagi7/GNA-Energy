@@ -1,5 +1,4 @@
 import state from "sweetalert/typings/modules/state";
-import { ConsumptionData } from "./Data";
 
 export interface ChartConsumptionData {
   date: string[];
@@ -238,6 +237,8 @@ export function FormatGenerationData(data: any) : GenerationChartData {
 
 export const ConsumptionColors: string[] = [
   // Shuffled using Math.random() approach
+  "rgb(17, 141, 255)",
+  "rgb(18, 35, 158)",
   "#FF8C00", // Dark Orange
   "#DC143C", // Crimson
   "#800080", // Purple
