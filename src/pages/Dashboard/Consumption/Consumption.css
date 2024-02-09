@@ -1,0 +1,14 @@
+.consumptionFilters{
+    overflow: scroll;
+    max-height: 95vh;
+    height: 93vh;
+}
+
+.ConsumptionChart{
+    height: 40vh;
+    
+}
+
+.OutageChart{
+    height: 86vh;
+}

@@ -11,23 +11,18 @@ import {
   Label,
 } from "recharts";
 import {
-  DemoExchangeData,
   Exchange,
   Filter,
   Markets,
   Product,
 } from "./DemoExchangeData";
-import { ChartByPriceItem, ChartExchangeItem, FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
+import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
 import { filters } from "./Filters";
 import {
-  Color1,
   ColorBlue,
-  ColorRed,
   ColorYellow,
   PrimaryColor,
-  QuaternaryColor,
   SecondaryColor,
-  TertiaryColor,
   buildHttpReq,
 } from "../../../common";
 import { IdTitle, SubMenu } from "../../../components/SubMenu";
@@ -39,6 +34,7 @@ import React from "react";
 import Select from "react-select";
 import { MediumButton } from "../../../components/Button";
 import { COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
+
 let startMonth: {
   value: number;
   label: string;
@@ -628,10 +624,13 @@ export function BetaMarketMontoring() {
     startMonth: { value: number; label: string };
     endMonth: { value: number; label: string };
   }) {
-    const byPrice = await buildHttpReq({
+    const byPrice = await buildHttpReq(
+
+      {
       endpoint: "market_monitoring_price_api",
       method: "POST",
-      body: {
+      body:
+       {
         exchange:selectedExchange.map((item) => item.name).toString(),
         market:  selectedMarket.map((item) => item.name).toString(),
         product: selectedProduct.name+",Trading Licensees",

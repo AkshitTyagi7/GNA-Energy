@@ -27,3 +27,17 @@ transition: 0.5s;
     transition: all 0.1s ease-in-out;
 }
 
+.filter-item{
+    margin-bottom: 0.25vw;
+    padding: 0.25vw;
+    width: 100%;
+    border-radius:4px;
+    text-align: center;
+    font-size: 0.85vw;
+    background-color: whitesmoke;
+}
+
+.activeFilter{
+    background-color: #F1935C;
+    color: white;
+}
