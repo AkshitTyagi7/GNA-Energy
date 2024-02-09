@@ -376,16 +376,7 @@ export function BetaConsumption() {
                   <Label value="MUs" angle={-90} position="insideLeft" />
                 </YAxis>
                 <CartesianGrid strokeDasharray="3 3" />
-                <Area
-                  type="monotone"
-                  dataKey="thermal"
-                  name="Thermal"
-                  stroke="#FF681F"
-                  fill="#FF681F"
-                  stackId={1}
-                  strokeWidth={3}
-                  hide={hiddenGenerationCharts.includes("Thermal")}
-                />
+        
                 <Area
                   type="monotone"
                   dataKey="wind"
@@ -434,6 +425,16 @@ export function BetaConsumption() {
 
                   fill="Red"
                   strokeWidth={3}
+                />
+                        <Area
+                  type="monotone"
+                  dataKey="thermal"
+                  name="Thermal"
+                  stroke="#FF681F"
+                  fill="#FF681F"
+                  stackId={1}
+                  strokeWidth={3}
+                  hide={hiddenGenerationCharts.includes("Thermal")}
                 />
                 <Tooltip 
                 formatter={(value, name, props) => {
