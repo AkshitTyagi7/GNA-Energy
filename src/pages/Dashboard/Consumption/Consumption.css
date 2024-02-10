@@ -19,13 +19,24 @@
 }
 
 .consumptionTitle{
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 .dateSelection{
     width: 305px;
-}
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle  ;
+    align-items: center;   /* <---- NEW    */
+
+    text-align: center;
+    }
 
 .consumptionButtons.btn{
     display: none!important;
+}
+
+.consumptionButton{
+    min-width: 80px!important;
+
 }
