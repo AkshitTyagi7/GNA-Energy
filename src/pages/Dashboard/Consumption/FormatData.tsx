@@ -230,8 +230,10 @@ export function FormatGenerationData(data: any) : GenerationChartData {
   });
   console.log("formattedData", formattedData);
   console.log("returning finalGenerationData", finalGenerationData);
+  finalGenerationData.states.sort();
   return finalGenerationData;
 }
+
 
 
 

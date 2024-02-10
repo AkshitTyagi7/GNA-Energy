@@ -11,9 +11,9 @@
 //             }</button>);
 // }
 
-export function SmallButton({buttonTitle, isActive = false, onClick}: {buttonTitle: string, isActive: boolean, onClick: () => void}) {
+export function SmallButton({buttonTitle, isActive = false, onClick, className}: {buttonTitle: string, isActive: boolean, onClick: () => void, className?: string}) {
     return (
-        <button className={`btn rectangle btn-primary btn-small ${isActive ? 'btn-active' : ''}`}
+        <button className={`btn rectangle btn-primary btn-small ${isActive ? 'btn-active' : ''} ${className}`}
             onClick={
                 onClick
             }

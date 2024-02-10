@@ -12,8 +12,10 @@ import {
   Line,
   Brush,
   ResponsiveContainer,
+  LineChart,
+  Label,
 } from "recharts";
-import { FormatDataOfRealtime, RealTimeChartData, formatRealTimeChartData } from "./FormatData";
+import { BuyerSeller, FormatDataOfRealtime, RealTimeChartData, formatRealTimeChartData } from "./FormatData";
 import {
   DemoExchangeData,
   DemoExchangeData2,
@@ -50,6 +52,7 @@ export default function ExchangePage() {
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
   >([]);
+  const [buyerVsSellerData, setBuyerVsSellerData] = useState<BuyerSeller[]>([]);
 
   const [pageIndex, setPageIndex] = useState(0);
   const [iexData, setIexData] = useState<ExchangeData>({
@@ -72,7 +75,7 @@ export default function ExchangePage() {
   });
 
   const [startDate, setStartDate] = useState(
-    new Date(new Date().getTime() - 4 * 24 * 60 * 60 * 1000)
+    new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
   );
   const [endDate, setEndDate] = useState(
     new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000)
@@ -85,6 +88,10 @@ export default function ExchangePage() {
       end_date: endDate,
     });
     fetchRealTimeData();
+    fetchBuyerVsSellerData(
+{      start_date: startDate,
+      end_date: endDate,}
+    )
   }, []);
 
   return (
@@ -109,7 +116,11 @@ export default function ExchangePage() {
             isActive={pageIndex === 2}
             onClick={() => setPageIndex(2)}
           />
-
+ <MediumButton
+            buttonTitle="Buyer vs Seller"
+            isActive={pageIndex === 3}
+            onClick={() => setPageIndex(3)}
+          />
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
         {pageIndex !== 2 && (
@@ -358,6 +369,53 @@ export default function ExchangePage() {
           <FootNote source="Source - IEX" />
         </div>
       )}
+      {
+        pageIndex === 3 &&
+        <div className="buyerVsSeller">
+          <h2 className="text-center text-2xl mt-0">Top Buyer vs Top Seller (MWhr)</h2>
+        <ResponsiveContainer>
+          <ComposedChart
+          data={buyerVsSellerData}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="id" />
+            <YAxis width={120} tickFormatter={
+              (value) => {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              }
+            
+            }>
+              <Label
+                value="MWhr"
+                angle={-90}
+                position="insideLeft"
+                style={{ textAnchor: "middle" }} />
+            </YAxis >
+            <Tooltip
+            contentStyle={
+              {
+                textAlign:"left",
+              }
+            }
+            formatter={
+              (value, name, props) => {
+                console.log(value, name, props); 
+                const newName= name === "Top Buyer" ? props.payload.buyer : props.payload.seller;
+                // add , after first 3 digits and then after every 2 digits
+                const formattedValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return [ [`${newName}: \n${formattedValue} MWhr`],];
+              }
+            }
+            />
+            <Legend verticalAlign="top" />
+            <Bar type="monotone" dataKey="buyer_mwhr" color={PrimaryColor} fill={PrimaryColor} stroke={PrimaryColor} name="Top Buyer" />
+            <Brush 
+             />
+            <Bar type="monotone" dataKey="seller_mwhr" color={SecondaryColor} fill={SecondaryColor} stroke={SecondaryColor} name="Top Seller"  />
+          </ComposedChart>
+        </ResponsiveContainer></div>
+      }
+      
     </>
   );
 
@@ -428,5 +486,32 @@ export default function ExchangePage() {
 
       setSelectedProductIndex([]);
     }
+  }
+  async function fetchBuyerVsSellerData({start_date,end_date} : {start_date:Date,end_date:Date}) {
+  const res = await buildHttpReq({
+    endpoint:"top_buyer_seller_api",
+    body:{
+      start_date:start_date
+        .toLocaleDateString("en-GB")
+        .split("/")
+        .join("-"),
+      end_date: end_date
+      .toLocaleDateString("en-GB")
+      .split("/")
+      .join("-"),
+    },
+    method:"POST"
+  })
+  let finalData: BuyerSeller[] = [];
+  for(let i=0;i<res.length;i++){
+    finalData.push({
+      buyer: res[i].buyer,
+      buyer_mwhr: parseFloat(res[i].buyer_mwhr),
+      id: res[i].id,
+      seller: res[i].seller,
+      seller_mwhr:parseFloat( res[i].seller_mwhr),
+    });
+  }
+  setBuyerVsSellerData(finalData);
   }
 }

@@ -15,3 +15,12 @@ li.recharts-tooltip-item {
 ul.recharts-default-legend {
     margin-bottom: 10px!important;
 }
+
+.buyerVsSeller{
+    margin-top: 10px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 70px);
+    height: calc(100vh - 120px);
+}
