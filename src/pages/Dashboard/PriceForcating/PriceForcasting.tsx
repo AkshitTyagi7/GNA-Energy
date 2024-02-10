@@ -87,9 +87,9 @@ export function PriceForecasting() {
                       }}
                     />
                     <Line strokeWidth={4}
-                        dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forecast IEX Dam price"} />
+                        dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forecast IEX DAM price"} />
                     <Line strokeWidth={4}
-                        dataKey="actual_value" stroke={PrimaryColor} color={PrimaryColor} fill={PrimaryColor} name="Actual IEX Dam Price" />
+                        dataKey="actual_value" stroke={PrimaryColor} color={PrimaryColor} fill={PrimaryColor} name="Actual IEX DAM Price" />
                     <XAxis dataKey="name" />
                     <Brush
 

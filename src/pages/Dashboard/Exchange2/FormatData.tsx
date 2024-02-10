@@ -15,6 +15,20 @@ export interface ExchngeItem{
 
     
 }
+// {
+//   "buyer": "GEB Beneficiary W0RGU0",
+//   "buyer_mwhr": "19508771.53",
+//   "id": "22-10-2021",
+//   "seller": "UPPCL N0RUP0",
+//   "seller_mwhr": "15202311.95"
+// },
+export interface BuyerSeller{
+    buyer: string;
+    buyer_mwhr: number;
+    id: string;
+    seller: string;
+    seller_mwhr: number;
+}
 
 export interface ExchangeData{
     dam:ExchngeItem[],

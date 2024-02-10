@@ -174,6 +174,15 @@ export function BetaConsumption() {
             }}
             isActive={tabIndex == 2}
           />
+
+          <SmallButton
+            buttonTitle="Realtime Generation"
+            onClick={() => {
+              setTabIndex(3);
+            }}
+            isActive={tabIndex == 3}
+          />
+
         </div>
       </div>
       <div className="flex flex-row w-full h-full">
