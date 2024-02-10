@@ -174,15 +174,14 @@ export function BetaConsumption() {
             }}
             isActive={tabIndex == 2}
           />
-
           <SmallButton
-            buttonTitle="Realtime Generation"
+            buttonTitle="Outage"
             onClick={() => {
-              setTabIndex(3);
+              setTabIndex(2);
             }}
-            isActive={tabIndex == 3}
+            isActive={tabIndex == 2}
           />
-
+          
         </div>
       </div>
       <div className="flex flex-row w-full h-full">
