@@ -88,10 +88,10 @@ export default function ExchangePage() {
       end_date: endDate,
     });
     fetchRealTimeData();
-    fetchBuyerVsSellerData(
-{      start_date: startDate,
-      end_date: endDate,}
-    )
+//     fetchBuyerVsSellerData(
+// {      start_date: startDate,
+//       end_date: endDate,}
+//     )
   }, []);
 
   return (
@@ -116,11 +116,11 @@ export default function ExchangePage() {
             isActive={pageIndex === 2}
             onClick={() => setPageIndex(2)}
           />
- <MediumButton
+ {/* <MediumButton
             buttonTitle="Buyer vs Seller"
             isActive={pageIndex === 3}
             onClick={() => setPageIndex(3)}
-          />
+          /> */}
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
         {pageIndex !== 2 && (

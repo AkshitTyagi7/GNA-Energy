@@ -6,6 +6,7 @@ import { buildHttpReq, buildUrl } from "../../common";
 import { getLoggedIn, getUser, isLoggedIn, setAccessToken, setLoggedIn, setUser } from "../Protected";
 import Loading from "../../components/Loading";
 import swal from "sweetalert";
+import {ReactComponent as LoginImage} from './InsightsLogin.svg';
 
 
 export function LoginPage() {
@@ -26,7 +27,7 @@ export function LoginPage() {
             }
 
             {<div className="lg:flex">
-                <div className="lg:w-1/3 xl:max-w-screen-sm">
+                <div className="lg:w-1/2 xl:w-1/3">
                     <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                         <div className="cursor-pointer flex items-center">
                             <div>
@@ -40,7 +41,7 @@ export function LoginPage() {
                         <div className="mt-8 2xl:mt:12">
                        { !isLoggedIn() ? <div>   <form onSubmit={
                                 handleFormSubmit
-                            }>
+                            }>                   
                                 <div>
                                     <div className="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
                                     <input
@@ -187,8 +188,9 @@ export function LoginPage() {
                 <div className="hidden lg:flex items-center justify-center bg-primary-100 flex-1 h-screen">
                     <div className=" text-center">
                         <h1 className="mb-10 primary text-4xl text-slate-600 font-display font-semibold">GNA ENERGY <br></br><div className="mb-10 primary text-3xl text-slate-600 font-display font-semibold"> DATA &  ANALYTICS CAPABILITY CENTER (GDACC)</div> </h1>
-                        <div className="transform duration-200 hover:scale-110 cursor-pointer flex justify-center px-20">
-                            <img src={DataAnalyticsImage} height={"200px"} />
+                        <div className="transform duration-200 hover:scale-110 cursor-pointer flex justify-center px-2">
+                            {/* <img src={DataAnalyticsImage} height={"200px"} /> */}
+                            <LoginImage height={"75vh"} width={"53vw"} />
                         </div>
                     </div>
 
