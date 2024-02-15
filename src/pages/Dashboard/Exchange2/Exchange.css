@@ -24,3 +24,8 @@ ul.recharts-default-legend {
     width: calc(100% - 70px);
     height: calc(100vh - 120px);
 }
+
+.buyerVsSellerChart{
+    width: 100%;
+    height: 40vh;
+}

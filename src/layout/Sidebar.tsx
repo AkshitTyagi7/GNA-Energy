@@ -7,23 +7,31 @@ import {ReactComponent as Logo} from '../logo.svg';
 import { NavLink, useLocation } from 'react-router-dom';
 import {ReactComponent as LogOut} from '../icons/logout.svg';
 import { setLoggedIn } from '../pages/Protected';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleMenu } from '../store/state/MenuState';
+import { RootState } from '../store/store';
 
 
 
 
 const Sidebar = () => {
   const location = useLocation();
+  const active = useSelector((state: RootState) => state.menu.isActive);
+  const dispatch = useDispatch();
+
   return (
-    <div className="flex-col p-3 fixed inline-flex ph-2 z-10 bg-white" style={{ width: '200px', height: '100%' }}>
-      <a href="/dashboard" className="flex space-x-5 text-center items-center">
-        <MenuIcon className='ml-3'/>
-        <Logo />
+    <div className={`flex-col p-3 fixed inline-flex ph-2 z-10 bg-white ${!active ? 'w-20' : ''}`} style={{  height: '100%',  transition: "width 2s" }}>
+      <a  className="flex space-x-5 text-center justify-center items-center" style={{height:40}}>
+        <MenuIcon onClick={()=>{
+          dispatch(toggleMenu());
+        }} className='ml'/>
+        {active && <Logo height={40} href="/dashboard" />}
       </a>
       <hr className="my-2 border-t border-gray-300" />
       <nav className="flex flex-col mb-auto">
-        <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard"  />
-          {/* <SideBarItems Icon={DocumentIcon} text="Document" href="/document"  /> */}
-          <SideBarItems Icon={GNAiIcon} text="GNAi" href="/gnai"  />
+        <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
+          <SideBarItems Icon={DocumentIcon} text="Document" isMenuActive={active} href="/document"  />
+          <SideBarItems Icon={GNAiIcon} text="GNAi" isMenuActive={active} href="/gnai"  />
           
           <SignOut />
       </nav>
@@ -31,17 +39,20 @@ const Sidebar = () => {
       
       <div className="relative">
         <div className='beta text-sm '>
-          <span className='font-bold text-slate-700'>Beta Version</span><br></br>
-          <span
+  
+       <span className='font-bold text-slate-700'>Beta Version</span><br></br>
+        {
+        active &&
+        <span
           onClick={
             () => {
               // mailto:info@gnaenergy
             }
           }
-          className='text-sm text-slate-700' >Contact: info@gna.energy</span>
+          className='text-sm text-slate-700' >Contact: info@gna.energy</span>}
         </div>
         <div className="absolute right-0 mt-2 bg-white border rounded shadow-md hidden">
-          <NavLink to="#"  className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">New project...</NavLink>
+          <NavLink  to="#"  className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">New project...</NavLink>
           <NavLink to="#" className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">Settings</NavLink>
           <NavLink to="#" className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">Profile</NavLink>
           <div className="border-t border-gray-300"></div>
@@ -53,13 +64,13 @@ const Sidebar = () => {
 
 
 
-  function SideBarItems({Icon, text, href, }: {Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> , text: string, href: string}) {
+  function SideBarItems({Icon, text, href, isMenuActive }: {Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> , text: string, href: string, isMenuActive?: boolean}) {
     let isActive = location.pathname.includes(href);
     return (
       <> 
-      <NavLink to={href} className={`flex mt-2 h-12 ${isActive ? "bg-primary" : ''} pl-2 pr-2 items-center rounded-lg`}>
-        <Icon className={`mr-3 ${isActive ? "icon whiteIcon":"icon blackIcon icon-bold"}`} width="30" x="0" y="20"   stroke="#000000" stroke-widths={20} />
-      {isActive ? <strong className="text-white">{text}</strong> : text}
+      <NavLink to={href} className={`flex mt-2 h-12 ${isActive ? "bg-primary" : ''} ${isMenuActive ? '' : 'justify-center'}  items-center rounded-lg`}>
+        <Icon className={`${isActive ? "icon whiteIcon":"icon blackIcon icon-bold"} ${isMenuActive ? "mr-2 ml-2": ""}`} width="30" x="0" y="20"   stroke="#000000" stroke-widths={20} />
+      {isMenuActive ? isActive ? <strong className="text-white">{text}</strong> : text : null}
       </NavLink>
       </>
   
@@ -68,6 +79,7 @@ const Sidebar = () => {
 
 }
 function SignOut(): JSX.Element {
+  const active = useSelector((state: RootState) => state.menu.isActive);
   return (
     <> 
     <button 
@@ -78,9 +90,9 @@ function SignOut(): JSX.Element {
         window.location.href = "/login";
                 }
     }
-    className={`flex mt-2 h-12 bg-gray-200  pl-2 pr-2 items-center rounded-lg`}>
-      <LogOut className={`mr-3 "icon blackIcon icon-bold"`} width="30" x="0" y="20"   stroke="#000000" stroke-widths={20} />
-    {"Sign Out"}
+    className={`flex mt-2 h-12 bg-gray-200 items-center justify-center rounded-lg`}>
+      <LogOut className={` "icon blackIcon icon-bold"`} width="30" x="0" y="20"   stroke="#000000" stroke-widths={20} />
+ {active && "Sign Out"}
     </button>
     </>
 

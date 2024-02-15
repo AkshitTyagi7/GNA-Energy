@@ -23,11 +23,11 @@ export interface ExchngeItem{
 //   "seller_mwhr": "15202311.95"
 // },
 export interface BuyerSeller{
-    buyer: string;
-    buyer_mwhr: number;
-    id: string;
-    seller: string;
-    seller_mwhr: number;
+    buyer: string[];
+    buyer_mwhr: number[];
+    date: string;
+    seller: string[];
+    seller_mwhr: number[];
 }
 
 export interface ExchangeData{
@@ -199,10 +199,130 @@ return formatedData;
 
 }
 
+export interface BuyerSellerData{
+    lines:{
+        name: string;
+        color: string;
+    }[];
+    data: any[];
+}
 
 
+export function formatBuyerVsSeller({data, key}: {data: BuyerSeller[], key: string}) : {
+  seller: BuyerSellerData;
+  buyer: BuyerSellerData;
+}{    
+   let BuyerData: BuyerSellerData={
+        lines:[],
+        data:[]
+   };
+   let SellerData: BuyerSellerData={
+    lines:[],
+    data:[]
+   }
+   const number=5;
+   let buyers: string[]= [];
+   let sellers: string[]= [];
+   for(let i=0; i<data.length; i++){
+    for(let j=0; j<number; j++){
+      const index = data[i].buyer.length - j-1;
+      if(!sellers.includes(data[i].seller[index])){
+        sellers.push(data[i].seller[index]);
+      }
+
+      if(!buyers.includes(data[i].buyer[index])){
+        buyers.push(data[i].buyer[index]);
+
+      }
+      if(j===0){
+        BuyerData.data.push({
+          date: data[i].date,
+          [data[i].buyer[index]]: parseFloat(data[i].buyer_mwhr[index].toString()),
+        });
+        SellerData.data.push({
+          date: data[i].date,
+          [data[i].seller[index]]: parseFloat(data[i].seller_mwhr[index].toString()),
+        });
+      }
+      else{
+        BuyerData.data[i][data[i].buyer[index]] = parseFloat(data[i].buyer_mwhr[index].toString());
+        SellerData.data[i][data[i].seller[index]] = parseFloat(data[i].seller_mwhr[index].toString());
+      }
+    }     
+  }
+  for(let i=0; i<buyers.length; i++){
+    BuyerData.lines.push({
+      name: buyers[i],
+      color: ExchangeColors[i],
+    });
+
+  }
+  for(let i=0; i<sellers.length; i++){
+    SellerData.lines.push({
+      name: sellers[i],
+      color: ExchangeColors[i],
+    });
+
+  }
+
+  return {
+    seller: SellerData,
+    buyer: BuyerData,
+  };
+ }
 const parseDate = (dateString: string): Date => {
   const [day, month, year] = dateString.split('-').map(Number);
   return new Date(year, month - 1, day); // Month is 0-indexed in JavaScript Dates
 };
 
+export const ExchangeColors: string[] = [
+  // Shuffled using Math.random() approach
+  PrimaryColor,
+  SecondaryColor,
+  "rgb(17, 141, 255)",
+  "rgb(18, 35, 158)",
+  "#DC143C", // Crimson
+  "#800080", // Purple
+  "#FFA07A", // Mango
+  "#006400", // Emerald Green
+  "#B76E79", // Rose Gold
+  "#B22222", // Firebrick
+  "#2F4F4F", // Dark Gray
+  "#C71585", // Deep Pink
+  "#D2B48C", // Cinnamon
+  "#DC143C", // Crimson
+  "#000080", // Navy Blue
+  "#FF7F50", // Coral
+  "#87CEEB", // Sky Blue
+  "#A52A2A", // Brown
+  "#FF6347", // Tomato
+  "#8B0000", // Dark Red
+  "#4B0082", // Indigo
+  "#C71585", // Deep Pink
+  "#2E8B57", // Sea Green
+  "#C00000", // Maroon
+  "#A9A9A9", // Medium Gray
+  "#363636", // Charcoal
+  "#696969", // Dark Gray
+  "#000000", // Black
+  "#6495ED", // Cornflower Blue
+  "#FF6347", // Tomato
+  "#B76E79", // Rose Gold
+  "#4B0082", // Indigo
+  "#FF8C00", // Dark Orange
+  "#004347", // Deep Sea Green
+  "#9400D3", // Dark Violet
+  "#007F4E", // Dark Green
+  "#8B0000", // Dark Red
+  "#C00000", // Maroon
+  "#FF0000", // Red
+  "#0018A8", // Deep Sapphire
+  "#4169E1", // Royal Blue
+  "#6495ED", // Cornflower Blue
+  "#87CEEB", // Sky Blue
+  "#FFA500", // Orange
+  "#FF4500", // Orange Red
+  "#2E8B57", // Sea Green
+  "#006400", // Emerald Green
+  // ... (remaining shuffled colors)
+];

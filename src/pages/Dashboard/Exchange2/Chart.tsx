@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
+import { BuyerSellerData } from "./FormatData";
 export const AxisLabel = ({
   axisType,
   x,
@@ -224,3 +225,74 @@ export const ExchangeChart = ({
     </ResponsiveContainer>
   </>
 );
+
+export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData, showLegend: boolean}) => {
+return <ResponsiveContainer>
+           <ComposedChart
+          data={data.data}
+          syncId={"buyerSeller"}
+          >
+            
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis width={120} tickFormatter={
+              (value) => {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              }
+            
+            }>
+              
+              <Label
+                value="MWhr"
+                angle={-90}
+                position="insideLeft"
+                style={{ textAnchor: "middle" }} />
+            </YAxis >
+            <Tooltip
+            contentStyle={
+              {
+                textAlign:"left",
+              }
+            }
+            content={(props: any) => {
+              return <BuyerSellerTooltip {...props} />
+            
+            }}
+            />
+            <Legend verticalAlign="top" />
+            <Brush
+            dataKey="date"
+            height={showLegend ? 30 : 0}
+            stroke={PrimaryColor}
+          />
+            {
+              data.lines.map((line, index) => {
+                return <Bar width={80} key={index} dataKey={line.name} fill={line.color} name={line.name} stackId={"bs"} />
+              }
+              )
+            }
+          </ComposedChart>
+</ResponsiveContainer>
+};
+
+// Write custom tooltip for tooltip of BuyerSellerChart
+function BuyerSellerTooltip({ active, payload, label }: { active: boolean, payload: any, label: string }) {
+  if (active) {
+    return (
+      <div className="bg-white border border-gray-300 p-2 text-left">
+        <p>{label}</p>
+        <p>
+          {payload.map((p: any, index: number) => {
+            return <span className="text-xs" key={index} style={{ color: p.color }}>{p.name}: {p.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} MW<br></br></span>
+          })}
+        </p>
+        <p>
+          Total: {payload.reduce((acc: number, curr: any) => {
+            return acc + curr.value;
+          }, 0).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+        </p>
+      </div>
+    );
+  }
+  return null;
+}

@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ContextProvider } from './contexts/ContextProvider';
-import configureStore from './configureStore'
+import configureStore from './store/configureStore'
 import { Provider } from 'react-redux';
+import MenuState from './store/state/MenuState';
+import { store } from './store/store';
 
-const store = configureStore({});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
