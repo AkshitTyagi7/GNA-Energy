@@ -58,7 +58,7 @@ export function BetaConsumption() {
     FetchDemandData({ start_date: startDate, end_date: endDate });
     FetchOutageData({ start_date: startDate, end_date: endDate });
     FetchGenerationData({ start_date: startDate, end_date: endDate });
-    // FetchRealTimeGenerationData();
+    FetchRealTimeGenerationData();
   }, []);
   const [tabIndex, setTabIndex] = useState(0);
   let [endDate, setEndDate] = useState(
@@ -180,13 +180,13 @@ export function BetaConsumption() {
             }}
             isActive={tabIndex == 2}
           />
-          {/* <SmallButton
+          <SmallButton
             buttonTitle="Real Time Generation"
             onClick={() => {
               setTabIndex(3);
             }}
             isActive={tabIndex == 3}
-          /> */}
+          />
         </div>
       </div>
       <div className="flex flex-row w-full h-full">

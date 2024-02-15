@@ -157,6 +157,7 @@ export const ExchangeChart = ({
             <Bar
               dataKey="wt_mcp_rs_mwh"
               fill={SecondaryColor}
+              isAnimationActive={false}
               name={`Price(${COST_UNIT})`}
             />
             <Line
@@ -165,6 +166,7 @@ export const ExchangeChart = ({
               yAxisId="right"
               dataKey="sell_bid_mw"
               stroke={QuaternaryColor}
+              isAnimationActive={false}
               color={QuaternaryColor}
               fill={QuaternaryColor}
               name={`Sell Bids(${MEGA_POWER_UNIT})`}
@@ -180,6 +182,7 @@ export const ExchangeChart = ({
           }}
           dataKey="prchs_bid_mw"
           stroke={PrimaryColor}
+          isAnimationActive={false}
           color={PrimaryColor}
           fill={PrimaryColor}
           name={`Purchase Bids(${MEGA_POWER_UNIT})`}
@@ -192,6 +195,7 @@ export const ExchangeChart = ({
               yAxisId="right"
               dataKey="mcv_mw"
               stroke={"red"}
+              isAnimationActive={false}
               color={"red"}
               fill={"red"}
               name={`MCV (${MEGA_POWER_UNIT})`}
