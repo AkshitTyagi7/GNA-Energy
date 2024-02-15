@@ -25,7 +25,7 @@ export interface ExchngeItem{
 export interface BuyerSeller{
     buyer: string[];
     buyer_mwhr: number[];
-    date: string;
+    // date: string;
     seller: string[];
     seller_mwhr: number[];
 }
@@ -207,68 +207,38 @@ export interface BuyerSellerData{
     data: any[];
 }
 
+export interface BuyerSellerItem{
+  buyer: string;
+  buyer_mwhr: number;
+  seller: string;
+  seller_mwhr: number;
+}
 
-export function formatBuyerVsSeller({data, key}: {data: BuyerSeller[], key: string}) : {
-  seller: BuyerSellerData;
+
+export function formatBuyerVsSeller({data}: {data: BuyerSeller}): {
   buyer: BuyerSellerData;
-}{    
-   let BuyerData: BuyerSellerData={
-        lines:[],
-        data:[]
-   };
-   let SellerData: BuyerSellerData={
-    lines:[],
-    data:[]
-   }
-   const number=5;
-   let buyers: string[]= [];
-   let sellers: string[]= [];
-   for(let i=0; i<data.length; i++){
-    for(let j=0; j<number; j++){
-      const index = data[i].buyer.length - j-1;
-      if(!sellers.includes(data[i].seller[index])){
-        sellers.push(data[i].seller[index]);
-      }
+  seller: BuyerSellerData;
 
-      if(!buyers.includes(data[i].buyer[index])){
-        buyers.push(data[i].buyer[index]);
-
-      }
-      if(j===0){
-        BuyerData.data.push({
-          date: data[i].date,
-          [data[i].buyer[index]]: parseFloat(data[i].buyer_mwhr[index].toString()),
-        });
-        SellerData.data.push({
-          date: data[i].date,
-          [data[i].seller[index]]: parseFloat(data[i].seller_mwhr[index].toString()),
-        });
-      }
-      else{
-        BuyerData.data[i][data[i].buyer[index]] = parseFloat(data[i].buyer_mwhr[index].toString());
-        SellerData.data[i][data[i].seller[index]] = parseFloat(data[i].seller_mwhr[index].toString());
-      }
-    }     
-  }
-  for(let i=0; i<buyers.length; i++){
-    BuyerData.lines.push({
-      name: buyers[i],
-      color: ExchangeColors[i],
-    });
-
-  }
-  for(let i=0; i<sellers.length; i++){
-    SellerData.lines.push({
-      name: sellers[i],
-      color: ExchangeColors[i],
-    });
-
-  }
-
-  return {
-    seller: SellerData,
-    buyer: BuyerData,
+}{   
+  const buyerData : BuyerSellerData = {
+      lines: [],
+      data: [],
   };
+  const sellerData : BuyerSellerData = {lines: [], data: []};
+
+  for(let i=0;i<data.buyer.length;i++){
+      buyerData.lines.push({name: data.buyer[i], color: ExchangeColors[i]});
+      sellerData.lines.push({name: data.seller[i], color: ExchangeColors[i]});
+      buyerData.data.push({name: data.buyer[i], mwhr: data.buyer_mwhr[i]});
+      sellerData.data.push({name: data.seller[i], mwhr: data.seller_mwhr[i]});
+  }
+  return {
+      buyer: buyerData,
+      seller: sellerData,
+  };
+
+
+  
  }
 const parseDate = (dateString: string): Date => {
   const [day, month, year] = dateString.split('-').map(Number);

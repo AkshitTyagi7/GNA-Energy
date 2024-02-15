@@ -238,7 +238,13 @@ return <ResponsiveContainer>
           >
             
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
+            <XAxis height={50} dataKey="name" >
+              <Label
+                value="Name"
+                
+                position="insideBottom"
+                style={{ textAnchor: "middle" }} />
+            </XAxis>
             <YAxis width={120} tickFormatter={
               (value) => {
                 return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -253,28 +259,26 @@ return <ResponsiveContainer>
                 style={{ textAnchor: "middle" }} />
             </YAxis >
             <Tooltip
-            contentStyle={
-              {
-                textAlign:"left",
+            formatter={
+              (value, name, props) => {
+                return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWhr"];
               }
             }
-            content={(props: any) => {
-              return <BuyerSellerTooltip {...props} />
-            
-            }}
+         
             />
-            <Legend verticalAlign="top" />
+            {/* <Legend verticalAlign="top" /> */}
             <Brush
             dataKey="date"
             height={showLegend ? 30 : 0}
             stroke={PrimaryColor}
           />
-            {
+          <Bar width={80}  dataKey={"mwhr"} fill={PrimaryColor}  />
+            {/* {
               data.lines.map((line, index) => {
-                return <Bar width={80} key={index} dataKey={line.name} fill={line.color} name={line.name} stackId={"bs"} />
+                return <Bar width={80} key={index} dataKey={"mwhr"} fill={line.color} name={line.name} />
               }
               )
-            }
+            } */}
           </ComposedChart>
 </ResponsiveContainer>
 };

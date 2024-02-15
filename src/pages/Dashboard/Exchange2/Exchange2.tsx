@@ -78,7 +78,7 @@ export default function ExchangePage() {
   });
 
   const [startDate, setStartDate] = useState(
-    new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
+    new Date(new Date().getTime() - 5 * 24 * 60 * 60 * 1000)
   );
   const [endDate, setEndDate] = useState(
     new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000)
@@ -491,7 +491,7 @@ export default function ExchangePage() {
     method:"POST"
   })
   setIsBuyerLoading(false);
-  setBuyerVsSellerData(formatBuyerVsSeller({data: res, key: "buyer_mwhr"}));
+  setBuyerVsSellerData(formatBuyerVsSeller({data: res}));
   }
 }
 
