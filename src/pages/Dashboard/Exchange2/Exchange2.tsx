@@ -15,7 +15,14 @@ import {
   LineChart,
   Label,
 } from "recharts";
-import { BuyerSeller, BuyerSellerData, FormatDataOfRealtime, RealTimeChartData, formatBuyerVsSeller, formatRealTimeChartData } from "./FormatData";
+import {
+  BuyerSeller,
+  BuyerSellerData,
+  FormatDataOfRealtime,
+  RealTimeChartData,
+  formatBuyerVsSeller,
+  formatRealTimeChartData,
+} from "./FormatData";
 import {
   DemoExchangeData,
   DemoExchangeData2,
@@ -52,10 +59,10 @@ export default function ExchangePage() {
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
   >([]);
-  const [buyerVsSellerData, setBuyerVsSellerData] = useState<{buyer: BuyerSellerData, seller: BuyerSellerData}>(
-    {buyer: {data: [], lines:[]}, seller: {data: [], lines:[]}}
-    
-  );
+  const [buyerVsSellerData, setBuyerVsSellerData] = useState<{
+    buyer: BuyerSellerData;
+    seller: BuyerSellerData;
+  }>({ buyer: { data: [], lines: [] }, seller: { data: [], lines: [] } });
 
   const [pageIndex, setPageIndex] = useState(0);
   const [iexData, setIexData] = useState<ExchangeData>({
@@ -93,15 +100,11 @@ export default function ExchangePage() {
       end_date: endDate,
     });
     fetchRealTimeData();
-    fetchBuyerVsSellerData(
-{      start_date: startDate,
-      end_date: endDate,}
-    )
+    fetchBuyerVsSellerData({ start_date: startDate, end_date: endDate });
   }, []);
 
   return (
     <>
-
       <div className="flex flex-row justify-between">
         <div className="flex mt-4 space-x-3 h-10">
           <MediumButton
@@ -119,7 +122,7 @@ export default function ExchangePage() {
             isActive={pageIndex === 2}
             onClick={() => setPageIndex(2)}
           />
- <MediumButton
+          <MediumButton
             buttonTitle="Buyer vs Seller"
             isActive={pageIndex === 3}
             onClick={() => setPageIndex(3)}
@@ -147,9 +150,10 @@ export default function ExchangePage() {
                   start_date: new Date(e.target.value),
                   end_date: endDate,
                 });
-                fetchBuyerVsSellerData(
-                  {start_date: new Date(e.target.value), end_date: endDate}
-                );
+                fetchBuyerVsSellerData({
+                  start_date: new Date(e.target.value),
+                  end_date: endDate,
+                });
               }}
             />
             to
@@ -172,9 +176,10 @@ export default function ExchangePage() {
                   start_date: startDate,
                   end_date: new Date(e.target.value),
                 });
-                fetchBuyerVsSellerData(
-                  {start_date: startDate, end_date: new Date(e.target.value)}
-                );
+                fetchBuyerVsSellerData({
+                  start_date: startDate,
+                  end_date: new Date(e.target.value),
+                });
               }}
             />
           </div>
@@ -182,9 +187,7 @@ export default function ExchangePage() {
       </div>
       {pageIndex === 0 && (
         <>
-            {
-      isLoading ? <Loading /> : null
-    }
+          {isLoading ? <Loading /> : null}
           <div
             className="flex flex-row justify-between mt-3"
             style={{ width: "98%" }}
@@ -287,9 +290,7 @@ export default function ExchangePage() {
       )}
       {pageIndex === 1 && (
         <>
-            {
-      isLoading ? <Loading /> : null
-    }
+          {isLoading ? <Loading /> : null}
           <div className="flex flex-row justify-between mt-3">
             <div className="text-2xl text-center">
               Price and Volume by Product
@@ -323,16 +324,19 @@ export default function ExchangePage() {
             }
             title="HPX"
           />
-          <ExchangeChart data={
+          <ExchangeChart
+            data={
               Object.keys(pxilData).map((data, index) => {
                 return pxilData[data];
               })[selectedProductIndex[0]]
-          } showBrush={true} title="PXIL" />
+            }
+            showBrush={true}
+            title="PXIL"
+          />
         </>
       )}
       {pageIndex === 2 && (
         <div className="p-5">
-
           <div className="justify-between container-chart">
             <div className="flex flex-row justify-between">
               <div className="text-2xl text-center mb-2">Real Time Data</div>
@@ -346,7 +350,6 @@ export default function ExchangePage() {
                     />
                   );
                 })}
-                
               </div>
             </div>
 
@@ -385,24 +388,30 @@ export default function ExchangePage() {
           <FootNote source="Source - IEX" />
         </div>
       )}
-      {
-        pageIndex === 3 &&
-        <div className="buyerVsSeller">
-              {
-      isBuyerLoading ? <Loading /> : null
-    }
-          <div className="h-1/2">
-          <h2 className="text-center text-2xl ">Top Sellers (MWhr)</h2>
-          <div className="buyerVsSellerChart">
-        <BuyerSellerChart data={buyerVsSellerData.seller} showLegend={false} /></div></div>
-          <div className="h-1/2">
-            <div className="h-6"></div>
+      {pageIndex === 3 && (
+        <div className="buyerVsSeller flex w-full">
+          {isBuyerLoading ? <Loading /> : null}
+          <div className="h-full w-full">
+            <h2 className="text-center text-2xl ">Top Sellers (MWhr)</h2>
+            <div className="buyerVsSellerChart">
+              <BuyerSellerChart
+                data={buyerVsSellerData.seller}
+                showLegend={false}
+              />
+            </div>
+          </div>
+          <div className="h-full w-full">
+            <div className=""></div>
             <h2 className="text-center text-2xl">Top Buyers (MWhr)</h2>
             <div className="buyerVsSellerChart">
-            <BuyerSellerChart data={buyerVsSellerData.buyer} showLegend={true} /> </div></div>
+              <BuyerSellerChart
+                data={buyerVsSellerData.buyer}
+                showLegend={true}
+              />
+            </div>
+          </div>
         </div>
-      }
-      
+      )}
     </>
   );
 
@@ -416,11 +425,10 @@ export default function ExchangePage() {
 
       const data: any = await response.json();
       // const data = RealTimeData as any;
-      const reData= FormatDataOfRealtime(ApiData as any);
+      const reData = FormatDataOfRealtime(ApiData as any);
       console.log(reData);
       const temp: RealTimeChartData[] = [];
-      const reChartData= 
-      Object.keys(data).forEach((key: string) => {
+      const reChartData = Object.keys(data).forEach((key: string) => {
         console.log(key, data[key]);
         const formattedData = formatRealTimeChartData(data[key], key);
         temp.push(formattedData);
@@ -463,7 +471,6 @@ export default function ExchangePage() {
       setIexData(FormatExchangeData(apiRes.iex));
       setSelectedProductIndex([0]);
       setIsLoading(false);
-
     } catch (error) {
       console.error("Error fetching data:", error);
       setIexData(FormatExchangeData([]));
@@ -474,26 +481,23 @@ export default function ExchangePage() {
       setSelectedProductIndex([]);
     }
   }
-  async function fetchBuyerVsSellerData({start_date,end_date} : {start_date:Date,end_date:Date}) {
+  async function fetchBuyerVsSellerData({
+    start_date,
+    end_date,
+  }: {
+    start_date: Date;
+    end_date: Date;
+  }) {
     setIsBuyerLoading(true);
-  const res = await buildHttpReq({
-    endpoint:"top_buyer_seller_api",
-    body:{
-      start_date:start_date
-        .toLocaleDateString("en-GB")
-        .split("/")
-        .join("-"),
-      end_date: end_date
-      .toLocaleDateString("en-GB")
-      .split("/")
-      .join("-"),
-    },
-    method:"POST"
-  })
-  setIsBuyerLoading(false);
-  setBuyerVsSellerData(formatBuyerVsSeller({data: res}));
+    const res = await buildHttpReq({
+      endpoint: "top_buyer_seller_api",
+      body: {
+        start_date: start_date.toLocaleDateString("en-GB").split("/").join("-"),
+        end_date: end_date.toLocaleDateString("en-GB").split("/").join("-"),
+      },
+      method: "POST",
+    });
+    setIsBuyerLoading(false);
+    setBuyerVsSellerData(formatBuyerVsSeller({ data: res }));
   }
 }
-
-
-

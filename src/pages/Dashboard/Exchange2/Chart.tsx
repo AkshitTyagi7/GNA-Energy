@@ -40,6 +40,8 @@ export const AxisLabel = ({
   );
 };
 
+
+
 export const renderQuarterTick = (tickProps: any) => {
   const { x, y, payload } = tickProps;
   const { index, value, offset } = payload;
@@ -231,21 +233,19 @@ export const ExchangeChart = ({
 );
 
 export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData, showLegend: boolean}) => {
-return <ResponsiveContainer>
+return <ResponsiveContainer 
+>
            <ComposedChart
+               layout="vertical"
+
           data={data.data}
           syncId={"buyerSeller"}
           >
             
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis height={50} dataKey="name" >
-              <Label
-                value="Name"
-                
-                position="insideBottom"
-                style={{ textAnchor: "middle" }} />
-            </XAxis>
-            <YAxis width={120} tickFormatter={
+            <YAxis height={0} width={150} fontSize={12} dataKey="name" type="category" >
+            </YAxis>
+            <XAxis width={120} type="number" tickFormatter={
               (value) => {
                 return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
               }
@@ -253,11 +253,11 @@ return <ResponsiveContainer>
             }>
               
               <Label
-                value="MWhr"
+                // value="MWhr"
                 angle={-90}
                 position="insideLeft"
                 style={{ textAnchor: "middle" }} />
-            </YAxis >
+            </XAxis >
             <Tooltip
             formatter={
               (value, name, props) => {
@@ -267,12 +267,8 @@ return <ResponsiveContainer>
          
             />
             {/* <Legend verticalAlign="top" /> */}
-            <Brush
-            dataKey="date"
-            height={showLegend ? 30 : 0}
-            stroke={PrimaryColor}
-          />
-          <Bar width={80}  dataKey={"mwhr"} fill={PrimaryColor}  />
+     
+          <Bar width={20} height={50}  dataKey={"mwhr"} fill={SecondaryColor}  />
             {/* {
               data.lines.map((line, index) => {
                 return <Bar width={80} key={index} dataKey={"mwhr"} fill={line.color} name={line.name} />
