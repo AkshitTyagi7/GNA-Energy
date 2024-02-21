@@ -14,10 +14,12 @@ import {
   PieChart,
   Pie,
   Cell,
+  LineChart,
 } from "recharts";
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
+import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement } from "../../../store/state/ExchangeState";
 export const AxisLabel = ({
   axisType,
   x,
@@ -257,7 +259,7 @@ return <ResponsiveContainer
             }>
               
               <Label
-                // value="MWhr"
+                // value="MWh"
                 angle={-90}
                 position="insideLeft"
                 style={{ textAnchor: "middle" }} />
@@ -265,7 +267,7 @@ return <ResponsiveContainer
             <Tooltip
             formatter={
               (value, name, props) => {
-                return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWhr"];
+                return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
               }
             }
          
@@ -275,7 +277,7 @@ return <ResponsiveContainer
           <Bar  dataKey={"value"} barSize={40}       fill={SecondaryColor}  />
             {/* {
               data.lines.map((line, index) => {
-                return <Bar width={80} key={index} dataKey={"mwhr"} fill={line.color} name={line.name} />
+                return <Bar width={80} key={index} dataKey={"MWh"} fill={line.color} name={line.name} />
               }
               )
             } */}
@@ -318,9 +320,35 @@ export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
             </Pie>
-      <Legend verticalAlign="top" />
+      <Legend verticalAlign="top" formatter={
+        (value, entry, index) => {
+          return value;
+        }
+      } />
     </PieChart>
   </ResponsiveContainer>
 };
 
-
+export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElement[], legends: {name: string, value: number}[]}) => {
+  return <ResponsiveContainer>
+    <LineChart syncId={"utilizationChart"} data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend
+      formatter={
+        (value, entry, index) => {
+          let total = legends.filter(legend => legend.name === value)[0].value;
+          return `${value}`;
+        }
+      }
+      verticalAlign="top"  />
+      {
+        legends.map((legend, index) => {
+          return <Line  key={index} type="monotone" dataKey={legend.name} stroke={COLORS[index]}  dot={false} strokeWidth={4}  />
+        })
+      }
+    </LineChart>
+  </ResponsiveContainer>
+}

@@ -1,20 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Exchange.css";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ComposedChart,
-  Line,
-  Brush,
-  ResponsiveContainer,
-  LineChart,
-  Label,
-} from "recharts";
+import { ResponsiveContainer, LineChart, Label } from "recharts";
 import {
   BuyerSeller,
   BuyerSellerData,
@@ -37,7 +23,12 @@ import {
 import { COST_UNIT } from "../../../Units";
 import { ExchangeData, FormatExchangeData } from "./FormatData";
 import { MediumButton, SmallButton } from "../../../components/Button";
-import { BuyerSellerChart, BuyerSellerPieChart, ExchangeChart } from "./Chart";
+import {
+  BuyerSellerChart,
+  BuyerSellerPieChart,
+  ExchangeChart,
+  UtilizationTrendChart,
+} from "./Chart";
 import { RawLineChart } from "../../../components/charts/Charts";
 import GetChartOptions from "../../../components/charts/data/GetChartOption";
 import FootNote from "../../../components/charts/footnote";
@@ -49,11 +40,32 @@ import {
   AddBuyerSellerFilter,
   RemoveBuyerSellerFilter,
   BuyerSellerFilter,
+  setBuyerSellerData,
+  setTrendData,
 } from "../../../store/state/ExchangeState";
+import { DemoTrendData } from "../../../store/state/UtilizationData";
+import Select from "react-select";
 
 const ApiData = FinalDemoData;
-
 export default function ExchangePage() {
+  const searchStyle = {
+    valueContainer: (base: any) => ({
+      ...base,
+      maxHeight: 50,
+      overflowY: "auto",
+    }),
+    multiValue: (base: any, state: { data: { isFixed: any } }) => {
+      return state.data.isFixed ? { ...base, backgroundColor: "gray" } : base;
+    },
+    multiValueLabel: (base: any, state: { data: { isFixed: any } }) => {
+      return state.data.isFixed
+        ? { ...base, fontWeight: "bold", color: "white", paddingRight: 6 }
+        : base;
+    },
+    multiValueRemove: (base: any, state: { data: { isFixed: any } }) => {
+      return state.data.isFixed ? { ...base, display: "none" } : base;
+    },
+  };
   const maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
   const [date, setDate] = useState(
     new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000)
@@ -62,17 +74,13 @@ export default function ExchangePage() {
   const [selectedProductIndex, setSelectedProductIndex] = useState<number[]>(
     []
   );
+  let trendBuyer: string[] = ["UPPCL", "RAJASTHAN", "ODISHA", "WBSETCL"];
+  let trendSeller: string[] = ["TSTRANSCO", "PUNJAB", "JK&LADAKH", "TNEB"];
   const [realTimechartIndex, setRealtimeChartIndex] = useState<number>(1);
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
   >([]);
   const BuyerSellerState = useSelector((state: RootState) => state.buyerSeller);
-  const [buyerVsSellerData, setBuyerVsSellerData] = useState<{
-    buyer: BuyerSellerData[];
-    seller: BuyerSellerData[];
-    region_buyer: BuyerSellerData[];
-    region_seller: BuyerSellerData[];
-  }>({ buyer: [], seller: [], region_buyer: [], region_seller: [] });
 
   const [pageIndex, setPageIndex] = useState(0);
   const [iexData, setIexData] = useState<ExchangeData>({
@@ -110,21 +118,31 @@ export default function ExchangePage() {
       start_date: startDate,
       end_date: endDate,
     });
+    fetchUtilityTrendData(
+      {
+        buyers: trendBuyer,
+        sellers: trendSeller,
+        startDate: startDate,
+        endDate: endDate,
+      }
+    );
     fetchRealTimeData();
+
     fetchBuyerVsSellerData({
       start_date: startDate,
       end_date: endDate,
-      exchange: BuyerSellerState.filters[0],
-      product: BuyerSellerState.filters[1],
-      region: BuyerSellerState.filters[2],
+      exchange: BuyerSellerState.BuyerSeller.filters[0],
+      product: BuyerSellerState.BuyerSeller.filters[1],
+      region: BuyerSellerState.BuyerSeller.filters[2],
     });
   }, []);
 
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div className="flex mt-4 space-x-3 h-10">
+        <div className="flex mt-4 space-x-3 h-10 tabButtons">
           <MediumButton
+          
             buttonTitle="By Exchange"
             isActive={pageIndex === 0}
             onClick={() => setPageIndex(0)}
@@ -143,6 +161,11 @@ export default function ExchangePage() {
             buttonTitle="Buyer vs Seller"
             isActive={pageIndex === 3}
             onClick={() => setPageIndex(3)}
+          />
+          <MediumButton
+            buttonTitle="Utility Trends"
+            isActive={pageIndex === 4}
+            onClick={() => setPageIndex(4)}
           />
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
@@ -170,10 +193,19 @@ export default function ExchangePage() {
                 fetchBuyerVsSellerData({
                   start_date: new Date(e.target.value),
                   end_date: endDate,
-                  product: BuyerSellerState.filters[1],
-                  exchange: BuyerSellerState.filters[0],
-                  region: BuyerSellerState.filters[2],
+                  product: BuyerSellerState.BuyerSeller.filters[1],
+                  exchange: BuyerSellerState.BuyerSeller.filters[0],
+                  region: BuyerSellerState.BuyerSeller.filters[2],
                 });
+                fetchUtilityTrendData(
+                  {
+                    buyers: trendBuyer,
+                    sellers: trendSeller,
+                    startDate: new Date(e.target.value),
+                    endDate: endDate,
+                  }
+                );
+
               }}
             />
             to
@@ -199,10 +231,18 @@ export default function ExchangePage() {
                 fetchBuyerVsSellerData({
                   start_date: startDate,
                   end_date: new Date(e.target.value),
-                  product: BuyerSellerState.filters[1],
-                  exchange: BuyerSellerState.filters[0],
-                  region: BuyerSellerState.filters[2],
+                  product: BuyerSellerState.BuyerSeller.filters[1],
+                  exchange: BuyerSellerState.BuyerSeller.filters[0],
+                  region: BuyerSellerState.BuyerSeller.filters[2],
                 });
+                fetchUtilityTrendData(
+                  {
+                    buyers: trendBuyer,
+                    sellers: trendSeller,
+                    startDate: startDate,
+                    endDate: new Date(e.target.value),
+                  }
+                );
               }}
             />
           </div>
@@ -425,7 +465,9 @@ export default function ExchangePage() {
                     return (
                       <button
                         className={`filter-item ${
-                          BuyerSellerState.filters[index].filters.findIndex(
+                          BuyerSellerState.BuyerSeller.filters[
+                            index
+                          ].filters.findIndex(
                             (item) => item.name === subfilter.name
                           ) !== -1
                             ? "activeFilter"
@@ -433,12 +475,12 @@ export default function ExchangePage() {
                         }`}
                         onClick={async () => {
                           let temp = JSON.parse(
-                            JSON.stringify(BuyerSellerState.filters)
+                            JSON.stringify(BuyerSellerState.BuyerSeller.filters)
                           );
-                          console.log(temp);
-                          console.log("-------");
                           if (
-                            BuyerSellerState.filters[index].filters.findIndex(
+                            BuyerSellerState.BuyerSeller.filters[
+                              index
+                            ].filters.findIndex(
                               (item) => item.name === subfilter.name
                             ) === -1
                           ) {
@@ -460,8 +502,6 @@ export default function ExchangePage() {
                               })
                             );
                           }
-                          // sleep for milliseconds
-                          await new Promise((r) => setTimeout(r, 100));
 
                           fetchBuyerVsSellerData({
                             start_date: startDate,
@@ -483,51 +523,139 @@ export default function ExchangePage() {
           <div className="w-full h-full">
             <div className="flex">
               <div className="h-full w-full">
-                <h2 className="text-center text-xl ">Sellers (MWhr)</h2>
+                <h2 className="text-center text-xl ">Sellers (MWh)</h2>
 
                 <div className="buyersellerCharts">
                   <div
                     className="buyerVsSellerChart"
                     style={{
-                      height: `${buyerVsSellerData.seller.length * 8}vh`,
+                      height: `${
+                        BuyerSellerState.BuyerSeller.Data.seller.length * 8
+                      }vh`,
                     }}
                   >
                     <BuyerSellerChart
-                      data={buyerVsSellerData.seller}
+                      data={BuyerSellerState.BuyerSeller.Data.seller}
                       showLegend={false}
                     />
                   </div>
                 </div>
                 <div className="w-full" style={{ height: "35vh" }}>
-                <h2 className="text-center text-xl mt-2">By Region</h2>
+                  <h2 className="text-center text-xl mt-2">By Region</h2>
 
-                  <BuyerSellerPieChart data={buyerVsSellerData.region_seller} />
+                  <BuyerSellerPieChart
+                    data={BuyerSellerState.BuyerSeller.Data.region_seller}
+                  />
                 </div>
               </div>
               <div className="h-full w-full r">
-                <h2 className="text-center text-xl">Buyers (MWhr)</h2>
+                <h2 className="text-center text-xl">Buyers (MWh)</h2>
                 <div className="buyersellerCharts">
                   <div
                     className="buyerVsSellerChart"
                     style={{
-                      height: `${buyerVsSellerData.buyer.length * 8}vh`,
+                      height: `${
+                        BuyerSellerState.BuyerSeller.Data.buyer.length * 8
+                      }vh`,
                     }}
                   >
-
                     <BuyerSellerChart
-                      data={buyerVsSellerData.buyer}
+                      data={BuyerSellerState.BuyerSeller.Data.buyer}
                       showLegend={true}
                     />
                   </div>
                 </div>
                 <div className="w-full mt-2" style={{ height: "35vh" }}>
-                <h2 className="text-center text-xl ">By Region</h2>
+                  <h2 className="text-center text-xl ">By Region</h2>
 
-                  <BuyerSellerPieChart data={buyerVsSellerData.region_buyer} />
+                  <BuyerSellerPieChart
+                    data={BuyerSellerState.BuyerSeller.Data.region_buyer}
+                  />
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      )}
+      {pageIndex === 4 && (
+        <div className="utilizationChart">
+          <div className="flex justify-between">
+            <div className="text-2xl">Utility Trend Analysis</div>
+            <div className="flex space-x-4">
+              <div>
+                <div className="ml-1 text-slate-500">Buyers</div>
+                <Select
+                  value={trendBuyer.map((item) => {
+                    return { value: item, label: item, isFixed: false };
+                  })}
+
+                  isMulti={true}
+                  onChange={(e) => {
+                    console.log(e);
+                    trendBuyer = e.map((item: any) => item.value);
+
+                    fetchUtilityTrendData(
+                      {
+                        buyers: trendBuyer,
+                        sellers: trendSeller,
+                        startDate: startDate,
+                        endDate: endDate,
+                      }
+                    );
+
+                  }}
+                  className="trendFilter"
+                  options={BuyerSellerState.Trend.filters.buyer_name.map(
+                    (item) => {
+                      return { value: item, label: item, isFixed: false };
+                    }
+                  )}
+                  styles={searchStyle}
+                />
+              </div>
+              <div>
+                <div className="text-slate-500 ml-1">Sellers</div>
+                <Select
+                  isMulti={true}
+                  value={trendSeller.map((item) => {
+                    return { value: item, label: item, isFixed: false };
+                  })}
+                  styles={searchStyle}
+                  onChange={
+                    (e)=> {
+                    trendSeller = e.map((item: any) => item.value);
+                    fetchUtilityTrendData(
+                      {
+                        buyers: trendBuyer,
+                        sellers: trendSeller,
+                        startDate: startDate,
+                        endDate: endDate,
+                      }
+                    );
+                    
+                    }
+                  }
+                  className="trendFilter"
+                  options={BuyerSellerState.Trend.filters.seller_name.map(
+                    (item) => {
+                    
+                      return { value: item, label: item, isFixed: false };
+                    }
+                  )}
+                />
+              </div>
+            </div>
+          </div>
+            <div className="text-center text-slate-700 text-lg">Buyer</div>
+            <UtilizationTrendChart
+              data={BuyerSellerState.Trend.data.buyer}
+              legends={BuyerSellerState.Trend.data.buyer_selected}
+            />
+          <div className="text-lg text-slate-700 mt-4 text-center">Seller</div>
+          <UtilizationTrendChart
+            data={BuyerSellerState.Trend.data.seller}
+            legends={BuyerSellerState.Trend.data.seller_selected}
+          />
         </div>
       )}
     </>
@@ -598,6 +726,9 @@ export default function ExchangePage() {
       setSelectedProductIndex([]);
     }
   }
+
+
+
   async function fetchBuyerVsSellerData({
     start_date,
     end_date,
@@ -625,6 +756,52 @@ export default function ExchangePage() {
       method: "POST",
     });
     setIsBuyerLoading(false);
-    setBuyerVsSellerData(res);
+    dispatch(
+      setBuyerSellerData({
+        buyer: res.buyer,
+        seller: res.seller,
+        region_buyer: res.region_buyer,
+        region_seller: res.region_seller,
+      })
+    );
+  }
+
+  async function fetchUtilityTrendData(
+    {
+      buyers,
+      sellers,
+      startDate,
+      endDate,
+    }:
+    {
+      buyers: string[];
+      sellers: string[];
+      startDate: Date;
+      endDate: Date;
+    
+    }
+  ) {
+    try {
+      const res = await buildHttpReq({
+        endpoint: "buyer_seller_trend_api",
+        body: {
+          start_date: startDate
+            .toLocaleDateString("en-GB")
+            .split("/")
+            .join("-"),
+          end_date: endDate.toLocaleDateString("en-GB").split("/").join("-"),
+          buyers: buyers,
+          sellers: sellers,
+        },
+        method: "POST",
+      });
+      console.log("Setting Trend Data");
+      console.log(res);
+      dispatch(
+        setTrendData(res)
+      )
+    } catch (e) {
+      console.error("Error fetching data:", e);
+    }
   }
 }
