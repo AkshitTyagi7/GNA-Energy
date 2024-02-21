@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import MenuState from "./state/MenuState";
-
+import BuyerSellerFilterSlice from "./state/ExchangeState";
 export const store = configureStore({
     reducer:{
       menu: MenuState,
+      buyerSeller: BuyerSellerFilterSlice,
     }
   });
 

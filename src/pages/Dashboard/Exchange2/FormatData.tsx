@@ -200,11 +200,8 @@ return formatedData;
 }
 
 export interface BuyerSellerData{
-    lines:{
-        name: string;
-        color: string;
-    }[];
-    data: any[];
+    name: string;
+    value: number;
 }
 
 export interface BuyerSellerItem{
@@ -215,31 +212,7 @@ export interface BuyerSellerItem{
 }
 
 
-export function formatBuyerVsSeller({data}: {data: BuyerSeller}): {
-  buyer: BuyerSellerData;
-  seller: BuyerSellerData;
 
-}{   
-  const buyerData : BuyerSellerData = {
-      lines: [],
-      data: [],
-  };
-  const sellerData : BuyerSellerData = {lines: [], data: []};
-
-  for(let i=0;i<data.buyer.length;i++){
-      buyerData.lines.push({name: data.buyer[i], color: ExchangeColors[i]});
-      sellerData.lines.push({name: data.seller[i], color: ExchangeColors[i]});
-      buyerData.data.push({name: data.buyer[i], mwhr: data.buyer_mwhr[i]});
-      sellerData.data.push({name: data.seller[i], mwhr: data.seller_mwhr[i]});
-  }
-  return {
-      buyer: buyerData,
-      seller: sellerData,
-  };
-
-
-  
- }
 const parseDate = (dateString: string): Date => {
   const [day, month, year] = dateString.split('-').map(Number);
   return new Date(year, month - 1, day); // Month is 0-indexed in JavaScript Dates

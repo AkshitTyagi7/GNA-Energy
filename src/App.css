@@ -63,6 +63,8 @@
     display: block;
     position: fixed;
     overflow: auto;
+    left: 210px;
+    width: calc(100% - 210px);
     height: calc(100%);
     }
 
@@ -87,4 +89,13 @@ body{
 .swal-button{
     background-color: #FF7C04!important;
     
+
+
+}
+
+div::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
 }

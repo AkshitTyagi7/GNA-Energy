@@ -19,13 +19,34 @@ ul.recharts-default-legend {
 .buyerVsSeller{
     margin-top: 10px;
     margin-left: 10px;
-    align-items: center;
-    text-align: center;
+    /* align-items: center; */
     width: calc(100% - 70px);
-    height: calc(100vh - 120px);
+    height: calc(100vh - 130px);
 }
 
 .buyerVsSellerChart{
     width: 100%;
-    height: calc(100vh - 100px);
+    overflow-x: hidden;
+
+    /* max-height: calc(100vh - 120px); */
+    height: calc(500vh);
+
+}
+
+.buyersellerCharts{
+    max-height: calc(65vh - 140px);
+    overflow-x: hidden;
+
+}
+
+.buyersellerCharts::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+.buyersellerCharts::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #F1935C;
 }

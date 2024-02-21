@@ -20,7 +20,6 @@ import {
   BuyerSellerData,
   FormatDataOfRealtime,
   RealTimeChartData,
-  formatBuyerVsSeller,
   formatRealTimeChartData,
 } from "./FormatData";
 import {
@@ -38,11 +37,19 @@ import {
 import { COST_UNIT } from "../../../Units";
 import { ExchangeData, FormatExchangeData } from "./FormatData";
 import { MediumButton, SmallButton } from "../../../components/Button";
-import { BuyerSellerChart, ExchangeChart } from "./Chart";
+import { BuyerSellerChart, BuyerSellerPieChart, ExchangeChart } from "./Chart";
 import { RawLineChart } from "../../../components/charts/Charts";
 import GetChartOptions from "../../../components/charts/data/GetChartOption";
 import FootNote from "../../../components/charts/footnote";
 import Loading from "../../../components/Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
+import {
+  BuyerSellerFilters,
+  AddBuyerSellerFilter,
+  RemoveBuyerSellerFilter,
+  BuyerSellerFilter,
+} from "../../../store/state/ExchangeState";
 
 const ApiData = FinalDemoData;
 
@@ -59,10 +66,13 @@ export default function ExchangePage() {
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
   >([]);
+  const BuyerSellerState = useSelector((state: RootState) => state.buyerSeller);
   const [buyerVsSellerData, setBuyerVsSellerData] = useState<{
-    buyer: BuyerSellerData;
-    seller: BuyerSellerData;
-  }>({ buyer: { data: [], lines: [] }, seller: { data: [], lines: [] } });
+    buyer: BuyerSellerData[];
+    seller: BuyerSellerData[];
+    region_buyer: BuyerSellerData[];
+    region_seller: BuyerSellerData[];
+  }>({ buyer: [], seller: [], region_buyer: [], region_seller: [] });
 
   const [pageIndex, setPageIndex] = useState(0);
   const [iexData, setIexData] = useState<ExchangeData>({
@@ -94,13 +104,20 @@ export default function ExchangePage() {
 
   const [isBuyerLoading, setIsBuyerLoading] = useState(false);
 
+  const dispatch = useDispatch();
   useEffect(() => {
     fetchExchangeData({
       start_date: startDate,
       end_date: endDate,
     });
     fetchRealTimeData();
-    fetchBuyerVsSellerData({ start_date: startDate, end_date: endDate });
+    fetchBuyerVsSellerData({
+      start_date: startDate,
+      end_date: endDate,
+      exchange: BuyerSellerState.filters[0],
+      product: BuyerSellerState.filters[1],
+      region: BuyerSellerState.filters[2],
+    });
   }, []);
 
   return (
@@ -153,6 +170,9 @@ export default function ExchangePage() {
                 fetchBuyerVsSellerData({
                   start_date: new Date(e.target.value),
                   end_date: endDate,
+                  product: BuyerSellerState.filters[1],
+                  exchange: BuyerSellerState.filters[0],
+                  region: BuyerSellerState.filters[2],
                 });
               }}
             />
@@ -179,6 +199,9 @@ export default function ExchangePage() {
                 fetchBuyerVsSellerData({
                   start_date: startDate,
                   end_date: new Date(e.target.value),
+                  product: BuyerSellerState.filters[1],
+                  exchange: BuyerSellerState.filters[0],
+                  region: BuyerSellerState.filters[2],
                 });
               }}
             />
@@ -389,25 +412,120 @@ export default function ExchangePage() {
         </div>
       )}
       {pageIndex === 3 && (
-        <div className="buyerVsSeller flex w-full">
+        <div className="buyerVsSeller  flex w-full">
           {isBuyerLoading ? <Loading /> : null}
-          <div className="h-full w-full">
-            <h2 className="text-center text-2xl ">Top Sellers (MWhr)</h2>
-            <div className="buyerVsSellerChart">
-              <BuyerSellerChart
-                data={buyerVsSellerData.seller}
-                showLegend={false}
-              />
-            </div>
+          <div className="w-2/12">
+            {BuyerSellerFilters.map((filter, index) => {
+              return (
+                <div>
+                  <div className="text-md text-slate-500 mt-4 mb-2 text-left">
+                    {filter.name}
+                  </div>
+                  {filter.filters.map((subfilter, subindex) => {
+                    return (
+                      <button
+                        className={`filter-item ${
+                          BuyerSellerState.filters[index].filters.findIndex(
+                            (item) => item.name === subfilter.name
+                          ) !== -1
+                            ? "activeFilter"
+                            : ""
+                        }`}
+                        onClick={async () => {
+                          let temp = JSON.parse(
+                            JSON.stringify(BuyerSellerState.filters)
+                          );
+                          console.log(temp);
+                          console.log("-------");
+                          if (
+                            BuyerSellerState.filters[index].filters.findIndex(
+                              (item) => item.name === subfilter.name
+                            ) === -1
+                          ) {
+                            temp[index].filters.push({
+                              id: subfilter.id,
+                              name: subfilter.name,
+                            });
+                            dispatch(
+                              AddBuyerSellerFilter({ index, filter: subfilter })
+                            );
+                          } else {
+                            temp[index].filters = temp[index].filters.filter(
+                              (item: any) => item.name !== subfilter.name
+                            );
+                            dispatch(
+                              RemoveBuyerSellerFilter({
+                                index,
+                                filter: subfilter,
+                              })
+                            );
+                          }
+                          // sleep for milliseconds
+                          await new Promise((r) => setTimeout(r, 100));
+
+                          fetchBuyerVsSellerData({
+                            start_date: startDate,
+                            end_date: endDate,
+                            exchange: temp[0],
+                            product: temp[1],
+                            region: temp[2],
+                          });
+                        }}
+                      >
+                        {subfilter.name}
+                      </button>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
-          <div className="h-full w-full">
-            <div className=""></div>
-            <h2 className="text-center text-2xl">Top Buyers (MWhr)</h2>
-            <div className="buyerVsSellerChart">
-              <BuyerSellerChart
-                data={buyerVsSellerData.buyer}
-                showLegend={true}
-              />
+          <div className="w-full h-full">
+            <div className="flex">
+              <div className="h-full w-full">
+                <h2 className="text-center text-xl ">Sellers (MWhr)</h2>
+
+                <div className="buyersellerCharts">
+                  <div
+                    className="buyerVsSellerChart"
+                    style={{
+                      height: `${buyerVsSellerData.seller.length * 8}vh`,
+                    }}
+                  >
+                    <BuyerSellerChart
+                      data={buyerVsSellerData.seller}
+                      showLegend={false}
+                    />
+                  </div>
+                </div>
+                <div className="w-full" style={{ height: "35vh" }}>
+                <h2 className="text-center text-xl mt-2">By Region</h2>
+
+                  <BuyerSellerPieChart data={buyerVsSellerData.region_seller} />
+                </div>
+              </div>
+              <div className="h-full w-full r">
+                <h2 className="text-center text-xl">Buyers (MWhr)</h2>
+                <div className="buyersellerCharts">
+                  <div
+                    className="buyerVsSellerChart"
+                    style={{
+                      height: `${buyerVsSellerData.buyer.length * 8}vh`,
+                    }}
+                  >
+
+                    <BuyerSellerChart
+                      data={buyerVsSellerData.buyer}
+                      showLegend={true}
+                    />
+                  </div>
+                </div>
+                <div className="w-full mt-2" style={{ height: "35vh" }}>
+                <h2 className="text-center text-xl ">By Region</h2>
+
+                  <BuyerSellerPieChart data={buyerVsSellerData.region_buyer} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -426,7 +544,6 @@ export default function ExchangePage() {
       const data: any = await response.json();
       // const data = RealTimeData as any;
       const reData = FormatDataOfRealtime(ApiData as any);
-      console.log(reData);
       const temp: RealTimeChartData[] = [];
       const reChartData = Object.keys(data).forEach((key: string) => {
         console.log(key, data[key]);
@@ -484,20 +601,30 @@ export default function ExchangePage() {
   async function fetchBuyerVsSellerData({
     start_date,
     end_date,
+    exchange,
+    product,
+    region,
   }: {
     start_date: Date;
     end_date: Date;
+    exchange: BuyerSellerFilter;
+    product: BuyerSellerFilter;
+    region: BuyerSellerFilter;
   }) {
     setIsBuyerLoading(true);
     const res = await buildHttpReq({
       endpoint: "top_buyer_seller_api",
       body: {
+        exchange: exchange.filters.map((item) => item.name),
+
+        product: product?.filters.map((item) => item.name),
+        region: region?.filters.map((item) => item.name),
         start_date: start_date.toLocaleDateString("en-GB").split("/").join("-"),
         end_date: end_date.toLocaleDateString("en-GB").split("/").join("-"),
       },
       method: "POST",
     });
     setIsBuyerLoading(false);
-    setBuyerVsSellerData(formatBuyerVsSeller({ data: res }));
+    setBuyerVsSellerData(res);
   }
 }

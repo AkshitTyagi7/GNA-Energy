@@ -10,6 +10,10 @@ import {
   Line,
   Brush,
   Label,
+  BarChart,
+  PieChart,
+  Pie,
+  Cell,
 } from "recharts";
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
@@ -232,22 +236,22 @@ export const ExchangeChart = ({
   </>
 );
 
-export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData, showLegend: boolean}) => {
+export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData[], showLegend: boolean}) => {
 return <ResponsiveContainer 
 >
-           <ComposedChart
+           <BarChart
                layout="vertical"
-
-          data={data.data}
-          syncId={"buyerSeller"}
+               barCategoryGap={2} barGap={2}
+          data={data}
+          // syncId={"buyerSeller"}
           >
             
             <CartesianGrid strokeDasharray="3 3" />
-            <YAxis height={0} width={150} fontSize={12} dataKey="name" type="category" >
+            <YAxis height={0}  width={150} fontSize={12} dataKey="name" type="category" >
             </YAxis>
-            <XAxis width={120} type="number" tickFormatter={
+            <XAxis width={110} height={0} type="number" tickFormatter={
               (value) => {
-                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return "";
               }
             
             }>
@@ -268,35 +272,55 @@ return <ResponsiveContainer
             />
             {/* <Legend verticalAlign="top" /> */}
      
-          <Bar width={20} height={50}  dataKey={"mwhr"} fill={SecondaryColor}  />
+          <Bar  dataKey={"value"} barSize={40}       fill={SecondaryColor}  />
             {/* {
               data.lines.map((line, index) => {
                 return <Bar width={80} key={index} dataKey={"mwhr"} fill={line.color} name={line.name} />
               }
               )
             } */}
-          </ComposedChart>
+            
+          </BarChart>
 </ResponsiveContainer>
 };
+const COLORS = [
+    '#34656D', '#F1935C','#7CB5EC' , '#333333', '#B8860B',
+    ];
 
-// Write custom tooltip for tooltip of BuyerSellerChart
-function BuyerSellerTooltip({ active, payload, label }: { active: boolean, payload: any, label: string }) {
-  if (active) {
-    return (
-      <div className="bg-white border border-gray-300 p-2 text-left">
-        <p>{label}</p>
-        <p>
-          {payload.map((p: any, index: number) => {
-            return <span className="text-xs" key={index} style={{ color: p.color }}>{p.name}: {p.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} MW<br></br></span>
-          })}
-        </p>
-        <p>
-          Total: {payload.reduce((acc: number, curr: any) => {
-            return acc + curr.value;
-          }, 0).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-        </p>
-      </div>
-    );
-  }
-  return null;
-}
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: { cx: number, cy: number, midAngle: number, innerRadius: number, outerRadius: number, percent: number, index: number }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {` ${percent > 0.06 ? (percent * 100).toFixed(0) +"%" : ""}`}
+    </text>
+  );
+};
+export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
+  return <ResponsiveContainer>
+    <PieChart
+    data={data}
+    >
+      <Tooltip
+     
+      />
+      <Pie 
+      
+                  label={renderCustomizedLabel}
+                  labelLine={false}
+
+            data={data} dataKey="value" nameKey="name"  >
+
+{data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+            </Pie>
+      <Legend verticalAlign="top" />
+    </PieChart>
+  </ResponsiveContainer>
+};
+
+
