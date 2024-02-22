@@ -36,7 +36,7 @@ export function Gnai() {
         scrollToBottom();
     }, []);
     return (
-        <div className="content">
+        <div className="h-full">
             <div className="chatArea pb-10 rounded " style={{ scrollBehavior: 'smooth' }} ref={
                 chatAreaRef
             

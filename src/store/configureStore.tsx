@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk'
 import loggerMiddleware from './middleware/logger'
 import rootReducer from './enhancers/monitorReducer'
 
-export default function configureStore(preloadedState: any):any {
+export default function   configureStore(preloadedState: any):any {
   const middlewares = [loggerMiddleware] 
   const middlewareEnhancer = applyMiddleware(...middlewares)
   const enhancers = [middlewareEnhancer]

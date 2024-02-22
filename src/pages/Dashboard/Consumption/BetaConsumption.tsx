@@ -58,7 +58,7 @@ export function BetaConsumption() {
     FetchDemandData({ start_date: startDate, end_date: endDate });
     FetchOutageData({ start_date: startDate, end_date: endDate });
     FetchGenerationData({ start_date: startDate, end_date: endDate });
-    // FetchRealTimeGenerationData();
+    FetchRealTimeGenerationData();
   }, []);
   const [tabIndex, setTabIndex] = useState(0);
   let [endDate, setEndDate] = useState(

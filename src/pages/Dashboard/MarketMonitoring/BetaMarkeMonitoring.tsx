@@ -144,7 +144,6 @@ export function BetaMarketMontoring() {
               <Select
                 placeholder="End Month"
                 className="dateSelect"
-                // options that are ahead of the start month
                 options={filters[2].subfilter.map((item) => {
                   if (
                     parseInt(item.id.toString()) >

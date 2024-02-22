@@ -13,8 +13,10 @@ import { ConsumptionAnalytics } from './pages/Dashboard/Consumption/Consumption'
 import { Protected, ProtectedPage } from './pages/Protected';
 import { DashboardRoutes } from './Routes';
 import { Gnai } from './pages/GNAi/Gnai';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const isMenuActive = useSelector((state: any) => state.menu.isActive);
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,7 +29,12 @@ function App() {
             element={
               <Protected>
                 <Sidebar />
-                <div className="content">
+                <div className="content" style={{
+                      width:isMenuActive ? "calc(100% - 210px)" : "calc(100% - 100px)",
+                      left:isMenuActive ? "210px" : "100px",
+                      
+
+                }}>
                   <Outlet />
                 </div>
               </Protected>
@@ -49,8 +56,14 @@ function App() {
           {/* <Route path="/document" element={<div>Document</div>} /> */}
           <Route path="/gnai" element={<div>
             <Sidebar />
+         
             <ProtectedPage children={
-              <Gnai />} pageId="/gnai" />
+            <div className="content" style={{
+              width:isMenuActive ? "calc(100% - 210px)" : "calc(100% - 100px)",
+              left:isMenuActive ? "210px" : "100px",
+              
+
+        }} >  <Gnai /></div>} pageId="/gnai" />
             </div>} />
         </Routes>
       </BrowserRouter>

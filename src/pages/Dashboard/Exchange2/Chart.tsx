@@ -10,9 +10,16 @@ import {
   Line,
   Brush,
   Label,
+  BarChart,
+  PieChart,
+  Pie,
+  Cell,
+  LineChart,
 } from "recharts";
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
+import { BuyerSellerData } from "./FormatData";
+import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement } from "../../../store/state/ExchangeState";
 export const AxisLabel = ({
   axisType,
   x,
@@ -38,6 +45,8 @@ export const AxisLabel = ({
     </text>
   );
 };
+
+
 
 export const renderQuarterTick = (tickProps: any) => {
   const { x, y, payload } = tickProps;
@@ -156,6 +165,7 @@ export const ExchangeChart = ({
             <Bar
               dataKey="wt_mcp_rs_mwh"
               fill={SecondaryColor}
+              isAnimationActive={false}
               name={`Price(${COST_UNIT})`}
             />
             <Line
@@ -164,6 +174,7 @@ export const ExchangeChart = ({
               yAxisId="right"
               dataKey="sell_bid_mw"
               stroke={QuaternaryColor}
+              isAnimationActive={false}
               color={QuaternaryColor}
               fill={QuaternaryColor}
               name={`Sell Bids(${MEGA_POWER_UNIT})`}
@@ -179,6 +190,7 @@ export const ExchangeChart = ({
           }}
           dataKey="prchs_bid_mw"
           stroke={PrimaryColor}
+          isAnimationActive={false}
           color={PrimaryColor}
           fill={PrimaryColor}
           name={`Purchase Bids(${MEGA_POWER_UNIT})`}
@@ -191,6 +203,7 @@ export const ExchangeChart = ({
               yAxisId="right"
               dataKey="mcv_mw"
               stroke={"red"}
+              isAnimationActive={false}
               color={"red"}
               fill={"red"}
               name={`MCV (${MEGA_POWER_UNIT})`}
@@ -224,3 +237,130 @@ export const ExchangeChart = ({
     </ResponsiveContainer>
   </>
 );
+
+export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData[], showLegend: boolean}) => {
+return <ResponsiveContainer 
+>
+           <BarChart
+               layout="vertical"
+               barCategoryGap={2} barGap={2}
+          data={data}
+          // syncId={"buyerSeller"}
+          >
+            
+            <CartesianGrid strokeDasharray="3 3" />
+            <YAxis height={0}  width={150} fontSize={12} dataKey="name" type="category" >
+            </YAxis>
+            <XAxis width={110} height={0} type="number" tickFormatter={
+              (value) => {
+                return "";
+              }
+            
+            }>
+              
+              <Label
+                // value="MWh"
+                angle={-90}
+                position="insideLeft"
+                style={{ textAnchor: "middle" }} />
+            </XAxis >
+            <Tooltip
+            formatter={
+              (value, name, props) => {
+                return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
+              }
+            }
+         
+            />
+            {/* <Legend verticalAlign="top" /> */}
+     
+          <Bar  dataKey={"value"} barSize={40}       fill={SecondaryColor}  />
+            {/* {
+              data.lines.map((line, index) => {
+                return <Bar width={80} key={index} dataKey={"MWh"} fill={line.color} name={line.name} />
+              }
+              )
+            } */}
+            
+          </BarChart>
+</ResponsiveContainer>
+};
+const COLORS = [
+    '#34656D', '#F1935C','#7CB5EC' , '#333333', '#B8860B',
+    ];
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: { cx: number, cy: number, midAngle: number, innerRadius: number, outerRadius: number, percent: number, index: number }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {` ${percent > 0.15 ? (percent * 100).toFixed(0) +"%" : ""}`}
+    </text>
+  );
+};
+export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
+  return <ResponsiveContainer>
+    <PieChart
+    data={data}
+    >
+      <Tooltip
+      formatter={
+        (value, name, props) => {
+          return [ parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh", name];
+        }
+      }
+      />
+      <Pie 
+      
+                  label={renderCustomizedLabel}
+                  labelLine={false}
+
+            data={data} dataKey="value" nameKey="name"  >
+
+{data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+            </Pie>
+      <Legend verticalAlign="top" formatter={
+        (value, entry, index) => {
+          return value;
+        }
+      } />
+    </PieChart>
+  </ResponsiveContainer>
+};
+
+export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElement[], legends: {name: string, value: number}[]}) => {
+  return <ResponsiveContainer>
+    <LineChart syncId={"utilizationChart"} data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis width={80}>
+        <Label value={"MWh"} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} />
+      </YAxis>
+      <Tooltip 
+      formatter={
+        (value, name, props) => {
+          return [name + " : "  + parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
+        }
+      }
+      />
+      <Legend
+      formatter={
+        (value, entry, index) => {
+          let total = legends.filter(legend => legend.name === value)[0].value;
+          return `${value}`;
+        }
+      }
+      verticalAlign="top"  />
+      {
+        legends.map((legend, index) => {
+          return <Line  key={index} type="monotone" dataKey={legend.name} stroke={COLORS[index]}  dot={false} strokeWidth={4}  />
+        })
+      }
+    </LineChart>
+  </ResponsiveContainer>
+}

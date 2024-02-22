@@ -19,8 +19,52 @@ ul.recharts-default-legend {
 .buyerVsSeller{
     margin-top: 10px;
     margin-left: 10px;
-    align-items: center;
-    text-align: center;
+    /* align-items: center; */
     width: calc(100% - 70px);
-    height: calc(100vh - 120px);
+    height: calc(55vh - 140px);
+}
+.trendFilter{
+    width: 40vw;
+}
+.buyerVsSellerChart{
+    width: 100%;
+    overflow-x: hidden;
+
+    /* max-height: calc(100vh - 120px); */
+    height: calc(500vh);
+
+}
+
+.buyersellerCharts{
+    max-height: calc(65vh - 200px);
+    min-height: calc(65vh - 200px);
+    overflow-x: hidden;
+
+}
+
+.buyersellerCharts::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+
+
+.buyersellerCharts::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #F1935C;
+}
+
+.utilizationChart{
+    width: calc(100% - 70px);
+    height: calc(55vh - 190px);
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.tabButtons button{
+
+    min-width: none;
+    border-radius: 3px;
 }
