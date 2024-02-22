@@ -74,8 +74,20 @@ export default function ExchangePage() {
   const [selectedProductIndex, setSelectedProductIndex] = useState<number[]>(
     []
   );
-  let trendBuyer: string[] = ["UPPCL", "RAJASTHAN", "ODISHA", "WBSETCL"];
-  let trendSeller: string[] = ["TSTRANSCO", "PUNJAB", "JK&LADAKH", "TNEB"];
+  // let trendBuyer: string[] = ["UPPCL", "RAJASTHAN", "ODISHA", "WBSETCL"];
+  const [trendBuyer, setTrendBuyer] = useState<string[]>([
+    "UPPCL",
+    "RAJASTHAN",
+    "ODISHA",
+    "WBSETCL",
+  ]);
+  // let trendSeller: string[] = ["TSTRANSCO", "PUNJAB", "JK&LADAKH", "TNEB"];
+  const [trendSeller, setTrendSeller] = useState<string[]>([
+    "TSTRANSCO",
+    "PUNJAB",
+    "JK&LADAKH",
+    "TNEB",
+  ]);
   const [realTimechartIndex, setRealtimeChartIndex] = useState<number>(1);
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
@@ -111,6 +123,7 @@ export default function ExchangePage() {
   const [isLoading, setIsLoading] = useState(false);
 
   const [isBuyerLoading, setIsBuyerLoading] = useState(false);
+  const [buyerSellerPage, setBuyerSellerPage] = useState(0);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -158,15 +171,11 @@ export default function ExchangePage() {
             onClick={() => setPageIndex(2)}
           />
           <MediumButton
-            buttonTitle="Buyer vs Seller"
+            buttonTitle="Buyers & Sellers"
             isActive={pageIndex === 3}
             onClick={() => setPageIndex(3)}
           />
-          <MediumButton
-            buttonTitle="Utility Trends"
-            isActive={pageIndex === 4}
-            onClick={() => setPageIndex(4)}
-          />
+
           {/* <MediumButton buttonTitle="Compare" isActive={pageIndex === 3} onClick={() => setPageIndex(3)} /> */}
         </div>
         {pageIndex !== 2 && (
@@ -452,7 +461,18 @@ export default function ExchangePage() {
         </div>
       )}
       {pageIndex === 3 && (
-        <div className="buyerVsSeller  flex w-full">
+        <div>
+          <div className="flex w-full justify-end pr-10 mt-5">
+            <MediumButton
+              buttonTitle="Top Players"
+              isActive={buyerSellerPage === 0}
+              onClick={() => setBuyerSellerPage(0)} />
+            <MediumButton
+              buttonTitle="Trends"
+              isActive={buyerSellerPage === 1}
+              onClick={() => setBuyerSellerPage(1)} />
+          </div>
+      {buyerSellerPage === 0 ?  <div className="buyerVsSeller  flex w-full">
           {isBuyerLoading ? <Loading /> : null}
           <div className="w-2/12">
             {BuyerSellerFilters.map((filter, index) => {
@@ -575,12 +595,8 @@ export default function ExchangePage() {
               </div>
             </div>
           </div>
-        </div>
-      )}
-      {pageIndex === 4 && (
-        <div className="utilizationChart">
-          <div className="flex justify-between">
-            <div className="text-2xl">Utility Trend Analysis</div>
+        </div> :  <div className="utilizationChart">
+          <div className="flex justify-between ">
             <div className="flex space-x-4">
               <div>
                 <div className="ml-1 text-slate-500">Buyers</div>
@@ -592,11 +608,11 @@ export default function ExchangePage() {
                   isMulti={true}
                   onChange={(e) => {
                     console.log(e);
-                    trendBuyer = e.map((item: any) => item.value);
+                    setTrendBuyer(e.map((item) => item.value));
 
                     fetchUtilityTrendData(
                       {
-                        buyers: trendBuyer,
+                        buyers: e.map((item) => item.value),
                         sellers: trendSeller,
                         startDate: startDate,
                         endDate: endDate,
@@ -623,11 +639,11 @@ export default function ExchangePage() {
                   styles={searchStyle}
                   onChange={
                     (e)=> {
-                    trendSeller = e.map((item: any) => item.value);
+                    setTrendSeller(e.map((item) => item.value));
                     fetchUtilityTrendData(
                       {
                         buyers: trendBuyer,
-                        sellers: trendSeller,
+                        sellers: e.map((item) => item.value),
                         startDate: startDate,
                         endDate: endDate,
                       }
@@ -656,8 +672,10 @@ export default function ExchangePage() {
             data={BuyerSellerState.Trend.data.seller}
             legends={BuyerSellerState.Trend.data.seller_selected}
           />
+        </div>}
         </div>
       )}
+
     </>
   );
 

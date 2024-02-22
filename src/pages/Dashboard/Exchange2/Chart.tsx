@@ -297,7 +297,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
   return (
     <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-      {` ${percent > 0.06 ? (percent * 100).toFixed(0) +"%" : ""}`}
+      {` ${percent > 0.15 ? (percent * 100).toFixed(0) +"%" : ""}`}
     </text>
   );
 };
@@ -307,7 +307,11 @@ export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
     data={data}
     >
       <Tooltip
-     
+      formatter={
+        (value, name, props) => {
+          return [ parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh", name];
+        }
+      }
       />
       <Pie 
       
@@ -334,8 +338,16 @@ export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElem
     <LineChart syncId={"utilizationChart"} data={data}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
+      <YAxis width={80}>
+        <Label value={"MWh"} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} />
+      </YAxis>
+      <Tooltip 
+      formatter={
+        (value, name, props) => {
+          return [name + " : "  + parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
+        }
+      }
+      />
       <Legend
       formatter={
         (value, entry, index) => {

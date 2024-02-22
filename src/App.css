@@ -105,6 +105,10 @@ div::-webkit-scrollbar-track
 background-color: #F1935C;
 }
 
+div{
+  
+}
+
 ::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;

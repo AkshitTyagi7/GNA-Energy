@@ -24,7 +24,7 @@ ul.recharts-default-legend {
     height: calc(55vh - 140px);
 }
 .trendFilter{
-    width: 25vw;
+    width: 40vw;
 }
 .buyerVsSellerChart{
     width: 100%;
@@ -36,8 +36,8 @@ ul.recharts-default-legend {
 }
 
 .buyersellerCharts{
-    max-height: calc(65vh - 140px);
-    min-height: calc(65vh - 140px);
+    max-height: calc(65vh - 200px);
+    min-height: calc(65vh - 200px);
     overflow-x: hidden;
 
 }
@@ -58,7 +58,7 @@ ul.recharts-default-legend {
 
 .utilizationChart{
     width: calc(100% - 70px);
-    height: calc(55vh - 150px);
+    height: calc(55vh - 190px);
     margin-top: 10px;
     margin-left: 10px;
 

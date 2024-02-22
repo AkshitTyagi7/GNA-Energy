@@ -259,7 +259,5 @@ for(let index= 0; index <
             traders: formattedDataArray.traders[index]?.value ?? null,
         });
     } 
-
 return finalChartByPriceData;
-
 }
