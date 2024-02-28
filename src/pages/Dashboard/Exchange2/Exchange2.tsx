@@ -596,6 +596,8 @@ export default function ExchangePage() {
             </div>
           </div>
         </div> :  <div className="utilizationChart">
+
+         {isBuyerLoading ? <Loading /> : null}
           <div className="flex justify-between ">
             <div className="flex space-x-4">
               <div>

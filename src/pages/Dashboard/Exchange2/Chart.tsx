@@ -305,6 +305,7 @@ export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
   return <ResponsiveContainer>
     <PieChart
     data={data}
+    
     >
       <Tooltip
       formatter={
@@ -314,6 +315,7 @@ export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
       }
       />
       <Pie 
+      isAnimationActive={false}
       
                   label={renderCustomizedLabel}
                   labelLine={false}
@@ -321,7 +323,9 @@ export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
             data={data} dataKey="value" nameKey="name"  >
 
 {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell key={`cell-${index}`} fill={COLORS[
+                index > COLORS.length - 1 ? index - COLORS.length : index
+              ]} />
             ))}
             </Pie>
       <Legend verticalAlign="top" formatter={
@@ -358,7 +362,11 @@ export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElem
       verticalAlign="top"  />
       {
         legends.map((legend, index) => {
-          return <Line  key={index} type="monotone" dataKey={legend.name} stroke={COLORS[index]}  dot={false} strokeWidth={4}  />
+          return <Line  key={index} type="monotone" dataKey={legend.name} stroke={
+            COLORS[
+              index > COLORS.length - 1 ? index - COLORS.length : index
+            ]
+          }  dot={false} strokeWidth={4}  />
         })
       }
     </LineChart>
