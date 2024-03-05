@@ -16,18 +16,20 @@ import { RootState } from "../../store/store";
 import {
   DocumentModel,
   addMessage,
+  setDiscoms,
   setDocumentFilters,
   setDocuments,
   setGNAiVisibility,
+  setTyping,
 } from "../../store/state/DocumentState";
 import Select from "react-select";
 import { ReactComponent as DownIcon } from "./downicon.svg";
-import { DocItem, UserChat, Role } from "./Components";
+import { DocItem, UserChat, Role, FilterHeading } from "./Components";
 
 export function Documents() {
   const state = useSelector((state: RootState) => state.document);
   const chatAreaRef = useRef<HTMLDivElement>(null);
-const URL = "http://143.244.128.157:8003/"
+const URL = "https://assistant.gna.energy/";
   const dispatch = useDispatch();
   useEffect(() => {
     fetchDocuments();
@@ -38,12 +40,14 @@ const URL = "http://143.244.128.157:8003/"
     valueContainer: (base: any) => ({
       ...base,
       maxHeight: 50,
+    
       overflowY: "auto",
     }),
     control: (base: any) => ({
       ...base,
       height: "100%",
-      width: "20vw",
+      backgroundColor: "#e5e7eb",
+      width: "100%",
 
       border: "none",
       boxShadow: "none",
@@ -89,36 +93,7 @@ const URL = "http://143.244.128.157:8003/"
               className="document-search"
             />
           </form>
-          <Select
-            isMulti={true}
-            styles={selectionStyle}
-            onChange={(e) => {
-              console.log(e);
-              selectedStates.length = 0;
-              e?.forEach((item: any) => {
-                selectedStates.push(item.value);
-              });
-              fetchDocuments();
-            }}
-            options={state.filters.states?.map((item) => {
-              return { value: item, label: item, isFixed: false };
-            })}
-          />
-          <Select
-            isMulti={true}
-            onChange={(e) => {
-              console.log(e);
-              selectedDiscoms.length = 0;
-              e?.forEach((item: any) => {
-                selectedDiscoms.push(item.value);
-              });
-              fetchDocuments();
-            }}
-            styles={selectionStyle}
-            options={state.filters.discoms?.map((item) => {
-              return { value: item, label: item, isFixed: false };
-            })}
-          />
+
         </div>
         <div className="main-container">
           <div className="document-container">
@@ -141,6 +116,63 @@ const URL = "http://143.244.128.157:8003/"
           </div>
 
           <div className="filter-container p-6">
+            {/* <FilterHeading heading="By Date" />
+            <div className="text-center date-range">
+              <div className="flex justify-center"></div>
+            <input type="date" className="mt-4 mr-3 p-2 br-20 rounded-lg" />
+            <input type="date" className="mt-4 mr-3 p-2 br-20 rounded-lg mb-3" />
+            </div> */}
+
+          <FilterHeading heading="By States" />
+
+          <Select
+          className="mt-4 mb-4"
+            isMulti={true}
+            styles={selectionStyle}
+            onChange={(e) => {
+              console.log(e);
+              let discoms : string[]  =  [];
+              selectedStates.length = 0;
+              if(e.length >0){
+              state.filters.stateDiscom?.forEach((item) => {
+                if (e.map((item) => item.value).includes(item.state)){
+                  item.discom.forEach((discom)=>{
+                    discoms?.push(discom);
+                    console.log(discom);
+                })
+                }
+              });
+              dispatch(setDiscoms(discoms));
+
+            }
+              e?.forEach((item: any) => {
+                selectedStates.push(item.value);
+              });
+
+              fetchDocuments();
+            }}
+            options={state.filters.states?.map((item) => {
+              return { value: item, label: item, isFixed: false };
+            })}
+          />
+          <FilterHeading heading="By Discom" />
+          <Select
+          className="mt-4 mb-4" 
+            isMulti={true}
+            onChange={(e) => {
+              console.log(e);
+              selectedDiscoms.length = 0;
+              e?.forEach((item: any) => {
+                selectedDiscoms.push(item.value);
+              });
+              fetchDocuments();
+            }}
+            styles={selectionStyle}
+            options={state.filters.discoms?.map((item) => {
+              return { value: item, label: item, isFixed: false };
+            })}
+          />
+          <div className="mt-4 mb-4">
             <div className="flex space-x-2">
               <DownIcon width="18px" />
               <p className="font-semibold">By Document Type</p>
@@ -174,7 +206,7 @@ const URL = "http://143.244.128.157:8003/"
                   </span>
                 </div>
               );
-            })}
+            })}</div>
           </div>
         </div>
         <div className="gnai-container">
@@ -189,6 +221,8 @@ const URL = "http://143.244.128.157:8003/"
                     
                     })
                }
+               {state.typing &&
+                  <div className="typing-loader"></div>}
               </div>
               <form 
               onSubmit={
@@ -256,6 +290,7 @@ const URL = "http://143.244.128.157:8003/"
   function sendMessage({
     content
   }: {content: string}){
+    dispatch(setTyping(true));
     fetch(URL + "gnai/generate_response/", {
         method: "post",
         headers: {
@@ -276,6 +311,7 @@ const URL = "http://143.244.128.157:8003/"
         content: data.message,
         role: Role.Ai
     }))
+    dispatch(setTyping(false));
     scrollToBottom();   
     })
   }

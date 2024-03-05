@@ -12,11 +12,12 @@
 }
 
 .chatArea{
-    height: calc(100% - 120px);
+    height: calc(100% - 1201px);
     margin-right: 20px;
     margin-top: 20px;
     background-color: white;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 .messageSender{
@@ -29,3 +30,5 @@
 .message{
     font-size: 16px;
 }
+
+

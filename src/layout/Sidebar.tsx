@@ -30,7 +30,7 @@ const Sidebar = () => {
       <hr className="my-2 border-t border-gray-300" />
       <nav className="flex flex-col mb-auto">
         <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
-          <SideBarItems Icon={DocumentIcon} text="Document" isMenuActive={active} href="/document"  />
+          <SideBarItems Icon={DocumentIcon} text="GNAi Doc" isMenuActive={active} href="/document"  />
           <SideBarItems Icon={GNAiIcon} text="GNAi" isMenuActive={active} href="/gnai"  />
           
           <SignOut />

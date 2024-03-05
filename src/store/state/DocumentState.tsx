@@ -16,9 +16,16 @@ export interface DocumentModel {
   state: string[] | undefined;
   fileId: string;
 }
+
+export interface StateDiscomFilter {
+  state: string;
+  discom: string[];
+}
+
 export interface DocumentFilter {
   discoms: string[] | undefined;
   states: string[] | undefined;
+  stateDiscom: StateDiscomFilter[] | undefined;
   types: string[] | undefined;
 }
 
@@ -27,10 +34,13 @@ export interface Message{
   role: string
 }
 
+
+
 export interface DocumentState {
   documents: DocumentModel[];
   filters: DocumentFilter;
   gnaiActive: boolean;
+  typing: boolean;
   chats: Message[];
 
 }
@@ -40,10 +50,12 @@ const initialState: DocumentState = {
   documents: [],
   filters: {
     discoms: [],
+    stateDiscom: [],
     states: [],
     types: [],
   },
   gnaiActive: false,
+  typing: false,
   chats: []
 };
 
@@ -62,6 +74,25 @@ const documentSlice = createSlice({
       action: PayloadAction<DocumentFilter>
     ) => {
       state.filters = action.payload;
+    },
+    setTyping: (
+      state: DocumentState,
+      action: PayloadAction<boolean>
+    ) => {
+      state.typing = action.payload;
+    },
+    setStates: (
+      state: DocumentState,
+      action: PayloadAction<string[]>
+    ) => {
+      state.filters.states = action.payload;
+    }
+    ,
+    setDiscoms: (
+      state: DocumentState,
+      action: PayloadAction<string[]>
+    ) => {
+      state.filters.discoms = action.payload;
     },
     addDocument: (
       state: DocumentState,
@@ -90,6 +121,6 @@ const documentSlice = createSlice({
   },
 });
 
-export const { addDocument, setDocuments, setDocumentFilters,setGNAiVisibility, addMessage, resetMessages  } = documentSlice.actions;
+export const { addDocument, setDocuments, setDocumentFilters,setGNAiVisibility,setTyping, addMessage, resetMessages, setDiscoms  } = documentSlice.actions;
 
 export default documentSlice.reducer;

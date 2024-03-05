@@ -107,4 +107,11 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
         link.click();
       });
   }
+
+  export function FilterHeading({heading} : {heading : string}){
+    return   <div className="flex space-x-2">
+    <DownIcon width="18px" />
+    <p className="font-semibold">{heading}</p>
+  </div>
+  }
   
