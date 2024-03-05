@@ -33,8 +33,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "start:loc": "react-scripts start --host 192.168.1.68:3000",
+
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

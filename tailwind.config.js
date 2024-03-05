@@ -17,7 +17,12 @@ module.exports = {
         'secondary': '#ffed4a',
         'danger': '#e3342f',
       
-      }
+      },
+      textColor:{
+        'primary': '#FF7C04',
+        'secondary': '#ffed4a',
+        'danger': '#e3342f',
+      },
     },
   },
   plugins: [],

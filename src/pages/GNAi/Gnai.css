@@ -17,6 +17,7 @@
     margin-top: 20px;
     background-color: white;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 .messageSender{
@@ -29,3 +30,5 @@
 .message{
     font-size: 16px;
 }
+
+
