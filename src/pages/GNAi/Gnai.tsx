@@ -12,7 +12,6 @@ enum Role {
 interface Message {
     content: string,
     role: string
-
 }
 export function Gnai() {
     const chatAreaRef = useRef<HTMLDivElement>(null);
