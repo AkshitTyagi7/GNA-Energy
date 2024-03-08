@@ -20,6 +20,7 @@ import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
 import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement } from "../../../store/state/ExchangeState";
+import React from "react";
 export const AxisLabel = ({
   axisType,
   x,
@@ -66,7 +67,7 @@ export const renderQuarterTick = (tickProps: any) => {
   }
 };
 
-export const ExchangeChart = ({
+export function ExchangeChart  ({
   showBrush = false,
   title = "Exchange Chart",
   data,
@@ -82,8 +83,10 @@ export const ExchangeChart = ({
   height?: string;
   width?: string;
   syncId?: string;
-}) => (
-  <>
+}){
+  const [shownLegnends, setShownLegends] = React.useState<string[]>([]);
+
+  return <>
     {!onlyBrush && <h2 className="text-center text-xl ">{title}</h2>}
     <ResponsiveContainer width={width} height={height}>
       <ComposedChart syncId={syncId} data={data} margin={{}}>
@@ -155,6 +158,15 @@ export const ExchangeChart = ({
             />
             <Legend verticalAlign="top" 
           align="center"
+          onClick={
+            (e) => {
+              if (shownLegnends.includes(e.value)) {
+                setShownLegends(shownLegnends.filter(legend => legend !== e.value));
+              } else {
+                setShownLegends([...shownLegnends, e.value]);
+              }
+            }
+          }
             wrapperStyle={{
               fontSize: "12px",
               paddingRight: "50px",
@@ -165,12 +177,14 @@ export const ExchangeChart = ({
             <Bar
               dataKey="wt_mcp_rs_mwh"
               fill={SecondaryColor}
+              hide={!shownLegnends.includes(`Price(${COST_UNIT})`) && shownLegnends.length > 0}
               isAnimationActive={false}
               name={`Price(${COST_UNIT})`}
             />
             <Line
               dot={false}
               strokeWidth={4}
+              hide={!shownLegnends.includes(`Sell Bids(${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
               yAxisId="right"
               dataKey="sell_bid_mw"
               stroke={QuaternaryColor}
@@ -185,6 +199,7 @@ export const ExchangeChart = ({
           dot={false}
           strokeWidth={4}
           yAxisId="right"
+          hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
           style={{
             display: onlyBrush ? "none" : "block",
           }}
@@ -202,6 +217,7 @@ export const ExchangeChart = ({
               strokeWidth={4}
               yAxisId="right"
               dataKey="mcv_mw"
+              hide={!shownLegnends.includes(`MCV (${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
               stroke={"red"}
               isAnimationActive={false}
               color={"red"}
@@ -235,8 +251,8 @@ export const ExchangeChart = ({
         )}
       </ComposedChart>
     </ResponsiveContainer>
-  </>
-);
+  </>}
+
 
 export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData[], showLegend: boolean}) => {
 return <ResponsiveContainer 

@@ -245,15 +245,28 @@ export default function AnalysisTable() {
                                 <table className='analysisTable'>
                                     <thead>
                                         <tr>
-                                            <th>Generator</th>
                                             <th onClick={() => {
-                                                setTableRecords(tableRecords.sort((a, b) => a.Actual_Mus - b.Actual_Mus));
-                                            }}>MUs Procured</th>
+                                               
+                                            }}>Generator</th>
+
+
+                                            <th onClick={
+                                                ()=>{
+                                                    setTableRecords(tableRecords.sort((a, b) => a.Actual_Mus - b.Actual_Mus));
+                                                    // setTableRecords([]);
+                                                    console.log("Sorting by Actual Mus");
+                                                }
+                                            } >MUs Procured</th>
+                                            
                                             <th
                                                 onClick={() => {
-                                                    setTableRecords(tableRecords.sort((a, b) => a.variable_charge - b.variable_charge));
+                                                    const newRecord=tableRecords
+                                                    setTableRecords([]);
+                                                    newRecord.sort((a, b) => a.variable_cost - b.variable_cost);
+                                                    setTableRecords(newRecord);
+
                                                     console.log("Sorting by Variable Charge");
-                                                    console.log(tableRecords);
+                                                    console.log(newRecord);
                                                 }}
                                             >Total Cost (₹ cr)                                            </th>
                                              <th

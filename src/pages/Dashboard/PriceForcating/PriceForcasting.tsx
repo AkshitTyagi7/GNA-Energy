@@ -16,6 +16,7 @@ export function PriceForecasting() {
     const [startDate, setStartDate] = useState(new Date(new Date().getTime() - (4 * 24 * 60 * 60 * 1000)));
     const [endDate, setEndDate] = useState(new Date(new Date().getTime() + (1 * 24 * 60 * 60 * 1000)));
     const maxDate = new Date(new Date().getTime() + (1 * 24 * 60 * 60 * 1000));
+    const [shownForecast, setShownForecast] = useState<String[]>([]);
 
       useEffect(() => {
         fetchData(
@@ -56,7 +57,18 @@ export function PriceForecasting() {
             } } /></div>
         </div><ResponsiveContainer width="98%" height={"90%"}>
                 <ComposedChart data={forecateData}>
-                    <Legend verticalAlign="top" />
+                    <Legend verticalAlign="top" 
+                    onClick={
+                        (e) => {
+                           if(shownForecast.includes(e.value)){
+                            setShownForecast(shownForecast.filter((item)=> item != e.value));
+                           }
+                            else{
+                             setShownForecast([...shownForecast,e.value]);
+                            }
+                        }
+                    }
+                    />
                     <XAxis dataKey="name" fontSize={12} />
                     <XAxis
                         dataKey="date"
@@ -87,8 +99,10 @@ export function PriceForecasting() {
                       }}
                     />
                     <Line strokeWidth={4}
+                    hide={!shownForecast.includes("Forecast IEX DAM price") && shownForecast.length > 0}
                         dataKey="forecasted_value" fill={SecondaryColor} color={SecondaryColor} stroke={SecondaryColor} name={"Forecast IEX DAM price"} />
                     <Line strokeWidth={4}
+                    hide={!shownForecast.includes("Actual IEX DAM Price") && shownForecast.length > 0}
                         dataKey="actual_value" stroke={PrimaryColor} color={PrimaryColor} fill={PrimaryColor} name="Actual IEX DAM Price" />
                     <XAxis dataKey="name" />
                     <Brush

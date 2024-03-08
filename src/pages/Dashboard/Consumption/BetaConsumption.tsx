@@ -49,6 +49,7 @@ export function BetaConsumption() {
   >([
     // chartOutageData.region[0].name,
   ]);
+  const [shownOutageCharts, setshownOutageCharts] = useState<string[]>([]);
   const [selectedGenerationState, setSelectedGenerationState] = React.useState<
     string[] | null
   >([
@@ -69,7 +70,7 @@ export function BetaConsumption() {
   );
   let maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
   const [loading, setLoading] = useState(true);
-  const [hiddenGenerationCharts, setHiddenGenerationCharts] = useState<
+  const [shownGenerationCharts, setshownGenerationCharts] = useState<
     string[]
   >([]);
   const [demandLoading, setDemandLoading] = useState(true);
@@ -372,15 +373,30 @@ export function BetaConsumption() {
                 <Legend
                   verticalAlign="top"
                   onClick={(e) => {
-                    if (hiddenGenerationCharts.includes(e.value)) {
-                      setHiddenGenerationCharts(
-                        hiddenGenerationCharts.filter(
+
+                    
+
+                    // if (hiddenGenerationCharts.includes(e.value)) {
+                    //   setHiddenGenerationCharts(
+                    //     hiddenGenerationCharts.filter(
+                    //       (item) => item !== e.value
+                    //     )
+                    //   );
+                    // } else {
+                    //   setHiddenGenerationCharts([
+                    //     ...hiddenGenerationCharts,
+                    //     e.value,
+                    //   ]);
+                    // }
+                    if (shownGenerationCharts.includes(e.value)) {
+                      setshownGenerationCharts(
+                        shownGenerationCharts.filter(
                           (item) => item !== e.value
                         )
                       );
                     } else {
-                      setHiddenGenerationCharts([
-                        ...hiddenGenerationCharts,
+                      setshownGenerationCharts([
+                        ...shownGenerationCharts,
                         e.value,
                       ]);
                     }
@@ -391,13 +407,13 @@ export function BetaConsumption() {
                 </YAxis>
                 <CartesianGrid strokeDasharray="3 3" />
 
-                <Area
+                {/* <Area
                   type="monotone"
                   dataKey="wind"
                   name="Wind"
                   stroke="Blue"
                   stackId={1}
-                  hide={hiddenGenerationCharts.includes("Wind")}
+                  hide={!shownGenerationCharts.includes("Wind")}
                   fill="Blue"
                   strokeWidth={3}
                 />
@@ -405,7 +421,7 @@ export function BetaConsumption() {
                   type="monotone"
                   dataKey="hydro"
                   stackId={1}
-                  hide={hiddenGenerationCharts.includes("Hydro")}
+                  hide={!shownGenerationCharts.includes("Hydro")}
                   name="Hydro"
                   stroke="Green"
                   fill="Green"
@@ -416,7 +432,7 @@ export function BetaConsumption() {
                   dataKey="solar"
                   name="Solar"
                   stackId={1}
-                  hide={hiddenGenerationCharts.includes("Solar")}
+                  hide={!shownGenerationCharts.includes("Solar")}
                   stroke="#00FFFF
                   "
                   fill="#00FFFF	
@@ -430,7 +446,7 @@ export function BetaConsumption() {
                   name="Nuclear"
                   stroke="Red"
                   stackId={1}
-                  hide={hiddenGenerationCharts.includes("Nuclear")}
+                  hide={!shownGenerationCharts.includes("Nuclear")}
                   fill="Red"
                   strokeWidth={3}
                 />
@@ -442,8 +458,57 @@ export function BetaConsumption() {
                   fill="#FF681F"
                   stackId={1}
                   strokeWidth={3}
-                  hide={hiddenGenerationCharts.includes("Thermal")}
-                />
+                  hide={!shownGenerationCharts.includes("Thermal")}
+                /> */}
+                {
+                [
+                  {
+                    name: "Wind",
+                    dataKey: "wind",
+                    fill: "Blue",
+                    stroke: "Blue",
+                  },
+                  {
+                    name: "Hydro",
+                    dataKey: "hydro",
+                    fill: "Green",
+                    stroke: "Green",
+                  },
+                  {
+                    name: "Solar",
+                    dataKey: "solar",
+                    fill: "#00FFFF",
+                    stroke: "#00FFFF",
+                  },
+                  {
+                    name: "Nuclear",
+                    dataKey: "nuclear",
+                    fill: "Red",
+                    stroke: "Red",
+                  },
+                  {
+                    name: "Thermal",
+                    dataKey: "thermal",
+                    fill: "#FF681F",
+                    stroke: "#FF681F",
+                  },
+                ].map((item) => {
+                  return (
+                    <Area
+                      type="monotone"
+                      dataKey={item.dataKey}
+                      name={item.name}
+                      stackId={1}
+                      hide={
+                        // !shownGenerationCharts.includes(item.name)
+                        shownGenerationCharts.length > 0 && !shownGenerationCharts.includes(item.name)
+                      }
+                      fill={item.fill}
+                      stroke={item.stroke}
+                      strokeWidth={3}
+                    />
+                  );})
+                }
                 <Tooltip
                   formatter={(value, name, props) => {
                     const val = parseFloat(value.toString()).toFixed(2);
@@ -523,7 +588,7 @@ export function BetaConsumption() {
                     <YAxis max={10} width={70}>
                       <Label value="MW" angle={-90} position="insideLeft" />
                     </YAxis>{" "}
-                    <Line
+                    {/* <Line
                       type="monotone"
                       strokeWidth={3}
                       dot={false}
@@ -538,14 +603,57 @@ export function BetaConsumption() {
                       dataKey="centralSector"
                       name="Central Sector"
                       stroke="rgb(18, 35, 158)"
-                    />
+                    /> */}
+                    {[
+                      {
+                        name: "State Sector",
+                        dataKey: "stateSector",
+                        stroke: "rgb(17, 141, 255)",
+                      },
+                      {
+                        name: "Central Sector",
+                        dataKey: "centralSector",
+                        stroke: "rgb(18, 35, 158)",
+                      },
+                      
+                    ].map((item) => {
+                      return (
+                        <Line
+                          type="monotone"
+                          strokeWidth={3}
+                          dot={false}
+                          hide={
+                            shownOutageCharts.length > 0 &&
+                            !shownOutageCharts.includes(item.name)
+                          }
+                          dataKey={item.dataKey}
+                          name={item.name}
+                          stroke={item.stroke}
+                        />
+                      );
+                    })}
                     <Tooltip
                       formatter={(value, name, props) => {
                         const val = parseFloat(value.toString()).toFixed(2);
                         return [val + " MW", name];
                       }}
                     />
-                    <Legend verticalAlign="top" />
+                    <Legend verticalAlign="top" onClick={
+                      (e) => {
+                        if (shownOutageCharts.includes(e.value)) {
+                          setshownOutageCharts(
+                            shownOutageCharts.filter(
+                              (item) => item !== e.value
+                            )
+                          );
+                        } else {
+                          setshownOutageCharts([
+                            ...shownOutageCharts,
+                            e.value,
+                          ]);
+                        }
+                      }
+                    } />
                     <Brush dataKey={"date"} />
                   </LineChart>
                 </ResponsiveContainer>
