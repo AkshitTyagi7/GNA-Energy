@@ -67,7 +67,7 @@ export const renderQuarterTick = (tickProps: any) => {
   }
 };
 
-export function ExchangeChart  ({
+export const ExchangeChart =  ({
   showBrush = false,
   title = "Exchange Chart",
   data,
@@ -75,18 +75,19 @@ export function ExchangeChart  ({
   width = "100%",
   syncId = "anyId",
   onlyBrush = false,
+  setShownLegends,
+  shownLegnends=[],
 }: {
   showBrush?: boolean;
   onlyBrush?: boolean;
   title?: string;
   data: any[];
+  shownLegnends: string[];
+  setShownLegends: (legends: string[]) => void;
   height?: string;
   width?: string;
   syncId?: string;
-}){
-  const [shownLegnends, setShownLegends] = React.useState<string[]>([]);
-
-  return <>
+})=>( <>
     {!onlyBrush && <h2 className="text-center text-xl ">{title}</h2>}
     <ResponsiveContainer width={width} height={height}>
       <ComposedChart syncId={syncId} data={data} margin={{}}>
@@ -251,7 +252,7 @@ export function ExchangeChart  ({
         )}
       </ComposedChart>
     </ResponsiveContainer>
-  </>}
+  </>)
 
 
 export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData[], showLegend: boolean}) => {

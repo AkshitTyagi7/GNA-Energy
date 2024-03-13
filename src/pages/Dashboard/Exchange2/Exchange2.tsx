@@ -75,6 +75,8 @@ export default function ExchangePage() {
     []
   );
   // let trendBuyer: string[] = ["UPPCL", "RAJASTHAN", "ODISHA", "WBSETCL"];
+  const [exchangeShownlegends, setExchangeShownLegends] = useState<string[]>([]);
+  const [productShownlegends, setProductShownLegends] = useState<string[]>([]);
   const [trendBuyer, setTrendBuyer] = useState<string[]>([
     "UPPCL",
     "RAJASTHAN",
@@ -294,6 +296,8 @@ export default function ExchangePage() {
           <div className="byExchangeChart mt-">
             <ResponsiveContainer>
               <ExchangeChart
+              shownLegnends={exchangeShownlegends}
+              setShownLegends={setExchangeShownLegends}
                 data={
                   byExchangeIndex === 0
                     ? iexData.dam
@@ -308,6 +312,9 @@ export default function ExchangePage() {
 
             <ResponsiveContainer>
               <ExchangeChart
+                            shownLegnends={exchangeShownlegends}
+                            setShownLegends={setExchangeShownLegends}
+              
                 data={
                   byExchangeIndex === 0
                     ? iexData.gdam
@@ -323,6 +330,8 @@ export default function ExchangePage() {
           <div className="byExchangeChart">
             <ResponsiveContainer>
               <ExchangeChart
+              shownLegnends={exchangeShownlegends}
+              setShownLegends={setExchangeShownLegends}
                 data={
                   byExchangeIndex === 0
                     ? iexData.hpdam
@@ -337,6 +346,9 @@ export default function ExchangePage() {
 
             <ResponsiveContainer>
               <ExchangeChart
+                            shownLegnends={exchangeShownlegends}
+                            setShownLegends={setExchangeShownLegends}
+              
                 data={
                   byExchangeIndex === 0
                     ? iexData.rtm
@@ -350,6 +362,9 @@ export default function ExchangePage() {
             </ResponsiveContainer>
           </div>
           <ExchangeChart
+                        shownLegnends={exchangeShownlegends}
+                        setShownLegends={setExchangeShownLegends}
+          
             data={iexData.dam}
             title="DAM"
             syncId="byProduct"
@@ -380,6 +395,9 @@ export default function ExchangePage() {
             </div>
           </div>
           <ExchangeChart
+
+          shownLegnends={productShownlegends}
+          setShownLegends={setProductShownLegends}
             data={
               Object.keys(iexData).map((data, index) => {
                 return iexData[data];
@@ -389,6 +407,9 @@ export default function ExchangePage() {
             title="IEX"
           />
           <ExchangeChart
+                    shownLegnends={productShownlegends}
+                    setShownLegends={setProductShownLegends}
+          
             data={
               Object.keys(hpxData).map((data, index) => {
                 return hpxData[data];
@@ -397,6 +418,9 @@ export default function ExchangePage() {
             title="HPX"
           />
           <ExchangeChart
+                    shownLegnends={productShownlegends}
+                    setShownLegends={setProductShownLegends}
+          
             data={
               Object.keys(pxilData).map((data, index) => {
                 return pxilData[data];

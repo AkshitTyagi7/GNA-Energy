@@ -36,7 +36,6 @@ export function ExchangeReCharts(){
 
     return (
         <div>
-               <ExchangeChart data={iexData.rtm} showBrush={false} title="IEX"  />
 
         </div>
     )
