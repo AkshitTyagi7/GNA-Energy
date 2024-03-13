@@ -23,7 +23,7 @@ import { ReactComponent as DownIcon } from "./downicon.svg";
 import { getUser } from "../Protected";
 
 export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat: Function }) => {
-    const URL = "http://143.244.128.157:8003/"
+    const URL = "https://assistant.gna.energy/"
 
     return (
       <div className="document-item">
