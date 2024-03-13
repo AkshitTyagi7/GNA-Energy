@@ -86,13 +86,23 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
                           {role === Role.User ? getUser().email : "GNAi Assistant"}
   
                       </div>
-                      <div className="message text-left">{message}</div>
+                      <div className="message text-left" dangerouslySetInnerHTML={{__html: message == null || "" ? "" : formatMessage(message)}}></div>
                   </div>
               </div>
           </div>
       )
   }
-
+// Function to format the message with line breaks and bold text
+function formatMessage(message : string) : string {
+  const lines = message.split('\n');
+  const formattedLines = lines.map((line, index) => {
+    let formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold text between ** **
+    formattedLine = formattedLine.replace(/^- /g, '<br><strong>- '); // Bold bullet points
+    if(index === 0) return formattedLine;
+    return `<br>${formattedLine}`;
+  });
+  return formattedLines.join('');
+}
   function downloadFile(url: string, fileName: string) {
     fetch(url)
       .then((response: Response) => {

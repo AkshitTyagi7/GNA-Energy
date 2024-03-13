@@ -85,7 +85,7 @@ export function Gnai() {
     scrollToBottom();
     await new Promise((r) => setTimeout(r, 100));
     const response = await fetch(
-      "https://assistant.gna.energy/gnai/streamChatGpt/",
+      "http://127.0.0.1:8000/gnai/streamChatGpt/",
       {
         method: "post",
         headers: {
@@ -156,9 +156,19 @@ function ChatBox({
           <div className="messageSender">
             {role === Role.User ? getUser().email : "GNAi Assistant"}
           </div>
-          <div className="message">{message}</div>
+          <div className="message" dangerouslySetInnerHTML={{__html:formatMessage( message) }}></div>
         </div>
       </div>
     </div>
   );
+}
+function formatMessage(message : string) : string {
+  const lines = message.split('\n');
+  const formattedLines = lines.map((line, index) => {
+    let formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold text between ** **
+    formattedLine = formattedLine.replace(/^- /g, '<br><strong>- '); // Bold bullet points
+    if(index === 0) return formattedLine;
+    return `<br>${formattedLine}`;
+  });
+  return formattedLines.join('');
 }

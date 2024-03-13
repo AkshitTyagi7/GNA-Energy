@@ -25,11 +25,14 @@ import {
 import Select from "react-select";
 import { ReactComponent as DownIcon } from "./downicon.svg";
 import { DocItem, UserChat, Role, FilterHeading } from "./Components";
+import { getUser } from "../Protected";
 
 export function Documents() {
   const state = useSelector((state: RootState) => state.document);
   const chatAreaRef = useRef<HTMLDivElement>(null);
-const URL = "https://assistant.gna.energy/";
+// const URL = "https://assistant.gna.energy/";
+const URL = "http://127.0.0.1:8000/";
+
   const dispatch = useDispatch();
   useEffect(() => {
     fetchDocuments();
@@ -272,7 +275,17 @@ const URL = "https://assistant.gna.energy/";
   );
 
   function create_thread(){
-    fetch(URL + "gnai/create_thread").then((response)=>{    
+    fetch(URL + "gnai/create_thread/",
+    {
+        method: "post",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            email: getUser().email
+        }),
+    }).then((response)=>{    
         return response.json();
         }).then((data)=>{
             console.log(data);
