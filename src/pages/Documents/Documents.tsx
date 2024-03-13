@@ -30,8 +30,8 @@ import { getUser } from "../Protected";
 export function Documents() {
   const state = useSelector((state: RootState) => state.document);
   const chatAreaRef = useRef<HTMLDivElement>(null);
-// const URL = "https://assistant.gna.energy/";
-const URL = "http://127.0.0.1:8000/";
+const URL = "https://assistant.gna.energy/";
+// const URL = "http://127.0.0.1:8000/";
 
   const dispatch = useDispatch();
   useEffect(() => {

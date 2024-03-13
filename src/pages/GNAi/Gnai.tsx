@@ -85,7 +85,7 @@ export function Gnai() {
     scrollToBottom();
     await new Promise((r) => setTimeout(r, 100));
     const response = await fetch(
-      "http://127.0.0.1:8000/gnai/streamChatGpt/",
+      "https://assistant.gna.energy/gnai/streamChatGpt/",
       {
         method: "post",
         headers: {
