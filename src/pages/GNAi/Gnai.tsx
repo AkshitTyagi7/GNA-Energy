@@ -4,6 +4,7 @@ import { ReactComponent as AiIcon } from "./AiIcon.svg";
 import { getUser } from "../Protected";
 import { ReactComponent as Send } from "./send.svg";
 import React, { useRef, useState } from "react";
+import { json } from "stream/consumers";
 
 enum Role {
   User = "user",
@@ -12,9 +13,16 @@ enum Role {
 interface Message {
   content: string;
   role: string;
+  source?: Source[];
+}
+
+interface Source {
+  name: string;
+  page: number;
 }
 export function Gnai() {
   const chatAreaRef = useRef<HTMLDivElement>(null);
+  const BASE_URL = "http://127.0.0.1:8000/";
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -35,15 +43,8 @@ export function Gnai() {
         ref={chatAreaRef}
       >
         {messages.map((message, index) => {
-          return (
-            <ChatBox
-              key={index}
-              role={message.role}
-              message={message.content}
-            />
-          );
+          return <ChatBox key={index} message={message} />;
         })}
-     
       </div>
 
       <div className="absolute bottom-0 w-full ">
@@ -84,17 +85,14 @@ export function Gnai() {
 
     scrollToBottom();
     await new Promise((r) => setTimeout(r, 100));
-    const response = await fetch(
-      "https://assistant.gna.energy/gnai/streamChatGpt/",
-      {
-        method: "post",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: tempMessage, email: getUser().email }),
-      }
-    );
+    const response = await fetch(`${BASE_URL}gnai/docGpt/`, {
+      method: "post",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: tempMessage, email: getUser().email }),
+    });
     if (!response.ok || !response.body) {
       throw response.statusText;
     }
@@ -122,8 +120,9 @@ export function Gnai() {
       setMessages([
         ...tempMessage,
         {
-          content: streamingMessage,
+          content: JSON.parse(streamingMessage).data.message,
           role: Role.Ai,
+          source: JSON.parse(streamingMessage).data.sources,
         },
       ]);
       scrollToBottom();
@@ -133,42 +132,62 @@ export function Gnai() {
     await new Promise((r) => setTimeout(r, 100));
     chatAreaRef!.current!.scrollTop! = chatAreaRef!.current!.scrollHeight!;
   }
-}
-
-function ChatBox({
-  role,
-  message,
-}: {
-  role: string;
-  message: string;
-}): JSX.Element {
-  return (
-    <div className="messageBox p-6">
-      <div className="flex space-x-2">
-        <div className="flex-shrink-0">
-          {role === Role.User ? (
-            <UserIcon className="h-10 w-10" />
-          ) : (
-            <AiIcon className="h-10 w-10" />
-          )}
-        </div>
-        <div>
-          <div className="messageSender">
-            {role === Role.User ? getUser().email : "GNAi Assistant"}
+  function ChatBox({ message }: { message: Message }): JSX.Element {
+    return (
+      <div className="messageBox p-6">
+        <div className="flex space-x-2">
+          <div className="flex-shrink-0">
+            {message.role === Role.User ? (
+              <UserIcon className="h-10 w-10" />
+            ) : (
+              <AiIcon className="h-10 w-10" />
+            )}
           </div>
-          <div className="message" dangerouslySetInnerHTML={{__html:formatMessage( message) }}></div>
+          <div>
+            <div className="messageSender">
+              {message.role === Role.User ? getUser().email : "GNAi Assistant"}
+            </div>
+            <div
+              className="message"
+              dangerouslySetInnerHTML={{
+                __html: formatMessage(message.content),
+              }}
+            ></div>
+
+            {message.source && (
+              <>
+                <br /> <div>Sources</div>
+                {message.source.map((source, index) => {
+                  return (
+                    <>
+                      <a
+                        key={index}
+                        target="_blank"
+                        className="source"
+                        href={`${BASE_URL}media/static/${source.name}#page=${source.page}`}
+                      >
+                        {source.name} - Page {source.page}
+                      </a>
+                      <br />
+                    </>
+                  );
+                })}
+              </>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-function formatMessage(message : string) : string {
-  const lines = message.split('\n');
+
+function formatMessage(message: string): string {
+  const lines = message.split("\n");
   const formattedLines = lines.map((line, index) => {
-    let formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold text between ** **
-    formattedLine = formattedLine.replace(/^- /g, '<br><strong>- '); // Bold bullet points
-    if(index === 0) return formattedLine;
+    let formattedLine = line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"); // Bold text between ** **
+    formattedLine = formattedLine.replace(/^- /g, "<br><strong>- "); // Bold bullet points
+    if (index === 0) return formattedLine;
     return `<br>${formattedLine}`;
   });
-  return formattedLines.join('');
+  return formattedLines.join("");
 }
