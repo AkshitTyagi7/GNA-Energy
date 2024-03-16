@@ -36,7 +36,7 @@ export function Gnai() {
     scrollToBottom();
   }, []);
   return (
-    <div className="h-full">
+    <div className="h-full overflow-hidden">
       <div
         className="chatArea pb-10 rounded "
         style={{ scrollBehavior: "smooth" }}
@@ -47,7 +47,7 @@ export function Gnai() {
         })}
       </div>
 
-      <div className="absolute bottom-0 w-full ">
+      <div className="absolute bottom-2 w-full ">
         <form onSubmit={_handleMessageSubmit}>
           <div className="flex justify-center h-full  text-center gptInputBox bg-white pl-2 ">
             <div className="pl-2 w-full flex">
@@ -155,8 +155,8 @@ export function Gnai() {
             ></div>
 
             {message.source && (
-              <>
-                <br /> <div>Sources</div>
+              <div className="sources">
+                <br /> <div><p>Sources</p></div>
                 {message.source.map((source, index) => {
                   return (
                     <>
@@ -172,7 +172,7 @@ export function Gnai() {
                     </>
                   );
                 })}
-              </>
+              </div>
             )}
           </div>
         </div>
@@ -185,7 +185,7 @@ function formatMessage(message: string): string {
   const lines = message.split("\n");
   const formattedLines = lines.map((line, index) => {
     let formattedLine = line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"); // Bold text between ** **
-    formattedLine = formattedLine.replace(/^- /g, "<br><strong>- "); // Bold bullet points
+    formattedLine = formattedLine.replace(/^- /g, "<br>- "); // Bold bullet points
     if (index === 0) return formattedLine;
     return `<br>${formattedLine}`;
   });
