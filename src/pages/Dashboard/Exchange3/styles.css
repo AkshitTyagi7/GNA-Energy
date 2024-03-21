@@ -1,0 +1,335 @@
+.time-text{
+    font-size: 11px;
+    color: #34656D;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    height: 80px;
+    /* position: fixed; */
+    width:calc( 100% );
+    padding: 20px;
+    border-left: solid 1px #E4E7ED;
+    border-bottom: solid 1px #E4E7ED;
+    /* left: 188px; */
+}
+.content2{
+    width: calc(100% - 192px)!important;
+    height: 100%;
+    position: absolute;
+    left: 192px!important;
+    
+    /* padding: 10px;
+    padding-right: 20px; */
+    /* top: 100px; */
+}
+.content2-padding-body{
+    padding: 30px;
+}
+.recharts-brush-texts { font-size: 0; }
+.date-selection input{
+    border: solid 1px #DEDFDF;
+    color: #9F9F9F;
+    align-items: center;
+    border-radius: 8px;
+    padding: 8px 16px 8px 16px;
+}
+
+.date-selection{
+    width:340px ;
+    display: flex;
+    color: #9F9F9F;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px ;
+    gap: 8px;
+
+}
+.date-input{
+
+}
+
+.filters{
+    margin: 20px 0px;
+    margin-top: 4px;
+}
+
+.tabs-dateSelection{
+    background-color: white;
+    padding: 10px 20px;
+    /* border-radius: 12px 12px 0px 0px; */
+}
+
+.tab-dateSelection{
+    padding: 7px 18px;
+    font-size: 16px;
+    color: #9F9F9F;
+    border: solid 0.5px #DEDFDF;
+}
+
+.tab-dateSelection-right{
+    border-radius: 0px 8px 8px 0px;
+}
+.tab-dateSelection-left{
+    border-radius: 8px 0px 0px 8px;
+}
+.tab-dateSelection-active{
+    color: #333333;
+    background-color: #FFE2D2;
+}
+
+.legend{
+    display: flex;
+    gap: 10px;
+    align-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+.legend-items{
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+}
+
+.legend-exchangeSelection{
+    padding: 8px 24px 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+.exchange-chart-area{
+    height: calc(100vh - 200px);
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    padding-bottom: 38px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .exchange-byExchange-chart{
+    width: calc(50% - 5px);
+    border-radius: 12px;
+    box-shadow: 0px 0px 6px 0px #0000002c;
+    height: calc(50% - 10px );
+    background-color: white;
+  }
+  .exchange-byProduct-chart{
+    width: calc(100% - 5px);
+    border-radius: 12px;
+    box-shadow: 0px 2px 12px 0px #00000024;
+    height: calc(33% - 5px);
+    background-color: white;
+  }
+
+  .exchange-selection{
+    display: flex;
+  }
+
+  .realtime-container{
+    height: calc(100vh - 160px);
+    width: 100%;
+    background-color: white;
+    padding: 40px 30px;
+}
+
+.realTime-chart{
+    height: calc((100vh - 260px));
+    width: 100%;
+}
+
+.realTime-Legend p{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.side-filters-container{
+    height: 100%;
+    padding: 28px;
+    padding-top: 32px;
+    background-color: white;
+    box-shadow: 4px 4px 40px 0px #0000000F;
+}
+
+.side-filters-container h4{
+    font-size: 16px;
+
+    color: #9F9F9F;
+    font-weight: 400;
+}
+
+.side-filters-container p{
+    font-size: 12px;
+    margin-left: 4px;
+    color: #9F9F9F;
+    font-weight: 400;
+}
+.side-filter-item{
+    margin-bottom: 32px;
+
+}
+
+.side-filter-subitem{
+    margin-top: 8px;
+
+}
+
+.side-filter-subitem-active{
+    color: #f1935c !important; ;
+}
+
+.buyer-seller-container{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    
+}
+.tab-buyerseller{
+    width: 218.5px;
+    height: 30px;
+    border: solid 1px #f1935c;
+}
+.tabselection-buyerseller{
+    background-color: white;
+    display: flex;
+    padding-top: 8px;
+    margin-top: 24px;
+    margin-left: 24px;
+    padding-bottom: 8px;
+    justify-content: center;
+}
+.tab-buyerseller-right{
+    border-radius: 0px 4px 4px 0px;
+}
+.tab-buyerseller-left{
+    border-radius: 4px 0px 0px 4px;
+}
+.hr-small{
+    border: 0.5px solid #E4E7ED;
+    width: 100%;
+    margin: 0px;
+    width: 112px;
+    margin-top: 4px;
+}
+
+.exchange-topplayers-container{
+    display: flex;
+
+    gap: 16px;
+    height: calc(100% - 100px);
+
+    margin: 10px;
+    margin-left: 24px;
+
+}
+.exchange-topplayers-players-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.exchange-topplayers-players-chart{
+    height: 50%;
+    background-color: white;
+    border-radius: 8px;
+    overflow: scroll;
+
+
+}
+
+.exchange-topplayers-region-container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.exchange-topplayers-players-chartarea{
+    height: 48%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+
+.exchange-topplayers-players-chartarea h3{
+    color: #34656D;
+    font-size: 18px;
+
+}
+
+.buyerSellerChart{
+    overflow: scroll;
+    height: 90%;
+}
+
+
+.buyerSellerChart::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+    width: 0px;
+    display: none;
+    background-color: #F5F5F5;
+}
+
+.buyerSellerChart::-webkit-scrollbar{
+  width: 0px;
+  display: none;
+
+background-color: #F1935C;
+}
+
+.exchange-buyerseller-trends-container{
+    display: flex;
+    gap: 24px;
+    height: calc(100% - 100px);
+    margin: 10px;
+    width: calc(100% - 22px);
+}
+
+.buyerseller-heading{
+    color: #34656D;
+    font-size: 18px!important;
+    text-align: center;
+}
+
+.exchange-buyerseller-trends-chart-container{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 100%;
+    background-color: white;
+    border-radius: 12px;
+}
+.trendFilter{
+    /* border-radius: 16px ; */
+    padding: 8px 0px;
+    
+}
+
+.css-13cymwt-control {
+    border-radius: 8px;
+    border-color: #DEDFDF;
+    /* padding-top: 7px;
+    padding-bottom: 7px; */
+}
+
+span.css-1u9des2-indicatorSeparator {
+    display: none;
+}
+
+.trends-chart{
+    height: calc(100%);
+}

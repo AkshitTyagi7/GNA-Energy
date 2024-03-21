@@ -35,8 +35,8 @@
 .content {
     display: block;
     position: absolute;
-    left: 210px;
-    width: calc(100% - 210px);
+    left: 190px;
+    width: calc(100% - 190px);
     height: calc(100%);
     }
 

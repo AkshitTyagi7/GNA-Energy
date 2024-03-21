@@ -5,12 +5,11 @@ import { BankingAnalytics } from "./pages/Dashboard/BankingAnalytics/BankingAaly
 import { ConsumptionAnalytics } from "./pages/Dashboard/Consumption/Consumption";
 import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonitoring";
 import { DemoPage } from "./pages/DemoPage";
-import ReCharts from "./pages/Recharts";
-import ReCharts2 from "./pages/Dashboard/Exchange2/Exchange2";
 import { ExchangeReCharts } from "./pages/ReCharts3";
 import { PriceForecasting } from "./pages/Dashboard/PriceForcating/PriceForcasting";
 import { BetaMarketMontoring } from "./pages/Dashboard/MarketMonitoring/BetaMarkeMonitoring";
 import { BetaConsumption } from "./pages/Dashboard/Consumption/BetaConsumption";
+import { Exchange3 } from "./pages/Dashboard/Exchange3/Exchange3";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -42,21 +41,14 @@ export const DashboardRoutes=[
     },
     {
         path:"exchangeAnalysis",
-        element:<ReCharts2 />
+        element:<Exchange3 />,
+        noDefaultPadding: true
     },
     {
         path:"powerAtlas",
         element:<PowerAtlas />
     },
-    {
-        path:"recharts",
-        element:<ReCharts />
-    },
-    {
-        path:"recharts2",
-        element:<ReCharts2 />,
-        notPrtoected:true
-    },
+
     {
         path:"attributeAnalysis",
         element:<AnalysisTable />

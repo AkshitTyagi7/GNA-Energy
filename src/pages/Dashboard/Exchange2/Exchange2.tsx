@@ -42,7 +42,7 @@ import {
   BuyerSellerFilter,
   setBuyerSellerData,
   setTrendData,
-} from "../../../store/state/ExchangeState";
+} from "../../../store/state/BuyerSellerState";
 import { DemoTrendData } from "../../../store/state/UtilizationData";
 import Select from "react-select";
 
@@ -483,7 +483,8 @@ export default function ExchangePage() {
           </div>
           <FootNote source="Source - IEX" />
         </div>
-      )}
+      )
+      }
       {pageIndex === 3 && (
         <div>
           <div className="flex w-full justify-end pr-10 mt-5">
@@ -700,7 +701,9 @@ export default function ExchangePage() {
           />
         </div>}
         </div>
-      )}
+      )
+      
+      }
 
     </>
   );

@@ -23,7 +23,9 @@ module.exports = {
         'secondary': '#ffed4a',
         'danger': '#e3342f',
       },
+        
     },
+    
   },
   plugins: [],
 }

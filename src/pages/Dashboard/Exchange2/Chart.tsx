@@ -19,7 +19,7 @@ import {
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
-import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement } from "../../../store/state/ExchangeState";
+import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement } from "../../../store/state/BuyerSellerState";
 import React from "react";
 export const AxisLabel = ({
   axisType,

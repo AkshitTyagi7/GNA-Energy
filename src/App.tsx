@@ -10,7 +10,6 @@ import Sidebar from "./layout/Sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { DemoPage } from "./pages/DemoPage";
 import { PowerAtlas } from "./pages/Dashboard/Atlas/Atlas";
-import ReCharts from "./pages/Recharts";
 import { LoginPage } from "./pages/Login/Login";
 import "./App.css";
 import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonitoring";
@@ -36,21 +35,22 @@ function App() {
             element={
               <Protected>
                 <Sidebar />
-                <div
-                  className="content"
-                  style={{
-                    width: isMenuActive
-                      ? "calc(100% - 210px)"
-                      : "calc(100% - 100px)",
-                    left: isMenuActive ? "210px" : "100px",
-                  }}
-                >
+
                   <Outlet />
-                </div>
               </Protected>
             }
           >
-            <Route index={true} element={<Dashboard />} />
+            <Route index={true} element={
+                            <div
+                            className="content2"
+                            style={{
+                              width: isMenuActive
+                                ? "calc(100% - 210px)"
+                                : "calc(100% - 100px)",
+                              left: isMenuActive ? "210px" : "100px",
+                            }}
+                          >
+            <Dashboard /></div>} />
             {DashboardRoutes.map((Proute, index) => {
               return (
                 <Route
@@ -60,10 +60,19 @@ function App() {
                     Proute.notPrtoected ? (
                       Proute.element
                     ) : (
+                      <div
+                      className={Proute.noDefaultPadding ? "content2" : "content"}
+                      style={{
+                        width: isMenuActive && !Proute.noDefaultPadding
+                          ? "calc(100% - 210px)"
+                          : "calc(100% - 100px)",
+                        left: isMenuActive && !Proute.noDefaultPadding ? "210px" : "100px",
+                      }}
+                    >
                       <ProtectedPage
                         children={Proute.element}
                         pageId={"/" + Proute.path}
-                      />
+                      /></div>
                     )
                   }
                 />
@@ -97,26 +106,25 @@ function App() {
               </div>
             }
           />
-          <Route 
-          path="/document"
-          element={
-            <div>
-              <Sidebar />
-           
-                  <div
-                    className="content"
-                    style={{
-                      width: isMenuActive
-                        ? "calc(100% - 210px)"
-                        : "calc(100% - 100px)",
-                      left: isMenuActive ? "210px" : "100px",
-                    }}
-                  >
-                    <Documents />
-                  </div>
-             
-            </div>
-          }
+          <Route
+            path="/document"
+            element={
+              <div>
+                <Sidebar />
+
+                <div
+                  className="content"
+                  style={{
+                    width: isMenuActive
+                      ? "calc(100% - 210px)"
+                      : "calc(100% - 100px)",
+                    left: isMenuActive ? "210px" : "100px",
+                  }}
+                >
+                  <Documents />
+                </div>
+              </div>
+            }
           />
         </Routes>
       </BrowserRouter>

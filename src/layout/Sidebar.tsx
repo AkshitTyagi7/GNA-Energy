@@ -20,14 +20,14 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={`flex-col p-3 fixed inline-flex ph-2 z-10 bg-white ${!active ? 'w-20' : ''}`} style={{  height: '100%',  transition: "width 2s" }}>
-      <a  className="flex space-x-5 text-center justify-center items-center" style={{height:40}}>
+    <div className={`flex-col p-3 fixed inline-flex ph-2 z-10 bg-white ${!active ? 'w-20' : ''}`} style={{  height: '100%',boxShadow: "4px 4px 40px 0px #0000000F",  transition: "width 2s",}}>
+      <a  className="flex space-x-5 text-center justify-center items-center" style={{height:40, marginTop:"10px", marginBottom:"9px"}}>
         <MenuIcon onClick={()=>{
           dispatch(toggleMenu());
         }} className='ml'/>
         {active && <Logo height={40} href="/dashboard" />}
       </a>
-      <hr className="my-2 border-t border-gray-300" />
+      <hr className="my-2 border-t border-gray-300" style={{color:"#E4E7ED"}} />
       <nav className="flex flex-col mb-auto">
         <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
           <SideBarItems Icon={DocumentIcon} text="GNAi Doc" isMenuActive={active} href="/document"  />
@@ -38,7 +38,7 @@ const Sidebar = () => {
       {/* <hr className="my-2 border-t border-gray-300" /> */}
       
       <div className="relative">
-        <div className='beta text-sm '>
+        <div className='beta '>
   
        <span className='font-bold text-slate-700'>Beta Version</span><br></br>
         {
@@ -49,7 +49,7 @@ const Sidebar = () => {
               // mailto:info@gnaenergy
             }
           }
-          className='text-sm text-slate-700' >Contact: info@gna.energy</span>}
+          className='text-slate-700' >Contact: info@gna.energy</span>}
         </div>
         <div className="absolute right-0 mt-2 bg-white border rounded shadow-md hidden">
           <NavLink  to="#"  className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-200">New project...</NavLink>

@@ -65,6 +65,11 @@ export default function GetChartOptions({
 } = {}): ChartOptions {
   const options = {
     // aspectRatio: aspectRatio,
+    elements: {
+      point:{
+          radius: 0
+      }
+  },
     maintainAspectRatio: maintainAspectRatio,
     transitions: {
       zoom: {
@@ -137,16 +142,16 @@ export default function GetChartOptions({
       x:{
         stacked: isStacked,
         display: showAxis,
+        
 
       },
       y: {
         stacked: isStacked,
-        // display: displayYLabel,
         display: showAxis,
         title: {
           
           display: displayYLabel,
-          text: yLabelText,
+          text: yLabelText,  
         },
       },
       y1: {
@@ -159,7 +164,22 @@ export default function GetChartOptions({
         },
 
 
-      }
+      },
+      xAxes: [{
+        gridLines: {
+            // You can change the color, the dash effect, the main axe color, etc.
+            borderDash: [8, 4],
+            color: "#348632"
+        }
+    }],
+
+    // And this will affect the horizontal lines (yAxe) of your dataset
+    yAxes: [{
+        gridLines: {
+            borderDash: [8, 4],
+            color: "#348632"
+        }
+    }]
       
     },
   };
