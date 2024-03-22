@@ -75,8 +75,6 @@ const Sidebar = () => {
       </>
   
     );
-
-
 }
 function SignOut(): JSX.Element {
   const active = useSelector((state: RootState) => state.menu.isActive);

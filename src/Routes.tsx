@@ -25,7 +25,9 @@ export const DashboardRoutes=[
 
     {
         path:"marketmonitoring",
-        element:<BetaMarketMontoring />
+        element:<MarketMontoring />,
+        noDefaultPadding: true
+
     },
     {
         path:"bankingAnalytics",

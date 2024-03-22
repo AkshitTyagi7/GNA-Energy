@@ -2,29 +2,27 @@
     font-size: 11px;
     color: #34656D;
 }
-
+.header-side-area{
+    display: flex;
+    gap: 32px;
+}
 .header{
     display: flex;
     justify-content: space-between;
     background-color: white;
     align-items: center;
     height: 80px;
-    /* position: fixed; */
     width:calc( 100% );
     padding: 20px;
     border-left: solid 1px #E4E7ED;
     border-bottom: solid 1px #E4E7ED;
-    /* left: 188px; */
 }
 .content2{
-    width: calc(100% - 192px)!important;
+    width: calc(100% - 141px)!important;
+    overflow: hidden;
     height: 100%;
-    position: absolute;
-    left: 192px!important;
-    
-    /* padding: 10px;
-    padding-right: 20px; */
-    /* top: 100px; */
+    /* position: absolute;
+    left: 192px!important; */
 }
 .content2-padding-body{
     padding: 30px;
@@ -34,12 +32,14 @@
     border: solid 1px #DEDFDF;
     color: #9F9F9F;
     align-items: center;
+    font-size: 13px;
     border-radius: 8px;
     padding: 8px 16px 8px 16px;
 }
 
 .date-selection{
     width:340px ;
+    height: 40px;
     display: flex;
     color: #9F9F9F;
     align-items: center;
@@ -108,11 +108,12 @@
     display: flex;
     padding-bottom: 38px;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 4px;
   }
 
   .exchange-byExchange-chart{
-    width: calc(50% - 5px);
+    width: calc(50% - 14px);
+    margin: 6px;
     border-radius: 12px;
     box-shadow: 0px 0px 6px 0px #0000002c;
     height: calc(50% - 10px );
@@ -121,7 +122,10 @@
   .exchange-byProduct-chart{
     width: calc(100% - 5px);
     border-radius: 12px;
-    box-shadow: 0px 2px 12px 0px #00000024;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    /* margin: px;
+    box-shadow: 0px 2px 12px 0px #00000024; */
     height: calc(33% - 5px);
     background-color: white;
   }
@@ -146,6 +150,17 @@
     display: flex;
     align-items: center;
     gap: 7px;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.buyerSeller-Legend p{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
     align-items: center;
     align-content: center;
     vertical-align: middle;
@@ -187,7 +202,7 @@
     color: #f1935c !important; ;
 }
 
-.buyer-seller-container{
+.body-container{
     display: flex;
     width: 100%;
     height: calc(100vh - 80px);
@@ -294,8 +309,8 @@ background-color: #F1935C;
     display: flex;
     gap: 24px;
     height: calc(100% - 100px);
-    margin: 10px;
-    width: calc(100% - 22px);
+    margin: 20px;
+    width: calc(100% - 12px);
 }
 
 .buyerseller-heading{
@@ -311,19 +326,37 @@ background-color: #F1935C;
     padding: 30px;
     height: 100%;
     background-color: white;
+    overflow: scroll;
     border-radius: 12px;
 }
+
+.exchange-buyerseller-trends-chart-container::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
+
 .trendFilter{
     /* border-radius: 16px ; */
     padding: 8px 0px;
     
 }
 
-.css-13cymwt-control {
+.exchange-buyerseller-trends-chart-container  .css-13cymwt-control {
     border-radius: 8px;
     border-color: #DEDFDF;
-    /* padding-top: 7px;
-    padding-bottom: 7px; */
+    padding-top: 7px;
+    font-size: 16px;
+
+    padding-bottom: 7px;
+}
+
+  .css-t3ipsp-control {
+    border-radius: 8px;
+    border-color: #DEDFDF;
+    padding-top: 7px;
+    font-size: 16px;
+
+    padding-bottom: 7px;
 }
 
 span.css-1u9des2-indicatorSeparator {
@@ -332,4 +365,26 @@ span.css-1u9des2-indicatorSeparator {
 
 .trends-chart{
     height: calc(100%);
+}
+
+.trendFilter.css-b62m3t-container {
+    height: 29px;
+}
+
+.buyerSeller-legends{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+    
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.topplayer-legends{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

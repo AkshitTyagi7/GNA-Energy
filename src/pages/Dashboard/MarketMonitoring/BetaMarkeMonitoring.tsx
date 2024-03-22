@@ -180,8 +180,7 @@ export function BetaMarketMontoring() {
                   }}
                 />
               </div>
-              <h2 className="text-3xl">Market Monitoring</h2>
-
+              <h2 className="text-3xl">Market Monitoring</h2>     
               <div>
                 <MediumButton
                   buttonTitle="By Volume"
@@ -376,30 +375,6 @@ export function BetaMarketMontoring() {
 
                 {tabIndex == 1 ? (
                   <>
-                    {/* <Line
-                  strokeWidth={2}
-                  type="monotone"
-                  dot={false}
-                  dataKey="hpx"
-                  name="HPX"
-                  stroke={"rgb(17, 141, 255)"}
-                />
-               <Line
-                  strokeWidth={2}
-                  type="monotone"
-                  dot={false}
-                  dataKey="iex"
-                  name="IEX"
-                  stroke={"rgb(18, 35, 158)"}
-                />
-                <Line
-                  strokeWidth={2}
-                  type="monotone"
-                  dot={false}
-                  dataKey="pxil"
-                  name="PXIL"
-                  stroke={"rgb(230, 108, 55)"}
-                /> */}
                     {[
                       {
                         dataKey: "hpx",
@@ -449,126 +424,6 @@ export function BetaMarketMontoring() {
                     ) : null}
                   </>
                 ) : (
-                  // <>
-                  //   {chartData.filter((item) => item.dam).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dot={false}
-                  //       visibility={
-                  //         chartData.filter((item) => item.dam).length != 0
-                  //           ? "visible"
-                  //           : "hidden"
-                  //       }
-                  //       dataKey="dam"
-                  //       name="DAM"
-                  //       stroke={PrimaryColor}
-                  //     />
-                  //   ) : null}
-
-                  //   {chartData.filter((item) => item.rtm).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="rtm"
-                  //       dot={false}
-                  //       name="RTM"
-                  //       stroke={SecondaryColor}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.gdam).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="gdam"
-                  //       dot={false}
-                  //       name="GDAM"
-                  //       stroke={"Green"}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.intraDay).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="intraDay"
-                  //       dot={false}
-                  //       name="Intra-Day Contracts"
-                  //       stroke={ColorBlue}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.contingencyContracts)
-                  //     .length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="contingencyContracts"
-                  //       dot={false}
-                  //       name="Day Ahead Contingency Contracts"
-                  //       stroke={"red"}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.daily).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="daily"
-                  //       dot={false}
-                  //       name="Daily Contracts"
-                  //       stroke={"slateblue"}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.weekly).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="weekly"
-                  //       dot={false}
-                  //       name="Weekly Contracts"
-                  //       stroke={"black"}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.monthly).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="monthly"
-                  //       dot={false}
-                  //       name="Monthly Contracts"
-                  //       stroke={"#710907"}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.anyDay).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="anyDay"
-                  //       dot={false}
-                  //       name="Any Day Contracts"
-                  //       stroke={ColorYellow}
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.singleSided).length !=
-                  //   0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dataKey="singleSided"
-                  //       dot={false}
-                  //       name="Any Day Single Sided Contracts"
-                  //       stroke="#82ca9d"
-                  //     />
-                  //   ) : null}
-                  //   {chartData.filter((item) => item.bilateral).length != 0 ? (
-                  //     <Line
-                  //       strokeWidth={2}
-                  //       type="monotone"
-                  //       dot={false}
-                  //       dataKey="bilateral"
-                  //       name="Bilateral"
-                  //       stroke={"skyblue"}
-                  //     />
-                  //   ) : null}
-                  // </>
                   <>
                   {
                     [

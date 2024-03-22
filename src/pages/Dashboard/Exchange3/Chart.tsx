@@ -151,7 +151,7 @@ export const ExchangeChart =  ({
               hide={!shownLegnends.includes(`MCV (${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
               name={`MCV (${MEGA_POWER_UNIT})`}
               yAxisId="right"
-
+              radius={[4, 4, 0, 0]}
               isAnimationActive={false}
             />
             <Line
@@ -160,6 +160,7 @@ export const ExchangeChart =  ({
               hide={!shownLegnends.includes(`Sell Bids(${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
               yAxisId="right"
               dataKey="sell_bid_mw"
+              
               stroke={SecondaryColor}
               isAnimationActive={false}
               color={SecondaryColor}
@@ -278,12 +279,7 @@ return <ResponsiveContainer
           } dataKey="value" position="center" ></LabelList>
 
           </Bar>
-            {/* {
-              data.lines.map((line, index) => {
-                return <Bar width={80} key={index} dataKey={"MWh"} fill={line.color} name={line.name} />
-              }
-              )
-            } */}
+
             
           </BarChart>
 </ResponsiveContainer>

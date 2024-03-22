@@ -1,0 +1,29 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+width: 141px;
+padding: 32px 16px;
+background-color: white;
+box-shadow: 4px 4px 40px 0px #0000000F;
+z-index: 1;
+}
+
+.sidebar-items{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+    justify-content: center;
+}
+.sidebar-item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 15px;
+    color: #9F9F9F;
+}
+.sidebar-item-active p{
+    color: #F1935C;
+}

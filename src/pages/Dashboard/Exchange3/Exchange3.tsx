@@ -48,6 +48,7 @@ import { RawLineChart } from "../../../components/charts/Charts";
 import { MediumButton } from "../../../components/Button";
 import { get } from "http";
 import Select from "react-select";
+import { ReactComponent as Cross } from "../../../icons/cross.svg";
 import Loading from "../../../components/Loading";
 export function Exchange3() {
   const [startDate, setStartDate] = useState(
@@ -101,8 +102,6 @@ export function Exchange3() {
       ...base,
       maxHeight: 40,
       overflowY: "auto",
-      
-      
     }),
     multiValue: (base: any, state: { data: { isFixed: any } }) => {
       return state.data.isFixed ? { ...base, backgroundColor: "gray" } : base;
@@ -112,7 +111,15 @@ export function Exchange3() {
         ? { ...base, fontWeight: "bold", color: "white", paddingRight: 6 }
         : base;
     },
-    multiValueRemove: (base: any, state: { data: { isFixed: any } }) => {
+    multiValueRemove: (
+      base: any,
+      state: {
+        data: {
+          value: any;
+          isFixed: any;
+        };
+      }
+    ) => {
       return state.data.isFixed ? { ...base, display: "none" } : base;
     },
   };
@@ -177,7 +184,7 @@ export function Exchange3() {
         <div>
           <h1>Exchange</h1>
         </div>
-        <div className="flex gap-8">
+        <div className="header-side-area">
           <div>
             {tabs.map((tab, index) => {
               return (
@@ -250,21 +257,21 @@ export function Exchange3() {
                     start_date: new Date(e.target.value),
                     end_date: endDate,
                   });
-                  // fetchBuyerVsSellerData({
-                  //   start_date: new Date(e.target.value),
-                  //   end_date: endDate,
-                  //   product: BuyerSellerState.BuyerSeller.filters[1],
-                  //   exchange: BuyerSellerState.BuyerSeller.filters[0],
-                  //   region: BuyerSellerState.BuyerSeller.filters[2],
-                  // });
-                  // fetchUtilityTrendData(
-                  //   {
-                  //     buyers: trendBuyer,
-                  //     sellers: trendSeller,
-                  //     startDate: new Date(e.target.value),
-                  //     endDate: endDate,
-                  //   }
-                  // );
+                  fetchBuyerVsSellerData({
+                    start_date: new Date(e.target.value),
+                    end_date: endDate,
+                    product: BuyerSellerState.BuyerSeller.filters[1],
+                    exchange: BuyerSellerState.BuyerSeller.filters[0],
+                    region: BuyerSellerState.BuyerSeller.filters[2],
+                  });
+                  fetchUtilityTrendData(
+                    {
+                      buyers: trendBuyer,
+                      sellers: trendSeller,
+                      startDate: new Date(e.target.value),
+                      endDate: endDate,
+                    }
+                  );
                 }}
               />
               to
@@ -287,21 +294,21 @@ export function Exchange3() {
                     start_date: startDate,
                     end_date: new Date(e.target.value),
                   });
-                  // fetchBuyerVsSellerData({
-                  //   start_date: startDate,
-                  //   end_date: new Date(e.target.value),
-                  //   product: BuyerSellerState.BuyerSeller.filters[1],
-                  //   exchange: BuyerSellerState.BuyerSeller.filters[0],
-                  //   region: BuyerSellerState.BuyerSeller.filters[2],
-                  // });
-                  // fetchUtilityTrendData(
-                  //   {
-                  //     buyers: trendBuyer,
-                  //     sellers: trendSeller,
-                  //     startDate: startDate,
-                  //     endDate: new Date(e.target.value),
-                  //   }
-                  // );
+                  fetchBuyerVsSellerData({
+                    start_date: startDate,
+                    end_date: new Date(e.target.value),
+                    product: BuyerSellerState.BuyerSeller.filters[1],
+                    exchange: BuyerSellerState.BuyerSeller.filters[0],
+                    region: BuyerSellerState.BuyerSeller.filters[2],
+                  });
+                  fetchUtilityTrendData(
+                    {
+                      buyers: trendBuyer,
+                      sellers: trendSeller,
+                      startDate: startDate,
+                      endDate: new Date(e.target.value),
+                    }
+                  );
                 }}
               />
             </div>
@@ -625,7 +632,7 @@ export function Exchange3() {
         ) : (
           <div>
             <div>
-              <div className="buyer-seller-container">
+              <div className="body-container">
                 {buyerSellerPage == 0 && (
                   <div className="side-filters-container">
                     {BuyerSellerFilters.map((filter, index) => {
@@ -775,8 +782,10 @@ export function Exchange3() {
                       </div>
                       <div className="exchange-topplayers-region-container">
                         <div className="exchange-topplayers-players-chartarea flex">
-                          <div>
-                            <h3 className="mb-4 buyerseller-heading">By Region</h3>
+                          <div className="topplayer-legends">
+                            <h3 className="buyerseller-heading">
+                              By Region
+                            </h3>
                             <div>
                               {BuyerSellerState.BuyerSeller.Data.region_buyer.map(
                                 (item, index) => {
@@ -787,7 +796,6 @@ export function Exchange3() {
                                     >
                                       <div className="realTime-Legend">
                                         <p>
-                                       
                                           <div
                                             className="dot"
                                             style={{
@@ -811,8 +819,10 @@ export function Exchange3() {
                           />
                         </div>
                         <div className="exchange-topplayers-players-chartarea flex">
-                          <div>
-                            <h3 className="mb-4 buyerseller-heading">By Region</h3>
+                          <div className="topplayer-legends">
+                            <h3 className="mb-4 buyerseller-heading">
+                              By Region
+                            </h3>
                             <div>
                               {BuyerSellerState.BuyerSeller.Data.region_seller.map(
                                 (item, index) => {
@@ -849,145 +859,218 @@ export function Exchange3() {
                       </div>
                     </div>
                   ) : (
-                    
-
-
                     <div className="exchange-buyerseller-trends-container">
-                      <div className="exchange-buyerseller-trends-chart-container">
-                        <h3 className="buyerseller-heading">
-                          Buyers
-                        </h3>
+                     <div className="exchange-buyerseller-trends-chart-container">
+                        <h3 className="buyerseller-heading">Buyer</h3>
                         <Select
-                        
-                              value={trendBuyer.map((item) => {
-                                return {
-                                  value: item,
-                                  label: item,
-                                  isFixed: false,
-                                };
-                              })}
-                              isMulti={true}
-                              onChange={(e) => {
-                                console.log(e);
-                                setTrendBuyer(e.map((item) => item.value));
+                          classNames={{}}
+                          placeholder="Select Sellers"
+                          value={[]}
+                          defaultValue={[]}
+                          isMulti={true}
+                          onChange={(e) => {
+                            console.log(e);
 
-                                fetchUtilityTrendData({
-                                  buyers: e.map((item) => item.value),
-                                  sellers: trendSeller,
-                                  startDate: startDate,
-                                  endDate: endDate,
-                                });
-                              }}
-                              className="trendFilter"
-                              options={BuyerSellerState.Trend.filters.buyer_name.map(
-                                (item) => {
-                                  return {
-                                    value: item,
-                                    label: item,
-                                    isFixed: false,
-                                  };
-                                }
-                              )}
-                              styles={searchStyle}
-                            />
-                            <div className="flex justify-center flex-wrap gap-x-5">
-                            {
-                                trendBuyer.map((item, index) =>{
-                                return    <div
-                                      key={index}
-                                      className="flex justify-between mb-2"
-                                    >
-                                      <div className="realTime-Legend">
-                                        <p>
-                                       
-                                          <div
-                                            className="dot"
-                                            style={{
-                                              backgroundColor:
-                                                ExchangeColors[index],
-                                            }}
-                                          ></div>
-                                          {item}
-                                        </p>
-                                      </div>
-                                    </div>
-                                })
-                            }</div>
-<div className="trends-chart">
-<UtilizationTrendChart
-                          data={BuyerSellerState.Trend.data.buyer}
-                          legends={BuyerSellerState.Trend.data.buyer_selected}
+                            if (
+                              trendBuyer.filter((item) => e[0].value == item)
+                                .length === 0
+                            ) {
+                              setTrendBuyer([
+                                ...trendBuyer,
+                                e.map((item) => item.value)[0],
+                              ]);
+
+                              fetchUtilityTrendData({
+                                sellers  : trendSeller,
+                                buyers: [
+                                  ...trendBuyer,
+                                  e.map((item) => item.value)[0],
+                                ],
+                                startDate: startDate,
+                                endDate: endDate,
+                              });
+                            } else {
+                              fetchUtilityTrendData({
+                                sellers  : trendSeller,
+                                buyers: trendBuyer.filter(
+                                  (item) =>
+                                    item !== e.map((item) => item.value)[0]
+                                ),
+                                startDate: startDate,
+                                endDate: endDate,
+                              });
+                              setTrendBuyer(
+                                trendBuyer.filter(
+                                  (item) =>
+                                    item !== e.map((item) => item.value)[0]
+                                )
+                              );
+                            }
+                          }}
+                          className="trendFilter"
+                          options={BuyerSellerState.Trend.filters.buyer_name
+                            .filter((item) => !trendBuyer.includes(item))
+                            .map((item) => {
+                              return {
+                                value: item,
+                                label: item,
+                                isFixed: false,
+                              };
+                            })}
+                          styles={searchStyle}
                         />
-                    </div>
-
+                        <div className="buyerSeller-legends">
+                          {trendBuyer.map((item, index) => {
+                            return (
+                              <button
+                                onClick={() => {
+                                  setTrendBuyer(
+                                    trendBuyer.filter(
+                                      (item2) => item2 !== item
+                                    )
+                                  );
+                                  fetchUtilityTrendData({
+                                    sellers  : trendSeller,
+                                    buyers:trendBuyer.filter(
+                                      (item2) => item2 !== item
+                                    ),
+                                    startDate: startDate,
+                                    endDate: endDate,
+                                  });
+                                }}
+                                key={index}
+                                className="flex justify-between"
+                              >
+                                <div className="buyerSeller-Legend">
+                                  <p>
+                                    <div
+                                      className="dot"
+                                      style={{
+                                        backgroundColor: ExchangeColors[index],
+                                      }}
+                                    ></div>
+                                    {item}
+                                    <Cross />
+                                  </p>
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                        <div className="trends-chart">
+                          <UtilizationTrendChart
+                            data={BuyerSellerState.Trend.data.buyer}
+                            legends={
+                              BuyerSellerState.Trend.data.buyer_selected
+                            }
+                          />
+                        </div>
                       </div>
                       <div className="exchange-buyerseller-trends-chart-container">
-                        <h3 className="buyerseller-heading">
-                          Buyers
-                        </h3>
+                        <h3 className="buyerseller-heading">Seller</h3>
                         <Select
-                        
-                              value={trendSeller.map((item) => {
-                                return {
-                                  value: item,
-                                  label: item,
-                                  isFixed: false,
-                                };
-                              })}
-                              isMulti={true}
-                              onChange={(e) => {
-                                console.log(e);
-                                setTrendSeller(e.map((item) => item.value));
+                          classNames={{}}
+                          placeholder="Select Sellers"
+                          value={[]}
+                          defaultValue={[]}
+                          isMulti={true}
+                          onChange={(e) => {
+                            console.log(e);
 
-                                fetchUtilityTrendData({
-                                  buyers: e.map((item) => item.value),
-                                  sellers: trendSeller,
-                                  startDate: startDate,
-                                  endDate: endDate,
-                                });
-                              }}
-                              className="trendFilter"
-                              options={BuyerSellerState.Trend.filters.seller_name.map(
-                                (item) => {
-                                  return {
-                                    value: item,
-                                    label: item,
-                                    isFixed: false,
-                                  };
-                                }
-                              )}
-                              styles={searchStyle}
-                            />
-                            <div className="flex justify-center flex-wrap gap-x-5">
-                            {
-                                trendSeller.map((item, index) =>{
-                                return    <div
-                                      key={index}
-                                      className="flex justify-between mb-2"
-                                    >
-                                      <div className="realTime-Legend">
-                                        <p>
-                                       
-                                          <div
-                                            className="dot"
-                                            style={{
-                                              backgroundColor:
-                                                ExchangeColors[index],
-                                            }}
-                                          ></div>
-                                          {item}
-                                        </p>
-                                      </div>
-                                    </div>
-                                })
-                            }</div>
-<div className="trends-chart">
-<UtilizationTrendChart
-                          data={BuyerSellerState.Trend.data.seller}
-                          legends={BuyerSellerState.Trend.data.seller_selected}
+                            if (
+                              trendSeller.filter((item) => e[0].value == item)
+                                .length === 0
+                            ) {
+                              setTrendSeller([
+                                ...trendSeller,
+                                e.map((item) => item.value)[0],
+                              ]);
+
+                              fetchUtilityTrendData({
+                                buyers: trendBuyer,
+                                sellers: [
+                                  ...trendSeller,
+                                  e.map((item) => item.value)[0],
+                                ],
+                                startDate: startDate,
+                                endDate: endDate,
+                              });
+                            } else {
+                              fetchUtilityTrendData({
+                                buyers: trendBuyer,
+                                sellers: trendSeller.filter(
+                                  (item) =>
+                                    item !== e.map((item) => item.value)[0]
+                                ),
+                                startDate: startDate,
+                                endDate: endDate,
+                              });
+                              setTrendSeller(
+                                trendSeller.filter(
+                                  (item) =>
+                                    item !== e.map((item) => item.value)[0]
+                                )
+                              );
+                            }
+                          }}
+                          className="trendFilter"
+                          options={BuyerSellerState.Trend.filters.seller_name
+                            .filter((item) => !trendSeller.includes(item))
+                            .map((item) => {
+                              return {
+                                value: item,
+                                label: item,
+                                isFixed: false,
+                              };
+                            })}
+                          styles={searchStyle}
                         />
-                    </div>
-
+                        <div className="buyerSeller-legends">
+                          {trendSeller.map((item, index) => {
+                            return (
+                              <button
+                                onClick={() => {
+                                  setTrendSeller(
+                                    trendSeller.filter(
+                                      (item2) => item2 !== item
+                                    )
+                                  );
+                                  fetchUtilityTrendData({
+                                    buyers: trendBuyer,
+                                    sellers: trendSeller.filter(
+                                      (item2) => item2 !== item
+                                    ),
+                                    startDate: startDate,
+                                    endDate: endDate,
+                                  });
+                                }}
+                                key={index}
+                                className="flex justify-between"
+                              >
+                                <div className="buyerSeller-Legend">
+                                  <p>
+                                    <div
+                                      className="dot"
+                                      style={{
+                                        backgroundColor: ExchangeColors[index],
+                                      }}
+                                    ></div>
+                                    {item}
+                                    <Cross />
+                                  </p>
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                        <div className="trends-chart">
+                          <UtilizationTrendChart
+                            data={BuyerSellerState.Trend.data.seller}
+                            legends={
+                              BuyerSellerState.Trend.data.seller_selected
+                            }
+                          />
+                        </div>
                       </div>
                     </div>
                   )}

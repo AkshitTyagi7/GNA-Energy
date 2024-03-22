@@ -20,6 +20,7 @@ import { DashboardRoutes } from "./Routes";
 import { Gnai } from "./pages/GNAi/Gnai";
 import { useSelector } from "react-redux";
 import { Documents } from "./pages/Documents/Documents";
+import { Sidebar2 } from "./layout/Sidebar2";
 
 function App() {
   const isMenuActive = useSelector((state: any) => state.menu.isActive);
@@ -33,21 +34,21 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <Protected>
-                <Sidebar />
+              <>
+                <Sidebar2 />
 
                   <Outlet />
-              </Protected>
+              </>
             }
           >
             <Route index={true} element={
                             <div
                             className="content2"
                             style={{
-                              width: isMenuActive
-                                ? "calc(100% - 210px)"
-                                : "calc(100% - 100px)",
-                              left: isMenuActive ? "210px" : "100px",
+                              // width: isMenuActive
+                              //   ? "calc(100% - 210px)"
+                              //   : "calc(100% - 100px)",
+                              // left: isMenuActive ? "210px" : "100px",
                             }}
                           >
             <Dashboard /></div>} />
@@ -62,12 +63,6 @@ function App() {
                     ) : (
                       <div
                       className={Proute.noDefaultPadding ? "content2" : "content"}
-                      style={{
-                        width: isMenuActive && !Proute.noDefaultPadding
-                          ? "calc(100% - 210px)"
-                          : "calc(100% - 100px)",
-                        left: isMenuActive && !Proute.noDefaultPadding ? "210px" : "100px",
-                      }}
                     >
                       <ProtectedPage
                         children={Proute.element}
@@ -84,46 +79,36 @@ function App() {
           <Route
             path="/gnai"
             element={
-              <div>
-                <Sidebar />
+              <Protected>
+                <Sidebar2 />
+                <div
+                      className="content"
 
+                    >
                 <ProtectedPage
                   children={
-                    <div
-                      className="content"
-                      style={{
-                        width: isMenuActive
-                          ? "calc(100% - 210px)"
-                          : "calc(100% - 100px)",
-                        left: isMenuActive ? "210px" : "100px",
-                      }}
-                    >
+               
                       <Gnai />
-                    </div>
                   }
                   pageId="/gnai"
                 />
-              </div>
+                </div>
+              </Protected>
             }
           />
           <Route
             path="/document"
             element={
-              <div>
-                <Sidebar />
+              <Protected>
+                <Sidebar2 />
 
                 <div
                   className="content"
-                  style={{
-                    width: isMenuActive
-                      ? "calc(100% - 210px)"
-                      : "calc(100% - 100px)",
-                    left: isMenuActive ? "210px" : "100px",
-                  }}
+
                 >
                   <Documents />
                 </div>
-              </div>
+                </Protected>
             }
           />
         </Routes>
