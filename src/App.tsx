@@ -21,6 +21,7 @@ import { Gnai } from "./pages/GNAi/Gnai";
 import { useSelector } from "react-redux";
 import { Documents } from "./pages/Documents/Documents";
 import { Sidebar2 } from "./layout/Sidebar2";
+import { Login2 } from "./pages/Login/Login2";
 
 function App() {
   const isMenuActive = useSelector((state: any) => state.menu.isActive);
@@ -28,8 +29,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<LoginPage />} />
+    
+          <Route path="/" element={      <Protected><Navigate to="/dashboard" /></Protected>} />
+          <Route path="/login" element={<Login2 />} />
 
           <Route
             path="/dashboard"
