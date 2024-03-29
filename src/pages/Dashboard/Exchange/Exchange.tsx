@@ -197,7 +197,7 @@ function Exchange() {
               </div>
 
 
-              <div className="realtime-container">
+              <div className="onechart-container">
 
                 <div className="flex justify-center realTimeChart text-center  w-full content-center">
                   <RawLineChart data={

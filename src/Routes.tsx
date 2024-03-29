@@ -10,6 +10,7 @@ import { PriceForecasting } from "./pages/Dashboard/PriceForcating/PriceForcasti
 import { BetaMarketMontoring } from "./pages/Dashboard/MarketMonitoring/BetaMarkeMonitoring";
 import { BetaConsumption } from "./pages/Dashboard/Consumption/BetaConsumption";
 import { Exchange3 } from "./pages/Dashboard/Exchange3/Exchange3";
+import { Discom } from "./pages/Dashboard/Discom/Discom";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -35,7 +36,9 @@ export const DashboardRoutes=[
     },
     {
         path:"discomAnalysis",
-        element:<AnalysisTable />
+        element:<Discom />,
+        noDefaultPadding: true
+
     },
     {
         path:"consumptionAndGenerationAnalytics",
@@ -66,6 +69,7 @@ export const DashboardRoutes=[
     {
         path:"priceForecasting",
         element:<PriceForecasting />,
+        noDefaultPadding:true
     },
     {
         path:"demandForecasting",

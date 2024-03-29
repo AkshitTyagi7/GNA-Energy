@@ -1,6 +1,7 @@
 import "./Login2.css";
 import { ReactComponent as Logo } from "../../icons/Logo.svg";
-import { ReactComponent as LoginIcons } from "./Login-Icons.svg";
+import { ReactComponent as LoginIcons } from "./Login.svg";
+import loginImage from "./Login.png";
 import swal from "sweetalert";
 import React from "react";
 import { buildUrl, buildHttpReq } from "../../common";
@@ -8,18 +9,14 @@ import { setAccessToken, setUser, setLoggedIn } from "../Protected";
 import Loading from "../../components/Loading";
 
 export function Login2() {
-  const [otpSent, setOtpSent] = React.useState<boolean>(true);
+  const [otpSent, setOtpSent] = React.useState<boolean>(false);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<string>("");
   let [otp, setOtp] = React.useState<number>();
 
   return (
     <div className="login-container">
-
-{
-                loading &&
-                <Loading />
-            }
+      {loading && <Loading />}
       <div className="left-container">
         <Logo />
         {!otpSent ? (
@@ -30,10 +27,13 @@ export function Login2() {
             </div>
             <form className="login-form" onSubmit={handleFormSubmit}>
               <label>Email</label>
-              <input type="text" placeholder="user@example.com" onChange={
-                                            (e) => {
-                                                setEmail(e.target.value);
-                                            }} />
+              <input
+                type="text"
+                placeholder="user@example.com"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
               <button type="submit" value="Sign in">
                 Sign in
               </button>
@@ -84,7 +84,7 @@ export function Login2() {
                 setOtpSent(false);
               }}
             >
-              Go Back 
+              Go Back
             </div>
           </div>
         )}
@@ -94,9 +94,12 @@ export function Login2() {
       </div>
       <div className="right-container">
         <div className="login-heading">
-          GNA ENERGY DATA & ANALYTICS CAPABILITY CENTER (GDACC)
+          <span>GNA ENERGY </span>
+          <h2>DATA & ANALYTICS CAPABILITY CENTER (GDACC)</h2>
         </div>
-        <LoginIcons />
+        {/* <LoginIcons /> */}
+
+        <LoginIcons className="login-image" />
       </div>
     </div>
   );

@@ -9,12 +9,16 @@ import { setTabIndex } from "../../../store/state/MarketMontitoring/MarketMonito
 import Select from "react-select";
 import { Filter, Product } from "../../../store/state/MarketMontitoring/types";
 import { filters } from "./Filters";
-import { ColorBlue, ColorYellow, PrimaryColor, SecondaryColor, buildHttpReq } from "../../../common";
 import {
-  FormatByPriceData,
-  FormatMarketMonitoringData,
-} from "./FormatData";
+  ColorBlue,
+  ColorYellow,
+  PrimaryColor,
+  SecondaryColor,
+  buildHttpReq,
+} from "../../../common";
+import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
 import { LegendKey, ReLineChart } from "../../../components/charts/ReCharts";
+import { tab } from "@testing-library/user-event/dist/tab";
 // import { FormatMarketMonitoringData } from "./FormatData";
 let startMonth: {
   value: number;
@@ -32,7 +36,6 @@ let endMonth: {
 };
 export function MarketMontoring() {
   useEffect(() => {
-
     fetchVolumeData({
       selectedExchange,
       selectedMarket,
@@ -47,7 +50,7 @@ export function MarketMontoring() {
       startMonth,
       endMonth,
     });
-    }, []);
+  }, []);
 
   const [productData, setProductData] = useState<any[]>([]);
   const [priceData, setPriceData] = useState<any[]>([]);
@@ -70,7 +73,7 @@ export function MarketMontoring() {
     })[0]
   );
 
-  const byVolumeKeys: LegendKey[] =                 [
+  const byVolumeKeys: LegendKey[] = [
     {
       dataKey: "dam",
       name: "DAM",
@@ -126,7 +129,7 @@ export function MarketMontoring() {
       name: "Bilateral",
       stroke: "skyblue",
     },
-  ]
+  ];
 
   const byProductKeys: LegendKey[] = [
     {
@@ -143,6 +146,11 @@ export function MarketMontoring() {
       dataKey: "pxil",
       name: "PXIL",
       stroke: "rgb(230, 108, 55)",
+    },
+    {
+      dataKey: "traders",
+      name: "Traders",
+      stroke: "#343C6A",
     },
   ];
 
@@ -247,7 +255,7 @@ export function MarketMontoring() {
       </div>
       <div className="c">
         <div className="body-container">
-        <div className="side-filters-container">
+          <div className="side-filters-container">
             <div className="side-filter-item">
               <h4>Market</h4>
 
@@ -255,7 +263,9 @@ export function MarketMontoring() {
                 return (
                   <p
                     className={`side-filter-subitem  ${
-                      selectedMarket.includes(item) ? "side-filter-subitem-active" : ""
+                      selectedMarket.includes(item)
+                        ? "side-filter-subitem-active"
+                        : ""
                     }`}
                     onClick={() => {
                       let filter;
@@ -289,126 +299,150 @@ export function MarketMontoring() {
                 );
               })}
             </div>
-            <div className="side-filter-item">
-              <h4>Exchange / Trader</h4>
+            {tabIndex === 0 && (
+              <div className="side-filter-item">
+                <h4>Exchange / Trader</h4>
 
-              {Exchange.map((item) => {
-                return (
-                  <p
-                    className={`side-filter-subitem ${
-                      selectedExchange.includes(item) ? "side-filter-subitem-active" : ""
-                    }`}
-                    onClick={() => {
-                      let filter;
-                      if (selectedExchange.includes(item)) {
-                        setSelectedExchange(
-                          selectedExchange.filter((i) => i != item)
-                        );
-                        filter = selectedExchange.filter((i) => i != item);
-                      } else {
-                        setSelectedExchange([...selectedExchange, item]);
-                        filter = [...selectedExchange, item];
-                      }
-                      fetchVolumeData({
-                        selectedExchange: filter,
-                        selectedMarket,
-                        selectedProduct: selectedFilter,
-                        startMonth,
-                        endMonth,
-                      });
-                      fetchPriceData({
-                        selectedExchange: filter,
-                        selectedMarket,
-                        selectedProduct: byPriceProduct,
-                        startMonth,
-                        endMonth,
-                      });
-                    }}
-                  >
-                    {item.name}
-                  </p>
-                );
-              })}
-</div>
-            <div className="side-filter-item">
-              <h4>Product</h4>
-
-              {getProducts({
-                exchange: selectedExchange,
-                market: selectedMarket,
-              }).map((item) => {
-                return (
-                  <p
-                    className={`side-filter-subitem ${
-                      tabIndex == 1
-                        ? byPriceProduct.id == item.id
+                {Exchange.map((item) => {
+                  return (
+                    <p
+                      className={`side-filter-subitem ${
+                        selectedExchange.includes(item)
                           ? "side-filter-subitem-active"
                           : ""
-                        : selectedFilter.filter((p) => p.id == item.id).length >
-                          0
-                        ? "side-filter-subitem-active"
-                        : ""
-                    }`}
-                    onClick={() => {
-                      if (tabIndex == 1) {
-                        setByPriceProduct(item);
-                        fetchPriceData({
-                          selectedExchange,
+                      }`}
+                      onClick={() => {
+                        let filter;
+                        if (selectedExchange.includes(item)) {
+                          setSelectedExchange(
+                            selectedExchange.filter((i) => i != item)
+                          );
+                          filter = selectedExchange.filter((i) => i != item);
+                        } else {
+                          setSelectedExchange([...selectedExchange, item]);
+                          filter = [...selectedExchange, item];
+                        }
+                        fetchVolumeData({
+                          selectedExchange: filter,
                           selectedMarket,
-                          selectedProduct: item,
+                          selectedProduct: selectedFilter,
                           startMonth,
                           endMonth,
                         });
-                        return;
-                      }
-                      if (
-                        selectedFilter.filter((p) => p.id == item.id).length > 0
-                      ) {
-                        setSelectedFilter(
-                          selectedFilter.filter((i) => i.id != item.id)
-                        );
-                        fetchVolumeData({
-                          selectedExchange: selectedExchange,
-                          selectedMarket: selectedMarket,
-                          selectedProduct: selectedFilter.filter(
-                            (i) => i.id != item.id
-                          ),
+                        fetchPriceData({
+                          selectedExchange: filter,
+                          selectedMarket,
+                          selectedProduct: byPriceProduct,
                           startMonth,
                           endMonth,
                         });
-                      } else {
-                        setSelectedFilter([...selectedFilter, item]);
-                        fetchVolumeData({
-                          selectedExchange: selectedExchange,
-                          selectedMarket: selectedMarket,
-                          selectedProduct: [...selectedFilter, item],
-                          startMonth,
-                          endMonth,
-                        });
-                      }
-                    }}
-                  >
-                    {item.name}
-                  </p>
-                );
-              })}
-            </div>
+                      }}
+                    >
+                      {item.name}
+                    </p>
+                  );
+                })}
+              </div>
+            )}
+            {tabIndex === 1 && (
+              <div className="side-filter-item">
+                <h4>Product</h4>
+
+                {getProducts({
+                  exchange: selectedExchange,
+                  market: selectedMarket,
+                }).map((item) => {
+                  return (
+                    <p
+                      className={`side-filter-subitem ${
+                        tabIndex == 1
+                          ? byPriceProduct.id == item.id
+                            ? "side-filter-subitem-active"
+                            : ""
+                          : selectedFilter.filter((p) => p.id == item.id)
+                              .length > 0
+                          ? "side-filter-subitem-active"
+                          : ""
+                      }`}
+                      onClick={() => {
+                        if (tabIndex == 1) {
+                          setByPriceProduct(item);
+                          fetchPriceData({
+                            selectedExchange,
+                            selectedMarket,
+                            selectedProduct: item,
+                            startMonth,
+                            endMonth,
+                          });
+                          return;
+                        }
+                        if (
+                          selectedFilter.filter((p) => p.id == item.id).length >
+                          0
+                        ) {
+                          setSelectedFilter(
+                            selectedFilter.filter((i) => i.id != item.id)
+                          );
+                          fetchVolumeData({
+                            selectedExchange: selectedExchange,
+                            selectedMarket: selectedMarket,
+                            selectedProduct: selectedFilter.filter(
+                              (i) => i.id != item.id
+                            ),
+                            startMonth,
+                            endMonth,
+                          });
+                        } else {
+                          setSelectedFilter([...selectedFilter, item]);
+                          fetchVolumeData({
+                            selectedExchange: selectedExchange,
+                            selectedMarket: selectedMarket,
+                            selectedProduct: [...selectedFilter, item],
+                            startMonth,
+                            endMonth,
+                          });
+                        }
+                      }}
+                    >
+                      {item.name}
+                    </p>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <div className="markeMonitoring-chart-container">
-
             <div className="markeMonitoring-chart">
-              <ReLineChart 
-              data={
-                tabIndex == 0 ? chartData : priceData
+              {tabIndex == 0 && (
+                <ReLineChart
+                  data={chartData}
+                  legends={
+                  byVolumeKeys.filter(
+                          (e) =>
+                            getProducts({
+                              exchange: selectedExchange,
+                              market: selectedMarket,
+                            }).filter(
+                              (product) => product.name == e.name ?? e.dataKey
+                            ).length > 0
+                        )
+                 
+                  }
+                  unit="MWh"
+                  xDataKey="month"
+                />
+              ) }
+              {
+                tabIndex == 1 &&  (
+                  <ReLineChart
+                    data={priceData}
+                    legends={byProductKeys}
+                    unit="MWh"
+                    xDataKey="month"
+                  />
+                )
               }
-              legends={
-                
-                tabIndex == 0 ?byVolumeKeys : byProductKeys
-              }
-              unit="MWh"
-              xDataKey="month"
-              />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { Text } from "recharts";
 import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../common";
 import { format } from "path";
+import { ReChartData } from "../../../components/charts/ReCharts";
 
 
 export interface ExchngeItem{
@@ -122,58 +123,51 @@ export const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: a
   
   export  interface RealTimeChartData {
     title: string;
-    data: {
-      labels: string[];
-      datasets: {
-        label: string;
-        data: number[];
-        borderColor: string;
-        backgroundColor: string;
-      }[]
-    };
+    data: ReChartData[];
   }
+  export  interface RealTimeReChartData {
+    
+  }
+  // export  const formatRealTimeChartData = (data: any, key: string): RealTimeChartData => {
+  //   const labels = Object.keys(data["DAM_rates"]);
+  //   const damPrices = Object.values(data["DAM_rates"]).map((price: any) => parseFloat(price)/10);
+  //   const gdamPrices = Object.values(data["GDAM_rates"]).map((price: any) => parseFloat(price)/10);
+  //   const rtmPrices = Object.values(data["RTM_rates"]).map((price: any) => parseFloat(price)/10);
   
-  export  const formatRealTimeChartData = (data: any, key: string): RealTimeChartData => {
-    const labels = Object.keys(data["DAM_rates"]);
-    const damPrices = Object.values(data["DAM_rates"]).map((price: any) => parseFloat(price)/10);
-    const gdamPrices = Object.values(data["GDAM_rates"]).map((price: any) => parseFloat(price)/10);
-    const rtmPrices = Object.values(data["RTM_rates"]).map((price: any) => parseFloat(price)/10);
-  
-    return {
-      title: key
-      ,
-      data: {
-        // Add labels as 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
-        labels: labels.map((label, index) => (index+1).toString()),
-        datasets: [
-          {
-            label: "DAM Prices",
-            data: damPrices as number[],
-            borderColor: PrimaryColor,
-            backgroundColor: PrimaryColor,
-          },
-          {
-            label: "GDAM Prices",
-            data: gdamPrices as number[],
-            borderColor: QuaternaryColor,
-            backgroundColor: QuaternaryColor,
-          },
-          {
-            label: "RTM Prices",
-            data: rtmPrices as number[],
-            borderColor: SecondaryColor,
-            backgroundColor: SecondaryColor,
-          },
-          {
-            label:"HPDAM Prices",
-            data:[],
-            borderColor:"red",
-            backgroundColor:"red"
-          }
-        ],
-      }
-    };
-  };
+  //   return {
+  //     title: key
+  //     ,
+  //     data: {
+  //       labels: labels.map((label, index) => (index+1).toString()),
+  //       datasets: [
+  //         {
+  //           label: "DAM Prices",
+  //           data: damPrices as number[],
+  //           borderColor: PrimaryColor,
+  //           backgroundColor: PrimaryColor,
+  //         },
+  //         {
+  //           label: "GDAM Prices",
+  //           data: gdamPrices as number[],
+  //           borderColor: QuaternaryColor,
+  //           backgroundColor: QuaternaryColor,
+  //         },
+  //         {
+  //           label: "RTM Prices",
+  //           data: rtmPrices as number[],
+  //           borderColor: SecondaryColor,
+  //           backgroundColor: SecondaryColor,
+  //         },
+  //         {
+  //           label:"HPDAM Prices",
+  //           data:[],
+  //           borderColor:"red",
+  //           backgroundColor:"red"
+  //         }
+  //       ],
+  //     }
+  //   };
+  // };
 
 
 export function FormatDataOfRealtime(data:any){

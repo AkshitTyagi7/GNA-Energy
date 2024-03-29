@@ -4,6 +4,8 @@
     align-items: center;
     
     height: 100%;
+    overflow: hidden;
+    /* min-width: 1500px; */
     width: 100%;
     background-color: red;
 }
@@ -13,32 +15,58 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 40%;
+    max-width: 500px;
+    width: 100%;
+
     flex-direction: column;
     padding: 40px;
     box-shadow: 4px 4px 40px 0px #0000000F;
 
     background-color: #F5F7FA;
 }
+
 .right-container{
+    border-top: solid 20px var(--primary);
+    border-bottom: solid 20px var(--primary);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     height: 100%;
-    width: 60%;
+    width: 100%;
     background-color: #FFDECA;
 }
 .login-heading{
     font-size: 26px;
     font-weight: 400;
-    color: black;
     text-align: center;
-    max-width: 519px;
+    /* max-width: 520px; */
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.login-heading span{
+font-size: 40px;
+font-weight: 1000;
+color: var(--primary);
+/* line-height: 120px; */
+margin: 0px;
+padding: 0px;
+letter-spacing: 0.016em;
+text-align: center;
+
+}
+.login-heading h2{
+font-size: 26px;
+font-weight: 500;
+/* line-height: 41.6px; */
+letter-spacing: 1.6%;
+text-align: center;
+
 }
 .login-box{
     padding: 50px 30px;
-    min-width: 100%;
+    width: 100%;
     display: flex;
     border-radius: 32px;
     flex-direction: column;
@@ -88,6 +116,7 @@
 
 .login-box-footer{
     margin-top: 20px;
+    cursor: pointer;
     display: flex;
     gap: 5px;
     justify-content: center;
@@ -116,8 +145,10 @@ color: var(--teritary-grey);
     border: solid 0.5px var(--teritary-grey);
     border-radius: 8px;
     display: flex;
-    width: 100%;
-    min-height: 64px;
+    width: 50px;
+    height: 64px;
+
+    /* min-height: 64px; */
     padding: 13px 10px;
     text-align: center;
     flex-wrap: wrap;
@@ -125,6 +156,22 @@ color: var(--teritary-grey);
 }
 
 .otp-input{
+    width: 100%;
+    justify-content: center;
     gap: 20px;
     display: flex;
+}
+
+.login-image{
+    width: 100%;
+    height: calc(100% - 250px);
+    transition: transform .4s; /* Animation */
+
+    object-fit: cover;
+}
+
+.login-image:hover{
+    transform: scale(1.06); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+    
 }

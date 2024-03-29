@@ -7,7 +7,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
   }
-thead {
+.analysisTable thead {
     background: #333;
   }
   @media (prefers-reduced-motion: no-preference) {
@@ -109,7 +109,7 @@ thead {
     transition: all 1s ease-in;;
   }
 
-th {
+.analysisTable th {
     background: #333;
     color: white;
     font-size: 12px;

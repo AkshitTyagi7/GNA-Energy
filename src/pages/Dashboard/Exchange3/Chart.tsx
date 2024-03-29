@@ -61,7 +61,7 @@ export const renderQuarterTick = (tickProps: any) => {
   // }
   if (finalIndex % 48 === 0 && finalIndex % 96 !== 0) {
     return (
-      <text x={x} y={y - 4} textAnchor="middle">
+      <text x={x} y={y - 4} fontSize={12} textAnchor="middle">
         {value}
       </text>
     );
@@ -103,6 +103,7 @@ export const ExchangeChart =  ({
               dataKey="date"
               axisLine={false}
               tickLine={false}
+              fontSize={12}
               interval={0}
               tick={renderQuarterTick as any}
               height={20}
@@ -144,51 +145,51 @@ export const ExchangeChart =  ({
               }}
             />
 
+<Bar
+  dataKey="mcv_mw"
+  fill={"#DEDFDF"}
+  hide={!shownLegnends.includes(`MCV (${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
+  name={`MCV (${MEGA_POWER_UNIT})`}
+  yAxisId="right"
+  radius={[4, 4, 0, 0]}
+  isAnimationActive={false}
+/>
 
-            <Bar
-              dataKey="mcv_mw"
-              fill={"#DEDFDF"}
-              hide={!shownLegnends.includes(`MCV (${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
-              name={`MCV (${MEGA_POWER_UNIT})`}
-              yAxisId="right"
-              radius={[4, 4, 0, 0]}
-              isAnimationActive={false}
-            />
-            <Line
-              dot={false}
-              strokeWidth={2}
-              hide={!shownLegnends.includes(`Sell Bids(${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
-              yAxisId="right"
-              dataKey="sell_bid_mw"
-              
-              stroke={SecondaryColor}
-              isAnimationActive={false}
-              color={SecondaryColor}
-              fill={SecondaryColor}
-              name={`Sell Bids(${MEGA_POWER_UNIT})`}
-            />
-
-
-                    <Line
-          dot={false}
-          strokeWidth={2}
-          yAxisId="right"
-          hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
-          style={{
-            display: onlyBrush ? "none" : "block",
-          }}
-          dataKey="prchs_bid_mw"
-          stroke={"#333333"}
-          isAnimationActive={false}
-          color={"#333333"}
-          fill={"#333333"}
-          name={`Purchase Bids(${MEGA_POWER_UNIT})`}
-        />
           </>
         )}
+        <Line
+          dot={false}
+          strokeWidth={onlyBrush ? 0 :2}
+          hide={!shownLegnends.includes(`Sell Bids(${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
+          yAxisId="right"
+          dataKey="sell_bid_mw"
+          
+          stroke={SecondaryColor}
+          isAnimationActive={false}
+          color={SecondaryColor}
+          fill={SecondaryColor}
+          name={`Sell Bids(${MEGA_POWER_UNIT})`}
+        />
+
+
+                <Line
+      dot={false}
+      strokeWidth={onlyBrush ? 0 :2}
+      yAxisId="right"
+      hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
+      style={{
+        display: onlyBrush ? "none" : "block",
+      }}
+      dataKey="prchs_bid_mw"
+      stroke={"#333333"}
+      isAnimationActive={false}
+      color={"#333333"}
+      fill={"#333333"}
+      name={`Purchase Bids(${MEGA_POWER_UNIT})`}
+    />
             <Line
               dot={false}
-              strokeWidth={2}
+              strokeWidth={onlyBrush ? 0 : 2}
               dataKey="wt_mcp_rs_mwh"
               hide={!shownLegnends.includes(`Price(${COST_UNIT})`) && shownLegnends.length > 0}
               name={`Price(${COST_UNIT})`}

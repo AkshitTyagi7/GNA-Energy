@@ -16,7 +16,7 @@ import {
   FormatDataOfRealtime,
   FormatExchangeData,
   RealTimeChartData,
-  formatRealTimeChartData,
+  // formatRealTimeChartData,
 } from "./FormatData";
 import {
   BuyerSellerChart,
@@ -50,6 +50,7 @@ import { get } from "http";
 import Select from "react-select";
 import { ReactComponent as Cross } from "../../../icons/cross.svg";
 import Loading from "../../../components/Loading";
+import { COLORS, ReChartData, ReLineChart } from "../../../components/charts/ReCharts";
 export function Exchange3() {
   const [startDate, setStartDate] = useState(
     new Date(new Date().getTime() - 5 * 24 * 60 * 60 * 1000)
@@ -264,14 +265,12 @@ export function Exchange3() {
                     exchange: BuyerSellerState.BuyerSeller.filters[0],
                     region: BuyerSellerState.BuyerSeller.filters[2],
                   });
-                  fetchUtilityTrendData(
-                    {
-                      buyers: trendBuyer,
-                      sellers: trendSeller,
-                      startDate: new Date(e.target.value),
-                      endDate: endDate,
-                    }
-                  );
+                  fetchUtilityTrendData({
+                    buyers: trendBuyer,
+                    sellers: trendSeller,
+                    startDate: new Date(e.target.value),
+                    endDate: endDate,
+                  });
                 }}
               />
               to
@@ -301,14 +300,12 @@ export function Exchange3() {
                     exchange: BuyerSellerState.BuyerSeller.filters[0],
                     region: BuyerSellerState.BuyerSeller.filters[2],
                   });
-                  fetchUtilityTrendData(
-                    {
-                      buyers: trendBuyer,
-                      sellers: trendSeller,
-                      startDate: startDate,
-                      endDate: new Date(e.target.value),
-                    }
-                  );
+                  fetchUtilityTrendData({
+                    buyers: trendBuyer,
+                    sellers: trendSeller,
+                    startDate: startDate,
+                    endDate: new Date(e.target.value),
+                  });
                 }}
               />
             </div>
@@ -575,54 +572,34 @@ export function Exchange3() {
               <div className="flex flex-row justify-between"></div>
 
               <div
-                className="realtime-container"
-                style={
-                  {
-                    //   height: "60vh",
-                  }
-                }
+                className="onechart-container"
               >
                 <div className="flex justify-center gap-8">
-                  {RealTimeChartData.length > 0 &&
-                    RealTimeChartData[realTimechartIndex].data.datasets.map(
-                      (
-                        {
-                          label,
-                          borderColor,
-                        }: { label: string; borderColor: string },
-                        index: number
-                      ) => {
-                        return (
-                          <div className="realTime-Legend">
-                            <p style={{ color: label }}>
-                              {" "}
-                              <div
-                                className="dot"
-                                style={{ backgroundColor: borderColor }}
-                              ></div>{" "}
-                              {label.replace("Prices", "")}
-                            </p>
-                          </div>
-                        );
-                      }
-                    )}
+
                 </div>
                 <div className="realTime-chart">
-                  <RawLineChart
+                  <h1>{RealTimeChartData[realTimechartIndex] == undefined || null  ? "" : RealTimeChartData[realTimechartIndex].title} Prices {COST_UNIT}</h1>
+                  <ReLineChart
                     data={
                       RealTimeChartData.length > 0
                         ? RealTimeChartData[realTimechartIndex!].data
-                        : { labels: [], datasets: [] }
+                        : []
                     }
-                    options={GetChartOptions({
-                      displayTitle: true,
-                      displayLegend: false,
-                      displayYLabel: true,
-                      yLabelText: "Rs/KWh",
-                      fontSize: 20,
-                      maintainAspectRatio: false,
-                      enableZoom: false,
-                    })}
+                    unit={COST_UNIT}
+                    legends={
+                      RealTimeChartData.length > 0
+                        ? Object.keys(
+                            RealTimeChartData[realTimechartIndex!].data[0]
+                          ).map((item, index) => {
+                            return {
+                              dataKey: item,
+                              name: item.replace("_rates", ""),
+                              stroke:COLORS[index > COLORS.length - 1 ? index - COLORS.length : index] 
+                            };
+                          })
+                        : []
+                    }
+                    xDataKey={"timeslot"}
                   />
                 </div>
               </div>
@@ -783,9 +760,7 @@ export function Exchange3() {
                       <div className="exchange-topplayers-region-container">
                         <div className="exchange-topplayers-players-chartarea flex">
                           <div className="topplayer-legends">
-                            <h3 className="buyerseller-heading">
-                              By Region
-                            </h3>
+                            <h3 className="buyerseller-heading">By Region</h3>
                             <div>
                               {BuyerSellerState.BuyerSeller.Data.region_buyer.map(
                                 (item, index) => {
@@ -860,7 +835,7 @@ export function Exchange3() {
                     </div>
                   ) : (
                     <div className="exchange-buyerseller-trends-container">
-                     <div className="exchange-buyerseller-trends-chart-container">
+                      <div className="exchange-buyerseller-trends-chart-container">
                         <h3 className="buyerseller-heading">Buyer</h3>
                         <Select
                           classNames={{}}
@@ -881,7 +856,7 @@ export function Exchange3() {
                               ]);
 
                               fetchUtilityTrendData({
-                                sellers  : trendSeller,
+                                sellers: trendSeller,
                                 buyers: [
                                   ...trendBuyer,
                                   e.map((item) => item.value)[0],
@@ -891,7 +866,7 @@ export function Exchange3() {
                               });
                             } else {
                               fetchUtilityTrendData({
-                                sellers  : trendSeller,
+                                sellers: trendSeller,
                                 buyers: trendBuyer.filter(
                                   (item) =>
                                     item !== e.map((item) => item.value)[0]
@@ -925,13 +900,11 @@ export function Exchange3() {
                               <button
                                 onClick={() => {
                                   setTrendBuyer(
-                                    trendBuyer.filter(
-                                      (item2) => item2 !== item
-                                    )
+                                    trendBuyer.filter((item2) => item2 !== item)
                                   );
                                   fetchUtilityTrendData({
-                                    sellers  : trendSeller,
-                                    buyers:trendBuyer.filter(
+                                    sellers: trendSeller,
+                                    buyers: trendBuyer.filter(
                                       (item2) => item2 !== item
                                     ),
                                     startDate: startDate,
@@ -960,9 +933,7 @@ export function Exchange3() {
                         <div className="trends-chart">
                           <UtilizationTrendChart
                             data={BuyerSellerState.Trend.data.buyer}
-                            legends={
-                              BuyerSellerState.Trend.data.buyer_selected
-                            }
+                            legends={BuyerSellerState.Trend.data.buyer_selected}
                           />
                         </div>
                       </div>
@@ -1116,16 +1087,38 @@ export function Exchange3() {
       }
 
       const data: any = await response.json();
-      // const data = RealTimeData as any;
-      const temp: RealTimeChartData[] = [];
-      const reChartData = Object.keys(data).forEach((key: string) => {
-        console.log(key, data[key]);
-        const formattedData = formatRealTimeChartData(data[key], key);
-        temp.push(formattedData);
-      });
-      setRealTimeChartData(temp);
 
-      console.log("data");
+      // const data = RealTimeData as any;
+      const reChartTemp: RealTimeChartData[] = [];
+      Object.keys(data).forEach((key: string, index) => {
+        reChartTemp.push({
+          title: key,
+          data: [],
+        });
+        Object.keys(data[key]).forEach((key2: string, index2) => {
+          Object.keys(data[key][key2]).forEach((key3: string, index3) => {
+            if (reChartTemp[index].data[index3 as any] == undefined) {
+              reChartTemp[index as any].data[index3 as any] = {
+                timeslot: index3 + 1,
+              };
+            }
+            try {
+              reChartTemp[index].data[index3 as any][key2 as any] = parseFloat(
+                data[key][key2][key3]
+              );
+            } catch (e) {
+              console.log(data[key][key2]);
+              console.log(e);
+            }
+          });
+        });
+      });
+
+      Object.keys(data).forEach((key: string) => {});
+
+      setRealTimeChartData(reChartTemp);
+
+      console.log("data - ", reChartTemp);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

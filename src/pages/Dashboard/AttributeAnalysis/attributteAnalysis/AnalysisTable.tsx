@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 // import { ShimmerTable } from "react-shimmer-effects";
-import Slider from './Slider';
+import Slider from './Slider.js';
 import TotalCard from '../card/Card';
 import './AnalysisTable.css';
 import { BarChart, PieChart, PrepareGraphData } from '../../../../components/charts/Charts';
@@ -120,7 +120,6 @@ interface Data {
     ppa_util: [];
     plf: [];
     total_cost: [];
-
 }
 
 

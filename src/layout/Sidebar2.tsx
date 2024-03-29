@@ -2,13 +2,16 @@ import "./sidebar.css"
 import {ReactComponent as Logo} from "../icons/Logo.svg";
 import { NavLink, useLocation } from "react-router-dom";
 import {ReactComponent as DashboardIcon} from '../icons/dashboard.svg';
+import {ReactComponent as LogOutIcon} from '../icons/logout.svg';
 import {ReactComponent as DocumentIcon} from '../icons/document.svg';
 import {ReactComponent as GNAiIcon} from '../icons/gnai.svg';
 import { useSelector, useDispatch } from "react-redux";
 import {ReactComponent as MenuItemIcon} from "../icons/menu-item.svg";
 import {ReactComponent as ActiveMenuItemIcon} from "../icons/menu-item-active.svg";
 import { RootState } from "../store/store";
-function SideBarItems({Icon, text, href, isMenuActive }: {Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> , text: string, href: string, isMenuActive?: boolean}) {
+import Sidebar from "./Sidebar";
+import { setLoggedIn } from "../pages/Protected";
+function SideBarItems({Icon, text, href, isMenuActive }: {Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>> , text: string, href: string, isMenuActive?: boolean}) {
     const location = useLocation();
 
     let isActive = location.pathname.includes(href);
@@ -27,6 +30,21 @@ function SideBarItems({Icon, text, href, isMenuActive }: {Icon: React.FunctionCo
   
     );
 }
+
+function LogOut(){
+  return       <div  className={`sidebar-item items-center rounded-lg`} onClick={()=>{
+    {
+      setLoggedIn(false);
+
+      window.location.href = "/login";
+              }
+  }}>
+ <LogOutIcon />
+  <p className="sidebar-text">Logout</p>
+
+</div>
+}
+
 export function Sidebar2(){
     const active = useSelector((state: RootState) => state.menu.isActive);
   
@@ -37,6 +55,7 @@ export function Sidebar2(){
     <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
           <SideBarItems Icon={DocumentIcon} text="GNAi Doc" isMenuActive={active} href="/document"  />
           <SideBarItems Icon={GNAiIcon} text="GNAi" isMenuActive={active} href="/gnai"  />
+         <LogOut />
           </div>
    </div>
     
