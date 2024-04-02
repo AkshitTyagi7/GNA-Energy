@@ -167,11 +167,9 @@ color: var(--teritary-grey);
     height: calc(100% - 250px);
     transition: transform 1s; /* Animation */
 
-    object-fit: cover;
+    object-fit:contain;
 }
 
 .login-image:hover{
     transform: scale(1.06); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-
-    
 }

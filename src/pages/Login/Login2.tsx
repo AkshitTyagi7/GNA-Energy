@@ -1,12 +1,13 @@
 import "./Login2.css";
 import { ReactComponent as Logo } from "../../icons/Logo.svg";
 import { ReactComponent as LoginIcons } from "./Login.svg";
-import loginImage from "./Login.png";
+import loginImage from "./login4.png";
 import swal from "sweetalert";
 import React from "react";
 import { buildUrl, buildHttpReq } from "../../common";
 import { setAccessToken, setUser, setLoggedIn } from "../Protected";
 import Loading from "../../components/Loading";
+
 
 export function Login2() {
   const [otpSent, setOtpSent] = React.useState<boolean>(false);
@@ -99,7 +100,8 @@ export function Login2() {
         </div>
         {/* <LoginIcons /> */}
 
-        <LoginIcons className="login-image" />
+        {/* <LoginIcons className="login-image" /> */}
+        <img src={loginImage} alt="loginImage" className="login-image" />
       </div>
     </div>
   );
