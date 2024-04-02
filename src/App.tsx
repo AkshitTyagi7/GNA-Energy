@@ -10,7 +10,6 @@ import Sidebar from "./layout/Sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { DemoPage } from "./pages/DemoPage";
 import { PowerAtlas } from "./pages/Dashboard/Atlas/Atlas";
-import ReCharts from "./pages/Recharts";
 import { LoginPage } from "./pages/Login/Login";
 import "./App.css";
 import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonitoring";
@@ -21,6 +20,8 @@ import { DashboardRoutes } from "./Routes";
 import { Gnai } from "./pages/GNAi/Gnai";
 import { useSelector } from "react-redux";
 import { Documents } from "./pages/Documents/Documents";
+import { Sidebar2 } from "./layout/Sidebar2";
+import { Login2 } from "./pages/Login/Login2";
 
 function App() {
   const isMenuActive = useSelector((state: any) => state.menu.isActive);
@@ -28,29 +29,31 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<LoginPage />} />
+    
+          <Route path="/" element={      <Protected><Navigate to="/dashboard" /></Protected>} />
+          <Route path="/login" element={<Login2 />} />
 
           <Route
             path="/dashboard"
             element={
-              <Protected>
-                <Sidebar />
-                <div
-                  className="content"
-                  style={{
-                    width: isMenuActive
-                      ? "calc(100% - 210px)"
-                      : "calc(100% - 100px)",
-                    left: isMenuActive ? "210px" : "100px",
-                  }}
-                >
+              <>
+                <Sidebar2 />
+
                   <Outlet />
-                </div>
-              </Protected>
+              </>
             }
           >
-            <Route index={true} element={<Dashboard />} />
+            <Route index={true} element={
+                            <div
+                            className="content2"
+                            style={{
+                              // width: isMenuActive
+                              //   ? "calc(100% - 210px)"
+                              //   : "calc(100% - 100px)",
+                              // left: isMenuActive ? "210px" : "100px",
+                            }}
+                          >
+            <Dashboard /></div>} />
             {DashboardRoutes.map((Proute, index) => {
               return (
                 <Route
@@ -60,10 +63,13 @@ function App() {
                     Proute.notPrtoected ? (
                       Proute.element
                     ) : (
+                      <div
+                      className={Proute.noDefaultPadding ? "content2" : "content"}
+                    >
                       <ProtectedPage
                         children={Proute.element}
                         pageId={"/" + Proute.path}
-                      />
+                      /></div>
                     )
                   }
                 />
@@ -75,48 +81,37 @@ function App() {
           <Route
             path="/gnai"
             element={
-              <div>
-                <Sidebar />
+              <Protected>
+                <Sidebar2 />
+                <div
+                      className="content"
 
+                    >
                 <ProtectedPage
                   children={
-                    <div
-                      className="content"
-                      style={{
-                        width: isMenuActive
-                          ? "calc(100% - 210px)"
-                          : "calc(100% - 100px)",
-                        left: isMenuActive ? "210px" : "100px",
-                      }}
-                    >
+               
                       <Gnai />
-                    </div>
                   }
                   pageId="/gnai"
                 />
-              </div>
+                </div>
+              </Protected>
             }
           />
-          <Route 
-          path="/document"
-          element={
-            <div>
-              <Sidebar />
-           
-                  <div
-                    className="content"
-                    style={{
-                      width: isMenuActive
-                        ? "calc(100% - 210px)"
-                        : "calc(100% - 100px)",
-                      left: isMenuActive ? "210px" : "100px",
-                    }}
-                  >
-                    <Documents />
-                  </div>
-             
-            </div>
-          }
+          <Route
+            path="/document"
+            element={
+              <Protected>
+                <Sidebar2 />
+
+                <div
+                  className="content"
+
+                >
+                  <Documents />
+                </div>
+                </Protected>
+            }
           />
         </Routes>
       </BrowserRouter>

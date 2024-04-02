@@ -51,6 +51,8 @@ export interface ChartExchangeItem {
 
 
 }
+
+
 export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
     const formattedDataArray: MarketMonitoringData = {
         dam: [],

@@ -1,34 +1,57 @@
 import React from "react";
 import "./Dashboard.css";
 import { NavLink } from "react-router-dom";
+import { Header } from "../../layout/Header";
+import {ReactComponent as ItemImage} from "../../icons/dashboard-item.svg";
+import {ReactComponent as BankingAalytics} from "../../icons/dashboard/bankingAnalytics.svg";
+import {ReactComponent as ConsumptionAndGenerationAnalytics} from "../../icons/dashboard/consumptionAndGenerationAnalytics.svg";
+import {ReactComponent as DemandForecasting} from "../../icons/dashboard/demandForecasting.svg";
+import {ReactComponent as DiscomAnalysis} from "../../icons/dashboard/discomAnalysis.svg";
+import {ReactComponent as ExchangeAnalysis} from "../../icons/dashboard/exchangeAnalysis.svg";
+import {ReactComponent as GridFrequencyProfile} from "../../icons/dashboard/gridFrequencyProfile.svg";
+import {ReactComponent as MarketMonitoring} from "../../icons/dashboard/marketmonitoring.svg";
+import {ReactComponent as PowerAtlas} from "../../icons/dashboard/powerAtlas.svg";
+import {ReactComponent as PriceForecasting} from "../../icons/dashboard/priceForecasting.svg";
 
-function DashBoardItem({title, to}: {title: string, to: string}) {
+
+ function DashBoardItem({title,Icon, to}: {title: string,Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>, to: string}) {
   return (
     <NavLink to={`${to}`} className="dashboard-item" >
-      <h3 className="text-white text-2xl ">{title}</h3>
+
+      <Icon style={{
+        fill:"white"
+      }}  />
+      <p >{title}</p>
+
     </NavLink>
   );
   
 }
 export default function Dashboard() {
   return (
-  <div className="dashboard p-10 mt-5">
-    <h2 className="mb-10 text-4xl text-center">GNA Energy Data and Analytics Capability Center (GDACC)</h2>
-    <div className="flex flex-row flex-wrap gap-10 justify-center">
-    <DashBoardItem title="Market Monitoring" to="marketmonitoring" />
-    <DashBoardItem title="Discom Analytics" to="discomAnalysis"/>
-    <DashBoardItem title="Exchange Analytics" to="exchangeAnalysis" />
-    <DashBoardItem title="Power Atlas" to="powerAtlas" />
-    <DashBoardItem title="Banking Analytics" to="bankingAnalytics" />
-    <DashBoardItem title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
-    <DashBoardItem title="Price Forecast" to="priceForecasting" />
-    <DashBoardItem title="Demand Forecast" to="demandForecasting" />
-    <DashBoardItem title="Grid Frequency Profile" to="gridFrequencyProfile" />
+    <>      <div className="dashboard-header">
+    <div>
+        <h1>GNA Energy Data and Analytics Capability Center (GDACC)</h1>
+    </div>
+</div>
+    
+      <div className="p-10 mt-5">
 
-  </div>
-  <div
-  className="text-center mt-8 text-gray-500"
-  >2024 GNA Energy Private Limited. All Rights Reserved</div>
-  </div>
+      <div className="flex flex-row flex-wrap gap-5 justify-center">
+        <DashBoardItem Icon={MarketMonitoring} title="Market Monitoring" to="marketmonitoring" />
+        <DashBoardItem Icon={DiscomAnalysis} title="Discom Analytics" to="discomAnalysis" />
+        <DashBoardItem Icon={ExchangeAnalysis} title="Exchange Analytics" to="exchangeAnalysis" />
+        <DashBoardItem Icon={PowerAtlas} title="Power Atlas" to="powerAtlas" />
+        <DashBoardItem Icon={BankingAalytics} title="Banking Analytics" to="bankingAnalytics" />
+        <DashBoardItem Icon={ConsumptionAndGenerationAnalytics} title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
+        <DashBoardItem Icon={PriceForecasting} title="Price Forecast" to="priceForecasting" />
+        <DashBoardItem Icon={DemandForecasting} title="Demand Forecast" to="demandForecasting" />
+        <DashBoardItem Icon={GridFrequencyProfile} title="Grid Frequency Profile" to="gridFrequencyProfile" />
+
+      </div>
+      <div
+        className="text-center mt-5 text-gray-500"
+      >2024 GNA Energy Private Limited. All Rights Reserved</div>
+    </div></>
   );
 }

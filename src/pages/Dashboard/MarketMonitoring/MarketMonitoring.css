@@ -10,9 +10,23 @@
 } */
 
 .searchSelect{
-    width: 30%;
+    /* width: 30%; */
 }
 
 .dateSelect{
-    width: 159px;
+    min-width: 169px;
+}
+
+.markeMonitoring-chart-container{
+    height: 100%;
+    width: 100%;
+    padding: 32px;
+}
+
+.markeMonitoring-chart{
+    height: 100%;
+    width: 100%;
+    padding: 32px;
+    border-radius: 12px;
+    background-color: white;
 }

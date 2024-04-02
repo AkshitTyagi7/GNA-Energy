@@ -1,14 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
 import MenuState from "./state/MenuState";
-import BuyerSellerFilterSlice from "./state/ExchangeState";
+import BuyerSellerFilterSlice from "./state/BuyerSellerState";
 import DocumentSlice from "./state/DocumentState";
+import ExchangeState from "./state/Exchange/ExchangeState";
+import MarketMonitoringSlice from "./state/MarketMontitoring/MarketMonitoringState";
+import DiscomSlice from "./state/Discom/Discom";
 // TODO Presist Reducer
 export const store = configureStore({
     reducer:{
       menu: MenuState,
       buyerSeller: BuyerSellerFilterSlice,
-
-      document: DocumentSlice 
+      exchange: ExchangeState,
+      document: DocumentSlice,
+      marketMonitoring: MarketMonitoringSlice,
+      discom: DiscomSlice
     }
   });
 

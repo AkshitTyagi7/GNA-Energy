@@ -27,10 +27,8 @@ export default function MahaGenco() {
         );
     }, [])
     return (
-        <>
-            <div className="flex space-x-1 justify-center">
-
-            </div>
+        <div className="pl-4">
+      
             <div className="flex space-x-1 justify-between">
                 <div className="w-1/2 h-full border-r justify-start">
                     <SearchGenerator />
@@ -115,7 +113,7 @@ export default function MahaGenco() {
                     )} options={GetChartOptions({ yLabelText: chartData.data[0]?.unit ?? '', displayYLabel: true, displayLegend: false, maintainAspectRatio: true })} />
                 </div>
             </div>
-        </>
+        </div>
 
     )
 

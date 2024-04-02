@@ -36,7 +36,7 @@ export function Gnai() {
     scrollToBottom();
   }, []);
   return (
-    <div className="h-full overflow-hidden">
+    <div className="h-full w-full overflow-hidden pl-4">
       <div
         className="chatArea pb-10 rounded "
         style={{ scrollBehavior: "smooth" }}
@@ -47,7 +47,7 @@ export function Gnai() {
         })}
       </div>
 
-      <div className="absolute bottom-2 w-full ">
+      <div className="mt-4 bottom-2 w-full ">
         <form onSubmit={_handleMessageSubmit}>
           <div className="flex justify-center h-full  text-center gptInputBox bg-white pl-2 ">
             <div className="pl-2 w-full flex">

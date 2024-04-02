@@ -1,27 +1,63 @@
 .dashboard-item{
-    display: flex;
-width: 248.5px;
-height: 150px;
-padding: 35px 30px 43px 30px;
-justify-content: center;
-font-size: 30px;
-align-items: center;
-flex-shrink: 0;
+width: 32%;
+height: 22vh;
 text-align: center;
+align-items: center;
+display: flex;
+padding: 0 2.5%;
+    justify-content: center;
+    gap: 20px;
 border-radius: 3px;
-background: var(--Primary-Gradient, linear-gradient(180deg, #FF7C04 0%, #FF2A00 99.88%));
+flex-direction: column;
+background: white;
 box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
 transition: 0.5s;
-}
+border-radius: 16px;
+color: #333333;
 
+}
+.dashboard-item p{
+    font-size: 18px;
+    font-weight: 400;
+
+}
 .dashboard-item:hover{
     cursor: pointer;
-    background: var(--Primary-Gradient, linear-gradient(180deg, #FF7C04 0%, #FF2A00 99.88%));
+    /* background: #F1935C; */
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    /* fill: white!important;
+    color: white; */
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
 }
 
+.dashboard-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    height: 80px;
+    /* position: fixed; */
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 400;
+    width:calc( 100% );
+    padding: 20px;
+    border-left: solid 1px #E4E7ED;
+    border-bottom: solid 1px #E4E7ED;
+    /* left: 188px; */
+}
+
+
+.dashboard-heading{
+    font-size: 20px;
+    font-weight:500;
+    margin-left: 1.25rem;
+    color: #333333;
+    margin-bottom: 1.25rem;
+
+}
 .dashboard-item:active{
     transform: scale(1);
     transition: all 0.1s ease-in-out;

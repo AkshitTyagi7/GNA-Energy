@@ -1,4 +1,4 @@
-import { UtilizationTrendData } from "./ExchangeState";
+import { UtilizationTrendData } from "./BuyerSellerState";
 
 export const DemoFilterData: {
     buyer_name: string[];
