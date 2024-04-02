@@ -165,7 +165,7 @@ color: var(--teritary-grey);
 .login-image{
     width: 100%;
     height: calc(100% - 250px);
-    transition: transform .4s; /* Animation */
+    transition: transform 1s; /* Animation */
 
     object-fit: cover;
 }

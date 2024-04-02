@@ -119,7 +119,7 @@ function formatMessage(message : string) : string {
   }
 
   export function FilterHeading({heading} : {heading : string}){
-    return   <div className="flex space-x-2">
+    return   <div className="flex space-x-2" style={{fontWeight: 500}}>
     <DownIcon width="18px" />
     <p className="">{heading}</p>
   </div>

@@ -36,7 +36,7 @@ export const DashboardRoutes=[
     },
     {
         path:"discomAnalysis",
-        element:<Discom />,
+        element:<AnalysisTable />,
         noDefaultPadding: true
 
     },

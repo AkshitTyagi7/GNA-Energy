@@ -178,7 +178,7 @@ const URL = "https://assistant.gna.energy/";
           <div className="mt-4 mb-4">
             <div className="flex space-x-2">
               <DownIcon width="18px" />
-              <p className="">By Document Type</p>
+              <p className="" style={{fontWeight:500}}>By Document Type</p>
             </div>
             {state.filters.types?.map((type) => {
               return (

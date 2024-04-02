@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 import "./Discom.css";
 import Slider from "./Slider";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
+import { fetchDiscomData } from "../../../store/state/Discom/Discom";
 export function Discom() {
   const data = useSelector((state: RootState) => state.discom);
-  useEffect(() => {}, []);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div>
       <div className="header">
@@ -45,16 +49,24 @@ export function Discom() {
                     <td>{item.variable_cost}</td>
                     <td>
                       <Slider
-                        currentValue={5}
-                        maxValue={10}
+                        currentValue={(
+                          parseFloat(
+                            data.data.data[
+                              index
+                            ].Adjusted_Availability.toString()
+                              .replace("%", "")
+                              .replace(" ", "")
+                          ) * 100
+                        ).toFixed(2) as any || 0}
+                        maxValue={100}
                         minValue={0}
                         onChange={(value: number) => {}}
                       />
                     </td>
                     <td>
                       <Slider
-                        currentValue={9}
-                        maxValue={10}
+                        currentValue={item.Adjusted_variable_charge.toFixed(2) as any || 0}
+                        maxValue={20}
                         minValue={0}
                         onChange={(value: number) => {}}
                       />
@@ -62,19 +74,6 @@ export function Discom() {
                   </tr>
                 );
               })}
-              {/* <tr>
-                            <td>Adani Power</td>
-                            <td className="mus-procured"> 100</td>
-                            <td>100</td>
-                            <td><Slider currentValue={5} maxValue={10} minValue={0} onChange={(value: number) => {
-                                 
-                                } }                            
-                            /></td>
-                            <td><Slider currentValue={9} maxValue={10} minValue={0} onChange={(value: number) => {
-                                 
-                                } }                            
-                            /></td>
-                        </tr> */}
             </table>
           </div>
         </div>
@@ -94,4 +93,8 @@ export function Discom() {
       </div>
     </div>
   );
+
+  function fetchData() {
+    dispatch(fetchDiscomData(data.arguments) as any);
+  }
 }

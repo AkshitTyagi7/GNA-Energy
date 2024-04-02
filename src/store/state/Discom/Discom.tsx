@@ -85,7 +85,7 @@ class DiscomArguments {
 const fetchDiscomData = createAsyncThunk(
     "discom/fetchDiscomData",
     async (args: DiscomArguments) => {
-        const res = await fetch("http://localhost:8000/discom", {
+        const res = await fetch("https://datahub.gna.energy/attribution_analysis_api", {
             method: "POST",
             body: args.getFormData()
         });
@@ -116,7 +116,7 @@ const DiscomSlice = createSlice({
         },
         setError: (state, action) => {
             state.error = action.payload;
-        }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchDiscomData.fulfilled, (state, action) => {

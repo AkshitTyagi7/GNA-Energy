@@ -294,11 +294,11 @@ div::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
   background-color: #f1935c;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 0px;
   background-color: #f1935c;
 }
