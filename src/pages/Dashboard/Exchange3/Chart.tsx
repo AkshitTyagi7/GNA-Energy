@@ -20,7 +20,7 @@ import {
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
-import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement } from "../../../store/state/BuyerSellerState";
+import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement, UtilizationTrendMCP } from "../../../store/state/BuyerSellerState";
 import React from "react";
 export const AxisLabel = ({
   axisType,
@@ -135,13 +135,17 @@ export const ExchangeChart =  ({
                 }
               }}
               formatter={(value, name, props) => {
+                let val = parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                if (val === "NaN") {
+                  val="";
+                }
                 if (name === "Weighted Average Price") {
                   return [
-                    parseFloat(value.toString()).toFixed(2),
+                    val,
                     name.toString().concat(`(${COST_UNIT})`),
                   ];
                 }
-                return [parseFloat(value.toString()).toFixed(2), name];
+                return [val, name];
               }}
             />
 
@@ -330,23 +334,32 @@ export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
               ]} />
             ))}
             </Pie>
-      {/* <Legend verticalAlign="top" formatter={
-        (value, entry, index) => {
-          return value;
-        }
-      } /> */}
     </PieChart>
   </ResponsiveContainer>
 };
 
-export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElement[], legends: {name: string, value: number}[]}) => {
+export const UtilizationTrendChart= ({data,mcp, legends}:{data: UtilizationTrendElement[],mcp: UtilizationTrendMCP[], legends: {name: string}[]}) => {
   return <ResponsiveContainer>
-    <LineChart syncId={"utilizationChart"} data={data}>
+    <ComposedChart syncId={"utilizationChart"} data={
+      // Add the mcp data to the data
+
+      data.map((element, index) => {
+        let mcpElement = mcp[index];
+        if (mcpElement) {
+          return {
+            ...element,
+            wt_mcp: mcpElement.wt_mcp,
+          };
+        }
+        return element;
+      })
+    }>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
       <YAxis >
         {/* <Label value={"MWh"} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} /> */}
       </YAxis>
+      <YAxis yAxisId="right" orientation="right" />
       <Tooltip 
       formatter={
         (value, name, props) => {
@@ -354,14 +367,15 @@ export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElem
         }
       }
       />
-      {/* <Legend
-      formatter={
-        (value, entry, index) => {
-          let total = legends.filter(legend => legend.name === value)[0].value;
-          return `${value}`;
-        }
-      }
-      verticalAlign="top"  /> */}
+
+<Bar
+  dataKey="wt_mcp"
+  fill={"#DEDFDF"}
+  name={`MCP (${COST_UNIT})`}
+  yAxisId="right"
+  radius={[4, 4, 0, 0]}
+  maxBarSize={30}
+/>
       {
         legends.map((legend, index) => {
           return <Line  key={index} type="monotone" dataKey={legend.name} stroke={
@@ -371,6 +385,7 @@ export const UtilizationTrendChart= ({data, legends}:{data: UtilizationTrendElem
           }  dot={false} strokeWidth={2}  />
         })
       }
-    </LineChart>
+
+    </ComposedChart>
   </ResponsiveContainer>
 }

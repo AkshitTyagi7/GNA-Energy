@@ -43,7 +43,6 @@ import {
   setBuyerSellerData,
   setTrendData,
 } from "../../../store/state/BuyerSellerState";
-import { DemoTrendData } from "../../../store/state/UtilizationData";
 import Select from "react-select";
 
 const ApiData = FinalDemoData;

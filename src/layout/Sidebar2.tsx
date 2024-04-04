@@ -50,7 +50,7 @@ export function Sidebar2(){
   
    return <div className="sidebar">
     <Logo />
-    <hr className="my-2 border-t border-gray-300" style={{color:"#E4E7ED", marginTop:"20px"}} />
+    <hr className="my-2 border-t border-gray-300 w-full" style={{color:"#E4E7ED", marginTop:"20px"}} />
     <div className="sidebar-items">
     <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
           <SideBarItems Icon={DocumentIcon} text="GNAi Doc" isMenuActive={active} href="/document"  />
@@ -58,8 +58,6 @@ export function Sidebar2(){
          <LogOut />
           </div>
    </div>
-    
-
 }
 
 
