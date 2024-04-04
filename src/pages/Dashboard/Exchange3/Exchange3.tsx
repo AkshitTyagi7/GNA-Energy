@@ -839,7 +839,7 @@ export function Exchange3() {
                         <h3 className="buyerseller-heading">Buyer</h3>
                         <Select
                           classNames={{}}
-                          placeholder="Select Sellers"
+                          placeholder="Select Buyers"
                           value={[]}
                           defaultValue={[]}
                           isMulti={true}
@@ -919,7 +919,9 @@ export function Exchange3() {
                                     <div
                                       className="dot"
                                       style={{
-                                        backgroundColor: ExchangeColors[index],
+                                        backgroundColor: COLORS[
+                                          index > COLORS.length - 1 ? index - COLORS.length : index
+                                        ],
                                       }}
                                     ></div>
                                     {item}
@@ -933,7 +935,16 @@ export function Exchange3() {
                         <div className="trends-chart">
                           <UtilizationTrendChart
                             data={BuyerSellerState.Trend.data.buyer}
-                            legends={BuyerSellerState.Trend.data.buyer_selected}
+                            mcp={BuyerSellerState.Trend.data.mcp}
+                            legends={trendBuyer.map((item) => {
+                              return {
+                                dataKey: item,
+                                name: item,
+                                stroke: ExchangeColors[trendBuyer.indexOf(item)],
+                              };
+                            
+                              }
+                            )}
                           />
                         </div>
                       </div>
@@ -1023,7 +1034,9 @@ export function Exchange3() {
                                     <div
                                       className="dot"
                                       style={{
-                                        backgroundColor: ExchangeColors[index],
+                                        backgroundColor: COLORS[
+                                          index > COLORS.length - 1 ? index - COLORS.length : index
+                                        ],
                                       }}
                                     ></div>
                                     {item}
@@ -1037,9 +1050,16 @@ export function Exchange3() {
                         <div className="trends-chart">
                           <UtilizationTrendChart
                             data={BuyerSellerState.Trend.data.seller}
-                            legends={
-                              BuyerSellerState.Trend.data.seller_selected
-                            }
+                            mcp={BuyerSellerState.Trend.data.mcp}
+                            legends={trendSeller.map((item) => {
+                              return {
+                                dataKey: item,
+                                name: item,
+                                stroke: ExchangeColors[trendBuyer.indexOf(item)],
+                              };
+                            
+                              }
+                            )}
                           />
                         </div>
                       </div>
@@ -1186,8 +1206,7 @@ export function Exchange3() {
         },
         method: "POST",
       });
-      console.log("Setting Trend Data");
-      console.log(res);
+
       dispatch(setTrendData(res));
     } catch (e) {
       console.error("Error fetching data:", e);

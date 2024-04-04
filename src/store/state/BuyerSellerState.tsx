@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { DemoFilterData, DemoTrendData } from "./UtilizationData";
+import { DemoFilterData } from "./UtilizationData";
 
 export interface subfilter {
   id: number;
@@ -66,11 +66,16 @@ export interface UtilizationTrendElement {
   name: string;
   [key: string]: string | number;
 }
+export interface UtilizationTrendMCP{
+  date: string;
+  wt_mcp: number;
+}
 export interface UtilizationTrendData{
     buyer: UtilizationTrendElement[];
     seller: UtilizationTrendElement[];
     buyer_selected: ChartElement[];
     seller_selected: ChartElement[];
+    mcp: UtilizationTrendMCP[];
   };
 export interface UtilizationTrend {
   data: UtilizationTrendData;
@@ -113,6 +118,7 @@ const initialState: ExchangeState = {
         seller: [],
         buyer_selected: [],
         seller_selected: [],
+        mcp: [],
       
       },
       filters: DemoFilterData
