@@ -569,7 +569,7 @@ export function Exchange3() {
                 <div className="realTime-chart">
                   <div className="flex justify-between">
                   
-                  <h1> Prices (IEX) ({COST_UNIT}) </h1>
+                  <h1> Price (IEX) ({COST_UNIT}) </h1>
                   <div className="date-selection">
               <div>
                 {RealTimeChartData.map((data, index) => {
