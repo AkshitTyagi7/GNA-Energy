@@ -70,12 +70,13 @@ export const renderQuarterTick = (tickProps: any) => {
 
 export const ExchangeChart =  ({
   showBrush = false,
-  title = "Exchange Chart",
+  title,
   data,
   height = "25%",
   width = "100%",
   syncId = "anyId",
   onlyBrush = false,
+
   setShownLegends,
   shownLegnends=[],
 }: {
@@ -109,18 +110,37 @@ export const ExchangeChart =  ({
               height={20}
               xAxisId="quarter"
             />
-            <YAxis  >
+            <YAxis
+              fontSize={12}
+              width={37}
+            >
+              <Label
+                value={COST_UNIT}
+                fontSize={13}
+
+                angle={-90}
+                position="insideLeft"
+                style={{ textAnchor: "middle" }}
+              />
+          
 
             </YAxis>
             {/* <YAxis name="MW" label={"MW"} width={0} /> */}
 
             <YAxis
               yAxisId="right"
-              fontSize={12}
-              
+              fontSize={11}
               orientation="right"
+              width={68}
             >
-  
+      <Label
+                value={"MW"}
+                fontSize={13}
+                angle={-90}
+                position="insideRight"
+
+                style={{ textAnchor: "middle" }}
+              />
             </YAxis>
 
             {/* <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={0} /> */}
@@ -356,9 +376,39 @@ export const UtilizationTrendChart= ({data,mcp, legends}:{data: UtilizationTrend
     }>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis >
-        {/* <Label value={"MWh"} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} /> */}
-      </YAxis>
+            <YAxis
+              fontSize={13}
+              width={37}
+            >
+              <Label
+                value={COST_UNIT}
+                fontSize={15}
+
+                angle={-90}
+                position="insideLeft"
+                style={{ textAnchor: "middle" }}
+              />
+          
+
+            </YAxis>
+            {/* <YAxis name="MW" label={"MW"} width={0} /> */}
+
+            <YAxis
+              yAxisId="right"
+              fontSize={13}
+              orientation="right"
+              width={68}
+            >
+      <Label
+                value={"MWh"}
+                fontSize={15}
+                angle={-90}
+                position="insideRight"
+
+                style={{ textAnchor: "middle" }}
+              />
+            </YAxis>
+
       <YAxis yAxisId="right" orientation="right" />
       <Tooltip 
       formatter={
@@ -372,13 +422,15 @@ export const UtilizationTrendChart= ({data,mcp, legends}:{data: UtilizationTrend
   dataKey="wt_mcp"
   fill={"#DEDFDF"}
   name={`MCP (${COST_UNIT})`}
-  yAxisId="right"
   radius={[4, 4, 0, 0]}
   maxBarSize={30}
 />
       {
         legends.map((legend, index) => {
-          return <Line  key={index} type="monotone" dataKey={legend.name} stroke={
+          return <Line
+          yAxisId="right"
+
+          key={index} type="monotone" dataKey={legend.name} stroke={
             COLORS[
               index > COLORS.length - 1 ? index - COLORS.length : index
             ]

@@ -104,7 +104,10 @@ export const filters=
                 { id: 78, title: "Jun-23" },
                 { id: 79, title: "Jul-23" },
                 { id: 80, title: "Aug-23" },
-                { id: 81, title: "Sep-23" }
+                { id: 81, title: "Sep-23" },
+                { id: 82, title: "Oct-23" },
+                { id: 83, title: "Nov-23" },
+                { id: 84, title: "Dec-23" }
               ]
         }
     ]

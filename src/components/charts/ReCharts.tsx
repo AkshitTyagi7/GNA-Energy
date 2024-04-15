@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Brush,
   CartesianGrid,
+  Label,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -10,7 +11,7 @@ import {
   YAxis,
 } from "recharts";
 import { PrimaryColor } from "../../common";
-export const COLORS = ["#34656D", "#F1935C", "#7CB5EC", "#333333", "#B8860B"];
+export const COLORS = ["#FF7F50", "#B8860B", "#7CB5EC", "#F1935C", "#34656D", "#333333"];
 export interface ReChartData {
   [key: string]: number;
 }
@@ -21,12 +22,27 @@ export interface LegendKey {
   dataKey: string;
   // color: string;
 }
+
+
+
+export const BAR_RADIUS: number | [number, number, number, number] = [4, 4, 0, 0];
+
+export function getColorList(length: number) {
+  let colors = [];
+  for (let i = 0; i < length; i++) {
+    colors.push(COLORS[i % COLORS.length]);
+  }
+  return colors;
+}
+
 export function ReLineChart({
   data,
   legends,
   syncid,
   unit,
   xDataKey,
+  yAxisLabel,
+  yAxisWidth,
   secondXDataKey,
   showBrush = false,
 }: {
@@ -35,7 +51,9 @@ export function ReLineChart({
   syncid?: string;
   unit?: string;
   xDataKey: string;
+  yAxisWidth?: number;
   secondXDataKey?: string;
+  yAxisLabel?: string;
   showBrush?: boolean;
 }) {
   const [selectedLegends, setSelectedLegends] = useState<LegendKey[]>([]);
@@ -87,8 +105,8 @@ export function ReLineChart({
             height={20}
             xAxisId="quarter" /> : null
           }
-          <YAxis>
-            {/* <Label value={"MWh"} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} /> */}
+          <YAxis width={yAxisWidth}>
+             <Label  value={yAxisLabel} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} /> 
           </YAxis>
           {            showBrush && <Brush dataKey={xDataKey} height={30}               stroke={PrimaryColor}
 
@@ -181,3 +199,51 @@ export const renderQuarterTick = (tickProps: any) => {
     );
   }
 };
+
+export const LegendItem = ({
+  name,
+  color,
+  onClick,
+  fontSize
+}: {
+  name: string;
+  color: string;
+  onClick?: () => void;
+  fontSize?: string;
+}) => {
+  return (
+    <div className="realTime-Legend" onClick={onClick}>
+      <p style={{ color: color }}>
+        {" "}
+        <div className="dot" style={{ backgroundColor: color,  }}></div>{" "}
+        {name}
+      </p>
+    </div>
+  );
+
+
+}
+
+export const MediumLegendItem = ({
+  name,
+  color,
+  onClick,
+  fontSize
+}: {
+  name: string;
+  color: string;
+  onClick?: () => void;
+  fontSize?: string;
+}) => {
+  return (
+    <div className="realTime-Legend" onClick={onClick}>
+      <p style={{ color: color, fontSize: "14p!important" }}>
+        {" "}
+        <div className="dot" style={{ backgroundColor: color,  }}></div>{" "}
+        {name}
+      </p>
+    </div>
+  );
+
+
+}

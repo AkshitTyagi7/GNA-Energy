@@ -2,6 +2,8 @@
     overflow: scroll;
     max-height: 90vh;
     margin-top: 10px;
+    overflow-x: hidden;
+    padding: 3px;
     height: 90vh;
 }
 
@@ -40,3 +42,29 @@
     min-width: 100px!important;
 
 }
+.consumptionFilters{
+
+}
+
+/* width */
+.consumptionFilters::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  .consumptionFilters::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .consumptionFilters::-webkit-scrollbar-thumb {
+    background: #f1935c;
+    border-radius: 2px;
+
+  }
+  
+  /* Handle on hover */
+  .consumptionFilters::-webkit-scrollbar-thumb:hover {
+    background: #f1935c;
+    border-radius: 2px;
+  }

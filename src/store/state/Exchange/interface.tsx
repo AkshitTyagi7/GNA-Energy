@@ -16,6 +16,11 @@ export interface ExchangeState{
 page: number;
 }
 
+export interface ExchangeStateData{
+    iex: ExchangeData;
+    hpx: ExchangeData;
+    pxil: ExchangeData;
+}
 
 export const initialExchangeState: ExchangeState = {
     Exchange: {

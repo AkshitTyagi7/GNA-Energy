@@ -39,19 +39,15 @@ function App() {
               <>
                 <Sidebar2 />
 
-                  <Outlet />
+                  <Outlet
+                    />
               </>
             }
           >
             <Route index={true} element={
                             <div
                             className="content2"
-                            style={{
-                              // width: isMenuActive
-                              //   ? "calc(100% - 210px)"
-                              //   : "calc(100% - 100px)",
-                              // left: isMenuActive ? "210px" : "100px",
-                            }}
+
                           >
             <Dashboard /></div>} />
             {DashboardRoutes.map((Proute, index) => {

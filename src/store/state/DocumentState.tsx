@@ -31,7 +31,11 @@ export interface DocumentFilter {
 
 export interface Message{
   content: string,
-  role: string
+  role: string,
+  source?: {
+    page: number,
+    name: string
+  }[]
 }
 
 

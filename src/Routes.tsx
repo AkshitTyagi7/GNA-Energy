@@ -11,6 +11,8 @@ import { BetaMarketMontoring } from "./pages/Dashboard/MarketMonitoring/BetaMark
 import { BetaConsumption } from "./pages/Dashboard/Consumption/BetaConsumption";
 import { Exchange3 } from "./pages/Dashboard/Exchange3/Exchange3";
 import { Discom } from "./pages/Dashboard/Discom/Discom";
+import { ExchangeComparion } from "./pages/Dashboard/Exchange3/Comparison";
+import { ExchangeComparion2 } from "./pages/Dashboard/Exchange3/Comparison2";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -36,7 +38,7 @@ export const DashboardRoutes=[
     },
     {
         path:"discomAnalysis",
-        element:<AnalysisTable />,
+        element:<Discom />,
         noDefaultPadding: true
 
     },
@@ -58,19 +60,13 @@ export const DashboardRoutes=[
         path:"attributeAnalysis",
         element:<AnalysisTable />
     },
-    {
-        path:"recharts3",
-        element:<ExchangeReCharts />,
-        notPrtoected:true
-    },
-    // <DashBoardItem title="Price Forecasting" to="priceForecasting" />
-    // <DashBoardItem title="Demand Forecasting" to="demandForecasting" />
-    // <DashBoardItem title="Grid Frequency Profile" to="gridFrequencyProfile" />
+
     {
         path:"priceForecasting",
         element:<PriceForecasting />,
         noDefaultPadding:true
     },
+
     {
         path:"demandForecasting",
         element:{}

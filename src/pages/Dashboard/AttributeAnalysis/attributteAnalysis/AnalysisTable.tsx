@@ -412,7 +412,6 @@ export default function AnalysisTable() {
                     <MSEDButton buttonTitle={"Total Procurement"} index={0} />
                     <MSEDButton buttonTitle={"Total Cost"} index={1} />
                     <MSEDButton buttonTitle={"Energy Charge"} index={2} />
-                    {/* <MSEDButton buttonTitle={'Plant Load Factor'} index={3} /> */}
                   </div>
                   <div className="barcharts">
                     <Bar

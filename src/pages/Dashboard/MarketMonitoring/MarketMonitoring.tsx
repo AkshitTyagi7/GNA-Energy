@@ -19,6 +19,7 @@ import {
 import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
 import { LegendKey, ReLineChart } from "../../../components/charts/ReCharts";
 import { tab } from "@testing-library/user-event/dist/tab";
+import { COST_UNIT, VOLUME_UNIT } from "../../../Units";
 // import { FormatMarketMonitoringData } from "./FormatData";
 let startMonth: {
   value: number;
@@ -183,7 +184,7 @@ export function MarketMontoring() {
             <Select
               placeholder="Start Month"
               className="dateSelect"
-              options={filters[2].subfilter.map((item) => {
+              options={filters[2].subfilter.reverse().map((item) => {
                 if (
                   endMonth.value === -1 ||
                   parseInt(item.id.toString()) <
@@ -415,34 +416,38 @@ export function MarketMontoring() {
           <div className="markeMonitoring-chart-container">
             <div className="markeMonitoring-chart">
               {tabIndex == 0 && (
-                <ReLineChart
-                  data={chartData}
-                  legends={
-                  byVolumeKeys.filter(
-                          (e) =>
-                            getProducts({
-                              exchange: selectedExchange,
-                              market: selectedMarket,
-                            }).filter(
-                              (product) => product.name == e.name ?? e.dataKey
-                            ).length > 0
-                        )
-                 
-                  }
-                  unit="MWh"
-                  xDataKey="month"
-                />
-              ) }
-              {
-                tabIndex == 1 &&  (
+                <>
+                  <h2 className="chartHeading">By Volume ({VOLUME_UNIT})</h2>
                   <ReLineChart
+                  yAxisLabel="Volume (MWh)"
+                  yAxisWidth={80}
+                    data={chartData}
+                    legends={byVolumeKeys.filter(
+                      (e) =>
+                        getProducts({
+                          exchange: selectedExchange,
+                          market: selectedMarket,
+                        }).filter(
+                          (product) => product.name == e.name ?? e.dataKey
+                        ).length > 0
+                    )}
+                    unit="MWh"
+                    xDataKey="month"
+                  />
+                </>
+              )}
+              {tabIndex == 1 && (
+                <>
+                  <h2 className="chartHeading">By Price ({COST_UNIT})</h2>
+                  <ReLineChart
+                    yAxisLabel="Price (Rs/MWh)"
                     data={priceData}
                     legends={byProductKeys}
                     unit="MWh"
                     xDataKey="month"
                   />
-                )
-              }
+                </>
+              )}
             </div>
           </div>
         </div>
