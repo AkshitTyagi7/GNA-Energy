@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
+import { COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT, VOLUME_UNIT } from "../../../Units";
 import {
   PrimaryColor,
   QuaternaryColor,
@@ -49,11 +49,12 @@ import { MediumButton } from "../../../components/Button";
 import { get } from "http";
 import Select from "react-select";
 import { ReactComponent as Cross } from "../../../icons/cross.svg";
-import Loading from "../../../components/Loading";
+import Loading, { LoadingItem } from "../../../components/Loading";
 import { COLORS, ReChartData, ReLineChart } from "../../../components/charts/ReCharts";
+import swal from "sweetalert";
 export function Exchange3() {
   const [startDate, setStartDate] = useState(
-    new Date(new Date().getTime() - 5 * 24 * 60 * 60 * 1000)
+    new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
   );
   const [endDate, setEndDate] = useState(
     new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000)
@@ -177,9 +178,13 @@ export function Exchange3() {
       endDate: endDate,
     });
   }, []);
-
+  const [exchangeLoading, setExchangeLoading] = useState(true);
+  const [realTimeLoading, setRealTimeLoading] = useState(true);
+  const [buyerSellerLoading, setBuyerSellerLoading] = useState(true);
+  const [utilityTrendLoading, setUtilityTrendLoading] = useState(true);
   return (
     <div>
+
       {/* Header */}
       <div className="header">
         <div>
@@ -212,29 +217,7 @@ export function Exchange3() {
             })}
           </div>
           {state.page === 2 && (
-            <div className="date-selection">
-              <div>
-                {RealTimeChartData.map((data, index) => {
-                  return (
-                    <button
-                      className={`tab-dateSelection ${
-                        realTimechartIndex === index &&
-                        "tab-dateSelection-active"
-                      } ${
-                        index === 0
-                          ? "tab-left"
-                          : index === RealTimeChartData.length - 1
-                          ? "tab-right"
-                          : ""
-                      }`}
-                      onClick={() => setRealtimeChartIndex(index)}
-                    >
-                      {data.title}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+            <div></div>
           )}
 
           {getActivateFilter(true) && (
@@ -314,7 +297,12 @@ export function Exchange3() {
       </div>
       {/* Content */}
       {/* Removing Padding for the Market Editing Page */}
+      <div className="loading-container" style={{display: getLoading() ? "flex" : "none"}}>
+        <LoadingItem  
+          
+        /></div>
       <div className={state.page != 3 ? "content2-padding-body" : ""}>
+
         {/* Filters */}
         {getActivateFilter(false) && (
           <div className="filters">
@@ -369,7 +357,7 @@ export function Exchange3() {
                     })}
               </div>
               <div className="legend">
-                Legend
+                Legends
                 <div className="legend-items">
                   {exchangeLegends.map((legend, index) => {
                     return (
@@ -404,6 +392,7 @@ export function Exchange3() {
             </div>
           </div>
         )}
+
         {/* Chart Area */}
         {state.page === 0 ? (
           <div className="exchange-chart-area">
@@ -578,7 +567,32 @@ export function Exchange3() {
 
                 </div>
                 <div className="realTime-chart">
-                  <h1>{RealTimeChartData[realTimechartIndex] == undefined || null  ? "" : RealTimeChartData[realTimechartIndex].title} Prices {COST_UNIT}</h1>
+                  <div className="flex justify-between">
+                  
+                  <h1> Prices (IEX) ({COST_UNIT}) </h1>
+                  <div className="date-selection">
+              <div>
+                {RealTimeChartData.map((data, index) => {
+                  return (
+                    <button
+                      className={`tab-dateSelection ${
+                        realTimechartIndex === index &&
+                        "tab-dateSelection-active"
+                      } ${
+                        index === 0
+                          ? "tab-left"
+                          : index === RealTimeChartData.length - 1
+                          ? "tab-right"
+                          : ""
+                      }`}
+                      onClick={() => setRealtimeChartIndex(index)}
+                    >
+                      {data.title}
+                    </button>
+                  );
+                })}
+              </div>
+            </div></div>
                   <ReLineChart
                     data={
                       RealTimeChartData.length > 0
@@ -586,6 +600,7 @@ export function Exchange3() {
                         : []
                     }
                     unit={COST_UNIT}
+                    yAxisLabel={COST_UNIT}
                     legends={
                       RealTimeChartData.length > 0
                         ? Object.keys(
@@ -758,9 +773,10 @@ export function Exchange3() {
                         </div>
                       </div>
                       <div className="exchange-topplayers-region-container">
-                        <div className="exchange-topplayers-players-chartarea flex">
+                        <div className="exchange-topplayers-players-chartarea">
+                            <h3 className="buyerseller-heading">By Region (MWh)</h3>
+                          <div className="exchange-buyerseller-region-chart-area">
                           <div className="topplayer-legends">
-                            <h3 className="buyerseller-heading">By Region</h3>
                             <div>
                               {BuyerSellerState.BuyerSeller.Data.region_buyer.map(
                                 (item, index) => {
@@ -792,12 +808,13 @@ export function Exchange3() {
                               BuyerSellerState.BuyerSeller.Data.region_buyer
                             }
                           />
-                        </div>
-                        <div className="exchange-topplayers-players-chartarea flex">
-                          <div className="topplayer-legends">
-                            <h3 className="mb-4 buyerseller-heading">
-                              By Region
+                        </div></div>
+                        <div className="exchange-topplayers-players-chartarea">
+                            <h3 className="buyerseller-heading">
+                              By Region ({VOLUME_UNIT})
                             </h3>
+                        <div className="exchange-buyerseller-region-chart-area">
+                          <div className="topplayer-legends">
                             <div>
                               {BuyerSellerState.BuyerSeller.Data.region_seller.map(
                                 (item, index) => {
@@ -830,7 +847,7 @@ export function Exchange3() {
                               BuyerSellerState.BuyerSeller.Data.region_seller
                             }
                           />
-                        </div>
+                        </div></div>
                       </div>
                     </div>
                   ) : (
@@ -1078,6 +1095,7 @@ export function Exchange3() {
     end_date = endDate,
   }) {
     try {
+      setExchangeLoading(true);       
       let formatedStartDate = start_date
         .toLocaleDateString("en-GB")
         .split("/")
@@ -1086,21 +1104,24 @@ export function Exchange3() {
         .toLocaleDateString("en-GB")
         .split("/")
         .join("-");
-
-      dispatch(
+              
+     await dispatch(
         fetchExchangeData({
           start_date: formatedStartDate,
           end_date: formatedEndDate,
         }) as any
       );
+      setExchangeLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+      swal("Something Went Wrong", "Error fetching Exchange Data. Please try again later", "warning");
     }
   }
 
   async function fetchRealTimeData() {
     console.log("fetching data");
     try {
+      setRealTimeLoading(true);
       const response = await fetch("https://datahub.gna.energy/rtm_api");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1137,10 +1158,12 @@ export function Exchange3() {
       Object.keys(data).forEach((key: string) => {});
 
       setRealTimeChartData(reChartTemp);
+      setRealTimeLoading(false);
 
       console.log("data - ", reChartTemp);
     } catch (error) {
       console.error("Error fetching data:", error);
+      swal("Something Went Wrong", "Error fetching Real Time Data. Please try again later", "warning");
     }
   }
 
@@ -1157,6 +1180,8 @@ export function Exchange3() {
     product: BuyerSellerFilter;
     region: BuyerSellerFilter;
   }) {
+    try
+{    setBuyerSellerLoading(true);
     // setIsBuyerLoading(true);
     const res = await buildHttpReq({
       endpoint: "top_buyer_seller_api",
@@ -1179,6 +1204,11 @@ export function Exchange3() {
         region_seller: res.region_seller,
       })
     );
+    setBuyerSellerLoading(false);}
+    catch (e) {
+      swal("Something Went Wrong", "Error fetching Buyer Seller Data. Please try again later", "warning");
+      console.error("Error fetching data:", e);
+    }
   }
 
   async function fetchUtilityTrendData({
@@ -1193,6 +1223,7 @@ export function Exchange3() {
     endDate: Date;
   }) {
     try {
+      setUtilityTrendLoading(true);
       const res = await buildHttpReq({
         endpoint: "buyer_seller_trend_api",
         body: {
@@ -1208,7 +1239,9 @@ export function Exchange3() {
       });
 
       dispatch(setTrendData(res));
+      setUtilityTrendLoading(false);
     } catch (e) {
+      swal("Something Went Wrong", "Error fetching Trend Data. Please try again later", "warning");
       console.error("Error fetching data:", e);
     }
   }
@@ -1227,5 +1260,28 @@ export function Exchange3() {
     } else {
       return false;
     }
+  }
+
+  function getLoading(){
+    if(state.page === 0){
+      return exchangeLoading
+  }
+  else if(state.page === 1){
+    return exchangeLoading
+  }
+  else if(state.page === 2){
+    return realTimeLoading
+  }
+  else if(state.page === 3){
+    if(buyerSellerPage === 0){
+      return buyerSellerLoading
+    }
+    else if(buyerSellerPage === 1){
+      return utilityTrendLoading
+    }
+  }
+  else{
+    return false
+  }
   }
 }

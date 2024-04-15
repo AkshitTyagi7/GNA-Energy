@@ -54,10 +54,10 @@ export function FormatExchangeData(data : any): ExchangeData{
             for(let i=0;i<timeSlots;i++){
                 fomattedDataArray[key2].push({
                     name: i+1,
-                    wt_mcp_rs_mwh: null,
-                    sell_bid_mw: null,
-                    prchs_bid_mw: null,
-                    mcv_mw: null,
+                    wt_mcp_rs_mwh: 0,
+                    sell_bid_mw: 0,
+                    prchs_bid_mw: 0,
+                    mcv_mw: 0,
                     date: key,
                 });
             }}

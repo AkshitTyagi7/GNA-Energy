@@ -26,7 +26,10 @@
 .markeMonitoring-chart{
     height: 100%;
     width: 100%;
-    padding: 32px;
+    padding: 20px;
     border-radius: 12px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

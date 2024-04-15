@@ -16,17 +16,12 @@ interface SourceData {
   
     data.forEach((entry) => {
       const source = entry.source;
-  
-      // If the source is not in sourceCount, initialize it with 1; otherwise, increment the count
-      sourceCount[source] = (sourceCount[source] || 0) + entry.Actual_Mus;
+        sourceCount[source] = (sourceCount[source] || 0) + entry.Actual_Mus;
     });
   
-    // Populate labels and values arrays
     Object.keys(sourceCount).forEach((source) => {
       labels.push(source);
       values.push(sourceCount[source]);
-      // Optional: You can set background colors here if needed
-      // backgroundColor.push("#RRGGBB"); // Replace with actual color codes
     });
   
     return { labels, values, backgroundColor };

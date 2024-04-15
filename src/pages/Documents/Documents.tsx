@@ -26,18 +26,20 @@ import Select from "react-select";
 import { ReactComponent as DownIcon } from "./downicon.svg";
 import { DocItem, UserChat, Role, FilterHeading } from "./Components";
 import { getUser } from "../Protected";
+import swal from "sweetalert";
+ export const DOC_URL = "https://assistant.gna.energy/";
 
 export function Documents() {
   const state = useSelector((state: RootState) => state.document);
   const chatAreaRef = useRef<HTMLDivElement>(null);
-const URL = "https://assistant.gna.energy/";
+ const URL = "https://assistant.gna.energy/";
 // const URL = "http://127.0.0.1:8000/";
 
   const dispatch = useDispatch();
   useEffect(() => {
     fetchDocuments();
     fetchFilters();
-    create_thread();
+    // create_thread();
   }, []);
   const selectionStyle = {
     valueContainer: (base: any) => ({
@@ -220,7 +222,7 @@ const URL = "https://assistant.gna.energy/";
                {
                     state.chats.map((chat)=>{
                 
-                        return <UserChat role={chat.role} message={chat.content} />
+                        return <UserChat source={chat.source} role={chat.role} message={chat.content} />
                     
                     })
                }
@@ -304,7 +306,7 @@ const URL = "https://assistant.gna.energy/";
     content
   }: {content: string}){
     dispatch(setTyping(true));
-    fetch(URL + "gnai/generate_response/", {
+    fetch(URL + "gnai/singleDocQuery/", {
         method: "post",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -312,8 +314,14 @@ const URL = "https://assistant.gna.energy/";
         },
         body: JSON.stringify({
             message: content,
-            thread_id: threadId,
-            file_id: fileId
+            // thread_id: threadId,
+            file_id: fileId,
+           // filename: state.documents.filter((item)=>item.fileId === fileId)[0].filename ?? ""
+           filename : state.documents.filter((item)=>item.fileId === fileId).length > 0 ?
+              state.documents.filter((item)=>item.fileId === fileId)[0].filename
+            :
+              ""
+            
         }),
     }).then((response)=>{
         return response.json();
@@ -321,11 +329,15 @@ const URL = "https://assistant.gna.energy/";
         console.log(data);
         console.log(data.message);
     dispatch( addMessage({
-        content: data.message,
-        role: Role.Ai
-    }))
+        content: data.data.message,
+        role: Role.Ai,
+        source: data.data.sources
+    }));
     dispatch(setTyping(false));
     scrollToBottom();   
+    }).catch((e)=>{
+      swal("Something Went Wrong", "An error occured while sending message. Please try again later", "warning");
+      console.log(e);
     })
   }
 
@@ -349,7 +361,10 @@ const URL = "https://assistant.gna.energy/";
       .then((data) => {
         console.log(data);
         dispatch(setDocuments(data.data));
-      });
+      }).catch((e)=>{
+        swal("Something Went Wrong", "An error occured while fetching documents. Please try again later", "warning");
+        console.log(e);
+  })
   }
   function fetchFilters() {
     fetch(URL + "gnai/fetchDocumentFilters/")
@@ -360,6 +375,11 @@ const URL = "https://assistant.gna.energy/";
         console.log("Filters");
         console.log(data);
         dispatch(setDocumentFilters(data));
-      });
+      }).catch((e)=>{
+        swal("Something Went Wrong", "An error occured while fetching filters. Please try again later", "warning");
+        console.log(e);
+    })
   }
+ 
+
 }

@@ -45,7 +45,7 @@ export function PriceForecasting() {
   return (
     <>
     <div className="header">
-    <h1>Price Forecast (IEX DAM)</h1>
+    <h1>Price Forecast</h1>
     <div className="date-selection">
           <input
             type="date"
@@ -180,7 +180,11 @@ export function PriceForecasting() {
         </ComposedChart>
       </ResponsiveContainer> */}
       <div className="container2 content2-padding-body">
-     <div className="onechart-container"> <ReLineChart
+     <div className="onechart-container">
+     <h1 className="chartHeading">IEX DAM Price Forecast (₹/KWh)</h1>
+
+      <ReLineChart
+      yAxisLabel="Price (₹/KWh)"
      showBrush={true}
      data={forecateData} legends={
         [

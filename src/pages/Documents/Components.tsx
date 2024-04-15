@@ -21,6 +21,7 @@ import {
 import Select from "react-select";
 import { ReactComponent as DownIcon } from "./downicon.svg";
 import { getUser } from "../Protected";
+import { DOC_URL } from "./Documents";
 
 export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat: Function }) => {
     const URL = "https://assistant.gna.energy/"
@@ -70,10 +71,12 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
   }
   export    function UserChat({
       role,
-      message
+      message,
+      source 
   }: {
       role: string,
-      message: string
+      message: string,
+      source?: { page: number, name: string }[]
   }): JSX.Element {
       return (
           <div className="messageBox p-6">
@@ -89,6 +92,26 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
                       <div className="message text-left" dangerouslySetInnerHTML={{__html: message == null || "" ? "" : formatMessage(message)}}></div>
                   </div>
               </div>
+              {source && (
+              <div className="sources">
+                <br /> <div><p>Sources</p></div>
+                {source.map((source, index) => {
+                  return (
+                    <>
+                      <a
+                        key={index}
+                        target="_blank"
+                        className="source"
+                        href={`${DOC_URL}media/static/${source.name}#page=${source.page}`}
+                      >
+                        {source.name} - Page {source.page}
+                      </a>
+                      <br />
+                    </>
+                  );
+                })}
+              </div>
+            )}
           </div>
       )
   }
@@ -96,8 +119,8 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
 function formatMessage(message : string) : string {
   const lines = message.split('\n');
   const formattedLines = lines.map((line, index) => {
-    let formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold text between ** **
-    formattedLine = formattedLine.replace(/^- /g, '<br><strong>- '); // Bold bullet points
+    let formattedLine = line.replace(/\*\*(.*?)\*\*/g, '$1'); // Bold text between ** **
+    formattedLine = formattedLine.replace(/^- /g, '<br>- '); // Bold bullet points
     if(index === 0) return formattedLine;
     return `<br>${formattedLine}`;
   });

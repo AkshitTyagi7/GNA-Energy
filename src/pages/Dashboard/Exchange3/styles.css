@@ -83,7 +83,7 @@
 
 .legend{
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-content: center;
     align-items: center;
     font-size: 16px;
@@ -92,9 +92,19 @@
     display: flex;
     align-items: center;
     align-content: center;
+    gap: 11px;
 
 }
-
+.legend-item {
+    font-size: 16px;
+    fill: white;
+    background-color: white;
+  
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+  }
 .legend-exchangeSelection{
     padding: 8px 24px 8px 24px;
     display: flex;
@@ -115,6 +125,7 @@
     width: calc(50% - 14px);
     margin: 6px;
     border-radius: 12px;
+    padding: 0px 14px;
     box-shadow: 0px 0px 6px 0px #0000002c;
     height: calc(50% - 20px );
     background-color: white;
@@ -123,6 +134,8 @@
   .exchange-byProduct-chart{
     width: calc(100% - 5px);
     border-radius: 12px;
+    padding: 0px 14px;
+
     margin-top: 3px;
     margin-bottom: 3px;
     /* margin: px;
@@ -275,17 +288,22 @@ width: max-content;
 }
 .exchange-topplayers-players-chartarea{
     height: 48%;
+    
     padding: 20px;
     background-color: white;
     border-radius: 8px;
 }
-
+.exchange-buyerseller-region-chart-area{
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
 
 
 .exchange-topplayers-players-chartarea h3{
     color: #34656D;
     font-size: 18px;
-
+    text-align: start;
 }
 
 .buyerSellerChart{
@@ -355,7 +373,7 @@ background-color: #F1935C;
     padding-bottom: 7px;
 }
 
-  .css-t3ipsp-control {
+.exchange-buyerseller-trends-chart-container .css-t3ipsp-control {
     border-radius: 8px;
     border-color: #DEDFDF;
     padding-top: 7px;
@@ -364,7 +382,7 @@ background-color: #F1935C;
     padding-bottom: 7px;
 }
 
-span.css-1u9des2-indicatorSeparator {
+.span.css-1u9des2-indicatorSeparator {
     display: none;
 }
 
@@ -402,3 +420,64 @@ font-size: 20px;
 
 
 }
+
+.loading-container{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.185);
+}
+
+.exchange-comparision-chart-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    margin-top: 16px;
+    /* margin-bottom: 10px; */
+}
+
+.exchange-comparision-chart-box h3{
+    color: var(--secondary);
+    font-size: 18px;
+    text-align: start;
+    font-weight: 500;
+}
+
+.date-picker{
+    width: 112px;
+    cursor: pointer;
+    
+}
+
+.date-picker:focus{
+    outline: none;
+}
+
+.react-datepicker__tab-loop{
+    position: absolute;
+    
+}
+
+.comparison-loading-container{
+    height: 80%;
+    width: calc(50vw - 141px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    
+}
+
+.exchange-byExchange-chart-comparison{
+    width: calc(50% - 14px);
+    margin: 6px;
+    border-radius: 12px;
+    padding: 3px 14px;
+    box-shadow: 0px 0px 6px 0px #0000002c;
+    height: calc(50% );
+    background-color: white;
+  }

@@ -1,5 +1,7 @@
-import { PrimaryColor, SecondaryColor } from "../../../../common";
-import { DemoMahaGencoDataJson } from "./DemoMahaGenco";
+// import { PrimaryColor, SecondaryColor } from "../../../../common";
+// import { DemoMahaGencoDataJson } from "./DemoMahaGenco";
+
+import { SecondaryColor, PrimaryColor } from "../../../common";
 
 interface MahaGencoGeneratorData  {
     actual: number[];
@@ -22,6 +24,7 @@ export interface MahaGencoFilter {
     name: string;
     subfilters: IdTitle[];
 }
+
 class MahaGencoChart{
     constructor(
         public months: string[],
@@ -58,12 +61,17 @@ for (let i = 0; i < this.data.length; i++) {
     label: this.data[i].generator + " Actual " + this.data[i].unit,
     data: this.data[i].actual_param,
     backgroundColor: SecondaryColor,
+    borderRadius: 4
   };
 
   let nomativeData = {
     label: this.data[i].generator + " Nomative " + this.data[i].unit,
     data: this.data[i].normative_param,
     backgroundColor: PrimaryColor,
+    borderRadius: 4,
+    borderWidth: 2,
+
+
   };
 
   chartData.push(
