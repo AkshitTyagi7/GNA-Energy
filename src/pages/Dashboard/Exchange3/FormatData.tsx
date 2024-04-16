@@ -2,6 +2,7 @@ import { Text } from "recharts";
 import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../common";
 import { format } from "path";
 import { ReChartData } from "../../../components/charts/ReCharts";
+import { ExchangeStateData } from "../../../store/state/Exchange/interface";
 
 
 export interface ExchngeItem{
@@ -37,6 +38,12 @@ export interface ExchangeData{
     rtm:ExchngeItem[],
     hpdam:ExchngeItem[],
     [key: string]: ExchngeItem[]; // Add index signature
+}
+
+export interface ComparisonData{
+  date: string;
+  data: ExchangeStateData;
+
 }
 
 export function FormatExchangeData(data : any): ExchangeData{
