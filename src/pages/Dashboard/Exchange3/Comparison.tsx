@@ -11,11 +11,13 @@ import {
   SecondaryColor,
   TertiaryColor,
   buildHttpReq,
+  buildUrl,
 } from "../../../common";
 import { tab } from "./interface/tabs";
 import "./styles.css";
 import { ExchangeLegend } from "./interface/legends";
 import {
+  ComparisonData,
   ExchangeColors,
   ExchangeData,
   FormatDataOfRealtime,
@@ -41,6 +43,7 @@ import Loading, { LoadingItem } from "../../../components/Loading";
 import swal from "sweetalert";
 import Select from "react-select";
 import { getColorList } from "../../../components/charts/ReCharts";
+import { DEMO_COMPARISON_DATA } from "./DemoData";
 export function ExchangeComparion() {
   const [startDate, setStartDate] = useState(
     new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
@@ -99,7 +102,7 @@ export function ExchangeComparion() {
     },
   };
 
-  const Years = [ 2022, 2023, 2024];
+  const Years = [  2023, 2024];
   const Months = [
     "Jan",
     "Feb",
@@ -114,20 +117,28 @@ export function ExchangeComparion() {
     "Nov",
     "Dec",
   ];
+  const maxDate = new Date();
   const dateOptions: {
     value: Date;
     label: string;
     color: string;
-  }[] = Years.flatMap((year,i1) => {
-    return Months.map((month,i2) => {
-      return {
-        id : i1 + i2,
-        value: new Date(year, Months.indexOf(month), 1),
-        label: `${month} ${year}`,
-        color: getColorList(Years.length * Months.length)[i1 + i2],
-      };
+  }[] = Years.flatMap((year, i1) => {
+    return Months.map((month, i2) => {
+      if (new Date(year, Months.indexOf(month), 1).getTime() <= maxDate.getTime()){
+        return {
+          id: i1 + i2,
+          value: new Date(year, Months.indexOf(month), 1),
+          label: `${month} ${year}`,
+          color: getColorList(Years.length * Months.length)[i1 + i2],
+        };
+      }
+      return undefined;
     });
-  }).reverse();
+  }).reverse().filter((option) => option !== undefined) as {
+    value: Date;
+    label: string;
+    color: string;
+  }[];
   const state = useSelector((state: RootState) => state.exchange);
   let [selectedYears, setSelectedYears] = useState<
     { name: number; color: string }[]
@@ -155,6 +166,7 @@ export function ExchangeComparion() {
           <Select isMulti={true}
           onChange={(value) => {
             setSelectedOptions(value as any);       
+            getExchangeData({ dates: value.map((e) => e.value) });
           }}
           options={
             /* date options that are not in the selected options */
@@ -432,41 +444,84 @@ export function ExchangeComparion() {
     </div>
   );
   async function getExchangeData({
-    month,
-    years,
+    dates
   }: {
-    month?: number;
-    years: number[];
+    dates: Date[]
+    
   }) {
     try {
-      // Start date is the date of first day of selected month and year
+    //  const res = await buildHttpReq({
+    //   endpoint :  "all_exchange_multiple_api_range",
+    //   method : "POST",
+    //   body : dates.map((e) => (
+    //     JSON.stringify(
+    //     {
+      
+    //       start_date: e  .toLocaleDateString("en-GB")
+    //       .split("/")
+    //       .join("-"),
 
-      // End date is the date of last day of selected month and year
-      const data = [];
-      for (let i = 0; i < years!.length; i++) {
-        const year = years[i];
-        const formatedStartDate = new Date(year!, month!, 1)
-          .toLocaleDateString("en-GB")
-          .split("/")
-          .join("-");
-        const formatedEndDate = new Date(year!, month! + 1, 0)
-          .toLocaleDateString("en-GB")
-          .split("/")
-          .join("-");
-        console.log(formatedStartDate, formatedEndDate);
-        const res = await buildHttpReq({
-          endpoint: "/all_exchange_analytics_api_range",
-          body: {
-            start_date: formatedStartDate,
-            end_date: formatedEndDate,
-          },
-          method: "POST",
+    //       /* End date is the last day of the month of start_date */
+    //       end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
+    //         .toLocaleDateString("en-GB")
+    //         .split("/")
+    //         .join("-"),
+
+          
+        
+    //   })))
+      
+    // })
+      let comparisonData: ComparisonData[] = [];
+/*       for (let i = 0; i < DEMO_COMPARISON_DATA.length; i++) {
+        let data = {
+          iex: FormatExchangeData(DEMO_COMPARISON_DATA[i].data.iex),
+          hpx: FormatExchangeData(DEMO_COMPARISON_DATA[i].data.hpx),
+          pxil: FormatExchangeData(DEMO_COMPARISON_DATA[i].data.pxil)
+      
+      };
+        comparisonData.push({
+          date: DEMO_COMPARISON_DATA[i].date_range.start_date,
+          data: data,
         });
-        data.push(res);
-        console.log("Exchange Data:", res);
-      }
 
-      console.log("Final Data: ", data);
+        console.log(comparison_data);
+        
+      } */
+
+
+
+
+  //  fetch(
+  //   buildUrl("all_exchange_multiple_api_range"),
+  //   {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${localStorage.getItem("token")}`,
+  //     },
+  //     body: JSON.stringify({
+  //       dates: dates.map((e) => ({
+  //         start_date: e
+  //           .toLocaleDateString("en-GB")
+  //           .split("/")
+  //           .join("-"),
+  //         end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
+  //           .toLocaleDateString("en-GB")
+  //           .split("/")
+  //           .join("-"),
+  //       })),
+  //     }),
+  //   }
+  //  ).then((res) => res.json()).then((data) => {
+  //   console.log(data);
+
+
+  // }
+  
+  // )
+  
+
     } catch (error) {
       console.error("Error fetching data:", error);
       swal(

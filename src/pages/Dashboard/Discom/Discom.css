@@ -102,6 +102,25 @@
   height: calc(100% - 102px);
   overflow-x: hidden;
 }
+
+
+.discom-table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.discom-table::-webkit-scrollbar-thumb {
+  background: #f1935c;
+  border-radius: 2px;
+
+}
+
+/* Handle on hover */
+.discom-table::-webkit-scrollbar-thumb:hover {
+  background: #f1935c;
+  border-radius: 2px;
+}
+
 .discom-table td {
   font-size: 12px;
   padding: 5px;
@@ -118,7 +137,6 @@
   z-index: 0;
   gap: 0px;
   border-radius: 8px 0px 0px 0px;
-  opacity: 0px;
 }
 .discom-table th {
   padding: 7px;

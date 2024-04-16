@@ -60,7 +60,16 @@ export const DashboardRoutes=[
         path:"attributeAnalysis",
         element:<AnalysisTable />
     },
-
+    {
+        path:"exchange-comparison",
+        element:<ExchangeComparion />,
+        notPrtoected:true
+    },
+    {
+        path:"exchange-comparison2",
+        element:<ExchangeComparion2 />,
+        notPrtoected:true
+    },
     {
         path:"priceForecasting",
         element:<PriceForecasting />,
