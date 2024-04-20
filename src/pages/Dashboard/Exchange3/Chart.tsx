@@ -22,6 +22,7 @@ import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
 import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement, UtilizationTrendMCP } from "../../../store/state/BuyerSellerState";
 import React from "react";
+import { BrushStart } from "../../../components/charts/ReCharts";
 export const AxisLabel = ({
   axisType,
   x,
@@ -74,9 +75,9 @@ export const ExchangeChart =  ({
   data,
   height = "25%",
   width = "100%",
-  syncId = "anyId",
+  syncId = "Exchange",
   onlyBrush = false,
-
+  brushStart = BrushStart.End,
   setShownLegends,
   shownLegnends=[],
 }: {
@@ -88,13 +89,14 @@ export const ExchangeChart =  ({
   setShownLegends: (legends: string[]) => void;
   height?: string;
   width?: string;
+  brushStart?: BrushStart;
   syncId?: string;
 })=>( <>
     {!onlyBrush && <h2 className="text-center text-xl m-2 " style={{
       color: SecondaryColor
     }}>{title}</h2>}
     <ResponsiveContainer width={width} height={height}>
-      <ComposedChart syncId={"Exchange"} data={data} margin={{}}>
+      <ComposedChart syncId={syncId} data={data} margin={{}}>
         {!onlyBrush && (
           <>
             <CartesianGrid strokeDasharray="4 2" />
@@ -226,9 +228,13 @@ export const ExchangeChart =  ({
 
         {showBrush ? (
           <Brush
-            startIndex={data != null && data.length > 96 ? data.length - 96 : 0}
-            endIndex={data != null && data.length > 96 ? data.length - 1 : 0}
-            fontSize={"20px"}
+          startIndex={data != null &&
+                
+            brushStart === BrushStart.Start ? 0 : data.length > 96 ? data.length - 96 : 0} 
+          endIndex={data != null &&
+            brushStart === BrushStart.Start ? 96 :
+            
+            data.length > 96 ? data.length - 1 : 0}            fontSize={"20px"}
             
             dataKey="date"
             height={40}
@@ -244,8 +250,13 @@ export const ExchangeChart =  ({
           />
         ) : (
           <Brush
-            startIndex={data != null && data.length > 96 ? data.length - 96 : 0}
-            endIndex={data != null && data.length > 96 ? data.length - 1 : 0}
+          startIndex={data != null &&
+                
+            brushStart === BrushStart.Start ? 0 : data.length > 96 ? data.length - 96 : 0} 
+          endIndex={data != null &&
+            brushStart === BrushStart.Start ? 96 :
+            
+            data.length > 96 ? data.length - 1 : 0}
             dataKey="date"
             height={0}
             stroke={PrimaryColor}
@@ -413,6 +424,9 @@ export const UtilizationTrendChart= ({data,mcp, legends}:{data: UtilizationTrend
       <Tooltip 
       formatter={
         (value, name, props) => {
+          if (name === "wt_mcp") {
+            return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
+          }
           return [name + " : "  + parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
         }
       }

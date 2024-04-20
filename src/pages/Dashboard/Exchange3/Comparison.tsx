@@ -18,19 +18,14 @@ import "./styles.css";
 import { ExchangeLegend } from "./interface/legends";
 import {
   ComparisonData,
-  ExchangeColors,
-  ExchangeData,
-  FormatDataOfRealtime,
   FormatExchangeData,
   RealTimeChartData,
+  ReformattedData,
+  getDaysInMonthFromString,
+  reformatData,
   // formatRealTimeChartData,
 } from "./FormatData";
-import {
-  BuyerSellerChart,
-  BuyerSellerPieChart,
-  ExchangeChart,
-  UtilizationTrendChart,
-} from "./Chart";
+import { ExchangeChart } from "./Chart";
 import { ResponsiveContainer } from "recharts";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
@@ -42,8 +37,14 @@ import {
 import Loading, { LoadingItem } from "../../../components/Loading";
 import swal from "sweetalert";
 import Select from "react-select";
-import { getColorList } from "../../../components/charts/ReCharts";
-import { DEMO_COMPARISON_DATA } from "./DemoData";
+import {
+  BrushStart,
+  LegendKey,
+  ReBarChart,
+  ReLineChart,
+  getColorList,
+} from "../../../components/charts/ReCharts";
+import { Legend } from "chart.js/dist";
 export function ExchangeComparion() {
   const [startDate, setStartDate] = useState(
     new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
@@ -54,24 +55,38 @@ export function ExchangeComparion() {
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
   >([]);
-  const tabs: tab[] = [
+
+  const unitTabs = [
     {
-      name: "By Exchange",
-      active: true,
+      dataKey: "wt_mcp_rs_mwh",
+      name: "MCP",
+      unit: COST_UNIT,
+    },
+
+    {
+      dataKey: "mcv_mw",
+      name: "MCV",
+      unit: MEGA_POWER_UNIT,
+    },
+
+    {
+      dataKey: "sell_bid_mw",
+      unit: MEGA_POWER_UNIT,
+      name: "Sell Bids",
     },
     {
-      name: "By Product",
-      active: false,
+      dataKey: "prchs_bid_mw",
+      name: "Purchase Bids",
+      unit: MEGA_POWER_UNIT,
     },
     {
-      name: "Realtime",
-      active: false,
+      name: "Weighted MCP",
+      unit: COST_UNIT,
     },
-    {
-      name: "Buyers & Sellers",
-      active: false,
-    },
+
   ];
+
+  const [activeUnitTab, setActiveUnitTab] = useState(0);
 
   const [buyerSellerPage, setBuyerSellerPage] = useState(0);
 
@@ -101,8 +116,33 @@ export function ExchangeComparion() {
       return state.data.isFixed ? { ...base, display: "none" } : base;
     },
   };
-
-  const Years = [  2023, 2024];
+  const [chartData, setChartData] = useState<{
+    data: ReformattedData;
+    legends: LegendKey[];
+  }>({
+    data: {
+      iex: {
+        dam: [],
+        gdam: [],
+        rtm: [],
+        hpdam: [],
+      },
+      pxil: {
+        dam: [],
+        gdam: [],
+        rtm: [],
+        hpdam: [],
+      },
+      hpx: {
+        dam: [],
+        gdam: [],
+        rtm: [],
+        hpdam: [],
+      },
+    },
+    legends: [],
+  });
+  const Years = [2023, 2024];
   const Months = [
     "Jan",
     "Feb",
@@ -124,7 +164,9 @@ export function ExchangeComparion() {
     color: string;
   }[] = Years.flatMap((year, i1) => {
     return Months.map((month, i2) => {
-      if (new Date(year, Months.indexOf(month), 1).getTime() <= maxDate.getTime()){
+      if (
+        new Date(year, Months.indexOf(month), 1).getTime() <= maxDate.getTime()
+      ) {
         return {
           id: i1 + i2,
           value: new Date(year, Months.indexOf(month), 1),
@@ -134,7 +176,9 @@ export function ExchangeComparion() {
       }
       return undefined;
     });
-  }).reverse().filter((option) => option !== undefined) as {
+  })
+    .reverse()
+    .filter((option) => option !== undefined) as {
     value: Date;
     label: string;
     color: string;
@@ -145,39 +189,50 @@ export function ExchangeComparion() {
   >([]);
   let [selectedMonths, setSelectedMonths] = useState<number>(0);
   const dispatch = useDispatch();
-  const [selectedOptions, setSelectedOptions] = useState<{
-    value: Date;
-    label: string;
-  }[]>([]);
+  const [selectedOptions, setSelectedOptions] = useState<
+    {
+      value: Date;
+      label: string;
+    }[]
+  >([]);
+
+  const [selectedExchange, setSelectedExchange] = useState(0);
 
   useEffect(() => {
-    // getExchangeData({ start_date: startDate, end_date: endDate });
+    /* Initial Data should be first 3 months of dateoptins */
+    setSelectedOptions(dateOptions.slice(0, 1));
+
+    getExchangeData({
+      dates: dateOptions.slice(0, 1).map((e) => e.value),
+    });
   }, []);
-  const [exchangeLoading, setExchangeLoading] = useState(false);
+  const [exchangeLoading, setExchangeLoading] = useState(true);
 
   return (
     <div>
       {/* Header */}
+      {}
       <div className="header">
         <div>
           <h1>Exchange</h1>
         </div>
         <div className="header-side-area">
-          <Select isMulti={true}
-          onChange={(value) => {
-            setSelectedOptions(value as any);       
-            getExchangeData({ dates: value.map((e) => e.value) });
-          }}
-          options={
-            /* date options that are not in the selected options */
-            dateOptions.filter(
-              (option) =>
-                !selectedOptions.map((e) => e.label).includes(option.label)
-            )
-          }
-        
-          
-           />
+          <Select
+            placeholder="Select Months..."
+            value={selectedOptions}
+            isMulti={true}
+            onChange={(value) => {
+              setSelectedOptions(value as any);
+              getExchangeData({ dates: value.map((e) => e.value) });
+            }}
+            options={
+              /* date options that are not in the selected options */
+              dateOptions.filter(
+                (option) =>
+                  !selectedOptions.map((e) => e.label).includes(option.label)
+              )
+            }
+          />
         </div>
       </div>
       {/* Content */}
@@ -200,9 +255,7 @@ export function ExchangeComparion() {
                         <button
                           key={index}
                           className={`tab-small ${
-                            state.Exchange.selectedExchange === index
-                              ? "tab-active"
-                              : ""
+                            selectedExchange === index ? "tab-active" : ""
                           } ${
                             index === 0
                               ? "tab-left"
@@ -211,7 +264,7 @@ export function ExchangeComparion() {
                               : ""
                           }`}
                           onClick={() => {
-                            dispatch(setSelectedExchange(index));
+                            setSelectedExchange(index);
                           }}
                         >
                           {exchange}
@@ -242,287 +295,192 @@ export function ExchangeComparion() {
                       );
                     })}
               </div>
-              <div className="legend">
-                Legends
-                <div className="legend-items">
-                  {selectedOptions.map((legend, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`legend-item ${
-                          index === 0
-                            ? "legend-item-left"
-                            : index === selectedYears.length - 1
-                            ? "legend-item-right"
-                            : ""
-                        }
-                         
-                        
-                    `}
-                      >
-                        <p style={{ color: dateOptions.filter((e)=> e.label == legend.label)[0].color }}>
-                          {" "}
-                          <div
-                            className="dot"
-                            style={{ backgroundColor: dateOptions.filter((e)=> e.label == legend.label)[0].color }}
-                          ></div>{" "}
-                          {legend.label}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
+              <div className="exchange-selection">
+                {unitTabs.map((tab, index) => {
+                  return (
+                    <button
+                      key={index}
+                      className={`tab-small ${
+                        activeUnitTab === index ? "tab-active" : ""
+                      } ${
+                        index === 0
+                          ? "tab-left"
+                          : index === unitTabs.length - 1
+                          ? "tab-right"
+                          : ""
+                      }`}
+                      onClick={() => {
+                        setActiveUnitTab(index);
+                      }}
+                    >
+                      {tab.name}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
         )}
         {/* Chart Area */}
-        {state.page === 0 ? (
+
+        {activeUnitTab !== 4 && (
           <div className="exchange-chart-area">
-            <div className="exchange-byExchange-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="DAM"
-                  data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.dam
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.dam
-                      : state.Exchange.data.hpx.dam
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
-            </div>
-            <div className="exchange-byExchange-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="GDAM"
-                  data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.gdam
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.gdam
-                      : state.Exchange.data.hpx.gdam
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
-            </div>
-            <div className="exchange-byExchange-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="HPDAM"
-                  data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.hpdam
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.hpdam
-                      : state.Exchange.data.hpx.hpdam
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
-            </div>
-            <div className="exchange-byExchange-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="RTM"
-                  data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.rtm
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.rtm
-                      : state.Exchange.data.hpx.rtm
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
-            </div>
+            <ComparisonChart
+              title="DAM"
+              data={
+                selectedExchange === 0
+                  ? chartData.data.iex.dam
+                  : selectedExchange === 1
+                  ? chartData.data.pxil.dam
+                  : chartData.data.hpx.dam
+              }
+            />
+
+            <ComparisonChart
+              title="GDAM"
+              data={
+                selectedExchange === 0
+                  ? chartData.data.iex.gdam
+                  : selectedExchange === 1
+                  ? chartData.data.pxil.gdam
+                  : chartData.data.hpx.gdam
+              }
+            />
+
+            <ComparisonChart
+              title="HPDAM"
+              data={
+                selectedExchange === 0
+                  ? chartData.data.iex.hpdam
+                  : selectedExchange === 1
+                  ? chartData.data.pxil.hpdam
+                  : chartData.data.hpx.hpdam
+              }
+            />
+
+            <ComparisonChart
+              title="RTM"
+              data={
+                selectedExchange === 0
+                  ? chartData.data.iex.rtm
+                  : selectedExchange === 1
+                  ? chartData.data.pxil.rtm
+                  : chartData.data.hpx.rtm
+              }
+            />
             <ExchangeChart
               shownLegnends={[]}
+              brushStart={BrushStart.Start}
               setShownLegends={function (legends: string[]): void {}}
-              data={state.Exchange.data.iex.dam}
+              data={chartData.data.iex.dam}
               title="DAM"
-              syncId="byProduct"
+              syncId="comparison"
               height="6%"
               width="99%"
               showBrush={true}
               onlyBrush={true}
             />
           </div>
-        ) : state.page == 1 ? (
+        )}
+
+        {activeUnitTab === 4 && (
           <div className="exchange-chart-area">
-            <div className="exchange-byProduct-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="IEX"
-                  data={
-                    state.Exchange.selectedProduct === 0
-                      ? state.Exchange.data.iex.dam
-                      : state.Exchange.selectedProduct === 1
-                      ? state.Exchange.data.iex.gdam
-                      : state.Exchange.selectedProduct === 2
-                      ? state.Exchange.data.iex.hpdam
-                      : state.Exchange.data.iex.rtm
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
+            <div className="exchange-byExchange-chart">
+              <WeightedAverageChart data={chartData.data.iex.dam} title="DAM" />
             </div>
-            <div className="exchange-byProduct-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="PXIL"
-                  data={
-                    state.Exchange.selectedProduct === 0
-                      ? state.Exchange.data.pxil.dam
-                      : state.Exchange.selectedProduct === 1
-                      ? state.Exchange.data.pxil.gdam
-                      : state.Exchange.selectedProduct === 2
-                      ? state.Exchange.data.pxil.hpdam
-                      : state.Exchange.data.pxil.rtm
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
+            <div className="exchange-byExchange-chart">
+              <WeightedAverageChart data={chartData.data.iex.dam} title="DAM" />
             </div>
-            <div className="exchange-byProduct-chart">
-              <ResponsiveContainer>
-                <ExchangeChart
-                  title="HPX"
-                  data={
-                    state.Exchange.selectedProduct === 0
-                      ? state.Exchange.data.hpx.dam
-                      : state.Exchange.selectedProduct === 1
-                      ? state.Exchange.data.hpx.gdam
-                      : state.Exchange.selectedProduct === 2
-                      ? state.Exchange.data.hpx.hpdam
-                      : state.Exchange.data.hpx.rtm
-                  }
-                  shownLegnends={[]}
-                  setShownLegends={function (legends: string[]): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                />
-              </ResponsiveContainer>
+
+            <div className="exchange-byExchange-chart">
+              <WeightedAverageChart data={chartData.data.iex.dam} title="DAM" />
             </div>
-            <ExchangeChart
-              shownLegnends={[]}
-              setShownLegends={function (legends: string[]): void {}}
-              data={state.Exchange.data.iex.dam}
-              title="DAM"
-              syncId="byProduct"
-              height="4%"
-              width="100%"
-              showBrush={true}
-              onlyBrush={true}
-            />
+
+            <div className="exchange-byExchange-chart">
+              <WeightedAverageChart data={chartData.data.iex.dam} title="DAM" />
+            </div>
           </div>
-        ) : (
-          <div></div>
-        )}{" "}
+        )}
       </div>
     </div>
   );
-  async function getExchangeData({
-    dates
-  }: {
-    dates: Date[]
-    
-  }) {
+
+  async function getExchangeData({ dates }: { dates: Date[] }) {
     try {
-    //  const res = await buildHttpReq({
-    //   endpoint :  "all_exchange_multiple_api_range",
-    //   method : "POST",
-    //   body : dates.map((e) => (
-    //     JSON.stringify(
-    //     {
-      
-    //       start_date: e  .toLocaleDateString("en-GB")
-    //       .split("/")
-    //       .join("-"),
+      if (dates.length === 0) {
+        return;
+      }
+      setExchangeLoading(true);
 
-    //       /* End date is the last day of the month of start_date */
-    //       end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
-    //         .toLocaleDateString("en-GB")
-    //         .split("/")
-    //         .join("-"),
-
-          
-        
-    //   })))
-      
-    // })
-      let comparisonData: ComparisonData[] = [];
-/*       for (let i = 0; i < DEMO_COMPARISON_DATA.length; i++) {
-        let data = {
-          iex: FormatExchangeData(DEMO_COMPARISON_DATA[i].data.iex),
-          hpx: FormatExchangeData(DEMO_COMPARISON_DATA[i].data.hpx),
-          pxil: FormatExchangeData(DEMO_COMPARISON_DATA[i].data.pxil)
-      
-      };
-        comparisonData.push({
-          date: DEMO_COMPARISON_DATA[i].date_range.start_date,
-          data: data,
-        });
-
-        console.log(comparison_data);
-        
+      /* If any date is before of feb-2024 return swal currently data not available before feb */
+      /*       if (dates[0].getTime() < new Date(2024, 1, 1).getTime()) {
+        swal(
+          "Data Not Available",
+          "Data is not available before Feb 2024",
+          "warning"
+        );
+        setExchangeLoading(false);
+        return;
       } */
 
+      fetch(buildUrl("all_exchange_multiple_api_range"), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          dates: dates.map((e) => ({
+            start_date: e.toLocaleDateString("en-GB").split("/").join("-"),
+            end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
+              .toLocaleDateString("en-GB")
+              .split("/")
+              .join("-"),
+          })),
+        }),
+      })
+        .then((res) => res.json())
+        .then((apidata) => {
+          let comparisonData: ComparisonData[] = [];
+          let legends: LegendKey[] = [];
+          console.log(apidata);
 
-
-
-  //  fetch(
-  //   buildUrl("all_exchange_multiple_api_range"),
-  //   {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Authorization": `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //     body: JSON.stringify({
-  //       dates: dates.map((e) => ({
-  //         start_date: e
-  //           .toLocaleDateString("en-GB")
-  //           .split("/")
-  //           .join("-"),
-  //         end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
-  //           .toLocaleDateString("en-GB")
-  //           .split("/")
-  //           .join("-"),
-  //       })),
-  //     }),
-  //   }
-  //  ).then((res) => res.json()).then((data) => {
-  //   console.log(data);
-
-
-  // }
-  
-  // )
-  
-
+          for (let i = 0; i < apidata.length; i++) {
+            let data = {
+              iex: FormatExchangeData(apidata[i].data.iex),
+              hpx: FormatExchangeData(apidata[i].data.hpx),
+              pxil: FormatExchangeData(apidata[i].data.pxil),
+            };
+            comparisonData.push({
+              date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+              data: data,
+            });
+            legends.push({
+              dataKey: `${Months[dates[i].getMonth()]}_${dates[
+                i
+              ].getFullYear()}`,
+              name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+              stroke: getColorList(dates.length)[i],
+            });
+          }
+          setChartData({
+            data: reformatData(comparisonData),
+            legends: legends,
+          });
+          console.log(reformatData(comparisonData));
+          setExchangeLoading(false);
+        })
+        .catch((error) => {
+          setExchangeLoading(false);
+          console.error("Error fetching data:", error);
+          swal(
+            "Something Went Wrong",
+            "Error fetching Exchange Data. Please try again",
+            "warning"
+          );
+        });
     } catch (error) {
+      setExchangeLoading(false);
       console.error("Error fetching data:", error);
       swal(
         "Something Went Wrong",
@@ -530,6 +488,65 @@ export function ExchangeComparion() {
         "warning"
       );
     }
+  }
+
+  function WeightedAverageChart({ data, title }: { data: any; title: string }) {
+    return (
+      <ReBarChart
+        data={convertWeightedAverage({
+          data: data,
+          months: chartData.legends.map((e) => e.name) as string[],
+        })}
+        xDataKey="month"
+        unit={COST_UNIT}
+        yAxisLabel={COST_UNIT}
+        legends={[
+          {
+            dataKey: "value",
+            name: "Weighted Average",
+            stroke: PrimaryColor,
+          },
+        ]}
+      />
+    );
+  }
+
+  function ComparisonChart({ data, title }: { data: any; title: string }) {
+    return (
+      <div className="exchange-byExchange-chart">
+        <h2
+          className="text-center text-md"
+          style={{
+            color: SecondaryColor,
+            marginBottom: -10,
+          }}
+        >
+          {title}
+        </h2>
+        <ReLineChart
+          yAxisWidth={activeUnitTab !== 0 ? 70 : 40}
+          fontSize={15}
+          brushStart={BrushStart.Start}
+          data={data}
+          xDataKey="name"
+          secondXDataKey="date"
+          syncid="comparison"
+          showBrush={true}
+          brushHeight={0.00000001}
+          yAxisLabel={unitTabs[activeUnitTab].unit}
+          unit={unitTabs[activeUnitTab].unit}
+          legends={chartData.legends.map((e) => {
+            const activeUnit = unitTabs[activeUnitTab];
+            return {
+              dataKey: activeUnit.dataKey + "_" + e.dataKey,
+              name: e.name,
+
+              stroke: e.stroke,
+            };
+          })}
+        />
+      </div>
+    );
   }
 
   function getActivateFilter(isBuyerSeller?: boolean): boolean {
@@ -556,5 +573,62 @@ export function ExchangeComparion() {
     } else {
       return false;
     }
+  }
+
+  function convertWeightedAverage({
+    data,
+    months,
+  }: {
+    data: {
+      [key: string]: string | number | null;
+    }[];
+    months: string[];
+  }): {
+    month: string | number;
+    value: number;
+  }[] {
+    const weightedAverage: {
+      month: string | number;
+      value: number;
+    }[] = months.map((month) => ({
+      month: month,
+      value: 0,
+    }));
+    let totalCost: number[] = [];
+    let volumes: number[] = [];
+
+    months.forEach((month, index) => {
+      const daysInMonth = getDaysInMonthFromString(month);
+      const noOfSlots = 96 * daysInMonth;
+      let totalCostMonth = 0;
+      let volumeMonth = 0;
+      data.forEach((item) => {
+        const cost = parseFloat(
+          item[`wt_mcp_rs_mwh_${month.replace(/-/g, "_")}`] as string
+        );
+        const volume = parseFloat(
+          item[`mcv_mw_${month.replace(/-/g, "_")}`] as string
+        );
+        if(
+          cost !== null &&
+          volume !== null &&
+          !isNaN(cost) &&
+          !isNaN(volume)
+        ){
+        totalCostMonth += cost * volume;
+        volumeMonth += volume;
+    }});
+      totalCost.push(totalCostMonth);
+      volumes.push(volumeMonth);
+    });
+
+    weightedAverage.forEach((item, index) => {
+      console.log(item.month,"Total Cost - ",  totalCost[index],"Total volume - ", volumes[index])
+      item.value = totalCost[index] / volumes[index];
+    });
+
+    console.log(weightedAverage);
+
+    return weightedAverage;
   }
 }

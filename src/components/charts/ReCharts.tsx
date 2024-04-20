@@ -1,7 +1,10 @@
 import { useState } from "react";
 import {
+  Bar,
+  BarChart,
   Brush,
   CartesianGrid,
+  ComposedChart,
   Label,
   Line,
   LineChart,
@@ -11,9 +14,16 @@ import {
   YAxis,
 } from "recharts";
 import { PrimaryColor } from "../../common";
-export const COLORS = ["#FF7F50", "#B8860B", "#7CB5EC", "#F1935C", "#34656D", "#333333"];
+export const COLORS = [
+  "#FF7F50",
+  "#B8860B",
+  "#7CB5EC",
+  "#F1935C",
+  "#34656D",
+  "#333333",
+];
 export interface ReChartData {
-  [key: string]: number;
+  [key: string]: number | string | Date | null | undefined;
 }
 
 export interface LegendKey {
@@ -23,9 +33,9 @@ export interface LegendKey {
   // color: string;
 }
 
-
-
-export const BAR_RADIUS: number | [number, number, number, number] = [4, 4, 0, 0];
+export const BAR_RADIUS: number | [number, number, number, number] = [
+  4, 4, 0, 0,
+];
 
 export function getColorList(length: number) {
   let colors = [];
@@ -33,6 +43,11 @@ export function getColorList(length: number) {
     colors.push(COLORS[i % COLORS.length]);
   }
   return colors;
+}
+
+export enum BrushStart {
+  Start,
+  End,
 }
 
 export function ReLineChart({
@@ -45,78 +60,146 @@ export function ReLineChart({
   yAxisWidth,
   secondXDataKey,
   showBrush = false,
+  brushHeight = 30,
+  brushStart = BrushStart.End,
+  fontSize,
 }: {
   data: ReChartData[];
-  legends:  LegendKey[];
+  legends: LegendKey[];
   syncid?: string;
   unit?: string;
   xDataKey: string;
   yAxisWidth?: number;
   secondXDataKey?: string;
   yAxisLabel?: string;
+  fontSize?: number;
   showBrush?: boolean;
+  brushHeight?: number;
+  brushStart?: BrushStart;
 }) {
   const [selectedLegends, setSelectedLegends] = useState<LegendKey[]>([]);
   return (
     <div className="chart-container">
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-5">
-        {legends.filter((e) => e.dataKey != xDataKey).map((legend, index) => {
-          return (
-            <div className="realTime-Legend" onClick={
-          ()=>{
-          if(selectedLegends.filter((item)=>item.dataKey===legend.dataKey).length>0){
-            setSelectedLegends(selectedLegends.filter((item)=>item.dataKey!==legend.dataKey))
-          }
-          else{
-
-            setSelectedLegends([...selectedLegends, legend])}
-          }
-            }>
-              <p style={{ color:  
-                     selectedLegends.filter((item)=> item.dataKey === legend.dataKey).length >0 || selectedLegends.length===0 ?
-                     legend.stroke === null || legend.stroke === undefined ? COLORS[index > COLORS.length - 1 ? index - COLORS.length : index] :
-                     legend.stroke : "grey"  }}>
-                {" "}
-                <div
-                  className="dot"
-                  style={{ backgroundColor:  selectedLegends.filter((item)=> item.dataKey === legend.dataKey).length >0 || selectedLegends.length===0 ?
-                    legend.stroke === null || legend.stroke === undefined ? COLORS[index > COLORS.length - 1 ? index - COLORS.length : index] :
-
-                    legend.stroke : "grey" }}
-                ></div>{" "}
-                { legend.name}
-              </p>
-            </div>
-          );
-        })}
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
+        {legends
+          .filter((e) => e.dataKey != xDataKey)
+          .map((legend, index) => {
+            return (
+              <div
+                className="realTime-Legend"
+                onClick={() => {
+                  if (
+                    selectedLegends.filter(
+                      (item) => item.dataKey === legend.dataKey
+                    ).length > 0
+                  ) {
+                    setSelectedLegends(
+                      selectedLegends.filter(
+                        (item) => item.dataKey !== legend.dataKey
+                      )
+                    );
+                  } else {
+                    setSelectedLegends([...selectedLegends, legend]);
+                  }
+                }}
+              >
+                <p
+                  style={{
+                    color:
+                      selectedLegends.filter(
+                        (item) => item.dataKey === legend.dataKey
+                      ).length > 0 || selectedLegends.length === 0
+                        ? legend.stroke === null || legend.stroke === undefined
+                          ? COLORS[
+                              index > COLORS.length - 1
+                                ? index - COLORS.length
+                                : index
+                            ]
+                          : legend.stroke
+                        : "grey",
+                  }}
+                >
+                  {" "}
+                  <div
+                    className="dot"
+                    style={{
+                      backgroundColor:
+                        selectedLegends.filter(
+                          (item) => item.dataKey === legend.dataKey
+                        ).length > 0 || selectedLegends.length === 0
+                          ? legend.stroke === null ||
+                            legend.stroke === undefined
+                            ? COLORS[
+                                index > COLORS.length - 1
+                                  ? index - COLORS.length
+                                  : index
+                              ]
+                            : legend.stroke
+                          : "grey",
+                    }}
+                  ></div>{" "}
+                  {legend.name}
+                </p>
+              </div>
+            );
+          })}
       </div>
 
       <ResponsiveContainer height={"80%"}>
         <LineChart syncId={syncid} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={xDataKey} />
-          {
-            secondXDataKey !== undefined ? <XAxis     dataKey={secondXDataKey}
-            axisLine={false}
-            tickLine={false}
-            fontSize={12}
-            interval={0}
-            tick={renderQuarterTick as any}
-            height={20}
-            xAxisId="quarter" /> : null
-          }
-          <YAxis width={yAxisWidth}>
-             <Label  value={yAxisLabel} angle={-90} position="insideLeft" style={{ textAnchor: "middle" }} /> 
+          {secondXDataKey !== undefined ? (
+            <XAxis
+              dataKey={secondXDataKey}
+              axisLine={false}
+              tickLine={false}
+              fontSize={12}
+              interval={0}
+              tick={renderQuarterTick as any}
+              height={20}
+              xAxisId="quarter"
+            />
+          ) : null}
+          <YAxis fontSize={fontSize} width={yAxisWidth}>
+            <Label
+              fontSize={fontSize}
+              value={yAxisLabel}
+              angle={-90}
+              position="insideLeft"
+              style={{ textAnchor: "middle" }}
+            />
           </YAxis>
-          {            showBrush && <Brush dataKey={xDataKey} height={30}               stroke={PrimaryColor}
-
-              startIndex={data != null && data.length > 96 ? data.length - 96 : 0}
-              endIndex={data != null && data.length > 96 ? data.length - 1 : 0}
+          {showBrush && (
+            <Brush
+              dataKey={xDataKey}
+              height={brushHeight}
+              stroke={PrimaryColor}
+              startIndex={
+                data != null && brushStart === BrushStart.Start
+                  ? 0
+                  : data.length > 96 - 1
+                  ? data.length - 96
+                  : 0
+              }
+              endIndex={
+                data != null && brushStart === BrushStart.Start
+                  ? 96 - 1
+                  : data.length > 96
+                  ? data.length - 1
+                  : 0
+              }
               floodColor={PrimaryColor}
-
-          />
-}
+            />
+          )}
           <Tooltip
+            labelFormatter={(value, payload) => {
+              try {
+                return [`${payload[0].payload.date} - Time Slot ${value}`];
+              } catch {
+                return [value];
+              }
+            }}
             formatter={(value, name, props) => {
               return [
                 name +
@@ -131,52 +214,55 @@ export function ReLineChart({
             }}
           />
 
-          {
-          
-          selectedLegends.length === 0 ?
-          legends.filter((e) => e.dataKey != xDataKey).map((legend, index) => {
-            return (
-              <Line
-                key={index}
-                type="monotone"
-                name={typeof legend === "string" ? legend : legend.name}
-                dataKey={typeof legend === "string" ? legend : legend.dataKey}
-                stroke={
-                  legend.stroke === null || legend.stroke === undefined
-                    ? COLORS[
-                        index > COLORS.length - 1
-                          ? index - COLORS.length
-                          : index
-                      ]
-                    : legend.stroke
-                }
-                dot={false}
-                strokeWidth={2}
-              />
-            );
-          }) : 
-          
-          selectedLegends.map((legend, index) => {
-            return (
-              <Line
-                key={index}
-                type="monotone"
-                name={typeof legend === "string" ? legend : legend.name}
-                dataKey={typeof legend === "string" ? legend : legend.dataKey}
-                stroke={
-                  legend.stroke === null || legend.stroke === undefined ? COLORS[index > COLORS.length - 1 ? index - COLORS.length : index] 
- 
-
-                    : legend.stroke
-                }
-                dot={false}
-                strokeWidth={2}
-              />
-            );
-          })
-          
-          
-          }
+          {selectedLegends.length === 0
+            ? legends
+                .filter((e) => e.dataKey != xDataKey)
+                .map((legend, index) => {
+                  return (
+                    <Line
+                      key={index}
+                      type="monotone"
+                      name={typeof legend === "string" ? legend : legend.name}
+                      dataKey={
+                        typeof legend === "string" ? legend : legend.dataKey
+                      }
+                      stroke={
+                        legend.stroke === null || legend.stroke === undefined
+                          ? COLORS[
+                              index > COLORS.length - 1
+                                ? index - COLORS.length
+                                : index
+                            ]
+                          : legend.stroke
+                      }
+                      dot={false}
+                      strokeWidth={2}
+                    />
+                  );
+                })
+            : selectedLegends.map((legend, index) => {
+                return (
+                  <Line
+                    key={index}
+                    type="monotone"
+                    name={typeof legend === "string" ? legend : legend.name}
+                    dataKey={
+                      typeof legend === "string" ? legend : legend.dataKey
+                    }
+                    stroke={
+                      legend.stroke === null || legend.stroke === undefined
+                        ? COLORS[
+                            index > COLORS.length - 1
+                              ? index - COLORS.length
+                              : index
+                          ]
+                        : legend.stroke
+                    }
+                    dot={false}
+                    strokeWidth={2}
+                  />
+                );
+              })}
         </LineChart>
       </ResponsiveContainer>
     </div>
@@ -204,7 +290,7 @@ export const LegendItem = ({
   name,
   color,
   onClick,
-  fontSize
+  fontSize,
 }: {
   name: string;
   color: string;
@@ -215,20 +301,235 @@ export const LegendItem = ({
     <div className="realTime-Legend" onClick={onClick}>
       <p style={{ color: color }}>
         {" "}
-        <div className="dot" style={{ backgroundColor: color,  }}></div>{" "}
-        {name}
+        <div className="dot" style={{ backgroundColor: color }}></div> {name}
       </p>
     </div>
   );
+};
 
+export function ReBarChart({
+  data,
+  legends,
+  syncid,
+  unit,
+  xDataKey,
+  yAxisLabel,
+  yAxisWidth,
+  secondXDataKey,
+  showBrush = false,
+  brushHeight = 30,
+  brushStart = BrushStart.End,
+  fontSize,
+}: {
+  data: ReChartData[];
+  legends: LegendKey[];
+  syncid?: string;
+  unit?: string;
+  xDataKey: string;
+  yAxisWidth?: number;
+  secondXDataKey?: string;
+  yAxisLabel?: string;
+  fontSize?: number;
+  showBrush?: boolean;
+  brushHeight?: number;
+  brushStart?: BrushStart;
+}) {
+  const [selectedLegends, setSelectedLegends] = useState<LegendKey[]>([]);
 
+  return (
+    <div className="chart-container">
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
+        {legends
+          .filter((e) => e.dataKey != xDataKey)
+          .map((legend, index) => {
+            return (
+              <div
+                className="realTime-Legend"
+                onClick={() => {
+                  if (
+                    selectedLegends.filter(
+                      (item) => item.dataKey === legend.dataKey
+                    ).length > 0
+                  ) {
+                    setSelectedLegends(
+                      selectedLegends.filter(
+                        (item) => item.dataKey !== legend.dataKey
+                      )
+                    );
+                  } else {
+                    setSelectedLegends([...selectedLegends, legend]);
+                  }
+                }}
+              >
+                <p
+                  style={{
+                    color:
+                      selectedLegends.filter(
+                        (item) => item.dataKey === legend.dataKey
+                      ).length > 0 || selectedLegends.length === 0
+                        ? legend.stroke === null || legend.stroke === undefined
+                          ? COLORS[
+                              index > COLORS.length - 1
+                                ? index - COLORS.length
+                                : index
+                            ]
+                          : legend.stroke
+                        : "grey",
+                  }}
+                >
+                  {" "}
+                  <div
+                    className="dot"
+                    style={{
+                      backgroundColor:
+                        selectedLegends.filter(
+                          (item) => item.dataKey === legend.dataKey
+                        ).length > 0 || selectedLegends.length === 0
+                          ? legend.stroke === null ||
+                            legend.stroke === undefined
+                            ? COLORS[
+                                index > COLORS.length - 1
+                                  ? index - COLORS.length
+                                  : index
+                              ]
+                            : legend.stroke
+                          : "grey",
+                    }}
+                  ></div>{" "}
+                  {legend.name}
+                </p>
+              </div>
+            );
+          })}
+      </div>
+
+      <ResponsiveContainer height={"80%"}>
+        <BarChart syncId={syncid} data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey={xDataKey} />
+          {secondXDataKey !== undefined ? (
+            <XAxis
+              dataKey={secondXDataKey}
+              axisLine={false}
+              tickLine={false}
+              fontSize={12}
+              interval={0}
+              tick={renderQuarterTick as any}
+              height={20}
+              xAxisId="quarter"
+            />
+          ) : null}
+          <YAxis fontSize={fontSize} width={yAxisWidth}>
+            <Label
+              fontSize={fontSize}
+              value={yAxisLabel}
+              angle={-90}
+              position="insideLeft"
+              style={{ textAnchor: "middle" }}
+            />
+          </YAxis>
+          {showBrush && (
+            <Brush
+              dataKey={xDataKey}
+              height={brushHeight}
+              stroke={PrimaryColor}
+              startIndex={
+                data != null && brushStart === BrushStart.Start
+                  ? 0
+                  : data.length > 96 - 1
+                  ? data.length - 96
+                  : 0
+              }
+              endIndex={
+                data != null && brushStart === BrushStart.Start
+                  ? 96 - 1
+                  : data.length > 96
+                  ? data.length - 1
+                  : 0
+              }
+              floodColor={PrimaryColor}
+            />
+          )}
+          <Tooltip
+            labelFormatter={(value, payload) => {
+              try {
+                return [`${value}`];
+              } catch {
+                return [value];
+              }
+            }}
+            formatter={(value, name, props) => {
+              return [
+                name +
+                  " : " +
+                  parseFloat(value.toString())
+                    .toFixed(2)
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
+                  " " +
+                  unit,
+              ];
+            }}
+          />
+
+          {selectedLegends.length === 0
+            ? legends
+                .filter((e) => e.dataKey != xDataKey)
+                .map((legend, index) => {
+                  return (
+                    <Bar
+                      key={index}
+                      type="monotone"
+                      name={typeof legend === "string" ? legend : legend.name}
+                      dataKey={
+                        typeof legend === "string" ? legend : legend.dataKey
+                      }
+                      stroke={
+                        legend.stroke === null || legend.stroke === undefined
+                          ? COLORS[
+                              index > COLORS.length - 1
+                                ? index - COLORS.length
+                                : index
+                            ]
+                          : legend.stroke
+                      }
+                      strokeWidth={2}
+                    />
+                  );
+                })
+            : selectedLegends.map((legend, index) => {
+                return (
+                  <Bar
+                    key={index}
+                    type="monotone"
+                    name={typeof legend === "string" ? legend : legend.name}
+                    dataKey={
+                      typeof legend === "string" ? legend : legend.dataKey
+                    }
+                    stroke={
+                      legend.stroke === null || legend.stroke === undefined
+                        ? COLORS[
+                            index > COLORS.length - 1
+                              ? index - COLORS.length
+                              : index
+                          ]
+                        : legend.stroke
+                    }
+                    strokeWidth={2}
+                  />
+                );
+              })}
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
 }
 
 export const MediumLegendItem = ({
   name,
   color,
   onClick,
-  fontSize
+  fontSize,
 }: {
   name: string;
   color: string;
@@ -239,11 +540,8 @@ export const MediumLegendItem = ({
     <div className="realTime-Legend" onClick={onClick}>
       <p style={{ color: color, fontSize: "14p!important" }}>
         {" "}
-        <div className="dot" style={{ backgroundColor: color,  }}></div>{" "}
-        {name}
+        <div className="dot" style={{ backgroundColor: color }}></div> {name}
       </p>
     </div>
   );
-
-
-}
+};

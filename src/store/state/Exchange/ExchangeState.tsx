@@ -55,6 +55,9 @@ const exchangeSlice = createSlice({
 
         setExchangePage: (state: { page: number; }, action: PayloadAction<number>)=>{
             state.page = action.payload;
+        },
+         setComparisonRawData: (state: { Exchange: { comparisonRawData: any; }; }, action: PayloadAction<any>)=>{
+            state.Exchange.comparisonRawData = action.payload;
         }
     },
     extraReducers: (builder: { addCase: (arg0: AsyncThunkFulfilledActionCreator<any, { start_date: string; end_date: string; }, AsyncThunkConfig>, arg1: (state: any, action: any) => void) => void; })=>{
@@ -66,5 +69,5 @@ const exchangeSlice = createSlice({
 });
 
 export default exchangeSlice.reducer;
-export const { setSelectedExchange, setSelectedProduct,setExchangePage } = exchangeSlice.actions;
+export const { setSelectedExchange,setComparisonRawData, setSelectedProduct,setExchangePage } = exchangeSlice.actions;
 export { fetchExchangeData };

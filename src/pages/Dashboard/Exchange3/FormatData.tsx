@@ -23,7 +23,9 @@ export interface ExchngeItem{
 //   "id": "22-10-2021",
 //   "seller": "UPPCL N0RUP0",
 //   "seller_mwhr": "15202311.95"
-// },
+
+// },]
+
 export interface BuyerSeller{
     buyer: string[];
     buyer_mwhr: number[];
@@ -135,47 +137,6 @@ export const AxisLabel = ({ axisType, x, y, width, height, stroke, children }: a
   export  interface RealTimeReChartData {
     
   }
-  // export  const formatRealTimeChartData = (data: any, key: string): RealTimeChartData => {
-  //   const labels = Object.keys(data["DAM_rates"]);
-  //   const damPrices = Object.values(data["DAM_rates"]).map((price: any) => parseFloat(price)/10);
-  //   const gdamPrices = Object.values(data["GDAM_rates"]).map((price: any) => parseFloat(price)/10);
-  //   const rtmPrices = Object.values(data["RTM_rates"]).map((price: any) => parseFloat(price)/10);
-  
-  //   return {
-  //     title: key
-  //     ,
-  //     data: {
-  //       labels: labels.map((label, index) => (index+1).toString()),
-  //       datasets: [
-  //         {
-  //           label: "DAM Prices",
-  //           data: damPrices as number[],
-  //           borderColor: PrimaryColor,
-  //           backgroundColor: PrimaryColor,
-  //         },
-  //         {
-  //           label: "GDAM Prices",
-  //           data: gdamPrices as number[],
-  //           borderColor: QuaternaryColor,
-  //           backgroundColor: QuaternaryColor,
-  //         },
-  //         {
-  //           label: "RTM Prices",
-  //           data: rtmPrices as number[],
-  //           borderColor: SecondaryColor,
-  //           backgroundColor: SecondaryColor,
-  //         },
-  //         {
-  //           label:"HPDAM Prices",
-  //           data:[],
-  //           borderColor:"red",
-  //           backgroundColor:"red"
-  //         }
-  //       ],
-  //     }
-  //   };
-  // };
-
 
 export function FormatDataOfRealtime(data:any){
     let formatedData: { name: number; price: number; date: string; }[]=[];
@@ -270,3 +231,54 @@ export const ExchangeColors: string[] = [
   "#006400", // Emerald Green
   // ... (remaining shuffled colors)
 ];
+
+export interface ReformattedData {
+  [key: string]: {
+    [key: string]: {
+      [key: string]: string | number | null;
+    }[];
+  };
+}
+
+
+export function reformatData(comparisonData: ComparisonData[]): ReformattedData {
+  const reformattedData: ReformattedData = {};
+
+  comparisonData.forEach(({ date, data }) => {
+    Object.keys(data).forEach((exchange) => {
+      if (!reformattedData[exchange]) {
+        reformattedData[exchange] = {};
+      }
+      Object.keys(data[exchange as keyof ExchangeStateData]).forEach((dataType) => {
+        if (!reformattedData[exchange][dataType]) {
+          reformattedData[exchange][dataType] =[];
+        }
+        data[exchange as keyof ExchangeStateData][dataType].forEach((item: any,index) => { // Add type annotation 'any' to 'item'
+          if(!reformattedData[exchange][dataType][index]){
+          reformattedData[exchange][dataType][index] = {};}
+          Object.keys(item).forEach((prop) => {
+            const newKey = `${prop}_${date.replace(/-/g, "_")}`;
+            reformattedData[exchange][dataType][index][newKey] = item[prop];
+            reformattedData[exchange][dataType][index]["date"] = item["date"];
+            reformattedData[exchange][dataType][index]["name"] = item["name"];
+          });
+        });
+      });
+    });
+  });
+
+  return reformattedData;
+}
+
+
+
+export function getDaysInMonthFromString(dateString: string): number {
+  const [monthStr, yearStr] = dateString.split('-');
+  const month = monthStr.substring(0, 3); // Extracting first three characters for month
+  const year = parseInt(yearStr);
+
+  const firstDayOfMonth = new Date(`${month} 1, ${year}`);
+  const lastDayOfMonth = new Date(firstDayOfMonth.getFullYear(), firstDayOfMonth.getMonth() + 1, 0);
+  
+  return lastDayOfMonth.getDate();
+}
