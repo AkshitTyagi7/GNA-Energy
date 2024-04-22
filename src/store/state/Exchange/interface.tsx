@@ -8,11 +8,12 @@ export interface ExchangeState{
         hpx: ExchangeData;
         pxil: ExchangeData;
     }
+    comparisonRawData: {date_range:{start_date:string, end_date:string}, data:any}[];
     selectedExchange: number;
     selectedProduct: number;
     selectedRegion: string[];
-
 };
+
 page: number;
 }
 
@@ -46,7 +47,7 @@ export const initialExchangeState: ExchangeState = {
             },
             },
         
-
+            comparisonRawData: [],
         selectedExchange:0,
         selectedProduct: 0,
         selectedRegion: [],

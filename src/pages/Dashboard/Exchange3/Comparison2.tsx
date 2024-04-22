@@ -213,10 +213,10 @@ export function ExchangeComparion2() {
 
   useEffect(() => {
     selectedDate.map((date, index) => {
-      getExchangeData({
+/*       getExchangeData({
         date: date,
         index: index,
-      });
+      }); */
     });
   }, []);
   const [exchangeLoading, setExchangeLoading] = useState(false);

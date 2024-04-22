@@ -512,7 +512,7 @@ export function BetaConsumption() {
                 <Tooltip
                   formatter={(value, name, props) => {
                     const val = parseFloat(value.toString()).toFixed(2);
-                    return [val + " MW", name];
+                    return [val + " MUs", name];
                   }}
                 />
                 <Brush dataKey={"date"} />

@@ -1,1 +1,0 @@
-export const DEMO_COMPARISON_DATA =[]
