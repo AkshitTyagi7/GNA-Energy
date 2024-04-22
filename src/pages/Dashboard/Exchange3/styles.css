@@ -485,5 +485,9 @@ font-size: 20px;
   }
 
   .header-tab-selection{
-    min-width: 650px;
+    min-width: 719px;
+  }
+
+  .header-side-area .css-dvg3yj-ValueContainer{
+    font-size: 12px;
   }

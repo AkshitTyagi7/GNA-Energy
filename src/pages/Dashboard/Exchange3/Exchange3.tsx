@@ -86,7 +86,7 @@ export function Exchange3() {
       active: false,
     },
     {
-      name: "Price",
+      name: "Trend Analysis",
       active: false,
     },
   ];
@@ -121,6 +121,9 @@ export function Exchange3() {
     "Nov",
     "Dec",
   ];
+
+
+  let selectedComparisonDate: Date[] = [];
 
 
   const dateOptions: {
@@ -453,53 +456,58 @@ export function Exchange3() {
           <div className="filters">
             <div className="legend-exchangeSelection">
               <div className="exchange-selection">
-                {state.page === (0 as any)
-                  ? ["IEX", "PXIL", "HPX"].map((exchange, index) => {
-                      return (
-                        <button
-                          key={index}
-                          className={`tab-small ${
-                            state.Exchange.selectedExchange === index
-                              ? "tab-active"
-                              : ""
-                          } ${
-                            index === 0
-                              ? "tab-left"
-                              : index === 2
-                              ? "tab-right"
-                              : ""
-                          }`}
-                          onClick={() => {
-                            dispatch(setSelectedExchange(index));
-                          }}
-                        >
-                          {exchange}
-                        </button>
-                      );
-                    })
-                  : ["DAM", "GDAM", "HPDAM", "RTM"].map((exchange, index) => {
-                      return (
-                        <button
-                          key={index}
-                          className={`tab-small ${
-                            state.Exchange.selectedProduct === index
-                              ? "tab-active"
-                              : ""
-                          } ${
-                            index === 0
-                              ? "tab-left"
-                              : index === 3
-                              ? "tab-right"
-                              : ""
-                          }`}
-                          onClick={() => {
-                            dispatch(setSelectedProduct(index));
-                          }}
-                        >
-                          {exchange}
-                        </button>
-                      );
-                    })}
+                {state.page === (1 as any) 
+                  ? 
+                  ["DAM", "GDAM", "HPDAM", "RTM"].map((exchange, index) => {
+                    return (
+                      <button
+                        key={index}
+                        className={`tab-small ${
+                          state.Exchange.selectedProduct === index
+                            ? "tab-active"
+                            : ""
+                        } ${
+                          index === 0
+                            ? "tab-left"
+                            : index === 3
+                            ? "tab-right"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          dispatch(setSelectedProduct(index));
+                        }}
+                      >
+                        {exchange}
+                      </button>
+                    );
+                  })
+                  :
+                  ["IEX", "PXIL", "HPX"].map((exchange, index) => {
+                    return (
+                      <button
+                        key={index}
+                        className={`tab-small ${
+                          state.Exchange.selectedExchange === index
+                            ? "tab-active"
+                            : ""
+                        } ${
+                          index === 0
+                            ? "tab-left"
+                            : index === 2
+                            ? "tab-right"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          dispatch(setSelectedExchange(index));
+                        }}
+                      >
+                        {exchange}
+                      </button>
+                    );
+                  
+                  
+                  }
+                )}
               </div>
               <div className="legend">
                 Legends
@@ -1277,24 +1285,24 @@ export function Exchange3() {
                               </button>
                             );
                           })
-                        : ["DAM", "GDAM", "HPDAM", "RTM"].map(
+                        : ["IEX","PXIL","HPX"].map(
                             (exchange, index) => {
                               return (
                                 <button
                                   key={index}
                                   className={`tab-small ${
-                                    state.Exchange.selectedProduct === index
+                                    selectedComparisonExchange === index
                                       ? "tab-active"
                                       : ""
                                   } ${
                                     index === 0
                                       ? "tab-left"
-                                      : index === 3
+                                      : index === 2
                                       ? "tab-right"
                                       : ""
                                   }`}
                                   onClick={() => {
-                                    dispatch(setSelectedProduct(index));
+                                    setSelectedComparisonExchange(index);
                                   }}
                                 >
                                   {exchange}
@@ -1393,32 +1401,49 @@ export function Exchange3() {
 
               {activeUnitTab === 4 && (
                 <div className="exchange-chart-area">
-                  <div className="exchange-byExchange-chart">
                     <WeightedAverageChart
-                      data={chartData.data.iex.dam}
+                      // data={chartData.data.iex.dam}
+                      data= {
+                        selectedComparisonExchange === 0
+                        ? chartData.data.iex.dam
+                        : selectedComparisonExchange === 1
+                        ? chartData.data.pxil.dam
+                        : chartData.data.hpx.dam
+                      }
                       title="DAM"
                     />
-                  </div>
-                  <div className="exchange-byExchange-chart">
                     <WeightedAverageChart
-                      data={chartData.data.iex.dam}
-                      title="DAM"
+                      data={
+                        selectedComparisonExchange === 0
+                        ? chartData.data.iex.gdam
+                        : selectedComparisonExchange === 1
+                        ? chartData.data.pxil.gdam
+                        : chartData.data.hpx.gdam
+                      }
+                      title="GDAM"
                     />
-                  </div>
 
-                  <div className="exchange-byExchange-chart">
                     <WeightedAverageChart
-                      data={chartData.data.iex.dam}
-                      title="DAM"
+                      data={
+                        selectedComparisonExchange === 0
+                        ? chartData.data.iex.hpdam
+                        : selectedComparisonExchange === 1
+                        ? chartData.data.pxil.hpdam
+                        : chartData.data.hpx.hpdam
+                      }
+                      title="HPDAM"
                     />
-                  </div>
 
-                  <div className="exchange-byExchange-chart">
                     <WeightedAverageChart
-                      data={chartData.data.iex.dam}
-                      title="DAM"
+                      data={
+                        selectedComparisonExchange === 0
+                        ? chartData.data.iex.rtm
+                        : selectedComparisonExchange === 1
+                        ? chartData.data.pxil.rtm
+                        : chartData.data.hpx.rtm
+                      }
+                      title="RTM"
                     />
-                  </div>
                 </div>
               )}
             </div>
@@ -1683,6 +1708,7 @@ export function Exchange3() {
         return;
       }
 
+
       // let datesToFetch = Dates that are not in rawcomparison by comparing with start data 
       let datesToFetch: Date[] = dates.filter(
         (date) =>
@@ -1698,7 +1724,40 @@ export function Exchange3() {
 if(datesToFetch.length<0){
    return;
 }
-else{
+
+
+      let compRawData = state.Exchange.comparisonRawData;
+      // check if any date is removed from the date range by comparing with the raw data
+      if (dates.length <= compRawData.length) {
+
+        const comparisonData: ComparisonData[] = [];
+        let legends: LegendKey[] = [];
+        for (let i = 0; i < dates.length; i++) {
+          let data = {
+            iex: FormatExchangeData(compRawData[i].data.iex),
+            hpx: FormatExchangeData(compRawData[i].data.hpx),
+            pxil: FormatExchangeData(compRawData[i].data.pxil),
+          };
+          comparisonData.push({
+            date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+            data: data,
+          });
+          legends.push({
+            dataKey: `${Months[dates[i].getMonth()]}_${dates[i].getFullYear()}`,
+            name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+            stroke: getColorList(dates.length)[i],
+          });
+        }
+        setChartData({
+          data: reformatData(comparisonData),
+          legends: legends,
+        });
+        console.log(reformatData(comparisonData));
+        console.log("Comparison Data", compRawData);
+        setComparisonLoading(false);
+        return;
+      }
+      else{
      const res=await fetch(buildUrl("all_exchange_multiple_api_range"), {
         method: "POST",
         headers: {
@@ -1716,13 +1775,12 @@ else{
         }),
       })
        apidata = await res.json();
-
-    };
+       compRawData= state.Exchange.comparisonRawData.concat(apidata) as any;
+    }
           const comparisonData: ComparisonData[] = [];
           let legends: LegendKey[] = [];
           dispatch(setComparisonRawData(state.Exchange.comparisonRawData.concat(apidata) as any));
 
-        const  compRawData= state.Exchange.comparisonRawData.concat(apidata) as any;
           for (let i = 0; i < compRawData.length; i++) {
             let data = {
               iex: FormatExchangeData(compRawData[i].data.iex),
@@ -1824,11 +1882,23 @@ else{
   }
   function WeightedAverageChart({ data, title }: { data: any; title: string }) {
     return (
+      <div className="exchange-byExchange-chart">
+      <h2
+        className="text-center text-md"
+        style={{
+          color: SecondaryColor,
+          marginBottom: -10,
+        }}
+      >
+        {title}
+      </h2>
       <ReBarChart
+      showLegend={false}
         data={convertWeightedAverage({
           data: data,
           months: chartData.legends.map((e) => e.name) as string[],
         })}
+        
         xDataKey="month"
         unit={COST_UNIT}
         yAxisLabel={COST_UNIT}
@@ -1839,7 +1909,9 @@ else{
             stroke: PrimaryColor,
           },
         ]}
-      />
+      /></div>
     );
   }
+
+
 }

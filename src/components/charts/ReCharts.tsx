@@ -4,6 +4,7 @@ import {
   BarChart,
   Brush,
   CartesianGrid,
+  Cell,
   ComposedChart,
   Label,
   Line,
@@ -315,6 +316,7 @@ export function ReBarChart({
   xDataKey,
   yAxisLabel,
   yAxisWidth,
+  showLegend = true,
   secondXDataKey,
   showBrush = false,
   brushHeight = 30,
@@ -324,6 +326,7 @@ export function ReBarChart({
   data: ReChartData[];
   legends: LegendKey[];
   syncid?: string;
+  showLegend?: boolean;
   unit?: string;
   xDataKey: string;
   yAxisWidth?: number;
@@ -343,7 +346,7 @@ export function ReBarChart({
           .filter((e) => e.dataKey != xDataKey)
           .map((legend, index) => {
             return (
-              <div
+            !showLegend ? null :    <div
                 className="realTime-Legend"
                 onClick={() => {
                   if (
@@ -477,6 +480,25 @@ export function ReBarChart({
                 .filter((e) => e.dataKey != xDataKey)
                 .map((legend, index) => {
                   return (
+
+                    legends.length === 1 ?  
+                    <Bar 
+                      key={index}
+                      type="monotone"
+                      name={typeof legend === "string" ? legend : legend.name}
+                      dataKey={
+                        typeof legend === "string" ? legend : legend.dataKey
+                      }
+                     
+                      strokeWidth={2}
+                  >
+                    {
+                      data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))
+                    }
+                  </Bar>
+                    :
                     <Bar
                       key={index}
                       type="monotone"
