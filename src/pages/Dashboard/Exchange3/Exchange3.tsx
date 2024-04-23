@@ -552,6 +552,8 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="DAM"
+                  syncId="byExchange"
+
                   data={
                     state.Exchange.selectedExchange === 0
                       ? state.Exchange.data.iex.dam
@@ -570,6 +572,9 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="GDAM"
+                  syncId="byExchange"
+
+
                   data={
                     state.Exchange.selectedExchange === 0
                       ? state.Exchange.data.iex.gdam
@@ -588,6 +593,8 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="HPDAM"
+                  syncId="byExchange"
+
                   data={
                     state.Exchange.selectedExchange === 0
                       ? state.Exchange.data.iex.hpdam
@@ -606,6 +613,8 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="RTM"
+                  syncId="byExchange"
+
                   data={
                     state.Exchange.selectedExchange === 0
                       ? state.Exchange.data.iex.rtm
@@ -625,7 +634,7 @@ export function Exchange3() {
               setShownLegends={function (legends: string[]): void {}}
               data={state.Exchange.data.iex.dam}
               title="DAM"
-              syncId="byProduct"
+              syncId="byExchange"
               height="6%"
               width="99%"
               showBrush={true}
@@ -638,6 +647,8 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="IEX"
+                  syncId="byProduct"
+
                   data={
                     state.Exchange.selectedProduct === 0
                       ? state.Exchange.data.iex.dam
@@ -658,6 +669,8 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="PXIL"
+                  syncId="byProduct"
+
                   data={
                     state.Exchange.selectedProduct === 0
                       ? state.Exchange.data.pxil.dam
@@ -678,6 +691,8 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="HPX"
+                  syncId="byProduct"
+
                   data={
                     state.Exchange.selectedProduct === 0
                       ? state.Exchange.data.hpx.dam
@@ -1803,8 +1818,6 @@ if(datesToFetch.length<0){
             data: reformatData(comparisonData),
             legends: legends,
           });
-          console.log(reformatData(comparisonData));
-          console.log("Comparison Data", compRawData);
           setComparisonLoading(false);
         }
         catch (error) {
