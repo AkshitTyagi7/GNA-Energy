@@ -552,7 +552,7 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="DAM"
-                  syncId="byExchange"
+                                syncId="byExchange"
 
                   data={
                     state.Exchange.selectedExchange === 0
