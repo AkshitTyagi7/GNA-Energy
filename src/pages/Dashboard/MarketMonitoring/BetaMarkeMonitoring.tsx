@@ -528,18 +528,7 @@ export function BetaMarketMontoring() {
                   }}
                 />
                 <Tooltip
-                  formatter={(value, name, props) => {
-                    let diplayValue = parseFloat(
-                      value.toLocaleString()
-                    ).toFixed(2);
-                    if (diplayValue == "NaN") {
-                      diplayValue = "-";
-                    }
-                    return [
-                      `${diplayValue} `,
-                      `${name} (${tabIndex == 0 ? ENERGY_UNIT : COST_UNIT})`,
-                    ];
-                  }}
+               
                 />
               </ComposedChart>
             </ResponsiveContainer>

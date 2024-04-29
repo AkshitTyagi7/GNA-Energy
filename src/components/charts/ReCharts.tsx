@@ -196,6 +196,9 @@ export function ReLineChart({
           <Tooltip
             labelFormatter={(value, payload) => {
               try {
+                if (payload[0].payload.date == undefined){
+                  return [value]
+                }
                 return [`${payload[0].payload.date} - Time Slot ${value}`];
               } catch {
                 return [value];
