@@ -24,14 +24,14 @@ const fetchExchangeData = createAsyncThunk(
                 {
                     iex: FormatExchangeData(apiRes.iex),
                     hpx: FormatExchangeData(apiRes.hpx),
-                    pxil: FormatExchangeData(apiRes.pxil)
+                    pxil: FormatExchangeData(apiRes.pxil,true)
                 
                 }
             );
             return {
                 iex: FormatExchangeData(apiRes.iex),
                 hpx: FormatExchangeData(apiRes.hpx),
-                pxil: FormatExchangeData(apiRes.pxil)
+                pxil: FormatExchangeData(apiRes.pxil,true)
             
             };
         } catch (error) {
