@@ -63,7 +63,7 @@ export const DiscomTextItemEditable = ({
                     }
                 }
                 >
-                <input name="edited" type="number" defaultValue={value} /></form> {unit} <span className="editIcon"><Edit /></span>
+                <input name="edited" step="any" type="number" defaultValue={value} /></form> {unit} <span className="editIcon"><Edit /></span>
 
             </div>
         </div>

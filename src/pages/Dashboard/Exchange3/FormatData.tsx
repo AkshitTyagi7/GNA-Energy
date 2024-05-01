@@ -48,7 +48,7 @@ export interface ComparisonData{
 
 }
 
-export function FormatExchangeData(data : any): ExchangeData{
+export function FormatExchangeData(data : any, isPxil = false ): ExchangeData{
     let fomattedDataArray: ExchangeData={
         dam:[],
         gdam:[],
@@ -74,8 +74,8 @@ export function FormatExchangeData(data : any): ExchangeData{
                 fomattedDataArray[key2].push({
                     name: index+1,
                     wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
-                    sell_bid_mw: parseFloat(item.sell_bid_mw),
-                    prchs_bid_mw: parseFloat(item.prchs_bid_mw),
+                    sell_bid_mw:isPxil ? parseFloat(item.sell_bid_mw)*4 : parseFloat(item.sell_bid_mw),
+                    prchs_bid_mw: isPxil ? parseFloat(item.prchs_bid_mw)*4 : parseFloat(item.prchs_bid_mw),
                     date: item.date,
                     mcv_mw: parseFloat(item.mcv_mw),
                 });
