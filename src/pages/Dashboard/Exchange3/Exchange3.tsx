@@ -301,6 +301,10 @@ export function Exchange3() {
       sellers: trendSeller,
       startDate: startDate,
       endDate: endDate,
+      exchange: BuyerSellerState.BuyerSeller.filters[0],
+      product: BuyerSellerState.BuyerSeller.filters[1],
+      region: BuyerSellerState.BuyerSeller.filters[2],
+
     });
   }, []);
   const [exchangeLoading, setExchangeLoading] = useState(true);
@@ -400,6 +404,11 @@ export function Exchange3() {
                     sellers: trendSeller,
                     startDate: new Date(e.target.value),
                     endDate: endDate,
+                    exchange: BuyerSellerState.BuyerSeller.filters[0],
+                    product: BuyerSellerState.BuyerSeller.filters[1],
+
+                    region: BuyerSellerState.BuyerSeller.filters[2],
+
                   });
                 }}
               />
@@ -435,6 +444,11 @@ export function Exchange3() {
                     sellers: trendSeller,
                     startDate: startDate,
                     endDate: new Date(e.target.value),
+                    exchange: BuyerSellerState.BuyerSeller.filters[0],
+                    product: BuyerSellerState.BuyerSeller.filters[1],
+
+                    region: BuyerSellerState.BuyerSeller.filters[2],
+
                   });
                 }}
               />
@@ -793,7 +807,7 @@ export function Exchange3() {
           <div>
             <div>
               <div className="body-container">
-                {buyerSellerPage == 0 && (
+                
                   <div className="side-filters-container">
                     {BuyerSellerFilters.map((filter, index) => {
                       return (
@@ -858,6 +872,15 @@ export function Exchange3() {
                                         product: temp[1],
                                         region: temp[2],
                                       });
+                                      fetchUtilityTrendData({
+                                        buyers: trendBuyer,
+                                        sellers: trendSeller,
+                                        startDate: startDate,
+                                        endDate: endDate,
+                                        exchange: temp[0],
+                                        product: temp[1],
+                                        region: temp[2],
+                                      });
                                     }}
                                   >
                                     {subfilter.name}
@@ -871,7 +894,6 @@ export function Exchange3() {
                       );
                     })}
                   </div>
-                )}
                 <div className="w-full h-full">
                   <div className="tabselection-buyerseller m-3">
                     <div>
@@ -961,7 +983,7 @@ export function Exchange3() {
                                               className="dot"
                                               style={{
                                                 backgroundColor:
-                                                  ExchangeColors[index],
+                                                  COLORS[index],
                                               }}
                                             ></div>
                                             {item.name}
@@ -1001,7 +1023,7 @@ export function Exchange3() {
                                               className="dot"
                                               style={{
                                                 backgroundColor:
-                                                  ExchangeColors[index],
+                                                  COLORS[index],
                                               }}
                                             ></div>{" "}
                                             {item.name}
@@ -1052,6 +1074,10 @@ export function Exchange3() {
                                 ],
                                 startDate: startDate,
                                 endDate: endDate,
+                                exchange: BuyerSellerState.BuyerSeller.filters[0],
+                                product: BuyerSellerState.BuyerSeller.filters[1],
+
+                                region: BuyerSellerState.BuyerSeller.filters[2],
                               });
                             } else {
                               fetchUtilityTrendData({
@@ -1062,6 +1088,11 @@ export function Exchange3() {
                                 ),
                                 startDate: startDate,
                                 endDate: endDate,
+                                exchange: BuyerSellerState.BuyerSeller.filters[0],
+                                product: BuyerSellerState.BuyerSeller.filters[1],
+
+                                region: BuyerSellerState.BuyerSeller.filters[2],
+
                               });
                               setTrendBuyer(
                                 trendBuyer.filter(
@@ -1098,6 +1129,11 @@ export function Exchange3() {
                                     ),
                                     startDate: startDate,
                                     endDate: endDate,
+                                    exchange: BuyerSellerState.BuyerSeller.filters[0],
+                                    product: BuyerSellerState.BuyerSeller.filters[1],
+    
+                                    region: BuyerSellerState.BuyerSeller.filters[2],
+    
                                   });
                                 }}
                                 key={index}
@@ -1132,8 +1168,7 @@ export function Exchange3() {
                               return {
                                 dataKey: item,
                                 name: item,
-                                stroke:
-                                  ExchangeColors[trendBuyer.indexOf(item)],
+                          
                               };
                             })}
                           />
@@ -1167,6 +1202,11 @@ export function Exchange3() {
                                 ],
                                 startDate: startDate,
                                 endDate: endDate,
+                                exchange: BuyerSellerState.BuyerSeller.filters[0],
+                                product: BuyerSellerState.BuyerSeller.filters[1],
+
+                                region: BuyerSellerState.BuyerSeller.filters[2],
+
                               });
                             } else {
                               fetchUtilityTrendData({
@@ -1177,6 +1217,11 @@ export function Exchange3() {
                                 ),
                                 startDate: startDate,
                                 endDate: endDate,
+                                exchange: BuyerSellerState.BuyerSeller.filters[0],
+                                product: BuyerSellerState.BuyerSeller.filters[1],
+
+                                region: BuyerSellerState.BuyerSeller.filters[2],
+
                               });
                               setTrendSeller(
                                 trendSeller.filter(
@@ -1215,6 +1260,11 @@ export function Exchange3() {
                                     ),
                                     startDate: startDate,
                                     endDate: endDate,
+                                    exchange: BuyerSellerState.BuyerSeller.filters[0],
+                                    product: BuyerSellerState.BuyerSeller.filters[1],
+    
+                                    region: BuyerSellerState.BuyerSeller.filters[2],
+    
                                   });
                                 }}
                                 key={index}
@@ -1608,11 +1658,18 @@ export function Exchange3() {
     sellers,
     startDate,
     endDate,
+    exchange,
+    product,
+    region,
   }: {
     buyers: string[];
     sellers: string[];
     startDate: Date;
     endDate: Date;
+    exchange: BuyerSellerFilter;
+    product: BuyerSellerFilter;
+    region: BuyerSellerFilter;
+    
   }) {
     try {
       setUtilityTrendLoading(true);
@@ -1626,6 +1683,10 @@ export function Exchange3() {
           end_date: endDate.toLocaleDateString("en-GB").split("/").join("-"),
           buyers: buyers,
           sellers: sellers,
+          exchange: exchange.filters.map((item) => item.name),
+
+          product: product?.filters.map((item) => item.name),
+          region: region?.filters.map((item) => item.name),
         },
         method: "POST",
       });

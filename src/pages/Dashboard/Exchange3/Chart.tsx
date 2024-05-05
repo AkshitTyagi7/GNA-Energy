@@ -22,7 +22,7 @@ import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
 import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement, UtilizationTrendMCP } from "../../../store/state/BuyerSellerState";
 import React from "react";
-import { BrushStart } from "../../../components/charts/ReCharts";
+import { BrushStart, COLORS } from "../../../components/charts/ReCharts";
 export const AxisLabel = ({
   axisType,
   x,
@@ -320,9 +320,10 @@ return <ResponsiveContainer
           </BarChart>
 </ResponsiveContainer>
 };
-const COLORS = [
-    '#34656D', '#F1935C','#7CB5EC' , '#333333', '#B8860B',
-    ];
+const PIECOLORS = [
+  '#34656D', '#F1935C','#7CB5EC' , '#333333', '#B8860B',
+  ];
+
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: { cx: number, cy: number, midAngle: number, innerRadius: number, outerRadius: number, percent: number, index: number }) => {
