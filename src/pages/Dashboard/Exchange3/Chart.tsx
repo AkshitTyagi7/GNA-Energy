@@ -101,7 +101,7 @@ export const ExchangeChart =  ({
           <>
             <CartesianGrid strokeDasharray="4 2" />
 
-            <XAxis dataKey="name" fontSize={12} />
+            <XAxis dataKey="time_slot" fontSize={12} />
             <XAxis
               dataKey="date"
               axisLine={false}
@@ -202,11 +202,11 @@ export const ExchangeChart =  ({
       dot={false}
       strokeWidth={onlyBrush ? 0 :2}
       yAxisId="right"
-      hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
+      // hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
       style={{
         display: onlyBrush ? "none" : "block",
       }}
-      dataKey="prchs_bid_mw"
+      dataKey="purchase_bid_mw"
       stroke={"#333333"}
       isAnimationActive={false}
       color={"#333333"}

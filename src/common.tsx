@@ -28,6 +28,7 @@ export async function buildHttpReq(
     endpoint, 
     method = 'GET',
     body = null,
+
     header= {}
   }:
   {

@@ -54,6 +54,7 @@ import {
   getColorList,
 } from "../../../components/charts/ReCharts";
 import swal from "sweetalert";
+import { stat } from "fs";
 
 export function Exchange3() {
   const maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
@@ -307,7 +308,7 @@ export function Exchange3() {
 
     });
   }, []);
-  const [exchangeLoading, setExchangeLoading] = useState(true);
+  const [exchangeLoading, setExchangeLoading] = useState(false);
   const [realTimeLoading, setRealTimeLoading] = useState(true);
   const [buyerSellerLoading, setBuyerSellerLoading] = useState(true);
   const [utilityTrendLoading, setUtilityTrendLoading] = useState(true);
@@ -569,12 +570,9 @@ export function Exchange3() {
                                 syncId="byExchange"
 
                   data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.dam
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.dam
-                      : state.Exchange.data.hpx.dam
-                  }
+                    state.Exchange.data.filter(
+                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+                    )                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -590,12 +588,9 @@ export function Exchange3() {
 
 
                   data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.gdam
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.gdam
-                      : state.Exchange.data.hpx.gdam
-                  }
+                    state.Exchange.data.filter(
+                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="GDAM"
+                    )                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -610,12 +605,9 @@ export function Exchange3() {
                   syncId="byExchange"
 
                   data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.hpdam
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.hpdam
-                      : state.Exchange.data.hpx.hpdam
-                  }
+state.Exchange.data.filter(
+  (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+)                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -630,12 +622,9 @@ export function Exchange3() {
                   syncId="byExchange"
 
                   data={
-                    state.Exchange.selectedExchange === 0
-                      ? state.Exchange.data.iex.rtm
-                      : state.Exchange.selectedExchange === 1
-                      ? state.Exchange.data.pxil.rtm
-                      : state.Exchange.data.hpx.rtm
-                  }
+                    state.Exchange.data.filter(
+                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="RTM"
+                    )                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -646,7 +635,10 @@ export function Exchange3() {
             <ExchangeChart
               shownLegnends={[]}
               setShownLegends={function (legends: string[]): void {}}
-              data={state.Exchange.data.iex.dam}
+              data={
+                state.Exchange.data.filter(
+                  (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+                )                  }
               title="DAM"
               syncId="byExchange"
               height="6%"
@@ -664,14 +656,9 @@ export function Exchange3() {
                   syncId="byProduct"
 
                   data={
-                    state.Exchange.selectedProduct === 0
-                      ? state.Exchange.data.iex.dam
-                      : state.Exchange.selectedProduct === 1
-                      ? state.Exchange.data.iex.gdam
-                      : state.Exchange.selectedProduct === 2
-                      ? state.Exchange.data.iex.hpdam
-                      : state.Exchange.data.iex.rtm
-                  }
+                    state.Exchange.data.filter(
+                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+                    )                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -686,14 +673,9 @@ export function Exchange3() {
                   syncId="byProduct"
 
                   data={
-                    state.Exchange.selectedProduct === 0
-                      ? state.Exchange.data.pxil.dam
-                      : state.Exchange.selectedProduct === 1
-                      ? state.Exchange.data.pxil.gdam
-                      : state.Exchange.selectedProduct === 2
-                      ? state.Exchange.data.pxil.hpdam
-                      : state.Exchange.data.pxil.rtm
-                  }
+                    state.Exchange.data.filter(
+                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+                    )                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -708,14 +690,9 @@ export function Exchange3() {
                   syncId="byProduct"
 
                   data={
-                    state.Exchange.selectedProduct === 0
-                      ? state.Exchange.data.hpx.dam
-                      : state.Exchange.selectedProduct === 1
-                      ? state.Exchange.data.hpx.gdam
-                      : state.Exchange.selectedProduct === 2
-                      ? state.Exchange.data.hpx.hpdam
-                      : state.Exchange.data.hpx.rtm
-                  }
+                    state.Exchange.data.filter(
+                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+                    )                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -726,7 +703,10 @@ export function Exchange3() {
             <ExchangeChart
               shownLegnends={[]}
               setShownLegends={function (legends: string[]): void {}}
-              data={state.Exchange.data.iex.dam}
+              data={
+                state.Exchange.data.filter(
+                  (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+                )                  }
               title="DAM"
               syncId="byProduct"
               height="4%"
