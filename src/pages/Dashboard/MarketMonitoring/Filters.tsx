@@ -24,6 +24,7 @@ export const filters=
         {
             name: "Month",
             subfilter:[
+
                 { id: 1, title: "Jan-17" },
                 { id: 2, title: "Feb-17" },
                 { id: 3, title: "Mar-17" },
@@ -107,7 +108,10 @@ export const filters=
                 { id: 81, title: "Sep-23" },
                 { id: 82, title: "Oct-23" },
                 { id: 83, title: "Nov-23" },
-                { id: 84, title: "Dec-23" }
+                { id: 84, title: "Dec-23" },
+                { id: 85, title: "Jan-24" },
+                { id: 86, title: "Feb-24" },
+                
               ]
         }
     ]
