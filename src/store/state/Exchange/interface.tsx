@@ -1,20 +1,8 @@
 import { ExchangeData } from "../../../pages/Dashboard/Exchange3/FormatData"
 import { EXCHANGE_DEMO_DATA } from "./DemoData";
 
-export interface ExchangeState{
 
-    Exchange: {
-
-        data:{
-    //   "date": "2024-01-05",
-    //   "exchange__name": "IEX",
-    //   "product__name": "DAM",
-    //   "time_slot": 77,
-    //   "purchase_bid_mw": 19719.6,
-    //   "sell_bid_mw": 7022.8,
-    //   "mcv_mw": 7022.8,
-    //   "mcp_rs_mwh": 10000.0,
-    //   "wt_mcp_rs_mwh": 10000.0
+export interface MarketSnapshotData{
     date: string,
     exchange__name: string, 
     product__name: string, 
@@ -24,9 +12,21 @@ export interface ExchangeState{
     mcv_mw: number,
     mcp_rs_mwh: number,
     wt_mcp_rs_mwh: number
+}
 
+export interface ExchangeState{
 
-        
+    Exchange: {
+        data:{
+    date: string,
+    exchange__name: string, 
+    product__name: string, 
+    time_slot: number,
+    purchase_bid_mw: number,
+    sell_bid_mw: number,
+    mcv_mw: number,
+    mcp_rs_mwh: number,
+    wt_mcp_rs_mwh: number
     }[],
     comparisonRawData: {date_range:{start_date:string, end_date:string}, data:any}[];
     selectedExchange: number;

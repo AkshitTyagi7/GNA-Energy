@@ -10,7 +10,7 @@ export interface ExchngeItem{
         name: string | number;
         wt_mcp_rs_mwh:  number | string | null;
         sell_bid_mw: number | string | null;
-        prchs_bid_mw: number | string | null;
+        purchase_bid_mw: number | string | null;
         mcv_mw: number | string | null;
         date: string | number ;
 
@@ -65,7 +65,7 @@ export function FormatExchangeData(data : any, isPxil = false ): ExchangeData{
                     name: i+1,
                     wt_mcp_rs_mwh: 0,
                     sell_bid_mw: 0,
-                    prchs_bid_mw: 0,
+                    purchase_bid_mw: 0,
                     mcv_mw: 0,
                     date: key,
                 });
@@ -75,7 +75,7 @@ export function FormatExchangeData(data : any, isPxil = false ): ExchangeData{
                     name: index+1,
                     wt_mcp_rs_mwh: item.wt_mcp_rs_mwh,
                     sell_bid_mw:isPxil ? parseFloat(item.sell_bid_mw)*4 : parseFloat(item.sell_bid_mw),
-                    prchs_bid_mw: isPxil ? parseFloat(item.prchs_bid_mw)*4 : parseFloat(item.prchs_bid_mw),
+                    purchase_bid_mw: isPxil ? parseFloat(item.prchs_bid_mw)*4 : parseFloat(item.prchs_bid_mw),
                     date: item.date,
                     mcv_mw: parseFloat(item.mcv_mw),
                 });
@@ -260,7 +260,7 @@ export function reformatData(comparisonData: ComparisonData[]): ReformattedData 
             const newKey = `${prop}_${date.replace(/-/g, "_")}`;
             reformattedData[exchange][dataType][index][newKey] = item[prop];
             reformattedData[exchange][dataType][index]["date"] = item["date"];
-            reformattedData[exchange][dataType][index]["name"] = item["name"];
+            reformattedData[exchange][dataType][index]["time_slot"] = item["time_slot"];
           });
         });
       });

@@ -6,6 +6,8 @@ import { ExchangeState, initialExchangeState } from "./interface";
 import { AsyncThunkFulfilledActionCreator, AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 import { FormatExchangeData } from "../../../pages/Dashboard/Exchange3/FormatData";
 
+
+
 const fetchExchangeData = createAsyncThunk(
     "exchange/fetchExchangeData",
     async({start_date, end_date} : {start_date: string, end_date: string})=>{
@@ -14,28 +16,26 @@ const fetchExchangeData = createAsyncThunk(
         start_date = start_date.split("-").reverse().join("-");
         end_date = end_date.split("-").reverse().join("-");
         // reduce the month by 1
-        start_date =start_date.split("-").map((item, index)=>{
-            if(index === 1){
-                if(parseInt(item) === 1){
-                    return "12";
-                }
+        // start_date =start_date.split("-").map((item, index)=>{
+        //     if(index === 1){
+        //         if(parseInt(item) === 1){
+        //             return "12";
+        //         }
                 
 
-                return (parseInt(item)-1).toString();
-            }
-            return item;
-        }
-        ).join("-");
-        end_date =end_date.split("-").map((item, index)=>{
-            if(index === 1){
-                return (parseInt(item)-1).toString();
-            }
-            return item;
-        }
-        ).join("-");
-        console.log("---------- yooo yoo yo")
+        //         return (parseInt(item)-1).toString();
+        //     }
+        //     return item;
+        // }
+        // ).join("-");
+        // end_date =end_date.split("-").map((item, index)=>{
+        //     if(index === 1){
+        //         return (parseInt(item)-1).toString();
+        //     }
+        //     return item;
+        // }
+        // ).join("-");
         try {
-            console.log("------");
             let req =await fetch(`http://127.0.0.1:8000/data/getData?start_date=${start_date}&end_date=${end_date}`, {
                 method: "GET",
                 headers: {

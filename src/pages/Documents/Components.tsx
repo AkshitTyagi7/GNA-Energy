@@ -29,7 +29,7 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
     return (
       <div className="document-item">
         <div className="document-item-row">
-          <DocumentIcon width={"4vw"} />
+          {/* <DocumentIcon width={"vw"} /> */}
           <span className="document-title">{document.title}</span>
         </div>
   
@@ -37,14 +37,14 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
         <div className="document-item-row">
           <ViewIcon
             className="cursor-pointer"
-            width={"3vw"}
+            width={"35px"}
             onClick={() =>
               window.open(URL + "" + document.file, "_blank")
             }
           />
           <DownloadIcon
             className="cursor-pointer"
-            width={"3vw"}
+            width={"35px"}
             onClick={() => {
               downloadFile(
                 URL + "" + document.file,
@@ -52,7 +52,7 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
               );
             }}
           />
-          <Chat width={"2vw"} onClick={
+          <Chat width={"30px"} onClick={
             () => onChat(document)
           } />
         </div>

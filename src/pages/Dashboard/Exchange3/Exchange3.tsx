@@ -55,6 +55,7 @@ import {
 } from "../../../components/charts/ReCharts";
 import swal from "sweetalert";
 import { stat } from "fs";
+import { FilterExchangeData, FilterSortExchangeData } from "../../../store/state/Exchange/function";
 
 export function Exchange3() {
   const maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
@@ -172,7 +173,7 @@ export function Exchange3() {
       name: "Sell Bids",
     },
     {
-      dataKey: "prchs_bid_mw",
+      dataKey: "purchase_bid_mw",
       name: "Purchase Bids",
       unit: MEGA_POWER_UNIT,
     },
@@ -570,9 +571,8 @@ export function Exchange3() {
                                 syncId="byExchange"
 
                   data={
-                    state.Exchange.data.filter(
-                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-                    )                  }
+                  FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedExchange,  exchangeProductIndex:0 })
+                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -588,9 +588,7 @@ export function Exchange3() {
 
 
                   data={
-                    state.Exchange.data.filter(
-                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="GDAM"
-                    )                  }
+                   FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedExchange,  exchangeProductIndex:1 })    }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -605,9 +603,11 @@ export function Exchange3() {
                   syncId="byExchange"
 
                   data={
-state.Exchange.data.filter(
-  (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-)                  }
+// state.Exchange.data.filter(
+//   (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
+// )          
+FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedExchange,  exchangeProductIndex:2 })
+}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -622,9 +622,8 @@ state.Exchange.data.filter(
                   syncId="byExchange"
 
                   data={
-                    state.Exchange.data.filter(
-                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="RTM"
-                    )                  }
+                   FilterExchangeData(state.Exchange.data, {exchangeIndex:state.Exchange.selectedExchange ,  exchangeProductIndex: state.Exchange.selectedExchange})                
+                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -636,9 +635,8 @@ state.Exchange.data.filter(
               shownLegnends={[]}
               setShownLegends={function (legends: string[]): void {}}
               data={
-                state.Exchange.data.filter(
-                  (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-                )                  }
+                FilterExchangeData(state.Exchange.data, {exchangeIndex: 0,  exchangeProductIndex: state.Exchange.selectedExchange})                
+              }
               title="DAM"
               syncId="byExchange"
               height="6%"
@@ -656,9 +654,8 @@ state.Exchange.data.filter(
                   syncId="byProduct"
 
                   data={
-                    state.Exchange.data.filter(
-                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-                    )                  }
+                    FilterExchangeData(state.Exchange.data, {exchangeIndex: 0,  exchangeProductIndex: state.Exchange.selectedProduct})
+                              }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -673,9 +670,8 @@ state.Exchange.data.filter(
                   syncId="byProduct"
 
                   data={
-                    state.Exchange.data.filter(
-                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-                    )                  }
+                    FilterExchangeData(state.Exchange.data, {exchangeIndex: 1,  exchangeProductIndex: state.Exchange.selectedProduct})
+                  }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -690,9 +686,8 @@ state.Exchange.data.filter(
                   syncId="byProduct"
 
                   data={
-                    state.Exchange.data.filter(
-                      (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-                    )                  }
+                    FilterExchangeData(state.Exchange.data, {exchangeIndex: 2,  exchangeProductIndex: state.Exchange.selectedProduct})
+                              }
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -704,9 +699,10 @@ state.Exchange.data.filter(
               shownLegnends={[]}
               setShownLegends={function (legends: string[]): void {}}
               data={
-                state.Exchange.data.filter(
-                  (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-                )                  }
+                FilterExchangeData(
+                  state.Exchange.data, {exchangeIndex: 0,  exchangeProductIndex: state.Exchange.selectedProduct}
+                )
+                }
               title="DAM"
               syncId="byProduct"
               height="4%"
@@ -1738,7 +1734,7 @@ state.Exchange.data.filter(
           fontSize={15}
           brushStart={BrushStart.Start}
           data={data}
-          xDataKey="name"
+          xDataKey="time_slot"
           secondXDataKey="date"
           syncid="comparison"
           showBrush={true}
@@ -1766,87 +1762,77 @@ state.Exchange.data.filter(
 
 
       // let datesToFetch = Dates that are not in rawcomparison by comparing with start data 
-      let datesToFetch: Date[] = dates.filter(
-        (date) =>
-          !state.Exchange.comparisonRawData.find(
-            (item) => item.date_range.start_date === date.toLocaleDateString("en-GB").split("/").join("-")
-          )
-      );
+      // let datesToFetch: Date[] = dates.filter(
+      //   (date) =>
+      //     !state.Exchange.comparisonRawData.find(
+      //       (item) => item.date_range.start_date === date.toLocaleDateString("en-GB").split("/").join("-")
+      //     )
+      // );
       
       setComparisonLoading(true);
 
-      console.log("Dates to fetch", datesToFetch);
+      // console.log("Dates to fetch", datesToFetch);
       let apidata = [];
-if(datesToFetch.length<0){
-   return;
-}
-
-
+// if(datesToFetch.length<0){
+//    return;
+// }
       let compRawData = state.Exchange.comparisonRawData;
       // check if any date is removed from the date range by comparing with the raw data
-      if (dates.length <= compRawData.length) {
-
-        const comparisonData: ComparisonData[] = [];
-        let legends: LegendKey[] = [];
-        for (let i = 0; i < dates.length; i++) {
-          let data = {
-            iex: FormatExchangeData(compRawData[i].data.iex),
-            hpx: FormatExchangeData(compRawData[i].data.hpx),
-            pxil: FormatExchangeData(compRawData[i].data.pxil),
-          };
-          comparisonData.push({
-            date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-            data: data,
-          });
-          legends.push({
-            dataKey: `${Months[dates[i].getMonth()]}_${dates[i].getFullYear()}`,
-            name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-            stroke: getColorList(dates.length)[i],
-          });
-        }
-        setChartData({
-          data: reformatData(comparisonData),
-          legends: legends,
-        });
-        console.log(reformatData(comparisonData));
-        console.log("Comparison Data", compRawData);
-        setComparisonLoading(false);
-        return;
-      }
-      else{
-     const res=await fetch(buildUrl("all_exchange_multiple_api_range"), {
+  
+     const res=await fetch("http://127.0.0.1:8000/data/multipleDateRangeExchangeData/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({
-          dates: datesToFetch.map((e) => ({
-            start_date: e.toLocaleDateString("en-GB").split("/").join("-"),
+          dates: dates.map((e) => ({
+            start_date: e.toLocaleDateString("en-GB").split("/").reverse().join("-"),
             end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
               .toLocaleDateString("en-GB")
-              .split("/")
+              .split("/").reverse()
               .join("-"),
           })),
         }),
       })
        apidata = await res.json();
-       compRawData= state.Exchange.comparisonRawData.concat(apidata) as any;
-    }
+       apidata = apidata.data
+       compRawData= apidata as any;
           const comparisonData: ComparisonData[] = [];
           let legends: LegendKey[] = [];
           dispatch(setComparisonRawData(state.Exchange.comparisonRawData.concat(apidata) as any));
 
           for (let i = 0; i < compRawData.length; i++) {
             let data = {
-              iex: FormatExchangeData(compRawData[i].data.iex),
-              hpx: FormatExchangeData(compRawData[i].data.hpx),
-              pxil: FormatExchangeData(compRawData[i].data.pxil),
+              // iex: FormatExchangeData(compRawData[i].data.iex),
+              // hpx: FormatExchangeData(compRawData[i].data.hpx),
+              // pxil: FormatExchangeData(compRawData[i].data.pxil),
+              iex: {
+                dam: FilterSortExchangeData(compRawData[i].data, "IEX", "DAM"),
+                gdam: FilterSortExchangeData(compRawData[i].data, "IEX", "GDAM"),
+                hpdam: FilterSortExchangeData(compRawData[i].data, "IEX", "HPDAM"),
+                rtm: FilterSortExchangeData(compRawData[i].data, "IEX", "RTM"),
+              
+              },
+              hpx: {
+                dam: FilterSortExchangeData(compRawData[i].data, "HPX", "DAM"),
+                gdam: FilterSortExchangeData(compRawData[i].data, "HPX", "GDAM"),
+                hpdam: FilterSortExchangeData(compRawData[i].data, "HPX", "HPDAM"),
+                rtm: FilterSortExchangeData(compRawData[i].data, "HPX", "RTM"),
+              
+              },
+              pxil: {
+                dam: FilterSortExchangeData(compRawData[i].data, "PXIL", "DAM"),
+                gdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "GDAM"),
+                hpdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "HPDAM"),
+                rtm: FilterSortExchangeData(compRawData[i].data, "PXIL", "RTM"),
+              }
+
             };
             comparisonData.push({
               date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-              data: data,
-            });
+              data: data as any,
+            }); 
             legends.push({
               dataKey: `${Months[dates[i].getMonth()]}_${dates[
                 i

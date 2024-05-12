@@ -184,7 +184,7 @@ export function Documents() {
             </div>
             {state.filters.types?.map((type) => {
               return (
-                <div className="pl-6 mt-2">
+                <div className="pl-6 mt-2 doc-filter">
                   <span
                     onClick={() => {
                       if (selectedTypes.includes(type)) {
