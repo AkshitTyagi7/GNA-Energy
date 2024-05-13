@@ -474,7 +474,7 @@ export function ExchangeComparion() {
           setExchangeLoading(false);
           console.error("Error fetching data:", error);
           swal(
-            "Something Went Wrong",
+            "Please Try Again",
             "Error fetching Exchange Data. Please try again",
             "warning"
           );
@@ -483,8 +483,8 @@ export function ExchangeComparion() {
       setExchangeLoading(false);
       console.error("Error fetching data:", error);
       swal(
-        "Something Went Wrong",
-        "Error fetching Exchange Data. Please try again later",
+        "Please Try Again",
+        "Error fetching Exchange Data. ",
         "warning"
       );
     }

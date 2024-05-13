@@ -514,8 +514,8 @@ export function ExchangeComparion2() {
         return newLoadings;
       });
       swal(
-        "Something Went Wrong",
-        "Error fetching Exchange Data. Please try again later"
+        "Please Try Again",
+        "Error fetching Exchange Data. "
       );
     }
   }

@@ -227,11 +227,11 @@ try{
         setLoading(false);}
         catch(e){
             setLoading(false);
-           swal("Something went wrong", "Please try again later.", "warning");
+           swal("Please Try Again", ".", "warning");
         }
         //  }
         // else{
-        //     alert("Something went wrong, Please try again later");
+        //     alert("Please Try Again, ");
         // }
     }
 
