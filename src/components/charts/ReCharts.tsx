@@ -149,11 +149,13 @@ export function ReLineChart({
       <ResponsiveContainer height={"80%"}>
         <LineChart syncId={syncid} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={xDataKey} />
+          <XAxis               minTickGap={8}
+ dataKey={xDataKey} />
           {secondXDataKey !== undefined ? (
             <XAxis
               dataKey={secondXDataKey}
               axisLine={false}
+            
               tickLine={false}
               fontSize={12}
               interval={0}
