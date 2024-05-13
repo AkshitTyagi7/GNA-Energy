@@ -336,7 +336,7 @@ export function Documents() {
     dispatch(setTyping(false));
     scrollToBottom();   
     }).catch((e)=>{
-      swal("Please Try Again", "An error occured while sending message. Please try again later", "warning");
+      swal("Please Try Again", "An error occured while sending message. ", "warning");
       console.log(e);
     })
   }
@@ -362,7 +362,7 @@ export function Documents() {
         console.log(data);
         dispatch(setDocuments(data.data));
       }).catch((e)=>{
-        swal("Please Try Again", "An error occured while fetching documents. Please try again later", "warning");
+        swal("Please Try Again", "An error occured while fetching documents. ", "warning");
         console.log(e);
   })
   }
@@ -376,7 +376,7 @@ export function Documents() {
         console.log(data);
         dispatch(setDocumentFilters(data));
       }).catch((e)=>{
-        swal("Please Try Again", "An error occured while fetching filters. Please try again later", "warning");
+        swal("Please Try Again", "An error occured while fetching filters. ", "warning");
         console.log(e);
     })
   }

@@ -484,7 +484,7 @@ export function ExchangeComparion() {
       console.error("Error fetching data:", error);
       swal(
         "Please Try Again",
-        "Error fetching Exchange Data. Please try again later",
+        "Error fetching Exchange Data. ",
         "warning"
       );
     }

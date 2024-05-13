@@ -1543,7 +1543,7 @@ export function Exchange3() {
       console.error("Error fetching data:", error);
       swal(
         "Please Try Again",
-        "Error fetching Exchange Data. Please try again later",
+        "Error fetching Exchange Data. ",
         "warning"
       );
     }
@@ -1596,7 +1596,7 @@ export function Exchange3() {
       console.error("Error fetching data:", error);
       swal(
         "Please Try Again",
-        "Error fetching Real Time Data. Please try again later",
+        "Error fetching Real Time Data. ",
         "warning"
       );
     }
@@ -1646,7 +1646,7 @@ export function Exchange3() {
     } catch (e) {
       swal(
         "Please Try Again",
-        "Error fetching Buyer Seller Data. Please try again later",
+        "Error fetching Buyer Seller Data. ",
         "warning"
       );
       console.error("Error fetching data:", e);
@@ -1696,7 +1696,7 @@ export function Exchange3() {
     } catch (e) {
       swal(
         "Please Try Again",
-        "Error fetching Trend Data. Please try again later",
+        "Error fetching Trend Data. ",
         "warning"
       );
       console.error("Error fetching data:", e);
@@ -1885,7 +1885,7 @@ if(datesToFetch.length<0){
           console.error("Error fetching data:", error);
           swal(
             "Please Try Again",
-            "Error fetching Exchange Data. Please try again later",
+            "Error fetching Exchange Data. ",
             "warning"
           );
         }

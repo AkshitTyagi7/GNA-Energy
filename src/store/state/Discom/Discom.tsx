@@ -217,7 +217,7 @@ const DiscomSlice = createSlice({
         });
         builder.addCase(fetchDiscomData.rejected, (state) => {
             state.loading = false;
-            swal("Please Try Again", "Please try again later", "warning");
+            swal("Please Try Again", "", "warning");
             state.error = true;
         });
     }
