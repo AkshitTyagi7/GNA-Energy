@@ -1542,7 +1542,7 @@ export function Exchange3() {
     } catch (error) {
       console.error("Error fetching data:", error);
       swal(
-        "Something Went Wrong",
+        "Please Try Again",
         "Error fetching Exchange Data. Please try again later",
         "warning"
       );
@@ -1595,7 +1595,7 @@ export function Exchange3() {
     } catch (error) {
       console.error("Error fetching data:", error);
       swal(
-        "Something Went Wrong",
+        "Please Try Again",
         "Error fetching Real Time Data. Please try again later",
         "warning"
       );
@@ -1645,7 +1645,7 @@ export function Exchange3() {
       setBuyerSellerLoading(false);
     } catch (e) {
       swal(
-        "Something Went Wrong",
+        "Please Try Again",
         "Error fetching Buyer Seller Data. Please try again later",
         "warning"
       );
@@ -1695,7 +1695,7 @@ export function Exchange3() {
       setUtilityTrendLoading(false);
     } catch (e) {
       swal(
-        "Something Went Wrong",
+        "Please Try Again",
         "Error fetching Trend Data. Please try again later",
         "warning"
       );
@@ -1884,7 +1884,7 @@ if(datesToFetch.length<0){
         catch (error) {
           console.error("Error fetching data:", error);
           swal(
-            "Something Went Wrong",
+            "Please Try Again",
             "Error fetching Exchange Data. Please try again later",
             "warning"
           );

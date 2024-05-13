@@ -130,11 +130,11 @@ export function Login2() {
       setLoading(false);
     } catch (e) {
       setLoading(false);
-      swal("Something went wrong", "Please try again later.", "warning");
+      swal("Please Try Again", "Please try again later.", "warning");
     }
     //  }
     // else{
-    //     alert("Something went wrong, Please try again later");
+    //     alert("Please Try Again, Please try again later");
     // }
   }
 

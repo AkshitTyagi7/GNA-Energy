@@ -125,7 +125,7 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
         }
 
     }     catch(err){
-        swal("Oops !",`Something went wrong. If the issue persist please send a mail to ${mail}`,"warning" )
+        swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
 
 
         return false;
@@ -158,7 +158,7 @@ async function CheckAccess(pageName: string): Promise<boolean> {
     }
 
 }     catch(err){
-    swal("Oops !",`Something went wrong. If the issue persist please send a mail to ${mail}`,"warning" )
+    swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
 
 
     return false;
