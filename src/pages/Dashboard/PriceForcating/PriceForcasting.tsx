@@ -15,7 +15,7 @@ import {
 } from "recharts";
 import { renderQuarterTick } from "../Exchange2/FormatData";
 import { COST, COST_UNIT } from "../../../Units";
-import { ReLineChart } from "../../../components/charts/ReCharts";
+import { ReLineChart } from "../../../components/recharts/ReCharts";
 
 interface PriceForecastingData {
   name: string;
@@ -102,7 +102,7 @@ export function PriceForecasting() {
             onClick={(e) => {
               if (shownForecast.includes(e.value)) {
                 setShownForecast(
-                  shownForecast.filter((item) => item != e.value)
+                  shownForecast.filter((item) => item !== e.value)
                 );
               } else {
                 setShownForecast([...shownForecast, e.value]);
@@ -164,12 +164,12 @@ export function PriceForecasting() {
           <XAxis dataKey="name" />
           <Brush
             startIndex={
-              forecateData != null && forecateData.length > 96
+              forecateData !== null && forecateData.length > 96
                 ? forecateData.length - 96
                 : 0
             }
             endIndex={
-              forecateData != null && forecateData.length > 96
+              forecateData !== null && forecateData.length > 96
                 ? forecateData.length - 1
                 : 0
             }

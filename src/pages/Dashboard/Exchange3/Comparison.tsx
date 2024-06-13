@@ -38,13 +38,11 @@ import Loading, { LoadingItem } from "../../../components/Loading";
 import swal from "sweetalert";
 import Select from "react-select";
 import {
-  BrushStart,
-  LegendKey,
   ReBarChart,
   ReLineChart,
-  getColorList,
-} from "../../../components/charts/ReCharts";
+} from "../../../components/recharts/ReCharts";
 import { Legend } from "chart.js/dist";
+import { BrushStart, LegendKey, getColorList } from "../../../models/chart_model";
 export function ExchangeComparion() {
   const [startDate, setStartDate] = useState(
     new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
@@ -243,7 +241,7 @@ export function ExchangeComparion() {
       >
         <LoadingItem />
       </div>
-      <div className={state.page != 3 ? "content2-padding-body" : ""}>
+      <div className={state.page !== 3 ? "content2-padding-body" : ""}>
         {/* Filters */}
         {getActivateFilter(false) && (
           <div className="filters">

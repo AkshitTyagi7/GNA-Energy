@@ -1,5 +1,4 @@
 import { PowerAtlas } from "./pages/Dashboard/Atlas/Atlas";
-import AnalysisTable from "./pages/Dashboard/AttributeAnalysis/attributteAnalysis/AnalysisTable";
 import Exchange from "./pages/Dashboard/Exchange/Exchange";
 import { BankingAnalytics } from "./pages/Dashboard/BankingAnalytics/BankingAalytics";
 import { ConsumptionAnalytics } from "./pages/Dashboard/Consumption/Consumption";
@@ -56,10 +55,6 @@ export const DashboardRoutes=[
         element:<PowerAtlas />
     },
 
-    {
-        path:"attributeAnalysis",
-        element:<AnalysisTable />
-    },
     {
         path:"exchange-comparison",
         element:<ExchangeComparion />,

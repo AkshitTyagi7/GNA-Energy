@@ -20,9 +20,15 @@ import {
 import { COST_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { PrimaryColor, SecondaryColor, QuaternaryColor } from "../../../common";
 import { BuyerSellerData } from "./FormatData";
-import { UtilizationTrend, UtilizationTrendData, UtilizationTrendElement, UtilizationTrendMCP } from "../../../store/state/BuyerSellerState";
+import {
+  UtilizationTrend,
+  UtilizationTrendData,
+  UtilizationTrendElement,
+  UtilizationTrendMCP,
+} from "../../../store/state/BuyerSellerState";
 import React from "react";
-import { BrushStart, COLORS } from "../../../components/charts/ReCharts";
+import { COLORS } from "../../../components/recharts/ReCharts";
+import { BrushStart } from "../../../models/chart_model";
 export const AxisLabel = ({
   axisType,
   x,
@@ -49,8 +55,6 @@ export const AxisLabel = ({
   );
 };
 
-
-
 export const renderQuarterTick = (tickProps: any) => {
   const { x, y, payload } = tickProps;
   const { index, value, offset } = payload;
@@ -69,7 +73,7 @@ export const renderQuarterTick = (tickProps: any) => {
   }
 };
 
-export const ExchangeChart =  ({
+export const ExchangeChart = ({
   showBrush = false,
   title,
   data,
@@ -79,7 +83,9 @@ export const ExchangeChart =  ({
   onlyBrush = false,
   brushStart = BrushStart.End,
   setShownLegends,
-  shownLegnends=[],
+  onBarClick,
+
+  shownLegnends = [],
 }: {
   showBrush?: boolean;
   onlyBrush?: boolean;
@@ -91,17 +97,26 @@ export const ExchangeChart =  ({
   width?: string;
   brushStart?: BrushStart;
   syncId?: string;
-})=>( <>
-    {!onlyBrush && <h2 className="text-center text-xl m-2 " style={{
-      color: SecondaryColor
-    }}>{title}</h2>}
+  onBarClick?: (e: any) => void;
+}) => (
+  <>
+    {!onlyBrush && (
+      <h2
+        className="text-center text-xl m-2 "
+        style={{
+          color: SecondaryColor,
+        }}
+      >
+        {title}
+      </h2>
+    )}
     <ResponsiveContainer width={width} height={height}>
       <ComposedChart syncId={syncId} data={data} margin={{}}>
         {!onlyBrush && (
           <>
             <CartesianGrid strokeDasharray="4 2" />
 
-            <XAxis dataKey="name" fontSize={12} />
+            <XAxis dataKey="time_slot" fontSize={12} />
             <XAxis
               dataKey="date"
               axisLine={false}
@@ -112,35 +127,23 @@ export const ExchangeChart =  ({
               height={20}
               xAxisId="quarter"
             />
-            <YAxis
-              fontSize={12}
-              width={37}
-            >
+            <YAxis fontSize={12} width={37}>
               <Label
                 value={COST_UNIT}
                 fontSize={13}
-
                 angle={-90}
                 position="insideLeft"
                 style={{ textAnchor: "middle" }}
               />
-          
-
             </YAxis>
             {/* <YAxis name="MW" label={"MW"} width={0} /> */}
 
-            <YAxis
-              yAxisId="right"
-              fontSize={11}
-              orientation="right"
-              width={68}
-            >
-      <Label
+            <YAxis yAxisId="right" fontSize={11} orientation="right" width={68}>
+              <Label
                 value={"MW"}
                 fontSize={13}
                 angle={-90}
                 position="insideRight"
-
                 style={{ textAnchor: "middle" }}
               />
             </YAxis>
@@ -148,7 +151,6 @@ export const ExchangeChart =  ({
             {/* <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={0} /> */}
 
             <Tooltip
-            
               labelFormatter={(value, payload) => {
                 try {
                   return [`${payload[0].payload.date} - Time Slot ${value}`];
@@ -157,39 +159,51 @@ export const ExchangeChart =  ({
                 }
               }}
               formatter={(value, name, props) => {
-                let val = parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                let val = parseFloat(value.toString())
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 if (val === "NaN") {
-                  val="";
+                  val = "";
                 }
                 if (name === "Weighted Average Price") {
-                  return [
-                    val,
-                    name.toString().concat(`(${COST_UNIT})`),
-                  ];
+                  return [val, name.toString().concat(`(${COST_UNIT})`)];
                 }
                 return [val, name];
               }}
             />
 
-<Bar
-  dataKey="mcv_mw"
-  fill={"#DEDFDF"}
-  hide={!shownLegnends.includes(`MCV (${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
-  name={`MCV (${MEGA_POWER_UNIT})`}
-  yAxisId="right"
-  radius={[4, 4, 0, 0]}
-  isAnimationActive={false}
-/>
-
+            <Bar
+              dataKey="mcv_mw"
+              fill={"#DEDFDF"}
+              onClick={(e) => {
+                console.log("Bar Clicked", e);
+                onBarClick && onBarClick(e);
+              }}
+              hide={
+                !shownLegnends.includes(`MCV (${MEGA_POWER_UNIT})`) &&
+                shownLegnends.length > 0
+              }
+              name={`MCV (${MEGA_POWER_UNIT})`}
+              yAxisId="right"
+              radius={[4, 4, 0, 0]}
+              isAnimationActive={false}
+            />
           </>
         )}
         <Line
           dot={false}
-          strokeWidth={onlyBrush ? 0 :2}
-          hide={!shownLegnends.includes(`Sell Bids(${MEGA_POWER_UNIT})`) && shownLegnends.length > 0}
+          strokeWidth={onlyBrush ? 0 : 2}
+          hide={
+            !shownLegnends.includes(`Sell Bids(${MEGA_POWER_UNIT})`) &&
+            shownLegnends.length > 0
+          }
           yAxisId="right"
           dataKey="sell_bid_mw"
-          
+          onClick={(e) => {
+            console.log("Line Clicked", e);
+            onBarClick && onBarClick(e);
+          }}
           stroke={SecondaryColor}
           isAnimationActive={false}
           color={SecondaryColor}
@@ -197,66 +211,84 @@ export const ExchangeChart =  ({
           name={`Sell Bids(${MEGA_POWER_UNIT})`}
         />
 
-
-                <Line
-      dot={false}
-      strokeWidth={onlyBrush ? 0 :2}
-      yAxisId="right"
-      hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
-      style={{
-        display: onlyBrush ? "none" : "block",
-      }}
-      dataKey="prchs_bid_mw"
-      stroke={"#333333"}
-      isAnimationActive={false}
-      color={"#333333"}
-      fill={"#333333"}
-      name={`Purchase Bids(${MEGA_POWER_UNIT})`}
-    />
-            <Line
-              dot={false}
-              strokeWidth={onlyBrush ? 0 : 2}
-              dataKey="wt_mcp_rs_mwh"
-              hide={!shownLegnends.includes(`Price(${COST_UNIT})`) && shownLegnends.length > 0}
-              name={`Price(${COST_UNIT})`}
-
-              stroke={PrimaryColor}
-              isAnimationActive={false}
-              color={PrimaryColor}
-              fill={PrimaryColor}
-            />
+        <Line
+          dot={false}
+          strokeWidth={onlyBrush ? 0 : 2}
+          yAxisId="right"
+          // hide={!shownLegnends.includes("Purchase Bids(MW)") && shownLegnends.length > 0}
+          style={{
+            display: onlyBrush ? "none" : "block",
+          }}
+          onClick={(e) => {
+            console.log("Line Clicked", e);
+            onBarClick && onBarClick(e);
+          }}
+          dataKey="purchase_bid_mw"
+          stroke={"#333333"}
+          isAnimationActive={false}
+          color={"#333333"}
+          fill={"#333333"}
+          name={`Purchase Bids(${MEGA_POWER_UNIT})`}
+        />
+        <Line
+          dot={false}
+          strokeWidth={onlyBrush ? 0 : 2}
+          dataKey="wt_mcp_rs_mwh"
+          hide={
+            !shownLegnends.includes(`Price(${COST_UNIT})`) &&
+            shownLegnends.length > 0
+          }
+          
+          name={`Price(${COST_UNIT})`}
+          stroke={PrimaryColor}
+          isAnimationActive={false}
+          color={PrimaryColor}
+          fill={PrimaryColor}
+        />
 
         {showBrush ? (
           <Brush
-          startIndex={data != null &&
-                
-            brushStart === BrushStart.Start ? 0 : data.length > 96 ? data.length - 96 : 0} 
-          endIndex={data != null &&
-            brushStart === BrushStart.Start ? 96 :
-            
-            data.length > 96 ? data.length - 1 : 0}            fontSize={"20px"}
-            
+            startIndex={
+              data !== null && brushStart === BrushStart.Start
+                ? 0
+                : data.length > 96
+                ? data.length - 96
+                : 0
+            }
+            endIndex={
+              data !== null && brushStart === BrushStart.Start
+                ? 96
+                : data.length > 96
+                ? data.length - 1
+                : 0
+            }
+            fontSize={"20px"}
             dataKey="date"
             height={40}
             fillOpacity={1}
-            color=
-            {PrimaryColor}
+            color={PrimaryColor}
             stopColor="red"
             floodColor={PrimaryColor}
-            style={{margin: "20px", fontSize:"0px"}}
-
+            style={{ margin: "20px", fontSize: "0px" }}
             fill={"white"}
             stroke={PrimaryColor}
           />
         ) : (
           <Brush
-          startIndex={data != null &&
-                
-            brushStart === BrushStart.Start ? 0 : data.length > 96 ? data.length - 96 : 0} 
-          endIndex={data != null &&
-            brushStart === BrushStart.Start ? 96 :
-            
-            data.length > 96 ? data.length - 1 : 0}
+            startIndex={
+              data !== null && brushStart === BrushStart.Start
+                ? 0
+                : data.length > 96
+                ? data.length - 96
+                : 0
+            }
+            endIndex={
+              data !== null && brushStart === BrushStart.Start
+                ? 96
+                : data.length > 96
+                ? data.length - 1
+                : 0
+            }
             dataKey="date"
             height={0}
             stroke={PrimaryColor}
@@ -264,195 +296,270 @@ export const ExchangeChart =  ({
         )}
       </ComposedChart>
     </ResponsiveContainer>
-  </>)
+  </>
+);
 
+export const BuyerSellerChart = ({
+  data,
+  showLegend,
+}: {
+  data: any[];
+  showLegend: boolean;
+}) => {
+  return (
+    <ResponsiveContainer>
+      <BarChart
+        layout="vertical"
+        barCategoryGap={2}
+        barGap={2}
+        data={data}
+        // syncId={"buyerSeller"}
+      >
+        <YAxis
+          height={0}
+          minTickGap={10}
+          axisLine={false}
+          tickLine={false}
+          allowDataOverflow={false}
+          fontSize={13}
+          width={140}
+          dataKey="name"
+          type="category"
+        ></YAxis>
+        <XAxis
+          width={110}
+          height={0}
+          type="number"
+          tickFormatter={(value) => {
+            return "";
+          }}
+        >
+          <Label
+            // value="MWh"
+            angle={-90}
+            position="insideLeft"
+            style={{ textAnchor: "middle" }}
+          />
+        </XAxis>
+        <Tooltip
+          formatter={(value, name, props) => {
+            return [
+              parseFloat(value.toString())
+                .toFixed(2)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh",
+            ];
+          }}
+        />
+        {/* <Legend verticalAlign="top" /> */}
 
-export const BuyerSellerChart = ({data, showLegend}:{data: BuyerSellerData[], showLegend: boolean}) => {
-return <ResponsiveContainer 
->
-           <BarChart
-               layout="vertical"
-               barCategoryGap={2} barGap={2}
-          data={data}
-          // syncId={"buyerSeller"}
-          >
-            
-            <YAxis  height={0} minTickGap={10} axisLine={false}  tickLine={false} allowDataOverflow={false} fontSize={13}  width={140} dataKey="name" type="category" >
-         
-
-       
-            </YAxis>
-            <XAxis width={110} height={0} type="number" tickFormatter={
-              (value) => {
+        <Bar
+          radius={4}
+          dataKey={"value"}
+          barSize={40}
+          color="white"
+          fill={SecondaryColor}
+        >
+          <LabelList
+            fontSize={14}
+            fill="white"
+            fontWeight={300}
+            formatter={(value: any) => {
+              // convert value to k by dividing by 1000
+              if (parseFloat(value) < 10000) {
                 return "";
               }
-            
-            }>
-              
-              <Label
-                // value="MWh"
-                angle={-90}
-                position="insideLeft"
-                style={{ textAnchor: "middle" }} />
-            </XAxis >
-            <Tooltip
-            formatter={
-              (value, name, props) => {
-                return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
-              }
-            }
-         
-            />
-            {/* <Legend verticalAlign="top" /> */}
-     
-          <Bar radius={4}  dataKey={"value"} barSize={40}  color="white"     fill={SecondaryColor}  >
-          <LabelList fontSize={14} fill="white" fontWeight={300} formatter={
-            (value: any) => {
-              // convert value to k by dividing by 1000
-              if(parseFloat(value) < 10000){return ""}
-              return (parseFloat(value)/1000).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "k MWh"; }
-          
-          } dataKey="value" position="center" ></LabelList>
-
-          </Bar>
-
-            
-          </BarChart>
-</ResponsiveContainer>
+              return (
+                (parseFloat(value) / 1000)
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "k MWh"
+              );
+            }}
+            dataKey="value"
+            position="center"
+          ></LabelList>
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  );
 };
-const PIECOLORS = [
-  '#34656D', '#F1935C','#7CB5EC' , '#333333', '#B8860B',
-  ];
-
+const PIECOLORS = ["#34656D", "#F1935C", "#7CB5EC", "#333333", "#B8860B"];
 
 const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: { cx: number, cy: number, midAngle: number, innerRadius: number, outerRadius: number, percent: number, index: number }) => {
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}: {
+  cx: number;
+  cy: number;
+  midAngle: number;
+  innerRadius: number;
+  outerRadius: number;
+  percent: number;
+  index: number;
+}) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
-    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-      {` ${percent > 0.15 ? (percent * 100).toFixed(0) +"%" : ""}`}
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+    >
+      {` ${percent > 0.15 ? (percent * 100).toFixed(0) + "%" : ""}`}
     </text>
   );
 };
-export const BuyerSellerPieChart = ({data}:{data: BuyerSellerData[]}) => {
-  return <ResponsiveContainer>
-    <PieChart
-    data={data}
-    
-    >
-      <Tooltip
-      formatter={
-        (value, name, props) => {
-          return [ parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh", name];
-        }
-      }
-      />
-      <Pie 
-      isAnimationActive={true}
-      animationDuration={500}
-      animationBegin={0}
-      
-                  label={renderCustomizedLabel}
-                  labelLine={false}
-
-            data={data} dataKey="value" nameKey="name"  >
-
-{data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[
-                index > COLORS.length - 1 ? index - COLORS.length : index
-              ]} />
-            ))}
-            </Pie>
-    </PieChart>
-  </ResponsiveContainer>
+export const BuyerSellerPieChart = ({ data }: { data: BuyerSellerData[] }) => {
+  return (
+    <ResponsiveContainer>
+      <PieChart data={data}>
+        <Tooltip
+          formatter={(value, name, props) => {
+            return [
+              parseFloat(value.toString())
+                .toFixed(2)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh",
+              name,
+            ];
+          }}
+        />
+        <Pie
+          isAnimationActive={true}
+          animationDuration={500}
+          animationBegin={0}
+          label={renderCustomizedLabel}
+          labelLine={false}
+          data={data}
+          dataKey="value"
+          nameKey="name"
+        >
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={
+                COLORS[
+                  index > COLORS.length - 1 ? index - COLORS.length : index
+                ]
+              }
+            />
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
+  );
 };
 
-export const UtilizationTrendChart= ({data,mcp, legends}:{data: UtilizationTrendElement[],mcp: UtilizationTrendMCP[], legends: {name: string}[]}) => {
-  return <ResponsiveContainer>
-    <ComposedChart syncId={"utilizationChart"} data={
-      // Add the mcp data to the data
+export const UtilizationTrendChart = ({
+  data,
+  mcp,
+  legends,
+}: {
+  data: UtilizationTrendElement[];
+  mcp: UtilizationTrendMCP[];
+  legends: { name: string }[];
+}) => {
+  return (
+    <ResponsiveContainer>
+      <ComposedChart
+        syncId={"utilizationChart"}
+        data={
+          // Add the mcp data to the data
 
-      data.map((element, index) => {
-        let mcpElement = mcp[index];
-        if (mcpElement) {
-          return {
-            ...element,
-            wt_mcp: mcpElement.wt_mcp,
-          };
+          data.map((element, index) => {
+            let mcpElement = mcp[index];
+            if (mcpElement) {
+              return {
+                ...element,
+                wt_mcp: mcpElement.wt_mcp,
+              };
+            }
+            return element;
+          })
         }
-        return element;
-      })
-    }>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-            <YAxis
-              fontSize={13}
-              width={37}
-            >
-              <Label
-                value={COST_UNIT}
-                fontSize={15}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis fontSize={13} width={37}>
+          <Label
+            value={COST_UNIT}
+            fontSize={15}
+            angle={-90}
+            position="insideLeft"
+            style={{ textAnchor: "middle" }}
+          />
+        </YAxis>
+        {/* <YAxis name="MW" label={"MW"} width={0} /> */}
 
-                angle={-90}
-                position="insideLeft"
-                style={{ textAnchor: "middle" }}
-              />
-          
+        <YAxis yAxisId="right" fontSize={13} orientation="right" width={68}>
+          <Label
+            value={"MWh"}
+            fontSize={15}
+            angle={-90}
+            position="insideRight"
+            style={{ textAnchor: "middle" }}
+          />
+        </YAxis>
 
-            </YAxis>
-            {/* <YAxis name="MW" label={"MW"} width={0} /> */}
+        <YAxis yAxisId="right" orientation="right" />
+        <Tooltip
+          formatter={(value, name, props) => {
+            if (name === "wt_mcp") {
+              return [
+                parseFloat(value.toString())
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh",
+              ];
+            }
+            return [
+              name +
+                " : " +
+                parseFloat(value.toString())
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
+                " MWh",
+            ];
+          }}
+        />
 
-            <YAxis
+        <Bar
+          dataKey="wt_mcp"
+          fill={"#DEDFDF"}
+          name={`MCP (${COST_UNIT})`}
+          radius={[4, 4, 0, 0]}
+          maxBarSize={30}
+        />
+        {legends.map((legend, index) => {
+          return (
+            <Line
               yAxisId="right"
-              fontSize={13}
-              orientation="right"
-              width={68}
-            >
-      <Label
-                value={"MWh"}
-                fontSize={15}
-                angle={-90}
-                position="insideRight"
-
-                style={{ textAnchor: "middle" }}
-              />
-            </YAxis>
-
-      <YAxis yAxisId="right" orientation="right" />
-      <Tooltip 
-      formatter={
-        (value, name, props) => {
-          if (name === "wt_mcp") {
-            return [parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
-          }
-          return [name + " : "  + parseFloat(value.toString()).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " MWh"];
-        }
-      }
-      />
-
-<Bar
-  dataKey="wt_mcp"
-  fill={"#DEDFDF"}
-  name={`MCP (${COST_UNIT})`}
-  radius={[4, 4, 0, 0]}
-  maxBarSize={30}
-/>
-      {
-        legends.map((legend, index) => {
-          return <Line
-          yAxisId="right"
-
-          key={index} type="monotone" dataKey={legend.name} stroke={
-            COLORS[
-              index > COLORS.length - 1 ? index - COLORS.length : index
-            ]
-          }  dot={false} strokeWidth={2}  />
-        })
-      }
-
-    </ComposedChart>
-  </ResponsiveContainer>
-}
+              key={index}
+              type="monotone"
+              dataKey={legend.name}
+              stroke={
+                COLORS[
+                  index > COLORS.length - 1 ? index - COLORS.length : index
+                ]
+              }
+              dot={false}
+              strokeWidth={2}
+            />
+          );
+        })}
+      </ComposedChart>
+    </ResponsiveContainer>
+  );
+};

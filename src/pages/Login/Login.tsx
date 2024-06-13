@@ -312,15 +312,12 @@ try{
                                         }
                                     }
                                     handleOnChange(parseInt(e.target.value), index);
-
                                 }
                             } />
                         )
                     })
 
                 }
-
-
             </div>
         )
 

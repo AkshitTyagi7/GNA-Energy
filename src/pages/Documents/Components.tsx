@@ -28,23 +28,23 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
 
     return (
       <div className="document-item">
-        <div className="document-item-row">
-          <DocumentIcon width={"4vw"} />
-          <span className="document-title">{document.title}</span>
+        <div className="document-item-row document-title">
+          {/* <DocumentIcon width={"vw"} /> */}
+          <span className="document-text ">{document.title}</span>
         </div>
   
-        <p className="document-date">{document.documentDate}</p>
+        <p className="document-text ">{document.documentDate}</p>
         <div className="document-item-row">
           <ViewIcon
             className="cursor-pointer"
-            width={"3vw"}
+            width={"24px"}
             onClick={() =>
               window.open(URL + "" + document.file, "_blank")
             }
           />
           <DownloadIcon
             className="cursor-pointer"
-            width={"3vw"}
+            width={"24px"}
             onClick={() => {
               downloadFile(
                 URL + "" + document.file,
@@ -52,7 +52,7 @@ export const DocItem = ({ document, onChat }: { document: DocumentModel, onChat:
               );
             }}
           />
-          <Chat width={"2vw"} onClick={
+          <Chat width={"30px"} onClick={
             () => onChat(document)
           } />
         </div>
@@ -142,8 +142,8 @@ function formatMessage(message : string) : string {
   }
 
   export function FilterHeading({heading} : {heading : string}){
-    return   <div className="flex space-x-2" style={{fontWeight: 500}}>
-    <DownIcon width="18px" />
+    return   <div className="flex space-x-2" style={{fontWeight: 300}}>
+    {/* <DownIcon width="18px" /> */}
     <p className="">{heading}</p>
   </div>
   }

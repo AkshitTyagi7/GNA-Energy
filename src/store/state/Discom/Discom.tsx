@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getUser } from "../../../pages/Protected";
-import { DISCOM_DEMO_DATA } from "./DemoData";
 import swal from "sweetalert";
 
 export interface TableRecord {

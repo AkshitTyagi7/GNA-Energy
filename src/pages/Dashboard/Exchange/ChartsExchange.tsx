@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './Exchange.css'
 import { Line } from "react-chartjs-2";
-import { BarChart, LineChart, MixChart, RawLineChart } from "../../../components/charts/Charts";
+import { BarChart, LineChart, MixChart, RawLineChart } from "../../../components/chartjs/Charts";
 import { RealTimeData } from "./DemoData";
-import GetChartOptions from "../../../components/charts/data/GetChartOption";
+import GetChartOptions from "../../../components/chartjs/data/GetChartOption";
 import { title } from "process";
 import { MediumButton, SmallButton } from "../../../components/Button";
 import { DemoExchangeData } from "./DemoExchangeData";
