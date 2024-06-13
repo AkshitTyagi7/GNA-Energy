@@ -4,8 +4,8 @@
 }
 .header-side-area{
     display: flex;
+    gap: 20px;
 
-    gap: 32px;
 }
 .header{
     display: flex;
@@ -40,7 +40,7 @@
 }
 
 .date-selection{
-    width:340px ;
+    min-width:340px ;
     height: 40px;
     display: flex;
     color: #9F9F9F;
@@ -483,7 +483,6 @@ font-size: 20px;
   }
 
   .header-tab-selection{
-    min-width: 719px;
   }
 
   .header-side-area .css-dvg3yj-ValueContainer{

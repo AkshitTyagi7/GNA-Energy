@@ -48,5 +48,7 @@ export interface ChartArguements {
     showBrush?: boolean;
     brushHeight?: number;
     brushStart?: BrushStart;
+    secondYAxisLabel?: string;
+
   }
 

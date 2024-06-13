@@ -16,7 +16,7 @@ const fetchExchangeData = createAsyncThunk(
         start_date = start_date.split("-").reverse().join("-");
         end_date = end_date.split("-").reverse().join("-");
         try {
-            let req =await fetch(`http://65.0.32.153:8000/data/getData?start_date=${start_date}&end_date=${end_date}`, {
+            let req =await fetch(`https://api-data.gna.energy/data/getData?start_date=${start_date}&end_date=${end_date}`, {
                 method: "GET",
                 headers: {
                 },

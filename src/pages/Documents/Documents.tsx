@@ -28,13 +28,14 @@ import { DocItem, UserChat, Role, FilterHeading } from "./Components";
 import { getUser } from "../Protected";
 import swal from "sweetalert";
 import { sep } from "path";
-export const DOC_URL = "https://assistant.gna.energy/";
+const URL = "https://assistant.gna.energy/";
+
+export const DOC_URL = URL;
 
 export function Documents() {
   const state = useSelector((state: RootState) => state.document);
   const chatAreaRef = useRef<HTMLDivElement>(null);
-  const URL = "https://assistant.gna.energy/";
-  // const URL = "http://65.0.32.153:8000/";
+  // const URL = "http://127.0.0.1:8000/";
 
   const dispatch = useDispatch();
   useEffect(() => {

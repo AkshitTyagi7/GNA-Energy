@@ -21,6 +21,7 @@ import {
 } from "../../models/chart_model";
 import { COLORS } from "./ReCharts";
 import { YAxisFormatter, renderQuarterTick } from "./components";
+import { COST_UNIT } from "../../Units";
 
 const getLegendColor = (legend: LegendKey, index: number, selectedLegends: LegendKey[]): string => {
   const isSelected =
@@ -59,6 +60,7 @@ export function ReMixChart({
   unit,
   xDataKey,
   yAxisLabel,
+  secondYAxisLabel,
   yAxisWidth,
   secondXDataKey,
   showBrush = false,
@@ -140,7 +142,15 @@ export function ReMixChart({
               style={{ textAnchor: "middle" }}
             />
           </YAxis>
-          <YAxis yAxisId="right" orientation="right" />
+          <YAxis yAxisId="right" orientation="right" >
+          <Label
+              fontSize={fontSize}
+              value={secondYAxisLabel}
+              angle={-90}
+              style={{ textAnchor: "middle" }}
+            />
+
+          </YAxis>
           {showBrush && (
             <Brush
               dataKey={xDataKey}
@@ -166,7 +176,7 @@ export function ReMixChart({
               `${parseFloat(value.toString())
                 .toFixed(2)
                 .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${unit}`
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${name.toString().includes("Price") ? COST_UNIT : unit}`
             }
           />
 

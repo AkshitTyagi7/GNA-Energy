@@ -7,6 +7,7 @@ import { SearchBox } from "../../../components/Search";
 import { Exchanges_data } from "./Data/Exchanges_data";
 import { EntityData } from "./Data/Entity_data";
 import Loading from "../../../components/Loading";
+import { COST_UNIT } from "../../../Units";
 
 export function EntityPage() {
   const [chartData, setChartData] = useState<ReChartData[]>([]);
@@ -129,6 +130,8 @@ export function EntityPage() {
         data={chartData}
         xDataKey="slot"
         unit="MW"
+        secondYAxisLabel={COST_UNIT}
+        yAxisLabel="MW"
         legends={[
           {
             name: "Weighted Price",

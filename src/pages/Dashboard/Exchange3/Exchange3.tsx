@@ -1610,7 +1610,7 @@ export function Exchange3() {
   }) {
     setExchangeLoading(true);
 
-    const res = await fetch("http://65.0.32.153:8000/data/getTopBuySellData/", {
+    const res = await fetch("https://api-data.gna.energy/data/getTopBuySellData/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1914,7 +1914,7 @@ export function Exchange3() {
       // check if any date is removed from the date range by comparing with the raw data
 
       const res = await fetch(
-        "http://65.0.32.153:8000/data/multipleDateRangeExchangeData/",
+        "https://api-data.gna.energy/data/multipleDateRangeExchangeData/",
         {
           method: "POST",
           headers: {
@@ -1948,50 +1948,38 @@ export function Exchange3() {
         )
       );
 
-      for (let i = 0; i < compRawData.length; i++) {
-        let data = {
-          iex: {
-            dam: FilterSortExchangeData(compRawData[i].data, "IEX", "DAM"),
-            gdam: FilterSortExchangeData(compRawData[i].data, "IEX", "GDAM"),
-            hpdam: FilterSortExchangeData(compRawData[i].data, "IEX", "HPDAM"),
-            rtm: FilterSortExchangeData(compRawData[i].data, "IEX", "RTM"),
-          },
-          hpx: {
-            dam: FilterSortExchangeData(compRawData[i].data, "HPX", "DAM"),
-            gdam: FilterSortExchangeData(compRawData[i].data, "HPX", "GDAM"),
-            hpdam: FilterSortExchangeData(compRawData[i].data, "HPX", "HPDAM"),
-            rtm: FilterSortExchangeData(compRawData[i].data, "HPX", "RTM"),
-          },
-          pxil: {
-            dam: FilterSortExchangeData(compRawData[i].data, "PXIL", "DAM"),
-            gdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "GDAM"),
-            hpdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "HPDAM"),
-            rtm: FilterSortExchangeData(compRawData[i].data, "PXIL", "RTM"),
-          },
-        };
-        comparisonData.push({
-          date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-          data: data as any,
-        });
-        legends.push({
-          dataKey: `${Months[dates[i].getMonth()]}_${dates[i].getFullYear()}`,
-          name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-          stroke: getColorList(dates.length)[i],
-        });
-      }
-      setChartData({
-        data: reformatData(comparisonData),
-        legends: legends,
-      });
-      setComparisonLoading(false);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      swal(
-        "Something Went Wrong",
-        "Error fetching Exchange Data. Please try again later",
-        "warning"
-      );
-    }
+          for (let i = 0; i < compRawData.length; i++) {
+            let data = {
+              iex: FormatExchangeData(compRawData[i].data.iex),
+              hpx: FormatExchangeData(compRawData[i].data.hpx),
+              pxil: FormatExchangeData(compRawData[i].data.pxil),
+            };
+            comparisonData.push({
+              date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+              data: data,
+            });
+            legends.push({
+              dataKey: `${Months[dates[i].getMonth()]}_${dates[
+                i
+              ].getFullYear()}`,
+              name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+              stroke: getColorList(dates.length)[i],
+            });
+          }
+          setChartData({
+            data: reformatData(comparisonData),
+            legends: legends,
+          });
+          setComparisonLoading(false);
+        }
+        catch (error) {
+          console.error("Error fetching data:", error);
+          swal(
+            "Something Went Wrong",
+            "Error fetching Exchange Data. Please try again later",
+            "warning"
+          );
+        }
   }
 
   function convertWeightedAverage({

@@ -18,7 +18,7 @@ export async function getEntityComparisont({
     
 > {
 
-    const response = await fetch("http://65.0.32.153:8000/data/getSlotWiseAggregatedEntityData/", {
+    const response = await fetch("https://api-data.gna.energy/data/getSlotWiseAggregatedEntityData/", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ export async function getEntityComparisont({
 }
 
 export async function getEntitys(){
-    const response = await fetch("http://65.0.32.153:8000/data/getEntitys", {
+    const response = await fetch("https://api-data.gna.energy/data/getEntitys", {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
