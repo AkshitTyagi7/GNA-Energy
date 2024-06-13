@@ -1,8 +1,8 @@
 import { Text } from "recharts";
 import { PrimaryColor, QuaternaryColor, SecondaryColor } from "../../../common";
 import { format } from "path";
-import { ReChartData } from "../../../components/charts/ReCharts";
 import { ExchangeStateData } from "../../../store/state/Exchange/interface";
+import { ReChartData } from "../../../models/chart_model";
 
 
 export interface ExchngeItem{

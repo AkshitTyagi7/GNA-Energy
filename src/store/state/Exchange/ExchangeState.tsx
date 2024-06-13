@@ -15,28 +15,8 @@ const fetchExchangeData = createAsyncThunk(
         // date is in format dd-mm-yyyy convert it to yyyy-mm-dd
         start_date = start_date.split("-").reverse().join("-");
         end_date = end_date.split("-").reverse().join("-");
-        // reduce the month by 1
-        // start_date =start_date.split("-").map((item, index)=>{
-        //     if(index === 1){
-        //         if(parseInt(item) === 1){
-        //             return "12";
-        //         }
-                
-
-        //         return (parseInt(item)-1).toString();
-        //     }
-        //     return item;
-        // }
-        // ).join("-");
-        // end_date =end_date.split("-").map((item, index)=>{
-        //     if(index === 1){
-        //         return (parseInt(item)-1).toString();
-        //     }
-        //     return item;
-        // }
-        // ).join("-");
         try {
-            let req =await fetch(`http://127.0.0.1:8000/data/getData?start_date=${start_date}&end_date=${end_date}`, {
+            let req =await fetch(`http://65.0.32.153:8000/data/getData?start_date=${start_date}&end_date=${end_date}`, {
                 method: "GET",
                 headers: {
                 },

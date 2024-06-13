@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './Exchange.css'
 import { Line } from "react-chartjs-2";
-import { BarChart, LineChart, MixChart, RawLineChart } from "../../../components/charts/Charts";
+import { BarChart, LineChart, MixChart, RawLineChart } from "../../../components/chartjs/Charts";
 import { RealTimeData } from "./DemoData";
-import GetChartOptions from "../../../components/charts/data/GetChartOption";
+import GetChartOptions from "../../../components/chartjs/data/GetChartOption";
 import { title } from "process";
 import { MediumButton, SmallButton } from "../../../components/Button";
 import { DemoExchangeData } from "./DemoExchangeData";
@@ -13,7 +13,7 @@ import { Chart as ChartJS } from 'chart.js';
 import { COST_MU, COST_UNIT, ENERGY_UNIT, MEGA_POWER_UNIT } from "../../../Units";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ExchangeChartData, FormatExchangeData, RealTimeChartData, formatRealTimeChartData } from "./ExchangeData";
-import FootNote from "../../../components/charts/footnote";
+import FootNote from "../../../components/chartjs/footnote";
 ChartJS.register(zoomPlugin);
 
 

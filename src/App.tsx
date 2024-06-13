@@ -101,7 +101,7 @@ function App() {
                 <Sidebar2 />
 
                 <div
-                  className="content"
+                  className="content2"
 
                 >
                   <Documents />

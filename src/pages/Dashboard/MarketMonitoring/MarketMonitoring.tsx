@@ -17,9 +17,10 @@ import {
   buildHttpReq,
 } from "../../../common";
 import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
-import { LegendKey, ReLineChart } from "../../../components/charts/ReCharts";
+import {  ReLineChart } from "../../../components/recharts/ReCharts";
 import { tab } from "@testing-library/user-event/dist/tab";
 import { COST_UNIT, VOLUME_UNIT } from "../../../Units";
+import { LegendKey } from "../../../models/chart_model";
 // import { FormatMarketMonitoringData } from "./FormatData";
 let startMonth: {
   value: number;
@@ -272,9 +273,9 @@ export function MarketMontoring() {
                       let filter;
                       if (selectedMarket.includes(item)) {
                         setSelectedMarket(
-                          selectedMarket.filter((i) => i != item)
+                          selectedMarket.filter((i) => i !== item)
                         );
-                        filter = selectedMarket.filter((i) => i != item);
+                        filter = selectedMarket.filter((i) => i !== item);
                       } else {
                         setSelectedMarket([...selectedMarket, item]);
                         filter = [...selectedMarket, item];
@@ -316,9 +317,9 @@ export function MarketMontoring() {
                         let filter;
                         if (selectedExchange.includes(item)) {
                           setSelectedExchange(
-                            selectedExchange.filter((i) => i != item)
+                            selectedExchange.filter((i) => i !== item)
                           );
-                          filter = selectedExchange.filter((i) => i != item);
+                          filter = selectedExchange.filter((i) => i !== item);
                         } else {
                           setSelectedExchange([...selectedExchange, item]);
                           filter = [...selectedExchange, item];
@@ -382,13 +383,13 @@ export function MarketMontoring() {
                           0
                         ) {
                           setSelectedFilter(
-                            selectedFilter.filter((i) => i.id != item.id)
+                            selectedFilter.filter((i) => i.id !== item.id)
                           );
                           fetchVolumeData({
                             selectedExchange: selectedExchange,
                             selectedMarket: selectedMarket,
                             selectedProduct: selectedFilter.filter(
-                              (i) => i.id != item.id
+                              (i) => i.id !== item.id
                             ),
                             startMonth,
                             endMonth,
@@ -528,7 +529,7 @@ export function MarketMontoring() {
     const commonProducts = uniqueMarketProducts.filter((mp) =>
       uniqueExchangeProducts.some((ep) => ep.id === mp.id)
     );
-    if (exchange.filter((item) => item.name == "Traders").length != 0) {
+    if (exchange.filter((item) => item.name == "Traders").length !== 0) {
       tabIndex == 0 && commonProducts.push({ id: 13, name: "Bilateral" });
     }
 

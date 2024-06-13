@@ -29,9 +29,9 @@ import {
   ExchangeChart,
   UtilizationTrendChart,
 } from "./Chart";
-import { RawLineChart } from "../../../components/charts/Charts";
-import GetChartOptions from "../../../components/charts/data/GetChartOption";
-import FootNote from "../../../components/charts/footnote";
+import { RawLineChart } from "../../../components/chartjs/Charts";
+import GetChartOptions from "../../../components/chartjs/data/GetChartOption";
+import FootNote from "../../../components/chartjs/footnote";
 import Loading from "../../../components/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";

@@ -83,7 +83,7 @@ export function BetaConsumption() {
   return (
     <div className="">
       <div className="flex justify-between mr-2 mt-2">
-      {tabIndex !=3 &&  <div className="flex dateSelection">
+      {tabIndex !==3 &&  <div className="flex dateSelection">
           <input
             type="date"
             data-date-format="DD MMMM YYYY"

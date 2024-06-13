@@ -233,7 +233,7 @@ export function ExchangeComparion2() {
       {/* Content */}
       {/* Removing Padding for the Market Editing Page */}
 
-      <div className={state.page != 3 ? "content2-padding-body" : ""}>
+      <div className={state.page !== 3 ? "content2-padding-body" : ""}>
         {/* Filters */}
         {
           <div className="filters">

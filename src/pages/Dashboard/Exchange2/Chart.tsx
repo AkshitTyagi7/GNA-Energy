@@ -228,8 +228,8 @@ export const ExchangeChart =  ({
 
         {showBrush ? (
           <Brush
-            startIndex={data != null && data.length > 96 ? data.length - 96 : 0}
-            endIndex={data != null && data.length > 96 ? data.length - 1 : 0}
+            startIndex={data !== null && data.length > 96 ? data.length - 96 : 0}
+            endIndex={data !== null && data.length > 96 ? data.length - 1 : 0}
             dataKey="date"
             height={40}
             fillOpacity={1}
@@ -243,8 +243,8 @@ export const ExchangeChart =  ({
           />
         ) : (
           <Brush
-            startIndex={data != null && data.length > 96 ? data.length - 96 : 0}
-            endIndex={data != null && data.length > 96 ? data.length - 1 : 0}
+            startIndex={data !== null && data.length > 96 ? data.length - 96 : 0}
+            endIndex={data !== null && data.length > 96 ? data.length - 1 : 0}
             dataKey="date"
             height={0}
             stroke={PrimaryColor}

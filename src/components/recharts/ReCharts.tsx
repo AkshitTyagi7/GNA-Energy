@@ -5,7 +5,6 @@ import {
   Brush,
   CartesianGrid,
   Cell,
-  ComposedChart,
   Label,
   Line,
   LineChart,
@@ -15,6 +14,8 @@ import {
   YAxis,
 } from "recharts";
 import { PrimaryColor } from "../../common";
+import { BrushStart, ChartArguements, LegendKey, ReChartData } from "../../models/chart_model";
+import { renderQuarterTick } from "./components";
 export const COLORS = [
   "#FF7F50",
   "#B8860B",
@@ -23,33 +24,6 @@ export const COLORS = [
   "#34656D",
   "#333333",
 ];
-export interface ReChartData {
-  [key: string]: number | string | Date | null | undefined;
-}
-
-export interface LegendKey {
-  name?: string;
-  stroke?: string;
-  dataKey: string;
-  // color: string;
-}
-
-export const BAR_RADIUS: number | [number, number, number, number] = [
-  4, 4, 0, 0,
-];
-
-export function getColorList(length: number) {
-  let colors = [];
-  for (let i = 0; i < length; i++) {
-    colors.push(COLORS[i % COLORS.length]);
-  }
-  return colors;
-}
-
-export enum BrushStart {
-  Start,
-  End,
-}
 
 export function ReLineChart({
   data,
@@ -64,26 +38,13 @@ export function ReLineChart({
   brushHeight = 30,
   brushStart = BrushStart.End,
   fontSize,
-}: {
-  data: ReChartData[];
-  legends: LegendKey[];
-  syncid?: string;
-  unit?: string;
-  xDataKey: string;
-  yAxisWidth?: number;
-  secondXDataKey?: string;
-  yAxisLabel?: string;
-  fontSize?: number;
-  showBrush?: boolean;
-  brushHeight?: number;
-  brushStart?: BrushStart;
-}) {
+}: ChartArguements) {
   const [selectedLegends, setSelectedLegends] = useState<LegendKey[]>([]);
   return (
     <div className="chart-container">
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
         {legends
-          .filter((e) => e.dataKey != xDataKey)
+          .filter((e) => e.dataKey !== xDataKey)
           .map((legend, index) => {
             return (
               <div
@@ -173,20 +134,21 @@ export function ReLineChart({
               style={{ textAnchor: "middle" }}
             />
           </YAxis>
+          <YAxis yAxisId="right" orientation="right" />
           {showBrush && (
             <Brush
               dataKey={xDataKey}
               height={brushHeight}
               stroke={PrimaryColor}
               startIndex={
-                data != null && brushStart === BrushStart.Start
+                data !== null && brushStart === BrushStart.Start
                   ? 0
                   : data.length > 96 - 1
                   ? data.length - 96
                   : 0
               }
               endIndex={
-                data != null && brushStart === BrushStart.Start
+                data !== null && brushStart === BrushStart.Start
                   ? 96 - 1
                   : data.length > 96
                   ? data.length - 1
@@ -222,13 +184,14 @@ export function ReLineChart({
 
           {selectedLegends.length === 0
             ? legends
-                .filter((e) => e.dataKey != xDataKey)
+                .filter((e) => e.dataKey !== xDataKey)
                 .map((legend, index) => {
                   return (
                     <Line
                       key={index}
                       type="monotone"
                       name={typeof legend === "string" ? legend : legend.name}
+                      yAxisId={legend.yAxisId}
                       dataKey={
                         typeof legend === "string" ? legend : legend.dataKey
                       }
@@ -274,44 +237,6 @@ export function ReLineChart({
     </div>
   );
 }
-export const renderQuarterTick = (tickProps: any) => {
-  const { x, y, payload } = tickProps;
-  const { index, value, offset } = payload;
-  const finalIndex = index + 1;
-
-  // if (finalIndex  === 1 || finalIndex%97 ===0 ) {
-  //   const pathX = Math.floor(x - offset) + 0.5;
-  //   return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red"  width={"2px"}/>;
-  // }
-  if (finalIndex % 48 === 0 && finalIndex % 96 !== 0) {
-    return (
-      <text x={x} y={y - 4} fontSize={12} textAnchor="middle">
-        {value}
-      </text>
-    );
-  }
-};
-
-export const LegendItem = ({
-  name,
-  color,
-  onClick,
-  fontSize,
-}: {
-  name: string;
-  color: string;
-  onClick?: () => void;
-  fontSize?: string;
-}) => {
-  return (
-    <div className="realTime-Legend" onClick={onClick}>
-      <p style={{ color: color }}>
-        {" "}
-        <div className="dot" style={{ backgroundColor: color }}></div> {name}
-      </p>
-    </div>
-  );
-};
 
 export function ReBarChart({
   data,
@@ -348,7 +273,7 @@ export function ReBarChart({
     <div className="chart-container">
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
         {legends
-          .filter((e) => e.dataKey != xDataKey)
+          .filter((e) => e.dataKey !== xDataKey)
           .map((legend, index) => {
             return (
             !showLegend ? null :    <div
@@ -442,14 +367,14 @@ export function ReBarChart({
               height={brushHeight}
               stroke={PrimaryColor}
               startIndex={
-                data != null && brushStart === BrushStart.Start
+                data !== null && brushStart === BrushStart.Start
                   ? 0
                   : data.length > 96 - 1
                   ? data.length - 96
                   : 0
               }
               endIndex={
-                data != null && brushStart === BrushStart.Start
+                data !== null && brushStart === BrushStart.Start
                   ? 96 - 1
                   : data.length > 96
                   ? data.length - 1
@@ -482,7 +407,7 @@ export function ReBarChart({
 
           {selectedLegends.length === 0
             ? legends
-                .filter((e) => e.dataKey != xDataKey)
+                .filter((e) => e.dataKey !== xDataKey)
                 .map((legend, index) => {
                   return (
 
@@ -552,23 +477,3 @@ export function ReBarChart({
   );
 }
 
-export const MediumLegendItem = ({
-  name,
-  color,
-  onClick,
-  fontSize,
-}: {
-  name: string;
-  color: string;
-  onClick?: () => void;
-  fontSize?: string;
-}) => {
-  return (
-    <div className="realTime-Legend" onClick={onClick}>
-      <p style={{ color: color, fontSize: "14p!important" }}>
-        {" "}
-        <div className="dot" style={{ backgroundColor: color }}></div> {name}
-      </p>
-    </div>
-  );
-};

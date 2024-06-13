@@ -216,9 +216,9 @@ export function BetaMarketMontoring() {
                       let filter;
                       if (selectedMarket.includes(item)) {
                         setSelectedMarket(
-                          selectedMarket.filter((i) => i != item)
+                          selectedMarket.filter((i) => i !== item)
                         );
-                        filter = selectedMarket.filter((i) => i != item);
+                        filter = selectedMarket.filter((i) => i !== item);
                       } else {
                         setSelectedMarket([...selectedMarket, item]);
                         filter = [...selectedMarket, item];
@@ -257,9 +257,9 @@ export function BetaMarketMontoring() {
                       let filter;
                       if (selectedExchange.includes(item)) {
                         setSelectedExchange(
-                          selectedExchange.filter((i) => i != item)
+                          selectedExchange.filter((i) => i !== item)
                         );
-                        filter = selectedExchange.filter((i) => i != item);
+                        filter = selectedExchange.filter((i) => i !== item);
                       } else {
                         setSelectedExchange([...selectedExchange, item]);
                         filter = [...selectedExchange, item];
@@ -321,13 +321,13 @@ export function BetaMarketMontoring() {
                         selectedFilter.filter((p) => p.id == item.id).length > 0
                       ) {
                         setSelectedFilter(
-                          selectedFilter.filter((i) => i.id != item.id)
+                          selectedFilter.filter((i) => i.id !== item.id)
                         );
                         fetchVolumeData({
                           selectedExchange: selectedExchange,
                           selectedMarket: selectedMarket,
                           selectedProduct: selectedFilter.filter(
-                            (i) => i.id != item.id
+                            (i) => i.id !== item.id
                           ),
                           startMonth,
                           endMonth,
@@ -408,7 +408,7 @@ export function BetaMarketMontoring() {
                       );
                     })}
 
-                    {chartData.filter((item) => item.traders).length != 0 ? (
+                    {chartData.filter((item) => item.traders).length !== 0 ? (
                       <Line
                         strokeWidth={2}
                         type="monotone"
@@ -511,7 +511,7 @@ export function BetaMarketMontoring() {
                     if (tabIndex == 0) {
                       if (setShownVolume.includes(e.value)) {
                         setSetShownVolume(
-                          setShownVolume.filter((item) => item != e.value)
+                          setShownVolume.filter((item) => item !== e.value)
                         );
                       } else {
                         setSetShownVolume([...setShownVolume, e.value]);
@@ -519,7 +519,7 @@ export function BetaMarketMontoring() {
                     } else {
                       if (setShownPrice.includes(e.value)) {
                         setSetShownPrice(
-                          setShownPrice.filter((item) => item != e.value)
+                          setShownPrice.filter((item) => item !== e.value)
                         );
                       } else {
                         setSetShownPrice([...setShownPrice, e.value]);
@@ -554,7 +554,7 @@ export function BetaMarketMontoring() {
     const commonProducts = uniqueMarketProducts.filter((mp) =>
       uniqueExchangeProducts.some((ep) => ep.id === mp.id)
     );
-    if (exchange.filter((item) => item.name == "Traders").length != 0) {
+    if (exchange.filter((item) => item.name == "Traders").length !== 0) {
       tabIndex == 0 && commonProducts.push({ id: 13, name: "Bilateral" });
     }
 

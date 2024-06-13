@@ -46,20 +46,25 @@ import Select from "react-select";
 import { ReactComponent as Cross } from "../../../icons/cross.svg";
 import { LoadingItem } from "../../../components/Loading";
 import {
-  BrushStart,
   COLORS,
-  LegendKey,
   ReBarChart,
   ReLineChart,
-  getColorList,
-} from "../../../components/charts/ReCharts";
+} from "../../../components/recharts/ReCharts";
 import swal from "sweetalert";
 import { stat } from "fs";
-import { FilterExchangeData, FilterSortExchangeData } from "../../../store/state/Exchange/function";
-
+import {
+  FilterExchangeData,
+  FilterSortExchangeData,
+} from "../../../store/state/Exchange/function";
+import Popup from "./components/Popup";
+import {EntityPage} from "./Entity";
+import { BrushStart, LegendKey, getColorList } from "../../../models/chart_model";
 export function Exchange3() {
   const maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
-  let comparisonRawData: {date_range:{start_date:string, end_date:string}, data:any}[] = [];
+  let comparisonRawData: {
+    date_range: { start_date: string; end_date: string };
+    data: any;
+  }[] = [];
   const [ccomparisonLoading, setComparisonLoading] = useState(true);
   const [startDate, setStartDate] = useState(
     new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
@@ -70,6 +75,15 @@ export function Exchange3() {
   const [RealTimeChartData, setRealTimeChartData] = useState<
     RealTimeChartData[]
   >([]);
+  const [popUpVisible, setPopUpVisible] = useState(false);
+  const [popUpTitle, setPopUpTitle] = useState("");
+  const [popupData, setPopupData] = useState<{
+    buyer: any[];
+    seller: any[];
+  }>({
+    buyer: [],
+    seller: [],
+  });
   const tabs: tab[] = [
     {
       name: "By Exchange",
@@ -91,6 +105,10 @@ export function Exchange3() {
       name: "Trend Analysis",
       active: false,
     },
+    {
+      name: "Entity Analysis",
+      active: true
+    }
   ];
 
   const BuyerSellerTab: string[] = ["Top Players", "Trends"];
@@ -124,9 +142,7 @@ export function Exchange3() {
     "Dec",
   ];
 
-
   let selectedComparisonDate: Date[] = [];
-
 
   const dateOptions: {
     value: Date;
@@ -306,7 +322,6 @@ export function Exchange3() {
       exchange: BuyerSellerState.BuyerSeller.filters[0],
       product: BuyerSellerState.BuyerSeller.filters[1],
       region: BuyerSellerState.BuyerSeller.filters[2],
-
     });
   }, []);
   const [exchangeLoading, setExchangeLoading] = useState(false);
@@ -321,7 +336,7 @@ export function Exchange3() {
           <h1>Exchange</h1>
         </div>
         <div className="header-side-area">
-          <div className="header-tab-selection"> 
+          <div className="header-tab-selection">
             {tabs.map((tab, index) => {
               return (
                 <button
@@ -348,29 +363,35 @@ export function Exchange3() {
           </div>
           {state.page === 2 && <div></div>}
 
-          {state.page=== 4 && (
+          {state.page === 4 && (
             <div className="header-side-area">
-            <Select
-              placeholder="Select Months..."
-              value={selectedOptions.map(option => ({ ...option, isFixed: false }))}
-              isMulti={true}
-              onChange={(value) => {
-                setSelectedOptions(value as any);
-                getComparisonExchangeData
-                ({ dates: value.map((e) => e.value) });
-              }}
-              
-              styles={searchStyle}
-
-              options={
-                /* date options that are not in the selected options */
-                dateOptions.filter(
-                  (option) =>
-                    !selectedOptions.map((e) => e.label).includes(option.label)
-                ).map((option) => ({ ...option, isFixed: false }))
-              }
-            />
-          </div>
+              <Select
+                placeholder="Select Months..."
+                value={selectedOptions.map((option) => ({
+                  ...option,
+                  isFixed: false,
+                }))}
+                isMulti={true}
+                onChange={(value) => {
+                  setSelectedOptions(value as any);
+                  getComparisonExchangeData({
+                    dates: value.map((e) => e.value),
+                  });
+                }}
+                styles={searchStyle}
+                options={
+                  /* date options that are not in the selected options */
+                  dateOptions
+                    .filter(
+                      (option) =>
+                        !selectedOptions
+                          .map((e) => e.label)
+                          .includes(option.label)
+                    )
+                    .map((option) => ({ ...option, isFixed: false }))
+                }
+              />
+            </div>
           )}
 
           {getActivateFilter(true) && (
@@ -410,7 +431,6 @@ export function Exchange3() {
                     product: BuyerSellerState.BuyerSeller.filters[1],
 
                     region: BuyerSellerState.BuyerSeller.filters[2],
-
                   });
                 }}
               />
@@ -450,7 +470,6 @@ export function Exchange3() {
                     product: BuyerSellerState.BuyerSeller.filters[1],
 
                     region: BuyerSellerState.BuyerSeller.filters[2],
-
                   });
                 }}
               />
@@ -460,70 +479,96 @@ export function Exchange3() {
       </div>
       {/* Content */}
       {/* Removing Padding for the Market Editing Page */}
+      {popUpVisible && (
+        <Popup
+          title={popUpTitle}
+          isVisible={state.page == 1 || state.page == 0}
+          onClose={() => {
+            setPopUpVisible(false);
+          }}
+        >
+          <div className="popup-buyerseller-container">
+            <div
+              style={{
+                height: `${popupData.buyer.length * 8}vh`,
+              }}
+              className="popup-buyerseller-chart text-center"
+            >
+              <h2>Buyers</h2>
+              <BuyerSellerChart data={popupData.buyer} showLegend={true} />
+            </div>
+
+            <div
+              style={{
+                height: `${popupData.seller.length * 8}vh`,
+              }}
+              className="popup-buyerseller-chart text-center"
+            >
+              <h2>Sellers</h2>
+              <BuyerSellerChart data={popupData.seller} showLegend={true} />
+            </div>
+          </div>
+        </Popup>
+      )}
       <div
         className="loading-container"
         style={{ display: getLoading() ? "flex" : "none" }}
       >
         <LoadingItem />
       </div>
-      <div className={state.page != 3 ? "content2-padding-body" : ""}>
+      <div className={state.page !== 3 ? "content2-padding-body" : ""}>
         {/* Filters */}
         {getActivateFilter(false) && (
           <div className="filters">
             <div className="legend-exchangeSelection">
               <div className="exchange-selection">
-                {state.page === (1 as any) 
-                  ? 
-                  ["DAM", "GDAM", "HPDAM", "RTM"].map((exchange, index) => {
-                    return (
-                      <button
-                        key={index}
-                        className={`tab-small ${
-                          state.Exchange.selectedProduct === index
-                            ? "tab-active"
-                            : ""
-                        } ${
-                          index === 0
-                            ? "tab-left"
-                            : index === 3
-                            ? "tab-right"
-                            : ""
-                        }`}
-                        onClick={() => {
-                          dispatch(setSelectedProduct(index));
-                        }}
-                      >
-                        {exchange}
-                      </button>
-                    );
-                  })
-                  :
-                  ["IEX", "PXIL", "HPX"].map((exchange, index) => {
-                    return (
-                      <button
-                        key={index}
-                        className={`tab-small ${
-                          state.Exchange.selectedExchange === index
-                            ? "tab-active"
-                            : ""
-                        } ${
-                          index === 0
-                            ? "tab-left"
-                            : index === 2
-                            ? "tab-right"
-                            : ""
-                        }`}
-                        onClick={() => {
-                          dispatch(setSelectedExchange(index));
-                        }}
-                      >
-                        {exchange}
-                      </button>
-                    );
-                  
-                  
-                  }
-                )}
+                {state.page === (1 as any)
+                  ? ["DAM", "GDAM", "HPDAM", "RTM"].map((exchange, index) => {
+                      return (
+                        <button
+                          key={index}
+                          className={`tab-small ${
+                            state.Exchange.selectedProduct === index
+                              ? "tab-active"
+                              : ""
+                          } ${
+                            index === 0
+                              ? "tab-left"
+                              : index === 3
+                              ? "tab-right"
+                              : ""
+                          }`}
+                          onClick={() => {
+                            dispatch(setSelectedProduct(index));
+                          }}
+                        >
+                          {exchange}
+                        </button>
+                      );
+                    })
+                  : ["IEX", "PXIL", "HPX"].map((exchange, index) => {
+                      return (
+                        <button
+                          key={index}
+                          className={`tab-small ${
+                            state.Exchange.selectedExchange === index
+                              ? "tab-active"
+                              : ""
+                          } ${
+                            index === 0
+                              ? "tab-left"
+                              : index === 2
+                              ? "tab-right"
+                              : ""
+                          }`}
+                          onClick={() => {
+                            dispatch(setSelectedExchange(index));
+                          }}
+                        >
+                          {exchange}
+                        </button>
+                      );
+                    })}
               </div>
               <div className="legend">
                 Legends
@@ -568,11 +613,19 @@ export function Exchange3() {
               <ResponsiveContainer>
                 <ExchangeChart
                   title="DAM"
-                                syncId="byExchange"
-
-                  data={
-                  FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedExchange,  exchangeProductIndex:0 })
-                  }
+                  syncId="byExchange"
+                  onBarClick={(data: any) => {
+                    fetchSlotData({
+                      exchange: data.payload.exchange__name,
+                      product: data.payload.product__name,
+                      date: data.payload.date,
+                      slot: data.payload.time_slot,
+                    });
+                  }}
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: state.Exchange.selectedExchange,
+                    exchangeProductIndex: 0,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -583,12 +636,20 @@ export function Exchange3() {
             <div className="exchange-byExchange-chart">
               <ResponsiveContainer>
                 <ExchangeChart
+                onBarClick={(data: any) => {
+                  fetchSlotData({
+                    exchange: data.payload.exchange__name,
+                    product: data.payload.product__name,
+                    date: data.payload.date,
+                    slot: data.payload.time_slot,
+                  });
+                }}
                   title="GDAM"
                   syncId="byExchange"
-
-
-                  data={
-                   FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedExchange,  exchangeProductIndex:1 })    }
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: state.Exchange.selectedExchange,
+                    exchangeProductIndex: 1,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -599,15 +660,20 @@ export function Exchange3() {
             <div className="exchange-byExchange-chart">
               <ResponsiveContainer>
                 <ExchangeChart
+                onBarClick={(data: any) => {
+                  fetchSlotData({
+                    exchange: data.payload.exchange__name,
+                    product: data.payload.product__name,
+                    date: data.payload.date,
+                    slot: data.payload.time_slot,
+                  });
+                }}
                   title="HPDAM"
                   syncId="byExchange"
-
-                  data={
-// state.Exchange.data.filter(
-//   (trade) => trade.exchange__name === "IEX" && trade.product__name==="DAM"
-// )          
-FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedExchange,  exchangeProductIndex:2 })
-}
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: state.Exchange.selectedExchange,
+                    exchangeProductIndex: 2,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -618,12 +684,20 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
             <div className="exchange-byExchange-chart">
               <ResponsiveContainer>
                 <ExchangeChart
+                onBarClick={(data: any) => {
+                  fetchSlotData({
+                    exchange: data.payload.exchange__name,
+                    product: data.payload.product__name,
+                    date: data.payload.date,
+                    slot: data.payload.time_slot,
+                  });
+                }}
                   title="RTM"
                   syncId="byExchange"
-
-                  data={
-                   FilterExchangeData(state.Exchange.data, {exchangeIndex:state.Exchange.selectedExchange ,  exchangeProductIndex: state.Exchange.selectedExchange})                
-                  }
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: state.Exchange.selectedExchange,
+                    exchangeProductIndex: 3,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -634,9 +708,10 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
             <ExchangeChart
               shownLegnends={[]}
               setShownLegends={function (legends: string[]): void {}}
-              data={
-                FilterExchangeData(state.Exchange.data, {exchangeIndex: 0,  exchangeProductIndex: state.Exchange.selectedExchange})                
-              }
+              data={FilterExchangeData(state.Exchange.data, {
+                exchangeIndex: 0,
+                exchangeProductIndex: state.Exchange.selectedExchange,
+              })}
               title="DAM"
               syncId="byExchange"
               height="6%"
@@ -650,12 +725,20 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
             <div className="exchange-byProduct-chart">
               <ResponsiveContainer>
                 <ExchangeChart
+                onBarClick={(data: any) => {
+                  fetchSlotData({
+                    exchange: data.payload.exchange__name,
+                    product: data.payload.product__name,
+                    date: data.payload.date,
+                    slot: data.payload.time_slot,
+                  });
+                }}
                   title="IEX"
                   syncId="byProduct"
-
-                  data={
-                    FilterExchangeData(state.Exchange.data, {exchangeIndex: 0,  exchangeProductIndex: state.Exchange.selectedProduct})
-                              }
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: 0,
+                    exchangeProductIndex: state.Exchange.selectedProduct,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -667,11 +750,19 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
               <ResponsiveContainer>
                 <ExchangeChart
                   title="PXIL"
+                  onBarClick={(data: any) => {
+                    fetchSlotData({
+                      exchange: data.payload.exchange__name,
+                      product: data.payload.product__name,
+                      date: data.payload.date,
+                      slot: data.payload.time_slot,
+                    });
+                  }}
                   syncId="byProduct"
-
-                  data={
-                    FilterExchangeData(state.Exchange.data, {exchangeIndex: 1,  exchangeProductIndex: state.Exchange.selectedProduct})
-                  }
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: 1,
+                    exchangeProductIndex: state.Exchange.selectedProduct,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -683,11 +774,19 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
               <ResponsiveContainer>
                 <ExchangeChart
                   title="HPX"
+                  onBarClick={(data: any) => {
+                    fetchSlotData({
+                      exchange: data.payload.exchange__name,
+                      product: data.payload.product__name,
+                      date: data.payload.date,
+                      slot: data.payload.time_slot,
+                    });
+                  }}
                   syncId="byProduct"
-
-                  data={
-                    FilterExchangeData(state.Exchange.data, {exchangeIndex: 2,  exchangeProductIndex: state.Exchange.selectedProduct})
-                              }
+                  data={FilterExchangeData(state.Exchange.data, {
+                    exchangeIndex: 2,
+                    exchangeProductIndex: state.Exchange.selectedProduct,
+                  })}
                   shownLegnends={[]}
                   setShownLegends={function (legends: string[]): void {
                     throw new Error("Function not implemented.");
@@ -698,11 +797,10 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
             <ExchangeChart
               shownLegnends={[]}
               setShownLegends={function (legends: string[]): void {}}
-              data={
-                FilterExchangeData(
-                  state.Exchange.data, {exchangeIndex: 0,  exchangeProductIndex: state.Exchange.selectedProduct}
-                )
-                }
+              data={FilterExchangeData(state.Exchange.data, {
+                exchangeIndex: 0,
+                exchangeProductIndex: state.Exchange.selectedProduct,
+              })}
               title="DAM"
               syncId="byProduct"
               height="4%"
@@ -783,93 +881,92 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
           <div>
             <div>
               <div className="body-container">
-                
-                  <div className="side-filters-container">
-                    {BuyerSellerFilters.map((filter, index) => {
-                      return (
-                        <div className="side-filter-item">
-                          <h4>{filter.name}</h4>
-                          <div>
-                            {filter.filters.map((subfilter, subindex) => {
-                              return (
-                                <>
-                                  <p
-                                    className={`side-filter-subitem ${
+                <div className="side-filters-container">
+                  {BuyerSellerFilters.map((filter, index) => {
+                    return (
+                      <div className="side-filter-item">
+                        <h4>{filter.name}</h4>
+                        <div>
+                          {filter.filters.map((subfilter, subindex) => {
+                            return (
+                              <>
+                                <p
+                                  className={`side-filter-subitem ${
+                                    BuyerSellerState.BuyerSeller.filters[
+                                      index
+                                    ].filters.findIndex(
+                                      (item) => item.name === subfilter.name
+                                    ) !== -1
+                                      ? "side-filter-subitem-active"
+                                      : ""
+                                  }`}
+                                  onClick={async () => {
+                                    let temp = JSON.parse(
+                                      JSON.stringify(
+                                        BuyerSellerState.BuyerSeller.filters
+                                      )
+                                    );
+                                    if (
                                       BuyerSellerState.BuyerSeller.filters[
                                         index
                                       ].filters.findIndex(
                                         (item) => item.name === subfilter.name
-                                      ) !== -1
-                                        ? "side-filter-subitem-active"
-                                        : ""
-                                    }`}
-                                    onClick={async () => {
-                                      let temp = JSON.parse(
-                                        JSON.stringify(
-                                          BuyerSellerState.BuyerSeller.filters
-                                        )
+                                      ) === -1
+                                    ) {
+                                      temp[index].filters.push({
+                                        id: subfilter.id,
+                                        name: subfilter.name,
+                                      });
+                                      dispatch(
+                                        AddBuyerSellerFilter({
+                                          index,
+                                          filter: subfilter,
+                                        })
                                       );
-                                      if (
-                                        BuyerSellerState.BuyerSeller.filters[
-                                          index
-                                        ].filters.findIndex(
-                                          (item) => item.name === subfilter.name
-                                        ) === -1
-                                      ) {
-                                        temp[index].filters.push({
-                                          id: subfilter.id,
-                                          name: subfilter.name,
-                                        });
-                                        dispatch(
-                                          AddBuyerSellerFilter({
-                                            index,
-                                            filter: subfilter,
-                                          })
-                                        );
-                                      } else {
-                                        temp[index].filters = temp[
-                                          index
-                                        ].filters.filter(
-                                          (item: any) =>
-                                            item.name !== subfilter.name
-                                        );
-                                        dispatch(
-                                          RemoveBuyerSellerFilter({
-                                            index,
-                                            filter: subfilter,
-                                          })
-                                        );
-                                      }
+                                    } else {
+                                      temp[index].filters = temp[
+                                        index
+                                      ].filters.filter(
+                                        (item: any) =>
+                                          item.name !== subfilter.name
+                                      );
+                                      dispatch(
+                                        RemoveBuyerSellerFilter({
+                                          index,
+                                          filter: subfilter,
+                                        })
+                                      );
+                                    }
 
-                                      fetchBuyerVsSellerData({
-                                        start_date: startDate,
-                                        end_date: endDate,
-                                        exchange: temp[0],
-                                        product: temp[1],
-                                        region: temp[2],
-                                      });
-                                      fetchUtilityTrendData({
-                                        buyers: trendBuyer,
-                                        sellers: trendSeller,
-                                        startDate: startDate,
-                                        endDate: endDate,
-                                        exchange: temp[0],
-                                        product: temp[1],
-                                        region: temp[2],
-                                      });
-                                    }}
-                                  >
-                                    {subfilter.name}
-                                  </p>
-                                  <hr className="hr-small" />
-                                </>
-                              );
-                            })}{" "}
-                          </div>
+                                    fetchBuyerVsSellerData({
+                                      start_date: startDate,
+                                      end_date: endDate,
+                                      exchange: temp[0],
+                                      product: temp[1],
+                                      region: temp[2],
+                                    });
+                                    fetchUtilityTrendData({
+                                      buyers: trendBuyer,
+                                      sellers: trendSeller,
+                                      startDate: startDate,
+                                      endDate: endDate,
+                                      exchange: temp[0],
+                                      product: temp[1],
+                                      region: temp[2],
+                                    });
+                                  }}
+                                >
+                                  {subfilter.name}
+                                </p>
+                                <hr className="hr-small" />
+                              </>
+                            );
+                          })}{" "}
                         </div>
-                      );
-                    })}
-                  </div>
+                      </div>
+                    );
+                  })}
+                </div>
                 <div className="w-full h-full">
                   <div className="tabselection-buyerseller m-3">
                     <div>
@@ -958,8 +1055,7 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                             <div
                                               className="dot"
                                               style={{
-                                                backgroundColor:
-                                                  COLORS[index],
+                                                backgroundColor: COLORS[index],
                                               }}
                                             ></div>
                                             {item.name}
@@ -998,8 +1094,7 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                             <div
                                               className="dot"
                                               style={{
-                                                backgroundColor:
-                                                  COLORS[index],
+                                                backgroundColor: COLORS[index],
                                               }}
                                             ></div>{" "}
                                             {item.name}
@@ -1050,8 +1145,10 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                 ],
                                 startDate: startDate,
                                 endDate: endDate,
-                                exchange: BuyerSellerState.BuyerSeller.filters[0],
-                                product: BuyerSellerState.BuyerSeller.filters[1],
+                                exchange:
+                                  BuyerSellerState.BuyerSeller.filters[0],
+                                product:
+                                  BuyerSellerState.BuyerSeller.filters[1],
 
                                 region: BuyerSellerState.BuyerSeller.filters[2],
                               });
@@ -1064,11 +1161,12 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                 ),
                                 startDate: startDate,
                                 endDate: endDate,
-                                exchange: BuyerSellerState.BuyerSeller.filters[0],
-                                product: BuyerSellerState.BuyerSeller.filters[1],
+                                exchange:
+                                  BuyerSellerState.BuyerSeller.filters[0],
+                                product:
+                                  BuyerSellerState.BuyerSeller.filters[1],
 
                                 region: BuyerSellerState.BuyerSeller.filters[2],
-
                               });
                               setTrendBuyer(
                                 trendBuyer.filter(
@@ -1105,11 +1203,13 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                     ),
                                     startDate: startDate,
                                     endDate: endDate,
-                                    exchange: BuyerSellerState.BuyerSeller.filters[0],
-                                    product: BuyerSellerState.BuyerSeller.filters[1],
-    
-                                    region: BuyerSellerState.BuyerSeller.filters[2],
-    
+                                    exchange:
+                                      BuyerSellerState.BuyerSeller.filters[0],
+                                    product:
+                                      BuyerSellerState.BuyerSeller.filters[1],
+
+                                    region:
+                                      BuyerSellerState.BuyerSeller.filters[2],
                                   });
                                 }}
                                 key={index}
@@ -1144,7 +1244,6 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                               return {
                                 dataKey: item,
                                 name: item,
-                          
                               };
                             })}
                           />
@@ -1178,11 +1277,12 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                 ],
                                 startDate: startDate,
                                 endDate: endDate,
-                                exchange: BuyerSellerState.BuyerSeller.filters[0],
-                                product: BuyerSellerState.BuyerSeller.filters[1],
+                                exchange:
+                                  BuyerSellerState.BuyerSeller.filters[0],
+                                product:
+                                  BuyerSellerState.BuyerSeller.filters[1],
 
                                 region: BuyerSellerState.BuyerSeller.filters[2],
-
                               });
                             } else {
                               fetchUtilityTrendData({
@@ -1193,11 +1293,12 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                 ),
                                 startDate: startDate,
                                 endDate: endDate,
-                                exchange: BuyerSellerState.BuyerSeller.filters[0],
-                                product: BuyerSellerState.BuyerSeller.filters[1],
+                                exchange:
+                                  BuyerSellerState.BuyerSeller.filters[0],
+                                product:
+                                  BuyerSellerState.BuyerSeller.filters[1],
 
                                 region: BuyerSellerState.BuyerSeller.filters[2],
-
                               });
                               setTrendSeller(
                                 trendSeller.filter(
@@ -1236,11 +1337,13 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                                     ),
                                     startDate: startDate,
                                     endDate: endDate,
-                                    exchange: BuyerSellerState.BuyerSeller.filters[0],
-                                    product: BuyerSellerState.BuyerSeller.filters[1],
-    
-                                    region: BuyerSellerState.BuyerSeller.filters[2],
-    
+                                    exchange:
+                                      BuyerSellerState.BuyerSeller.filters[0],
+                                    product:
+                                      BuyerSellerState.BuyerSeller.filters[1],
+
+                                    region:
+                                      BuyerSellerState.BuyerSeller.filters[2],
                                   });
                                 }}
                                 key={index}
@@ -1288,17 +1391,16 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
               </div>{" "}
             </div>
           </div>
-        ) : (
+        ) : state.page == 4 ? (
           <div>
             {/* Header */}
-
 
             {/* Content */}
             {/* Removing Padding for the Market Editing Page */}
 
-            <div className={ ""}>
+            <div className={""}>
               {/* Filters */}
-              { (
+              {
                 <div className="filters">
                   <div className="legend-exchangeSelection">
                     <div className="exchange-selection">
@@ -1326,31 +1428,29 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                               </button>
                             );
                           })
-                        : ["IEX","PXIL","HPX"].map(
-                            (exchange, index) => {
-                              return (
-                                <button
-                                  key={index}
-                                  className={`tab-small ${
-                                    selectedComparisonExchange === index
-                                      ? "tab-active"
-                                      : ""
-                                  } ${
-                                    index === 0
-                                      ? "tab-left"
-                                      : index === 2
-                                      ? "tab-right"
-                                      : ""
-                                  }`}
-                                  onClick={() => {
-                                    setSelectedComparisonExchange(index);
-                                  }}
-                                >
-                                  {exchange}
-                                </button>
-                              );
-                            }
-                          )}
+                        : ["IEX", "PXIL", "HPX"].map((exchange, index) => {
+                            return (
+                              <button
+                                key={index}
+                                className={`tab-small ${
+                                  selectedComparisonExchange === index
+                                    ? "tab-active"
+                                    : ""
+                                } ${
+                                  index === 0
+                                    ? "tab-left"
+                                    : index === 2
+                                    ? "tab-right"
+                                    : ""
+                                }`}
+                                onClick={() => {
+                                  setSelectedComparisonExchange(index);
+                                }}
+                              >
+                                {exchange}
+                              </button>
+                            );
+                          })}
                     </div>
                     <div className="exchange-selection">
                       {unitTabs.map((tab, index) => {
@@ -1377,7 +1477,7 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
                     </div>
                   </div>
                 </div>
-              )}
+              }
               {/* Chart Area */}
 
               {activeUnitTab !== 4 && (
@@ -1442,57 +1542,96 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
 
               {activeUnitTab === 4 && (
                 <div className="exchange-chart-area">
-                    <WeightedAverageChart
-                      // data={chartData.data.iex.dam}
-                      data= {
-                        selectedComparisonExchange === 0
+                  <WeightedAverageChart
+                    // data={chartData.data.iex.dam}
+                    data={
+                      selectedComparisonExchange === 0
                         ? chartData.data.iex.dam
                         : selectedComparisonExchange === 1
                         ? chartData.data.pxil.dam
                         : chartData.data.hpx.dam
-                      }
-                      title="DAM"
-                    />
-                    <WeightedAverageChart
-                      data={
-                        selectedComparisonExchange === 0
+                    }
+                    title="DAM"
+                  />
+                  <WeightedAverageChart
+                    data={
+                      selectedComparisonExchange === 0
                         ? chartData.data.iex.gdam
                         : selectedComparisonExchange === 1
                         ? chartData.data.pxil.gdam
                         : chartData.data.hpx.gdam
-                      }
-                      title="GDAM"
-                    />
+                    }
+                    title="GDAM"
+                  />
 
-                    <WeightedAverageChart
-                      data={
-                        selectedComparisonExchange === 0
+                  <WeightedAverageChart
+                    data={
+                      selectedComparisonExchange === 0
                         ? chartData.data.iex.hpdam
                         : selectedComparisonExchange === 1
                         ? chartData.data.pxil.hpdam
                         : chartData.data.hpx.hpdam
-                      }
-                      title="HPDAM"
-                    />
+                    }
+                    title="HPDAM"
+                  />
 
-                    <WeightedAverageChart
-                      data={
-                        selectedComparisonExchange === 0
+                  <WeightedAverageChart
+                    data={
+                      selectedComparisonExchange === 0
                         ? chartData.data.iex.rtm
                         : selectedComparisonExchange === 1
                         ? chartData.data.pxil.rtm
                         : chartData.data.hpx.rtm
-                      }
-                      title="RTM"
-                    />
+                    }
+                    title="RTM"
+                  />
                 </div>
               )}
             </div>
           </div>
-        )}{" "}
+        ) : (
+          <EntityPage />
+        )
+      }
       </div>
     </div>
   );
+
+  async function fetchSlotData({
+    exchange,
+    product,
+    slot,
+    date,
+  }: {
+    exchange: string;
+    product: string;
+    slot: string;
+    date: string;
+  }) {
+    setExchangeLoading(true);
+
+    const res = await fetch("http://65.0.32.153:8000/data/getTopBuySellData/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        exchanges: [exchange],
+        products: [product],
+        time_slots: [slot],
+        start_date: date,
+        end_date: date,
+      }),
+    });
+
+    const data = await res.json();
+    setExchangeLoading(false);
+    setPopUpTitle(`${exchange} ${product}, ${slot} Time Slot of ${date} `);
+
+    setPopupData(data);
+    setPopUpVisible(true);
+  }
+
   async function getExchangeData({
     start_date = startDate,
     end_date = endDate,
@@ -1645,7 +1784,6 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
     exchange: BuyerSellerFilter;
     product: BuyerSellerFilter;
     region: BuyerSellerFilter;
-    
   }) {
     try {
       setUtilityTrendLoading(true);
@@ -1703,17 +1841,14 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
     } else if (state.page === 2) {
       return realTimeLoading;
     } else if (state.page === 3) {
-
       if (buyerSellerPage === 0) {
         return buyerSellerLoading;
       } else if (buyerSellerPage === 1) {
         return utilityTrendLoading;
       }
-    } 
-    else if (state.page === 4) {
+    } else if (state.page === 4) {
       return ccomparisonLoading;
-    } 
-    else {
+    } else {
       return false;
     }
   }
@@ -1760,101 +1895,103 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
         return;
       }
 
-
-      // let datesToFetch = Dates that are not in rawcomparison by comparing with start data 
+      // let datesToFetch = Dates that are not in rawcomparison by comparing with start data
       // let datesToFetch: Date[] = dates.filter(
       //   (date) =>
       //     !state.Exchange.comparisonRawData.find(
       //       (item) => item.date_range.start_date === date.toLocaleDateString("en-GB").split("/").join("-")
       //     )
       // );
-      
+
       setComparisonLoading(true);
 
       // console.log("Dates to fetch", datesToFetch);
       let apidata = [];
-// if(datesToFetch.length<0){
-//    return;
-// }
+      // if(datesToFetch.length<0){
+      //    return;
+      // }
       let compRawData = state.Exchange.comparisonRawData;
       // check if any date is removed from the date range by comparing with the raw data
-  
-     const res=await fetch("http://127.0.0.1:8000/data/multipleDateRangeExchangeData/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({
-          dates: dates.map((e) => ({
-            start_date: e.toLocaleDateString("en-GB").split("/").reverse().join("-"),
-            end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
-              .toLocaleDateString("en-GB")
-              .split("/").reverse()
-              .join("-"),
-          })),
-        }),
-      })
-       apidata = await res.json();
-       apidata = apidata.data
-       compRawData= apidata as any;
-          const comparisonData: ComparisonData[] = [];
-          let legends: LegendKey[] = [];
-          dispatch(setComparisonRawData(state.Exchange.comparisonRawData.concat(apidata) as any));
 
-          for (let i = 0; i < compRawData.length; i++) {
-            let data = {
-              // iex: FormatExchangeData(compRawData[i].data.iex),
-              // hpx: FormatExchangeData(compRawData[i].data.hpx),
-              // pxil: FormatExchangeData(compRawData[i].data.pxil),
-              iex: {
-                dam: FilterSortExchangeData(compRawData[i].data, "IEX", "DAM"),
-                gdam: FilterSortExchangeData(compRawData[i].data, "IEX", "GDAM"),
-                hpdam: FilterSortExchangeData(compRawData[i].data, "IEX", "HPDAM"),
-                rtm: FilterSortExchangeData(compRawData[i].data, "IEX", "RTM"),
-              
-              },
-              hpx: {
-                dam: FilterSortExchangeData(compRawData[i].data, "HPX", "DAM"),
-                gdam: FilterSortExchangeData(compRawData[i].data, "HPX", "GDAM"),
-                hpdam: FilterSortExchangeData(compRawData[i].data, "HPX", "HPDAM"),
-                rtm: FilterSortExchangeData(compRawData[i].data, "HPX", "RTM"),
-              
-              },
-              pxil: {
-                dam: FilterSortExchangeData(compRawData[i].data, "PXIL", "DAM"),
-                gdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "GDAM"),
-                hpdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "HPDAM"),
-                rtm: FilterSortExchangeData(compRawData[i].data, "PXIL", "RTM"),
-              }
+      const res = await fetch(
+        "http://65.0.32.153:8000/data/multipleDateRangeExchangeData/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            dates: dates.map((e) => ({
+              start_date: e
+                .toLocaleDateString("en-GB")
+                .split("/")
+                .reverse()
+                .join("-"),
+              end_date: new Date(e.getFullYear(), e.getMonth() + 1, 0)
+                .toLocaleDateString("en-GB")
+                .split("/")
+                .reverse()
+                .join("-"),
+            })),
+          }),
+        }
+      );
+      apidata = await res.json();
+      apidata = apidata.data;
+      compRawData = apidata as any;
+      const comparisonData: ComparisonData[] = [];
+      let legends: LegendKey[] = [];
+      dispatch(
+        setComparisonRawData(
+          state.Exchange.comparisonRawData.concat(apidata) as any
+        )
+      );
 
-            };
-            comparisonData.push({
-              date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-              data: data as any,
-            }); 
-            legends.push({
-              dataKey: `${Months[dates[i].getMonth()]}_${dates[
-                i
-              ].getFullYear()}`,
-              name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
-              stroke: getColorList(dates.length)[i],
-            });
-          }
-          setChartData({
-            data: reformatData(comparisonData),
-            legends: legends,
-          });
-          setComparisonLoading(false);
-        }
-        catch (error) {
-          console.error("Error fetching data:", error);
-          swal(
-            "Something Went Wrong",
-            "Error fetching Exchange Data. Please try again later",
-            "warning"
-          );
-        }
+      for (let i = 0; i < compRawData.length; i++) {
+        let data = {
+          iex: {
+            dam: FilterSortExchangeData(compRawData[i].data, "IEX", "DAM"),
+            gdam: FilterSortExchangeData(compRawData[i].data, "IEX", "GDAM"),
+            hpdam: FilterSortExchangeData(compRawData[i].data, "IEX", "HPDAM"),
+            rtm: FilterSortExchangeData(compRawData[i].data, "IEX", "RTM"),
+          },
+          hpx: {
+            dam: FilterSortExchangeData(compRawData[i].data, "HPX", "DAM"),
+            gdam: FilterSortExchangeData(compRawData[i].data, "HPX", "GDAM"),
+            hpdam: FilterSortExchangeData(compRawData[i].data, "HPX", "HPDAM"),
+            rtm: FilterSortExchangeData(compRawData[i].data, "HPX", "RTM"),
+          },
+          pxil: {
+            dam: FilterSortExchangeData(compRawData[i].data, "PXIL", "DAM"),
+            gdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "GDAM"),
+            hpdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "HPDAM"),
+            rtm: FilterSortExchangeData(compRawData[i].data, "PXIL", "RTM"),
+          },
+        };
+        comparisonData.push({
+          date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+          data: data as any,
+        });
+        legends.push({
+          dataKey: `${Months[dates[i].getMonth()]}_${dates[i].getFullYear()}`,
+          name: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
+          stroke: getColorList(dates.length)[i],
+        });
+      }
+      setChartData({
+        data: reformatData(comparisonData),
+        legends: legends,
+      });
+      setComparisonLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      swal(
+        "Something Went Wrong",
+        "Error fetching Exchange Data. Please try again later",
+        "warning"
+      );
+    }
   }
 
   function convertWeightedAverage({
@@ -1923,35 +2060,33 @@ FilterExchangeData(state.Exchange.data, {exchangeIndex: state.Exchange.selectedE
   function WeightedAverageChart({ data, title }: { data: any; title: string }) {
     return (
       <div className="exchange-byExchange-chart">
-      <h2
-        className="text-center text-md"
-        style={{
-          color: SecondaryColor,
-          marginBottom: -10,
-        }}
-      >
-        {title}
-      </h2>
-      <ReBarChart
-      showLegend={false}
-        data={convertWeightedAverage({
-          data: data,
-          months: chartData.legends.map((e) => e.name) as string[],
-        })}
-        
-        xDataKey="month"
-        unit={COST_UNIT}
-        yAxisLabel={COST_UNIT}
-        legends={[
-          {
-            dataKey: "value",
-            name: "Weighted Average",
-            stroke: PrimaryColor,
-          },
-        ]}
-      /></div>
+        <h2
+          className="text-center text-md"
+          style={{
+            color: SecondaryColor,
+            marginBottom: -10,
+          }}
+        >
+          {title}
+        </h2>
+        <ReBarChart
+          showLegend={false}
+          data={convertWeightedAverage({
+            data: data,
+            months: chartData.legends.map((e) => e.name) as string[],
+          })}
+          xDataKey="month"
+          unit={COST_UNIT}
+          yAxisLabel={COST_UNIT}
+          legends={[
+            {
+              dataKey: "value",
+              name: "Weighted Average",
+              stroke: PrimaryColor,
+            },
+          ]}
+        />
+      </div>
     );
   }
-
-
 }
