@@ -1,3 +1,4 @@
+import Select from "react-select";
 
 export const searchStyle = {
     valueContainer: (base: any) => ({
@@ -24,4 +25,18 @@ export const searchStyle = {
     ) => {
       return state.data.isFixed ? { ...base, display: "none" } : base;
     },
+  }
+
+  export function SearchBox({options, selectedOptions, onChange, placeholder, isMany}: {options: any[], selectedOptions: any[], onChange: any, placeholder: string, isMany?: boolean}){
+    return <Select
+    placeholder={placeholder}
+    value={selectedOptions.map((option) => ({
+      ...option,
+      isFixed: false,
+    }))}
+    isMulti={isMany}
+    onChange={onChange}
+    styles={searchStyle}
+    options={options}
+  />
   }

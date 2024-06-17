@@ -4,8 +4,8 @@
 }
 .header-side-area{
     display: flex;
+    gap: 20px;
 
-    gap: 32px;
 }
 .header{
     display: flex;
@@ -40,7 +40,7 @@
 }
 
 .date-selection{
-    width:340px ;
+    min-width:340px ;
     height: 40px;
     display: flex;
     color: #9F9F9F;
@@ -48,9 +48,6 @@
     justify-content: flex-end;
     font-size: 16px ;
     gap: 8px;
-
-}
-.date-input{
 
 }
 
@@ -424,11 +421,12 @@ font-size: 20px;
 }
 
 .loading-container{
-    height: 100%;
-    width: 100%;
+    height: calc(100vh - 60px);
+    width: calc(100vw - 141px);
     justify-content: center;
     align-items: center;
     position: fixed;
+    display: flex;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.185);
 }
@@ -485,9 +483,41 @@ font-size: 20px;
   }
 
   .header-tab-selection{
-    min-width: 719px;
   }
 
   .header-side-area .css-dvg3yj-ValueContainer{
     font-size: 12px;
+  }
+
+  .chart-popup{
+    align-items: center;
+    width: 95%;
+    border-radius: 10px;
+    height: 80%;
+    background-color: white;
+  }
+
+  .popup-buyerseller-container{
+    display: flex;
+    height:  calc(100% - 45px);
+    /* margin: 20px; */
+    width: calc(100% );
+    overflow: scroll;
+
+  }
+
+  .popup-buyerseller-chart{
+    width: 100%;
+    display: flex;
+    height: 10px;
+    padding-top: 20px;
+    flex-direction: column;
+  }
+
+  .entity-selectbox{
+    width: 2000px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
   }

@@ -6,34 +6,47 @@ import { ExchangeState, initialExchangeState } from "./interface";
 import { AsyncThunkFulfilledActionCreator, AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 import { FormatExchangeData } from "../../../pages/Dashboard/Exchange3/FormatData";
 
+
+
 const fetchExchangeData = createAsyncThunk(
     "exchange/fetchExchangeData",
     async({start_date, end_date} : {start_date: string, end_date: string})=>{
-        console.log("---------- yooo yoo yo")
+
+        // date is in format dd-mm-yyyy convert it to yyyy-mm-dd
+        start_date = start_date.split("-").reverse().join("-");
+        end_date = end_date.split("-").reverse().join("-");
         try {
-            console.log("------")
-            let apiRes = await buildHttpReq({
-                endpoint: "/all_exchange_analytics_api_range",
-                body: {
-                    start_date: start_date,
-                    end_date: end_date,
+            let req =await fetch(`https://api-data.gna.energy/data/getData?start_date=${start_date}&end_date=${end_date}`, {
+                method: "GET",
+                headers: {
                 },
-                method: "POST",
             });
-            console.log(
-                {
-                    iex: FormatExchangeData(apiRes.iex),
-                    hpx: FormatExchangeData(apiRes.hpx),
-                    pxil: FormatExchangeData(apiRes.pxil,true)
-                
+            let apiRes = await req.json();
+            console.log("API Response:", apiRes);
+            return apiRes.data.sort(
+                (a: any, b: any) => {
+                    if(a.date < b.date){
+                        return -1;
+                    }
+                    if(a.date > b.date){
+                        return 1;
+                    }
+                    return a.time_slot - b.time_slot;
                 }
-            );
-            return {
-                iex: FormatExchangeData(apiRes.iex),
-                hpx: FormatExchangeData(apiRes.hpx),
-                pxil: FormatExchangeData(apiRes.pxil,true)
             
-            };
+            ).map((item: any, index: any)=>{
+                return {
+                    date: item.date,
+                    exchange__name: item.exchange__name,
+                    product__name: item.product__name,
+                    time_slot: item.time_slot,
+                    purchase_bid_mw: item.purchase_bid_mw,
+                    sell_bid_mw: item.sell_bid_mw,
+                    mcv_mw: item.mcv_mw,
+                    mcp_rs_mwh: item.mcp_rs_mwh,
+                    wt_mcp_rs_mwh: item.wt_mcp_rs_mwh/1000
+                }
+            });
         } catch (error) {
             console.error("Error fetching data:", error);
             return error;

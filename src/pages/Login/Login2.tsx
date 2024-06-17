@@ -1,6 +1,5 @@
 import "./Login2.css";
 import { ReactComponent as Logo } from "../../icons/Logo.svg";
-import { ReactComponent as LoginIcons } from "./Login.svg";
 import loginImage from "./login4.png";
 import swal from "sweetalert";
 import React from "react";

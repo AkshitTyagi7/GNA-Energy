@@ -13,7 +13,7 @@ import {
   } from "recharts";
 import { DemoExchangeData } from "./Dashboard/Exchange/DemoExchangeData";
 import { PrimaryColor, QuaternaryColor, SecondaryColor, TertiaryColor } from "../common";
-import { LineChart } from "../components/charts/Charts";
+import { LineChart } from "../components/chartjs/Charts";
 
   const data = [
     { name: "1", uv: 300, pv: 456 },

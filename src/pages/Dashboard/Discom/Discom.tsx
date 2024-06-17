@@ -32,11 +32,8 @@ import {
 import state from "sweetalert/typings/modules/state";
 import { PrimaryColor, SecondaryColor } from "../../../common";
 import {
-  BAR_RADIUS,
   COLORS,
-  LegendItem,
-  getColorList,
-} from "../../../components/charts/ReCharts";
+} from "../../../components/recharts/ReCharts";
 import { stat } from "fs";
 import Select from "react-select";
 import { searchStyle } from "../../../components/Search";
@@ -46,6 +43,8 @@ import MahaGenco from "./Mahagenco";
 import {ReactComponent as  AscendingIcon} from "../../../icons/ascending.svg";
 import {ReactComponent as  DescendingIcon} from "../../../icons/descending.svg";
 import { clear } from "console";
+import { BAR_RADIUS, getColorList } from "../../../models/chart_model";
+import { LegendItem } from "../../../components/recharts/components";
 export function Discom() {
   const state = useSelector((state: RootState) => state.discom);
   const dispatch = useDispatch();

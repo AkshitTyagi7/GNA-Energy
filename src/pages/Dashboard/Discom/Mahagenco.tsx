@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import MahaGencoChart, { IdTitle, MahaGencoFilter } from "./Models";
 import { Filters, Generators } from "./Data";
-import { DemoMahaGencoDataJson } from "../AttributeAnalysis/attributteAnalysis/DemoMahaGenco";
 import "./Discom.css";
-import GetChartOptions from "../../../components/charts/data/GetChartOption";
-import { BarChart } from "../../../components/charts/Charts";
+import GetChartOptions from "../../../components/chartjs/data/GetChartOption";
+import { BarChart } from "../../../components/chartjs/Charts";
 import Select from "react-select";
 import { PrimaryColor, SecondaryColor } from "../../../common";
 import { searchStyle } from "../../../components/Search";
-import {
-  LegendItem,
-  MediumLegendItem,
-} from "../../../components/charts/ReCharts";
 
 import { ReactComponent as UpIcon } from '../../../icons/up.svg';
 import { ReactComponent as DownIcon } from '../../../icons/down.svg';
+import { DemoMahaGencoDataJson } from "./DemoMahaGenco";
+import { MediumLegendItem } from "../../../components/recharts/components";
 
 export default function MahaGenco() {
   const [selectedLegend, setSelectedLegend] = React.useState<string[]>([]);
