@@ -35,7 +35,7 @@ export function EntityPage() {
     new Date(new Date().getTime() - 365 * 24 * 60 * 60 * 1000)
   );
   const [endDate, setEndDate] = useState(
-    new Date(new Date().getTime() - 20 * 24 * 60 * 60 * 1000)
+    new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000)
   );
   const [isLoading, setIsLoading] = useState(true);
   const maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
