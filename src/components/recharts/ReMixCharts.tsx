@@ -22,6 +22,7 @@ import {
 import { COLORS } from "./ReCharts";
 import { YAxisFormatter, renderQuarterTick } from "./components";
 import { COST_UNIT } from "../../Units";
+import { getTimeRange } from "../../pages/Dashboard/Exchange3/Chart";
 
 const getLegendColor = (legend: LegendKey, index: number, selectedLegends: LegendKey[]): string => {
   const isSelected =
@@ -59,6 +60,8 @@ export function ReMixChart({
   syncid,
   unit,
   xDataKey,
+  xTick,
+  xLabel,
   yAxisLabel,
   secondYAxisLabel,
   yAxisWidth,
@@ -66,6 +69,7 @@ export function ReMixChart({
   showBrush = false,
   brushHeight = 30,
   brushStart = BrushStart.End,
+  isTimeSlot,
   fontSize,
 }: ChartArguements) {
   const [selectedLegends, setSelectedLegends] = useState<LegendKey[]>([]);
@@ -117,7 +121,11 @@ export function ReMixChart({
       <ResponsiveContainer height={"80%"}>
         <ComposedChart barCategoryGap={2.5} syncId={syncid} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis minTickGap={8} dataKey={xDataKey} />
+          <XAxis 
+          tick={xTick}
+          label={{ value: xLabel, position: "insideBottom", dy: 10 }}
+          interval={xTick ? 0 : undefined}
+          minTickGap={8} dataKey={xDataKey} />
           {secondXDataKey && (
             <XAxis
               dataKey={secondXDataKey}
@@ -149,7 +157,6 @@ export function ReMixChart({
               angle={-90}
               style={{ textAnchor: "middle" }}
             />
-
           </YAxis>
           {showBrush && (
             <Brush
@@ -162,13 +169,22 @@ export function ReMixChart({
             />
           )}
           <Tooltip
-            labelFormatter={(value, payload) => {
+            labelFormatter={
+              
+              (value, payload) => {
+
               try {
+                if(isTimeSlot) {return [getTimeRange(parseInt(value)) + ` (${value})`];}
+
+                
                 if (!payload[0].payload.date) {
                   return [value];
                 }
                 return [`${payload[0].payload.date} - Time Slot ${value}`];
-              } catch {
+              } 
+              
+              catch {
+                if(isTimeSlot) {return [value, getTimeRange(parseInt(value))];}
                 return [value];
               }
             }}

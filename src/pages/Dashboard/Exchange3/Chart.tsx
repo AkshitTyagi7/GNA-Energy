@@ -73,6 +73,52 @@ export const renderQuarterTick = (tickProps: any) => {
   }
 };
 
+export function getTimeRange(slot: number): string {
+  if (slot < 1 || slot > 96) {
+      throw new Error("Slot must be between 1 and 96");
+  }
+
+  // Calculate starting time in minutes from midnight
+  const startMinutes = (slot - 1) * 15;
+  const startHour = Math.floor(startMinutes / 60);
+  const startMinute = startMinutes % 60;
+
+  // Calculate ending time in minutes from midnight
+  const endMinutes = startMinutes + 15;
+  const endHour = Math.floor(endMinutes / 60);
+  const endMinute = endMinutes % 60;
+
+  // Format time as HH:mm
+  const formatTime = (hour: number, minute: number): string => {
+      const pad = (num: number): string => num.toString().padStart(2, '0');
+      return `${pad(hour)}:${pad(minute)}`;
+  };
+
+  const startTime = formatTime(startHour, startMinute);
+  const endTime = formatTime(endHour, endMinute);
+
+  return `${startTime}-${endTime}`;
+}
+
+
+export const renderHourTick = (tickProps: any) => {
+  const { x, y, payload } = tickProps;
+  const { index, value, offset } = payload;
+  const valueint = parseInt(value);
+
+  // if (finalIndex  === 1 || finalIndex%97 ===0 ) {
+  //   const pathX = Math.floor(x - offset) + 0.5;
+  //   return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red"  width={"2px"}/>;
+  // }
+  if (valueint % 4 === 0) {
+    return (
+      <text x={x} y={y + 10} fontSize={12} textAnchor="middle">
+        {valueint/4}
+      </text>
+    );
+  }
+};
+
 export const ExchangeChart = ({
   showBrush = false,
   title,
@@ -116,13 +162,27 @@ export const ExchangeChart = ({
           <>
             <CartesianGrid strokeDasharray="4 2" />
 
-            <XAxis dataKey="time_slot" fontSize={12} />
+            <XAxis dataKey="time_slot"
+            // tickFormatter={
+            //   ((value) => {
+            //     const number = parseInt(value);
+            //     if (number % 4) {
+            //       return value;
+            //     }
+            //     else{
+            //       return ""
+            //     }
+            // })}
+            tick={renderHourTick as any}
+            interval = {0}
+            fontSize={12} />
             <XAxis
               dataKey="date"
               axisLine={false}
               tickLine={false}
               fontSize={12}
               interval={0}
+              
               tick={renderQuarterTick as any}
               height={20}
               xAxisId="quarter"
@@ -148,12 +208,11 @@ export const ExchangeChart = ({
               />
             </YAxis>
 
-            {/* <YAxis yAxisId="right" orientation="right" name="WAP" label={"WAP"} width={0} /> */}
 
             <Tooltip
               labelFormatter={(value, payload) => {
                 try {
-                  return [`${payload[0].payload.date} - Time Slot ${value}`];
+                  return [`${payload[0].payload.date}, ${getTimeRange(parseInt(value))} (${value})` ];
                 } catch {
                   return [value];
                 }
@@ -324,6 +383,13 @@ export const BuyerSellerChart = ({
           fontSize={13}
           width={140}
           dataKey="name"
+          tickFormatter={
+            ((value) => {
+              // return value by converting string to title case
+              // return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase(); ;
+return value
+            })
+          }
           type="category"
         ></YAxis>
         <XAxis
@@ -332,7 +398,9 @@ export const BuyerSellerChart = ({
           type="number"
           tickFormatter={(value) => {
             return "";
+            
           }}
+         
         >
           <Label
             // value="MWh"

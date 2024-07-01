@@ -22,17 +22,19 @@ interface Source {
 }
 export function Gnai() {
   const chatAreaRef = useRef<HTMLDivElement>(null);
-  const BASE_URL = "https://assistant.gna.energy/";
-
+  const BASE_URL = "http://127.0.0.1:8002/";
+  const [threadId, setThreadId] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([
     {
       content: "Welcome to GNAi ! How can I help you ?",
       role: Role.Ai,
     },
   ]);
+  const [waiting, setWaiting] = useState<boolean>(false);
   let tempMessage: Message[] = [];
   const [state, setState] = React.useState<any>();
   React.useEffect(() => {
+    create_thread();
     scrollToBottom();
   }, []);
   return (
@@ -85,13 +87,16 @@ export function Gnai() {
 
     scrollToBottom();
     await new Promise((r) => setTimeout(r, 100));
-    const response = await fetch(`${BASE_URL}gnai/docGpt/`, {
+    const response = await fetch(`${BASE_URL}gnai/get_response_api/`, {
       method: "post",
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message: tempMessage, email: getUser().email }),
+      
+      body: JSON.stringify({ message: tempMessage[
+        tempMessage.length - 1
+      ].content, email: getUser().email,  thread_token:threadId, }),
     });
     if (!response.ok || !response.body) {
       throw response.statusText;
@@ -179,6 +184,26 @@ export function Gnai() {
       </div>
     );
   }
+  function create_thread() {
+    fetch(BASE_URL + "gnai/create_thread/", {
+      method: "post",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: getUser().email,
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log(data.thread_id);
+        setThreadId(data.thread_id);
+      });
+  }
 }
 
 function formatMessage(message: string): string {
@@ -191,3 +216,4 @@ function formatMessage(message: string): string {
   });
   return formattedLines.join("");
 }
+
