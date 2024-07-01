@@ -61,7 +61,7 @@ import Popup from "./components/Popup";
 import {EntityPage} from "./Entity";
 import { BrushStart, LegendKey, getColorList } from "../../../models/chart_model";
 export function Exchange3() {
-  const maxDate = new Date(new Date().getTime() - 0 * 24 * 60 * 60 * 1000);
+  const maxDate = new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000);
   let comparisonRawData: {
     date_range: { start_date: string; end_date: string };
     data: any;
