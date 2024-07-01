@@ -23,6 +23,7 @@ import {
   BuyerSellerPieChart,
   ExchangeChart,
   UtilizationTrendChart,
+  renderHourTick,
 } from "./Chart";
 import { ResponsiveContainer } from "recharts";
 import { useDispatch, useSelector } from "react-redux";
@@ -101,10 +102,10 @@ export function Exchange3() {
       name: "Buyers & Sellers",
       active: false,
     },
-    {
-      name: "Trend Analysis",
-      active: false,
-    },
+    // {
+    //   name: "Trend Analysis",
+    //   active: false,
+    // },
     {
       name: "Entity Analysis",
       active: true
@@ -845,11 +846,14 @@ export function Exchange3() {
                     </div>
                   </div>
                   <ReLineChart
+                            xLabel="Time (Hrs)"
+                        isTimeSlot={true}
                     data={
                       RealTimeChartData.length > 0
                         ? RealTimeChartData[realTimechartIndex!].data
                         : []
                     }
+                    xTick={renderHourTick}
                     unit={COST_UNIT}
                     yAxisLabel={COST_UNIT}
                     legends={
@@ -1391,205 +1395,207 @@ export function Exchange3() {
               </div>{" "}
             </div>
           </div>
-        ) : state.page == 4 ? (
-          <div>
-            {/* Header */}
+        ) : 
+        // state.page == 4 ? (
+        //   <div>
+        //     {/* Header */}
 
-            {/* Content */}
-            {/* Removing Padding for the Market Editing Page */}
+        //     {/* Content */}
+        //     {/* Removing Padding for the Market Editing Page */}
 
-            <div className={""}>
-              {/* Filters */}
-              {
-                <div className="filters">
-                  <div className="legend-exchangeSelection">
-                    <div className="exchange-selection">
-                      {state.page === (0 as any)
-                        ? ["IEX", "PXIL", "HPX"].map((exchange, index) => {
-                            return (
-                              <button
-                                key={index}
-                                className={`tab-small ${
-                                  selectedComparisonExchange === index
-                                    ? "tab-active"
-                                    : ""
-                                } ${
-                                  index === 0
-                                    ? "tab-left"
-                                    : index === 2
-                                    ? "tab-right"
-                                    : ""
-                                }`}
-                                onClick={() => {
-                                  setSelectedComparisonExchange(index);
-                                }}
-                              >
-                                {exchange}
-                              </button>
-                            );
-                          })
-                        : ["IEX", "PXIL", "HPX"].map((exchange, index) => {
-                            return (
-                              <button
-                                key={index}
-                                className={`tab-small ${
-                                  selectedComparisonExchange === index
-                                    ? "tab-active"
-                                    : ""
-                                } ${
-                                  index === 0
-                                    ? "tab-left"
-                                    : index === 2
-                                    ? "tab-right"
-                                    : ""
-                                }`}
-                                onClick={() => {
-                                  setSelectedComparisonExchange(index);
-                                }}
-                              >
-                                {exchange}
-                              </button>
-                            );
-                          })}
-                    </div>
-                    <div className="exchange-selection">
-                      {unitTabs.map((tab, index) => {
-                        return (
-                          <button
-                            key={index}
-                            className={`tab-small ${
-                              activeUnitTab === index ? "tab-active" : ""
-                            } ${
-                              index === 0
-                                ? "tab-left"
-                                : index === unitTabs.length - 1
-                                ? "tab-right"
-                                : ""
-                            }`}
-                            onClick={() => {
-                              setActiveUnitTab(index);
-                            }}
-                          >
-                            {tab.name}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              }
-              {/* Chart Area */}
+        //     <div className={""}>
+        //       {/* Filters */}
+        //       {
+        //         <div className="filters">
+        //           <div className="legend-exchangeSelection">
+        //             <div className="exchange-selection">
+        //               {state.page === (0 as any)
+        //                 ? ["IEX", "PXIL", "HPX"].map((exchange, index) => {
+        //                     return (
+        //                       <button
+        //                         key={index}
+        //                         className={`tab-small ${
+        //                           selectedComparisonExchange === index
+        //                             ? "tab-active"
+        //                             : ""
+        //                         } ${
+        //                           index === 0
+        //                             ? "tab-left"
+        //                             : index === 2
+        //                             ? "tab-right"
+        //                             : ""
+        //                         }`}
+        //                         onClick={() => {
+        //                           setSelectedComparisonExchange(index);
+        //                         }}
+        //                       >
+        //                         {exchange}
+        //                       </button>
+        //                     );
+        //                   })
+        //                 : ["IEX", "PXIL", "HPX"].map((exchange, index) => {
+        //                     return (
+        //                       <button
+        //                         key={index}
+        //                         className={`tab-small ${
+        //                           selectedComparisonExchange === index
+        //                             ? "tab-active"
+        //                             : ""
+        //                         } ${
+        //                           index === 0
+        //                             ? "tab-left"
+        //                             : index === 2
+        //                             ? "tab-right"
+        //                             : ""
+        //                         }`}
+        //                         onClick={() => {
+        //                           setSelectedComparisonExchange(index);
+        //                         }}
+        //                       >
+        //                         {exchange}
+        //                       </button>
+        //                     );
+        //                   })}
+        //             </div>
+        //             <div className="exchange-selection">
+        //               {unitTabs.map((tab, index) => {
+        //                 return (
+        //                   <button
+        //                     key={index}
+        //                     className={`tab-small ${
+        //                       activeUnitTab === index ? "tab-active" : ""
+        //                     } ${
+        //                       index === 0
+        //                         ? "tab-left"
+        //                         : index === unitTabs.length - 1
+        //                         ? "tab-right"
+        //                         : ""
+        //                     }`}
+        //                     onClick={() => {
+        //                       setActiveUnitTab(index);
+        //                     }}
+        //                   >
+        //                     {tab.name}
+        //                   </button>
+        //                 );
+        //               })}
+        //             </div>
+        //           </div>
+        //         </div>
+        //       }
+        //       {/* Chart Area */}
 
-              {activeUnitTab !== 4 && (
-                <div className="exchange-chart-area">
-                  <ComparisonChart
-                    title="DAM"
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.dam
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.dam
-                        : chartData.data.hpx.dam
-                    }
-                  />
+        //       {activeUnitTab !== 4 && (
+        //         <div className="exchange-chart-area">
+        //           <ComparisonChart
+        //             title="DAM"
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.dam
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.dam
+        //                 : chartData.data.hpx.dam
+        //             }
+        //           />
 
-                  <ComparisonChart
-                    title="GDAM"
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.gdam
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.gdam
-                        : chartData.data.hpx.gdam
-                    }
-                  />
+        //           <ComparisonChart
+        //             title="GDAM"
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.gdam
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.gdam
+        //                 : chartData.data.hpx.gdam
+        //             }
+        //           />
 
-                  <ComparisonChart
-                    title="HPDAM"
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.hpdam
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.hpdam
-                        : chartData.data.hpx.hpdam
-                    }
-                  />
+        //           <ComparisonChart
+        //             title="HPDAM"
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.hpdam
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.hpdam
+        //                 : chartData.data.hpx.hpdam
+        //             }
+        //           />
 
-                  <ComparisonChart
-                    title="RTM"
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.rtm
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.rtm
-                        : chartData.data.hpx.rtm
-                    }
-                  />
-                  <ExchangeChart
-                    shownLegnends={[]}
-                    brushStart={BrushStart.Start}
-                    setShownLegends={function (legends: string[]): void {}}
-                    data={chartData.data.iex.dam}
-                    title="DAM"
-                    syncId="comparison"
-                    height="6%"
-                    width="99%"
-                    showBrush={true}
-                    onlyBrush={true}
-                  />
-                </div>
-              )}
+        //           <ComparisonChart
+        //             title="RTM"
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.rtm
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.rtm
+        //                 : chartData.data.hpx.rtm
+        //             }
+        //           />
+        //           <ExchangeChart
+        //             shownLegnends={[]}
+        //             brushStart={BrushStart.Start}
+        //             setShownLegends={function (legends: string[]): void {}}
+        //             data={chartData.data.iex.dam}
+        //             title="DAM"
+        //             syncId="comparison"
+        //             height="6%"
+        //             width="99%"
+        //             showBrush={true}
+        //             onlyBrush={true}
+        //           />
+        //         </div>
+        //       )}
 
-              {activeUnitTab === 4 && (
-                <div className="exchange-chart-area">
-                  <WeightedAverageChart
-                    // data={chartData.data.iex.dam}
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.dam
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.dam
-                        : chartData.data.hpx.dam
-                    }
-                    title="DAM"
-                  />
-                  <WeightedAverageChart
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.gdam
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.gdam
-                        : chartData.data.hpx.gdam
-                    }
-                    title="GDAM"
-                  />
+        //       {activeUnitTab === 4 && (
+        //         <div className="exchange-chart-area">
+        //           <WeightedAverageChart
+        //             // data={chartData.data.iex.dam}
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.dam
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.dam
+        //                 : chartData.data.hpx.dam
+        //             }
+        //             title="DAM"
+        //           />
+        //           <WeightedAverageChart
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.gdam
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.gdam
+        //                 : chartData.data.hpx.gdam
+        //             }
+        //             title="GDAM"
+        //           />
 
-                  <WeightedAverageChart
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.hpdam
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.hpdam
-                        : chartData.data.hpx.hpdam
-                    }
-                    title="HPDAM"
-                  />
+        //           <WeightedAverageChart
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.hpdam
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.hpdam
+        //                 : chartData.data.hpx.hpdam
+        //             }
+        //             title="HPDAM"
+        //           />
 
-                  <WeightedAverageChart
-                    data={
-                      selectedComparisonExchange === 0
-                        ? chartData.data.iex.rtm
-                        : selectedComparisonExchange === 1
-                        ? chartData.data.pxil.rtm
-                        : chartData.data.hpx.rtm
-                    }
-                    title="RTM"
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        ) : (
+        //           <WeightedAverageChart
+        //             data={
+        //               selectedComparisonExchange === 0
+        //                 ? chartData.data.iex.rtm
+        //                 : selectedComparisonExchange === 1
+        //                 ? chartData.data.pxil.rtm
+        //                 : chartData.data.hpx.rtm
+        //             }
+        //             title="RTM"
+        //           />
+        //         </div>
+        //       )}
+        //     </div>
+        //   </div>
+        // ) : 
+        (
           <EntityPage />
         )
       }
@@ -1865,12 +1871,16 @@ export function Exchange3() {
           {title}
         </h2>
         <ReLineChart
+                  xLabel="Time (Hrs)"
+          isTimeSlot={true}
           yAxisWidth={activeUnitTab !== 0 ? 70 : 40}
           fontSize={15}
           brushStart={BrushStart.Start}
           data={data}
+          xTick={renderHourTick}
           xDataKey="time_slot"
           secondXDataKey="date"
+          
           syncid="comparison"
           showBrush={true}
           brushHeight={0.00000001}

@@ -16,6 +16,7 @@ import {
 import { PrimaryColor } from "../../common";
 import { BrushStart, ChartArguements, LegendKey, ReChartData } from "../../models/chart_model";
 import { renderQuarterTick } from "./components";
+import { getTimeRange } from "../../pages/Dashboard/Exchange3/Chart";
 export const COLORS = [
   "#FF7F50",
   "#B8860B",
@@ -28,9 +29,12 @@ export const COLORS = [
 export function ReLineChart({
   data,
   legends,
+  xLabel,
   syncid,
   unit,
   xDataKey,
+  isTimeSlot,
+  xTick,
   yAxisLabel,
   yAxisWidth,
   secondXDataKey,
@@ -109,8 +113,12 @@ export function ReLineChart({
 
       <ResponsiveContainer height={"80%"}>
         <LineChart syncId={syncid} data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis               minTickGap={8}
+          <CartesianGrid  strokeDasharray="3 3" />
+          <XAxis    
+          tick={xTick}
+          minTickGap={8}
+          label={{ value: xLabel, position: "insideBottom", dy: 10 }}
+          interval={xTick !== undefined ? 0 : undefined}
  dataKey={xDataKey} />
           {secondXDataKey !== undefined ? (
             <XAxis
@@ -160,6 +168,8 @@ export function ReLineChart({
           <Tooltip
             labelFormatter={(value, payload) => {
               try {
+                if(isTimeSlot) {return [ getTimeRange(parseInt(value)) + ` (${value})`];}
+
                 if (payload[0].payload.date == undefined){
                   return [value]
                 }
@@ -169,6 +179,7 @@ export function ReLineChart({
               }
             }}
             formatter={(value, name, props) => {
+
               return [
                 name +
                   " : " +

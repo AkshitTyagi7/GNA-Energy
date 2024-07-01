@@ -215,6 +215,13 @@ export function MarketMontoring() {
                   startMonth,
                   endMonth,
                 });
+                fetchPriceData({
+                  selectedExchange,
+                  selectedMarket,
+                  selectedProduct: byPriceProduct,
+                  startMonth,
+                  endMonth,
+                });
               }}
             />
             <Select

@@ -1,3 +1,4 @@
+import { NameType, Payload, ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { COLORS } from "../components/recharts/ReCharts";
 
 export interface ReChartData {
@@ -41,10 +42,13 @@ export interface ChartArguements {
     syncid?: string;
     unit?: string;
     xDataKey: string;
+    xTick? : any ; 
+    xLabel?: string;
     yAxisWidth?: number;
     secondXDataKey?: string;
     yAxisLabel?: string;
     fontSize?: number;
+    isTimeSlot?: boolean;
     showBrush?: boolean;
     brushHeight?: number;
     brushStart?: BrushStart;

@@ -8,6 +8,7 @@ import { Exchanges_data } from "./Data/Exchanges_data";
 import { EntityData } from "./Data/Entity_data";
 import Loading from "../../../components/Loading";
 import { COST_UNIT } from "../../../Units";
+import { renderHourTick } from "./Chart";
 
 export function EntityPage() {
   const [chartData, setChartData] = useState<ReChartData[]>([]);
@@ -129,9 +130,12 @@ export function EntityPage() {
       <ReMixChart
         data={chartData}
         xDataKey="slot"
+        isTimeSlot={true}
+        xLabel="Time (Hrs)"
         unit="MW"
         secondYAxisLabel={COST_UNIT}
         yAxisLabel="MW"
+        xTick={renderHourTick}
         legends={[
           {
             name: "Weighted Price",
