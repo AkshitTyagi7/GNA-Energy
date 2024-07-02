@@ -31,7 +31,7 @@ export default function Dashboard() {
   return (
     <>      <div className="dashboard-header">
     <div>
-        <h1>GNA Energy Data and Analytics Capability Center</h1>
+        <h1>GNA Energy Data and Analytics Capability Center (GDACC)</h1>
     </div>
 </div>
     
