@@ -22,7 +22,7 @@ interface Source {
 }
 export function Gnai() {
   const chatAreaRef = useRef<HTMLDivElement>(null);
-  const BASE_URL = "http://127.0.0.1:8002/";
+  const BASE_URL = "https://assistant.gna.energy/";
   const [threadId, setThreadId] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([
     {
