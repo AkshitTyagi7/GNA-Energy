@@ -12,6 +12,7 @@ import { Exchange3 } from "./pages/Dashboard/Exchange3/Exchange3";
 import { Discom } from "./pages/Dashboard/Discom/Discom";
 import { ExchangeComparion } from "./pages/Dashboard/Exchange3/Comparison";
 import { ExchangeComparion2 } from "./pages/Dashboard/Exchange3/Comparison2";
+import { AuctionPage } from "./pages/Dashboard/Auction/Auction";
 
 {/* <Route path="demoPage" element={<DemoPage />} />
 <Route path="marketmonitoring" element={<MarketMontoring />} />
@@ -83,7 +84,12 @@ export const DashboardRoutes=[
         path:"betaConsumption",
         element: <BetaConsumption />,
         notPrtoected:true
-    }
+    },
+    {
+        path: "auctions",
+        element:<AuctionPage  />,
+        notPrtoected:true ,
+        noDefaultPadding:true   }
     // {
     //     path:"betaMarketMonitoring",
     //     element: <BetaMarketMontoring />,
