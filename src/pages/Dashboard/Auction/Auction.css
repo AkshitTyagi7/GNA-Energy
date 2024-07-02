@@ -1,0 +1,45 @@
+.auction-table thead{
+    font-size: 14px;
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+  
+}
+.auction-table{
+    width: 100%;
+    height: 20vh;
+    margin-top: 20px;
+    overflow-y: scroll;
+}
+
+.auction-table-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.auction-container{
+    width: 100%;
+
+}
+.auction-table th{
+    padding-right: 4px;
+}
+.auction-table tbody
+{
+    
+    font-size: 12px;
+    text-align: center;
+    color: gray;
+}
+
+.auction-table td{
+    padding: 7px;
+    min-width: 100px;
+}
+/* add doted line in table */
+.search-box{
+width: 40%;}

@@ -42,7 +42,7 @@ export default function Dashboard() {
         <DashBoardItem Icon={DiscomAnalysis} title="Discom Analytics" to="discomAnalysis" />
         <DashBoardItem Icon={ExchangeAnalysis} title="Exchange Analytics" to="exchangeAnalysis" />
         <DashBoardItem Icon={PowerAtlas} title="Power Atlas" to="powerAtlas" />
-        <DashBoardItem Icon={BankingAalytics} title="Banking Analytics" to="bankingAnalytics" />
+        <DashBoardItem Icon={BankingAalytics} title="Auctions" to="auctions" />
         <DashBoardItem Icon={ConsumptionAndGenerationAnalytics} title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
         <DashBoardItem Icon={PriceForecasting} title="Price Forecast" to="priceForecasting" />
         <DashBoardItem Icon={DemandForecasting} title="Demand Forecast" to="demandForecasting" />
