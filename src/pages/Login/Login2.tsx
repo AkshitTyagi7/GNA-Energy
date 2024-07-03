@@ -8,7 +8,6 @@ import { setAccessToken, setUser, setLoggedIn } from "../Protected";
 import Loading from "../../components/Loading";
 import OTPInput from "react-otp-input";
 
-
 export function Login2() {
   const [otpSent, setOtpSent] = React.useState<boolean>(false);
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -59,24 +58,22 @@ export function Login2() {
               <h1>OTP</h1>
               <p>{email}</p>
             </div>
-            <form className="login-form">
+            <form className="login-form" onSubmit={handleFormSubmit}>
               <label>Enter the OTP</label>
               <OTPInput
-              inputType="number"
-              
-      value={otp?.toString()}
-      onChange={(value) => {
-        console.log(value);
-        setOtp(parseInt(value));
-        otp = parseInt(value);
-        handleOtpSubmit();
-      }
-      }
-      numInputs={5}
-      renderSeparator={<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}
-      renderInput={(props) => <input {...props} />}
-    />
-              <button type="submit" value="Sign in">
+                inputType="number"
+                value={otp?.toString()}
+                onChange={(value) => {
+                  console.log(value);
+                  setOtp(parseInt(value));
+                  otp = parseInt(value);
+                  handleOtpSubmit();
+                }}
+                numInputs={5}
+                renderSeparator={<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+                renderInput={(props) => <input {...props} />}
+              />
+              <button type="submit" value="otpsubmit">
                 Sign in
               </button>
             </form>
@@ -113,10 +110,14 @@ export function Login2() {
       // if (otp?.toString().length !== 5) {
       //   return;
       // }
-      if(otpSent){
+      if (otpSent) {
+        if (otp?.toString().length !== 5) {
+          // alert("Please enter a valid otp");
+          swal("Invalid Otp", "Please enter a valid otp.", "warning");
+          return;
+        }
         handleOtpSubmit();
         return;
-        
       }
       const url = buildUrl("/get_otp");
       setLoading(true);
