@@ -6,7 +6,7 @@ import React from "react";
 import { buildUrl, buildHttpReq } from "../../common";
 import { setAccessToken, setUser, setLoggedIn } from "../Protected";
 import Loading from "../../components/Loading";
-
+import OTPInput from "react-otp-input";
 
 export function Login2() {
   const [otpSent, setOtpSent] = React.useState<boolean>(false);
@@ -58,23 +58,22 @@ export function Login2() {
               <h1>OTP</h1>
               <p>{email}</p>
             </div>
-            <form className="login-form">
-              <label>Enter the Otp</label>
-              <OtpInput
-                fieldNumber={5}
-                onFilled={(e: number) => {
-                  console.log("OTP Filled");
-                  console.log(e);
+            <form className="login-form" onSubmit={handleFormSubmit}>
+              <label>Enter the OTP</label>
+              <OTPInput
+                inputType="number"
+                value={otp?.toString()}
+                onChange={(value) => {
+                  console.log(value);
+                  setOtp(parseInt(value));
+                  otp = parseInt(value);
                   handleOtpSubmit();
                 }}
-                onChange={(e: number) => {
-                  otp = e;
-
-                  console.log(otp);
-                  console.log(e);
-                }}
+                numInputs={5}
+                renderSeparator={<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+                renderInput={(props) => <input {...props} />}
               />
-              <button type="submit" value="Sign in">
+              <button type="submit" value="otpsubmit">
                 Sign in
               </button>
             </form>
@@ -108,6 +107,18 @@ export function Login2() {
   async function handleFormSubmit(e: any) {
     try {
       e.preventDefault();
+      // if (otp?.toString().length !== 5) {
+      //   return;
+      // }
+      if (otpSent) {
+        if (otp?.toString().length !== 5) {
+          // alert("Please enter a valid otp");
+          swal("Invalid Otp", "Please enter a valid otp.", "warning");
+          return;
+        }
+        handleOtpSubmit();
+        return;
+      }
       const url = buildUrl("/get_otp");
       setLoading(true);
       const response = await buildHttpReq({
@@ -141,7 +152,7 @@ export function Login2() {
     console.log("Form submitted");
     if (otp?.toString().length !== 5) {
       // alert("Please enter a valid otp");
-      swal("Invalid Otp", "Please enter a valid otp.", "warning");
+      // swal("Invalid Otp", "Please enter a valid otp.", "warning");
       return;
     }
     setLoading(true);
@@ -177,55 +188,55 @@ export function Login2() {
     }
   }
 }
-function OtpInput({
-  fieldNumber,
-  onChange,
-  onFilled,
-}: {
-  fieldNumber: number;
-  onChange: any;
-  onFilled?: any;
-}) {
-  let fieldNumberList: number[] = [];
-  for (let i = 0; i < fieldNumber; i++) {
-    fieldNumberList.push(i);
-  }
-  let inputList: any[] = [];
-  function handleOnChange(e: number, index: number) {
-    if (inputList[index] === null) {
-      onChange(inputList.join(""));
-      return;
-    }
-    inputList[index] = e;
-    onChange(parseInt(inputList.join("")));
-    if (inputList.join("").length === 5) {
-      onFilled(parseInt(inputList.join("")));
-    }
-  }
+// function OtpInput({
+//   fieldNumber,
+//   onChange,
+//   onFilled,
+// }: {
+//   fieldNumber: number;
+//   onChange: any;
+//   onFilled?: any;
+// }) {
+//   let fieldNumberList: number[] = [];
+//   for (let i = 0; i < fieldNumber; i++) {
+//     fieldNumberList.push(i);
+//   }
+//   let inputList: any[] = [];
+//   function handleOnChange(e: number, index: number) {
+//     if (inputList[index] === null) {
+//       onChange(inputList.join(""));
+//       return;
+//     }
+//     inputList[index] = e;
+//     onChange(parseInt(inputList.join("")));
+//     if (inputList.join("").length === 5) {
+//       onFilled(parseInt(inputList.join("")));
+//     }
+//   }
 
-  return (
-    <div className="otp-input">
-      {fieldNumberList.map((item, index) => {
-        return (
-          <input
-            className="otp-input-fields"
-            type="number"
-            id={`otpInput-${item.toString()}`}
-            key={`otpInput=${item.toString()}`}
-            maxLength={1}
-            onChange={(e) => {
-              if (e.target.value.length === 1) {
-                if (item < fieldNumber - 1) {
-                  document
-                    .getElementById(`otpInput-${(item + 1).toString()}`)
-                    ?.focus();
-                }
-              }
-              handleOnChange(parseInt(e.target.value), index);
-            }}
-          />
-        );
-      })}
-    </div>
-  );
-}
+//   return (
+//     <div className="otp-input">
+//       {fieldNumberList.map((item, index) => {
+//         return (
+//           <input
+//             className="otp-input-fields"
+//             type="number"
+//             id={`otpInput-${item.toString()}`}
+//             key={`otpInput=${item.toString()}`}
+//             maxLength={1}
+//             onChange={(e) => {
+//               if (e.target.value.length === 1) {
+//                 if (item < fieldNumber - 1) {
+//                   document
+//                     .getElementById(`otpInput-${(item + 1).toString()}`)
+//                     ?.focus();
+//                 }
+//               }
+//               handleOnChange(parseInt(e.target.value), index);
+//             }}
+//           />
+//         );
+//       })}
+//     </div>
+//   );
+// }
