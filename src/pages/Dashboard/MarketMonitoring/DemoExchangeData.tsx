@@ -226,6 +226,8 @@ export const Markets: Filter[] = [
       {id: 1, name: "DAM" },
       {id: 2, name: "RTM"},
       {id: 3, name: "GDAM"},
+      {id: 12, name: "HPDAM"},
+
     ],
   },
   {
@@ -263,6 +265,7 @@ export const Exchange: Filter[] = [
       { id: 1, name: "DAM" },
       { id: 2, name: "RTM" },
       { id: 3, name: "GDAM" },
+      {id: 12, name: "HPDAM"},
       { id: 4, name: "Intra-Day Contracts" },
       { id: 5, name: "Day Ahead Contingency Contracts" },
       { id: 6, name: "Daily Contracts" },
@@ -278,6 +281,8 @@ export const Exchange: Filter[] = [
       { id: 1, name: "DAM" },
       { id: 2, name: "RTM" },
       { id: 3, name: "GDAM" },
+      {id: 12, name: "HPDAM"},
+
       { id: 4, name: "Intra-Day Contracts" },
       { id: 5, name: "Day Ahead Contingency Contracts" },
       { id: 6, name: "Daily Contracts" },

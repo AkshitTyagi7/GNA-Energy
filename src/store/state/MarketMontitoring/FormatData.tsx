@@ -3,6 +3,7 @@ import { StringLiteral } from "typescript";
 enum Products {
     DAM = "DAM",
     RTM = "RTM",
+    HPDAM = "HPDAM",
     GDAM = "GDAM",
     IntraDay = "Intra-Day Contracts",
     ContigencyContracts = "Day Ahead Contingency Contracts",
@@ -23,6 +24,7 @@ export interface MarketMonitoringItem {
 export interface MarketMonitoringData {
     dam: MarketMonitoringItem[];
     rtm: MarketMonitoringItem[];
+    hpdam: MarketMonitoringItem[];
     gdam: MarketMonitoringItem[];
     intraDay: MarketMonitoringItem[];
     contingencyContracts: MarketMonitoringItem[];
@@ -38,6 +40,7 @@ export interface ChartExchangeItem {
     month: string;
     dam: number;
     rtm: number;
+    hpdam: number;
     gdam: number;
     intraDay: number;
     contingencyContracts: number;
@@ -55,6 +58,7 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
     const formattedDataArray: MarketMonitoringData = {
         dam: [],
         rtm: [],
+        hpdam: [],
         gdam: [],
         intraDay: [],
         contingencyContracts: [],
@@ -138,6 +142,7 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
             finalChartExchangeData.push({
                 month: formattedDataArray[maxLengthKey as keyof MarketMonitoringData][index].month,
                 dam: formattedDataArray.dam[index]?.value ?? null,
+                hpdam: formattedDataArray.hpdam[index]?.value ?? null,
                 rtm: formattedDataArray.rtm[index]?.value ?? null,
                 gdam: formattedDataArray.gdam[index]?.value ?? null,
                 intraDay: formattedDataArray.intraDay[index]?.value ?? null,

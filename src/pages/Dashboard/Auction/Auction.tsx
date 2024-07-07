@@ -139,6 +139,7 @@ export function AuctionPage() {
                 <th>Quantity (MW)</th>
                 <th>Buyer</th>
                 <th>Exchange</th>
+                <th>Type</th>
               </tr>
             </thead>
             <tbody className="auction-table-body">
@@ -154,6 +155,7 @@ export function AuctionPage() {
                   <td>{auction.allocated_quantity_mw}</td>
                   <td>{auction.buyer__name}</td>
                   <td>{auction.exchange_type__name}</td>
+                    <td>{auction.type__name}</td>
                 </tr>
               ))}
             </tbody>
