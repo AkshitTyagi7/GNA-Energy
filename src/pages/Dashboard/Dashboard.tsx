@@ -39,11 +39,11 @@ export default function Dashboard() {
 
       <div className="flex flex-row flex-wrap gap-5 justify-center">
         <DashBoardItem Icon={MarketMonitoring} title="Market Monitoring" to="marketmonitoring" />
-        <DashBoardItem Icon={DiscomAnalysis} title="Discom Analytics" to="discomAnalysis" />
         <DashBoardItem Icon={ExchangeAnalysis} title="Exchange Analytics" to="exchangeAnalysis" />
-        <DashBoardItem Icon={PowerAtlas} title="Power Atlas" to="powerAtlas" />
         <DashBoardItem Icon={BankingAalytics} title="Auctions" to="auctions" />
+        <DashBoardItem Icon={PowerAtlas} title="Power Atlas" to="powerAtlas" />
         <DashBoardItem Icon={ConsumptionAndGenerationAnalytics} title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
+        <DashBoardItem Icon={DiscomAnalysis} title="Discom Analytics" to="discomAnalysis" />
         <DashBoardItem Icon={PriceForecasting} title="Price Forecast" to="priceForecasting" />
         <DashBoardItem Icon={DemandForecasting} title="Demand Forecast" to="demandForecasting" />
         <DashBoardItem Icon={GridFrequencyProfile} title="Grid Frequency Profile" to="gridFrequencyProfile" />

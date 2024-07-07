@@ -22,6 +22,7 @@ import { useSelector } from "react-redux";
 import { Documents } from "./pages/Documents/Documents";
 import { Sidebar2 } from "./layout/Sidebar2";
 import { Login2 } from "./pages/Login/Login2";
+import MarketMonitoring from "./pages/MarketMonitoringCERC/MarketMonitoring";
 
 function App() {
   const isMenuActive = useSelector((state: any) => state.menu.isActive);
@@ -89,6 +90,24 @@ function App() {
                       <Gnai />
                   }
                   pageId="/gnai"
+                />
+                </div>
+              </Protected>
+            }
+          />
+          <Route
+            path="/marketMonitoring"
+            element={
+              <Protected>
+                {/* <Sidebar2 /> */}
+                <div
+                      className=""
+                    >
+                <ProtectedPage
+                  children={
+                      <MarketMonitoring />
+                  }
+                  pageId="/marketMonitoring"
                 />
                 </div>
               </Protected>

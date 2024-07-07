@@ -23,7 +23,7 @@ function SideBarItems({Icon, text, href, isMenuActive }: {Icon?: React.FunctionC
       <NavLink to={href} className={`sidebar-item ${isActive ? "sidebar-item-active" : ''} ${isMenuActive ? '' : 'justify-center'}  items-center rounded-lg`}>
         {/* <Icon className={`${isActive ? "icon whiteIcon":"icon blackIcon icon-bold"} ${isMenuActive ? "mr-2 ml-2": ""}`} width="30" x="0" y="20"   stroke="#000000" stroke-widths={20} /> */}
         {isActive ? <MenuItemIcon fill="#F1935C"  /> : <MenuItemIcon fill={"#9F9F9F"} />}
-        <p className="sidebar-text">{text}</p>
+        <p className="sidebar-text" style={{textAlign:"center"}}>{text}</p>
 
       </NavLink>
       </>
@@ -52,11 +52,12 @@ export function Sidebar2(){
     <Logo />
     <hr className="my-2 border-t border-gray-300 w-full" style={{color:"#E4E7ED", marginTop:"20px"}} />
     <div className="sidebar-items">
-    <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
-          <SideBarItems Icon={DocumentIcon} text="GNAi Doc" isMenuActive={active} href="/document"  />
-          <SideBarItems Icon={GNAiIcon} text="GNAi" isMenuActive={active} href="/gnai"  />
-         <LogOut />
-          </div>
+      <SideBarItems Icon={DashboardIcon} text="Dashboard" href="/dashboard" isMenuActive={active}   />
+      <SideBarItems Icon={DashboardIcon} text="Market Monitoring" href="/marketMonitoring" isMenuActive={active}   />
+      <SideBarItems Icon={DocumentIcon} text="GNAi Doc" isMenuActive={active} href="/document"  />
+      <SideBarItems Icon={GNAiIcon} text="GNAi" isMenuActive={active} href="/gnai"  />
+      <LogOut />
+    </div>
    </div>
 }
 
