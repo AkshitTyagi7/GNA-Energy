@@ -1,0 +1,435 @@
+.cerccontainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.topNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+  background-color: #fff;
+  width: 100dvw;
+  height: 10vh;
+}
+
+.navHeading {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+}
+
+.bottomText {
+  height: 4vh;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  letter-spacing: 0.016em;
+
+  color: #9f9f9f;
+  text-align: center;
+}
+
+.powerSuppContainer {
+  height: 28vh;
+  margin: 0px 32px;
+  background-color: #ffffff;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.powSupPosContainer {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4e7ed;
+
+  padding: 0px 16px;
+}
+
+.powSupPos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #666666;
+}
+
+.dateTextPowSup {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #295d66;
+}
+
+.powSupDispContainer {
+  height: 20vh;
+  padding: 0px 16px 16px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateContainer {
+  width: 8vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-items: center;
+  background-color: #fffcfb;
+  border-radius: 16px;
+}
+
+.dateNow {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #777777;
+  padding-top: 8px;
+}
+
+.datePast {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: #333333;
+}
+
+.eachEnergyContainer {
+  width: 10vw;
+  border-radius: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 0.1px solid #34656d;
+  box-shadow: 2px 2px 9px -5px #dadde866;
+
+  padding: 16px;
+}
+
+.powSupHeading {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: #6ba3ac;
+}
+
+.powSupToday {
+  padding-top: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  color: #777777;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.powSuppast {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+
+  color: #585858;
+}
+
+.collectiveMarketCont {
+  height: 49vh;
+  margin: 0px 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cmContainer {
+  height: 100%;
+  width: 56.5%;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.collHeadContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px;
+  height: 15%;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.collHeading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.headingContSub {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.collTypesSec {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.inactiveCollType {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+
+  color: #64748b;
+}
+
+.activeCollType {
+  height: 36px;
+  width: 94px;
+  background-color: #fff7f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #f1935c;
+}
+
+.marketContianer {
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.marketTypeCont {
+  width: 20%;
+  padding-bottom: 2%;
+  height: 98%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.marketDetailsCont {
+  width: 25.5%;
+  padding-bottom: 2%;
+  height: 98%;
+  border: 1px solid #e4e7ed;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.marketImageArea {
+  height: 20%;
+  width: 95%;
+  margin-left: 5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.marketImageArea2 {
+  height: 20%;
+  width: 95%;
+  margin-left: 5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.marketTextArea {
+  height: 16%;
+  width: 95%;
+  margin-left: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mcpButton {
+  height: 100%;
+  width: 80%;
+
+  background-color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  letter-spacing: 0.016em;
+  color: #34656d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 9.1px 0px #e5e5e566;
+}
+
+.sellButton {
+  height: 100%;
+  width: 80%;
+
+  background-color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  letter-spacing: 0.016em;
+
+  color: #34656d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 9.1px 0px #e5e5e566;
+}
+
+.valEach {
+  width: 90%;
+  margin-right: 10%;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.iconCont {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.016em;
+  color: #34656d;
+}
+.iconCOntDown {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.016em;
+  color: #ff0000;
+}
+
+.mainValue1 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28.8px;
+  letter-spacing: 0.016em;
+  color: #444444;
+}
+
+.mainVal2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.016em;
+  color: #333333;
+}
+
+.mainVal2Right {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.016em;
+  color: #888888;
+}
+
+.rtmContainer {
+  height: 100%;
+  width: 42.5%;
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rtmHeadCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  padding: 0px 16px;
+}
+
+.rtmHeadText {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+
+  color: #666666;
+}
+
+.timerTxt {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #f1935c;
+}
+
+.rtmGraphContainer {
+  height: 57%;
+  background-color: rgb(176, 176, 176);
+}
+
+.rtmDetailsCont {
+  height: 25%;
+  width: 95%;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.rtmL1 {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0px;
+}
+
+.rtmL2 {
+  height: 100%;
+  padding: 8px 0px;
+  width: 25%;
+  border: 1px solid #e4e7ed;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
