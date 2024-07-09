@@ -59,7 +59,7 @@ export interface ChartExchangeItem {
 }
 
 
-export function FormatMarketMonitoringData(data: any, includingExchange?: String[], isWeighted?: boolean): ChartExchangeItem[] {
+export function FormatMarketMonitoringData(data: any, includingExchange?: String[],includingMarket?: String[], isWeighted?: boolean): ChartExchangeItem[] {
     const formattedDataArray: MarketMonitoringData = {
         dam: [],
         rtm: [],
@@ -92,13 +92,10 @@ export function FormatMarketMonitoringData(data: any, includingExchange?: String
             dataArray.push(toPush); 
 
         } else {
-       
             if(isWeighted){
-
                 dataArray[index].totalVolume += item.volume;
                 dataArray[index].totalCost! += item.value*item.volume;
                 dataArray[index].value = dataArray[index].totalVolume === 0 ? 0 : dataArray[index].totalCost!/dataArray[index].totalVolume!;
-                
             }
             else{
                 dataArray[index].value += item.value;
@@ -109,6 +106,7 @@ export function FormatMarketMonitoringData(data: any, includingExchange?: String
         if (includingExchange?.includes(key)) {
             
         Object.keys(data[key]).forEach((key2) => {
+            if (includingMarket?.includes(key2)) {
             data[key][key2].forEach((item: any) => {
                 switch (item.product) {
                     
@@ -153,7 +151,9 @@ export function FormatMarketMonitoringData(data: any, includingExchange?: String
                         break;
                 }
             });
-        });
+        }else{
+            console.log("Market not included, " + key2)
+        }});
     }
     });
     const finalChartExchangeData: ChartExchangeItem[] = [];
@@ -211,6 +211,9 @@ interface ByPriceItem{
     value: number;
     exchange: Exchange;
     month: string;
+    cost? : number;
+    totalVolume? : number;
+
 }
 
 interface ByPriceData{
@@ -224,7 +227,7 @@ interface ByPriceData{
 
 
 
-export function FormatByPriceData(data: any, selectedProduct?: String[]): ChartByPriceItem[]{
+export function FormatByPriceData(data: any, selectedProduct?: String[],selectedMarket?: String[], isPrice?: boolean): ChartByPriceItem[]{
     const formattedDataArray: ByPriceData = {
         month:[],
         iex: [],
@@ -236,27 +239,38 @@ export function FormatByPriceData(data: any, selectedProduct?: String[]): ChartB
 
     const updateFormattedData = (dataArray: ByPriceItem[], exchange: Exchange, item: any) => {
         const index = dataArray.findIndex((element) => element.month === item.month);
-        // if(item.product !== selectedProduct && item.Product !== "Bilateral"){
-        //     return;
-        // }
         if( !selectedProduct?.includes(item.product)){
             return;
         }
         else{
         if (index === -1) {
-            dataArray.push({
+            var toBePushed: ByPriceItem = {
                 month: item.month,
                 exchange: exchange,
                 value: parseFloat(item.value),
-            });
+            };
+            if(isPrice){
+                toBePushed.cost = item.value*item.volume ;
+                toBePushed.totalVolume = item.volume;
+            }
+            dataArray.push(toBePushed);
+         
         } else {
             dataArray[index].value += parseFloat(item.value);
+            if(isPrice){
+                dataArray[index].cost! += item.value*item.volume;
+                dataArray[index].totalVolume! += item.volume;
+                dataArray[index].value = dataArray[index].totalVolume === 0 ? 0 : dataArray[index].cost!/dataArray[index].totalVolume!;
+            }
         }}
     };
 
 
     Object.keys(data).forEach((exchange) => {
         Object.keys(data[exchange]).forEach((market) => {
+            if(selectedMarket?.includes(market)){
+
+    
             
             switch (exchange) {
                 case Exchange.IEX:
@@ -281,6 +295,9 @@ export function FormatByPriceData(data: any, selectedProduct?: String[]): ChartB
                     break;
                 default:
                     break;
+            }        }
+            else{
+                console.log("Market not included price, " + market)
             }
     });
 });

@@ -1,4 +1,5 @@
 import { ReChartData } from "../models/chart_model";
+import { ApiResponse } from "../models/csrc";
 
 
 export async function getEntityComparisont({
@@ -44,7 +45,7 @@ export async function getEntityComparisont({
         // }
     const data = await response.json();
 
-    return data.data as any;
+    return data as any;
 
 }
 
@@ -67,4 +68,32 @@ export async function getEntitys(){
         }
     })
     return res;
+}
+
+
+const fetchLatestAggregatedDayData = async () => {
+    try {
+        const response = await fetch("https://api-data.gna.energy/data/latest-aggregated-day-data/");
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw new Error('Error fetching data');
+    }
+};
+
+export default fetchLatestAggregatedDayData;
+
+export async function fetchPSPData() {
+    const response = await fetch("https://datahub.gna.energy/power_supply_api", {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+    const data = await response.json();
+    return data;
 }

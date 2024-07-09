@@ -30,8 +30,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-    
-          <Route path="/" element={      <Protected><Navigate to="/dashboard" /></Protected>} />
+          <Route
+            path="/"
+            element={
+              <Protected>
+                <Navigate to="/dashboard" />
+              </Protected>
+            }
+          />
           <Route path="/login" element={<Login2 />} />
 
           <Route
@@ -40,17 +46,18 @@ function App() {
               <>
                 <Sidebar2 />
 
-                  <Outlet
-                    />
+                <Outlet />
               </>
             }
           >
-            <Route index={true} element={
-                            <div
-                            className="content2"
-
-                          >
-            <Dashboard /></div>} />
+            <Route
+              index={true}
+              element={
+                <div className="content2">
+                  <Dashboard />
+                </div>
+              }
+            />
             {DashboardRoutes.map((Proute, index) => {
               return (
                 <Route
@@ -61,12 +68,15 @@ function App() {
                       Proute.element
                     ) : (
                       <div
-                      className={Proute.noDefaultPadding ? "content2" : "content"}
-                    >
-                      <ProtectedPage
-                        children={Proute.element}
-                        pageId={"/" + Proute.path}
-                      /></div>
+                        className={
+                          Proute.noDefaultPadding ? "content2" : "content"
+                        }
+                      >
+                        <ProtectedPage
+                          children={Proute.element}
+                          pageId={"/" + Proute.path}
+                        />
+                      </div>
                     )
                   }
                 />
@@ -80,17 +90,8 @@ function App() {
             element={
               <Protected>
                 <Sidebar2 />
-                <div
-                      className="content"
-
-                    >
-                <ProtectedPage
-                  children={
-               
-                      <Gnai />
-                  }
-                  pageId="/gnai"
-                />
+                <div className="content">
+                  <ProtectedPage children={<Gnai />} pageId="/gnai" />
                 </div>
               </Protected>
             }
@@ -100,15 +101,11 @@ function App() {
             element={
               <Protected>
                 {/* <Sidebar2 /> */}
-                <div
-                      className=""
-                    >
-                <ProtectedPage
-                  children={
-                      <MarketMonitoring />
-                  }
-                  pageId="/marketMonitoring"
-                />
+                <div className="">
+                  <ProtectedPage
+                    children={<MarketMonitoring />}
+                    pageId="/marketMonitoring"
+                  />
                 </div>
               </Protected>
             }
@@ -119,13 +116,10 @@ function App() {
               <Protected>
                 <Sidebar2 />
 
-                <div
-                  className="content2"
-
-                >
+                <div className="content2">
                   <Documents />
                 </div>
-                </Protected>
+              </Protected>
             }
           />
         </Routes>

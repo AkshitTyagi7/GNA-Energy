@@ -72,7 +72,7 @@ export const Filters = {
         "Daily Contracts",
         "Weekly Contracts",
         "Monthly Contracts",
-        "Any Day Contracts",
+        // "Any Day Contracts",
         "Any Day Single Sided Contracts",
       ],
       TAM: [
@@ -81,7 +81,7 @@ export const Filters = {
         "Daily Contracts",
         "Weekly Contracts",
         "Monthly Contracts",
-        "Any Day Contracts",
+        // "Any Day Contracts",
         "Any Day Single Sided Contracts",
       ],
     },
@@ -204,10 +204,10 @@ const TamProducts: Product[] = [
     id: 8,
     name: "Monthly Contracts",
   },
-  {
-    id: 9,
-    name: "Any Day Contracts",
-  },
+  // {
+  //   id: 9,
+  //   name: "Any Day Contracts",
+  // },
   {
     id: 10,
     name: "Any Day Single Sided Contracts",
@@ -288,7 +288,7 @@ export const Exchange: Filter[] = [
       { id: 6, name: "Daily Contracts" },
       { id: 7, name: "Weekly Contracts" },
       { id: 8, name: "Monthly Contracts" },
-      { id: 9, name: "Any Day Contracts" },
+      // { id: 9, name: "Any Day Contracts" },
       { id: 10, name: "Any Day Single Sided Contracts" },
     ],
   },

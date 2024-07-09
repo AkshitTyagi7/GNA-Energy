@@ -34,6 +34,7 @@ export function ReLineChart({
   unit,
   xDataKey,
   isTimeSlot,
+  disableLegend=false,
   xTick,
   yAxisLabel,
   yAxisWidth,
@@ -46,7 +47,8 @@ export function ReLineChart({
   const [selectedLegends, setSelectedLegends] = useState<LegendKey[]>([]);
   return (
     <div className="chart-container">
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
+
+    { !disableLegend && <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
         {legends
           .filter((e) => e.dataKey !== xDataKey)
           .map((legend, index) => {
@@ -109,17 +111,21 @@ export function ReLineChart({
               </div>
             );
           })}
-      </div>
+      </div>}
 
       <ResponsiveContainer height={"80%"}>
         <LineChart syncId={syncid} data={data}>
           <CartesianGrid  strokeDasharray="3 3" />
           <XAxis    
           tick={xTick}
+          height={38}
           minTickGap={8}
-          label={{ value: xLabel, position: "insideBottom", dy: 10 }}
+          
+          // label={{ value: xLabel, position: "insideBottom", dy: 10,   }}
           interval={xTick !== undefined ? 0 : undefined}
- dataKey={xDataKey} />
+ dataKey={xDataKey} >
+  <Label value={xLabel} offset={0} position="insideBottom" />
+ </XAxis>
           {secondXDataKey !== undefined ? (
             <XAxis
               dataKey={secondXDataKey}

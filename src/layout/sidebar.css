@@ -14,13 +14,14 @@ z-index: 1;
 .sidebar-items{
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    /* gap: 32px; */
     margin-top: 32px;
     justify-content: center;
 }
 .sidebar-item{
     display: flex;
     align-items: center;
+    margin-bottom: 32px;
     cursor: pointer;
     flex-direction: column;
     gap: 15px;

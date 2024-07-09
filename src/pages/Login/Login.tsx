@@ -239,7 +239,7 @@ try{
         console.log("Form submitted");
         if (otp?.toString().length !== 5) {
             // alert("Please enter a valid otp");
-            swal("Invalid Otp", "Please enter a valid otp.", "warning");
+            swal("Invalid OTP", "Please enter a valid otp.", "warning");
             return;
         }
         setLoading(true);
@@ -270,7 +270,7 @@ try{
         else {
             setLoading(false);
             // alert("The otp you entered is incorrect. Please try again");
-            swal("Incorrect Otp", "The otp you entered is incorrect. Please try again.", "warning");
+            swal("Incorrect OTP", "The otp you entered is incorrect. Please try again.", "warning");
 
         }
 

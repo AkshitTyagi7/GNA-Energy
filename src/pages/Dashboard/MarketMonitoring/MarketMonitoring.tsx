@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-import { PowerBiFrame } from "../../../components/frame";
 import "./MarketMonitoring.css";
 import { DemoExchangeData, Exchange, Markets } from "./DemoExchangeData";
-import { RootState } from "../../../store/store";
-import { MediumButton } from "../../../components/Button";
-import { setProductData, setTabIndex } from "../../../store/state/MarketMontitoring/MarketMonitoringState";
 import Select from "react-select";
 import { Filter, Product } from "../../../store/state/MarketMontitoring/types";
 import { filters } from "./Filters";
@@ -16,9 +12,7 @@ import {
   buildHttpReq,
 } from "../../../common";
 import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
-import {  ReLineChart } from "../../../components/recharts/ReCharts";
-import { tab } from "@testing-library/user-event/dist/tab";
-import { COST_UNIT, VOLUME_UNIT } from "../../../Units";
+import { ReLineChart } from "../../../components/recharts/ReCharts";
 import { LegendKey } from "../../../models/chart_model";
 // import { FormatMarketMonitoringData } from "./FormatData";
 let startMonth: {
@@ -56,8 +50,6 @@ export function MarketMontoring() {
   const [priceData, setPriceData] = useState<any[]>([]);
   const [volumeData, setVolumeData] = useState<any[]>([]);
   const [chartData, setChartData] = useState<any[]>([]);
-  const [setShownVolume, setSetShownVolume] = useState<String[]>([]);
-  const [setShownPrice, setSetShownPrice] = useState<String[]>([]);
   const [tabIndex, setTabIndex] = useState<number>(0);
   const [subTabIndex, setSubTabIndex] = useState<number>(0);
   const [selectedMarket, setSelectedMarket] = useState<Filter[]>(Markets);
@@ -74,6 +66,7 @@ export function MarketMontoring() {
       market: selectedMarket,
     })[0]
   );
+  // reset t
 
   const byVolumeKeys: LegendKey[] = [
     {
@@ -87,16 +80,16 @@ export function MarketMontoring() {
       stroke: SecondaryColor,
     },
     {
-      dataKey:"hpdam",
-      name:"HPDAM",
-      stroke:ColorYellow
+      dataKey: "hpdam",
+      name: "HPDAM",
+      stroke: ColorYellow,
     },
     {
       dataKey: "gdam",
       name: "GDAM",
       stroke: "Green",
     },
-    
+
     {
       dataKey: "intraDay",
       name: "Intra-Day Contracts",
@@ -191,6 +184,12 @@ export function MarketMontoring() {
             <Select
               placeholder="Start Month"
               className="dateSelect"
+              value={
+                startMonth.value != -1 ?  {
+                value: startMonth.value as any,
+                label: startMonth.label,
+              } : undefined
+              }
               options={filters[2].subfilter.reverse().map((item) => {
                 if (
                   endMonth.value === -1 ||
@@ -233,6 +232,12 @@ export function MarketMontoring() {
             <Select
               placeholder="End Month"
               className="dateSelect"
+              value={
+                endMonth.value !=-1 ? {
+                  value: endMonth.value as any,
+                  label: endMonth.label,
+                } : undefined
+                }
               options={filters[2].subfilter.map((item) => {
                 if (
                   parseInt(item.id.toString()) >
@@ -294,8 +299,7 @@ export function MarketMontoring() {
                       if (selectedMarket.length === 3) {
                         setSelectedMarket([item]);
                         filter = [item];
-                      } 
-                     else if (selectedMarket.includes(item)) {
+                      } else if (selectedMarket.includes(item)) {
                         setSelectedMarket(
                           selectedMarket.filter((i) => i !== item)
                         );
@@ -308,20 +312,20 @@ export function MarketMontoring() {
                         setSelectedMarket([...selectedMarket, item]);
                         filter = [...selectedMarket, item];
                       }
-                      fetchVolumeData({
-                        selectedExchange,
-                        selectedMarket: filter,
-                        selectedProduct: selectedFilter,
-                        startMonth,
-                        endMonth,
-                      });
-                      fetchexchangeData({
-                        selectedExchange,
-                        selectedMarket: filter,
-                        selectedProduct: byPriceProduct,
-                        startMonth,
-                        endMonth,
-                      });
+                      // fetchVolumeData({
+                      //   selectedExchange,
+                      //   selectedMarket: filter,
+                      //   selectedProduct: selectedFilter,
+                      //   startMonth,
+                      //   endMonth,
+                      // });
+                      // fetchexchangeData({
+                      //   selectedExchange,
+                      //   selectedMarket: filter,
+                      //   selectedProduct: byPriceProduct,
+                      //   startMonth,
+                      //   endMonth,
+                      // });
                     }}
                   >
                     {item.name}
@@ -345,9 +349,7 @@ export function MarketMontoring() {
                         let filter;
                         if (selectedExchange.length === 4) {
                           setSelectedExchange([item]);
-                        }
-
-                      else  if (selectedExchange.includes(item)) {
+                        } else if (selectedExchange.includes(item)) {
                           setSelectedExchange(
                             selectedExchange.filter((i) => i !== item)
                           );
@@ -360,8 +362,7 @@ export function MarketMontoring() {
                           setSelectedExchange([...selectedExchange, item]);
                           filter = [...selectedExchange, item];
                         }
-                      }
-                    }
+                      }}
                     >
                       {item.name}
                     </p>
@@ -418,53 +419,60 @@ export function MarketMontoring() {
             <div className="markeMonitoring-chart">
               {tabIndex == 0 && (
                 <>
-                <div className="flex justify-between">
-                  {/* <h2 className="chartHeading">
+                  <div className="flex justify-between">
+                    {/* <h2 className="chartHeading">
                     By Volume ({VOLUME_UNIT})</h2> */}
                     <h2 className="chartHeading">
-                      {
-                        subTabIndex == 0 ?
-                        "By Volume (MU)" : "By Price (Rs/KWh)"
-                      }
+                      {subTabIndex == 0
+                        ? "By Volume (MU)"
+                        : "By Price (Rs/KWh)"}
                     </h2>
-                  <div className="header-side-area">
-          <div>
-            <button
-              onClick={() => {
-                setSubTabIndex(0);
-              }}
-              className={`tab tab-left ${subTabIndex === 0 ? "tab-active" : ""}`}
-            >
-              By Volume
-            </button>
-            <button
-              className={`tab tab-right ${subTabIndex === 1 ? "tab-active" : ""}`}
-              onClick={() => {
-                setSubTabIndex(1);
-              }}
-            >
-              By Price
-            </button>
-          </div></div>
+                    <div className="header-side-area">
+                      <div>
+                        <button
+                          onClick={() => {
+                            setSubTabIndex(0);
+                          }}
+                          className={`tab tab-left ${
+                            subTabIndex === 0 ? "tab-active" : ""
+                          }`}
+                        >
+                          By Volume
+                        </button>
+                        <button
+                          className={`tab tab-right ${
+                            subTabIndex === 1 ? "tab-active" : ""
+                          }`}
+                          onClick={() => {
+                            setSubTabIndex(1);
+                          }}
+                        >
+                          By Price
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <ReLineChart
-                  yAxisLabel= {
-                    subTabIndex == 0 ?
-                    "Volume (MU)" : "Weighted Average Price (Rs/KWh)"
-                  }
-                  
-                  yAxisWidth={80}
+                    yAxisLabel={
+                      subTabIndex == 0
+                        ? "Volume (MU)"
+                        : "Weighted Average Price (Rs/KWh)"
+                    }
+                    yAxisWidth={80}
                     data={
-                      subTabIndex == 0 ?
-                    FormatMarketMonitoringData(volumeData, selectedExchange.map(
-                      (e) => e.name
-                    
-                    )) as any : FormatMarketMonitoringData(priceData, selectedExchange.map(
-                      (e) => e.name
-                    
-                    ), true) as any }
-                    legends={
-                      byVolumeKeys.filter(
+                      subTabIndex == 0
+                        ? (FormatMarketMonitoringData(
+                            volumeData,
+                            selectedExchange.map((e) => e.name),
+                            [ ...selectedMarket.map((e) => e.name), "Traders"] ,
+                          ) as any)
+                        : (FormatMarketMonitoringData(
+                            priceData,
+                            selectedExchange.map((e) => e.name),
+                            [ ...selectedMarket.map((e) => e.name), "Traders", "Bilateral"] ,                            true
+                          ) as any)
+                    }
+                    legends={byVolumeKeys.filter(
                       (e) =>
                         getProducts({
                           exchange: selectedExchange,
@@ -472,62 +480,69 @@ export function MarketMontoring() {
                         }).filter(
                           (product) => product.name == e.name ?? e.dataKey
                         ).length > 0
-                    )
-                  }
-                    unit={
-                      subTabIndex == 0 ?
-                      "MU" : "Rs/KWh"
-                    }
+                    )}
+                    unit={subTabIndex == 0 ? "MU" : "Rs/KWh"}
                     xDataKey="month"
                   />
                 </>
               )}
               {tabIndex == 1 && (
                 <>
-                <div className="flex justify-between">
-                  {/* <h2 className="chartHeading">
+                  <div className="flex justify-between">
+                    {/* <h2 className="chartHeading">
                     By Volume ({VOLUME_UNIT})</h2> */}
                     <h2 className="chartHeading">
-                      {
-                        subTabIndex == 0 ?
-                        "By Volume (MU)" : "By Price (Rs/KWh)"
-                      }
+                      {subTabIndex == 0
+                        ? "By Volume (MU)"
+                        : "By Price (Rs/KWh)"}
                     </h2>
-                  <div className="header-side-area">
-          <div>
-            <button
-              onClick={() => {
-                setSubTabIndex(0);
-              }}
-              className={`tab tab-left ${subTabIndex === 0 ? "tab-active" : ""}`}
-            >
-              By Volume
-            </button>
-            <button
-              className={`tab tab-right ${subTabIndex === 1 ? "tab-active" : ""}`}
-              onClick={() => {
-                setSubTabIndex(1);
-              }}
-            >
-              By Price
-            </button>
-          </div></div>
+                    <div className="header-side-area">
+                      <div>
+                        <button
+                          onClick={() => {
+                            setSubTabIndex(0);
+                          }}
+                          className={`tab tab-left ${
+                            subTabIndex === 0 ? "tab-active" : ""
+                          }`}
+                        >
+                          By Volume
+                        </button>
+                        <button
+                          className={`tab tab-right ${
+                            subTabIndex === 1 ? "tab-active" : ""
+                          }`}
+                          onClick={() => {
+                            setSubTabIndex(1);
+                          }}
+                        >
+                          By Price
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <ReLineChart
-                  yAxisLabel= {
-                    subTabIndex == 0 ?
-                    "Volume (MU)" : "Weighted Average Price (Rs/KWh)"
-                  }
-                  yAxisWidth={80}
-                    data={
-                      subTabIndex == 0 ?
-                      FormatByPriceData(volumeData, [byPriceProduct.name, "Bilateral", ]) as any : FormatByPriceData(priceData, [byPriceProduct.name, "Trading Licensees"])}
-                    legends={
-                     byProductKeys}
-                    unit={
-                      subTabIndex == 0 ?
-                      "MU" : "Rs/KWh"
+                    yAxisLabel={
+                      subTabIndex == 0
+                        ? "Volume (MU)"
+                        : "Weighted Average Price (Rs/KWh)"
                     }
+                    yAxisWidth={80}
+                    data={
+                      subTabIndex == 0
+                        ? (FormatByPriceData(volumeData, [
+                            byPriceProduct.name,
+                            "Bilateral",
+                          ],                          [ ...selectedMarket.map((e) => e.name), "Traders"] ,
+                        ) as any)
+                        : FormatByPriceData(
+                            priceData,
+                            [byPriceProduct.name, "Trading Licensees"],
+                            [ ...selectedMarket.map((e) => e.name), "Traders"] ,                            true
+                          )
+                    }
+                    legends={byProductKeys}
+                    unit={subTabIndex == 0 ? "MU" : "Rs/KWh"}
                     xDataKey="month"
                   />
                 </>
@@ -552,6 +567,7 @@ export function MarketMontoring() {
     startMonth: { value: number; label: string };
     endMonth: { value: number; label: string };
   }) {
+    
     const res = await buildHttpReq({
       endpoint: "market_monitoring_volume_api",
       method: "POST",
@@ -588,7 +604,9 @@ export function MarketMontoring() {
       body: {
         exchange: "HPX,IEX,PXIL,Traders",
         market: selectedMarket.map((item) => item.name).toString(),
-        product: byVolumeKeys.map((item) => item.name).toString()+",Trading Licensees",
+        product:
+          byVolumeKeys.map((item) => item.name).toString() +
+          ",Trading Licensees",
         start_month: startMonth.label,
         end_month: endMonth.label,
       },
