@@ -72,7 +72,7 @@ export const Filters = {
         "Daily Contracts",
         "Weekly Contracts",
         "Monthly Contracts",
-        "Any Day Contracts",
+        // "Any Day Contracts",
         "Any Day Single Sided Contracts",
       ],
       TAM: [
@@ -81,7 +81,7 @@ export const Filters = {
         "Daily Contracts",
         "Weekly Contracts",
         "Monthly Contracts",
-        "Any Day Contracts",
+        // "Any Day Contracts",
         "Any Day Single Sided Contracts",
       ],
     },
@@ -204,10 +204,10 @@ const TamProducts: Product[] = [
     id: 8,
     name: "Monthly Contracts",
   },
-  {
-    id: 9,
-    name: "Any Day Contracts",
-  },
+  // {
+  //   id: 9,
+  //   name: "Any Day Contracts",
+  // },
   {
     id: 10,
     name: "Any Day Single Sided Contracts",
@@ -226,6 +226,8 @@ export const Markets: Filter[] = [
       {id: 1, name: "DAM" },
       {id: 2, name: "RTM"},
       {id: 3, name: "GDAM"},
+      {id: 12, name: "HPDAM"},
+
     ],
   },
   {
@@ -263,6 +265,7 @@ export const Exchange: Filter[] = [
       { id: 1, name: "DAM" },
       { id: 2, name: "RTM" },
       { id: 3, name: "GDAM" },
+      {id: 12, name: "HPDAM"},
       { id: 4, name: "Intra-Day Contracts" },
       { id: 5, name: "Day Ahead Contingency Contracts" },
       { id: 6, name: "Daily Contracts" },
@@ -278,12 +281,14 @@ export const Exchange: Filter[] = [
       { id: 1, name: "DAM" },
       { id: 2, name: "RTM" },
       { id: 3, name: "GDAM" },
+      {id: 12, name: "HPDAM"},
+
       { id: 4, name: "Intra-Day Contracts" },
       { id: 5, name: "Day Ahead Contingency Contracts" },
       { id: 6, name: "Daily Contracts" },
       { id: 7, name: "Weekly Contracts" },
       { id: 8, name: "Monthly Contracts" },
-      { id: 9, name: "Any Day Contracts" },
+      // { id: 9, name: "Any Day Contracts" },
       { id: 10, name: "Any Day Single Sided Contracts" },
     ],
   },

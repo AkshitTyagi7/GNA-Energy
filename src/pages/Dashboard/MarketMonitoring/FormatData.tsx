@@ -3,7 +3,9 @@ import { StringLiteral } from "typescript";
 enum Products {
     DAM = "DAM",
     RTM = "RTM",
+    HPDAM = "HPDAM",
     GDAM = "GDAM",
+    
     IntraDay = "Intra-Day Contracts",
     ContigencyContracts = "Day Ahead Contingency Contracts",
     Daily = "Daily Contracts",
@@ -18,11 +20,14 @@ export interface MarketMonitoringItem {
     month: string;
     product: Products;
     value: number;
+    totalVolume?: number;
+    totalCost?: number;
 }
 
 export interface MarketMonitoringData {
     dam: MarketMonitoringItem[];
     rtm: MarketMonitoringItem[];
+    hpdam: MarketMonitoringItem[];
     gdam: MarketMonitoringItem[];
     intraDay: MarketMonitoringItem[];
     contingencyContracts: MarketMonitoringItem[];
@@ -38,6 +43,7 @@ export interface ChartExchangeItem {
     month: string;
     dam: number;
     rtm: number;
+    hpdam: number;
     gdam: number;
     intraDay: number;
     contingencyContracts: number;
@@ -53,10 +59,11 @@ export interface ChartExchangeItem {
 }
 
 
-export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
+export function FormatMarketMonitoringData(data: any, includingExchange?: String[],includingMarket?: String[], isWeighted?: boolean): ChartExchangeItem[] {
     const formattedDataArray: MarketMonitoringData = {
         dam: [],
         rtm: [],
+        hpdam: [],
         gdam: [],
         intraDay: [],
         contingencyContracts: [],
@@ -67,28 +74,50 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
         singleSided: [],
         bilateral: [],
     };
-
+    
     const updateFormattedData = (dataArray: MarketMonitoringItem[], product: Products, item: any) => {
         const index = dataArray.findIndex((element) => element.month === item.month);
+
         if (index === -1) {
-            dataArray.push({
+            var toPush: MarketMonitoringItem = {
                 month: item.month,
-                product: item.product,
+                product: product,
                 value: item.value,
-            });
+            };
+            if(isWeighted){
+                toPush.totalVolume = item.volume;
+                toPush.totalCost = item.value*item.volume;
+            }
+           
+            dataArray.push(toPush); 
+
         } else {
-            dataArray[index].value += item.value;
+            if(isWeighted){
+                dataArray[index].totalVolume += item.volume;
+                dataArray[index].totalCost! += item.value*item.volume;
+                dataArray[index].value = dataArray[index].totalVolume === 0 ? 0 : dataArray[index].totalCost!/dataArray[index].totalVolume!;
+            }
+            else{
+                dataArray[index].value += item.value;
+            }
         }
     };
     Object.keys(data).forEach((key) => {
+        if (includingExchange?.includes(key)) {
+            
         Object.keys(data[key]).forEach((key2) => {
+            if (includingMarket?.includes(key2)) {
             data[key][key2].forEach((item: any) => {
                 switch (item.product) {
+                    
                     case Products.DAM:
                         updateFormattedData(formattedDataArray.dam, Products.DAM, item);
                         break;
                     case Products.RTM:
                         updateFormattedData(formattedDataArray.rtm, Products.RTM, item);
+                        break;
+                    case Products.HPDAM:
+                        updateFormattedData(formattedDataArray.hpdam, Products.HPDAM, item);
                         break;
                     case Products.GDAM:
                         updateFormattedData(formattedDataArray.gdam, Products.GDAM, item);
@@ -122,7 +151,10 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
                         break;
                 }
             });
-        });
+        }else{
+            console.log("Market not included, " + key2)
+        }});
+    }
     });
     const finalChartExchangeData: ChartExchangeItem[] = [];
 
@@ -139,8 +171,10 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
         ){
             finalChartExchangeData.push({
                 month: formattedDataArray[maxLengthKey as keyof MarketMonitoringData][index].month,
+
                 dam: formattedDataArray.dam[index]?.value ?? null,
                 rtm: formattedDataArray.rtm[index]?.value ?? null,
+                hpdam: formattedDataArray.hpdam[index]?.value ?? null,
                 gdam: formattedDataArray.gdam[index]?.value ?? null,
                 intraDay: formattedDataArray.intraDay[index]?.value ?? null,
                 contingencyContracts: formattedDataArray.contingencyContracts[index]?.value ?? null,
@@ -152,6 +186,7 @@ export function FormatMarketMonitoringData(data: any): ChartExchangeItem[] {
                 bilateral: formattedDataArray.bilateral[index]?.value ?? null,
             });
         }    
+         console.log(finalChartExchangeData)
 
     return finalChartExchangeData;
 }
@@ -176,6 +211,9 @@ interface ByPriceItem{
     value: number;
     exchange: Exchange;
     month: string;
+    cost? : number;
+    totalVolume? : number;
+
 }
 
 interface ByPriceData{
@@ -189,7 +227,7 @@ interface ByPriceData{
 
 
 
-export function FormatByPriceData(data: any): ChartByPriceItem[]{
+export function FormatByPriceData(data: any, selectedProduct?: String[],selectedMarket?: String[], isPrice?: boolean): ChartByPriceItem[]{
     const formattedDataArray: ByPriceData = {
         month:[],
         iex: [],
@@ -201,20 +239,39 @@ export function FormatByPriceData(data: any): ChartByPriceItem[]{
 
     const updateFormattedData = (dataArray: ByPriceItem[], exchange: Exchange, item: any) => {
         const index = dataArray.findIndex((element) => element.month === item.month);
+        if( !selectedProduct?.includes(item.product)){
+            return;
+        }
+        else{
         if (index === -1) {
-            dataArray.push({
+            var toBePushed: ByPriceItem = {
                 month: item.month,
                 exchange: exchange,
                 value: parseFloat(item.value),
-            });
+            };
+            if(isPrice){
+                toBePushed.cost = item.value*item.volume ;
+                toBePushed.totalVolume = item.volume;
+            }
+            dataArray.push(toBePushed);
+         
         } else {
             dataArray[index].value += parseFloat(item.value);
-        }
+            if(isPrice){
+                dataArray[index].cost! += item.value*item.volume;
+                dataArray[index].totalVolume! += item.volume;
+                dataArray[index].value = dataArray[index].totalVolume === 0 ? 0 : dataArray[index].cost!/dataArray[index].totalVolume!;
+            }
+        }}
     };
 
 
     Object.keys(data).forEach((exchange) => {
         Object.keys(data[exchange]).forEach((market) => {
+            if(selectedMarket?.includes(market)){
+
+    
+            
             switch (exchange) {
                 case Exchange.IEX:
                     data[exchange][market].forEach((item: any) => {
@@ -238,6 +295,9 @@ export function FormatByPriceData(data: any): ChartByPriceItem[]{
                     break;
                 default:
                     break;
+            }        }
+            else{
+                console.log("Market not included price, " + market)
             }
     });
 });
@@ -261,5 +321,6 @@ for(let index= 0; index <
             traders: formattedDataArray.traders[index]?.value ?? null,
         });
     } 
+    console.log(finalChartByPriceData)
 return finalChartByPriceData;
 }

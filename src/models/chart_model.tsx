@@ -44,6 +44,7 @@ export interface ChartArguements {
     xDataKey: string;
     xTick? : any ; 
     xLabel?: string;
+    disableLegend?: boolean;
     yAxisWidth?: number;
     secondXDataKey?: string;
     yAxisLabel?: string;

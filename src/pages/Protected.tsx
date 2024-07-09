@@ -77,7 +77,7 @@ export const getUser = (): User => {
 }
 
 
-export function ProtectedPage({ children, pageId }: { children: any, pageId: string }) {
+export function ProtectedPage({ children, pageId, showPopUp }: { children: any, pageId: string, showPopUp?: boolean}) {
     const [loggedIn, setLoggedIn] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
     const [access, setAccess] = React.useState(true);
@@ -119,13 +119,14 @@ export function ProtectedPage({ children, pageId }: { children: any, pageId: str
         else {
 
             // show popup
-            setAccess(false);
-            swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe.`,"warning" );
+
+              setAccess(false);
+          showPopUp &&  swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe.`,"warning" );
             return false;
         }
 
     }     catch(err){
-        swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
+        showPopUp &&     swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
 
 
         return false;
