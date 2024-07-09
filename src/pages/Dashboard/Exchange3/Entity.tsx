@@ -130,12 +130,12 @@ export function EntityPage() {
       <ReMixChart
         data={chartData}
         xDataKey="slot"
-        isTimeSlot={true}
+        // isTimeSlot={true}
         xLabel="Time (Hrs)"
         unit="MW"
         secondYAxisLabel={COST_UNIT}
         yAxisLabel="MW"
-        xTick={renderHourTick}
+        // xTick={renderHourTick}
         legends={[
           {
             name: "Weighted Price",

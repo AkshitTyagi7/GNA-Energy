@@ -45,7 +45,7 @@ export async function getEntityComparisont({
         // }
     const data = await response.json();
 
-    return data as any;
+    return data.data as any;
 
 }
 

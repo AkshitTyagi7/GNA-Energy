@@ -109,7 +109,7 @@ export function ReMixChart({
         : 0,
     [data, brushStart]
   );
-
+console.log("Data for entity analysis", data)
   return (
     <div className="chart-container">
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
