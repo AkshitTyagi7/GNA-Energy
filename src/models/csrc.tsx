@@ -65,6 +65,7 @@ export interface PSPData {
     max_demand_met_during_the_day_mw_from_nldc_scada: string;
     peak_shrtage_mw: string;
     regions: string;
+    solar_hour_peak: string;
     solar_gen_mu: string;
     time_of_max_demand_met_from_nldc_scada: string;
     wind_gen_mu: string;

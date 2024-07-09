@@ -91,7 +91,7 @@ export function ProtectedPage({ children, pageId, showPopUp }: { children: any, 
             display:'unset'
         }}>
             {
-                loading ? <Loading />: access ? children : <Navigate to="/dashboard" />
+                loading ? <Loading />: access ? children : showPopUp && <Navigate to="/dashboard" />
             }
         </div>
     )
@@ -121,12 +121,12 @@ export function ProtectedPage({ children, pageId, showPopUp }: { children: any, 
             // show popup
 
               setAccess(false);
-          showPopUp &&  swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe.`,"warning" );
+              showPopUp &&  swal("Access Denied",`Sorry, you do not have a subscription for this page. Please write to ${mail} to subscribe.`,"warning" );
             return false;
         }
 
     }     catch(err){
-        showPopUp &&     swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
+        showPopUp &&   swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
 
 
         return false;

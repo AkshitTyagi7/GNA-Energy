@@ -40,7 +40,7 @@ export default function Dashboard() {
       <div className="flex flex-row flex-wrap gap-5 justify-center">
         <DashBoardItem Icon={MarketMonitoring} title="Market Monitoring" to="marketmonitoring" />
         <DashBoardItem Icon={ExchangeAnalysis} title="Exchange Analytics" to="exchangeAnalysis" />
-        <DashBoardItem Icon={BankingAalytics} title="Auctions" to="auctions" />
+        <DashBoardItem Icon={BankingAalytics} title="TAM and DEEP" to="auctions" />
         <DashBoardItem Icon={PowerAtlas} title="Power Atlas" to="powerAtlas" />
         <DashBoardItem Icon={ConsumptionAndGenerationAnalytics} title="Consumption and Generation Analytics" to="consumptionAndGenerationAnalytics" />
         <DashBoardItem Icon={DiscomAnalysis} title="Discom Analytics" to="discomAnalysis" />

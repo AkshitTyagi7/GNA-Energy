@@ -146,8 +146,13 @@ export function FormatMarketMonitoringData(data: any, includingExchange?: String
                     case Products.Bilateral:
                         updateFormattedData(formattedDataArray.bilateral, Products.Bilateral, item);
                         break;
+                    case "Trading Licensees":
+                        updateFormattedData(formattedDataArray.bilateral, Products.Bilateral, item);
+                        break;
+                    
 
                     default:
+                        console.log("Product not included, " + item.product);
                         break;
                 }
             });

@@ -16,6 +16,7 @@ import fetchLatestAggregatedDayData, { fetchPSPData } from "../../rest_api/resta
 import { ReLineChart } from "../../components/recharts/ReCharts";
 import { renderHourTick } from "../Dashboard/Exchange3/Chart";
 import { COST_UNIT } from "../../Units";
+import { NavLink } from "react-router-dom";
 
 const MarketMonitoring = () => {
   const [data, setData] = useState<ApiResponse | null>(null);
@@ -85,9 +86,10 @@ const MarketMonitoring = () => {
   return (
     <div className="cerccontainer">
       <div className="topNavbar">
-        <Cerc />
+        <NavLink to="/dashboard">
+        <Cerc  /></NavLink>
         <div className="navHeading">CERC Market Monitor</div>
-        <Logo />
+       <NavLink to="/dashboard"> <Logo  /></NavLink>
       </div>
       <div className="powerSuppContainer">
         <div className="powSupPosContainer">
@@ -133,8 +135,8 @@ const MarketMonitoring = () => {
           </div>
           <div className="eachEnergyContainer">
             <div className="powSupHeading">Solar Hour Peak (MW)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.solar_gen_mu}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.solar_gen_mu}</div>
+            <div className="powSupToday">{pspdata && pspdata?.latest.data.solar_hour_peak}</div>
+            <div className="powSuppast">{pspdata && pspdata?.prev.data.solar_hour_peak}</div>
           </div>
           <div className="eachEnergyContainer">
             <div className="powSupHeading">Evening Peak (MW)</div>
@@ -281,7 +283,16 @@ const MarketMonitoring = () => {
           </div>
           <div className="rtmGraphContainer">
             <ReLineChart
-              data={data && data["IEX"]["RTM"] && data["IEX"]["RTM"].chartData as any}
+              data={data && data["IEX"]["RTM"] && data["IEX"]["RTM"].chartData.map((v,i)=>{
+                return {
+                  "iex_rs_mwh": v["mcp_rs_mwh"],
+                  "time_slot": i+1,
+                  "pxil_rs_mwh":data["PXIL"]["RTM"].chartData[i] ?  data["PXIL"]["RTM"].chartData[i]["mcp_rs_mwh"] : null,
+                  "hpx_rs_mwh":data["HPX"]["RTM"].chartData[i] ? data["HPX"]["RTM"].chartData[i]["mcp_rs_mwh"] : null
+
+                  
+                }
+              }) as any}
               unit={COST_UNIT}
               
               yAxisWidth={45}
@@ -290,7 +301,7 @@ const MarketMonitoring = () => {
               xLabel="Time(Hrs)"
               yAxisLabel="(Rs/kWh)"
               disableLegend={true}
-              legends={[{ dataKey: "mcp_rs_mwh", name: "MCP", stroke: "rgba(241, 147, 92, 1)" }]}
+              legends={[{ dataKey: "iex_rs_mwh", name: "IEX", stroke: "rgba(241, 147, 92, 1)" }, { dataKey: "pxil_rs_mwh", name: "PXIL", stroke: "rgba(0, 0, 0, 1)" }, { dataKey: "hpx_rs_mwh", name: "HPX", stroke: "rgba(0, 0, 255, 1)" }]}
               xDataKey="time_slot"
               xTick={renderHourTick}
               

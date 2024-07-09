@@ -84,14 +84,14 @@ export function Sidebar2() {
           href="/dashboard"
           isMenuActive={active}
         />
-        {/* <ProtectedPage pageId="cerc">
+        <ProtectedPage pageId="cerc">
           <SideBarItems
             Icon={DashboardIcon}
-            text="CERC Market Monitoring"
+            text="CERC Monitor"
             href="/marketMonitoring"
             isMenuActive={active}
           />
-        </ProtectedPage> */}
+        </ProtectedPage>
         <SideBarItems
           Icon={DocumentIcon}
           text="GNAi Doc"

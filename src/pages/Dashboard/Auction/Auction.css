@@ -98,7 +98,7 @@
   border-radius: 8px;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
 }
@@ -114,7 +114,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  gap: 5px;
   height: 65px;
   background-color: #ffffff;
   border-radius: 8px 8px 0px 0px;
@@ -170,7 +170,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-
+height: calc(100vh - 185px);
   width: 90vw;
   margin: auto;
 }
@@ -186,3 +186,49 @@
 }
 
 /* Update */
+
+.auction_no{
+  white-space: nowrap;
+
+  overflow: hidden!important;
+  text-overflow: ellipsis!important;
+  width: 14%!important;
+}
+
+.large-col{
+  width: 40%!important;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #f1935c;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination button.active {
+  background-color: #f1935c;
+  color: #fff;
+}

@@ -12,20 +12,33 @@ export interface Auction {
     booking_quantity_mw: number | null;
     buy_minimum_quantity_mw: number | null;
     buy_total_quantity_mw: number | null;
-    buyer: number | null; // Assuming buyer is referenced by ID
+    buyer__name: string | null;
     delivery_end_date: string | null;
     delivery_end_time: string | null;
     delivery_start_date: string | null;
     delivery_start_time: string | null;
     duplicate: number | null;
-    exchange_type: number | null; // Assuming exchange_type is referenced by ID
+    exchange_type__name: string | null;
     requisition_no: string | null;
-    type: number | null; // Assuming type is referenced by ID
-}
+    type__name: string | null;
+  }
 
 interface SearchAuctionParams {
     buyer?: string;
     type?: string;
     start_date?: string;
     end_date?: string;
+}
+
+export interface TAM{
+    // "date": "2024-07-06",
+    // "exchange": "HPX",
+    // "product": "DAILY",
+    // "total_traded_volume_mwh": "100.0",
+    // "weighted_average_price_rs_mwh": "8900.0"
+    date: string | null;
+    exchange: string | null;
+    product: string | null;
+    total_traded_volume_mwh: number | null;
+    weighted_average_price_rs_mwh: number | null;
 }
