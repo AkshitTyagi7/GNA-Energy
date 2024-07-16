@@ -7,9 +7,13 @@ export const QuaternaryColor = '#50C878';
 export const Color1 = '#28565D';
 export const ColorRed = '#dc3545';
 export const ColorBlue = '#0d6efd';
+export const ColorSkyBlue = '#0dcaf0';
 export const ColorYellow='#ffc107';
-
+export const ColorGray = '#DEDFDF';
 export const mail="info@gna.energy";
+
+export const volumeBar = "#E0E0E0";
+export const volumeBarLegend = "rgb(159, 159, 159)";
 
 const baseUri = 'https://datahub.gna.energy';
 

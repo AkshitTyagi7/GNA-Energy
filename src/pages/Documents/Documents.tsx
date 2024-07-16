@@ -35,7 +35,7 @@ export const DOC_URL = URL;
 export function Documents() {
   const state = useSelector((state: RootState) => state.document);
   const chatAreaRef = useRef<HTMLDivElement>(null);
-  // const URL = "http://127.0.0.1:8000/";
+  // const URL = "https://api-data.gna.energy/";
 
   const dispatch = useDispatch();
   useEffect(() => {

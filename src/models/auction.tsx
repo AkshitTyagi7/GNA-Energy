@@ -41,4 +41,28 @@ export interface TAM{
     product: string | null;
     total_traded_volume_mwh: number | null;
     weighted_average_price_rs_mwh: number | null;
+    instrument_name: string | null;
+    no_of_trades: number | null;
+}
+
+// {
+//     "date": "2024-03-01",
+//     "total_mwh": 240884.23379166663,
+//     "total_mu": 240.88423379166693,
+//     "total_price_rs": 1874219.2956202764,
+//     "auction_count": 190,
+//     "weighted_avg_rs_per_kwh": 7.780581012376389,
+//     "simple_avg_rs_per_kwh": 8.10706315789474
+//   },
+
+export interface AuctionChartData{
+    date: string | null;
+    total_mwh: number | null;
+    total_mu: number | null;
+    total_price_rs: number | null;
+    auction_count: number | null;
+    weighted_avg_rs_per_kwh: number | null;
+    simple_avg_rs_per_kwh: number | null;
+    [key: string]: number | string | null;
+
 }

@@ -77,7 +77,7 @@ export const getUser = (): User => {
 }
 
 
-export function ProtectedPage({ children, pageId, showPopUp }: { children: any, pageId: string, showPopUp?: boolean}) {
+export function ProtectedPage({ children, pageId, showPopUp = true }: { children: any, pageId: string, showPopUp?: boolean}) {
     const [loggedIn, setLoggedIn] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
     const [access, setAccess] = React.useState(true);
@@ -126,7 +126,7 @@ export function ProtectedPage({ children, pageId, showPopUp }: { children: any, 
         }
 
     }     catch(err){
-        showPopUp &&   swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" )
+        showPopUp &&   swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" );
 
 
         return false;

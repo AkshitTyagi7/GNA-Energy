@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ReLineChart } from "../../../components/recharts/ReCharts";
-import { getEntityComparisont } from "../../../rest_api/restapi";
+import { getEntityComparisont } from "../../../Rest_api/restapi";
 import { ChartType, ReChartData } from "../../../models/chart_model";
 import { ReMixChart } from "../../../components/recharts/ReMixCharts";
 import { SearchBox } from "../../../components/Search";

@@ -131,8 +131,23 @@
   width: 9%;
   text-align: center;
 }
-.buyerList {
-  width: 15% !important;
+
+.buyerList2 {
+  width: 20% !important;
+  white-space: nowrap;
+  /* max-lines: 2!important; */
+
+  overflow: hidden!important;
+  text-overflow: ellipsis!important;
+
+}
+
+.buyerList2:hover{
+  white-space: unset;
+  cursor: pointer;
+  overflow: unset!important;
+  text-overflow: unset!important;
+  width: 20% !important;
 }
 
 .tableDetails {
@@ -155,9 +170,6 @@
   width: 9%;
   text-align: center;
   padding-left: 5px;
-}
-.buyerList2 {
-  width: 15% !important;
 }
 
 .elemDetailsSec {
@@ -192,7 +204,15 @@ height: calc(100vh - 185px);
 
   overflow: hidden!important;
   text-overflow: ellipsis!important;
-  width: 14%!important;
+  width: 15%!important;
+}
+
+.auction_no:hover{
+  white-space: unset;
+  cursor: pointer;
+  overflow: unset!important;
+  text-overflow: unset!important;
+  width: 15%!important;
 }
 
 .large-col{
@@ -231,4 +251,24 @@ height: calc(100vh - 185px);
 .pagination button.active {
   background-color: #f1935c;
   color: #fff;
+}
+
+.tamChart{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.raChart{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 30px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
 }

@@ -27,6 +27,20 @@ export function FilterExchangeData(
     (trade) => trade.exchange__name === exchange && trade.product__name === product
   );
 
+  data = data.map((item: any, index: any) =>{
+   return {
+    
+      date: item.date,
+      exchange__name: item.exchange__name,
+      product__name: item.product__name,
+      time_slot: item.time_slot,
+      purchase_bid_mw: item.purchase_bid_mw,
+      sell_bid_mw: item.sell_bid_mw,
+      mcv_mw: item.mcv_mw,
+      mcp_rs_mwh: item.mcp_rs_mwh,
+      wt_mcp_rs_mwh: item.wt_mcp_rs_mwh/1000
+  }});
+
   // Sort data by date and time_slot
   data.sort(
     (a: any, b: any) => {
@@ -89,48 +103,4 @@ export function FilterExchangeData(
 }
 
 
-export function FilterSortExchangeData(
-  data: MarketSnapshotData[],
-  exchange: string,
-  product: string
-): MarketSnapshotData[] {
-  data = data.filter(
-    (trade) => trade.exchange__name === exchange && trade.product__name === product
-  ).sort(
-    (a: any, b: any) => {
-      if (a.date < b.date) {
-        return -1;
-      }
-      if (a.date > b.date) {
-        return 1;
-      }
-      return a.time_slot - b.time_slot;
-    }
 
-      // each day has 96 slots now we have to check if each day is of 96 slot and add missing slots
-      // we also have to check if the data is missing for any day and add missing days
-      // we can do this by checking the date of the first and last element and then checking if the difference is 96*days
-      // if not then we have to add the missing days and slots to there respective places
-
-
-
-  ).map((item: any, index: any) => {
-    return {
-      date: item.date,
-      exchange__name: item.exchange__name,
-      product__name: item.product__name,
-      time_slot: item.time_slot,
-      purchase_bid_mw: item.purchase_bid_mw,
-      sell_bid_mw: item.sell_bid_mw,
-      mcv_mw: item.mcv_mw,
-      mcp_rs_mwh: item.mcp_rs_mwh,
-      wt_mcp_rs_mwh: item.wt_mcp_rs_mwh / 1000
-    }
-  }
-  );
-
-
-  
-
-  return data;
-}

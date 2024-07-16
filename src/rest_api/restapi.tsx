@@ -1,5 +1,7 @@
+import { buildHttpResponse, HttpMethod } from "./network_utility";
 import { ReChartData } from "../models/chart_model";
 import { ApiResponse } from "../models/csrc";
+import { AuctionChartData } from "../models/auction";
 
 
 export async function getEntityComparisont({
@@ -96,4 +98,24 @@ export async function fetchPSPData() {
     });
     const data = await response.json();
     return data;
+}
+
+export async function fetchDailyAuctionData({start_date, end_date, exchange, entity_id}:{
+    start_date: string,
+    end_date: string,
+    exchange?: string,
+    entity_id?: number
+}): Promise<AuctionChartData[]> {
+    const response = await buildHttpResponse(`/data/auction-daily-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`, HttpMethod.GET);
+    return response as AuctionChartData[];
+}
+
+export async function fetchMonthlyAuctionData({start_date, end_date, exchange, entity_id}:{
+    start_date: string,
+    end_date: string,
+    exchange?: string,
+    entity_id?: number
+}): Promise<AuctionChartData[]> {
+    const response = await buildHttpResponse(`/data/auction-monthly-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`, HttpMethod.GET);
+    return response as AuctionChartData[];
 }

@@ -16,6 +16,7 @@ export interface ReChartData {
     dataKey: string;
     type?: ChartType;
     yAxisId?: string;
+    legendColor?:string;
     // color: string;
   }
   
@@ -36,22 +37,35 @@ export interface ReChartData {
     End,
   }
 
+  interface BrushIndex{
+    startIndex: number;
+    endIndex: number;
+  }
+
 export interface ChartArguements {
     data: ReChartData[];
     legends: LegendKey[];
+    legendBreakIndex?: number;
     syncid?: string;
     unit?: string;
     xDataKey: string;
+  
     xTick? : any ; 
+    barCategoryGap?: number;
     xLabel?: string;
+    onlyTitle?: boolean;
+    xAxisPosition?: string;
     disableLegend?: boolean;
     yAxisWidth?: number;
-    secondXDataKey?: string;
+    xaxisHeight? : number;
+        secondXDataKey?: string;
     yAxisLabel?: string;
     fontSize?: number;
     isTimeSlot?: boolean;
     showBrush?: boolean;
     brushHeight?: number;
+
+    brushIndex?: BrushIndex;
     brushStart?: BrushStart;
     secondYAxisLabel?: string;
 

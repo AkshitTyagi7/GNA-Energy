@@ -88,7 +88,7 @@ export const DashboardRoutes=[
     {
         path: "auctions",
         element:<AuctionPage  />,
-        notPrtoected:true ,
+        
         noDefaultPadding:true   }
     // {
     //     path:"betaMarketMonitoring",

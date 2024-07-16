@@ -81,6 +81,7 @@ export function Login2() {
               className="login-box-footer"
               onClick={() => {
                 setOtpSent(false);
+                setOtp(null as any)
               }}
             >
               Go Back

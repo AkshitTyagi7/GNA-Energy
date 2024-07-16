@@ -252,6 +252,14 @@ body {
   display: inline-block;
 }
 
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: #bbb;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .center-frame {
   display: flex;
   justify-content: center;

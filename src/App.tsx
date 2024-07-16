@@ -117,7 +117,7 @@ function App() {
                 <Sidebar2 />
 
                 <div className="content2">
-                  <Documents />
+          <ProtectedPage pageId="/gnadoc" key={"gnadoc"} >      <Documents /></ProtectedPage>  
                 </div>
               </Protected>
             }

@@ -55,7 +55,6 @@ import swal from "sweetalert";
 import { stat } from "fs";
 import {
   FilterExchangeData,
-  FilterSortExchangeData,
 } from "../../../store/state/Exchange/function";
 import Popup from "./components/Popup";
 import {EntityPage} from "./Entity";
@@ -1859,6 +1858,7 @@ export function Exchange3() {
     }
   }
   function ComparisonChart({ data, title }: { data: any; title: string }) {
+
     return (
       <div className="exchange-byExchange-chart">
         <h2
@@ -1890,7 +1890,7 @@ export function Exchange3() {
             const activeUnit = unitTabs[activeUnitTab];
             return {
               dataKey: activeUnit.dataKey + "_" + e.dataKey,
-              name: e.name,
+              name: e.name ?? "No Name",
 
               stroke: e.stroke,
             };
@@ -1961,25 +1961,25 @@ export function Exchange3() {
       for (let i = 0; i < compRawData.length; i++) {
         let data = {
           iex: {
-            dam: FilterSortExchangeData(compRawData[i].data, "IEX", "DAM"),
-            gdam: FilterSortExchangeData(compRawData[i].data, "IEX", "GDAM"),
-            hpdam: FilterSortExchangeData(compRawData[i].data, "IEX", "HPDAM"),
-            rtm: FilterSortExchangeData(compRawData[i].data, "IEX", "RTM"),
+            dam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 0, exchangeProductIndex: 0 }),
+            gdam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 0, exchangeProductIndex: 1 }),
+            hpdam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 0, exchangeProductIndex: 2 }),
+            rtm: FilterExchangeData(compRawData[i].data, { exchangeIndex: 0, exchangeProductIndex: 3 }),
           },
           hpx: {
-            dam: FilterSortExchangeData(compRawData[i].data, "HPX", "DAM"),
-            gdam: FilterSortExchangeData(compRawData[i].data, "HPX", "GDAM"),
-            hpdam: FilterSortExchangeData(compRawData[i].data, "HPX", "HPDAM"),
-            rtm: FilterSortExchangeData(compRawData[i].data, "HPX", "RTM"),
+            dam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 2, exchangeProductIndex: 0 }),
+            gdam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 2, exchangeProductIndex: 1 }),
+            hpdam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 2, exchangeProductIndex: 2 }),
+            rtm: FilterExchangeData(compRawData[i].data, { exchangeIndex: 2, exchangeProductIndex: 3 }),
           },
           pxil: {
-            dam: FilterSortExchangeData(compRawData[i].data, "PXIL", "DAM"),
-            gdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "GDAM"),
-            hpdam: FilterSortExchangeData(compRawData[i].data, "PXIL", "HPDAM"),
-            rtm: FilterSortExchangeData(compRawData[i].data, "PXIL", "RTM"),
+            dam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 1, exchangeProductIndex: 0 }),
+            gdam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 1, exchangeProductIndex: 1 }),
+            hpdam: FilterExchangeData(compRawData[i].data, { exchangeIndex: 1, exchangeProductIndex: 2 }),
+            rtm: FilterExchangeData(compRawData[i].data, { exchangeIndex: 1, exchangeProductIndex: 3 }),
           },
         };
-        comparisonData.push({
+                        comparisonData.push({
           date: `${Months[dates[i].getMonth()]}-${dates[i].getFullYear()}`,
           data: data as any,
         });

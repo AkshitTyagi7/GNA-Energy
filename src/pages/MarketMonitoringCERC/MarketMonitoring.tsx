@@ -12,7 +12,7 @@ import { ReactComponent as Pxil } from "../../icons/Pxil.svg";
 import { ReactComponent as IEX } from "../../icons/IEX.svg";
 import "./MarketMonitoring.css";
 import { ApiResponse, CsrcPSSPData, PSPData } from "../../models/csrc";
-import fetchLatestAggregatedDayData, { fetchPSPData } from "../../rest_api/restapi";
+import fetchLatestAggregatedDayData, { fetchPSPData } from "../../Rest_api/restapi";
 import { ReLineChart } from "../../components/recharts/ReCharts";
 import { renderHourTick } from "../Dashboard/Exchange3/Chart";
 import { COST_UNIT } from "../../Units";
@@ -27,6 +27,7 @@ const MarketMonitoring = () => {
 
   const updateData = () => {
     setLoading(true);
+    try{
     fetchLatestAggregatedDayData()
       .then((responseData) => {
         setData(responseData);
@@ -36,7 +37,11 @@ const MarketMonitoring = () => {
         console.error("Error:", error);
         setLoading(false);
       });
-
+    }catch(e){
+      console.error("Error:", e);
+      setLoading(false);
+    }
+    try{
     fetchPSPData()
       .then((data) => {
         console.log(data);
@@ -44,7 +49,10 @@ const MarketMonitoring = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-      });
+      });}
+      catch(e){
+        console.error("Error:", e);
+      }
   };
 
   const updateTime = () => {
@@ -87,9 +95,10 @@ const MarketMonitoring = () => {
     <div className="cerccontainer">
       <div className="topNavbar">
         <NavLink to="/dashboard">
-        <Cerc  /></NavLink>
+        <Logo  /></NavLink>
         <div className="navHeading">CERC Market Monitor</div>
-       <NavLink to="/dashboard"> <Logo  /></NavLink>
+        <div style={{width:"88px"}}></div>
+
       </div>
       <div className="powerSuppContainer">
         <div className="powSupPosContainer">

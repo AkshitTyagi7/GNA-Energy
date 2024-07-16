@@ -231,9 +231,9 @@ export function ReLineChart({
                   <Line
                     key={index}
                     type="monotone"
-                    name={typeof legend === "string" ? legend : legend.name}
+                    name={typeof legend === "string" ? legend : legend.name ?? ""}
                     dataKey={
-                      typeof legend === "string" ? legend : legend.dataKey
+                      typeof legend === "string" ? legend : legend.dataKey ?? ""
                     }
                     stroke={
                       legend.stroke === null || legend.stroke === undefined

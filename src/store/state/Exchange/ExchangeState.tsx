@@ -44,7 +44,7 @@ const fetchExchangeData = createAsyncThunk(
                     sell_bid_mw: item.sell_bid_mw,
                     mcv_mw: item.mcv_mw,
                     mcp_rs_mwh: item.mcp_rs_mwh,
-                    wt_mcp_rs_mwh: item.wt_mcp_rs_mwh/1000
+                    wt_mcp_rs_mwh: item.wt_mcp_rs_mwh
                 }
             });
         } catch (error) {

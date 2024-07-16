@@ -3,12 +3,14 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    z-index: 10;
     height: 100%;
 width: 141px;
 padding: 32px 16px;
 background-color: white;
 box-shadow: 4px 4px 40px 0px #0000000F;
-z-index: 1;
+position: relative;
+z-index: 100;
 }
 
 .sidebar-items{
@@ -29,4 +31,5 @@ z-index: 1;
 }
 .sidebar-item-active p{
     color: #F1935C;
+
 }

@@ -24,16 +24,34 @@ import { YAxisFormatter, renderQuarterTick } from "./components";
 import { COST_UNIT } from "../../Units";
 import { getTimeRange } from "../../pages/Dashboard/Exchange3/Chart";
 
-const getLegendColor = (legend: LegendKey, index: number, selectedLegends: LegendKey[]): string => {
+const getLegendColor = (legend: LegendKey, index: number, selectedLegends: LegendKey[], isLegend?:boolean): string => {
   const isSelected =
     selectedLegends.some((item) => item.dataKey === legend.dataKey) ||
     selectedLegends.length === 0;
   return isSelected
-    ? legend.stroke ?? COLORS[index % COLORS.length]
-    : "grey";
+    ? (isLegend ? legend.legendColor : legend.stroke) ?? legend.stroke ??  COLORS[index % COLORS.length]
+    : "#E0E0E0";
 };
 
-const renderLegendComponent = (
+export function lightenColor(color: string, percent: number): string {
+  const num = parseInt(color.replace("#", ""), 16),
+    amt = Math.round(2.55 * percent),
+    R = (num >> 16) + amt,
+    G = ((num >> 8) & 0x00FF) + amt,
+    B = (num & 0x0000FF) + amt;
+
+  return `#${(
+    0x1000000 +
+    (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+    (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+    (B < 255 ? (B < 1 ? 0 : B) : 255)
+  )
+    .toString(16)
+    .slice(1)}`;
+}
+
+
+export const LegendComponent = (
   legend: LegendKey,
   index: number,
   selectedLegends: LegendKey[],
@@ -44,10 +62,12 @@ const renderLegendComponent = (
     className="realTime-Legend"
     onClick={() => handleLegendClick(legend)}
   >
-    <p style={{ color: getLegendColor(legend, index, selectedLegends) }}>
+    <p style={{ color: getLegendColor(legend, index, selectedLegends, true) }}>
       <div
-        className="dot"
-        style={{ backgroundColor: getLegendColor(legend, index, selectedLegends) }}
+        className={
+          legend.type === ChartType.Bar ? "dot" : "line"
+        }
+        style={{ backgroundColor: getLegendColor(legend, index, selectedLegends, true) }}
       ></div>
       {legend.name}
     </p>
@@ -65,10 +85,17 @@ export function ReMixChart({
   yAxisLabel,
   secondYAxisLabel,
   yAxisWidth,
+  legendBreakIndex, 
+
+  xAxisPosition = "insideBottom",
+  onlyTitle = false,
   secondXDataKey,
   showBrush = false,
+  brushIndex,
   brushHeight = 30,
   brushStart = BrushStart.End,
+  xaxisHeight,
+  barCategoryGap = 2.5,
   isTimeSlot,
   fontSize,
 }: ChartArguements) {
@@ -112,18 +139,24 @@ export function ReMixChart({
 console.log("Data for entity analysis", data)
   return (
     <div className="chart-container">
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
-        {filteredLegends.map((legend, index) =>
-          renderLegendComponent(legend, index, selectedLegends, handleLegendClick)
-        )}
-      </div>
+<div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
+  {filteredLegends.map((legend, index) => (
+    <React.Fragment key={index}>
+      {LegendComponent(legend, index, selectedLegends, handleLegendClick)}
+      {legendBreakIndex && legendBreakIndex === index && (
+        <div style={{ width: "100%", height: "0px" }}></div>
+      )}
+    </React.Fragment>
+  ))}
+</div>
 
       <ResponsiveContainer height={"80%"}>
-        <ComposedChart barCategoryGap={2.5} syncId={syncid} data={data}>
+        <ComposedChart barCategoryGap={barCategoryGap} syncId={syncid} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis 
           tick={xTick}
-          label={{ value: xLabel, position: "insideBottom", dy: 10 }}
+          height={xaxisHeight}
+          label={{ value: xLabel, position: xAxisPosition, dy: 10 }}
           interval={xTick ? 0 : undefined}
           minTickGap={8} dataKey={xDataKey} />
           {secondXDataKey && (
@@ -163,8 +196,11 @@ console.log("Data for entity analysis", data)
               dataKey={xDataKey}
               height={brushHeight}
               stroke={PrimaryColor}
-              startIndex={brushStartIndex}
-              endIndex={brushEndIndex}
+              startIndex={
+                brushIndex?.startIndex ?? brushStartIndex}
+              endIndex={
+                brushIndex?.endIndex ??
+                brushEndIndex}
               floodColor={PrimaryColor}
             />
           )}
@@ -174,6 +210,7 @@ console.log("Data for entity analysis", data)
               (value, payload) => {
 
               try {
+                if(onlyTitle) {return [value];}
                 if(isTimeSlot) {return [getTimeRange(parseInt(value)) + ` (${value})`];}
 
                 

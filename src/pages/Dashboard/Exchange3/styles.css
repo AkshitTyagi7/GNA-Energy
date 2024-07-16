@@ -9,6 +9,8 @@
 }
 .header{
     display: flex;
+    z-index: 100;
+    position: sticky;
     justify-content: space-between;
     background-color: white;
     align-items: center;

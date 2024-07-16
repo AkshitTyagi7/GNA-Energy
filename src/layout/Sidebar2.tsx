@@ -84,7 +84,7 @@ export function Sidebar2() {
           href="/dashboard"
           isMenuActive={active}
         />
-        <ProtectedPage pageId="cerc">
+        <ProtectedPage showPopUp={false} pageId="cerc">
           <SideBarItems
             Icon={DashboardIcon}
             text="CERC Monitor"

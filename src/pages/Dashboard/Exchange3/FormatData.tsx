@@ -184,8 +184,8 @@ export const ExchangeColors: string[] = [
   // Shuffled using Math.random() approach
   PrimaryColor,
   SecondaryColor,
-  "rgb(17, 141, 255)",
-  "rgb(18, 35, 158)",
+  "#118DFF",
+  "#12239E",
   "#DC143C", // Crimson
   "#800080", // Purple
   "#FFA07A", // Mango

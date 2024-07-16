@@ -20,12 +20,13 @@
     height: 35px;
 }
 
+
 .consumptionTitle{
     font-size: 1.8vw;
 }
 
 .dateSelection{
-    width: 305px;
+    width: 345px;
     display: flex;
     justify-content: space-between;
     vertical-align: middle  ;
@@ -40,6 +41,8 @@
 
 .consumptionButton{
     min-width: 100px!important;
+    border-radius: 0px!important;
+
 
 }
 .consumptionFilters{
