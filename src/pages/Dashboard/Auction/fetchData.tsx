@@ -9,7 +9,7 @@ interface FetchDataParams {
 export const fetchData = async ({ startDate, endDate }: FetchDataParams) => {
   try {
     const response = await fetch(
-      `https://api-data.gna.energy/data/search-auction/?start_date=${startDate.toISOString().split("T")[0]}&end_date=${endDate.toISOString().split("T")[0]}`
+      `http://127.0.0.1:8000/data/search-auction/?start_date=${startDate.toISOString().split("T")[0]}&end_date=${endDate.toISOString().split("T")[0]}`
     );
     if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
@@ -28,9 +28,9 @@ export const fetchTAMData = async ({ startDate, endDate }: FetchDataParams) => {
     formData.append("start_date", startDate.toISOString().split("T")[0]);
     formData.append("end_date", endDate.toISOString().split("T")[0]);
 
-    const response = await fetch("https://datahub.gna.energy/tam_exchange_api", {
-      method: "POST",
-      body: formData,
+    const response = await fetch(`https://api-data.gna.energy/data/get_tam_data?start_date=${startDate.toISOString().split("T")[0]}&end_date=${endDate.toISOString().split("T")[0]}`, {
+      method: "GET",
+      // body: formData,
     });
 
     if (!response.ok) {
@@ -38,11 +38,11 @@ export const fetchTAMData = async ({ startDate, endDate }: FetchDataParams) => {
     }
 
     const data = await response.json();
+
     let tamData: TAM[] = [];
-    data.forEach((date: any) => {
-      date.data.forEach((auction: any) => {
+    data.forEach((auction: any) => {
         tamData.push({
-          date: date.date,
+          date: auction.converted_date,
           exchange: auction.exchange,
           product: auction.product === "CONTINGENCY" ? "Day Ahead Contingency" : auction.product === "Intraday" ? "Intra day" : auction.product === "Intra Day" ? "Intra day" : auction.product === "DAILY" ? "Daily" : auction.product,
           total_traded_volume_mwh: auction.total_traded_volume_mwh,
@@ -51,7 +51,6 @@ export const fetchTAMData = async ({ startDate, endDate }: FetchDataParams) => {
           no_of_trades: auction.no_of_trades,
         });
       });
-    });
 
     return tamData;
   } catch (error) {

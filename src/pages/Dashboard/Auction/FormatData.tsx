@@ -1,3 +1,4 @@
+import { formatDMY } from "../../../common";
 import { Auction, AuctionChartData } from "../../../models/auction";
 
 // date: string | null;
@@ -54,7 +55,7 @@ export const FormatAuctionDaily = (
         let currentDate = auctionStart;
 
         while (currentDate <= auctionEnd) {
-            const dayKey = currentDate.toISOString().split('T')[0];
+            const dayKey = formatDMY(currentDate.toISOString().split('T')[0]);
             let existingEntry = data.find(item => item.date === dayKey);
 
             if (!existingEntry) {
@@ -163,7 +164,7 @@ export const FormatAuctionDailyComparison = (
         let currentDate = auctionStart;
 
         while (currentDate <= auctionEnd) {
-            const dayKey = currentDate.toISOString().split('T')[0];
+            const dayKey =formatDMY(currentDate.toISOString().split('T')[0]);
             let existingEntry = data.find(item => item.date === dayKey);
 
             if (!existingEntry) {

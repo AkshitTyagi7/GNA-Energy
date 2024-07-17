@@ -149,14 +149,7 @@ function handleErrorResponse(response: AxiosResponse): Record<string, any> {
 }
 
 // Example usage
-(async () => {
-  try {
-    const response = await buildHttpResponse('/endpoint', HttpMethod.GET);
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-})();
+
 
 export {
     buildHttpResponse,

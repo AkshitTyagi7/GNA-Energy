@@ -36,7 +36,8 @@
 }
 
 .powerSuppContainer {
-  height: 28vh;
+  height: 23vh;
+  padding-top: 15px;
   margin: 0px 32px;
   background-color: #ffffff;
   border-radius: 16px;
@@ -60,7 +61,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-
+  
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
@@ -75,8 +76,8 @@
 }
 
 .powSupDispContainer {
-  height: 20vh;
-  padding: 0px 16px 16px 16px;
+  height: 100%;
+  padding: 16px 16px 16px 16px;
   display: flex;
   justify-content: space-between;
 }
@@ -87,12 +88,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 8px;
-  align-items: center;
+  align-items: start;
   background-color: #fffcfb;
   border-radius: 16px;
+  padding: 12px;
+  box-shadow: 2px 2px 9px -1px rgba(218, 221, 232, 0.9);
+
 }
+
 
 .dateNow {
   font-size: 18px;
@@ -111,6 +115,7 @@
 
 .eachEnergyContainer {
   width: 10vw;
+  min-height: 110px;
   border-radius: 16px;
   height: 100%;
   display: flex;
@@ -119,8 +124,9 @@
   align-items: flex-start;
   gap: 8px;
   background-color: #ffffff;
-  border: 0.1px solid #34656d;
-  box-shadow: 2px 2px 9px -5px #dadde866;
+  /* border: 0.1px solid #34656d; */
+  box-shadow: 2px 2px 9px -1px rgba(218, 221, 232, 0.9);
+
 
   padding: 16px;
 }
@@ -528,3 +534,96 @@
   }
 }
 
+
+.market-monitoring {
+  .top-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-heading {
+      font-size: 1.5rem;
+    }
+    .nav-spacer {
+      width: 88px;
+    }
+  }
+  .bottom-text {
+    text-align: center;
+  }
+}
+
+
+  .market-monitoring-textbold{
+    font-weight: 500;
+  }
+  .market-monitoring-secondary{
+    color: var(--secondary);
+  }
+  .market-monitoring-gray{
+    color: rgba(102, 102, 102, 1);
+  }
+
+.market-monitoring-textsm{
+  font-size: 14px;
+}
+.market-monitoring-textmd{
+  font-size: 16px;
+}
+.market-monitoring-textlg{
+  font-size: 18px;
+}
+
+
+.market-monitoring-textbold{
+  font-weight: 500;
+}
+
+.dash-divider {
+  width: 60px;
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed #f1c27d;
+  /* margin: 10px 0; */
+}
+
+.dash-secondary {
+  border-top: 1px dashed var(--secondary);
+  width: 60px;
+  height: 1px;
+
+
+}
+
+
+.market-monitoring-secondary{
+  color: var(--secondary);
+  
+}
+.market-monitoring-gray{
+  color: rgba(102, 102, 102, 1);
+}
+
+.psp-title{
+  height: 37px;
+}
+
+/* akshit  css */
+
+@media (max-width: 1400px) {
+
+.market-monitoring-textsm{
+  font-size: 12px;
+}
+.market-monitoring-textmd{
+  font-size: 14px;
+}
+.market-monitoring-textlg{
+  font-size: 16px;
+}
+
+
+}
+
+.lightgray{
+  color: rgba(159, 159, 159, 1);
+}

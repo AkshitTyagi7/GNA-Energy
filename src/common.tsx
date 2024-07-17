@@ -56,3 +56,12 @@ export async function buildHttpReq(
   });
   return await response.json();
 }
+
+export const formatDMY = (date: string): string => {
+  // input date format as yyyy-mm-dd, output date format as dd-mm-yyyy
+  try{
+   return date.split("-").reverse().join("-");}
+   catch{
+    return date;
+   }
+  }

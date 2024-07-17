@@ -5,7 +5,7 @@ import { toSafeFloat } from "../../../extensions/number";
 import Loading from "../../../components/Loading";
 import { Pagination } from "./Pagination";
 import { ExchangeColors } from "../Exchange3/FormatData";
-import { PrimaryColor } from "../../../common";
+import { formatDMY, PrimaryColor } from "../../../common";
 
 interface TAMProps {
   TAMData: TAMType[];
@@ -40,7 +40,9 @@ export const TAM: React.FC<TAMProps> = ({
       productName: "Day Ahead Contingency",
       color: ExchangeColors[3],
     },
-    { product: "monthly", name: "Monthly", productName: "Monthly", color: ExchangeColors[4] },
+    { product: "weekly", name: "Weekly", productName: "Weekly", color: ExchangeColors[5] },
+
+    { product: "monthly", name: "Monthly", productName: "Monthly", color: ExchangeColors[6] },
   ];
 
   const ITEMS_PER_PAGE = 100;
@@ -108,7 +110,7 @@ export const TAM: React.FC<TAMProps> = ({
         <div className="large-col">Instrument Name</div>
         <div className="large-col">Date</div>
         <div className="large-col">Exchange</div>
-        <div className="large-col">Product</div>
+        <div className="large-col">Contract Type</div>
         <div className="large-col">Total Traded Volume(MWh)</div>
         <div className="large-col">Weighted Average Price(Rs/KWh)</div>
         <div className="large-col">No of Trades</div>
@@ -117,7 +119,7 @@ export const TAM: React.FC<TAMProps> = ({
         {auctions.map((auction) => (
           <div className="tableDetails" key={auction.date}>
             <div className="large-col">{auction.instrument_name}</div>
-            <div className="large-col">{auction.date}</div>
+            <div className="large-col">{formatDMY(auction.date ?? "")}</div>
             <div className="large-col">{auction.exchange}</div>
             <div className="large-col">{auction.product}</div>
             <div className="large-col">{auction.total_traded_volume_mwh}</div>
@@ -253,9 +255,9 @@ export const TAM: React.FC<TAMProps> = ({
               onlyTitle={true}
                
               legendBreakIndex={3}
-              xaxisHeight={(isCumulative || aggregateComparativeTAMData(filteredTAMAuctions()).length > 100) ? 50 : 35}
+              xaxisHeight={(isCumulative || aggregateComparativeTAMData(filteredTAMAuctions()).length > 60) ? 50 : 35}
               unit="MWh"
-              xAxisPosition={isCumulative ? "" : undefined}
+              xAxisPosition={(isCumulative || aggregateComparativeTAMData(filteredTAMAuctions()).length > 60)  ? "" : undefined}
               data={
                 isCumulative
                   ? aggregateComparativeTAMData(filteredTAMAuctions())
@@ -307,11 +309,11 @@ export const TAM: React.FC<TAMProps> = ({
                     ].flat()
               }
               showBrush={
-            (aggregateComparativeTAMData(filteredTAMAuctions()).length > 10 && isCumulative) || aggregateTAMData(filteredTAMAuctions()).length > 100
+            (aggregateComparativeTAMData(filteredTAMAuctions()).length > 61 && isCumulative) && aggregateTAMData(filteredTAMAuctions()).length > 60
               }
               brushIndex={{
                 startIndex: 0,
-                endIndex: isCumulative ? 15 : 100,
+                endIndex: isCumulative ? 15 : 60,
               }}
               xDataKey="date"
               xLabel="Date"
@@ -351,6 +353,8 @@ const products = [
       "Contingency",
     ],
   },
+  { name: "Weekly", key: "Weekly", keys: ["Weekly", "WEEKLY"] },
+
   { name: "Monthly", key: "Monthly", keys: ["Monthly"] },
 ];
 
@@ -367,10 +371,10 @@ const aggregateTAMData = (tamData: TAMType[]): AggregatedTAM[] => {
     ) {
       const { date, total_traded_volume_mwh, weighted_average_price_rs_mwh } =
         entry;
-
       if (!aggregatedData[date]) {
         aggregatedData[date] = { totalVolume: 0, totalPrice: 0, count: 0 };
       }
+
 
       aggregatedData[date].totalVolume +=
         toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
@@ -385,7 +389,7 @@ const aggregateTAMData = (tamData: TAMType[]): AggregatedTAM[] => {
   const result: AggregatedTAM[] = Object.keys(aggregatedData).map((date) => {
     const { totalVolume, totalPrice, count } = aggregatedData[date];
     return {
-      date,
+      date: formatDMY(date),
       total_traded_volume_mwh: totalVolume,
       weighted_average_price_rs_mwh: totalPrice / totalVolume,
       average_weighted_price_rs_mwh: totalPrice / count,
@@ -400,7 +404,54 @@ const aggregateComparativeTAMData = (tamData: TAMType[]): ComparativeTAM[] => {
     [key: string]: ComparativeTAM;
   } = {};
 
+  // add all dates between start and end date
+  if(tamData.length === 0) return [];
+  let date =new Date(tamData[0].date as any);
+  const start_date = new Date(tamData[0].date as any);
+  const end_date = new Date(tamData[tamData.length - 1].date as any);
+  
+  while (date.getTime() <= end_date.getTime()) {
+    const dateString = formatDMY(date.toISOString().split("T")[0]);
+    aggregatedData[dateString] = {
+      date: dateString,
+      total_traded_volume_mwh: 0,
+      total_price_rs: 0,
+      average_weighted_price_rs_mwh: 0,
+      weighted_average_price_rs_mwh: 0,
+      daily_total_traded_volume_mwh: 0,
+      daily_total_price_rs: 0,
+      daily_average_weighted_price_rs_mwh: 0,
+      daily_weighted_average_price_rs_mwh: 0,
+      intra_total_traded_volume_mwh: 0,
+      intra_total_price_rs: 0,
+      intra_average_weighted_price_rs_mwh: 0,
+      intra_weighted_average_price_rs_mwh: 0,
+      contingency_total_traded_volume_mwh: 0,
+      contingency_total_price_rs: 0,
+      contingency_average_weighted_price_rs_mwh: 0,
+      contingency_weighted_average_price_rs_mwh: 0,
+      monthly_total_traded_volume_mwh: 0,
+      monthly_total_price_rs: 0,
+      monthly_average_weighted_price_rs_mwh: 0,
+      monthly_weighted_average_price_rs_mwh: 0,
+      weekly_total_traded_volume_mwh: 0,
+      weekly_total_price_rs: 0,
+      weekly_average_weighted_price_rs_mwh: 0,
+      weekly_weighted_average_price_rs_mwh: 0,
+    };
+    date.setDate(date.getDate() + 1);
+    date = new Date(date); // Create a new date object to avoid modifying the original date object
+
+  }
+  console.log(start_date, end_date);
+  console.log(start_date.getTime(), end_date.getTime());
+  console.log("empty dates", aggregatedData);
+
+
+
   tamData.forEach((entry) => {
+    entry.date = formatDMY(entry.date as any);
+    
     if (
       entry.date &&
       entry.total_traded_volume_mwh !== null &&
@@ -408,32 +459,37 @@ const aggregateComparativeTAMData = (tamData: TAMType[]): ComparativeTAM[] => {
     ) {
       const { date, total_traded_volume_mwh, weighted_average_price_rs_mwh } =
         entry;
+        if (! aggregatedData[date]) {
+          aggregatedData[date] = {
+         date:   date,
+            total_traded_volume_mwh: 0,
+            total_price_rs: 0,
+            average_weighted_price_rs_mwh: 0,
+            weighted_average_price_rs_mwh: 0,
+            daily_total_traded_volume_mwh: 0,
+            daily_total_price_rs: 0,
+            daily_average_weighted_price_rs_mwh: 0,
+            daily_weighted_average_price_rs_mwh: 0,
+            intra_total_traded_volume_mwh: 0,
+            intra_total_price_rs: 0,
+            intra_average_weighted_price_rs_mwh: 0,
+            intra_weighted_average_price_rs_mwh: 0,
+            contingency_total_traded_volume_mwh: 0,
+            contingency_total_price_rs: 0,
+            contingency_average_weighted_price_rs_mwh: 0,
+            contingency_weighted_average_price_rs_mwh: 0,
+            monthly_total_traded_volume_mwh: 0,
+            monthly_total_price_rs: 0,
+            monthly_average_weighted_price_rs_mwh: 0,
+            monthly_weighted_average_price_rs_mwh: 0,
+            weekly_total_traded_volume_mwh: 0,
+            weekly_total_price_rs: 0,
+            weekly_average_weighted_price_rs_mwh: 0,
+            weekly_weighted_average_price_rs_mwh: 0,
+          };
+        }
 
-      if (!aggregatedData[date]) {
-        aggregatedData[date] = {
-          date,
-          total_traded_volume_mwh: 0,
-          total_price_rs: 0,
-          average_weighted_price_rs_mwh: 0,
-          weighted_average_price_rs_mwh: 0,
-          daily_total_traded_volume_mwh: 0,
-          daily_total_price_rs: 0,
-          daily_average_weighted_price_rs_mwh: 0,
-          daily_weighted_average_price_rs_mwh: 0,
-          intra_total_traded_volume_mwh: 0,
-          intra_total_price_rs: 0,
-          intra_average_weighted_price_rs_mwh: 0,
-          intra_weighted_average_price_rs_mwh: 0,
-          contingency_total_traded_volume_mwh: 0,
-          contingency_total_price_rs: 0,
-          contingency_average_weighted_price_rs_mwh: 0,
-          contingency_weighted_average_price_rs_mwh: 0,
-          monthly_total_traded_volume_mwh: 0,
-          monthly_total_price_rs: 0,
-          monthly_average_weighted_price_rs_mwh: 0,
-          monthly_weighted_average_price_rs_mwh: 0,
-        };
-      }
+
 
       aggregatedData[date].total_traded_volume_mwh +=
         toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
@@ -477,18 +533,17 @@ const aggregateComparativeTAMData = (tamData: TAMType[]): ComparativeTAM[] => {
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
+      if (entry.product === "Weekly") {
+        aggregatedData[date].weekly_total_traded_volume_mwh =
+          toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
+        aggregatedData[date].weekly_total_price_rs =
+          toSafeFloat(total_traded_volume_mwh.toString()) *
+          toSafeFloat(weighted_average_price_rs_mwh.toString()) *
+          entry.no_of_trades!;
+      }
     }
   });
 
-  // const result: AggregatedTAM[] = Object.keys(aggregatedData).map((date) => {
-  //   const { totalVolume, totalPrice, count } = aggregatedData[date];
-  //   return {
-  //     date,
-  //     total_traded_volume_mwh: totalVolume,
-  //     weighted_average_price_rs_mwh: totalPrice / totalVolume,
-  //     average_weighted_price_rs_mwh: totalPrice / count,
-  //   };
-  // });
 
   const result: ComparativeTAM[] = Object.keys(aggregatedData).map((date) => {
     const {
@@ -505,36 +560,32 @@ const aggregateComparativeTAMData = (tamData: TAMType[]): ComparativeTAM[] => {
     } = aggregatedData[date];
     return {
       date,
-      total_traded_volume_mwh: total_traded_volume_mwh,
-      total_price_rs: total_price_rs,
-      average_weighted_price_rs_mwh: total_price_rs / total_traded_volume_mwh,
-      weighted_average_price_rs_mwh: total_price_rs / total_traded_volume_mwh,
-      daily_total_traded_volume_mwh: daily_total_traded_volume_mwh,
-      daily_total_price_rs: daily_total_price_rs,
-      daily_average_weighted_price_rs_mwh:
-        daily_total_price_rs / daily_total_traded_volume_mwh,
-      daily_weighted_average_price_rs_mwh:
-        daily_total_price_rs / daily_total_traded_volume_mwh,
-      intra_total_traded_volume_mwh: intra_total_traded_volume_mwh,
-      intra_total_price_rs: intra_total_price_rs,
-      intra_average_weighted_price_rs_mwh:
-        intra_total_price_rs / intra_total_traded_volume_mwh,
-      intra_weighted_average_price_rs_mwh:
-        intra_total_price_rs / intra_total_traded_volume_mwh,
-      contingency_total_traded_volume_mwh: contingency_total_traded_volume_mwh,
-      contingency_total_price_rs: contingency_total_price_rs,
-      contingency_average_weighted_price_rs_mwh:
-        contingency_total_price_rs / contingency_total_traded_volume_mwh,
-      contingency_weighted_average_price_rs_mwh:
-        contingency_total_price_rs / contingency_total_traded_volume_mwh,
-      monthly_total_traded_volume_mwh: monthly_total_traded_volume_mwh,
-      monthly_total_price_rs: monthly_total_price_rs,
-      monthly_average_weighted_price_rs_mwh:
-        monthly_total_price_rs / monthly_total_traded_volume_mwh,
-      monthly_weighted_average_price_rs_mwh:
-        monthly_total_price_rs / monthly_total_traded_volume_mwh,
+      total_traded_volume_mwh: toSafeFloat(total_traded_volume_mwh),
+      total_price_rs: toSafeFloat(total_price_rs),
+      average_weighted_price_rs_mwh: toSafeFloat(total_price_rs / total_traded_volume_mwh),
+      weighted_average_price_rs_mwh: toSafeFloat(total_price_rs / total_traded_volume_mwh),
+      daily_total_traded_volume_mwh: toSafeFloat(daily_total_traded_volume_mwh),
+      daily_total_price_rs: toSafeFloat(daily_total_price_rs),
+      daily_average_weighted_price_rs_mwh: toSafeFloat(daily_total_price_rs / daily_total_traded_volume_mwh),
+      daily_weighted_average_price_rs_mwh: toSafeFloat(daily_total_price_rs / daily_total_traded_volume_mwh),
+      intra_total_traded_volume_mwh: toSafeFloat(intra_total_traded_volume_mwh),
+      intra_total_price_rs: toSafeFloat(intra_total_price_rs),
+      intra_average_weighted_price_rs_mwh: toSafeFloat(intra_total_price_rs / intra_total_traded_volume_mwh),
+      intra_weighted_average_price_rs_mwh: toSafeFloat(intra_total_price_rs / intra_total_traded_volume_mwh),
+      contingency_total_traded_volume_mwh: toSafeFloat(contingency_total_traded_volume_mwh),
+      contingency_total_price_rs: toSafeFloat(contingency_total_price_rs),
+      contingency_average_weighted_price_rs_mwh: toSafeFloat(contingency_total_price_rs / contingency_total_traded_volume_mwh),
+      contingency_weighted_average_price_rs_mwh: toSafeFloat(contingency_total_price_rs / contingency_total_traded_volume_mwh),
+      monthly_total_traded_volume_mwh: toSafeFloat(monthly_total_traded_volume_mwh),
+      monthly_total_price_rs: toSafeFloat(monthly_total_price_rs),
+      monthly_average_weighted_price_rs_mwh: toSafeFloat(monthly_total_price_rs / monthly_total_traded_volume_mwh),
+      monthly_weighted_average_price_rs_mwh: toSafeFloat(monthly_total_price_rs / monthly_total_traded_volume_mwh),
+      weekly_total_traded_volume_mwh: toSafeFloat(aggregatedData[date].weekly_total_traded_volume_mwh),
+      weekly_total_price_rs: toSafeFloat(aggregatedData[date].weekly_total_price_rs),
+      weekly_average_weighted_price_rs_mwh: toSafeFloat(aggregatedData[date].weekly_total_price_rs / aggregatedData[date].weekly_total_traded_volume_mwh),
+      weekly_weighted_average_price_rs_mwh: toSafeFloat(aggregatedData[date].weekly_total_price_rs / aggregatedData[date].weekly_total_traded_volume_mwh),
     };
-  });
+      });
 
   return result;
 };
@@ -568,4 +619,10 @@ interface ComparativeTAM {
   monthly_total_price_rs: number;
   monthly_average_weighted_price_rs_mwh: number;
   monthly_weighted_average_price_rs_mwh: number;
+
+  weekly_total_traded_volume_mwh: number;
+  weekly_total_price_rs: number;
+  weekly_average_weighted_price_rs_mwh: number;
+  weekly_weighted_average_price_rs_mwh: number;
+
 }

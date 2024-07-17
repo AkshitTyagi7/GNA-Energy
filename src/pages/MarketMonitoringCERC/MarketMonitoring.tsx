@@ -67,27 +67,74 @@ const MarketMonitoring = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  useEffect(() => {
-    updateTime();
-    const timerId = setInterval(updateTime, 1 * 1000); // 1 minute
+  // useEffect(() => {
+  //   updateTime();
+  //   const timerId = setInterval(updateTime, 1 * 1000); // 1 minute
 
-    return () => clearInterval(timerId);
-  }, []);
+  //   return () => clearInterval(timerId);
+  // }, []);
 
-  useEffect(() => {
-    const markets = ["DAM", "GDAM", "HPDAM"];
-    let currentIndex = 0;
+  // useEffect(() => {
+  //   const markets = ["DAM", "GDAM", "HPDAM"];
+  //   let currentIndex = 0;
 
-    const switchMarket = () => {
-      currentIndex = (currentIndex + 1) % markets.length;
-      setSelectedMarket(markets[currentIndex]);
-    };
+  //   const switchMarket = () => {
+  //     currentIndex = (currentIndex + 1) % markets.length;
+  //     setSelectedMarket(markets[currentIndex]);
+  //   };
 
-    const marketSwitchInterval = setInterval(switchMarket, 10 * 1000); // 30 seconds
+  //   const marketSwitchInterval = setInterval(switchMarket, 10 * 1000); // 30 seconds
 
-    return () => clearInterval(marketSwitchInterval);
-  }, []);
+  //   return () => clearInterval(marketSwitchInterval);
+  // }, []);
 
+
+  const PowerSupplyComponent = () => (
+    <div className="powerSuppContainer">
+    <div className="powSupPosContainer">
+      <div className="powSupPos">
+        <Stat style={{ fontSize: "24px" }} />
+        <span className="market-monitoring-textlg market-monitoring-textbold market-monitoring-gray">Power Supply Position</span>
+      </div>
+      <div className="market-monitoring-textsm">{pspdata && pspdata?.latest.data.date}</div>
+    </div>
+    <div className="powSupDispContainer">
+      <div className="dateContainer">
+        <div className="market-monitoring-textsm psp-title">Date</div>
+        <div className="dash-divider"></div>
+
+        <div className="market-monitoring-textmd market-monitoring-textbold">{pspdata && pspdata?.latest.data.date}</div>
+        <div className="market-monitoring-textsm lightgray">{pspdata && pspdata?.prev.data.date}</div>
+      </div>
+
+      {
+        [
+          { title: `Energy Met (MU)`, key: 'enrgy_met_mu' },
+          { title: 'Energy Shortage (MU)', key: 'enrgy_shrtage_mu' },
+          { title: 'Generation Outage (MW)', key: 'outage' },
+          { title: 'Frequency (49.9-50.05)', key: 'frequency' },
+          { title: 'Max Demand (MW)', key: 'max_demand_met_during_the_day_mw_from_nldc_scada' },
+          { title: 'Solar Hour Peak (MW)', key: 'solar_hour_peak' },
+          { title: 'Evening Peak (MW)', key: 'demand_met_during_evening_peak_hrsmw_at_19_00_hrs_from_rldcs' },
+          { title: 'Peak Shortage (MW)', key: 'peak_shrtage_mw' },
+        ].map((field) => {
+          return (
+            <div className="eachEnergyContainer" key={field.key}>
+              <div className="market-monitoring-textsm market-monitoring-secondary psp-title">{field.title}</div>
+              <div className="dash-secondary"></div>
+
+              <div className="market-monitoring-textmd  market-monitoring-textbold">{pspdata && pspdata?.latest.data[field.key as keyof PSPData] as any}</div>
+              <div className="market-monitoring-textsm">{pspdata && pspdata?.prev.data[field.key as keyof PSPData]}</div>
+            </div>
+          )
+        })
+      }
+
+   
+      
+    </div>
+  </div>
+  )
 
 
 
@@ -100,66 +147,7 @@ const MarketMonitoring = () => {
         <div style={{width:"88px"}}></div>
 
       </div>
-      <div className="powerSuppContainer">
-        <div className="powSupPosContainer">
-          <div className="powSupPos">
-            <Stat style={{ fontSize: "24px" }} />
-            <span>Power Supply Position</span>
-          </div>
-          <div className="dateTextPowSup">{pspdata && pspdata?.latest.data.date}</div>
-        </div>
-        <div className="powSupDispContainer">
-          <div className="dateContainer">
-            <DateIcon style={{ fontSize: "25px" }} />
-            <div className="dateNow">{pspdata && pspdata?.latest.data.date}</div>
-            <div className="datePast">{pspdata && pspdata?.prev.data.date}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">
-              Energy Met <br />
-              (MU)
-            </div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.enrgy_met_mu}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.enrgy_met_mu}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Energy Shortage (MU)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.enrgy_shrtage_mu}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.enrgy_shrtage_mu}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Generation Outage (MW)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.outage}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.outage}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Frequency (49.9-50.05)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.frequency}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.frequency}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Max Demand (MW)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.max_demand_met_during_the_day_mw_from_nldc_scada}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.max_demand_met_during_the_day_mw_from_nldc_scada}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Solar Hour Peak (MW)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.solar_hour_peak}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.solar_hour_peak}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Evening Peak (MW)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.demand_met_during_evening_peak_hrsmw_at_19_00_hrs_from_rldcs}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.demand_met_during_evening_peak_hrsmw_at_19_00_hrs_from_rldcs}</div>
-          </div>
-          <div className="eachEnergyContainer">
-            <div className="powSupHeading">Peak Shortage (MW)</div>
-            <div className="powSupToday">{pspdata && pspdata?.latest.data.peak_shrtage_mw}</div>
-            <div className="powSuppast">{pspdata && pspdata?.prev.data.peak_shrtage_mw}</div>
-          </div>
-          
-        </div>
-      </div>
+     <PowerSupplyComponent />
       <div className="collectiveMarketCont">
         <div className="cmContainer">
           <div className="collHeadContainer">

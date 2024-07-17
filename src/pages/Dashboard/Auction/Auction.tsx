@@ -56,7 +56,7 @@ export function AuctionPage() {
           ))}
         </div>
         <div className="date-selection">
-          <span>Delievery Period</span>
+          <span>Delivery Period</span>
           &nbsp;
           <input
             type="date"
@@ -67,6 +67,7 @@ export function AuctionPage() {
           to
           <input
             type="date"
+            min = {formatDateString(startDate)}
             value={formatDateString(endDate)}
             onChange={(e) => setEndDate(new Date(e.target.value))}
           />

@@ -13,6 +13,7 @@ import {
 } from "./FormatData";
 import {
   ColorGray,
+  formatDMY,
   PrimaryColor,
   SecondaryColor,
   TertiaryColor,
@@ -360,7 +361,11 @@ export const RA: React.FC<RAProps> = ({
                 ]}
                 brushIndex={{
                   startIndex: 0,
-                  endIndex: 10,
+                  endIndex:(FormatAuctionDailyComparison({
+                    auctions: filteredAuctions(),
+                    start_date: startDate.toString(),
+                    end_date: endDate.toString(),
+                  }) as any).length - 1,
                 }}
                 unit="MUs"
                 secondYAxisLabel="Weighted Average Price(Rs/KWh)"
@@ -392,6 +397,3 @@ const EXCHANGE_TYPES = ["DEEP", "IEX", "HPX", "PXIL"];
 const formatDateString = (date: Date): string =>
   date.toLocaleDateString("en-GB").split("/").reverse().join("-");
 
-const formatDMY = (date: string): string =>
-// input date format as yyyy-mm-dd, output date format as dd-mm-yyyy
-  date.split("-").reverse().join("-");
