@@ -12,6 +12,7 @@ import {
   FormatAuctionMonthlyComparison,
 } from "./FormatData";
 import {
+  ColorBlue,
   ColorGray,
   formatDMY,
   PrimaryColor,
@@ -24,6 +25,7 @@ import Loading from "../../../components/Loading";
 import { BrushStart } from "../../../models/chart_model";
 import { COLORS } from "../../../components/recharts/ReCharts";
 import { ExchangeColors } from "../Exchange3/FormatData";
+import { get } from "https";
 
 interface RAProps {
   forecastData: Auction[];
@@ -44,6 +46,9 @@ export const RA: React.FC<RAProps> = ({
   const [selectedEntity, setSelectedEntity] = useState<string[]>([]);
   const [selectExc, setSelectExc] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [selectedAuctioNumber, setSelectedAuctioNumber] = useState<string[]>(
+    []
+  );
   const EXCHANGE_COLOR_MAP: { [key: string]: string } = {
     DEEP: ExchangeColors[1],
     IEX: ExchangeColors[2],
@@ -59,9 +64,19 @@ export const RA: React.FC<RAProps> = ({
         ? prev.filter((item) => item !== type)
         : [...prev, type]
     );
+    setCurrentPage(1);
+    
   };
 
-  const filteredAuctions = (filterByEntity = true): Auction[] => {
+  const handleSelectAuction = (auctionNumber: string) => {
+    setSelectedAuctioNumber((prev) =>
+      prev.includes(auctionNumber)
+        ? prev.filter((item) => item !== auctionNumber)
+        : [...prev, auctionNumber]
+    );
+  };
+
+  const filteredAuctions = (filterByEntity = true, filterByAuctionNumber = true): Auction[] => {
     let res = forecastData;
     if (selectExc.length > 0) {
       res = res.filter((auction) =>
@@ -71,6 +86,11 @@ export const RA: React.FC<RAProps> = ({
     if (selectedEntity.length > 0 && filterByEntity) {
       res = res.filter((auction) =>
         selectedEntity.includes(auction.buyer__name!)
+      );
+    }
+    if (selectedAuctioNumber.length > 0 && filterByAuctionNumber) {
+      res = res.filter((auction) =>
+        selectedAuctioNumber.includes(auction.auction_no!)
       );
     }
     return res;
@@ -103,7 +123,7 @@ export const RA: React.FC<RAProps> = ({
         {auctions.map((auction) => (
           <div className="tableDetails" key={auction.id}>
             <div className="auction_no">{auction.auction_no}</div>
-            <div>{formatDMY(auction.auction_initiation_date as any)}</div>
+            <div>{formatDMY(auction.auction_initiation_date ?? auction.auction_result_date as any)}</div>
             <div>{formatDMY(auction.delivery_start_date as any)}</div>
             <div>{auction.delivery_start_time}</div>
             <div>{formatDMY(auction.delivery_end_date as string)}</div>
@@ -150,52 +170,74 @@ export const RA: React.FC<RAProps> = ({
               value: entity,
             }))}
             onChange={(e: any) =>
-              setSelectedEntity(e.map((item: any) => item.value))
-            }
+              {setSelectedEntity(e.map((item: any) => item.value)); setCurrentPage(1);
+                          }            }
             placeholder="Select Entity"
           />
         </div>
-        <div className="selectButton">
-          <div
-            style={{ borderRadius: "8px 0px 0px 8px" }}
-            className={`fiterInactive ${
-              isByChart ? "fiterInactive" : "fiterActive"
-            }`}
-            onClick={() => setIsByChart(false)}
-          >
-            Table
-          </div>
-          <div
-            style={{ borderRadius: "0px 8px 8px 0px" }}
-            className={`fiterInactive ${
-              isByChart ? "fiterActive" : "fiterInactive"
-            }`}
-            onClick={() => setIsByChart(true)}
-          >
-            Chart
-          </div>
-        </div>
-        <div className="selectButton">
-          {EXCHANGE_TYPES.map((type, index) => (
+        <div className="auctionnum-search-box">
+          <SearchBox
+            options={filteredAuctions(true, false)
+              .map((auction) => ({
+                label: auction.auction_no!,
+                value: auction.auction_no!,
+              }))
+              .filter(
+                (v, i, a) => a.findIndex((t) => t.value === v.value) === i
+              )}
+            isMany={true}
+            selectedOptions={selectedAuctioNumber.map((auctionNumber) => ({
+              label: auctionNumber,
+              value: auctionNumber,
+            }))}
+            onChange={(e: any) =>{
+              setSelectedAuctioNumber(e.map((item: any) => item.value)); setCurrentPage(1);}
+            
+            }
+            placeholder="Select Auction No."
+          />        </div>
+
+          <div className="selectButton">
             <div
-              key={type}
-              style={{
-                borderRadius:
-                  index === 0
-                    ? "8px 0px 0px 8px"
-                    : index === EXCHANGE_TYPES.length - 1
-                    ? "0px 8px 8px 0px"
-                    : undefined,
-              }}
-              className={
-                selectExc.includes(type) ? "fiterActive" : "fiterInactive"
-              }
-              onClick={() => handleSelectType(type)}
+              style={{ borderRadius: "8px 0px 0px 8px" }}
+              className={`fiterInactive ${
+                isByChart ? "fiterInactive" : "fiterActive"
+              }`}
+              onClick={() => setIsByChart(false)}
             >
-              {type}
+              Table
             </div>
-          ))}
-        </div>
+            <div
+              style={{ borderRadius: "0px 8px 8px 0px" }}
+              className={`fiterInactive ${
+                isByChart ? "fiterActive" : "fiterInactive"
+              }`}
+              onClick={() => setIsByChart(true)}
+            >
+              Chart
+            </div>
+          </div>
+          <div className="selectButton">
+            {EXCHANGE_TYPES.map((type, index) => (
+              <div
+                key={type}
+                style={{
+                  borderRadius:
+                    index === 0
+                      ? "8px 0px 0px 8px"
+                      : index === EXCHANGE_TYPES.length - 1
+                      ? "0px 8px 8px 0px"
+                      : undefined,
+                }}
+                className={
+                  selectExc.includes(type) ? "fiterActive" : "fiterInactive"
+                }
+                onClick={() => handleSelectType(type)}
+              >
+                {type}
+              </div>
+            ))}
+          </div>
       </div>
       <div className="detContainermain">
         {isByChart ? (
@@ -270,31 +312,36 @@ export const RA: React.FC<RAProps> = ({
               </div>
             </div>
             {!isComparative ? (
-              <ReMixChart
-
+              <><ReMixChart
               onlyTitle={true}
-
-                data={
-                  isByMonthlyChart
-                    ? FormatAuctionMonthly({
-                        start_date: formatDateString(startDate),
-                        end_date: formatDateString(endDate),
-                        auctions: filteredAuctions(),
-                      })
-                    : (FormatAuctionDaily({
-                        auctions: filteredAuctions(),
-                        start_date: startDate.toString(),
-                        end_date: endDate.toString(),
-                      }) as any)
-                }
+              data={isByMonthlyChart
+                  ? FormatAuctionMonthly({
+                    start_date: formatDateString(startDate),
+                    end_date: formatDateString(endDate),
+                    auctions: filteredAuctions(),
+                  })
+                  : (FormatAuctionDaily({
+                    auctions: filteredAuctions(),
+                    start_date: startDate.toString(),
+                    end_date: endDate.toString(),
+                  }) as any)}
                 xDataKey="date"
                 legends={[
                   {
                     dataKey: "total_mu",
                     stroke: "#E0E0E0",
-                    name: "Total MU",
+                    name: "Allocated MU",
                     type: 1,
+                    stackId: "a",
                     legendColor: "rgb(159, 159, 159)",
+                  },
+                  {
+                    dataKey: "unallocated_mu",
+                    stroke: "gray",
+                    name: "Unallocated MU",
+                    type: 1,
+                    stackId: "a",
+                    legendColor: "gray",
                   },
                   {
                     dataKey: "weighted_avg_rs_per_kwh",
@@ -307,12 +354,50 @@ export const RA: React.FC<RAProps> = ({
                 unit="MUs"
                 secondYAxisLabel="Weighted Average Price(Rs/KWh)"
                 xLabel="Date"
-                yAxisLabel="Total MUs"
-              />
+                yAxisLabel="Total MUs" />
+                {/* <ReMixChart
+                data={forecastData.map((auction) => ({
+                  accepted_price_kwh: auction.accepted_price_kwh,
+                  deleivery_date: auction.delivery_start_date,
+                  
+                  buyer: auction.buyer__name,
+                  allocated_quantity_mw: auction.allocated_quantity_mw,
+                  auction_no: auction.auction_no,
+                  unallocated_mu: auction.buy_total_quantity_mw! - auction.allocated_quantity_mw!,
+
+
+                })) as any}
+                legends  = {[
+                  {
+                    dataKey: "allocated_quantity_mw",
+                    stroke: PrimaryColor,
+                    name: "Allocated MU",
+                    type: 1,
+                    stackId: "a",
+                    legendColor: "rgb(159, 159, 159)",
+                  },
+                  {
+                    dataKey: "unallocated_mu",
+                    stroke: "gray",
+                    name: "Unallocated MU",
+                    type: 1,
+                    stackId: "a",
+                    legendColor: "gray",
+                  },
+                  {
+                    dataKey: "accepted_price_kwh",
+                    stroke: PrimaryColor,
+                    name: "Wt. Avg Price(Rs/KWh)",
+                    yAxisId: "right",
+                  },
+                ]}
+                xDataKey="auction_no"
+
+                /> */}
+                </>
             ) : (
               <ReMixChart
-              onlyTitle={true}
-
+                onlyTitle={true}
                 data={
                   isByMonthlyChart
                     ? FormatAuctionMonthlyComparison({
@@ -324,10 +409,10 @@ export const RA: React.FC<RAProps> = ({
                         auctions: filteredAuctions(),
                         start_date: startDate.toString(),
                         end_date: endDate.toString(),
-                      }) as any)
+                      }) as any) ?? []
                 }
                 xDataKey="date"
-                legendBreakIndex={3}
+                legendBreakIndex={(getActiveExc().length *2 - 1 ) < 2 ? undefined : (getActiveExc().length *2 - 1)}
                 xaxisHeight={50}
                 xAxisPosition=""
                 legends={[
@@ -336,10 +421,19 @@ export const RA: React.FC<RAProps> = ({
                       [
                         {
                           dataKey: `total_mu_${type.toLowerCase()}`,
-                          stroke: lightenColor(EXCHANGE_COLOR_MAP[type], 15),
-                          name: `${type} Volume`,
+                          stroke: lightenColor(EXCHANGE_COLOR_MAP[type], 40),
+                          name: `${type} Allocated`,
+                          stackId: type,
                           type: 1,
                         },
+                        {
+                          dataKey: `unallocated_mu_${type.toLowerCase()}`,
+                          stroke: lightenColor(EXCHANGE_COLOR_MAP[type], 10),
+                          name: `${type} Unallocated`,
+                          stackId: type,
+                          type: 1,
+
+                        }
                       ].flat()
                     )
                     .flat(),
@@ -351,7 +445,7 @@ export const RA: React.FC<RAProps> = ({
                           {
                             dataKey: `weighted_avg_rs_per_kwh_${type.toLowerCase()}`,
                             stroke: EXCHANGE_COLOR_MAP[type],
-                            name: `${type} Wt. Avg Price`,
+                            name: `${type} Price`,
                             yAxisId: "right",
                           },
                         ].flat()
@@ -361,11 +455,14 @@ export const RA: React.FC<RAProps> = ({
                 ]}
                 brushIndex={{
                   startIndex: 0,
-                  endIndex:(FormatAuctionDailyComparison({
-                    auctions: filteredAuctions(),
-                    start_date: startDate.toString(),
-                    end_date: endDate.toString(),
-                  }) as any).length - 1,
+                  endIndex:
+                    (
+                      FormatAuctionDailyComparison({
+                        auctions: filteredAuctions(),
+                        start_date: startDate.toString(),
+                        end_date: endDate.toString(),
+                      }) as any
+                    ).length - 1,
                 }}
                 unit="MUs"
                 secondYAxisLabel="Weighted Average Price(Rs/KWh)"
@@ -396,4 +493,3 @@ const EXCHANGE_TYPES = ["DEEP", "IEX", "HPX", "PXIL"];
 
 const formatDateString = (date: Date): string =>
   date.toLocaleDateString("en-GB").split("/").reverse().join("-");
-

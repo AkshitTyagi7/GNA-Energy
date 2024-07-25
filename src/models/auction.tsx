@@ -22,6 +22,34 @@ export interface Auction {
     requisition_no: string | null;
     type__name: string | null;
   }
+  export interface AuctionComparison{
+    date: string | null;
+    total_mu_iex: number;
+    total_mu_pxil: number;
+    total_mu_hpx: number;
+    total_mu_deep: number;
+    total_mu: number;
+    total_price_rs_iex: number;
+    total_price_rs_pxil: number;
+    total_price_rs_hpx: number;
+    total_price_rs_deep: number;
+    total_price_rs: number;
+    auction_count_iex: number;
+    auction_count_pxil: number;
+    auction_count_hpx: number;
+    auction_count_deep: number;
+    auction_count: number;
+    weighted_avg_rs_per_kwh_iex: number;
+    weighted_avg_rs_per_kwh_pxil: number;
+    weighted_avg_rs_per_kwh_hpx: number;
+    weighted_avg_rs_per_kwh_deep: number;
+    weighted_avg_rs_per_kwh: number;
+    simple_avg_rs_per_kwh_iex: number;
+    simple_avg_rs_per_kwh_pxil: number;
+    simple_avg_rs_per_kwh_hpx: number;
+    simple_avg_rs_per_kwh_deep: number;
+    simple_avg_rs_per_kwh: number;
+}
 
 interface SearchAuctionParams {
     buyer?: string;
@@ -43,6 +71,7 @@ export interface TAM{
     weighted_average_price_rs_mwh: number | null;
     instrument_name: string | null;
     no_of_trades: number | null;
+    product_gna: string | null;
 }
 
 // {
@@ -57,12 +86,14 @@ export interface TAM{
 
 export interface AuctionChartData{
     date: string | null;
-    total_mwh: number | null;
-    total_mu: number | null;
-    total_price_rs: number | null;
-    auction_count: number | null;
-    weighted_avg_rs_per_kwh: number | null;
+    total_mwh: number | undefined;
+    total_mu: number | undefined;
+    total_price_rs: number | undefined;
+    auction_count: number | undefined;
+    weighted_avg_rs_per_kwh: number | undefined;
+    unallocated_mwh?: number | undefined;
+    unallocated_mu?: number | undefined;
     simple_avg_rs_per_kwh: number | null;
-    [key: string]: number | string | null;
+    [key: string]: number | string | null | undefined;
 
 }

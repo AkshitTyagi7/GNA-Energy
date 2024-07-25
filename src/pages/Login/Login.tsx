@@ -3,7 +3,7 @@ import DataAnalyticsImage from './Login.png'
 import { ReactComponent as Logo } from '../../logo.svg';
 import { ReactComponent as User } from './UserIcon.svg';
 import { buildHttpReq, buildUrl } from "../../common";
-import { getLoggedIn, getUser, isLoggedIn, setAccessToken, setLoggedIn, setUser } from "../Protected";
+import { getLoggedIn, getUser, isLoggedIn, setSessionToken, setLoggedIn, setUser } from "../Protected";
 import Loading from "../../components/Loading";
 import swal from "sweetalert";
 import {ReactComponent as LoginImage} from './InsightsLogin.svg';
@@ -257,7 +257,7 @@ try{
         if (response.status === true) {
             setLoading(false);
            
-            setAccessToken(response.token);
+            setSessionToken(response.token);
             setUser({
                 email: email,
                 accessToken: response.token

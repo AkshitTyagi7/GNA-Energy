@@ -3,8 +3,6 @@ import Exchange from "./pages/Dashboard/Exchange/Exchange";
 import { BankingAnalytics } from "./pages/Dashboard/BankingAnalytics/BankingAalytics";
 import { ConsumptionAnalytics } from "./pages/Dashboard/Consumption/Consumption";
 import { MarketMontoring } from "./pages/Dashboard/MarketMonitoring/MarketMonitoring";
-import { DemoPage } from "./pages/DemoPage";
-import { ExchangeReCharts } from "./pages/ReCharts3";
 import { PriceForecasting } from "./pages/Dashboard/PriceForcating/PriceForcasting";
 import { BetaMarketMontoring } from "./pages/Dashboard/MarketMonitoring/BetaMarkeMonitoring";
 import { BetaConsumption } from "./pages/Dashboard/Consumption/BetaConsumption";

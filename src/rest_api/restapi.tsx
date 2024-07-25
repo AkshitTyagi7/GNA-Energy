@@ -1,8 +1,85 @@
 import { buildHttpResponse, HttpMethod } from "./network_utility";
 import { ReChartData } from "../models/chart_model";
-import { ApiResponse } from "../models/csrc";
 import { AuctionChartData } from "../models/auction";
+ import { ApiResponse } from "../models/api_res";
 
+export async function login(email: string): Promise<ApiResponse> {
+    const response =await buildHttpResponse({ 
+        endPoint: 'user/login/',
+        method: HttpMethod.POST,
+        body: {
+            email: email
+        }
+    } )
+    return response as ApiResponse;
+}
+
+export async function verifyOtp(email: string, otp: string): Promise<ApiResponse> {
+    const response = await buildHttpResponse({
+        endPoint: 'user/verify_otp/',
+        method: HttpMethod.POST,
+        body: {
+            email: email,
+            otp: otp
+        }
+    })
+    return response as ApiResponse;
+}
+
+export async function checkAccess(accessKey: string): Promise<ApiResponse> {
+    const response = await buildHttpResponse({
+        endPoint: 'user/check_access/',
+        method: HttpMethod.POST,
+        body: {
+            access_key: accessKey
+        }
+    })
+    return response as ApiResponse;
+}
+
+export async function fetchExchangeSlotData({
+    exchange,
+    product,
+    slot,
+    date,
+  }: {
+    exchange: string;
+    product: string;
+    slot: string;
+    date: string;
+  }){
+    console.log("fetchExchangeSlotData", exchange, product, slot, date);
+    const response =  await buildHttpResponse({
+        endPoint: "data/getTopBuySellData/",
+        method: HttpMethod.POST,
+        body: {
+            "exchanges": [exchange],
+            "products": [product],
+            "time_slots": [slot],
+            "start_date": date,
+            "end_date": date,
+                }
+  })
+    return response;
+}
+
+export async function fetchExchangeComparisonData(body: any) {
+    const response = await buildHttpResponse({
+        endPoint: "data/multipleDateRangeExchangeData/",
+        method: HttpMethod.POST,
+        body:body
+    })
+    return response;
+    }
+
+export async function fetchAllExchangeData(start_date: string, end_date: string){
+    const response = await buildHttpResponse({
+        endPoint: `data/getData?start_date=${start_date}&end_date=${end_date}`,
+        method: HttpMethod.GET
+    })
+    return response;
+
+}
 
 export async function getEntityComparisont({
     entityid,
@@ -106,7 +183,7 @@ export async function fetchDailyAuctionData({start_date, end_date, exchange, ent
     exchange?: string,
     entity_id?: number
 }): Promise<AuctionChartData[]> {
-    const response = await buildHttpResponse(`/data/auction-daily-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`, HttpMethod.GET);
+    const response = await buildHttpResponse({endPoint:`data/auction-daily-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`,method: HttpMethod.GET});
     return response as AuctionChartData[];
 }
 
@@ -116,6 +193,6 @@ export async function fetchMonthlyAuctionData({start_date, end_date, exchange, e
     exchange?: string,
     entity_id?: number
 }): Promise<AuctionChartData[]> {
-    const response = await buildHttpResponse(`/data/auction-monthly-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`, HttpMethod.GET);
+    const response = await buildHttpResponse({endPoint:`data/auction-monthly-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`, method:HttpMethod.GET});
     return response as AuctionChartData[];
 }

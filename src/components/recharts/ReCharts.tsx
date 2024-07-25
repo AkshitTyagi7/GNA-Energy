@@ -39,6 +39,7 @@ export function ReLineChart({
   yAxisLabel,
   yAxisWidth,
   secondXDataKey,
+  showSecondYAxis = true,
   showBrush = false,
   brushHeight = 30,
   brushStart = BrushStart.End,
@@ -115,8 +116,9 @@ export function ReLineChart({
 
       <ResponsiveContainer height={"80%"}>
         <LineChart syncId={syncid} data={data}>
-          <CartesianGrid  strokeDasharray="3 3" />
+          <CartesianGrid   strokeDasharray="3 3" />
           <XAxis    
+          
           tick={xTick}
           height={38}
           minTickGap={8}
@@ -124,7 +126,7 @@ export function ReLineChart({
           // label={{ value: xLabel, position: "insideBottom", dy: 10,   }}
           interval={xTick !== undefined ? 0 : undefined}
  dataKey={xDataKey} >
-  <Label value={xLabel} offset={0} position="insideBottom" />
+  <Label value={xLabel} fontSize={fontSize} offset={0} position="insideBottom" />
  </XAxis>
           {secondXDataKey !== undefined ? (
             <XAxis
@@ -148,7 +150,8 @@ export function ReLineChart({
               style={{ textAnchor: "middle" }}
             />
           </YAxis>
-          <YAxis yAxisId="right" orientation="right" />
+        {  <YAxis yAxisId="right" orientation="right" width={
+          !showSecondYAxis ? 10 : undefined} />}
           {showBrush && (
             <Brush
               dataKey={xDataKey}
@@ -356,7 +359,7 @@ export function ReBarChart({
       <ResponsiveContainer height={"80%"}>
         <BarChart syncId={syncid} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={xDataKey} />
+          <XAxis  dataKey={xDataKey} />
           {secondXDataKey !== undefined ? (
             <XAxis
               dataKey={secondXDataKey}

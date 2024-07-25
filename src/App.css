@@ -289,3 +289,55 @@ body {
 
 
 
+
+.textsm{
+  font-size: 14px;
+}
+.textmd{
+  font-size: 16px;
+}
+.textlg{
+  font-size: 18px;
+}
+.textxsm{
+  font-size: 12px;
+}
+.textbold{
+  font-weight: 500;
+}
+
+@media (max-width: 1700px) {
+  
+    .textsm{
+      font-size: 12px;
+    }
+    .textmd{
+      font-size: 14px;
+    }
+    .textlg{
+      font-size: 16px;
+    }
+    .textxsm{
+      font-size: 10px;
+    }
+  
+}
+
+
+@media (max-width: 1400px) {
+
+  .textsm{
+    font-size: 11px;
+  }
+  .textmd{
+    font-size: 13px;
+  }
+  .textlg{
+    font-size: 14px;
+  }
+  .textxsm{
+    font-size: 9px;
+  }
+  
+  
+  }

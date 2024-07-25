@@ -59,6 +59,7 @@ import {
 import Popup from "./components/Popup";
 import {EntityPage} from "./Entity";
 import { BrushStart, LegendKey, getColorList } from "../../../models/chart_model";
+import { fetchExchangeComparisonData, fetchExchangeSlotData } from "../../../Rest_api/restapi";
 export function Exchange3() {
   const maxDate = new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000);
   let comparisonRawData: {
@@ -1622,21 +1623,26 @@ export function Exchange3() {
   }) {
     setExchangeLoading(true);
 
-    const res = await fetch("https://api-data.gna.energy/data/getTopBuySellData/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        exchanges: [exchange],
-        products: [product],
-        time_slots: [slot],
-        start_date: date,
-        end_date: date,
-      }),
-    });
+    // const res = await fetch("https://api-data.gna.energy/data/getTopBuySellData/", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     exchanges: [exchange],
+    //     products: [product],
+    //     time_slots: [slot],
+    //     start_date: date,
+    //     end_date: date,
+    //   }),
+    // });
+    console.log("fetching data from exchange3", exchange, product, slot, date);
 
-    const data = await res.json();
+    const data = await fetchExchangeSlotData({
+      exchange: exchange,
+      product: product,
+      slot: slot,
+      date: date,});
     setExchangeLoading(false);
     setPopUpTitle(`${exchange} ${product}, ${slot} Time Slot of ${date} `);
 
@@ -1930,15 +1936,8 @@ export function Exchange3() {
       let compRawData = state.Exchange.comparisonRawData;
       // check if any date is removed from the date range by comparing with the raw data
 
-      const res = await fetch(
-        "https://api-data.gna.energy/data/multipleDateRangeExchangeData/",
+      const res =await fetchExchangeComparisonData(
         {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({
             dates: dates.map((e) => ({
               start_date: e
                 .toLocaleDateString("en-GB")
@@ -1951,10 +1950,10 @@ export function Exchange3() {
                 .reverse()
                 .join("-"),
             })),
-          }),
+          
         }
       );
-      apidata = await res.json();
+      apidata = await res;
       apidata = apidata.data;
       compRawData = apidata as any;
       const comparisonData: ComparisonData[] = [];

@@ -25,8 +25,7 @@
 }
 
 .bottomText {
-  height: 4vh;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 16.8px;
   letter-spacing: 0.016em;
@@ -36,8 +35,7 @@
 }
 
 .powerSuppContainer {
-  height: 23vh;
-  padding-top: 15px;
+  /* height: 23vh; */
   margin: 0px 32px;
   background-color: #ffffff;
   border-radius: 16px;
@@ -48,7 +46,7 @@
 }
 
 .powSupPosContainer {
-  height: 6vh;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +59,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  
+
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
@@ -83,20 +81,17 @@
 }
 
 .dateContainer {
-  width: 8vw;
+  width: 9vw;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
   align-items: start;
-  background-color: #fffcfb;
+  background: #fff7f3;
   border-radius: 16px;
   padding: 12px;
   box-shadow: 2px 2px 9px -1px rgba(218, 221, 232, 0.9);
-
 }
-
 
 .dateNow {
   font-size: 18px;
@@ -115,7 +110,8 @@
 
 .eachEnergyContainer {
   width: 10vw;
-  min-height: 110px;
+  min-height: 90px;
+  min-width: 120px;
   border-radius: 16px;
   height: 100%;
   display: flex;
@@ -126,7 +122,6 @@
   background-color: #ffffff;
   /* border: 0.1px solid #34656d; */
   box-shadow: 2px 2px 9px -1px rgba(218, 221, 232, 0.9);
-
 
   padding: 16px;
 }
@@ -157,7 +152,7 @@
 }
 
 .collectiveMarketCont {
-  height: 49vh;
+  height: 53vh;
   margin: 0px 32px;
   display: flex;
   justify-content: space-between;
@@ -167,7 +162,7 @@
   height: 100%;
   width: 56.5%;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .collHeadContainer {
@@ -175,8 +170,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 16px;
-  height: 15%;
-  border-bottom: 1px solid #e6e6e6;
+  height: 13%;
+  border-bottom: 1px solid #F5F5F5;
 }
 
 .collHeading {
@@ -202,38 +197,36 @@
 }
 
 .inactiveCollType {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 28px;
   cursor: pointer;
-  color: #64748b;
+  color: #666666;
 }
 
 .activeCollType {
-  height: 36px;
-  width: 94px;
-  background-color: #fff7f3;
+  padding: 5px 10px;
+  /* background-color: #fff7f3; */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 22px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 28px;
-  color: #f1935c;
+  /* color: #f1935c; */
 }
 
 .marketContianer {
   height: 85%;
   display: flex;
-  justify-content: space-between;
-  padding: 1%;
+  /* justify-content: space-between; */
+  gap: 20px;  
+  padding: 15px;
 }
 
 .marketTypeCont {
   width: 20%;
-  padding-bottom: 2%;
+  border-radius: 16px;
   height: 98%;
 
   display: flex;
@@ -243,11 +236,11 @@
 
 .marketDetailsCont {
   width: 25.5%;
-  padding-bottom: 2%;
+  /* padding-bottom: 2%; */
   height: 98%;
-  border: 1px solid #e4e7ed;
-  border-radius: 8px;
-
+  /* border: 1px solid #e4e7ed; */
+  border-radius: 14px;
+  box-shadow: 0px 1px 5px 0px #33333326;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -269,36 +262,35 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+   justify-content: center;
   align-items: center;
 }
 
 .marketTextArea {
-  height: 16%;
-  width: 95%;
+  height: 18%;
+  /* width: 88%; */
   margin-left: 5%;
+  margin-right: 5%;
 
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
 }
 
 .mcpButton {
-  height: 100%;
-  width: 80%;
+  height: 90%;
+  width: 100%;
+  padding: 10px;
+
 
   background-color: #ffffff;
-
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 28.8px;
-  letter-spacing: 0.016em;
-  color: #34656d;
+  /* color: #34656d; */
 
   display: flex;
+  border-radius: 8px;
   align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 9.1px 0px #e5e5e566;
+  justify-content: space-between;
+box-shadow: 1px 1px 9.1px 0px #E5E5E566;
 }
 
 .sellButton {
@@ -324,8 +316,9 @@
   width: 90%;
   margin-right: 10%;
   display: flex;
-  gap: 32px;
-  align-items: center;
+  flex-direction: column;
+  /* justify-content: space-bet
+  ween;  align-items: center; */
 }
 
 .iconCont {
@@ -355,7 +348,6 @@
   font-size: 20px;
   min-width: 80px;
   font-weight: 500;
-  line-height: 28.8px;
   letter-spacing: 0.016em;
   color: #444444;
 }
@@ -380,7 +372,7 @@
   height: 100%;
   width: 42.5%;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 16px;
 
   display: flex;
   flex-direction: column;
@@ -391,7 +383,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15%;
+  margin-top: 3%;
+  /* margin-top: 15px; */
   padding: 0px 16px;
 }
 
@@ -407,17 +400,22 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
-  min-width: 90px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 110px;
   color: #f1935c;
 }
 
 .rtmGraphContainer {
-  height: 57%;
+  height: 64%;
+  width: 90%;
   margin-left: 40px;
+  /* border: 0.5px solid #E4E7ED */
 }
 
 .rtmDetailsCont {
-  height: 25%;
+  height: 20%;
   width: 95%;
   margin: auto;
 
@@ -426,7 +424,7 @@
 }
 
 .rtmL1 {
-  width: 15%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -436,18 +434,16 @@
 
 .rtmL2 {
   height: 100%;
-  padding: 8px 0px;
-  width: 25%;
+  padding: 8px 8px;
+  width: 20%;
   border: 1px solid #e4e7ed;
-  border-radius: 8px;
+  border-radius: 16px;
+  align-items: start;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
 }
-
-
 
 /* For screens smaller than 1600px */
 @media (max-width: 1600px) {
@@ -472,8 +468,9 @@
   }
 
   .eachEnergyContainer {
+    gap: 4px;
     width: 10vw;
-    padding: 12px;
+    padding: 0px 11px;
   }
 
   .powSupHeading {
@@ -490,21 +487,22 @@
 
   .collectiveMarketCont {
     margin: 0px 24px;
+    height: 57vh;
   }
 
   .cmContainer {
     width: 55%;
   }
-  .dateNow{
+  .dateNow {
     font-size: 14px;
-
   }
-  .datePast{
+  .datePast {
     font-size: 12px;
   }
 
-  .marketTypeCont, .marketDetailsCont {
-    width: 22%;
+  .marketTypeCont,
+  .marketDetailsCont {
+    width: 25%;
   }
 
   .mainValue1 {
@@ -514,7 +512,8 @@
 
   .mainVal2 {
     font-size: 12px;
-  }.valEach span{
+  }
+  .valEach span {
     font-size: 10px;
   }
 
@@ -525,15 +524,11 @@
   .rtmContainer {
     width: 43%;
   }
-  .sellButton{
+  .sellButton {
     font-size: 13px;
+  }
 
-  }
-  .mcpButton{
-    font-size: 20px;
-  }
 }
-
 
 .market-monitoring {
   .top-navbar {
@@ -552,34 +547,39 @@
   }
 }
 
+.market-monitoring-textbold {
+  font-weight: 500;
+}
+.market-monitoring-secondary {
+  color: var(--secondary);
+}
+.secondary-color {
+  color: var(--secondary);
+}
+.market-monitoring-gray {
+  color: rgba(102, 102, 102, 1);
+}
 
-  .market-monitoring-textbold{
-    font-weight: 500;
-  }
-  .market-monitoring-secondary{
-    color: var(--secondary);
-  }
-  .market-monitoring-gray{
-    color: rgba(102, 102, 102, 1);
-  }
+.market-monitoring-date {
+  color: var(--teritary-grey);
+}
 
-.market-monitoring-textsm{
+.market-monitoring-textsm {
   font-size: 14px;
 }
-.market-monitoring-textmd{
+.market-monitoring-textmd {
   font-size: 16px;
 }
-.market-monitoring-textlg{
+.market-monitoring-textlg {
   font-size: 18px;
 }
 
-
-.market-monitoring-textbold{
+.market-monitoring-textbold {
   font-weight: 500;
 }
 
 .dash-divider {
-  width: 60px;
+  width: 80%;
   height: 1px;
   border: 0;
   border-top: 1px dashed #f1c27d;
@@ -588,42 +588,40 @@
 
 .dash-secondary {
   border-top: 1px dashed var(--secondary);
-  width: 60px;
+  width: 80%;
   height: 1px;
-
-
 }
 
-
-.market-monitoring-secondary{
+.market-monitoring-secondary {
   color: var(--secondary);
-  
-}
-.market-monitoring-gray{
-  color: rgba(102, 102, 102, 1);
 }
 
-.psp-title{
+.psp-title {
   height: 37px;
+}
+.timerTxt{
+  font-size: 16px;
+  min-width: 100px;
+
 }
 
 /* akshit  css */
 
 @media (max-width: 1400px) {
-
-.market-monitoring-textsm{
-  font-size: 12px;
+  .market-monitoring-textsm {
+    font-size: 12px;
+  }
+  .market-monitoring-textmd {
+    font-size: 14px;
+  }
+  .market-monitoring-textlg {
+    font-size: 16px;
+  }
+  .mcpButton{
+    font-size: 10px;
+  }
 }
-.market-monitoring-textmd{
-  font-size: 14px;
-}
-.market-monitoring-textlg{
-  font-size: 16px;
-}
 
-
-}
-
-.lightgray{
+.lightgray {
   color: rgba(159, 159, 159, 1);
 }

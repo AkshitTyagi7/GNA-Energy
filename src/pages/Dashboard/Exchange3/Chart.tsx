@@ -112,7 +112,7 @@ export const renderHourTick = (tickProps: any) => {
   // }
   if (valueint % 4 === 0) {
     return (
-      <text x={x} y={y + 10} fontSize={12} textAnchor="middle">
+      <text x={x} y={y + 10} fontSize={12} textAnchor="middle" fill="#666">
         {valueint/4}
       </text>
     );

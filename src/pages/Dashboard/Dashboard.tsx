@@ -47,6 +47,17 @@ export default function Dashboard() {
         <DashBoardItem Icon={PriceForecasting} title="Price Forecast" to="priceForecasting" />
         <DashBoardItem Icon={DemandForecasting} title="Demand Forecast" to="demandForecasting" />
         <DashBoardItem Icon={GridFrequencyProfile} title="Grid Frequency Profile" to="gridFrequencyProfile" />
+        {/* [
+        "marketmonitoring", "exchangeAnalysis", "auctions", "powerAtlas", "consumptionAndGenerationAnalytics", "discomAnalysis", "priceForecasting", "demandForecasting", "gridFrequencyProfile"
+        ] */}
+        {/* 
+        [
+        {
+        "access_type" : "Market Monitoring",
+        "key": "marketmonitoring",
+        }, {"access_type" : "Exchange Analysis", "key": "exchangeAnalysis"}, {"access_type" : "TAM and DEEP", "key": "auctions"}, {"access_type" : "Power Atlas", "key": "powerAtlas"}, {"access_type" : "Consumption and Generation Analytics", "key": "consumptionAndGenerationAnalytics"}, {"access_type" : "Discom Analytics", "key": "discomAnalysis"}, {"access_type" : "Price Forecast", "key": "priceForecasting"}, {"access_type" : "Demand Forecast", "key": "demandForecasting"}, {"access_type" : "Grid Frequency Profile", "key": "gridFrequencyProfile"
+        ]
+        */}
 
       </div>
       <div

@@ -5,6 +5,7 @@ import { buildHttpReq } from "../../../common";
 import { ExchangeState, initialExchangeState } from "./interface";
 import { AsyncThunkFulfilledActionCreator, AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 import { FormatExchangeData } from "../../../pages/Dashboard/Exchange3/FormatData";
+import { fetchAllExchangeData } from "../../../Rest_api/restapi";
 
 
 
@@ -16,12 +17,8 @@ const fetchExchangeData = createAsyncThunk(
         start_date = start_date.split("-").reverse().join("-");
         end_date = end_date.split("-").reverse().join("-");
         try {
-            let req =await fetch(`https://api-data.gna.energy/data/getData?start_date=${start_date}&end_date=${end_date}`, {
-                method: "GET",
-                headers: {
-                },
-            });
-            let apiRes = await req.json();
+            let req =await fetchAllExchangeData(start_date, end_date);
+            let apiRes = await req;
             console.log("API Response:", apiRes);
             return apiRes.data.sort(
                 (a: any, b: any) => {

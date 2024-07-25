@@ -40,6 +40,7 @@ export interface ExchangeData {
 export interface ApiResponse {
     [exchange: string]: ExchangeData;
     date: any;
+    previousDate:any;
 }
 
 export interface CsrcPSSPData {

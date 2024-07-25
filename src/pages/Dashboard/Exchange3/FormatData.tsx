@@ -186,14 +186,14 @@ export const ExchangeColors: string[] = [
   SecondaryColor,
   "#118DFF",
   "#12239E",
-  "#DC143C", // Crimson
+  // "#DC143C", // Crimson
   "#800080", // Purple
   "#FFA07A", // Mango
   "#006400", // Emerald Green
   "#B76E79", // Rose Gold
   "#B22222", // Firebrick
   "#2F4F4F", // Dark Gray
-  "#C71585", // Deep Pink
+  // "#C71585", // Deep Pink
   "#D2B48C", // Cinnamon
   "#DC143C", // Crimson
   "#000080", // Navy Blue

@@ -86,6 +86,7 @@ export function ReMixChart({
   secondYAxisLabel,
   yAxisWidth,
   legendBreakIndex, 
+  hidePrice,
 
   xAxisPosition = "insideBottom",
   onlyTitle = false,
@@ -136,19 +137,27 @@ export function ReMixChart({
         : 0,
     [data, brushStart]
   );
-console.log("Data for entity analysis", data)
+
+  const orderedSelectedLegends = useMemo(
+    () => {
+      if (selectedLegends.length === 0) return filteredLegends;
+      return legends.filter(legend => selectedLegends.some(selected => selected.dataKey === legend.dataKey));
+    },
+    [selectedLegends, filteredLegends, legends]
+  );
+
   return (
     <div className="chart-container">
-<div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
-  {filteredLegends.map((legend, index) => (
-    <React.Fragment key={index}>
-      {LegendComponent(legend, index, selectedLegends, handleLegendClick)}
-      {legendBreakIndex && legendBreakIndex === index && (
-        <div style={{ width: "100%", height: "0px" }}></div>
-      )}
-    </React.Fragment>
-  ))}
-</div>
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
+        {filteredLegends.map((legend, index) => (
+          <React.Fragment key={index}>
+            {LegendComponent(legend, index, selectedLegends, handleLegendClick)}
+            {legendBreakIndex && legendBreakIndex === index && (
+              <div style={{ width: "100%", height: "0px" }}></div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
 
       <ResponsiveContainer height={"80%"}>
         <ComposedChart barCategoryGap={barCategoryGap} syncId={syncid} data={data}>
@@ -226,14 +235,22 @@ console.log("Data for entity analysis", data)
               }
             }}
             formatter={(value, name) =>
-              `${parseFloat(value.toString())
+              // `${parseFloat(value.toString())
+              //   .toFixed(2)
+              //   .toString()
+              //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${name.toString().includes("Price") ? COST_UNIT : unit}`
+              {
+                let val = `${parseFloat(value.toString())
                 .toFixed(2)
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${name.toString().includes("Price") ? COST_UNIT : unit}`
+                if(hidePrice) {return val.replace("Price", "")}
+                return val;
+              }
             }
           />
 
-          {(selectedLegends.length === 0 ? filteredLegends : selectedLegends).map(
+          {orderedSelectedLegends.map(
             (legend, index) => (
               legend.type === ChartType.Bar ? (
                 <Bar
@@ -242,6 +259,7 @@ console.log("Data for entity analysis", data)
                   radius={BAR_RADIUS}
                   type="monotone"
                   name={legend.name}
+                  stackId={legend.stackId}
                   
                   dataKey={legend.dataKey}
                   yAxisId={legend.yAxisId}

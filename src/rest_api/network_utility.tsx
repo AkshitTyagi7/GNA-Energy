@@ -6,6 +6,7 @@ import path from 'path';
 // import { getSessionToken } from './prefdata';
 // import { isNetworkAvailable } from './network_status';
 import { BASE_URL, APP_TOKEN } from '../configs';
+import { getAccessToken } from '../pages/Protected';
 
 const isNetworkAvailable =  () => true;
 
@@ -17,7 +18,7 @@ enum HttpMethod {
 }
 
 async function buildHeaderTokens(isStripePayment: boolean = false, request?: any): Promise<Record<string, string>> {
-  const userToken = "random_token";
+  const userToken = getAccessToken()?.toString() || '';
 
   const header: Record<string, string> = {
     // 'Cache-Control': 'no-cache',
@@ -25,7 +26,7 @@ async function buildHeaderTokens(isStripePayment: boolean = false, request?: any
     // 'Access-Control-Allow-Origin': '*',
     // 'Content-Type': 'application/json; charset=UTF-8',
     // 'usertoken': userToken,
-    // 'Authorization': `Bearer ${APP_TOKEN}`,
+    'Authorization': `${userToken}`,
     'Accept': 'application/json; charset=utf-8'
   };
 
@@ -33,21 +34,35 @@ async function buildHeaderTokens(isStripePayment: boolean = false, request?: any
 }
 
 async function buildHttpResponse(
-  endPoint: string,
-  method: HttpMethod = HttpMethod.GET,
-  request?: any,
-  isStripePayment: boolean = false,
-  customHeader?: Record<string, string>
+  // endPoint: string,
+  // method: HttpMethod = HttpMethod.GET,
+  // request?: any,
+  // isStripePayment: boolean = false,
+  // customHeader?: Record<string, string>
+  {
+    endPoint,
+    method = HttpMethod.GET,
+    body,
+    isStripePayment = false,
+    customHeader
+  }: {
+    endPoint: string,
+    method?: HttpMethod,
+    body?: any,
+    isStripePayment?: boolean,
+    customHeader?: Record<string, string>
+  
+  }
 ): Promise<any> {
   if (await isNetworkAvailable()) {
-    const headers = await buildHeaderTokens(isStripePayment, request);
+    const headers = await buildHeaderTokens(isStripePayment, body);
     const url = buildBaseUrl(endPoint);
 
     const config: AxiosRequestConfig = {
       method,
       url,
       headers: customHeader ?? headers,
-      data: request,
+      data: body,
       responseType: 'json'
     };
 
@@ -72,7 +87,7 @@ async function buildHttpResponse(
 }
 
 function buildBaseUrl(endPoint: string): string {
-  if (!endPoint.startsWith('http')) return `${BASE_URL}${endPoint}`;
+  if (!endPoint.startsWith('http')) return `${BASE_URL}/${endPoint}`;
   return endPoint;
 }
 

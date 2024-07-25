@@ -17,6 +17,7 @@ export interface ReChartData {
     type?: ChartType;
     yAxisId?: string;
     legendColor?:string;
+    stackId?: string;
     // color: string;
   }
   
@@ -62,12 +63,15 @@ export interface ChartArguements {
     yAxisLabel?: string;
     fontSize?: number;
     isTimeSlot?: boolean;
+    hidePrice?: boolean;
     showBrush?: boolean;
     brushHeight?: number;
 
     brushIndex?: BrushIndex;
     brushStart?: BrushStart;
     secondYAxisLabel?: string;
+    showSecondYAxis?: boolean;
+  
 
   }
 
