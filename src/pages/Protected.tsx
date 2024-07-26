@@ -3,7 +3,6 @@ import { Navigate, Route } from "react-router-dom";
 import { buildHttpReq, mail } from "../common";
 import Loading from "../components/Loading";
 import swal from "sweetalert";
-import { checkAccess } from "../Rest_api/restapi";
 interface User {
     email: string,
     accessToken: string
@@ -48,7 +47,7 @@ export const getLoggedIn = (): boolean => {
     return loggedIn === 'true';
 }
 
-export const setSessionToken = (token: string) => {
+export const setAccessToken = (token: string) => {
     localStorage.setItem('token', token);
 }
 
@@ -98,9 +97,18 @@ export function ProtectedPage({ children, pageId, showPopUp = true }: { children
     )
 
     async function CheckAccess(): Promise<boolean> {
-        
+
         try{
-        const res =await checkAccess(pageId.replace("/",""));
+        const res =await buildHttpReq({
+            endpoint: '/verify_access',
+            method: 'POST',
+            body:{
+                page: pageId.replace("/",""),
+                email: getUser().email,
+                token: getUser().accessToken
+            }
+
+        })
 
         setLoading(false);
         if (res.status === true) {
@@ -119,8 +127,7 @@ export function ProtectedPage({ children, pageId, showPopUp = true }: { children
 
     }     catch(err){
         showPopUp &&   swal("Oops !",`Please Try Again. If the issue persist please send a mail to ${mail}`,"warning" );
-        
-        
+
 
         return false;
     }}

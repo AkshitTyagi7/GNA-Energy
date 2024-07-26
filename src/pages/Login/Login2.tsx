@@ -4,10 +4,9 @@ import loginImage from "./login4.png";
 import swal from "sweetalert";
 import React from "react";
 import { buildUrl, buildHttpReq } from "../../common";
-import { setSessionToken, setUser, setLoggedIn } from "../Protected";
+import { setAccessToken, setUser, setLoggedIn } from "../Protected";
 import Loading from "../../components/Loading";
 import OTPInput from "react-otp-input";
-import { login, verifyOtp } from "../../Rest_api/restapi";
 
 export function Login2() {
   const [otpSent, setOtpSent] = React.useState<boolean>(false);
@@ -121,14 +120,23 @@ export function Login2() {
         handleOtpSubmit();
         return;
       }
+      const url = buildUrl("/get_otp");
       setLoading(true);
-      const response = await login(email );
+      const response = await buildHttpReq({
+        endpoint: "get_otp",
+        method: "POST",
+        body: {
+          email: email,
+        },
+      });
 
+      //  if(response.status === 200){
+      //     console.log
       console.log(response);
       if (response.status === true) {
         setOtpSent(true);
       } else if (response.status === false) {
-        swal("", response.message!, "warning");
+        swal("", response.message, "warning");
       }
       setLoading(false);
     } catch (e) {
@@ -143,7 +151,6 @@ export function Login2() {
 
   async function handleOtpSubmit() {
     console.log("Form submitted");
-    try{
     if (otp?.toString().length !== 5) {
       // alert("Please enter a valid otp");
       // swal("Invalid OTP", "Please enter a valid otp.", "warning");
@@ -151,13 +158,20 @@ export function Login2() {
     }
     setLoading(true);
 
-    const response = await verifyOtp(email, otp?.toString()!);
+    const response = await buildHttpReq({
+      endpoint: "verify_otp",
+      method: "POST",
+      body: {
+        email: email,
+        otp: otp,
+      },
+    });
     //  if(response.status === 200){
     console.log(response);
     if (response.status === true) {
       setLoading(false);
 
-      setSessionToken(response.token);
+      setAccessToken(response.token);
       setUser({
         email: email,
         accessToken: response.token,
@@ -174,12 +188,56 @@ export function Login2() {
       );
     }
   }
-  catch(e){
-    setLoading(false);
-    swal("Please Try Again", ".", "warning");
-  }
 }
+// function OtpInput({
+//   fieldNumber,
+//   onChange,
+//   onFilled,
+// }: {
+//   fieldNumber: number;
+//   onChange: any;
+//   onFilled?: any;
+// }) {
+//   let fieldNumberList: number[] = [];
+//   for (let i = 0; i < fieldNumber; i++) {
+//     fieldNumberList.push(i);
+//   }
+//   let inputList: any[] = [];
+//   function handleOnChange(e: number, index: number) {
+//     if (inputList[index] === null) {
+//       onChange(inputList.join(""));
+//       return;
+//     }
+//     inputList[index] = e;
+//     onChange(parseInt(inputList.join("")));
+//     if (inputList.join("").length === 5) {
+//       onFilled(parseInt(inputList.join("")));
+//     }
+//   }
 
-  
-}
-
+//   return (
+//     <div className="otp-input">
+//       {fieldNumberList.map((item, index) => {
+//         return (
+//           <input
+//             className="otp-input-fields"
+//             type="number"
+//             id={`otpInput-${item.toString()}`}
+//             key={`otpInput=${item.toString()}`}
+//             maxLength={1}
+//             onChange={(e) => {
+//               if (e.target.value.length === 1) {
+//                 if (item < fieldNumber - 1) {
+//                   document
+//                     .getElementById(`otpInput-${(item + 1).toString()}`)
+//                     ?.focus();
+//                 }
+//               }
+//               handleOnChange(parseInt(e.target.value), index);
+//             }}
+//           />
+//         );
+//       })}
+//     </div>
+//   );
+// }

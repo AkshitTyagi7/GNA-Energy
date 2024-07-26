@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Sidebar from "./layout/Sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import { DemoPage } from "./pages/DemoPage";
+// import { DemoPage } from "./pages/DemoPage";
 import { PowerAtlas } from "./pages/Dashboard/Atlas/Atlas";
 import { LoginPage } from "./pages/Login/Login";
 import "./App.css";

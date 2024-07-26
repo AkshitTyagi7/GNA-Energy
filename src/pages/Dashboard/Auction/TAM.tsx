@@ -434,7 +434,7 @@ export const TAM: React.FC<TAMProps> = ({
                     {
                       dataKey: "total_mu",
                       stroke: PrimaryColor,
-                      name: "Volume(MUs)",
+                      name: "Total Traded Volume(MWh)",
                       type: 1,
                       legendColor: PrimaryColor,
                     },
@@ -864,76 +864,76 @@ const aggregateComparativeTAMData = (tamData: TAMType[]): ComparativeTAM[] => {
       }
 
       if (entry.product === "Intra day") {
-        aggregatedData[date].intra_total_traded_volume_mwh =
+        aggregatedData[date].intra_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].intra_total_price_rs =
+        aggregatedData[date].intra_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
 
       if (entry.product === "Day Ahead Contingency") {
-        aggregatedData[date].contingency_total_traded_volume_mwh =
+        aggregatedData[date].contingency_total_traded_volume_mwh+=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].contingency_total_price_rs =
+        aggregatedData[date].contingency_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
 
       if (entry.product === "Monthly") {
-        aggregatedData[date].monthly_total_traded_volume_mwh =
+        aggregatedData[date].monthly_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].monthly_total_price_rs =
+        aggregatedData[date].monthly_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
 
       if (entry.product === "Daily") {
-        aggregatedData[date].daily_total_traded_volume_mwh =
+        aggregatedData[date].daily_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].daily_total_price_rs =
+        aggregatedData[date].daily_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
       if (entry.product === "Weekly") {
-        aggregatedData[date].weekly_total_traded_volume_mwh =
+        aggregatedData[date].weekly_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].weekly_total_price_rs =
+        aggregatedData[date].weekly_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
       if (entry.product === "Daily_HP") {
-        aggregatedData[date].hp_daily_total_traded_volume_mwh =
+        aggregatedData[date].hp_daily_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].hp_daily_total_price_rs =
+        aggregatedData[date].hp_daily_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
       if (entry.product === "IDayDynamic_HP") {
-        aggregatedData[date].hp_intra_total_traded_volume_mwh =
+        aggregatedData[date].hp_intra_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].hp_intra_total_price_rs =
+        aggregatedData[date].hp_intra_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
       if (entry.product === "DACDynamic_HP") {
-        aggregatedData[date].hp_contingency_total_traded_volume_mwh =
+        aggregatedData[date].hp_contingency_total_traded_volume_mwh+=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].hp_contingency_total_price_rs =
+        aggregatedData[date].hp_contingency_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
       }
       if (entry.product === "Monthly_HP") {
-        aggregatedData[date].hp_monthly_total_traded_volume_mwh =
+        aggregatedData[date].hp_monthly_total_traded_volume_mwh +=
           toSafeFloat(total_traded_volume_mwh.toString()) * entry.no_of_trades!;
-        aggregatedData[date].hp_monthly_total_price_rs =
+        aggregatedData[date].hp_monthly_total_price_rs +=
           toSafeFloat(total_traded_volume_mwh.toString()) *
           toSafeFloat(weighted_average_price_rs_mwh.toString()) *
           entry.no_of_trades!;
