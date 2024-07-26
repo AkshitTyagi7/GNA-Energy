@@ -145,8 +145,6 @@ export function Login2() {
     console.log("Form submitted");
     try{
     if (otp?.toString().length !== 5) {
-      // alert("Please enter a valid otp");
-      // swal("Invalid OTP", "Please enter a valid otp.", "warning");
       return;
     }
     setLoading(true);
@@ -166,7 +164,6 @@ export function Login2() {
       window.location.href = "/dashboard";
     } else {
       setLoading(false);
-      // alert("The otp you entered is incorrect. Please try again");
       swal(
         "Incorrect OTP",
         "The otp you entered is incorrect. Please try again.",
