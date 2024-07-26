@@ -373,7 +373,7 @@ export const FormatAuctionMonthly = (
             const nextMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
             const periodEnd = new Date(Math.min(nextMonth.getTime() - 1, auctionEnd.getTime()));
             const durationHours = calculateHoursBetween(auction.delivery_start_time!, auction.delivery_end_time!) *
-                ((periodEnd.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
+                ((periodEnd.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24) + 1);
 
             const mwh = auction.allocated_quantity_mw ? auction.allocated_quantity_mw * durationHours : 0;
             const unallocated_mwh = auction.buy_total_quantity_mw ? (auction.buy_total_quantity_mw! - (auction.allocated_quantity_mw ?? 0)) * durationHours : 0;
@@ -501,7 +501,7 @@ export const FormatAuctionMonthlyComparison = (
             const nextMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
             const periodEnd = new Date(Math.min(nextMonth.getTime() - 1, auctionEnd.getTime()));
             const durationHours = calculateHoursBetween(auction.delivery_start_time!, auction.delivery_end_time!) *
-                ((periodEnd.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
+                ((periodEnd.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24) + 1);
 
             const mwh = auction.allocated_quantity_mw ? auction.allocated_quantity_mw * durationHours : 0;
             const unallocated_mwh = auction.buy_total_quantity_mw ? (auction.buy_total_quantity_mw! - (auction.allocated_quantity_mw ?? 0)) * durationHours : 0;
