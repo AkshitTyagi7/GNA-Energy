@@ -30,6 +30,7 @@ import StartEndDate from "../../../components/StartEndDate";
 import { PrimaryColor, buildHttpReq } from "../../../common";
 import { MediumButton, SmallButton } from "../../../components/Button";
 import Loading from "../../../components/Loading";
+import { buildFormDataRequest } from "../../../Rest_api/network_utility";
 export function BetaConsumption() {
   let [chartData, setChartData] = React.useState<ChartConsumptionData>(
     FormatConsumptionData([])
@@ -736,8 +737,8 @@ export function BetaConsumption() {
     // setChartData(FormatConsumptionData(data));
     setDemandLoading(true);
 
-    const data = await buildHttpReq({
-      endpoint: "consumption_api",
+    const data = await buildFormDataRequest({
+      endpoint: "data/consumption_api",
       method: "POST",
       body: {
         start_date: convertDate(start_date),
@@ -758,8 +759,8 @@ export function BetaConsumption() {
   }) {
     setOutageLoading(true);
     // fetch data from api
-    const data = await buildHttpReq({
-      endpoint: "generation_outage_api",
+    const data = await buildFormDataRequest({
+      endpoint: "data/generation_outage_api",
       method: "POST",
       body: {
         start_date: convertDate(start_date),
@@ -782,8 +783,8 @@ export function BetaConsumption() {
   }) {
     setGenerationLoading(true);
     // fetch data from api
-    const data = await buildHttpReq({
-      endpoint: "generation_data_api",
+    const data = await buildFormDataRequest({
+      endpoint: "data/generation_data_api",
       method: "POST",
       body: {
         start_date: convertDate(start_date),

@@ -14,6 +14,7 @@ import {
 import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
 import { ReLineChart } from "../../../components/recharts/ReCharts";
 import { LegendKey } from "../../../models/chart_model";
+import { buildFormDataRequest } from "../../../Rest_api/network_utility";
 // import { FormatMarketMonitoringData } from "./FormatData";
 let startMonth: {
   value: number;
@@ -568,8 +569,8 @@ export function MarketMontoring() {
     endMonth: { value: number; label: string };
   }) {
     
-    const res = await buildHttpReq({
-      endpoint: "market_monitoring_volume_api",
+    const res = await buildFormDataRequest({
+      endpoint: "data/market_monitoring_volume_api",
       method: "POST",
       body: {
         exchange: "HPX,IEX,PXIL,Traders",
@@ -598,8 +599,8 @@ export function MarketMontoring() {
     startMonth: { value: number; label: string };
     endMonth: { value: number; label: string };
   }) {
-    const byPrice = await buildHttpReq({
-      endpoint: "market_monitoring_price_api",
+    const byPrice = await buildFormDataRequest({
+      endpoint: "data/market_monitoring_price_api",
       method: "POST",
       body: {
         exchange: "HPX,IEX,PXIL,Traders",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Dashboard.css";
 import { NavLink } from "react-router-dom";
 import { Header } from "../../layout/Header";
@@ -12,6 +12,7 @@ import {ReactComponent as GridFrequencyProfile} from "../../icons/dashboard/grid
 import {ReactComponent as MarketMonitoring} from "../../icons/dashboard/marketmonitoring.svg";
 import {ReactComponent as PowerAtlas} from "../../icons/dashboard/powerAtlas.svg";
 import {ReactComponent as PriceForecasting} from "../../icons/dashboard/priceForecasting.svg";
+import { getSessionValidity } from "../../Rest_api/restapi";
 
 
  function DashBoardItem({title,Icon, to}: {title: string,Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>, to: string}) {
@@ -28,6 +29,16 @@ import {ReactComponent as PriceForecasting} from "../../icons/dashboard/priceFor
   
 }
 export default function Dashboard() {
+  useEffect(() => {
+    getSessionValidity().then((res) => {
+      if (res.status == false) {
+        // swal("Session Expired", "Please login again", "warning");
+        localStorage.clear();
+        window.location.href = "/login";
+        
+      }
+    });
+  }, []);
   return (
     <>      <div className="dashboard-header">
     <div>

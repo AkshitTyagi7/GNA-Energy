@@ -5,6 +5,7 @@ import AtlasData from "./DemoAtlas.json";
 import {ReactComponent as Cross} from '../../../icons/cross.svg'
 import "./Atlas.css";
 import ReactSelect from "react-select";
+import { buildBaseUrl, buildHeaderTokens } from "../../../Rest_api/network_utility";
 export function PowerAtlas() {
   const colorMapping: {
     [key: string]: string;
@@ -169,7 +170,10 @@ export function PowerAtlas() {
 
   async function fetchAtlasData() {
     // https://datahub.gna.energy/power_atlas_api
-    const response = await fetch("https://datahub.gna.energy/power_atlas_api");
+    const response = await fetch(buildBaseUrl("data/power_atlas_api"), {
+      method: 'GET',
+      headers:await buildHeaderTokens()
+    });
     const res = await response.json();
     setAtlasData(res);
     setData(FormatAtlasData(res.data, getSelectedLegends()));

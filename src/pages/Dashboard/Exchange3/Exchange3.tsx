@@ -23,7 +23,6 @@ import {
   BuyerSellerPieChart,
   ExchangeChart,
   UtilizationTrendChart,
-  renderHourTick,
 } from "./Chart";
 import { ResponsiveContainer } from "recharts";
 import { useDispatch, useSelector } from "react-redux";
@@ -60,6 +59,8 @@ import Popup from "./components/Popup";
 import {EntityPage} from "./Entity";
 import { BrushStart, LegendKey, getColorList } from "../../../models/chart_model";
 import { fetchExchangeComparisonData, fetchExchangeSlotData } from "../../../Rest_api/restapi";
+import { buildBaseUrl, buildFormDataRequest, buildHeaderTokens } from "../../../Rest_api/network_utility";
+import { renderHourTick } from "../../../components/recharts/components";
 export function Exchange3() {
   const maxDate = new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000);
   let comparisonRawData: {
@@ -405,13 +406,13 @@ export function Exchange3() {
                   .split("/")
                   .reverse()
                   .join("-")}
-                  min={
-                    startDate
-                      .toLocaleDateString("en-GB")
-                      .split("/")
-                      .reverse()
-                      .join("-")
-                  }
+                  // min={
+                  //   startDate
+                  //     .toLocaleDateString("en-GB")
+                  //     .split("/")
+                  //     .reverse()
+                  //     .join("-")
+                  // }
                 value={startDate
                   .toLocaleDateString("en-GB")
                   .split("/")
@@ -1686,7 +1687,9 @@ export function Exchange3() {
     console.log("fetching data");
     try {
       setRealTimeLoading(true);
-      const response = await fetch("https://datahub.gna.energy/rtm_api");
+      const response = await fetch(buildBaseUrl("data/getRealtimeIexPrices"), {
+        headers:await buildHeaderTokens(),
+      });
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -1751,8 +1754,8 @@ export function Exchange3() {
     try {
       setBuyerSellerLoading(true);
       // setIsBuyerLoading(true);
-      const res = await buildHttpReq({
-        endpoint: "top_buyer_seller_api",
+      const res = await buildFormDataRequest({
+        endpoint: "data/getTopBuyerSeller/",
         body: {
           exchange: exchange.filters.map((item) => item.name),
 
@@ -1805,8 +1808,8 @@ export function Exchange3() {
   }) {
     try {
       setUtilityTrendLoading(true);
-      const res = await buildHttpReq({
-        endpoint: "buyer_seller_trend_api",
+      const res = await buildFormDataRequest({
+        endpoint: "data/getBuyerSellerTrendData/",
         body: {
           start_date: startDate
             .toLocaleDateString("en-GB")

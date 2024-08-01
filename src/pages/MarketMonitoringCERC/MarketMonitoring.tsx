@@ -17,10 +17,10 @@ import fetchLatestAggregatedDayData, {
   fetchPSPData,
 } from "../../Rest_api/restapi";
 import { ReLineChart } from "../../components/recharts/ReCharts";
-import { renderHourTick } from "../Dashboard/Exchange3/Chart";
 import { COST_UNIT } from "../../Units";
 import { NavLink } from "react-router-dom";
 import { formatDateMD, formatDateUserFriendly } from "../../extensions/date";
+import { renderHourTick } from "../../components/recharts/components";
 
 const MarketMonitoring = () => {
   const [data, setData] = useState<ApiResponse | null>(null);

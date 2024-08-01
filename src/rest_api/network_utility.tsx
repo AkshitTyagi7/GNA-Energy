@@ -17,7 +17,7 @@ enum HttpMethod {
   PUT = 'PUT'
 }
 
-async function buildHeaderTokens(isStripePayment: boolean = false, request?: any): Promise<Record<string, string>> {
+export async function buildHeaderTokens(isStripePayment: boolean = false, request?: any): Promise<Record<string, string>> {
   const userToken = getAccessToken()?.toString() || '';
 
   const header: Record<string, string> = {
@@ -86,7 +86,7 @@ async function buildHttpResponse(
   }
 }
 
-function buildBaseUrl(endPoint: string): string {
+export function buildBaseUrl(endPoint: string): string {
   if (!endPoint.startsWith('http')) return `${BASE_URL}/${endPoint}`;
   return endPoint;
 }
@@ -106,62 +106,68 @@ async function handleResponse(response: AxiosResponse, avoidTokenError?: boolean
   }
 }
 
-// async function buildMultipartRequest(
-//   endPoint: string,
-//   fields: Record<string, string>,
-//   file?: File,
-//   fileFieldName: string = 'file'
-// ): Promise<any> {
-//   if (await isNetworkAvailable()) {
-//     const headers = await buildHeaderTokens();
-//     const url = buildBaseUrl(endPoint);
-
-//     const formData = new FormData();
-//     Object.keys(fields).forEach(key => {
-//       formData.append(key, fields[key]);
-//     });
-
-//     if (file) {
-//       const fileStream = await fs.readFile(file.name);
-//       formData.append(fileFieldName, fileStream, path.basename(file.name));
-//     }
-
-//     const config: AxiosRequestConfig = {
-//       method: 'POST',
-//       url,
-//       headers: {
-//         ...headers,
-//         ...formData.getHeaders()
-//       },
-//       data: formData
-//     };
-
-//     try {
-//       const response = await axios(config);
-//       return response.data;
-//     } catch (error) {
-//       if (axios.isAxiosError(error)) {
-//         if (error.response) {
-//           console.error(`Error (POST) ${error.response.status}: ${error.response.data}`);
-//           throw error.response.data.message || 'Something Went Wrong';
-//         } else {
-//           throw 'Your internet is not working';
-//         }
-//       } else {
-//         throw 'An unknown error occurred';
-//       }
-//     }
-//   } else {
-//     throw 'Your internet is not working';
-//   }
-// }
-
 function handleErrorResponse(response: AxiosResponse): Record<string, any> {
   return {
     status: response.status,
     message: 'Something Went Wrong',
   };
 }
+
+
+// export async function buildHttpReq(
+//   {
+//     endpoint, 
+//     method = 'GET',
+//     body = null,
+//     header= {},
+//     customUrl
+    
+//   }:
+//   {
+//     endpoint?: string,
+//     method?: string,
+//     body?: any,
+//     header?: any
+//     customUrl?: string
+//   }
+// ){
+//   // convert body to form data
+//   const formData = new FormData();
+//   Object.keys(body).forEach(key => formData.append(key, body[key]));
+//   const response = await fetch(endpoint != null ? buildUrl(endpoint) : customUrl != null ? customUrl: ""  , {
+//     method: method,
+//     headers: {
+//       ...header
+//     },
+//     body: formData
+//   });
+//   return await response.json();
+// }
+
+export async function buildFormDataRequest(
+  {
+    endpoint, 
+    method = 'GET',
+    body = null,
+    customUrl 
+  }:
+  {
+    endpoint?: string,
+    method?: string,
+    body?: any,
+    customUrl?: string
+  }){
+    const formData = new FormData();
+    Object.keys(body).forEach(key => formData.append(key, body[key]));
+    const response = await fetch(endpoint != null ? buildBaseUrl(endpoint) : customUrl != null ? customUrl: ""  , {
+      method: method,
+      headers:await buildHeaderTokens(),
+      body: formData as any
+    });
+
+    return await response.json();
+
+  }
 
 // Example usage
 

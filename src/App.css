@@ -1,108 +1,3 @@
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Bold.eot");
-  src: local("Marsden Wide Bold"), local("Marsden-W-Bold"),
-    url("./fonts/Marsden-W-Bold.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Bold.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Bold.woff") format("woff"),
-    url("./fonts/Marsden-W-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Black.eot");
-  src: local("Marsden Wide Black"), local("Marsden-W-Black"),
-    url("./fonts/Marsden-W-Black.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Black.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Black.woff") format("woff"),
-    url("./fonts/Marsden-W-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Medium.eot");
-  src: local("Marsden Wide Medium"), local("Marsden-W-Medium"),
-    url("./fonts/Marsden-W-Medium.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Medium.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Medium.woff") format("woff"),
-    url("./fonts/Marsden-W-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Light.eot");
-  src: local("Marsden Wide Light"), local("Marsden-W-Light"),
-    url("./fonts/Marsden-W-Light.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Light.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Light.woff") format("woff"),
-    url("./fonts/Marsden-W-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Regular.eot");
-  src: local("Marsden Wide"), local("Marsden-W-Regular"),
-    url("./fonts/Marsden-W-Regular.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Regular.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Regular.woff") format("woff"),
-    url("./fonts/Marsden-W-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Heavy.eot");
-  src: local("Marsden Wide Heavy"), local("Marsden-W-Heavy"),
-    url("./fonts/Marsden-W-Heavy.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Heavy.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Heavy.woff") format("woff"),
-    url("./fonts/Marsden-W-Heavy.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Marsden Wide";
-  src: url("./fonts/Marsden-W-Thin.eot");
-  src: local("Marsden Wide Thin"), local("Marsden-W-Thin"),
-    url("./fonts/Marsden-W-Thin.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Marsden-W-Thin.woff2") format("woff2"),
-    url("./fonts/Marsden-W-Thin.woff") format("woff"),
-    url("./fonts/Marsden-W-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --primary: #f1935c;
-  --secondary: #34656d;
-  --border: #333333;
-  --white: #ffffff;
-  --black: rgba(51, 51, 51, 1);
-  --primary-grey: #e4e7ed;
-  --secondary-grey: #dedfdf;
-  --teritary-grey: #9f9f9f;
-  --accent-grey: #f5f5f5;
-  --primary-accent: #ffe2d2;
-  --background: #f5f7fa;
-  --primary-border: 0.5px solid rgba(241, 147, 92, 1)
-}
 
 h1 {
   font-size: 24px;
@@ -306,6 +201,59 @@ body {
   font-weight: 500;
 }
 
+.header-side-area{
+  display: flex;
+  gap: 20px;
+
+}
+.header{
+  display: flex;
+  z-index: 100;
+  position: sticky;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  height: 80px;
+  width:calc( 100% );
+  gap: 25px;
+  padding: 20px;
+  border-left: solid 1px #E4E7ED;
+  border-bottom: solid 1px #E4E7ED;
+}
+
+.content2{
+  width: calc(100% - 141px)!important;
+  overflow: hidden;
+  height: 100%;
+  /* position: absolute;
+  left: 192px!important; */
+}
+.content2-padding-body{
+  padding: 30px;
+}
+.onechart-container{
+  height: calc(100vh - 160px);
+  width: 100%;
+  background-color: white;
+  padding: 40px 30px;
+}
+.body-container{
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  
+}
+.loading-container{
+  height: calc(100vh - 60px);
+  width: calc(100vw - 141px);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.185);
+}
 @media (max-width: 1700px) {
   
     .textsm{
@@ -338,6 +286,5 @@ body {
   .textxsm{
     font-size: 9px;
   }
-  
-  
   }
+

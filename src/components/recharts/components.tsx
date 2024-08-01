@@ -71,3 +71,21 @@ export const renderQuarterTick = (tickProps: any) => {
     }
   }
   
+  
+export const renderHourTick = (tickProps: any) => {
+  const { x, y, payload } = tickProps;
+  const { index, value, offset } = payload;
+  const valueint = parseInt(value);
+
+  // if (finalIndex  === 1 || finalIndex%97 ===0 ) {
+  //   const pathX = Math.floor(x - offset) + 0.5;
+  //   return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red"  width={"2px"}/>;
+  // }
+  if (valueint % 4 === 0) {
+    return (
+      <text x={x} y={y + 10} fontSize={12} textAnchor="middle" fill="#666">
+        {valueint/4}
+      </text>
+    );
+  }
+};

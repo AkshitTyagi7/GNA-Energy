@@ -37,6 +37,14 @@ export async function checkAccess(accessKey: string): Promise<ApiResponse> {
     return response as ApiResponse;
 }
 
+export async function getSessionValidity(): Promise<ApiResponse> {
+    const response = await buildHttpResponse({
+        endPoint: 'user/get_session_validity/',
+        method: HttpMethod.GET
+    })
+    return response as ApiResponse;
+}
+
 export async function fetchExchangeSlotData({
     exchange,
     product,
@@ -152,12 +160,11 @@ export async function getEntitys(){
 
 const fetchLatestAggregatedDayData = async () => {
     try {
-        const response = await fetch("https://api-data.gna.energy/data/latest-aggregated-day-data/");
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        return data;
+        const response = await buildHttpResponse({
+            endPoint: 'data/latest-aggregated-day-data/',
+            method: HttpMethod.GET
+        });
+        return response;
     } catch (error) {
         console.error('Error fetching data:', error);
         throw new Error('Error fetching data');
@@ -167,14 +174,11 @@ const fetchLatestAggregatedDayData = async () => {
 export default fetchLatestAggregatedDayData;
 
 export async function fetchPSPData() {
-    const response = await fetch("https://datahub.gna.energy/power_supply_api", {
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    });
-    const data = await response.json();
-    return data;
+    const response = await buildHttpResponse({
+        endPoint: 'data/power_supply_api',
+        method: HttpMethod.POST
+    })
+    return response;
 }
 
 export async function fetchDailyAuctionData({start_date, end_date, exchange, entity_id}:{
@@ -196,3 +200,5 @@ export async function fetchMonthlyAuctionData({start_date, end_date, exchange, e
     const response = await buildHttpResponse({endPoint:`data/auction-monthly-api?start_date=${start_date}&end_date=${end_date}&exchange_type=${exchange}`, method:HttpMethod.GET});
     return response as AuctionChartData[];
 }
+
+ 

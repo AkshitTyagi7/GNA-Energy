@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getUser } from "../../../pages/Protected";
 import swal from "sweetalert";
+import { buildFormDataRequest, HttpMethod } from "../../../Rest_api/network_utility";
 
 export interface TableRecord {
 
@@ -120,11 +121,12 @@ class DiscomArguments {
 const fetchDiscomData = createAsyncThunk(
     "discom/fetchDiscomData",
     async (args: DiscomArguments) => {
-        const res = await fetch("https://datahub.gna.energy/attribution_analysis_api", {
-            method: "POST",
-            body: args.getFormData()
+        const res = await buildFormDataRequest({endpoint:"data/attribution_analysis_api", 
+            method:HttpMethod.POST,
+            // method: "POST",
+            body: args
         });
-        return res.json();
+        return res;
     }
 );
 

@@ -29,6 +29,7 @@ import {
 import React from "react";
 import { COLORS } from "../../../components/recharts/ReCharts";
 import { BrushStart } from "../../../models/chart_model";
+import { renderHourTick, renderQuarterTick } from "../../../components/recharts/components";
 export const AxisLabel = ({
   axisType,
   x,
@@ -55,23 +56,6 @@ export const AxisLabel = ({
   );
 };
 
-export const renderQuarterTick = (tickProps: any) => {
-  const { x, y, payload } = tickProps;
-  const { index, value, offset } = payload;
-  const finalIndex = index + 1;
-
-  // if (finalIndex  === 1 || finalIndex%97 ===0 ) {
-  //   const pathX = Math.floor(x - offset) + 0.5;
-  //   return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red"  width={"2px"}/>;
-  // }
-  if (finalIndex % 48 === 0 && finalIndex % 96 !== 0) {
-    return (
-      <text x={x} y={y - 4} fontSize={12} textAnchor="middle">
-        {value}
-      </text>
-    );
-  }
-};
 
 export function getTimeRange(slot: number): string {
   if (slot < 1 || slot > 96) {
@@ -101,23 +85,6 @@ export function getTimeRange(slot: number): string {
 }
 
 
-export const renderHourTick = (tickProps: any) => {
-  const { x, y, payload } = tickProps;
-  const { index, value, offset } = payload;
-  const valueint = parseInt(value);
-
-  // if (finalIndex  === 1 || finalIndex%97 ===0 ) {
-  //   const pathX = Math.floor(x - offset) + 0.5;
-  //   return <path d={`M${pathX},${y - 4}v${-35}`} stroke="red"  width={"2px"}/>;
-  // }
-  if (valueint % 4 === 0) {
-    return (
-      <text x={x} y={y + 10} fontSize={12} textAnchor="middle" fill="#666">
-        {valueint/4}
-      </text>
-    );
-  }
-};
 
 export const ExchangeChart = ({
   showBrush = false,
@@ -163,16 +130,6 @@ export const ExchangeChart = ({
             <CartesianGrid strokeDasharray="4 2" />
 
             <XAxis dataKey="time_slot"
-            // tickFormatter={
-            //   ((value) => {
-            //     const number = parseInt(value);
-            //     if (number % 4) {
-            //       return value;
-            //     }
-            //     else{
-            //       return ""
-            //     }
-            // })}
             tick={renderHourTick as any}
             interval = {0}
             fontSize={12} />

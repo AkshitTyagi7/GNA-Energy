@@ -2,35 +2,8 @@
     font-size: 11px;
     color: #34656D;
 }
-.header-side-area{
-    display: flex;
-    gap: 20px;
 
-}
-.header{
-    display: flex;
-    z-index: 100;
-    position: sticky;
-    justify-content: space-between;
-    background-color: white;
-    align-items: center;
-    height: 80px;
-    width:calc( 100% );
-    gap: 25px;
-    padding: 20px;
-    border-left: solid 1px #E4E7ED;
-    border-bottom: solid 1px #E4E7ED;
-}
-.content2{
-    width: calc(100% - 141px)!important;
-    overflow: hidden;
-    height: 100%;
-    /* position: absolute;
-    left: 192px!important; */
-}
-.content2-padding-body{
-    padding: 30px;
-}
+
 .recharts-brush-texts { font-size: 0; }
 .date-selection input{
     border: solid 1px #DEDFDF;
@@ -149,12 +122,6 @@
     display: flex;
   }
 
-  .onechart-container{
-    height: calc(100vh - 160px);
-    width: 100%;
-    background-color: white;
-    padding: 40px 30px;
-}
 
 .realTime-chart{
     height: calc((100vh - 260px));
@@ -221,13 +188,7 @@ width: max-content;
     color: #f1935c !important; ;
 }
 
-.body-container{
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 80px);
-    overflow: hidden;
-    
-}
+
 .tab-buyerseller{
     width: 218.5px;
     height: 30px;
@@ -422,16 +383,7 @@ font-size: 20px;
 
 }
 
-.loading-container{
-    height: calc(100vh - 60px);
-    width: calc(100vw - 141px);
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    display: flex;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.185);
-}
+
 
 .exchange-comparision-chart-box{
     width: 100%;

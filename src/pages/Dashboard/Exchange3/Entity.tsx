@@ -8,7 +8,6 @@ import { Exchanges_data } from "./Data/Exchanges_data";
 import { EntityData } from "./Data/Entity_data";
 import Loading from "../../../components/Loading";
 import { COST_UNIT } from "../../../Units";
-import { renderHourTick } from "./Chart";
 
 export function EntityPage() {
   const [chartData, setChartData] = useState<ReChartData[]>([]);

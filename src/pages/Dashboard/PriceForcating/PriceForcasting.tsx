@@ -16,6 +16,7 @@ import {
 import { renderQuarterTick } from "../Exchange2/FormatData";
 import { COST, COST_UNIT } from "../../../Units";
 import { ReLineChart } from "../../../components/recharts/ReCharts";
+import { buildFormDataRequest } from "../../../Rest_api/network_utility";
 
 interface PriceForecastingData {
   name: string;
@@ -132,8 +133,8 @@ export function PriceForecasting() {
       .toLocaleDateString("en-GB")
       .split("/")
       .join("-");
-    const response = await buildHttpReq({
-      endpoint: "/dam_forecast_api",
+    const response = await buildFormDataRequest({
+      endpoint: "data/dam_forecast_api",
       method: "POST",
       body: {
         start_date: formatStartDate,
