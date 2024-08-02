@@ -316,7 +316,7 @@ export const ExchangeChart = ({
             }
             endIndex={
               data !== null && brushStart === BrushStart.Start
-                ? 96
+                ? 95
                 : data.length > 96
                 ? data.length - 1
                 : 0

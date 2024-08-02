@@ -151,9 +151,9 @@ export const TAM: React.FC<TAMProps> = ({
   ];
   
   const chartExchangeComprison = [
-    "IEX_Day Ahead Contingency",
-    "HPX_Day Ahead Contingency",
-    "PXIL_Day Ahead Contingency",
+    "IEX_DAC",
+    "HPX_DAC",
+    "PXIL_DAC",
     "PXIL_Daily",
     "HPX_Daily",
     "PXIL_Intra day",
@@ -1187,7 +1187,6 @@ interface CompareTamExchange {
 const aggregateExchangeComparativeTAMData = (
   tamData: TAMType[]
 ): CompareTamExchange[] => {
-  // first get unit combinations of exchange and product
   let unitCombinations: string[] = [];
   console.log("Tam data - ",tamData);
   tamData.forEach((entry) => {
@@ -1201,13 +1200,14 @@ const aggregateExchangeComparativeTAMData = (
     [key: string]: CompareTamExchange;
   } = {};
 
-  // add all dates between start and end date
   if (tamData.length === 0) return [];
-  let date = new Date(tamData[0].date as any);
+  let date = new Date(formatDMY(tamData[0].date!) as any)  ;
+  date = new Date(date.setDate(date.getDate() - 1));
   const start_date = new Date(tamData[0].date as any);
   const end_date = new Date(
     formatDMY(tamData[tamData.length - 1].date!) as any
   );
+  console.log(date);
   while (date.getTime() <= end_date.getTime()) {
     console.log("looping");
     const dateString = formatDMY(date.toISOString().split("T")[0]);

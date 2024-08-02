@@ -1546,6 +1546,7 @@ export function Exchange3() {
                     syncId="comparison"
                     height="6%"
                     width="99%"
+                    
                     showBrush={true}
                     onlyBrush={true}
                   />
