@@ -1,5 +1,5 @@
 import { buildHttpResponse, HttpMethod } from "./network_utility";
-import { ReChartData } from "../models/chart_model";
+import { ChartRecord, ReChartData } from "../models/chart_model";
 import { AuctionChartData } from "../models/auction";
  import { ApiResponse } from "../models/api_res";
 
@@ -201,4 +201,19 @@ export async function fetchMonthlyAuctionData({start_date, end_date, exchange, e
     return response as AuctionChartData[];
 }
 
- 
+export async function fetchSnapshots(start_date: string, end_date: string): Promise<ChartRecord[]> {
+    const response = await buildHttpResponse({
+        endPoint: `data/getSnapshots?start_date=${start_date}&end_date=${end_date}`,
+        method: HttpMethod.GET
+    });
+    return response as ChartRecord[];
+}
+
+// Function to fetch TAM data
+export async function fetchTamData(start_date: string, end_date: string): Promise<ChartRecord[]> {
+    const response = await buildHttpResponse({
+        endPoint: `data/getTamData?start_date=${start_date}&end_date=${end_date}`,
+        method: HttpMethod.GET
+    });
+    return response as ChartRecord[];
+}

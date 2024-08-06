@@ -49,70 +49,7 @@ export function ReLineChart({
   return (
     <div className="chart-container">
 
-    { !disableLegend && <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
-        {legends
-          .filter((e) => e.dataKey !== xDataKey)
-          .map((legend, index) => {
-            return (
-              <div
-                className="realTime-Legend"
-                onClick={() => {
-                  if (
-                    selectedLegends.filter(
-                      (item) => item.dataKey === legend.dataKey
-                    ).length > 0
-                  ) {
-                    setSelectedLegends(
-                      selectedLegends.filter(
-                        (item) => item.dataKey !== legend.dataKey
-                      )
-                    );
-                  } else {
-                    setSelectedLegends([...selectedLegends, legend]);
-                  }
-                }}
-              >
-                <p
-                  style={{
-                    color:
-                      selectedLegends.filter(
-                        (item) => item.dataKey === legend.dataKey
-                      ).length > 0 || selectedLegends.length === 0
-                        ? legend.stroke === null || legend.stroke === undefined
-                          ? COLORS[
-                              index > COLORS.length - 1
-                                ? index - COLORS.length
-                                : index
-                            ]
-                          : legend.stroke
-                        : "grey",
-                  }}
-                >
-                  {" "}
-                  <div
-                    className="dot"
-                    style={{
-                      backgroundColor:
-                        selectedLegends.filter(
-                          (item) => item.dataKey === legend.dataKey
-                        ).length > 0 || selectedLegends.length === 0
-                          ? legend.stroke === null ||
-                            legend.stroke === undefined
-                            ? COLORS[
-                                index > COLORS.length - 1
-                                  ? index - COLORS.length
-                                  : index
-                              ]
-                            : legend.stroke
-                          : "grey",
-                    }}
-                  ></div>{" "}
-                  {legend.name}
-                </p>
-              </div>
-            );
-          })}
-      </div>}
+
 
       <ResponsiveContainer height={"80%"}>
         <LineChart syncId={syncid} data={data}>
@@ -254,6 +191,70 @@ export function ReLineChart({
               })}
         </LineChart>
       </ResponsiveContainer>
+      { !disableLegend && <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-3">
+        {legends
+          .filter((e) => e.dataKey !== xDataKey)
+          .map((legend, index) => {
+            return (
+              <div
+                className="realTime-Legend"
+                onClick={() => {
+                  if (
+                    selectedLegends.filter(
+                      (item) => item.dataKey === legend.dataKey
+                    ).length > 0
+                  ) {
+                    setSelectedLegends(
+                      selectedLegends.filter(
+                        (item) => item.dataKey !== legend.dataKey
+                      )
+                    );
+                  } else {
+                    setSelectedLegends([...selectedLegends, legend]);
+                  }
+                }}
+              >
+                <p
+                  style={{
+                    color:
+                      selectedLegends.filter(
+                        (item) => item.dataKey === legend.dataKey
+                      ).length > 0 || selectedLegends.length === 0
+                        ? legend.stroke === null || legend.stroke === undefined
+                          ? COLORS[
+                              index > COLORS.length - 1
+                                ? index - COLORS.length
+                                : index
+                            ]
+                          : legend.stroke
+                        : "grey",
+                  }}
+                >
+                  {" "}
+                  <div
+                    className="dot"
+                    style={{
+                      backgroundColor:
+                        selectedLegends.filter(
+                          (item) => item.dataKey === legend.dataKey
+                        ).length > 0 || selectedLegends.length === 0
+                          ? legend.stroke === null ||
+                            legend.stroke === undefined
+                            ? COLORS[
+                                index > COLORS.length - 1
+                                  ? index - COLORS.length
+                                  : index
+                              ]
+                            : legend.stroke
+                          : "grey",
+                    }}
+                  ></div>{" "}
+                  {legend.name}
+                </p>
+              </div>
+            );
+          })}
+      </div>}
     </div>
   );
 }

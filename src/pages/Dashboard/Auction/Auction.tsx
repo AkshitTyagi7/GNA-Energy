@@ -19,7 +19,7 @@ import Popup from "../Exchange3/components/Popup";
 import { MediumButton } from "../../../components/Button";
 
 const TABS = ["Reverse Auction", "TAM"];
-const formatDateString = (date: Date): string =>
+export const formatDateString = (date: Date): string =>
   date.toLocaleDateString("en-GB").split("/").reverse().join("-");
 
 export function AuctionPage() {

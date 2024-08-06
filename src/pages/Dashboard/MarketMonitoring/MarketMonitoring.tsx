@@ -15,6 +15,9 @@ import { FormatByPriceData, FormatMarketMonitoringData } from "./FormatData";
 import { ReLineChart } from "../../../components/recharts/ReCharts";
 import { LegendKey } from "../../../models/chart_model";
 import { buildFormDataRequest } from "../../../Rest_api/network_utility";
+import { FilterTab } from "../../../components/Filters";
+import { set } from "date-fns";
+import { ta } from "date-fns/locale";
 // import { FormatMarketMonitoringData } from "./FormatData";
 let startMonth: {
   value: number;
@@ -162,24 +165,13 @@ export function MarketMontoring() {
         <h1>Market Monitoring</h1>
 
         <div className="header-side-area">
-          <div>
-            <button
-              onClick={() => {
-                setTabIndex(0);
-              }}
-              className={`tab tab-left ${tabIndex === 0 ? "tab-active" : ""}`}
-            >
-              Cumulative
-            </button>
-            <button
-              className={`tab tab-right ${tabIndex === 1 ? "tab-active" : ""}`}
-              onClick={() => {
-                setTabIndex(1);
-              }}
-            >
-              Comparative
-            </button>
-          </div>
+          <FilterTab
+            options={["Cumulative", "Comparative"]}
+            selected={[["Cumulative", "Comparative"][tabIndex]]}
+            onClick={(option, index) => {
+              setTabIndex(index);
+            }}
+          />
 
           <div className="flex space-x-2">
             <Select
@@ -282,8 +274,9 @@ export function MarketMontoring() {
         </div>
       </div>
       <div className="c">
-        <div className="body-container">
-          <div className="side-filters-container">
+        <div className="body-column-container">
+          
+          {/* <div className="side-filters-container">
             <div className="side-filter-item">
               <h4>Market</h4>
 
@@ -414,21 +407,72 @@ export function MarketMontoring() {
                 })}
               </div>
             )}
-          </div>
+          </div> */}
 
-          <div className="markeMonitoring-chart-container">
-            <div className="markeMonitoring-chart">
-              {tabIndex == 0 && (
-                <>
-                  <div className="flex justify-between">
-                    {/* <h2 className="chartHeading">
-                    By Volume ({VOLUME_UNIT})</h2> */}
-                    <h2 className="chartHeading">
-                      {subTabIndex == 0
-                        ? "By Volume (MU)"
-                        : "By Price (Rs/KWh)"}
-                    </h2>
-                    <div className="header-side-area">
+          <div className="filter-horizontal mt-2">
+
+            <FilterTab 
+              options={Markets.map((item) => item.name)}
+              selected={selectedMarket.map((item) => item.name)}
+              onClick={(option, index) => {
+                let filter;
+                if (selectedMarket.length === 3) {
+                  setSelectedMarket([Markets[index]]);
+                  filter = [Markets[index]];
+                } else if (selectedMarket.includes(Markets[index])) {
+                  setSelectedMarket(
+                    selectedMarket.filter((i) => i !== Markets[index])
+                  );
+                  filter = selectedMarket.filter((i) => i !== Markets[index]);
+                  if (filter.length === 0) {
+                    setSelectedMarket(Markets);
+                    filter = Markets;
+                  }
+                } else {
+                  setSelectedMarket([...selectedMarket, Markets[index]]);
+                  filter = [...selectedMarket, Markets[index]];
+                }
+              }} />
+              {
+                tabIndex === 0 && <FilterTab
+                options={Exchange.map((item) => item.name)}
+                selected={selectedExchange.map((item) => item.name)}
+                onClick={(option, index) => {
+                  let filter;
+                  if (selectedExchange.length === 4) {
+                    setSelectedExchange([Exchange[index]]);
+                  } else if (selectedExchange.includes(Exchange[index])) {
+                    setSelectedExchange(
+                      selectedExchange.filter((i) => i !== Exchange[index])
+                    );
+                    filter = selectedExchange.filter((i) => i !== Exchange[index]);
+                    if (filter.length === 0) {
+                      setSelectedExchange(Exchange);
+                      filter = Exchange;
+                    }
+                  } else {
+                    setSelectedExchange([...selectedExchange, Exchange[index]]);
+                    filter = [...selectedExchange, Exchange[index]];
+                  }
+                }}
+              />
+              }
+              {
+                tabIndex === 1 && <FilterTab
+                options={getProducts({
+                  exchange: selectedExchange,
+                  market: selectedMarket,
+                }).map((item) => item.name)}
+                selected={[byPriceProduct.name]}
+                onClick={(option, index) => {
+                  setByPriceProduct(getProducts({
+                    exchange: selectedExchange,
+                    market: selectedMarket,
+                  })[index]);
+                }}
+              />
+              }
+
                       <div>
                         <button
                           onClick={() => {
@@ -450,8 +494,22 @@ export function MarketMontoring() {
                         >
                           By Price
                         </button>
-                      </div>
                     </div>
+          </div>
+
+          <div className="markeMonitoring-chart-container">
+            <div className="markeMonitoring-chart">
+              {tabIndex == 0 && (
+                <>
+                  <div className="flex justify-between">
+                    {/* <h2 className="chartHeading">
+                    By Volume ({VOLUME_UNIT})</h2> */}
+                    <h2 className="chartHeading">
+                      {subTabIndex == 0
+                        ? "By Volume (MU)"
+                        : "By Price (Rs/KWh)"}
+                    </h2>
+
                   </div>
                   <ReLineChart
                     yAxisLabel={
@@ -489,7 +547,7 @@ export function MarketMontoring() {
               )}
               {tabIndex == 1 && (
                 <>
-                  <div className="flex justify-between">
+                  <div className="flex justify-center">
                     {/* <h2 className="chartHeading">
                     By Volume ({VOLUME_UNIT})</h2> */}
                     <h2 className="chartHeading">
@@ -497,30 +555,7 @@ export function MarketMontoring() {
                         ? "By Volume (MU)"
                         : "By Price (Rs/KWh)"}
                     </h2>
-                    <div className="header-side-area">
-                      <div>
-                        <button
-                          onClick={() => {
-                            setSubTabIndex(0);
-                          }}
-                          className={`tab tab-left ${
-                            subTabIndex === 0 ? "tab-active" : ""
-                          }`}
-                        >
-                          By Volume
-                        </button>
-                        <button
-                          className={`tab tab-right ${
-                            subTabIndex === 1 ? "tab-active" : ""
-                          }`}
-                          onClick={() => {
-                            setSubTabIndex(1);
-                          }}
-                        >
-                          By Price
-                        </button>
-                      </div>
-                    </div>
+                   
                   </div>
                   <ReLineChart
                     yAxisLabel={

@@ -22,6 +22,7 @@ import { Documents } from "./pages/Documents/Documents";
 import { Sidebar2 } from "./layout/Sidebar2";
 import { Login2 } from "./pages/Login/Login2";
 import MarketMonitoring from "./pages/MarketMonitoringCERC/MarketMonitoring";
+import { ChartBuilder } from "./pages/ChartBuilder/ChartBuilder";
 
 function App() {
   const isMenuActive = useSelector((state: any) => state.menu.isActive);
@@ -107,6 +108,12 @@ function App() {
                   />
                 </div>
               </Protected>
+            }
+          />
+            <Route
+            path="/chartBuilder"
+            element={
+              <ChartBuilder />
             }
           />
           <Route

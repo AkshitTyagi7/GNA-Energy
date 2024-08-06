@@ -75,3 +75,10 @@ export interface ChartArguements {
 
   }
 
+
+export interface ChartRecord{
+  total_volume_mwh: number;
+  weighted_average_price: number;
+  [key: string]: any;
+}
+
