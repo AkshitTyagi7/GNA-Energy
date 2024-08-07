@@ -99,8 +99,9 @@ export function AuctionPage() {
           ))}
         </div>
         <div className="date-selection">
-          <span>Delivery Period</span>
-          &nbsp;
+        { selectedTab == TABS[0] &&  <><span>Delivery Period</span>
+          &nbsp;</>
+          }
           {/* <input
             type="date"
             max={formatDateString(endDate)}

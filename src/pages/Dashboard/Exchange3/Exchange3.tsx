@@ -405,13 +405,13 @@ export function Exchange3() {
                   .split("/")
                   .reverse()
                   .join("-")}
-                  min={
-                    startDate
-                      .toLocaleDateString("en-GB")
-                      .split("/")
-                      .reverse()
-                      .join("-")
-                  }
+                  // min={
+                  //   startDate
+                  //     .toLocaleDateString("en-GB")
+                  //     .split("/")
+                  //     .reverse()
+                  //     .join("-")
+                  // }
                 value={startDate
                   .toLocaleDateString("en-GB")
                   .split("/")

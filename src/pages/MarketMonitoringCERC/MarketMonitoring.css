@@ -87,6 +87,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  gap: 8px;
   background: #fff7f3;
   border-radius: 16px;
   padding: 12px;
@@ -607,7 +608,7 @@ box-shadow: 1px 1px 9.1px 0px #E5E5E566;
 
 /* akshit  css */
 
-@media (max-width: 1400px) {
+@media (max-width: 1400px ), (max-height: 800px) {
   .market-monitoring-textsm {
     font-size: 12px;
   }
@@ -618,7 +619,8 @@ box-shadow: 1px 1px 9.1px 0px #E5E5E566;
     font-size: 16px;
   }
   .mcpButton{
-    font-size: 10px;
+    font-size: 9px;
+    padding: 0px 10px;
   }
 }
 

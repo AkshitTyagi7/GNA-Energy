@@ -421,12 +421,12 @@ const MarketMonitoring = () => {
           </div>
           <div className="rtmDetailsCont">
             <div className="rtmL1">
-              <CollMar style={{ height: "30px"  }} />
+              <CollMar style={{ height: "20px"  }} />
               <div className="textsm secondary-color">MCP (MU)</div>
               <div className="textsm secondary-color">MCV (Rs/kWh)</div>
             </div>
             <div className="rtmL2 mainVal2">
-              <IEX style={{ height: "30px"  }} />
+              <IEX style={{ height: "20px", width:"57px"  }} />
               <div>
                 {data &&
                   data["IEX"]["RTM"] &&
@@ -439,7 +439,7 @@ const MarketMonitoring = () => {
               </div>
             </div>
             <div className="rtmL2">
-              <HPX style={{ height: "30px"  }} />
+              <HPX style={{ height: "20px"   }} />
               <div className="mainVal2">
                 {data &&
                   data["HPX"]["RTM"] &&
@@ -452,7 +452,7 @@ const MarketMonitoring = () => {
               </div>
             </div >
             <div className="rtmL2 mainVal2" >
-              <Pxil style={{ height: "30px"  }} />
+              <Pxil style={{ height: "20px"  }} />
               <div>
                 {data &&
                   data["PXIL"]["RTM"] &&
